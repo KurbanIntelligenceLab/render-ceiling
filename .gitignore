@@ -1,0 +1,12 @@
+# Trained adapter weights — 2.82 GB. GitHub rejects blobs over 100 MB, and large binaries do not
+# belong in git history even when they fit. Publish via a release asset, Zenodo, or the HF Hub.
+# See weights/README.md for the manifest, the sha256, and which arm is NOT in the archive.
+weights/*.tar.gz
+weights/adapters*/
+
+# Compiled bytecode — regenerated on every run, machine- and interpreter-specific.
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
