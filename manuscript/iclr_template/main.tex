@@ -31,39 +31,39 @@ and What It Attributes}
 \maketitle
 
 \begin{abstract}
-\input{sections/00_abstract}
+Vision--language models fail on rendered scientific figures, and the failure is widely attributed to
+perception rather than reasoning. The evidence is usually a two-stage pipeline that replaces the model's
+perception with a model-written description. That design compares two model configurations and cannot say
+how much information the image contains. We supply the missing quantity. A crystal-structure render is a
+known orthographic projection of a known structure, so the information it carries can be measured by
+inverting the cameras and applying a deterministic symmetry algorithm, with no model anywhere in the
+measurement. On a certified-label benchmark of crystal-system classification, this geometric oracle
+recovers 0.9524 and 0.9095 of structures on two 210-structure samples, against 0.6905 for the strongest
+model arm (paired per structure, discordance $61{:}6$, $p = 1.5\times10^{-12}$). Every label is generated rather than annotated,
+so the ceiling and the ground truth come from one source. Using the oracle as one rung of a four-rung
+attribution ladder yields two results a two-stage comparison cannot reach. First, supplying exact geometry
+as text leaves 12 of the 14 scored models limited by the symbolic residual rather than by perception
+(median perception share 30.9\%), and the share tracks model strength: ``perception is the bottleneck'' is
+false as a general statement on this task and true only of the strongest models. Second, a strong model
+used as the extraction stage emits syntactically perfect coordinate lists whose median recall against
+ground truth is 0.0000, a fabrication that downstream accuracy alone would have attributed to reasoning.
+The method transfers to any modality whose forward rendering is known and invertible.
 \end{abstract}
 
 \input{sections/01_introduction}
 \input{sections/02_related_work}
+\input{sections/03_method}
+\input{sections/04_results}
+\input{sections/05_discussion}
+\input{sections/06_conclusion}
 
-% Section 3 -- Method and benchmark
-\input{sections/02b_method_head}
-\input{sections/03_method_oracle}
-\input{sections/04_method_ladder}
-\input{sections/05_method_benchmark}
-
-% Section 4 -- Experiments and results
-\input{sections/05b_results_head}
-\input{sections/06_results_main}
-\input{sections/07_results_residual}
-\input{sections/08_results_controls}
-\input{sections/09_results_conventions}
-
-% Sections 5-6
-\input{sections/10_discussion}
-\input{sections/10_conclusion}
-
-% Reproducibility and AI-use statements: unnumbered, excluded from the page limit.
-\input{sections/11_statements}
+% Reproducibility, ethics and AI-use statements: unnumbered, excluded from the page limit.
+\input{sections/07_statements}
 
 \bibliographystyle{iclr2027_conference}
 \bibliography{references}
 
 \appendix
-\input{sections/A1_proof}
-\input{sections/A2_statistics}
-\input{sections/A3_corrections}
-\input{sections/A4_secondary_figures}
+\input{sections/A_appendix}
 
 \end{document}

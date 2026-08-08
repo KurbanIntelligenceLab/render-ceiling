@@ -1,3 +1,6 @@
+\section{Method and benchmark}
+\label{sec:method}
+
 \subsection{Geometric oracle and identifiability}
 \label{sec:oracle}
 
@@ -77,3 +80,74 @@ protocol's occlusion leaves almost every atom triangulable in principle (Section
 \textbf{Why a ceiling below $1.0$ is the point.} A design that supplied the source coordinates as text
 would have a ceiling of exactly $1.0$ by construction and would measure nothing about the images. A ceiling
 below $1.0$ says the protocol withholds information, and Proposition~\ref{prop:ident} locates where.
+
+\subsection{Attribution ladder}
+\label{sec:ladder}
+
+\begin{definition}[Rungs and shares]
+\label{def:ladder}
+For a model $m$ evaluated on the same structures, let
+$R_0 = \tfrac{1}{n}\sum \mathbf{1}[\spg(s) = y(s)]$ (the symmetry algorithm on ground-truth positions),
+$R_1$ the oracle ceiling of Definition~\ref{def:ceiling},
+$R_3(m)$ the accuracy of $m$ given ground-truth fractional coordinates, species and cell parameters as
+text, and
+$R_4(m)$ the accuracy of $m$ on the pixel renders. Define the \emph{perception component}
+$P(m) = R_3(m) - R_4(m)$, the \emph{symbolic residual} $S(m) = R_1 - R_3(m)$, and the \emph{perception
+share} $P(m) / (R_1 - R_4(m))$. $R_2$ denotes the oracle run on a learned detector's output.
+\end{definition}
+
+Three conditions make the shares interpretable, and we state them because each is checkable: the rungs are
+scored on the same named structures with all comparisons paired; $R_3$ and $R_4$ use the same decode budget
+($K{=}3$ everywhere the shares are computed); and the symbolic residual \emph{bounds} rather than isolates
+symmetry reasoning, since a residual against a deterministic solver can include failure modes other than
+symmetry (we test this directly below). Table~\ref{tab:rungs} gives the ladder.
+
+\begin{table}[t]
+\centering
+\caption{Attribution ladder, original evaluation sample, $n=210$, $K{=}3$. The two model columns are the
+strongest scored model and one mid-roster model, named rather than aggregated; $R_3$ and $R_4$ within
+a column are the same model under two conditions, so their interval is that model's perception component
+(Definition~\ref{def:ladder}). $R_2$ is unscored: its extractor fails to triangulate on 19.0\% and 22.4\%
+of structures, over the pre-registered 5\% gate. The fine-tuned arm was never run under the coordinate
+condition, so it carries no within-model interval and is not a column.}
+\label{tab:rungs}
+\small
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{p{0.40\linewidth}p{0.22\linewidth}rr}
+\toprule
+rung & what it removes & \small gemini-3.6-flash & \small gpt-4.1-mini \\
+\midrule
+$R_0$ algorithm on ground-truth positions & nothing & \multicolumn{2}{c}{1.0000 (definitional)} \\
+$R_1$ oracle: camera inversion, then algorithm & the protocol's losses & \multicolumn{2}{c}{0.9524} \\
+$R_3$ exact geometry as text ($K{=}3$) & the model's perception & 0.8524 & 0.4143 \\
+$R_4$ pixels ($K{=}3$) & nothing further & 0.7333 & 0.3667 \\
+\midrule
+perception share $(R_3-R_4)/(R_1-R_4)$ & --- & 0.5436 & 0.0813 \\
+$R_2$ oracle on a learned detector's output & ideal extraction & \multicolumn{2}{c}{unscored} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The top rung is definitional, and that is load-bearing.} The label \emph{is} $\spg$ applied to the
+structure, so $R_0 = 1.0000$ exactly, and the $R_0 \to R_1$ interval is what camera inversion and
+correspondence re-solution cost. Treating $R_0$ as approximately equal to $R_1$ would discard that
+interval.
+
+\subsection{Benchmark construction}
+\label{sec:benchmark}
+
+\textbf{Certified labels.} Each structure's crystal system, Bravais lattice, point group and space group
+are derived from its coordinates by $\spg$ at the canonical tolerance, with a tolerance sweep that
+quarantines any structure whose space group is not stable across it. On the kept set, label agreement with
+the source databases is $220/220$ (one-sided exact 95\% lower bound $0.9865$).
+
+\textbf{Composition exclusion.} No chemical composition in any evaluation set appears in training. Without
+this, symmetry is partly predictable from composition alone, a published task \citep{cryspnet2003}, and a
+model could score well without reading the image.
+
+\textbf{A label ladder gives a difficulty axis.} We score four labels of increasing granularity for the
+model-free arms. The oracle is flat across granularity because a
+reconstruction is either right or wrong and all four labels follow from it; the cell-metric baseline falls
+from 0.8952 at crystal system to 0.6810 at space group, because point group and space group depend on atom
+positions that lattice parameters do not encode. The identifiability claim is therefore not specific to the
+seven-way label.
