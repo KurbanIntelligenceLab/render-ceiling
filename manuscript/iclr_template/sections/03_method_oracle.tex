@@ -1,5 +1,5 @@
-\section{Setup, notation, and the geometric oracle}
-\label{sec:setup}
+\subsection{Geometric oracle and identifiability}
+\label{sec:oracle}
 
 \textbf{Structures and labels.} A crystal structure is a triple $s = (L, X, Z)$: a lattice
 $L \in \mathbb{R}^{3\times3}$, fractional coordinates $X = \{x_i\}_{i=1}^{N} \subset [0,1)^3$, and species
@@ -69,7 +69,7 @@ the remaining views eliminates spurious matches outside the coincidence set). Th
 what its failure set says. Condition (i) holds by construction for the frozen camera set. Condition
 (ii) fails under projective coincidence, when distinct atoms project onto near-identical pixels, and this
 is exactly where the measured ceiling falls short of $1$: coincidence grows with atoms per cell, which
-predicts the cell-size dependence observed at scale-up (Section~\ref{sec:models}). A separate quantity
+predicts the cell-size dependence observed at scale-up (Section~\ref{sec:controls}). A separate quantity
 governs what an extractor reading pixels could recover: across the frozen five-view set, the fraction of
 atoms with fewer than two clear views is 0.26\% (original sample) and 0.87\% (replication sample), so the
 protocol's occlusion leaves almost every atom triangulable in principle (Section~\ref{sec:conventions}).

@@ -1,0 +1,51 @@
+\subsection{Attribution ladder}
+\label{sec:ladder}
+
+\begin{definition}[Rungs and shares]
+\label{def:ladder}
+For a model $m$ evaluated on the same structures, let
+$R_0 = \tfrac{1}{n}\sum \mathbf{1}[\spg(s) = y(s)]$ (the symmetry algorithm on ground-truth positions),
+$R_1$ the oracle ceiling of Definition~\ref{def:ceiling},
+$R_3(m)$ the accuracy of $m$ given ground-truth fractional coordinates, species and cell parameters as
+text, and
+$R_4(m)$ the accuracy of $m$ on the pixel renders. Define the \emph{perception component}
+$P(m) = R_3(m) - R_4(m)$, the \emph{symbolic residual} $S(m) = R_1 - R_3(m)$, and the \emph{perception
+share} $P(m) / (R_1 - R_4(m))$. $R_2$ denotes the oracle run on a learned detector's output.
+\end{definition}
+
+Three conditions make the shares interpretable, and we state them because each is checkable: the rungs are
+scored on the same named structures with all comparisons paired; $R_3$ and $R_4$ use the same decode budget
+($K{=}3$ everywhere the shares are computed); and the symbolic residual \emph{bounds} rather than isolates
+symmetry reasoning, since a residual against a deterministic solver can include failure modes other than
+symmetry (we test this directly below). Table~\ref{tab:rungs} gives the ladder.
+
+\begin{table}[t]
+\centering
+\caption{Attribution ladder, original evaluation sample, $n=210$, $K{=}3$. The two model columns are the
+strongest scored model and one mid-roster model, named rather than aggregated; $R_3$ and $R_4$ within
+a column are the same model under two conditions, so their interval is that model's perception component
+(Definition~\ref{def:ladder}). $R_2$ is unscored: its extractor fails to triangulate on 19.0\% and 22.4\%
+of structures, over the pre-registered 5\% gate. The fine-tuned arm was never run under the coordinate
+condition, so it carries no within-model interval and is not a column.}
+\label{tab:rungs}
+\small
+\setlength{\tabcolsep}{4.5pt}
+\begin{tabular}{p{0.40\linewidth}p{0.22\linewidth}rr}
+\toprule
+rung & what it removes & \small gemini-3.6-flash & \small gpt-4.1-mini \\
+\midrule
+$R_0$ algorithm on ground-truth positions & nothing & \multicolumn{2}{c}{1.0000 (definitional)} \\
+$R_1$ oracle: camera inversion, then algorithm & the protocol's losses & \multicolumn{2}{c}{0.9524} \\
+$R_3$ exact geometry as text ($K{=}3$) & the model's perception & 0.8524 & 0.4143 \\
+$R_4$ pixels ($K{=}3$) & nothing further & 0.7333 & 0.3667 \\
+\midrule
+perception share $(R_3-R_4)/(R_1-R_4)$ & --- & 0.5436 & 0.0813 \\
+$R_2$ oracle on a learned detector's output & ideal extraction & \multicolumn{2}{c}{unscored} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{The top rung is definitional, and that is load-bearing.} The label \emph{is} $\spg$ applied to the
+structure, so $R_0 = 1.0000$ exactly, and the $R_0 \to R_1$ interval is what camera inversion and
+correspondence re-solution cost. Treating $R_0$ as approximately equal to $R_1$ would discard that
+interval.
