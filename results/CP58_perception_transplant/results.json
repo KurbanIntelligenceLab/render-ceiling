@@ -1,0 +1,72 @@
+{
+ "stage": "CP58 perception transplant (ICLR directive)",
+ "branch": "NO BRANCH FIRES. A3 = 30/210 = 0.1429 with only 2 of 7 classes predicted (205 'cubic'), which equals the cubic base rate exactly \u2014 PREDICTION COLLAPSE, so the accuracy is not a reasoning measurement.",
+ "arms": {
+  "A1_weak_pixels": 0.2048,
+  "A2_strong_pixels": 0.7333,
+  "A3_strong_extracts_weak_reasons": {
+   "k": 30,
+   "n": 210,
+   "micro": 0.1429,
+   "classes_predicted": 2,
+   "prediction_distribution": {
+    "cubic": 205,
+    "None": 4,
+    "tetragonal": 1
+   },
+   "equals_cubic_base_rate": true,
+   "cubic_stratum_size": 30
+  },
+  "A4_oracle_positions_weak_reasons": 0.5048
+ },
+ "correct_reference_for_A3": {
+  "value": 0.5048,
+  "why": "A4 is the weak model's ceiling with PERFECT geometry, so A2 (0.7333) overstates the shortfall. Named in the pre-registration before the run."
+ },
+ "emitted_position_quality": {
+  "n_scored": 206,
+  "median_recall": 0.0,
+  "median_precision": 0.0,
+  "structures_with_zero_matched_atoms": 105,
+  "median_error_on_matched_atoms_frac": 0.0817,
+  "median_atoms_emitted": 48,
+  "matching_tolerance_frac": 0.15,
+  "cp19_detector_for_contrast": {
+   "median_recall": 0.4,
+   "median_precision": 0.2333
+  },
+  "interpretation": "the strong model emits syntactically perfect coordinate lists \u2014 correct elements, 5-decimal precision, median 48 atoms \u2014 and on half the structures NOT ONE lands within tolerance of a real atom. It generates the FORM of an extraction without the content.",
+  "atoms_emitted_distribution": {
+   "median": 48,
+   "mean": 53.3,
+   "min": 5,
+   "max": 288,
+   "n": 206,
+   "note": "computed over all 206 structures with an emitted list. An earlier prose figure of 45 came from a 43-record diagnostic on a CLASS-ORDERED PREFIX that was already discarded for the accuracy number; it leaked into prose while the numeric field was correct."
+  }
+ },
+ "gates": {
+  "unparseable_extractions": {
+   "n": 4,
+   "rate": 0.019,
+   "gate": 0.05,
+   "passed": true
+  },
+  "extract_api_errors": {
+   "n": 0,
+   "gate": 0.05,
+   "passed": true
+  },
+  "fewer_than_3_atoms": {
+   "n": 4,
+   "rate": 0.019,
+   "gate": 0.2,
+   "passed": true
+  },
+  "conclusion": "all gates pass, so the failure is the model's extraction rather than a harness artefact"
+ },
+ "what_is_supported": "model-emitted structured extractions can be entirely fabricated while syntactically perfect, and downstream accuracy alone would NOT reveal it \u2014 0.1429 could have been read as 'the weak model reasons badly'. Only scoring the intermediate against exact ground truth exposes it. This is a direct argument for the paper's instrument.",
+ "what_is_not_supported": "any claim about whether the strong/weak difference is perception. The design premise failed, not the hypothesis: A3 can only test transplant if the transplanted content is perception.",
+ "own_reading_defect": "at 43/210 I observed 0 correct; the executor submits in file order and eval.jsonl is ORDERED BY CRYSTAL SYSTEM, so that prefix was all triclinic/monoclinic. The documented prefix-slice defect, recurring. The partial number was meaningless.",
+ "limits": "one strong model, one weak model, one sample, one handoff format. A different prompt might elicit real coordinates; this shows the obvious prompt does not."
+}

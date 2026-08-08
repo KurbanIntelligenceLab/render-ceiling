@@ -1,0 +1,152 @@
+{
+ "stage": "E9-lite calibration (re-scoring only, no new generation)",
+ "confidence_signal": {
+  "type": "3-sample majority vote share",
+  "levels": [
+   0.333,
+   0.667,
+   1.0
+  ],
+  "limitation": "chain format never asks for confidence; 0/360 scanned chains contained any verbalized confidence, so verbalized-confidence ECE is not computable from existing generations",
+  "action": "add explicit confidence slot to eval protocol before next big run"
+ },
+ "calibration": {
+  "B3": {
+   "ece": 0.5725,
+   "n": 630,
+   "bins": {
+    "0.333": {
+     "n": 15,
+     "acc": 0.0,
+     "gap": -0.333
+    },
+    "0.667": {
+     "n": 127,
+     "acc": 0.118,
+     "gap": -0.549
+    },
+    "1.0": {
+     "n": 488,
+     "acc": 0.414,
+     "gap": -0.586
+    }
+   }
+  },
+  "V2a": {
+   "ece": 0.5271,
+   "n": 630,
+   "bins": {
+    "0.333": {
+     "n": 15,
+     "acc": 0.067,
+     "gap": -0.266
+    },
+    "0.667": {
+     "n": 153,
+     "acc": 0.144,
+     "gap": -0.523
+    },
+    "1.0": {
+     "n": 462,
+     "acc": 0.463,
+     "gap": -0.537
+    }
+   }
+  },
+  "V2b": {
+   "ece": 0.4932,
+   "n": 630,
+   "bins": {
+    "0.333": {
+     "n": 14,
+     "acc": 0.071,
+     "gap": -0.262
+    },
+    "0.667": {
+     "n": 201,
+     "acc": 0.234,
+     "gap": -0.433
+    },
+    "1.0": {
+     "n": 415,
+     "acc": 0.47,
+     "gap": -0.53
+    }
+   }
+  }
+ },
+ "summary": {
+  "B3": {
+   "ece": 0.5725,
+   "mean_conf": 0.917,
+   "acc": 0.344,
+   "overconf": 0.572,
+   "frac_unanimous": 0.775,
+   "auc": 0.62
+  },
+  "V2a": {
+   "ece": 0.5271,
+   "mean_conf": 0.903,
+   "acc": 0.376,
+   "overconf": 0.527,
+   "frac_unanimous": 0.733,
+   "auc": 0.637
+  },
+  "V2b": {
+   "ece": 0.4932,
+   "mean_conf": 0.879,
+   "acc": 0.386,
+   "overconf": 0.493,
+   "frac_unanimous": 0.659,
+   "auc": 0.619
+  }
+ },
+ "answer": "PARTIAL mitigation: ECE falls monotonically with process-verification density (0.573->0.527->0.493, 14% relative) but all arms remain severely overconfident. Mechanism is MORE HEDGING (frac_unanimous 0.775->0.659), NOT better discrimination (AUC flat at ~0.62).",
+ "accuracy_matched_check": {
+  "note": "restricted to the 3/3 bin where ECE reduces to |1-acc|",
+  "B3": 0.586,
+  "V2a": 0.537,
+  "V2b": 0.53,
+  "verdict": "ordering survives at matched confidence, so the gain is not purely the accuracy gain"
+ },
+ "step_to_final_correlation": {
+  "circularity_retracted": {
+   "naive_auc": 0.998,
+   "why_invalid": "score_chain per_step includes step['system'] = whether emitted crystal system matches truth = the same quantity as final-answer correctness; bravais/point_group/space_group likewise answer-coupled",
+   "do_not_cite": true
+  },
+  "valid_answer_independent": {
+   "predictor": "geometry step only (scored vs CIF lattice relations, no reference to the crystal-system answer)",
+   "B3": {
+    "n": 630,
+    "r": 0.523,
+    "auc": 0.811
+   },
+   "V2a": {
+    "n": 630,
+    "r": 0.539,
+    "auc": 0.812
+   },
+   "V2b": {
+    "n": 630,
+    "r": 0.553,
+    "auc": 0.818
+   },
+   "reading": "answer-independent verifiable step predicts final correctness at AUC ~0.81, vs the model's own self-consistency confidence at AUC ~0.62 -> the CIF-grounded checker is a usable E7 reranking signal carrying information the model's confidence does not; near-identical across arms => property of the CHECKER not of a training arm"
+  },
+  "limitation": {
+   "recoverable_from_stored_text": {
+    "geometry": 0.907,
+    "motif": 0.0,
+    "system": 0.36
+   },
+   "consequence": "full answer-independent decomposition (geometry+motif) needs FULL generations, not stored; re-scored faith 0.263 vs eval-time 0.288",
+   "action": "store full generations or a per-step score vector in the next eval run"
+  }
+ },
+ "literature": {
+  "DCPO_2603.09117": "RLVR severely suffers from calibration degeneration, models become excessively over-confident in incorrect answers; reports gradient conflict between accuracy and calibration objectives",
+  "semantic_reward_2605.15588": "binary correctness reward is indifferent to confidence, no penalty for confident-but-wrong, structurally incentivizes overconfident guessing",
+  "hidden_costs_2509.21882": "headline RLVR gains conflate policy improvement with budget mismatch, attempt inflation/calibration drift, contamination; recommends budget-matched curves with calibration and abstention tracking"
+ }
+}

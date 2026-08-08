@@ -1,0 +1,91 @@
+{
+ "note": "Superseded values, kept as data so a reader comparing versions can see what moved. Nothing here is asserted.",
+ "S1_stratified_137_73": {
+  "partition": "137 sufficient / 73 ambiguous \u2014 rule NOT RECOVERABLE",
+  "why_superseded": "a 50-combination grid over tolerances and branch orderings reproduces the count 73 but never the stratum composition",
+  "rows": {
+   "gemini-3.6-flash_K3": {
+    "suff": 0.854,
+    "amb": 0.5068,
+    "drop": 0.3472,
+    "fisher_p": 1.7e-07
+   },
+   "grok-4.5_K3": {
+    "suff": 0.6788,
+    "amb": 0.4932,
+    "drop": 0.1857,
+    "fisher_p": 0.0112
+   },
+   "B1_direct_K8": {
+    "suff": 0.6715,
+    "amb": 0.5205,
+    "drop": 0.151,
+    "fisher_p": 0.0372
+   },
+   "claude-opus-4.8_K3": {
+    "suff": 0.635,
+    "amb": 0.4795,
+    "drop": 0.1556,
+    "fisher_p": 0.0395
+   },
+   "RF_lattice19": {
+    "suff": 0.9124,
+    "amb": 0.8356,
+    "drop": 0.0768,
+    "fisher_p": 0.113
+   },
+   "FLOOR_3feat": {
+    "suff": 0.5474,
+    "amb": 0.4932,
+    "drop": 0.0543,
+    "fisher_p": 0.471
+   }
+  },
+  "replaced_by": "CP28 canonical 140/70 table; frontier rows never recomputed on it and are historical"
+ },
+ "S2_mechanism_prose": {
+  "claim": "the information is in the cell parameters; what fails is reading them off a drawing",
+  "why_superseded": "rested on the stratified drop, refuted four independent times"
+ },
+ "S3_B3_reverse_direction": {
+  "box_sufficient": 0.1857,
+  "box_ambiguous": 0.4714,
+  "drop": -0.2857,
+  "fisher_p": 3.4e-05,
+  "counts": "26/140, 33/70"
+ },
+ "S4_effective_visibility_limit": {
+  "value": "~0.18-0.20",
+  "why_superseded": "a PER-VIEW mean, not a ceiling",
+  "replaced_by": {
+   "informative_occlusion_all_views": [
+    0.0001,
+    0.0007
+   ],
+   "frac_atoms_fewer_than_2_clear_views": {
+    "original": 0.0026,
+    "expansion": 0.0087
+   }
+  }
+ },
+ "S5_coincidence_disc_decomposition": {
+  "total_mean": 0.4891,
+  "why_superseded": "computed on a system-ordered prefix slice containing only two crystal systems",
+  "replaced_by": {
+   "orbit_split_total_mean": 0.5699
+  }
+ },
+ "S6_retired_rf_values": {
+  "0.8905": "187/210 original run, feature list never saved",
+  "0.8857": "186/210 later reproduction, also unrecoverable",
+  "variant_span": [
+   183,
+   188
+  ],
+  "replaced_by": {
+   "canonical": 0.8952,
+   "k": 188,
+   "spec": "classifier_specifications.json, verified by clean-room refit"
+  }
+ }
+}

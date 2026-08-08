@@ -1,0 +1,34 @@
+{
+ "calibration_sweep": {
+  "configs_tested": {
+   "lr1e-5_b0.01": {
+    "kl_last": 0.0067,
+    "note": "KL moderate-low"
+   },
+   "lr1e-5_b0.02": {
+    "kl_last": 0.0127,
+    "note": "KL deliberate ~0.015 band, stable, entropy healthy \u2014 CHOSEN"
+   },
+   "lr3e-5_b0.005": {
+    "kl_last": 0.092,
+    "note": "KL large (~0.08); moves fast but higher divergence risk over long run"
+   }
+  },
+  "observation": "reward OSCILLATES step-to-step (0.35-0.73) due to fresh 1610-prompt batches per step (group 8), NOT a decline; entropy stable ~0.13-0.22 all configs; reward_std non-zero (gradient present). All 3 lift KL 30-450x off the pilot's frozen 0.0002.",
+  "caveat": "40 steps too short to CONFIRM a plateau; full matrix runs longer with KL/reward as a standing panel (item 8) to catch divergence early."
+ },
+ "FROZEN_CONFIG": {
+  "lr": 1e-05,
+  "beta": 0.02,
+  "group_size": 8,
+  "max_completion_length": 350,
+  "steps": "TBD (>= pilot's 200; scale with wall-budget)",
+  "seeds": [
+   0,
+   1,
+   2
+  ],
+  "eval_decode": "sampled (temp>0) / majority-vote \u2014 not greedy",
+  "rationale": "KL lands in a deliberate ~0.015 band (75x the frozen pilot regime) without the instability risk of the 0.08 high-lr config; entropy stable; gradient present. Identical across ALL arms and seeds. No mid-matrix tuning."
+ }
+}

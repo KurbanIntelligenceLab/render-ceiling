@@ -1,0 +1,246 @@
+{
+ "stage": "CP31 visibility-corrected oracle (ICLR plan, Phase B)",
+ "branch": "BOTH PRE-REGISTERED STOPS FIRE. Primary quantity O0-O1 is exactly ZERO on both eval sets; the O3 control removes 6-21 structures, so O1 is unreadable by the rule fixed before the run.",
+ "harness_gate": {
+  "rule": "O0 must reproduce CP25 within one structure or nothing is scored",
+  "original_5v": {
+   "got": 200,
+   "cp25": 200,
+   "delta": 0
+  },
+  "expansion_5v": {
+   "got": 191,
+   "cp25": 191,
+   "delta": 0
+  },
+  "over_triangulation": 0,
+  "errors": 0,
+  "result": "PASS",
+  "earlier_harness_rejected": "a first version generated candidates from every view pair instead of CP25's anchor pair and scored 198/185; the gate caught it and the harness was corrected before any condition was read"
+ },
+ "conditions": {
+  "expansion_4v_O0": {
+   "k": 188,
+   "n": 210,
+   "micro": 0.8952,
+   "count_match": 204,
+   "over_triangulated": 6,
+   "errors": 0
+  },
+  "expansion_4v_O1": {
+   "k": 188,
+   "n": 210,
+   "micro": 0.8952,
+   "count_match": 194,
+   "over_triangulated": 6,
+   "errors": 0
+  },
+  "expansion_4v_O2": {
+   "k": 113,
+   "n": 210,
+   "micro": 0.5381,
+   "count_match": 47,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "expansion_4v_O3": {
+   "k": 168,
+   "n": 210,
+   "micro": 0.8,
+   "count_match": 168,
+   "over_triangulated": 3,
+   "errors": 0
+  },
+  "expansion_5v_O0": {
+   "k": 191,
+   "n": 210,
+   "micro": 0.9095,
+   "count_match": 207,
+   "over_triangulated": 3,
+   "errors": 0
+  },
+  "expansion_5v_O1": {
+   "k": 191,
+   "n": 210,
+   "micro": 0.9095,
+   "count_match": 197,
+   "over_triangulated": 3,
+   "errors": 0
+  },
+  "expansion_5v_O2": {
+   "k": 113,
+   "n": 210,
+   "micro": 0.5381,
+   "count_match": 47,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "expansion_5v_O3": {
+   "k": 170,
+   "n": 210,
+   "micro": 0.8095,
+   "count_match": 170,
+   "over_triangulated": 1,
+   "errors": 0
+  },
+  "original_4v_O0": {
+   "k": 200,
+   "n": 210,
+   "micro": 0.9524,
+   "count_match": 210,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "original_4v_O1": {
+   "k": 200,
+   "n": 210,
+   "micro": 0.9524,
+   "count_match": 203,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "original_4v_O2": {
+   "k": 122,
+   "n": 210,
+   "micro": 0.581,
+   "count_match": 56,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "original_4v_O3": {
+   "k": 194,
+   "n": 210,
+   "micro": 0.9238,
+   "count_match": 196,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "original_5v_O0": {
+   "k": 200,
+   "n": 210,
+   "micro": 0.9524,
+   "count_match": 210,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "original_5v_O1": {
+   "k": 200,
+   "n": 210,
+   "micro": 0.9524,
+   "count_match": 203,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "original_5v_O2": {
+   "k": 122,
+   "n": 210,
+   "micro": 0.581,
+   "count_match": 56,
+   "over_triangulated": 0,
+   "errors": 0
+  },
+  "original_5v_O3": {
+   "k": 194,
+   "n": 210,
+   "micro": 0.9238,
+   "count_match": 196,
+   "over_triangulated": 0,
+   "errors": 0
+  }
+ },
+ "primary_paired_test": {
+  "original_5v": {
+   "o0_only": 0,
+   "o1_only": 0,
+   "p": 1.0
+  },
+  "expansion_5v": {
+   "o0_only": 0,
+   "o1_only": 0,
+   "p": 1.0
+  }
+ },
+ "o3_control": {
+  "original_4v": {
+   "d_O0_O1": 0,
+   "d_O0_O3": 6,
+   "d_O0_O2": 78,
+   "O1_readable": false
+  },
+  "original_5v": {
+   "d_O0_O1": 0,
+   "d_O0_O3": 6,
+   "d_O0_O2": 78,
+   "O1_readable": false
+  },
+  "expansion_4v": {
+   "d_O0_O1": 0,
+   "d_O0_O3": 20,
+   "d_O0_O2": 75,
+   "O1_readable": false
+  },
+  "expansion_5v": {
+   "d_O0_O1": 0,
+   "d_O0_O3": 21,
+   "d_O0_O2": 78,
+   "O1_readable": false
+  }
+ },
+ "removal_reaches_reconstructor": {
+  "site_view_slots_total": 16740,
+  "hidden_O1": 548,
+  "hidden_O2": 3067,
+  "hidden_O3": 889,
+  "structures_with_a_hidden_site_under_O1": "38 of 40 sampled",
+  "of_those_changing_n_recovered": 7,
+  "conclusion": "the masks are real and do perturb reconstruction; they do not change symmetry recovery"
+ },
+ "mechanism": "a site is observable in a view if ANY of its 2x2x2=8 supercell copies is unoccluded there. Informative occlusion hits few copies of a site, and with five cameras losing one or two still leaves the two triangulation needs. Redundant occlusion is more common and more correlated across copies, which is why the CONTROL removes structures.",
+ "axis_vs_oblique": {
+  "original": {
+   "axis_mean_occluded": 0.565,
+   "oblique_mean_occluded": 0.1693,
+   "ratio": 3.34
+  },
+  "expansion": {
+   "axis_mean_occluded": 0.5872,
+   "oblique_mean_occluded": 0.2611,
+   "ratio": 2.25
+  },
+  "finding": "the PRE-REGISTERED prediction is CONFIRMED and larger than stated: the three axis views carry 2.2-3.3x the occlusion of the two oblique views, so every occlusion figure published before this extension was measured on the worst cameras in the protocol"
+ },
+ "cross_view_recoverability": {
+  "original_4views": {
+   "never": 0.5897,
+   "some": 0.4095,
+   "all": 0.0008,
+   "frac_atoms_fewer_than_2_clear_views": 0.0108
+  },
+  "original_5views": {
+   "never": 0.5407,
+   "some": 0.4592,
+   "all": 0.0001,
+   "frac_atoms_fewer_than_2_clear_views": 0.0026
+  },
+  "expansion_4views": {
+   "never": 0.5291,
+   "some": 0.4695,
+   "all": 0.0014,
+   "frac_atoms_fewer_than_2_clear_views": 0.0209
+  },
+  "expansion_5views": {
+   "never": 0.4474,
+   "some": 0.552,
+   "all": 0.0007,
+   "frac_atoms_fewer_than_2_clear_views": 0.0087
+  }
+ },
+ "consequence_for_the_plan": "claims 2 and 3 cannot be built as written \u2014 there is no corrected ceiling distinct from the ideal one, so 'corrected minus arm' and 'ideal minus corrected' are the same number and the render-imposed vs model-imposed separation collapses",
+ "what_survives": [
+  "the frozen 5-view protocol withholds under 1% of atoms",
+  "axis views are 2.25-3.34x more occluded than oblique views, so the protocol's worst cameras drove every previous occlusion figure",
+  "removing ALL occlusion costs 78 structures (0.9524 -> 0.5810), so visibility matters in aggregate even though the informative component specifically does not",
+  "the full ideal-extraction gap to the best model arm stands unreduced"
+ ],
+ "not_established": "nothing here shows a MODEL could perform the extraction; the oracle reads ground-truth coordinates throughout"
+}

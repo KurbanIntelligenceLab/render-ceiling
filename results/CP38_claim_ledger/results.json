@@ -1,0 +1,123 @@
+{
+ "stage": "CP38 claim ledger (ICLR plan, Phase F)",
+ "n_claims": 10,
+ "by_status": {
+  "CONTRIBUTION": 4,
+  "SUPPORTING": 2,
+  "WITHDRAWN": 2,
+  "NOT CLAIMED": 2
+ },
+ "claims": [
+  {
+   "id": "C1",
+   "claim": "A projective-geometry oracle recovers crystal system from the frozen render set at 0.9524 (original) and 0.9095 (expansion), and beats every trained arm paired per structure",
+   "evidence": "CP25 results.json oracle_accuracy + paired_original_eval/paired_expansion_eval",
+   "values": {
+    "original": 0.9524,
+    "expansion": 0.9095
+   },
+   "prior_art": "no cited work computes an identifiability ceiling from RENDERS this way. Nearest: 2411.00803 computes a theoretical maximum for 1D powder patterns \u2014 a ceiling argument in another modality, now cited.",
+   "status": "CONTRIBUTION"
+  },
+  {
+   "id": "C2",
+   "claim": "The frozen five-view protocol withholds under 1% of atoms: only 0.26% (original) and 0.87% (expansion) have fewer than two clear views, so the ideal ceiling is a TIGHT bound",
+   "evidence": "CP31 cross_view_recoverability",
+   "values": {
+    "original": 0.0026,
+    "expansion": 0.0087
+   },
+   "prior_art": "unoccupied",
+   "status": "CONTRIBUTION"
+  },
+  {
+   "id": "C3",
+   "claim": "Occlusion decomposes by space-group orbit into a redundant majority and a small informative remainder, and the protocol's three axis views carry 2.25-3.34x the occlusion of its two oblique views",
+   "evidence": "CP31 axis_vs_oblique + per_view aggregates, 210 structures x 5 views per set",
+   "values": {
+    "original": {
+     "axis_mean_occluded": 0.565,
+     "oblique_mean_occluded": 0.1693,
+     "ratio": 3.34
+    },
+    "expansion": {
+     "axis_mean_occluded": 0.5872,
+     "oblique_mean_occluded": 0.2611,
+     "ratio": 2.25
+    },
+    "finding": "the PRE-REGISTERED prediction is CONFIRMED and larger than stated: the three axis views carry 2.2-3.3x the occlusion of the two oblique views, so every occlusion figure published before this extension was measured on the worst cameras in the protocol"
+   },
+   "prior_art": "unoccupied",
+   "status": "CONTRIBUTION"
+  },
+  {
+   "id": "C4",
+   "claim": "Thirteen zero-shot VLMs from eight vendors all fall below the shape-free regularity floor on the original sample; the best falls significantly below it",
+   "evidence": "CP26 leaderboard_canonical_run_A + floor_test; scope restriction from CP50 results.json",
+   "values": {
+    "best": 0.4429,
+    "floor": 0.5286,
+    "one_sided_p": 0.0078,
+    "floor_n1933": 0.2054,
+    "floor_size_matched_n721": 0.2205
+   },
+   "prior_art": "DEMOTED \u2014 2605.29446 already reports VLMs failing on rendered crystallographic images (CP43). Ours adds vendor breadth and a deterministic-label target.",
+   "status": "RE-SCOPED (was: supported)",
+   "sample": "original eval, n=210 ONLY",
+   "scope_restriction": "RE-SCOPED by CP50. The below-floor comparison holds ONLY on the original 210 sample: at n=1933 the floor is 0.2054 and size-matched 0.2205, both BELOW the best model's 0.4429. No longer statable as a property of the task."
+  },
+  {
+   "id": "C5",
+   "claim": "A coordinate-input GNN and an 8B pixel model are statistically indistinguishable",
+   "evidence": "CP8 alignn_published_3seed.json (mean/sd_population) + CP8 finding.md paired McNemar",
+   "values": {
+    "alignn_mean": 0.6492,
+    "alignn_sd_population": 0.0287,
+    "b1_direct": 0.619,
+    "paired_mcnemar_p": 0.256
+   },
+   "prior_art": "unoccupied for this pairing",
+   "status": "CONTRIBUTION"
+  },
+  {
+   "id": "C6",
+   "claim": "Chain-of-thought underperforms direct answering on this task",
+   "evidence": "CP2/CP3 arms, n=420, p=4.8e-04",
+   "prior_art": "DEMOTED TO CITED REPLICATION \u2014 2604.16060 (CP43)",
+   "status": "SUPPORTING"
+  },
+  {
+   "id": "C7",
+   "claim": "The cue-sufficiency stratified accuracy drop",
+   "evidence": "CP15 + CP18 + CP28 recompute",
+   "values": {
+    "canonical_B1_drop": 0.1143,
+    "canonical_B1_p": 0.131835
+   },
+   "prior_art": "n/a",
+   "status": "WITHDRAWN \u2014 four independent failures: expansion sign reversal, A3 null, RF control inversion, and now the original-sample leg losing significance under the canonical partition (CP28)"
+  },
+  {
+   "id": "C8",
+   "claim": "A visibility-corrected ceiling separating render-imposed from model-imposed deficit",
+   "evidence": "CP31 conditions O0-O3",
+   "prior_art": "n/a",
+   "status": "WITHDRAWN \u2014 the primary quantity is exactly zero on both eval sets and the O3 control dominates the target condition; there is no corrected ceiling distinct from the ideal one"
+  },
+  {
+   "id": "C9",
+   "claim": "Perception, not reasoning, is the bottleneck",
+   "prior_art": "OCCUPIED \u2014 2605.20177 states it almost verbatim (CP43)",
+   "status": "NOT CLAIMED \u2014 cited as established; our contribution is the geometric instrument"
+  },
+  {
+   "id": "C10",
+   "claim": "Composition-exclusion benchmark design for VLMs on crystal images",
+   "prior_art": "OCCUPIED \u2014 2506.13051 Compositional-Exclusion benchmark, nine VLMs (CP43)",
+   "status": "NOT CLAIMED"
+  }
+ ],
+ "gate": "CP43's open rows (resolution-vs-reseed, cue-sufficiency partition, oracle-only checker) are NOT yet searched; no claim resting on them enters as a contribution",
+ "rf_control_framing": "CRYSPNet (2003.14328) publishes ML prediction of Bravais lattice, space group and lattice parameters, so the numeric-cell-to-symmetry control is a REPRODUCTION of an established capability and is presented as such.",
+ "prior_art_gate": "CLOSED \u2014 all three previously open instrument rows searched; see CP43."
+}

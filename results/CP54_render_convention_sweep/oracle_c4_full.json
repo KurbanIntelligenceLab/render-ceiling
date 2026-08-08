@@ -1,0 +1,1706 @@
+{
+ "original": {
+  "frozen_k": 200,
+  "offaxis_k": 209,
+  "n": 210,
+  "frozen_micro": 0.9524,
+  "offaxis_micro": 0.9952,
+  "offaxis_only": 9,
+  "frozen_only": 0,
+  "exact_p": 0.00390625,
+  "per_structure": {
+   "mp-1235466": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2215870": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1246840": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1273441": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1215015": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1246507": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1048072": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1391233": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2225355": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1345578": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046784": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2231502": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-673678": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046464": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-733975": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046939": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1275776": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046323": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1206411": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1247817": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2228346": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2217558": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1235944": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046128": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046536": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1245986": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046312": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1046501": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-756745": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1102961": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1237061": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1232849": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1104453": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214786": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-6215": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228753": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-14561": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228427": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214797": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-3751": {
+    "frozen": false,
+    "offaxis": false
+   },
+   "mp-1214784": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1188260": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228721": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228728": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-754198": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1079632": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1078874": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214987": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1102943": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-997001": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228801": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228416": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-567929": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1246198": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1105940": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1104047": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1214794": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1104804": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1232615": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-752827": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1105758": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1539038": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1178550": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1079890": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1258701": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-10910": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-560067": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-16529": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1096576": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1096644": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1093553": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1245824": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1093903": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1097386": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1097410": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1093720": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-29674": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183276": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1095763": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1097597": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1097296": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1096466": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1095930": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1182863": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1096308": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1097427": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-504676": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1248716": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1096345": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1093958": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-33615": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1182875": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1228935": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-22412": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214759": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-867347": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1068010": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-5606": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183257": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228890": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1069712": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-7909": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-557233": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1246276": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-7906": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-10909": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-570256": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-7910": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-7188": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214765": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-4109": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214823": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214750": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228817": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1189716": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-29816": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1228926": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228809": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-3038": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-38417": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-8279": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214834": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228698": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-13369": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228150": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-643047": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1245583": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-18733": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228354": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228085": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1095623": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228866": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-12832": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214580": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1246182": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228699": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1228074": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228925": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-554669": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1070275": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228180": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2226142": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228995": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228197": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-8150": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228643": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2228574": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-8281": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228461": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1214828": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-19213": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183380": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-985290": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183261": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228634": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-17535": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2294": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1029626": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183229": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183051": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-13854": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-754157": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-9324": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2217621": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183238": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183252": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183049": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-862289": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1245965": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183563": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183263": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1026813": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-4887": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-11772": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183188": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183231": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-997617": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-11816": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1188147": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1246088": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-862873": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-867321": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183192": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183136": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1182878": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183140": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183135": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-867775": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-862695": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-756317": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-864644": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-985443": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183199": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-865989": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183190": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183071": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-631567": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-866031": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1885": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183133": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183067": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-866203": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183118": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183160": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183060": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-867338": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-867125": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183121": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183110": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-866225": {
+    "frozen": true,
+    "offaxis": true
+   }
+  }
+ },
+ "expansion": {
+  "frozen_k": 191,
+  "offaxis_k": 203,
+  "n": 210,
+  "frozen_micro": 0.9095,
+  "offaxis_micro": 0.9667,
+  "offaxis_only": 16,
+  "frozen_only": 4,
+  "exact_p": 0.01181793212890625,
+  "per_structure": {
+   "mp-22422": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183806": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1080470": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-30388": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-865254": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-862563": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-979751": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-753983": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1185963": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1196347": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-19803": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-865746": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1078353": {
+    "frozen": false,
+    "offaxis": false
+   },
+   "mp-1211014": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-865981": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1104547": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1184740": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1183885": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-972478": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-865214": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1095170": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-976595": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-865463": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-754918": {
+    "frozen": true,
+    "offaxis": false
+   },
+   "mp-1113975": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1206179": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1111955": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-861883": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1187731": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1209061": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-5933": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1210077": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-22156": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-7073": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1211250": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-22662": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1194358": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-510567": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1205952": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-22718": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1079623": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-867318": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-13312": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-11548": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-569819": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-16305": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-28282": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-862668": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1226482": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-542939": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-3598": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1111": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1178388": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-865045": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-11580": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-20608": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1206604": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-542806": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-867352": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-20051": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1215967": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-752705": {
+    "frozen": false,
+    "offaxis": false
+   },
+   "mp-11913": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1175684": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1188397": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-28875": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1100482": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-675832": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1224603": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-680610": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1225601": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-753601": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1290385": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-11904": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-18456": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1226891": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-582828": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228063": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-4658": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-6200": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1218620": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1223043": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1207399": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1190146": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-759465": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1192586": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-556480": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1221675": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1287546": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-607829": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1189296": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-669645": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-27398": {
+    "frozen": true,
+    "offaxis": false
+   },
+   "mp-1105844": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1222966": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1191990": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228672": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1078316": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1094851": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-3463": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1225903": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1223394": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1047671": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1191553": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-8154": {
+    "frozen": true,
+    "offaxis": false
+   },
+   "mp-1206811": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-560530": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1025558": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1206300": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-777972": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-649033": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1094927": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-20666": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1228014": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-675930": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1105259": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1219552": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1029448": {
+    "frozen": true,
+    "offaxis": false
+   },
+   "mp-768605": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1222734": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-3907": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1207157": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1069477": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1080173": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1221660": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-30411": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-569954": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1207394": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-28843": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1223395": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1212462": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1102524": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1105793": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-571457": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-558557": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1204787": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-569089": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-574369": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1217777": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1219131": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1104930": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-21366": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1201760": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1025144": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-23192": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1227817": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-20980": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1201769": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-8179": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-20911": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1101441": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-752479": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-779095": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-647035": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-757987": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1210977": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-31232": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1219636": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1301347": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1284734": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1220826": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-765581": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-861170": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-505236": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-568020": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-32682": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1100547": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-776963": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1218572": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1174283": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1100516": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-626800": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1175184": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1223576": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-505619": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-756230": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-780308": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1303744": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1213091": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1175337": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-755003": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1182608": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1227461": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-570314": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-771649": {
+    "frozen": false,
+    "offaxis": false
+   },
+   "mp-567336": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1207106": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1221846": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-570158": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-28865": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2629": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-8176": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1223148": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1007907": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1227521": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1385417": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1048868": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1215704": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-989611": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-18075": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1220207": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-766789": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1071269": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-1217153": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-754538": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-989455": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-2025375": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-1187591": {
+    "frozen": false,
+    "offaxis": true
+   },
+   "mp-2011964": {
+    "frozen": true,
+    "offaxis": true
+   },
+   "mp-773911": {
+    "frozen": true,
+    "offaxis": true
+   }
+  }
+ }
+}

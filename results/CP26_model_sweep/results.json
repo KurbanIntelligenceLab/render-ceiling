@@ -1,0 +1,304 @@
+{
+ "stage": "CP26 model sweep (directive item 3)",
+ "branch": "S1 FIRES on TWO INDEPENDENT RUNS \u2014 all 13 models below the shape-free floor; best significantly below (run A p=0.0078, run B p=0.0310). S3 does not fire.",
+ "protocol": {
+  "eval_set": "original, n=210",
+  "views": 5,
+  "K": 3,
+  "temperature": 0.7,
+  "decode": "majority vote",
+  "prompt": "CP14 verbatim, identical for every model, no per-model tuning",
+  "denominators": "fixed at 210; parse failures and API errors scored as errors, never dropped",
+  "counts": "recomputed from per-structure prediction vectors, not read from stored summary fields"
+ },
+ "leaderboard_canonical_run_A": {
+  "amazon/nova-pro-v1": {
+   "k": 38,
+   "n": 210,
+   "micro": 0.181,
+   "macro_f1": 0.0966,
+   "api_errors": 0
+  },
+  "bytedance-seed/seed-1.6": {
+   "k": 54,
+   "n": 210,
+   "micro": 0.2571,
+   "macro_f1": 0.2092,
+   "api_errors": 0
+  },
+  "google/gemini-2.5-flash": {
+   "k": 90,
+   "n": 210,
+   "micro": 0.4286,
+   "macro_f1": 0.3802,
+   "api_errors": 0
+  },
+  "meta-llama/llama-4-maverick": {
+   "k": 93,
+   "n": 210,
+   "micro": 0.4429,
+   "macro_f1": 0.362,
+   "api_errors": 0
+  },
+  "meta-llama/llama-4-scout": {
+   "k": 43,
+   "n": 210,
+   "micro": 0.2048,
+   "macro_f1": 0.1806,
+   "api_errors": 0
+  },
+  "mistralai/mistral-medium-3.1": {
+   "k": 48,
+   "n": 210,
+   "micro": 0.2286,
+   "macro_f1": 0.1845,
+   "api_errors": 0
+  },
+  "mistralai/mistral-small-2603": {
+   "k": 31,
+   "n": 210,
+   "micro": 0.1476,
+   "macro_f1": 0.0827,
+   "api_errors": 0
+  },
+  "openai/gpt-4.1-mini": {
+   "k": 77,
+   "n": 210,
+   "micro": 0.3667,
+   "macro_f1": 0.3127,
+   "api_errors": 0
+  },
+  "qwen/qwen2.5-vl-72b-instruct": {
+   "k": 53,
+   "n": 210,
+   "micro": 0.2524,
+   "macro_f1": 0.2191,
+   "api_errors": 2
+  },
+  "qwen/qwen3-vl-235b-a22b-instruct": {
+   "k": 70,
+   "n": 210,
+   "micro": 0.3333,
+   "macro_f1": 0.242,
+   "api_errors": 3
+  },
+  "qwen/qwen3-vl-32b-instruct": {
+   "k": 48,
+   "n": 210,
+   "micro": 0.2286,
+   "macro_f1": 0.2231,
+   "api_errors": 0
+  },
+  "z-ai/glm-4.6v": {
+   "k": 93,
+   "n": 210,
+   "micro": 0.4429,
+   "macro_f1": 0.4204,
+   "api_errors": 0
+  },
+  "qwen/qwen3-vl-8b-instruct": {
+   "k": 79,
+   "n": 210,
+   "micro": 0.3762,
+   "macro_f1": 0.3374,
+   "api_errors": 0
+  }
+ },
+ "reference_rows": {
+  "shape_free_regularity_floor": {
+   "k": 111,
+   "n": 210,
+   "micro": 0.5286
+  },
+  "our_best_finetuned_arm_A3": {
+   "k": 145,
+   "n": 210,
+   "micro": 0.6905
+  }
+ },
+ "floor_test": {
+  "best_open_models": [
+   "meta-llama/llama-4-maverick",
+   "z-ai/glm-4.6v"
+  ],
+  "k": 93,
+  "n": 210,
+  "micro": 0.4429,
+  "structures_below_floor": 18,
+  "one_sided_binomial_p": 0.0078,
+  "verdict": "significantly BELOW the floor, not merely short of it"
+ },
+ "measurement_provenance": {
+  "defect": "the sweep ran TWICE. I launched it with nohup, wrongly concluded from a process check that it had died, and relaunched model-by-model. The first sweep completed at 13:33 and wrote results_original.json (9 models) while the relaunch wrote one m_*.json per model. My aggregation globbed BOTH, so 9 models appeared twice and the table took whichever file the glob ordered last - mixing two independent runs in one leaderboard.",
+  "run_A": "per-model relaunch, 13 models, CANONICAL",
+  "run_B": "original sweep, 9 models, results_original.json, treated as a REPLICATION",
+  "replication_diffs": {
+   "meta-llama/llama-4-maverick": {
+    "run_A": 93,
+    "run_B": 97,
+    "diff": 4
+   },
+   "meta-llama/llama-4-scout": {
+    "run_A": 43,
+    "run_B": 48,
+    "diff": 5
+   },
+   "mistralai/mistral-medium-3.1": {
+    "run_A": 48,
+    "run_B": 59,
+    "diff": 11
+   },
+   "mistralai/mistral-small-2603": {
+    "run_A": 31,
+    "run_B": 33,
+    "diff": 2
+   },
+   "qwen/qwen2.5-vl-72b-instruct": {
+    "run_A": 53,
+    "run_B": 54,
+    "diff": 1
+   },
+   "qwen/qwen3-vl-235b-a22b-instruct": {
+    "run_A": 70,
+    "run_B": 75,
+    "diff": 5
+   },
+   "qwen/qwen3-vl-32b-instruct": {
+    "run_A": 48,
+    "run_B": 49,
+    "diff": 1
+   },
+   "qwen/qwen3-vl-8b-instruct": {
+    "run_A": 79,
+    "run_B": 72,
+    "diff": -7
+   },
+   "z-ai/glm-4.6v": {
+    "run_A": 93,
+    "run_B": 84,
+    "diff": -9
+   }
+  },
+  "run_to_run_spread": {
+   "mean_abs_structures": 5.0,
+   "max_abs_structures": 11,
+   "max_abs_accuracy": 0.052,
+   "interpretation": "the run-to-run spread of K=3 majority voting at temperature 0.7 on this benchmark; any single-run leaderboard position carries roughly +/-0.05, so adjacent rows are NOT separable"
+  },
+  "claims_surviving_both_runs": {
+   "all_below_floor": true,
+   "best_significantly_below_floor": {
+    "run_A_p": 0.0078,
+    "run_B_p": 0.031
+   },
+   "none_reaches_finetune": true,
+   "qwen_ladder_non_monotone": {
+    "run_A": "79>48",
+    "run_B": "72>49"
+   }
+  }
+ },
+ "vendors_covered": [
+  "Meta",
+  "Google",
+  "Z-AI",
+  "OpenAI",
+  "Qwen",
+  "Mistral",
+  "Amazon",
+  "ByteDance"
+ ],
+ "n_vendors": 8,
+ "unscored": {
+  "moonshotai/kimi-k2.6": "pre-registered; hangs indefinitely (no response on a 2-structure K=1 probe after 10 min) so the failure is the model endpoint not the harness. UNSCORED, not dropped; roster is 13 of a pre-registered 14."
+ },
+ "corrections": [
+  "an earlier version published a leaderboard mixing runs A and B, with 'six model families' in its headline while its own list enumerated EIGHT vendors and its results.json families_covered field held 8 entries. Both are fixed: the leaderboard is single-run (A), the replication is reported separately as a spread estimate, and the vendor count is 8.",
+  "an earlier version said 'a 30x parameter range' and 'the largest model tested stays 41 structures below the floor'. Both wrong: they treated the 235B-A22B model as largest when maverick at 400B is larger, and attached the 235B model's 41-structure deficit to it. Range is 50x; the largest model's deficit is 18 and it is TIED FOR BEST. Worse, the same figure plotted a Mistral ladder at 24B/41B - MISTRAL HAS NOT DISCLOSED either model's size, so those figures were invented. The Mistral ladder is removed and all 8 undisclosed-size models are barred from any parameter axis."
+ ],
+ "scaling_analysis": {
+  "parameter_figures_verified": {
+   "qwen/qwen3-vl-8b-instruct": {
+    "total_B": 8,
+    "active_B": 8,
+    "kind": "dense",
+    "k": 79,
+    "below_floor": 32
+   },
+   "qwen/qwen3-vl-32b-instruct": {
+    "total_B": 32,
+    "active_B": 32,
+    "kind": "dense",
+    "k": 48,
+    "below_floor": 63
+   },
+   "qwen/qwen3-vl-235b-a22b-instruct": {
+    "total_B": 235,
+    "active_B": 22,
+    "kind": "MoE",
+    "k": 70,
+    "below_floor": 41
+   },
+   "meta-llama/llama-4-scout": {
+    "total_B": 109,
+    "active_B": 17,
+    "kind": "MoE, 16 experts",
+    "k": 43,
+    "below_floor": 68
+   },
+   "meta-llama/llama-4-maverick": {
+    "total_B": 400,
+    "active_B": 17,
+    "kind": "MoE, 128 experts",
+    "k": 93,
+    "below_floor": 18
+   }
+  },
+  "sizes_undisclosed_excluded_from_any_parameter_axis": [
+   "mistralai/mistral-small-2603",
+   "mistralai/mistral-medium-3.1",
+   "z-ai/glm-4.6v",
+   "moonshotai/kimi-k2.6",
+   "bytedance-seed/seed-1.6",
+   "amazon/nova-pro-v1",
+   "google/gemini-2.5-flash",
+   "openai/gpt-4.1-mini"
+  ],
+  "largest_model_tested": {
+   "model": "meta-llama/llama-4-maverick",
+   "total_B": 400,
+   "k": 93,
+   "below_floor": 18,
+   "tied_for_best": true,
+   "note": "the largest model tested is TIED FOR BEST and still 18 structures short of the floor - the correct and stronger form of the difficulty claim"
+  },
+  "total_parameter_range": "50x (8B to 400B), on verified figures only",
+  "dense_pair_same_family": {
+   "8B": 79,
+   "32B": 48,
+   "delta_structures": 31,
+   "note": "the SMALLER model wins by 31 structures, six times the 5-structure run-to-run spread"
+  },
+  "fixed_active_compute_varying_capacity": {
+   "scout": {
+    "total_B": 109,
+    "active_B": 17,
+    "experts": 16,
+    "k": 43
+   },
+   "maverick": {
+    "total_B": 400,
+    "active_B": 17,
+    "experts": 128,
+    "k": 93
+   },
+   "note": "IDENTICAL 17B active parameters; accuracy 43->93 is an EXPERT-COUNT/total-capacity effect at fixed active compute, NOT a compute-scale effect. The earlier text conflated the two axes."
+  },
+  "active_parameters_do_not_order_accuracy": {
+   "maverick_17B": 93,
+   "qwen235B_a22B_22B": 70,
+   "scout_17B": 43
+  },
+  "conclusion": "NO single scaling statement is supported: within a dense family the smaller model wins; at fixed active compute more total capacity helps; across families active parameters carry no signal. What IS supported is the negative claim - across a 50x total-parameter range and every architecture tested, nothing clears the floor."
+ }
+}

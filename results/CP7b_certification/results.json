@@ -1,0 +1,221 @@
+{
+ "answerer_n": 210,
+ "strata": [
+  0.5,
+  0.625,
+  0.75,
+  0.875,
+  1.0
+ ],
+ "min_cell": 3,
+ "chains": {
+  "V2b": {
+   "per_stratum": {
+    "0.5": {
+     "agree_correct": 2,
+     "agree_n": 3,
+     "disagree_correct": 6,
+     "disagree_n": 16
+    },
+    "0.625": {
+     "agree_correct": 3,
+     "agree_n": 4,
+     "disagree_correct": 15,
+     "disagree_n": 29
+    },
+    "0.75": {
+     "agree_correct": 4,
+     "agree_n": 4,
+     "disagree_correct": 12,
+     "disagree_n": 27
+    },
+    "0.875": {
+     "agree_correct": 7,
+     "agree_n": 8,
+     "disagree_correct": 18,
+     "disagree_n": 35
+    },
+    "1.0": {
+     "agree_correct": 15,
+     "agree_n": 15,
+     "disagree_correct": 47,
+     "disagree_n": 67
+    }
+   },
+   "cmh": {
+    "z": 3.7666,
+    "common_or": 8.9885,
+    "strata_used": [
+     0.5,
+     0.625,
+     0.75,
+     0.875,
+     1.0
+    ]
+   },
+   "breslow_day": {
+    "stat": 2.9455,
+    "df": 4,
+    "p": 0.56975,
+    "reject": false
+   },
+   "homogeneity_gate": "CMH reportable",
+   "coverage": 0.1619,
+   "coverage_counts": {
+    "certified": 34,
+    "population": 210,
+    "off_stratum_scored_not_certified": 2
+   },
+   "cmh_denominator": 208,
+   "acc_on_covered": 0.9118,
+   "acc_on_covered_wilson95": [
+    0.7704,
+    0.9695
+   ],
+   "lift_vs_base_rate": {
+    "k": 31,
+    "n": 34,
+    "observed": 0.9118,
+    "base_rate": 0.6143,
+    "lift": 0.2975,
+    "direction": "above",
+    "one_sided_p": 0.00011,
+    "verdict": "significant"
+   },
+   "prediction_support": {
+    "distribution": {
+     "tetragonal": 79,
+     "cubic": 68,
+     "trigonal": 62,
+     "orthorhombic": 1
+    },
+    "systems_emitted": 4,
+    "never_emitted": [
+     "hexagonal",
+     "monoclinic",
+     "triclinic"
+    ]
+   },
+   "false_certification": {
+    "chain_wrong_n": 130,
+    "answerer_agreed_with_wrong": 3,
+    "rate": 0.0231,
+    "wilson95": [
+     0.0079,
+     0.0657
+    ]
+   }
+  },
+  "B3": {
+   "per_stratum": {
+    "0.5": {
+     "agree_correct": 0,
+     "agree_n": 3,
+     "disagree_correct": 8,
+     "disagree_n": 16
+    },
+    "0.625": {
+     "agree_correct": 3,
+     "agree_n": 7,
+     "disagree_correct": 15,
+     "disagree_n": 26
+    },
+    "0.75": {
+     "agree_correct": 1,
+     "agree_n": 4,
+     "disagree_correct": 15,
+     "disagree_n": 27
+    },
+    "0.875": {
+     "agree_correct": 7,
+     "agree_n": 12,
+     "disagree_correct": 18,
+     "disagree_n": 31
+    },
+    "1.0": {
+     "agree_correct": 10,
+     "agree_n": 14,
+     "disagree_correct": 52,
+     "disagree_n": 68
+    }
+   },
+   "cmh": {
+    "z": -1.374,
+    "common_or": 0.5953,
+    "strata_used": [
+     0.5,
+     0.625,
+     0.75,
+     0.875,
+     1.0
+    ]
+   },
+   "breslow_day": {
+    "stat": 2.8454,
+    "df": 4,
+    "p": 0.58691,
+    "reject": false
+   },
+   "homogeneity_gate": "CMH reportable",
+   "coverage": 0.1905,
+   "coverage_counts": {
+    "certified": 40,
+    "population": 210,
+    "off_stratum_scored_not_certified": 2
+   },
+   "cmh_denominator": 208,
+   "acc_on_covered": 0.525,
+   "acc_on_covered_wilson95": [
+    0.375,
+    0.6706
+   ],
+   "lift_vs_base_rate": {
+    "k": 21,
+    "n": 40,
+    "observed": 0.525,
+    "base_rate": 0.6143,
+    "lift": -0.0893,
+    "direction": "below",
+    "one_sided_p": 0.159,
+    "verdict": "NULL \u2014 point estimate below base rate but not significant"
+   },
+   "prediction_support": {
+    "distribution": {
+     "tetragonal": 132,
+     "trigonal": 75,
+     "orthorhombic": 3
+    },
+    "systems_emitted": 3,
+    "never_emitted": [
+     "cubic",
+     "hexagonal",
+     "monoclinic",
+     "triclinic"
+    ]
+   },
+   "false_certification": {
+    "chain_wrong_n": 151,
+    "answerer_agreed_with_wrong": 19,
+    "rate": 0.1258,
+    "wilson95": [
+     0.0821,
+     0.1882
+    ]
+   }
+  }
+ },
+ "false_certification_comparison": {
+  "arms": [
+   "V2b",
+   "B3"
+  ],
+  "rates": [
+   0.0231,
+   0.1258
+  ],
+  "difference": 0.1028,
+  "z_pooled": 3.197,
+  "z_unpooled": 3.421,
+  "note": "z_unpooled is the headline; pooled reported alongside, conclusion unchanged"
+ }
+}

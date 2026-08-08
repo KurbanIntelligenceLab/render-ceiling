@@ -1,0 +1,60 @@
+\documentclass{article}
+\usepackage{iclr2027_conference,times}
+
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+
+\graphicspath{{figures/}}
+
+\newtheorem{proposition}{Proposition}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\newcommand{\spg}{\mathrm{spg}_\tau}
+
+\title{A Measured Identifiability Ceiling for Rendered Scientific Images,\\
+and What It Attributes}
+
+% Authors are hidden while \iclrfinalcopy is commented out; the style file
+% typesets "Anonymous authors / Paper under double-blind review" in its place.
+\author{Anonymous}
+
+%\iclrfinalcopy % Uncomment for the camera-ready version, but NOT for submission.
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\input{sections/00_abstract}
+\end{abstract}
+
+\input{sections/01_introduction}
+\input{sections/02_related_work}
+\input{sections/03_setup}
+\input{sections/04_benchmark}
+\input{sections/05_attribution}
+\input{sections/06_models}
+\input{sections/07_conventions}
+\input{sections/08_secondary}
+\input{sections/09_limitations}
+\input{sections/10_conclusion}
+
+% Reproducibility and AI-use statements: unnumbered, excluded from the page limit.
+\input{sections/11_statements}
+
+\bibliographystyle{iclr2027_conference}
+\bibliography{references}
+
+\appendix
+\input{sections/A1_proof}
+\input{sections/A2_statistics}
+\input{sections/A3_corrections}
+\input{sections/A4_secondary_figures}
+
+\end{document}

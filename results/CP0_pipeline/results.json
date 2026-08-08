@@ -1,0 +1,2216 @@
+{
+ "summary": {
+  "n_records": 98,
+  "n_labeled_ok": 98,
+  "n_errors": 0,
+  "label_correctness": {
+   "n_robust_with_source_sg": 93,
+   "n_agree": 93,
+   "agreement_rate": 1.0,
+   "pass_98pct": true
+  },
+  "tolerance_flip": {
+   "n_flipped": 5,
+   "flip_rate": 0.05102040816326531,
+   "flipped_ids": [
+    "mp-32884",
+    "mp-663172",
+    "mp-985286",
+    "mp-862982",
+    "JVASP-28565"
+   ]
+  },
+  "metadata_leakage": {
+   "n_checked": 98,
+   "n_leak_free": 98,
+   "all_leak_free": true,
+   "violations": []
+  },
+  "wyckoff_consistency": {
+   "n_checked": 98,
+   "n_consistent": 98,
+   "all_consistent": true,
+   "inconsistent_ids": []
+  },
+  "crystal_system_distribution": {
+   "triclinic": 14,
+   "monoclinic": 14,
+   "orthorhombic": 14,
+   "tetragonal": 14,
+   "trigonal": 14,
+   "hexagonal": 14,
+   "cubic": 14
+  }
+ },
+ "rows": [
+  {
+   "material_id": "mp-1183027",
+   "source": "MP",
+   "formula": "Ag2IO6",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183027_view0.png",
+    "MP_mp-1183027_view1.png",
+    "MP_mp-1183027_view2.png",
+    "MP_mp-1183027_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-38238",
+   "source": "MP",
+   "formula": "Ag2O",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-38238_view0.png",
+    "MP_mp-38238_view1.png",
+    "MP_mp-38238_view2.png",
+    "MP_mp-38238_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-32868",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-32868_view0.png",
+    "MP_mp-32868_view1.png",
+    "MP_mp-32868_view2.png",
+    "MP_mp-32868_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-32884",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 1,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": false,
+   "tolerance_robust": false,
+   "unique_sgs": [
+    1,
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-32884_view0.png",
+    "MP_mp-32884_view1.png",
+    "MP_mp-32884_view2.png",
+    "MP_mp-32884_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-660503",
+   "source": "MP",
+   "formula": "Ag2SO4",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-660503_view0.png",
+    "MP_mp-660503_view1.png",
+    "MP_mp-660503_view2.png",
+    "MP_mp-660503_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1247874",
+   "source": "MP",
+   "formula": "Ag2Se",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1247874_view0.png",
+    "MP_mp-1247874_view1.png",
+    "MP_mp-1247874_view2.png",
+    "MP_mp-1247874_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-663172",
+   "source": "MP",
+   "formula": "Ag2SeO4",
+   "our_sg": 1,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": false,
+   "tolerance_robust": false,
+   "unique_sgs": [
+    1,
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-663172_view0.png",
+    "MP_mp-663172_view1.png",
+    "MP_mp-663172_view2.png",
+    "MP_mp-663172_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183089",
+   "source": "MP",
+   "formula": "Ac2Mg",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183089_view0.png",
+    "MP_mp-1183089_view1.png",
+    "MP_mp-1183089_view2.png",
+    "MP_mp-1183089_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-35835",
+   "source": "MP",
+   "formula": "Ag(AuS)2",
+   "our_sg": 7,
+   "source_sg": 7,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    7
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-35835_view0.png",
+    "MP_mp-35835_view1.png",
+    "MP_mp-35835_view2.png",
+    "MP_mp-35835_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-558796",
+   "source": "MP",
+   "formula": "Ag(Bi2S3)3",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-558796_view0.png",
+    "MP_mp-558796_view1.png",
+    "MP_mp-558796_view2.png",
+    "MP_mp-558796_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1229158",
+   "source": "MP",
+   "formula": "Ag(Te5Au2)2",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1229158_view0.png",
+    "MP_mp-1229158_view1.png",
+    "MP_mp-1229158_view2.png",
+    "MP_mp-1229158_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-29607",
+   "source": "MP",
+   "formula": "Ag(TeMo)6",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-29607_view0.png",
+    "MP_mp-29607_view1.png",
+    "MP_mp-29607_view2.png",
+    "MP_mp-29607_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-4691",
+   "source": "MP",
+   "formula": "Ag2CO3",
+   "our_sg": 11,
+   "source_sg": 11,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    11
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-4691_view0.png",
+    "MP_mp-4691_view1.png",
+    "MP_mp-4691_view2.png",
+    "MP_mp-4691_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1229141",
+   "source": "MP",
+   "formula": "Ag2HgGeS4",
+   "our_sg": 7,
+   "source_sg": 7,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    7
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1229141_view0.png",
+    "MP_mp-1229141_view1.png",
+    "MP_mp-1229141_view2.png",
+    "MP_mp-1229141_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183085",
+   "source": "MP",
+   "formula": "Ac2Mg",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183085_view0.png",
+    "MP_mp-1183085_view1.png",
+    "MP_mp-1183085_view2.png",
+    "MP_mp-1183085_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1215094",
+   "source": "MP",
+   "formula": "Ag(AsSe2)3",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1215094_view0.png",
+    "MP_mp-1215094_view1.png",
+    "MP_mp-1215094_view2.png",
+    "MP_mp-1215094_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1207284",
+   "source": "MP",
+   "formula": "Ag(BiSe2)3",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1207284_view0.png",
+    "MP_mp-1207284_view1.png",
+    "MP_mp-1207284_view2.png",
+    "MP_mp-1207284_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1206226",
+   "source": "MP",
+   "formula": "Ag(BiTe2)3",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1206226_view0.png",
+    "MP_mp-1206226_view1.png",
+    "MP_mp-1206226_view2.png",
+    "MP_mp-1206226_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1229130",
+   "source": "MP",
+   "formula": "Ag2Bi2SeS3",
+   "our_sg": 44,
+   "source_sg": 44,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    44
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1229130_view0.png",
+    "MP_mp-1229130_view1.png",
+    "MP_mp-1229130_view2.png",
+    "MP_mp-1229130_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-755127",
+   "source": "MP",
+   "formula": "Ag2GeO4",
+   "our_sg": 70,
+   "source_sg": 70,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    70
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-755127_view0.png",
+    "MP_mp-755127_view1.png",
+    "MP_mp-755127_view2.png",
+    "MP_mp-755127_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-861942",
+   "source": "MP",
+   "formula": "Ag2GePbS4",
+   "our_sg": 40,
+   "source_sg": 40,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    40
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-861942_view0.png",
+    "MP_mp-861942_view1.png",
+    "MP_mp-861942_view2.png",
+    "MP_mp-861942_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1207297",
+   "source": "MP",
+   "formula": "Ac2Br2O",
+   "our_sg": 123,
+   "source_sg": 123,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    123
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1207297_view0.png",
+    "MP_mp-1207297_view1.png",
+    "MP_mp-1207297_view2.png",
+    "MP_mp-1207297_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1207291",
+   "source": "MP",
+   "formula": "Ac2Cl2O",
+   "our_sg": 123,
+   "source_sg": 123,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    123
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1207291_view0.png",
+    "MP_mp-1207291_view1.png",
+    "MP_mp-1207291_view2.png",
+    "MP_mp-1207291_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-985286",
+   "source": "MP",
+   "formula": "Ac2Mg",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "unique_sgs": [
+    69,
+    139
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-985286_view0.png",
+    "MP_mp-985286_view1.png",
+    "MP_mp-985286_view2.png",
+    "MP_mp-985286_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183080",
+   "source": "MP",
+   "formula": "Ac3Ag",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183080_view0.png",
+    "MP_mp-1183080_view1.png",
+    "MP_mp-1183080_view2.png",
+    "MP_mp-1183080_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183090",
+   "source": "MP",
+   "formula": "Ac3Cd",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183090_view0.png",
+    "MP_mp-1183090_view1.png",
+    "MP_mp-1183090_view2.png",
+    "MP_mp-1183090_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183307",
+   "source": "MP",
+   "formula": "Ac3Ce",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183307_view0.png",
+    "MP_mp-1183307_view1.png",
+    "MP_mp-1183307_view2.png",
+    "MP_mp-1183307_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183081",
+   "source": "MP",
+   "formula": "Ac3Dy",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183081_view0.png",
+    "MP_mp-1183081_view1.png",
+    "MP_mp-1183081_view2.png",
+    "MP_mp-1183081_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-11107",
+   "source": "MP",
+   "formula": "Ac2O3",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-11107_view0.png",
+    "MP_mp-11107_view1.png",
+    "MP_mp-11107_view2.png",
+    "MP_mp-11107_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-977351",
+   "source": "MP",
+   "formula": "Ac2S3",
+   "our_sg": 167,
+   "source_sg": 167,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    167
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-977351_view0.png",
+    "MP_mp-977351_view1.png",
+    "MP_mp-977351_view2.png",
+    "MP_mp-977351_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-35109",
+   "source": "MP",
+   "formula": "Ag(Mo3S4)2",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-35109_view0.png",
+    "MP_mp-35109_view1.png",
+    "MP_mp-35109_view2.png",
+    "MP_mp-35109_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1103642",
+   "source": "MP",
+   "formula": "Ag(Mo3Se4)2",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1103642_view0.png",
+    "MP_mp-1103642_view1.png",
+    "MP_mp-1103642_view2.png",
+    "MP_mp-1103642_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-862982",
+   "source": "MP",
+   "formula": "Ag2Br3",
+   "our_sg": 167,
+   "source_sg": 167,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "unique_sgs": [
+    15,
+    167
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-862982_view0.png",
+    "MP_mp-862982_view1.png",
+    "MP_mp-862982_view2.png",
+    "MP_mp-862982_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-864635",
+   "source": "MP",
+   "formula": "Ag2Cl3",
+   "our_sg": 167,
+   "source_sg": 167,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    167
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-864635_view0.png",
+    "MP_mp-864635_view1.png",
+    "MP_mp-864635_view2.png",
+    "MP_mp-864635_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1391",
+   "source": "MP",
+   "formula": "Ag2F",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1391_view0.png",
+    "MP_mp-1391_view1.png",
+    "MP_mp-1391_view2.png",
+    "MP_mp-1391_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183112",
+   "source": "MP",
+   "formula": "Ac3Ag",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183112_view0.png",
+    "MP_mp-1183112_view1.png",
+    "MP_mp-1183112_view2.png",
+    "MP_mp-1183112_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183119",
+   "source": "MP",
+   "formula": "Ac3Br",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183119_view0.png",
+    "MP_mp-1183119_view1.png",
+    "MP_mp-1183119_view2.png",
+    "MP_mp-1183119_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183100",
+   "source": "MP",
+   "formula": "Ac3Cd",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183100_view0.png",
+    "MP_mp-1183100_view1.png",
+    "MP_mp-1183100_view2.png",
+    "MP_mp-1183100_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183673",
+   "source": "MP",
+   "formula": "Ac3Ce",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183673_view0.png",
+    "MP_mp-1183673_view1.png",
+    "MP_mp-1183673_view2.png",
+    "MP_mp-1183673_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183113",
+   "source": "MP",
+   "formula": "Ac3Cl",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183113_view0.png",
+    "MP_mp-1183113_view1.png",
+    "MP_mp-1183113_view2.png",
+    "MP_mp-1183113_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183103",
+   "source": "MP",
+   "formula": "Ac3Dy",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183103_view0.png",
+    "MP_mp-1183103_view1.png",
+    "MP_mp-1183103_view2.png",
+    "MP_mp-1183103_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-985294",
+   "source": "MP",
+   "formula": "Ac3Er",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-985294_view0.png",
+    "MP_mp-985294_view1.png",
+    "MP_mp-985294_view2.png",
+    "MP_mp-985294_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-861724",
+   "source": "MP",
+   "formula": "Ac2AgIr",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-861724_view0.png",
+    "MP_mp-861724_view1.png",
+    "MP_mp-861724_view2.png",
+    "MP_mp-861724_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183076",
+   "source": "MP",
+   "formula": "Ac2AgPb",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183076_view0.png",
+    "MP_mp-1183076_view1.png",
+    "MP_mp-1183076_view2.png",
+    "MP_mp-1183076_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183068",
+   "source": "MP",
+   "formula": "Ac2CdGa",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183068_view0.png",
+    "MP_mp-1183068_view1.png",
+    "MP_mp-1183068_view2.png",
+    "MP_mp-1183068_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183063",
+   "source": "MP",
+   "formula": "Ac2CdGe",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183063_view0.png",
+    "MP_mp-1183063_view1.png",
+    "MP_mp-1183063_view2.png",
+    "MP_mp-1183063_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-1183086",
+   "source": "MP",
+   "formula": "Ac2CdHg",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-1183086_view0.png",
+    "MP_mp-1183086_view1.png",
+    "MP_mp-1183086_view2.png",
+    "MP_mp-1183086_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-862319",
+   "source": "MP",
+   "formula": "Ac2CdSn",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-862319_view0.png",
+    "MP_mp-862319_view1.png",
+    "MP_mp-862319_view2.png",
+    "MP_mp-862319_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "mp-862786",
+   "source": "MP",
+   "formula": "Ac2CuGe",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "MP_mp-862786_view0.png",
+    "MP_mp-862786_view1.png",
+    "MP_mp-862786_view2.png",
+    "MP_mp-862786_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-97853",
+   "source": "JARVIS",
+   "formula": "Sn3PO4F3",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-97853_view0.png",
+    "JARVIS_JVASP-97853_view1.png",
+    "JARVIS_JVASP-97853_view2.png",
+    "JARVIS_JVASP-97853_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-97854",
+   "source": "JARVIS",
+   "formula": "AgNO3",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-97854_view0.png",
+    "JARVIS_JVASP-97854_view1.png",
+    "JARVIS_JVASP-97854_view2.png",
+    "JARVIS_JVASP-97854_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-85460",
+   "source": "JARVIS",
+   "formula": "U3CuO10",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-85460_view0.png",
+    "JARVIS_JVASP-85460_view1.png",
+    "JARVIS_JVASP-85460_view2.png",
+    "JARVIS_JVASP-85460_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-4510",
+   "source": "JARVIS",
+   "formula": "ScPS4",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-4510_view0.png",
+    "JARVIS_JVASP-4510_view1.png",
+    "JARVIS_JVASP-4510_view2.png",
+    "JARVIS_JVASP-4510_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-86586",
+   "source": "JARVIS",
+   "formula": "Sr2CoWO6",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-86586_view0.png",
+    "JARVIS_JVASP-86586_view1.png",
+    "JARVIS_JVASP-86586_view2.png",
+    "JARVIS_JVASP-86586_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-85928",
+   "source": "JARVIS",
+   "formula": "TiTlPS5",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-85928_view0.png",
+    "JARVIS_JVASP-85928_view1.png",
+    "JARVIS_JVASP-85928_view2.png",
+    "JARVIS_JVASP-85928_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-86443",
+   "source": "JARVIS",
+   "formula": "Cu3P2O8",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-86443_view0.png",
+    "JARVIS_JVASP-86443_view1.png",
+    "JARVIS_JVASP-86443_view2.png",
+    "JARVIS_JVASP-86443_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-48166",
+   "source": "JARVIS",
+   "formula": "LiMn5O3F5",
+   "our_sg": 8,
+   "source_sg": 8,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    8
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-48166_view0.png",
+    "JARVIS_JVASP-48166_view1.png",
+    "JARVIS_JVASP-48166_view2.png",
+    "JARVIS_JVASP-48166_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-97984",
+   "source": "JARVIS",
+   "formula": "TbTaO4",
+   "our_sg": 13,
+   "source_sg": 13,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    13
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-97984_view0.png",
+    "JARVIS_JVASP-97984_view1.png",
+    "JARVIS_JVASP-97984_view2.png",
+    "JARVIS_JVASP-97984_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-98224",
+   "source": "JARVIS",
+   "formula": "Ni3Te2",
+   "our_sg": 11,
+   "source_sg": 11,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    11
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-98224_view0.png",
+    "JARVIS_JVASP-98224_view1.png",
+    "JARVIS_JVASP-98224_view2.png",
+    "JARVIS_JVASP-98224_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-107735",
+   "source": "JARVIS",
+   "formula": "TiCrAgS4",
+   "our_sg": 10,
+   "source_sg": 10,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    10
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-107735_view0.png",
+    "JARVIS_JVASP-107735_view1.png",
+    "JARVIS_JVASP-107735_view2.png",
+    "JARVIS_JVASP-107735_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-89901",
+   "source": "JARVIS",
+   "formula": "Ho3Co2Ge4",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-89901_view0.png",
+    "JARVIS_JVASP-89901_view1.png",
+    "JARVIS_JVASP-89901_view2.png",
+    "JARVIS_JVASP-89901_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-43424",
+   "source": "JARVIS",
+   "formula": "Li2MnCuO4",
+   "our_sg": 15,
+   "source_sg": 15,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    15
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-43424_view0.png",
+    "JARVIS_JVASP-43424_view1.png",
+    "JARVIS_JVASP-43424_view2.png",
+    "JARVIS_JVASP-43424_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-52881",
+   "source": "JARVIS",
+   "formula": "K3CaP2HO8",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-52881_view0.png",
+    "JARVIS_JVASP-52881_view1.png",
+    "JARVIS_JVASP-52881_view2.png",
+    "JARVIS_JVASP-52881_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-14014",
+   "source": "JARVIS",
+   "formula": "TbMnSi",
+   "our_sg": 62,
+   "source_sg": 62,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    62
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-14014_view0.png",
+    "JARVIS_JVASP-14014_view1.png",
+    "JARVIS_JVASP-14014_view2.png",
+    "JARVIS_JVASP-14014_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-50332",
+   "source": "JARVIS",
+   "formula": "Na2CuO2",
+   "our_sg": 71,
+   "source_sg": 71,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    71
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-50332_view0.png",
+    "JARVIS_JVASP-50332_view1.png",
+    "JARVIS_JVASP-50332_view2.png",
+    "JARVIS_JVASP-50332_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-28397",
+   "source": "JARVIS",
+   "formula": "SiS",
+   "our_sg": 53,
+   "source_sg": 53,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    53
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-28397_view0.png",
+    "JARVIS_JVASP-28397_view1.png",
+    "JARVIS_JVASP-28397_view2.png",
+    "JARVIS_JVASP-28397_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-15345",
+   "source": "JARVIS",
+   "formula": "YCoC2",
+   "our_sg": 38,
+   "source_sg": 38,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    38
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-15345_view0.png",
+    "JARVIS_JVASP-15345_view1.png",
+    "JARVIS_JVASP-15345_view2.png",
+    "JARVIS_JVASP-15345_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-98036",
+   "source": "JARVIS",
+   "formula": "Ce3Si8Ni2",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-98036_view0.png",
+    "JARVIS_JVASP-98036_view1.png",
+    "JARVIS_JVASP-98036_view2.png",
+    "JARVIS_JVASP-98036_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-47529",
+   "source": "JARVIS",
+   "formula": "MnCoO4",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-47529_view0.png",
+    "JARVIS_JVASP-47529_view1.png",
+    "JARVIS_JVASP-47529_view2.png",
+    "JARVIS_JVASP-47529_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-43739",
+   "source": "JARVIS",
+   "formula": "LiFeF3",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-43739_view0.png",
+    "JARVIS_JVASP-43739_view1.png",
+    "JARVIS_JVASP-43739_view2.png",
+    "JARVIS_JVASP-43739_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-90856",
+   "source": "JARVIS",
+   "formula": "TiCuSiAs",
+   "our_sg": 129,
+   "source_sg": 129,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    129
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-90856_view0.png",
+    "JARVIS_JVASP-90856_view1.png",
+    "JARVIS_JVASP-90856_view2.png",
+    "JARVIS_JVASP-90856_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-64906",
+   "source": "JARVIS",
+   "formula": "Be2OsRu",
+   "our_sg": 119,
+   "source_sg": 119,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    119
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-64906_view0.png",
+    "JARVIS_JVASP-64906_view1.png",
+    "JARVIS_JVASP-64906_view2.png",
+    "JARVIS_JVASP-64906_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-89957",
+   "source": "JARVIS",
+   "formula": "Sr2Ti2As2OF2",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-89957_view0.png",
+    "JARVIS_JVASP-89957_view1.png",
+    "JARVIS_JVASP-89957_view2.png",
+    "JARVIS_JVASP-89957_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-22721",
+   "source": "JARVIS",
+   "formula": "PbBr2",
+   "our_sg": 136,
+   "source_sg": 136,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    136
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-22721_view0.png",
+    "JARVIS_JVASP-22721_view1.png",
+    "JARVIS_JVASP-22721_view2.png",
+    "JARVIS_JVASP-22721_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-86154",
+   "source": "JARVIS",
+   "formula": "Fe2B",
+   "our_sg": 123,
+   "source_sg": 123,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    123
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-86154_view0.png",
+    "JARVIS_JVASP-86154_view1.png",
+    "JARVIS_JVASP-86154_view2.png",
+    "JARVIS_JVASP-86154_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-91564",
+   "source": "JARVIS",
+   "formula": "SmSb2Au",
+   "our_sg": 129,
+   "source_sg": 129,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    129
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-91564_view0.png",
+    "JARVIS_JVASP-91564_view1.png",
+    "JARVIS_JVASP-91564_view2.png",
+    "JARVIS_JVASP-91564_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-97732",
+   "source": "JARVIS",
+   "formula": "LaMgSi2",
+   "our_sg": 141,
+   "source_sg": 141,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    141
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-97732_view0.png",
+    "JARVIS_JVASP-97732_view1.png",
+    "JARVIS_JVASP-97732_view2.png",
+    "JARVIS_JVASP-97732_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-10",
+   "source": "JARVIS",
+   "formula": "VSe2",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-10_view0.png",
+    "JARVIS_JVASP-10_view1.png",
+    "JARVIS_JVASP-10_view2.png",
+    "JARVIS_JVASP-10_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-28634",
+   "source": "JARVIS",
+   "formula": "MoW3Se2S6",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    156
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-28634_view0.png",
+    "JARVIS_JVASP-28634_view1.png",
+    "JARVIS_JVASP-28634_view2.png",
+    "JARVIS_JVASP-28634_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-90228",
+   "source": "JARVIS",
+   "formula": "Ag2IO6",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-90228_view0.png",
+    "JARVIS_JVASP-90228_view1.png",
+    "JARVIS_JVASP-90228_view2.png",
+    "JARVIS_JVASP-90228_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-86968",
+   "source": "JARVIS",
+   "formula": "CdAs2O6",
+   "our_sg": 162,
+   "source_sg": 162,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    162
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-86968_view0.png",
+    "JARVIS_JVASP-86968_view1.png",
+    "JARVIS_JVASP-86968_view2.png",
+    "JARVIS_JVASP-86968_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-90532",
+   "source": "JARVIS",
+   "formula": "FeOF",
+   "our_sg": 146,
+   "source_sg": 146,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    146
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-90532_view0.png",
+    "JARVIS_JVASP-90532_view1.png",
+    "JARVIS_JVASP-90532_view2.png",
+    "JARVIS_JVASP-90532_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-28704",
+   "source": "JARVIS",
+   "formula": "Mo3WSe6S2",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    156
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-28704_view0.png",
+    "JARVIS_JVASP-28704_view1.png",
+    "JARVIS_JVASP-28704_view2.png",
+    "JARVIS_JVASP-28704_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-28565",
+   "source": "JARVIS",
+   "formula": "Te2Mo2WSe2S2",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "unique_sgs": [
+    8,
+    156
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-28565_view0.png",
+    "JARVIS_JVASP-28565_view1.png",
+    "JARVIS_JVASP-28565_view2.png",
+    "JARVIS_JVASP-28565_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-86322",
+   "source": "JARVIS",
+   "formula": "LiO",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-86322_view0.png",
+    "JARVIS_JVASP-86322_view1.png",
+    "JARVIS_JVASP-86322_view2.png",
+    "JARVIS_JVASP-86322_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-16112",
+   "source": "JARVIS",
+   "formula": "YbAsPd",
+   "our_sg": 189,
+   "source_sg": 189,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    189
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-16112_view0.png",
+    "JARVIS_JVASP-16112_view1.png",
+    "JARVIS_JVASP-16112_view2.png",
+    "JARVIS_JVASP-16112_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-85557",
+   "source": "JARVIS",
+   "formula": "EuCuBi",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-85557_view0.png",
+    "JARVIS_JVASP-85557_view1.png",
+    "JARVIS_JVASP-85557_view2.png",
+    "JARVIS_JVASP-85557_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-4729",
+   "source": "JARVIS",
+   "formula": "YAl3",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-4729_view0.png",
+    "JARVIS_JVASP-4729_view1.png",
+    "JARVIS_JVASP-4729_view2.png",
+    "JARVIS_JVASP-4729_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-18544",
+   "source": "JARVIS",
+   "formula": "LiNiN",
+   "our_sg": 187,
+   "source_sg": 187,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    187
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-18544_view0.png",
+    "JARVIS_JVASP-18544_view1.png",
+    "JARVIS_JVASP-18544_view2.png",
+    "JARVIS_JVASP-18544_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-14997",
+   "source": "JARVIS",
+   "formula": "YbNi5",
+   "our_sg": 191,
+   "source_sg": 191,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    191
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-14997_view0.png",
+    "JARVIS_JVASP-14997_view1.png",
+    "JARVIS_JVASP-14997_view2.png",
+    "JARVIS_JVASP-14997_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-43079",
+   "source": "JARVIS",
+   "formula": "LiCuS",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-43079_view0.png",
+    "JARVIS_JVASP-43079_view1.png",
+    "JARVIS_JVASP-43079_view2.png",
+    "JARVIS_JVASP-43079_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-86097",
+   "source": "JARVIS",
+   "formula": "DyB6",
+   "our_sg": 221,
+   "source_sg": 221,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    221
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-86097_view0.png",
+    "JARVIS_JVASP-86097_view1.png",
+    "JARVIS_JVASP-86097_view2.png",
+    "JARVIS_JVASP-86097_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-64664",
+   "source": "JARVIS",
+   "formula": "Ba4NaBi",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-64664_view0.png",
+    "JARVIS_JVASP-64664_view1.png",
+    "JARVIS_JVASP-64664_view2.png",
+    "JARVIS_JVASP-64664_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-22556",
+   "source": "JARVIS",
+   "formula": "SrFeO3",
+   "our_sg": 221,
+   "source_sg": 221,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    221
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-22556_view0.png",
+    "JARVIS_JVASP-22556_view1.png",
+    "JARVIS_JVASP-22556_view2.png",
+    "JARVIS_JVASP-22556_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-86726",
+   "source": "JARVIS",
+   "formula": "LuNi4Sn",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-86726_view0.png",
+    "JARVIS_JVASP-86726_view1.png",
+    "JARVIS_JVASP-86726_view2.png",
+    "JARVIS_JVASP-86726_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-1372",
+   "source": "JARVIS",
+   "formula": "AlAs",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-1372_view0.png",
+    "JARVIS_JVASP-1372_view1.png",
+    "JARVIS_JVASP-1372_view2.png",
+    "JARVIS_JVASP-1372_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-14873",
+   "source": "JARVIS",
+   "formula": "SrB6",
+   "our_sg": 221,
+   "source_sg": 221,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    221
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-14873_view0.png",
+    "JARVIS_JVASP-14873_view1.png",
+    "JARVIS_JVASP-14873_view2.png",
+    "JARVIS_JVASP-14873_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  },
+  {
+   "material_id": "JVASP-1996",
+   "source": "JARVIS",
+   "formula": "NaI",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true,
+   "render_view_files": [
+    "JARVIS_JVASP-1996_view0.png",
+    "JARVIS_JVASP-1996_view1.png",
+    "JARVIS_JVASP-1996_view2.png",
+    "JARVIS_JVASP-1996_view3.png"
+   ],
+   "leak_free": true,
+   "leak_violations": []
+  }
+ ],
+ "meta": {
+  "per_system": 7,
+  "min_sites": 2,
+  "max_sites": 16,
+  "n_mp": 49,
+  "n_jarvis": 49,
+  "elapsed_sec": 99.4
+ }
+}

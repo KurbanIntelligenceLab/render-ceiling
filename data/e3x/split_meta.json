@@ -1,0 +1,29 @@
+{
+ "split_type": "composition-exclusion EXPANSION of data/e3 eval",
+ "reserved_elements": [
+  "Cd",
+  "Ce",
+  "Hg",
+  "In",
+  "Ir",
+  "La",
+  "Mn",
+  "Os",
+  "Re",
+  "Ru",
+  "Tc",
+  "Ti",
+  "Tl"
+ ],
+ "n_new_eval": 210,
+ "seed": 23,
+ "target_rationale": "CP16 paired-McNemar power: n=400-500 resolves the 0.03-0.09 band; 210 existing + 210 new = 420",
+ "leakage": {
+  "new_inter_existing_structures": 0,
+  "new_inter_eval": 0,
+  "new_inter_train": 0,
+  "duplicates_within_new": 0
+ },
+ "all_carry_reserved_element": true,
+ "label_policy": "spglib via make_labels, symprec convention as data/e3; MP crystal_system used only for CANDIDATE SELECTION, our label is spglib's"
+}

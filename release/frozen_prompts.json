@@ -1,0 +1,22 @@
+{
+ "n_distinct_prompt_strings": 3,
+ "note": "Verbatim prompt strings, one entry per arm family. No per-model tuning: the same string goes to every model in a roster. CP58's two prompts were added after an audit found them missing from this file even though the checkpoint's result depends on them.",
+ "prompts": [
+  {
+   "id": "main_zeroshot",
+   "used_by": "CP1, CP14, CP26, CP35, CP41 (image arm), CP54 \u2014 every image-input arm",
+   "text": "You are shown standardized multi-view ball-and-stick renders of a crystal structure (principal-axis and oblique views of the conventional cell). Identify the crystal system (one of: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic). Reason from the cell geometry and atomic arrangement visible in the images."
+  },
+  {
+   "id": "CP58_extraction_strong_model",
+   "used_by": "CP58 leg 1 \u2014 the strong model acting as the extraction stage",
+   "text": "You are shown standardized multi-view ball-and-stick renders of a crystal structure (principal-axis and oblique views of the conventional cell). Report ONLY the atoms you can see: for each atom give its chemical element and its fractional coordinates within the cell. Do NOT identify the crystal system, space group, or any symmetry property. Output one atom per line in exactly this format and nothing else:\nELEMENT x y z\nfor example:\nBa 0.00000 0.50000 0.25000",
+   "note": "the symmetry question is deliberately withheld so the extraction cannot leak an answer"
+  },
+  {
+   "id": "CP58_answer_weak_model",
+   "used_by": "CP58 leg 2 \u2014 the weak model answering from the extracted text",
+   "text": "You are given the atoms of a crystal structure as text, extracted from images by another system. Identify the crystal system (one of: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic). Reason from the atomic arrangement given below."
+  }
+ ]
+}

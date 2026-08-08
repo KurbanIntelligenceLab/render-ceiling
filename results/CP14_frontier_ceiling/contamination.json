@@ -1,0 +1,50 @@
+{
+ "google/gemini-3.6-flash": {
+  "canonical": 0.7333,
+  "anonymized": 0.681,
+  "gap": 0.0523,
+  "discordant_canon_right": 28,
+  "discordant_anon_right": 17,
+  "paired_p": 0.1352,
+  "raw_gap_exceeds_band": true,
+  "paired_significant": false,
+  "macro_canonical": 0.7101,
+  "macro_anonymized": 0.6719,
+  "wilson_canonical": [
+   0.6697,
+   0.7886
+  ]
+ },
+ "x-ai/grok-4.5": {
+  "canonical": 0.6143,
+  "anonymized": 0.5905,
+  "gap": 0.0238,
+  "discordant_canon_right": 24,
+  "discordant_anon_right": 19,
+  "paired_p": 0.5424,
+  "raw_gap_exceeds_band": false,
+  "paired_significant": false,
+  "macro_canonical": 0.6103,
+  "macro_anonymized": 0.5396,
+  "wilson_canonical": [
+   0.547,
+   0.6775
+  ]
+ },
+ "anthropic/claude-opus-4.8": {
+  "canonical": 0.581,
+  "anonymized": 0.619,
+  "gap": -0.038,
+  "discordant_canon_right": 24,
+  "discordant_anon_right": 32,
+  "paired_p": 0.3497,
+  "raw_gap_exceeds_band": false,
+  "paired_significant": false,
+  "macro_canonical": 0.5545,
+  "macro_anonymized": 0.612,
+  "wilson_canonical": [
+   0.5134,
+   0.6456
+  ]
+ }
+}

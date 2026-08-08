@@ -1,0 +1,13 @@
+\section{Statistical procedures}
+\label{app:stats}
+\textbf{Paired comparisons.} Every model-versus-model and model-versus-oracle comparison on a shared sample
+is a paired exact binomial (sign) test on discordant structures: with $g$ structures one arm alone gets
+right and $l$ the other alone, the two-sided $p$ is that of $\mathrm{Bin}(g+l, 1/2)$ evaluated at
+$\min(g,l)$. For the render-convention probe, the per-comparison minimum detectable difference is the
+smallest $|g-l|/n$ reaching $p<0.05$ given that comparison's observed $g+l$; with $g+l \le 5$ no split
+reaches it, which is the source of the 7-of-16 unreachable comparisons in
+Section~\ref{sec:conventions}.
+\textbf{Label certification.} The one-sided exact 95\% lower bound for $k/k$ agreements is
+$0.05^{1/k}$; for $k = 220$ this is $0.9865$.
+\textbf{Run-to-run spread.} The second sweep execution is retained as a labelled replication; spread is
+reported as the mean and maximum absolute per-model difference in correct counts.

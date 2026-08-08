@@ -1,0 +1,108 @@
+{
+ "answerer_n": 210,
+ "strata": [
+  0.5,
+  0.625,
+  0.75,
+  0.875,
+  1.0
+ ],
+ "min_cell": 3,
+ "chains": {
+  "V2b_s0": {
+   "per_stratum": {
+    "0.5": {
+     "agree_correct": 3,
+     "agree_n": 3,
+     "disagree_correct": 4,
+     "disagree_n": 7
+    },
+    "0.625": {
+     "agree_correct": 0,
+     "agree_n": 1,
+     "disagree_correct": 5,
+     "disagree_n": 11
+    },
+    "0.75": {
+     "agree_correct": 0,
+     "agree_n": 0,
+     "disagree_correct": 10,
+     "disagree_n": 17
+    },
+    "0.875": {
+     "agree_correct": 4,
+     "agree_n": 4,
+     "disagree_correct": 8,
+     "disagree_n": 17
+    },
+    "1.0": {
+     "agree_correct": 11,
+     "agree_n": 11,
+     "disagree_correct": 34,
+     "disagree_n": 44
+    }
+   },
+   "cmh": {
+    "z": 2.8313,
+    "common_or": NaN,
+    "strata_used": [
+     0.5,
+     0.875,
+     1.0
+    ]
+   },
+   "breslow_day": {
+    "stat": null,
+    "df": 0,
+    "reject": null,
+    "note": "common OR undefined; homogeneity untestable"
+   },
+   "homogeneity_gate": "CMH reportable",
+   "coverage": 0.0905,
+   "coverage_counts": {
+    "certified": 19,
+    "population": 210,
+    "off_stratum_scored_not_certified": 95
+   },
+   "cmh_denominator": 115,
+   "acc_on_covered": 0.9474,
+   "acc_on_covered_wilson95": [
+    0.7536,
+    0.9906
+   ],
+   "lift_vs_base_rate": {
+    "k": 18,
+    "n": 19,
+    "observed": 0.9474,
+    "base_rate": 0.6143,
+    "lift": 0.3331,
+    "direction": "above",
+    "one_sided_p": 0.00123,
+    "verdict": "significant"
+   },
+   "prediction_support": {
+    "distribution": {
+     "tetragonal": 79,
+     "cubic": 68,
+     "trigonal": 62,
+     "orthorhombic": 1
+    },
+    "systems_emitted": 4,
+    "never_emitted": [
+     "hexagonal",
+     "monoclinic",
+     "triclinic"
+    ]
+   },
+   "false_certification": {
+    "chain_wrong_n": 130,
+    "answerer_agreed_with_wrong": 3,
+    "rate": 0.0231,
+    "wilson95": [
+     0.0079,
+     0.0657
+    ]
+   }
+  }
+ }
+}

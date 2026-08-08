@@ -1,0 +1,181 @@
+{
+ "stage": "E3 full matrix (3 arms x 3 seeds, 300 GRPO steps)",
+ "config": {
+  "lr": 1e-05,
+  "beta": 0.02,
+  "group_size": 8,
+  "steps": 300,
+  "sft_ckpt": "V1_s0",
+  "train_prompts": 1610,
+  "stack": "TRL 1.9.0 GRPOTrainer"
+ },
+ "eval": {
+  "set": "composition-exclusion",
+  "n": 210,
+  "decode": "majority_vote",
+  "samples": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 512,
+  "note": "B3_s0 re-run at 3x512 for consistency (0.281, unchanged from 5x900 0.286)"
+ },
+ "arms": {
+  "B3": {
+   "macro": [
+    0.281,
+    0.3714,
+    0.381
+   ],
+   "macro_mean": 0.3445,
+   "macro_sd": 0.045,
+   "faith": [
+    0.2109,
+    0.2707,
+    0.2936
+   ],
+   "faith_mean": 0.2584,
+   "faith_sd": 0.0349
+  },
+  "V2a": {
+   "macro": [
+    0.3571,
+    0.381,
+    0.3905
+   ],
+   "macro_mean": 0.3762,
+   "macro_sd": 0.0141,
+   "faith": [
+    0.2787,
+    0.3125,
+    0.3278
+   ],
+   "faith_mean": 0.3063,
+   "faith_sd": 0.0205
+  },
+  "V2b": {
+   "macro": [
+    0.3857,
+    0.3857,
+    0.3857
+   ],
+   "macro_mean": 0.3857,
+   "macro_sd": 0.0,
+   "faith": [
+    0.2744,
+    0.3106,
+    0.3133
+   ],
+   "faith_mean": 0.2994,
+   "faith_sd": 0.0177
+  }
+ },
+ "gate2": {
+  "rule": "process arm beats B3 by > pooled across-seed SD on BOTH macro-F1 AND faithfulness",
+  "V2b": {
+   "macro_delta": 0.041,
+   "macro_pooled_sd": 0.032,
+   "faith_delta": 0.041,
+   "faith_pooled_sd": 0.028,
+   "verdict": "CONFIRMED"
+  },
+  "V2a": {
+   "macro_delta": 0.032,
+   "macro_pooled_sd": 0.033,
+   "faith_delta": 0.048,
+   "faith_pooled_sd": 0.029,
+   "verdict": "faithfulness PASS, accuracy narrow FAIL -> not met on strict rule"
+  }
+ },
+ "per_structure_paired_n210": {
+  "accuracy": {
+   "V2a": {
+    "delta": 0.032,
+    "t": 2.0
+   },
+   "V2b": {
+    "delta": 0.041,
+    "t": 2.9
+   }
+  },
+  "faithfulness": {
+   "V2a": {
+    "delta": 0.048,
+    "t": 6.2
+   },
+   "V2b": {
+    "delta": 0.041,
+    "t": 5.8
+   }
+  }
+ },
+ "training_panel_zero_variance_group_fraction": {
+  "B3": [
+   0.5067,
+   0.47,
+   0.49
+  ],
+  "V2a": [
+   0.0,
+   0.03,
+   0.0433
+  ],
+  "V2b": [
+   0.0167,
+   0.02,
+   0.0433
+  ]
+ },
+ "verdict": "H1 SUPPORTED. V2b confirms Gate 2 (both metrics). V2a passes faithfulness decisively, borderline accuracy. Process-verified rewards beat outcome-only, most clearly on chain faithfulness; mechanism = dense reward wastes ~0% of rollout groups vs ~half for sparse outcome.",
+ "arm_definitions": {
+  "B3": "outcome-only: base = final crystal-system reward",
+  "V2a": "dense step-level: base = mean(per-step verifiable rewards), final EXCLUDED",
+  "V2b": "dense step-level (StepGRPO-style): base = mean(per-step verifiable rewards + final)",
+  "common": "all arms add 0.25*format; only the per-step verification content of the base varies",
+  "naming_correction": "'step-wise credit assignment' / 'per-step advantage attribution' RETRACTED. These arms do dense step-level REWARDING with a PATH-LEVEL group-normalized advantage \u2014 as does StepGRPO (R1-VL arXiv 2503.12937), which aggregates StepRAR+StepRVR step rewards into a scalar per-trajectory reward and normalizes it relative to the group (no token-level attribution). True per-step credit attribution is untested future work / optional E3 extension arm.",
+  "differentiation_from_stepgrpo": "StepGRPO's key steps are GPT-4-extracted (model-generated supervision); CoCr's step targets are deterministic from the source CIF via spglib/pymatgen \u2014 no model in the loop, so every step reward is programmatically verifiable rather than LLM-judged."
+ },
+ "mechanism_analysis": {
+  "literature": {
+   "zero_advantage": "DAPO arXiv 2503.14476 (all-correct/all-wrong group -> zero advantage -> zero policy gradient; remedy = dynamic sampling filtering accuracy-0/1 prompts)",
+   "advantage_vanishing_related": [
+    "R1-ShareVL 2505.16673",
+    "MM-Eureka online zero-advantage filtering",
+    "VL-Rethinker / Skywork large-advantage reuse"
+   ],
+   "our_orthogonal_contribution": "a densely-verifiable reward prevents silent groups arising (~2%) rather than filtering them post hoc (~49% for outcome-only)"
+  },
+  "lattice_crosscheck": {
+   "method": "B3 per-rollout reward is 1.25 (correct) / 0.25 (wrong) when terminating, so group-mean reward = 0.25 + k/8; k=0 and k=8 are exactly the silent groups",
+   "silent_from_lattice": 0.49,
+   "trl_logged_frac_reward_zero_std": 0.4889,
+   "abs_difference": 0.001,
+   "conclusion": "panel statistic confirmed two independent ways"
+  },
+  "closed_form_check": {
+   "formula": "P[silent] = p^G + (1-p)^G, G=8",
+   "observed": 0.49,
+   "mean_per_rollout_accuracy": 0.336,
+   "homogeneous_prediction_at_pbar": 0.038,
+   "best_fit_homogeneous_p": 0.461,
+   "its_prediction": 0.009,
+   "verdict": "HOMOGENEOUS MODEL FAILS (~13x under-prediction) \u2014 the silent rate is NOT explained by mean accuracy",
+   "empirical": {
+    "P_k0": 0.38,
+    "P_kG": 0.11,
+    "informative_fraction": 0.51
+   },
+   "beta_binomial_fit": {
+    "matched_to": [
+     "mean p",
+     "P[k=0]"
+    ],
+    "concentration_a_plus_b": 0.887,
+    "predicted_P_kG": 0.105,
+    "observed_P_kG": 0.11,
+    "predicted_P_silent": 0.485,
+    "observed_P_silent": 0.49,
+    "interpretation": "a+b<1 => U-shaped per-prompt difficulty (mass near p~0 and p~1); PROMPT HETEROGENEITY, not mean accuracy, drives the sparsity"
+   }
+  },
+  "dynamic_sampling_caution": "documented failure mode on sparse hard-gated rewards: batch-wide rejection + resample thrashing (arXiv 2606.27210). With B3 at ~49% silent groups this is a live risk for the OUTCOME arm specifically. If adopted: cap resample rounds, log rejection rates, and apply to ALL arms or none \u2014 asymmetric adoption would break the matched-arm design."
+ }
+}

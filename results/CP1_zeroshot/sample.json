@@ -1,0 +1,1000 @@
+{
+ "structures": [
+  {
+   "material_id": "mp-35109",
+   "stem": "mp-35109",
+   "source": "MP",
+   "crystal_system": "trigonal",
+   "space_group": 148,
+   "lattice_angles": [
+    92.0723,
+    92.0723,
+    92.0723
+   ],
+   "cn_element": "Mo",
+   "cn_value": 5
+  },
+  {
+   "material_id": "mp-864635",
+   "stem": "mp-864635",
+   "source": "MP",
+   "crystal_system": "trigonal",
+   "space_group": 167,
+   "lattice_angles": [
+    117.5564,
+    62.4437,
+    120.0029
+   ],
+   "cn_element": "Ag",
+   "cn_value": 6
+  },
+  {
+   "material_id": "JVASP-87903",
+   "stem": "JVASP-87903",
+   "source": "JARVIS",
+   "crystal_system": "orthorhombic",
+   "space_group": 71,
+   "lattice_angles": [
+    115.4777,
+    105.7821,
+    89.9988
+   ],
+   "cn_element": "O",
+   "cn_value": 6
+  },
+  {
+   "material_id": "mp-1183086",
+   "stem": "mp-1183086",
+   "source": "MP",
+   "crystal_system": "cubic",
+   "space_group": 225,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 8
+  },
+  {
+   "material_id": "mp-29607",
+   "stem": "mp-29607",
+   "source": "MP",
+   "crystal_system": "monoclinic",
+   "space_group": 12,
+   "lattice_angles": [
+    119.616,
+    90.0,
+    104.1504
+   ],
+   "cn_element": "Ag",
+   "cn_value": 8
+  },
+  {
+   "material_id": "mp-770433",
+   "stem": "mp-770433",
+   "source": "MP",
+   "crystal_system": "trigonal",
+   "space_group": 156,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Ag",
+   "cn_value": 12
+  },
+  {
+   "material_id": "JVASP-1372",
+   "stem": "JVASP-1372",
+   "source": "JARVIS",
+   "crystal_system": "cubic",
+   "space_group": 216,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Al",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-1183095",
+   "stem": "mp-1183095",
+   "source": "MP",
+   "crystal_system": "tetragonal",
+   "space_group": 139,
+   "lattice_angles": [
+    131.1502,
+    131.1502,
+    71.5745
+   ],
+   "cn_element": "Ac",
+   "cn_value": 12
+  },
+  {
+   "material_id": "JVASP-10",
+   "stem": "JVASP-10",
+   "source": "JARVIS",
+   "crystal_system": "trigonal",
+   "space_group": 164,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Se",
+   "cn_value": 3
+  },
+  {
+   "material_id": "mp-1183080",
+   "stem": "mp-1183080",
+   "source": "MP",
+   "crystal_system": "tetragonal",
+   "space_group": 139,
+   "lattice_angles": [
+    134.0656,
+    134.0656,
+    66.9855
+   ],
+   "cn_element": "Ag",
+   "cn_value": 12
+  },
+  {
+   "material_id": "JVASP-28397",
+   "stem": "JVASP-28397",
+   "source": "JARVIS",
+   "crystal_system": "orthorhombic",
+   "space_group": 53,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Si",
+   "cn_value": 2
+  },
+  {
+   "material_id": "mp-1183068",
+   "stem": "mp-1183068",
+   "source": "MP",
+   "crystal_system": "cubic",
+   "space_group": 225,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 8
+  },
+  {
+   "material_id": "JVASP-28565",
+   "stem": "JVASP-28565",
+   "source": "JARVIS",
+   "crystal_system": "trigonal",
+   "space_group": 156,
+   "lattice_angles": [
+    89.9909,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Te",
+   "cn_value": 3
+  },
+  {
+   "material_id": "JVASP-1996",
+   "stem": "JVASP-1996",
+   "source": "JARVIS",
+   "crystal_system": "cubic",
+   "space_group": 225,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Na",
+   "cn_value": 6
+  },
+  {
+   "material_id": "mp-1207284",
+   "stem": "mp-1207284",
+   "source": "MP",
+   "crystal_system": "orthorhombic",
+   "space_group": 65,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.2819
+   ],
+   "cn_element": "Ag",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-9635",
+   "stem": "mp-9635",
+   "source": "MP",
+   "crystal_system": "monoclinic",
+   "space_group": 14,
+   "lattice_angles": [
+    69.7609,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Ag",
+   "cn_value": 3
+  },
+  {
+   "material_id": "mp-1229185",
+   "stem": "mp-1229185",
+   "source": "MP",
+   "crystal_system": "triclinic",
+   "space_group": 2,
+   "lattice_angles": [
+    99.6401,
+    85.5493,
+    93.1148
+   ],
+   "cn_element": "As",
+   "cn_value": 6
+  },
+  {
+   "material_id": "JVASP-89901",
+   "stem": "JVASP-89901",
+   "source": "JARVIS",
+   "crystal_system": "monoclinic",
+   "space_group": 12,
+   "lattice_angles": [
+    106.5991,
+    90.0,
+    111.3353
+   ],
+   "cn_element": "Co",
+   "cn_value": 8
+  },
+  {
+   "material_id": "mp-867122",
+   "stem": "mp-867122",
+   "source": "MP",
+   "crystal_system": "cubic",
+   "space_group": 225,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 8
+  },
+  {
+   "material_id": "JVASP-85557",
+   "stem": "JVASP-85557",
+   "source": "JARVIS",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Eu",
+   "cn_value": 12
+  },
+  {
+   "material_id": "JVASP-43739",
+   "stem": "JVASP-43739",
+   "source": "JARVIS",
+   "crystal_system": "orthorhombic",
+   "space_group": 63,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    106.3544
+   ],
+   "cn_element": "F",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-1183090",
+   "stem": "mp-1183090",
+   "source": "MP",
+   "crystal_system": "tetragonal",
+   "space_group": 139,
+   "lattice_angles": [
+    134.1712,
+    134.1712,
+    66.8207
+   ],
+   "cn_element": "Cd",
+   "cn_value": 12
+  },
+  {
+   "material_id": "mp-1183673",
+   "stem": "mp-1183673",
+   "source": "MP",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 12
+  },
+  {
+   "material_id": "JVASP-48166",
+   "stem": "JVASP-48166",
+   "source": "JARVIS",
+   "crystal_system": "monoclinic",
+   "space_group": 8,
+   "lattice_angles": [
+    59.2561,
+    59.9484,
+    59.9484
+   ],
+   "cn_element": "O",
+   "cn_value": 4
+  },
+  {
+   "material_id": "JVASP-98550",
+   "stem": "JVASP-98550",
+   "source": "JARVIS",
+   "crystal_system": "trigonal",
+   "space_group": 166,
+   "lattice_angles": [
+    33.4584,
+    33.4584,
+    33.4584
+   ],
+   "cn_element": "Ba",
+   "cn_value": 12
+  },
+  {
+   "material_id": "JVASP-98224",
+   "stem": "JVASP-98224",
+   "source": "JARVIS",
+   "crystal_system": "monoclinic",
+   "space_group": 11,
+   "lattice_angles": [
+    91.5299,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Ni",
+   "cn_value": 9
+  },
+  {
+   "material_id": "mp-1183113",
+   "stem": "mp-1183113",
+   "source": "MP",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 2
+  },
+  {
+   "material_id": "mp-1183076",
+   "stem": "mp-1183076",
+   "source": "MP",
+   "crystal_system": "cubic",
+   "space_group": 225,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 8
+  },
+  {
+   "material_id": "mp-1206226",
+   "stem": "mp-1206226",
+   "source": "MP",
+   "crystal_system": "orthorhombic",
+   "space_group": 65,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    121.2358
+   ],
+   "cn_element": "Ag",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-1183096",
+   "stem": "mp-1183096",
+   "source": "MP",
+   "crystal_system": "tetragonal",
+   "space_group": 139,
+   "lattice_angles": [
+    133.1963,
+    133.1963,
+    68.3461
+   ],
+   "cn_element": "Ac",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-4691",
+   "stem": "mp-4691",
+   "source": "MP",
+   "crystal_system": "monoclinic",
+   "space_group": 11,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    93.9524
+   ],
+   "cn_element": "Ag",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-861942",
+   "stem": "mp-861942",
+   "source": "MP",
+   "crystal_system": "orthorhombic",
+   "space_group": 40,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    112.7881
+   ],
+   "cn_element": "Ag",
+   "cn_value": 4
+  },
+  {
+   "material_id": "JVASP-48576",
+   "stem": "JVASP-48576",
+   "source": "JARVIS",
+   "crystal_system": "triclinic",
+   "space_group": 1,
+   "lattice_angles": [
+    71.9469,
+    71.3939,
+    81.4214
+   ],
+   "cn_element": "O",
+   "cn_value": 6
+  },
+  {
+   "material_id": "JVASP-43079",
+   "stem": "JVASP-43079",
+   "source": "JARVIS",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Li",
+   "cn_value": 12
+  },
+  {
+   "material_id": "mp-1207291",
+   "stem": "mp-1207291",
+   "source": "MP",
+   "crystal_system": "tetragonal",
+   "space_group": 123,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 2
+  },
+  {
+   "material_id": "JVASP-91653",
+   "stem": "JVASP-91653",
+   "source": "JARVIS",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    119.9996,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Mg",
+   "cn_value": 12
+  },
+  {
+   "material_id": "mp-861724",
+   "stem": "mp-861724",
+   "source": "MP",
+   "crystal_system": "cubic",
+   "space_group": 225,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 8
+  },
+  {
+   "material_id": "JVASP-86436",
+   "stem": "JVASP-86436",
+   "source": "JARVIS",
+   "crystal_system": "trigonal",
+   "space_group": 148,
+   "lattice_angles": [
+    55.2464,
+    55.2464,
+    55.2464
+   ],
+   "cn_element": "F",
+   "cn_value": 2
+  },
+  {
+   "material_id": "mp-663172",
+   "stem": "mp-663172",
+   "source": "MP",
+   "crystal_system": "triclinic",
+   "space_group": 1,
+   "lattice_angles": [
+    78.6342,
+    53.88,
+    47.4858
+   ],
+   "cn_element": "Se",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-574486",
+   "stem": "mp-574486",
+   "source": "MP",
+   "crystal_system": "monoclinic",
+   "space_group": 14,
+   "lattice_angles": [
+    78.5718,
+    90.0,
+    90.0
+   ],
+   "cn_element": "C",
+   "cn_value": 2
+  },
+  {
+   "material_id": "JVASP-3534",
+   "stem": "JVASP-3534",
+   "source": "JARVIS",
+   "crystal_system": "tetragonal",
+   "space_group": 129,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Bi",
+   "cn_value": 4
+  },
+  {
+   "material_id": "JVASP-15831",
+   "stem": "JVASP-15831",
+   "source": "JARVIS",
+   "crystal_system": "tetragonal",
+   "space_group": 122,
+   "lattice_angles": [
+    114.8902,
+    114.8902,
+    90.0
+   ],
+   "cn_element": "S",
+   "cn_value": 2
+  },
+  {
+   "material_id": "mp-1183103",
+   "stem": "mp-1183103",
+   "source": "MP",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Ac",
+   "cn_value": 12
+  },
+  {
+   "material_id": "JVASP-22698",
+   "stem": "JVASP-22698",
+   "source": "JARVIS",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    89.9982,
+    90.003,
+    59.9997
+   ],
+   "cn_element": "F",
+   "cn_value": 6
+  },
+  {
+   "material_id": "JVASP-86726",
+   "stem": "JVASP-86726",
+   "source": "JARVIS",
+   "crystal_system": "cubic",
+   "space_group": 216,
+   "lattice_angles": [
+    60.0,
+    60.0,
+    60.0
+   ],
+   "cn_element": "Ni",
+   "cn_value": 12
+  },
+  {
+   "material_id": "mp-1079461",
+   "stem": "mp-1079461",
+   "source": "MP",
+   "crystal_system": "monoclinic",
+   "space_group": 4,
+   "lattice_angles": [
+    87.8164,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Ag",
+   "cn_value": 2
+  },
+  {
+   "material_id": "JVASP-86322",
+   "stem": "JVASP-86322",
+   "source": "JARVIS",
+   "crystal_system": "hexagonal",
+   "space_group": 194,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Li",
+   "cn_value": 6
+  },
+  {
+   "material_id": "mp-1215094",
+   "stem": "mp-1215094",
+   "source": "MP",
+   "crystal_system": "orthorhombic",
+   "space_group": 65,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    119.1248
+   ],
+   "cn_element": "Ag",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-1229141",
+   "stem": "mp-1229141",
+   "source": "MP",
+   "crystal_system": "monoclinic",
+   "space_group": 7,
+   "lattice_angles": [
+    90.0,
+    89.8836,
+    90.0
+   ],
+   "cn_element": "S",
+   "cn_value": 4
+  },
+  {
+   "material_id": "mp-1103642",
+   "stem": "mp-1103642",
+   "source": "MP",
+   "crystal_system": "trigonal",
+   "space_group": 148,
+   "lattice_angles": [
+    92.0111,
+    92.0111,
+    92.0111
+   ],
+   "cn_element": "Mo",
+   "cn_value": 5
+  },
+  {
+   "material_id": "JVASP-14997",
+   "stem": "JVASP-14997",
+   "source": "JARVIS",
+   "crystal_system": "hexagonal",
+   "space_group": 191,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Ni",
+   "cn_value": 12
+  },
+  {
+   "material_id": "mp-558796",
+   "stem": "mp-558796",
+   "source": "MP",
+   "crystal_system": "monoclinic",
+   "space_group": 12,
+   "lattice_angles": [
+    81.1737,
+    81.1737,
+    33.0926
+   ],
+   "cn_element": "Ag",
+   "cn_value": 6
+  },
+  {
+   "material_id": "JVASP-28634",
+   "stem": "JVASP-28634",
+   "source": "JARVIS",
+   "crystal_system": "trigonal",
+   "space_group": 156,
+   "lattice_angles": [
+    90.0003,
+    90.0,
+    120.0
+   ],
+   "cn_element": "S",
+   "cn_value": 3
+  },
+  {
+   "material_id": "JVASP-89957",
+   "stem": "JVASP-89957",
+   "source": "JARVIS",
+   "crystal_system": "tetragonal",
+   "space_group": 139,
+   "lattice_angles": [
+    101.5061,
+    101.5061,
+    90.0
+   ],
+   "cn_element": "Sr",
+   "cn_value": 4
+  },
+  {
+   "material_id": "JVASP-91564",
+   "stem": "JVASP-91564",
+   "source": "JARVIS",
+   "crystal_system": "tetragonal",
+   "space_group": 129,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Sb",
+   "cn_value": 8
+  },
+  {
+   "material_id": "JVASP-14014",
+   "stem": "JVASP-14014",
+   "source": "JARVIS",
+   "crystal_system": "orthorhombic",
+   "space_group": 62,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Tb",
+   "cn_value": 9
+  },
+  {
+   "material_id": "JVASP-48091",
+   "stem": "JVASP-48091",
+   "source": "JARVIS",
+   "crystal_system": "orthorhombic",
+   "space_group": 31,
+   "lattice_angles": [
+    90.0,
+    90.0014,
+    90.0
+   ],
+   "cn_element": "Mn",
+   "cn_value": 6
+  },
+  {
+   "material_id": "mp-862982",
+   "stem": "mp-862982",
+   "source": "MP",
+   "crystal_system": "trigonal",
+   "space_group": 167,
+   "lattice_angles": [
+    117.5545,
+    62.4457,
+    119.9873
+   ],
+   "cn_element": "Ag",
+   "cn_value": 6
+  },
+  {
+   "material_id": "JVASP-86154",
+   "stem": "JVASP-86154",
+   "source": "JARVIS",
+   "crystal_system": "tetragonal",
+   "space_group": 123,
+   "lattice_angles": [
+    109.8494,
+    109.8494,
+    108.7175
+   ],
+   "cn_element": "Fe",
+   "cn_value": 4
+  },
+  {
+   "material_id": "JVASP-18544",
+   "stem": "JVASP-18544",
+   "source": "JARVIS",
+   "crystal_system": "hexagonal",
+   "space_group": 187,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    120.0
+   ],
+   "cn_element": "Li",
+   "cn_value": 3
+  },
+  {
+   "material_id": "JVASP-47529",
+   "stem": "JVASP-47529",
+   "source": "JARVIS",
+   "crystal_system": "orthorhombic",
+   "space_group": 65,
+   "lattice_angles": [
+    89.6192,
+    107.2068,
+    33.2964
+   ],
+   "cn_element": "O",
+   "cn_value": 3
+  },
+  {
+   "material_id": "JVASP-43424",
+   "stem": "JVASP-43424",
+   "source": "JARVIS",
+   "crystal_system": "monoclinic",
+   "space_group": 15,
+   "lattice_angles": [
+    123.0735,
+    123.0735,
+    85.7725
+   ],
+   "cn_element": "Li",
+   "cn_value": 6
+  },
+  {
+   "material_id": "JVASP-90856",
+   "stem": "JVASP-90856",
+   "source": "JARVIS",
+   "crystal_system": "tetragonal",
+   "space_group": 129,
+   "lattice_angles": [
+    90.0,
+    90.0,
+    90.0
+   ],
+   "cn_element": "Ti",
+   "cn_value": 8
+  },
+  {
+   "material_id": "mp-1229130",
+   "stem": "mp-1229130",
+   "source": "MP",
+   "crystal_system": "orthorhombic",
+   "space_group": 44,
+   "lattice_angles": [
+    132.8119,
+    131.6405,
+    69.8763
+   ],
+   "cn_element": "S",
+   "cn_value": 6
+  },
+  {
+   "material_id": "mp-755127",
+   "stem": "mp-755127",
+   "source": "MP",
+   "crystal_system": "orthorhombic",
+   "space_group": 70,
+   "lattice_angles": [
+    77.1654,
+    55.4464,
+    47.3881
+   ],
+   "cn_element": "Ag",
+   "cn_value": 4
+  },
+  {
+   "material_id": "JVASP-52544",
+   "stem": "JVASP-52544",
+   "source": "JARVIS",
+   "crystal_system": "monoclinic",
+   "space_group": 15,
+   "lattice_angles": [
+    55.4037,
+    124.5963,
+    127.7155
+   ],
+   "cn_element": "Ba",
+   "cn_value": 9
+  },
+  {
+   "material_id": "mp-32868",
+   "stem": "mp-32868",
+   "source": "MP",
+   "crystal_system": "triclinic",
+   "space_group": 1,
+   "lattice_angles": [
+    99.7844,
+    98.1977,
+    94.8692
+   ],
+   "cn_element": "Ag",
+   "cn_value": 3
+  },
+  {
+   "material_id": "JVASP-97854",
+   "stem": "JVASP-97854",
+   "source": "JARVIS",
+   "crystal_system": "triclinic",
+   "space_group": 1,
+   "lattice_angles": [
+    37.3942,
+    37.2294,
+    46.1988
+   ],
+   "cn_element": "Ag",
+   "cn_value": 5
+  },
+  {
+   "material_id": "mp-555477",
+   "stem": "mp-555477",
+   "source": "MP",
+   "crystal_system": "trigonal",
+   "space_group": 148,
+   "lattice_angles": [
+    67.2001,
+    67.2001,
+    67.2001
+   ],
+   "cn_element": "H",
+   "cn_value": 2
+  },
+  {
+   "material_id": "JVASP-50332",
+   "stem": "JVASP-50332",
+   "source": "JARVIS",
+   "crystal_system": "orthorhombic",
+   "space_group": 71,
+   "lattice_angles": [
+    132.722,
+    149.0825,
+    57.5645
+   ],
+   "cn_element": "Na",
+   "cn_value": 4
+  }
+ ],
+ "view_counts": [
+  1,
+  3,
+  5
+ ],
+ "n": 70,
+ "seed": 11,
+ "dist": {
+  "trigonal": 11,
+  "orthorhombic": 13,
+  "cubic": 8,
+  "monoclinic": 12,
+  "tetragonal": 11,
+  "triclinic": 5,
+  "hexagonal": 10
+ }
+}

@@ -1,0 +1,492 @@
+{
+ "mp-770433": {
+  "stem": "mp-770433",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-864635": {
+  "stem": "mp-864635",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-87903": {
+  "stem": "JVASP-87903",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1207284": {
+  "stem": "mp-1207284",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-1183068": {
+  "stem": "mp-1183068",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-28397": {
+  "stem": "JVASP-28397",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-29607": {
+  "stem": "mp-29607",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-1996": {
+  "stem": "JVASP-1996",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-1183086": {
+  "stem": "mp-1183086",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-1183080": {
+  "stem": "mp-1183080",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-28565": {
+  "stem": "JVASP-28565",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-10": {
+  "stem": "JVASP-10",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-35109": {
+  "stem": "mp-35109",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1183095": {
+  "stem": "mp-1183095",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-9635": {
+  "stem": "mp-9635",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1229185": {
+  "stem": "mp-1229185",
+  "cs": "triclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-1372": {
+  "stem": "JVASP-1372",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-89901": {
+  "stem": "JVASP-89901",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-867122": {
+  "stem": "mp-867122",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-85557": {
+  "stem": "JVASP-85557",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1183090": {
+  "stem": "mp-1183090",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1183673": {
+  "stem": "mp-1183673",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-43739": {
+  "stem": "JVASP-43739",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-98224": {
+  "stem": "JVASP-98224",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-98550": {
+  "stem": "JVASP-98550",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1206226": {
+  "stem": "mp-1206226",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-1183096": {
+  "stem": "mp-1183096",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1183076": {
+  "stem": "mp-1183076",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-4691": {
+  "stem": "mp-4691",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-43079": {
+  "stem": "JVASP-43079",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-48166": {
+  "stem": "JVASP-48166",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-861942": {
+  "stem": "mp-861942",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1207291": {
+  "stem": "mp-1207291",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-91653": {
+  "stem": "JVASP-91653",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-861724": {
+  "stem": "mp-861724",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-3534": {
+  "stem": "JVASP-3534",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1183113": {
+  "stem": "mp-1183113",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-663172": {
+  "stem": "mp-663172",
+  "cs": "triclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-1183103": {
+  "stem": "mp-1183103",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-15831": {
+  "stem": "JVASP-15831",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-86436": {
+  "stem": "JVASP-86436",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-48576": {
+  "stem": "JVASP-48576",
+  "cs": "triclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1215094": {
+  "stem": "mp-1215094",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-86726": {
+  "stem": "JVASP-86726",
+  "cs": "cubic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-86322": {
+  "stem": "JVASP-86322",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1229141": {
+  "stem": "mp-1229141",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-28634": {
+  "stem": "JVASP-28634",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-22698": {
+  "stem": "JVASP-22698",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-558796": {
+  "stem": "mp-558796",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-91564": {
+  "stem": "JVASP-91564",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-89957": {
+  "stem": "JVASP-89957",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-574486": {
+  "stem": "mp-574486",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1079461": {
+  "stem": "mp-1079461",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-14997": {
+  "stem": "JVASP-14997",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-1103642": {
+  "stem": "mp-1103642",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-48091": {
+  "stem": "JVASP-48091",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-14014": {
+  "stem": "JVASP-14014",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-86154": {
+  "stem": "JVASP-86154",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-862982": {
+  "stem": "mp-862982",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-18544": {
+  "stem": "JVASP-18544",
+  "cs": "hexagonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-47529": {
+  "stem": "JVASP-47529",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-43424": {
+  "stem": "JVASP-43424",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-1229130": {
+  "stem": "mp-1229130",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-90856": {
+  "stem": "JVASP-90856",
+  "cs": "tetragonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "mp-755127": {
+  "stem": "mp-755127",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-50332": {
+  "stem": "JVASP-50332",
+  "cs": "orthorhombic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "JVASP-97854": {
+  "stem": "JVASP-97854",
+  "cs": "triclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-32868": {
+  "stem": "mp-32868",
+  "cs": "triclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ },
+ "mp-555477": {
+  "stem": "mp-555477",
+  "cs": "trigonal",
+  "ok": true,
+  "parseable": true,
+  "correct": false
+ },
+ "JVASP-52544": {
+  "stem": "JVASP-52544",
+  "cs": "monoclinic",
+  "ok": true,
+  "parseable": true,
+  "correct": true
+ }
+}

@@ -1,0 +1,49 @@
+{
+ "stage": "CP39 figures (directive Phase F) \u2014 five figures, no more",
+ "figures": {
+  "fig1_bracket": {
+   "built": true,
+   "source": "CP14 + CP25 + CP8",
+   "content": "chance, best chain arm, coordinate GNN, cell-metric RF, best model arm, best frontier, oracle; every bar labelled with input modality and K",
+   "correction_standing": "the 0.8905 bar is a TABULAR classifier on lattice metrics, not a graph network; the project's coordinate GNN is 0.4889 with its seed error bar. Oracle bar is CP25's eval-set 0.9524."
+  },
+  "fig2_visibility": {
+   "built": true,
+   "source": "CP31",
+   "content": "four conditions O0/O1/O2/O3, both eval sets, O3 control visible"
+  },
+  "fig3_noimage": {
+   "built": true,
+   "source": "CP41 roster_extension",
+   "content": "with-image against formula-only per model, 13 scored, chance line, significance starred",
+   "values": {
+    "n_scored": 13,
+    "n_significant": 10,
+    "max_image": 0.7333,
+    "max_text": 0.1762,
+    "min_text": 0.119
+   },
+   "defect_caught_in_build": "my first version printed '4 of 13 significant' because I took len() of the 'significant' SUMMARY DICT (4 keys) instead of its n field (10). Corrected and cross-checked against a recomputation from the per-model p-values, which also gives 10."
+  },
+  "fig4_cue_sufficiency": {
+   "built": true,
+   "source": "CP35",
+   "content": "pixel-minus-RF gap by stratum, three arms, both samples, zero line drawn",
+   "caption_carries_the_confound": "the ambiguous stratum is 60/70 and 58/69 hexagonal-or-trigonal and the residual n is 10 and 12 \u2014 both stated on the figure itself rather than only in the text"
+  },
+  "fig5_generational": {
+   "built": true,
+   "source": "CP36",
+   "content": "left: the single generational pair by stratum with the oracle ceiling and chance drawn; right: the same gains normalised by headroom-to-oracle",
+   "why_two_panels": "the raw panel alone would license the false reading that the newer generation closes the ambiguous gap faster. Normalised it closes LESS (54.1% against 64.0%). Both panels ship because the raw numbers are what a reader will compute, and the normalisation is what corrects them.",
+   "no_trend_language": "enforced \u2014 one pair is a comparison"
+  }
+ },
+ "count": {
+  "required": 5,
+  "built": 5,
+  "pending": 0
+ },
+ "render_then_verify": "each new figure was rendered, read back visually, and defects fixed before saving: fig5's first render had the delta annotation colliding with the legend and the caption sitting behind a bar; both fixed and a programmatic bounding-box overlap check now returns 0.",
+ "not_built": "none \u2014 all five built"
+}

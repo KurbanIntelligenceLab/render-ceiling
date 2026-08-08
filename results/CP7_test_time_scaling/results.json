@@ -1,0 +1,419 @@
+{
+ "stage": "CP7 / E7 test-time scaling (1 seed, K=8, 210-struct composition-exclusion, 416-eff matched to training)",
+ "prereg": "prereg.md, committed before any E7 inference",
+ "generations": {
+  "per_arm": 1680,
+  "structures": 210,
+  "k": 8,
+  "claim_parse_rate": 1.0,
+  "v2b_emitted_lattice_rate": 1.0,
+  "b1_emitted_lattice_rate": 0.0,
+  "note": "generated ONCE; every row scored offline from the SAME samples, so row differences are the selection rule, not sampling luck"
+ },
+ "effective_resolution": {
+  "max_pixels": 200704,
+  "effective_px": [
+   416,
+   416
+  ],
+  "visual_tokens_per_view": 169,
+  "n_views": 5,
+  "why": "matched to training per the CP0c train/test mismatch artifact"
+ },
+ "rows": {
+  "V2b": {
+   "D1_majority": {
+    "kind": "deployable",
+    "accuracy": 0.381,
+    "risk_coverage": {
+     "aurc": 0.6268,
+     "aurc_optimal": 0.2529,
+     "e_aurc": 0.374,
+     "overall_acc": 0.381,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.4074
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.462
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.5048
+      }
+     },
+     "n": 210
+    }
+   },
+   "D2_self_consistency": {
+    "kind": "deployable",
+    "accuracy": 0.3524,
+    "risk_coverage": {
+     "aurc": 0.797,
+     "aurc_optimal": 0.2816,
+     "e_aurc": 0.5154,
+     "overall_acc": 0.3524,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.3915
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.3228
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.2667
+      }
+     },
+     "n": 210
+    }
+   },
+   "D3_tool_coupled": {
+    "kind": "deployable",
+    "accuracy": 0.3524,
+    "risk_coverage": {
+     "aurc": 0.7971,
+     "aurc_optimal": 0.2816,
+     "e_aurc": 0.5155,
+     "overall_acc": 0.3524,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.3915
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.3228
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.2667
+      }
+     },
+     "n": 210
+    }
+   },
+   "O1_truth_rerank": {
+    "kind": "oracle",
+    "accuracy": 0.4,
+    "risk_coverage": {
+     "aurc": 0.4659,
+     "aurc_optimal": 0.2349,
+     "e_aurc": 0.2309,
+     "overall_acc": 0.4,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.4444
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.519
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.6095
+      }
+     },
+     "n": 210
+    }
+   },
+   "O2_best_of_k": {
+    "kind": "oracle",
+    "accuracy": 0.4048,
+    "risk_coverage": {
+     "aurc": 0.2306,
+     "aurc_optimal": 0.2306,
+     "e_aurc": 0.0,
+     "overall_acc": 0.4048,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.4497
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.538
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.8095
+      }
+     },
+     "n": 210
+    }
+   }
+  },
+  "B1": {
+   "D1_majority": {
+    "kind": "deployable",
+    "accuracy": 0.619,
+    "risk_coverage": {
+     "aurc": 0.2835,
+     "aurc_optimal": 0.085,
+     "e_aurc": 0.1985,
+     "overall_acc": 0.619,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.6402
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.6519
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.7429
+      }
+     },
+     "n": 210
+    }
+   },
+   "D2_self_consistency": {
+    "kind": "deployable",
+    "accuracy": 0.619,
+    "risk_coverage": {
+     "aurc": 0.3803,
+     "aurc_optimal": 0.085,
+     "e_aurc": 0.2953,
+     "overall_acc": 0.619,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.6402
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.6013
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.7143
+      }
+     },
+     "n": 210
+    }
+   },
+   "D3_tool_coupled": {
+    "kind": "deployable",
+    "accuracy": 0.619,
+    "risk_coverage": {
+     "aurc": 0.3803,
+     "aurc_optimal": 0.085,
+     "e_aurc": 0.2953,
+     "overall_acc": 0.619,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.6402
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.6013
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.7143
+      }
+     },
+     "n": 210
+    }
+   },
+   "O1_truth_rerank": {
+    "kind": "oracle",
+    "accuracy": 0.5857,
+    "risk_coverage": {
+     "aurc": 0.4465,
+     "aurc_optimal": 0.102,
+     "e_aurc": 0.3446,
+     "overall_acc": 0.5857,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.5979
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 0.557
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 0.6381
+      }
+     },
+     "n": 210
+    }
+   },
+   "O2_best_of_k": {
+    "kind": "oracle",
+    "accuracy": 0.8571,
+    "risk_coverage": {
+     "aurc": 0.0111,
+     "aurc_optimal": 0.0111,
+     "e_aurc": 0.0,
+     "overall_acc": 0.8571,
+     "operating_points": {
+      "0.9": {
+       "coverage": 0.9,
+       "accuracy_on_covered": 0.9524
+      },
+      "0.75": {
+       "coverage": 0.7524,
+       "accuracy_on_covered": 1.0
+      },
+      "0.5": {
+       "coverage": 0.5,
+       "accuracy_on_covered": 1.0
+      }
+     },
+     "n": 210
+    }
+   }
+  }
+ },
+ "predict_and_certify": {
+  "chain_agrees": {
+   "coverage": 0.1619,
+   "acc_on_covered": 0.9118,
+   "n_covered": 34
+  },
+  "chain_agrees_and_selfconsistent": {
+   "coverage": 0.1524,
+   "acc_on_covered": 0.9062,
+   "n_covered": 32
+  }
+ },
+ "H7a": {
+  "rule": "a deployable row beats D1 majority by >0.05 acc OR >10% relative AURC",
+  "verdict": "NOT MET",
+  "detail": {
+   "V2b": {
+    "d2_d3_acc_delta": -0.0286,
+    "aurc_relative": -0.272
+   },
+   "B1": {
+    "d2_d3_acc_delta": 0.0,
+    "aurc_relative": -0.341
+   }
+  },
+  "interpretation": "not a near miss \u2014 filtering by self-consistency is WORSE than not filtering. CP9's AUC 0.81 used the answer-independent geometry step scored AGAINST CIF TRUTH; D2/D3 have no truth and can only ask whether the model's emitted numbers match its own claim. A chain that FABRICATES a clean lattice and reasons correctly from it is maximally self-consistent AND wrong, so self-consistency preferentially selects confident fabrications. => the checker's predictive power is REAL but ORACLE-ONLY."
+ },
+ "H7b": {
+  "rule": "predict-and-certify acc>=0.80 at coverage>=0.5",
+  "verdict": "NOT MET (coverage)",
+  "best": {
+   "coverage": 0.1619,
+   "acc_on_covered": 0.9118,
+   "n": 34
+  },
+  "reference_b1_alone": {
+   "coverage": 1.0,
+   "acc": 0.619
+  },
+  "interpretation": "accuracy clears the bar comfortably (0.912 vs 0.80) but coverage misses badly (0.16 vs 0.50). When the chain AGREES with the direct answer that answer is right 91% of the time vs 62% unconditionally, a +29pp lift \u2014 the chain is a good certifier on the slice it can certify, and that slice is small because the chain's own 0.38 accuracy bounds how often it agrees with a correct answer."
+ },
+ "H7c_oracle_gap": {
+  "V2b": {
+   "best_deployable": 0.381,
+   "O2_ceiling": 0.4048,
+   "headroom": 0.0238,
+   "reading": "ceiling nearly saturated \u2014 the chain's problem is GENERATION, not selection"
+  },
+  "B1": {
+   "best_deployable": 0.619,
+   "O2_ceiling": 0.8571,
+   "headroom": 0.2381,
+   "reading": "large unrealised headroom; note O1 truth-rerank is WORSE than majority for B1 (0.5857 vs 0.6190) because a direct answer contains no geometry to score \u2014 null by construction, not a finding"
+  }
+ },
+ "bug_caught": "the first scoring pass reported D3 with a plausible number, but enrichment metadata showed spglib_resolved=0/1680: spglib and pymatgen are NOT in the box's VLM env and a bare except silently turned every failure into 'no result', degenerating D3 into majority vote. Recomputed locally (spglib 2.7.0) where it resolves 1680/1680. LESSON: a fallback path must be counted and surfaced, never silent.",
+ "caveats": [
+  "1 seed, K=8, one eval set",
+  "the certify-coverage limit is bounded by the chain's own 0.38 accuracy; a stronger chain would widen it \u2014 hypothesis, not result"
+ ],
+ "post_hoc_stratified_certification": {
+  "status": "EXPLORATORY \u2014 designed after H7b failed; survives its control but must be pre-registered and re-run on the 3-seed matrix before being stated as a finding",
+  "question": "is the 91%-accurate certified slice merely the easy structures B1 would get right anyway?",
+  "aggregate_control": {
+   "chain_certified": {
+    "n": 34,
+    "acc": 0.9118,
+    "mean_b1_conf": 0.853
+   },
+   "top34_by_b1_confidence": {
+    "n": 34,
+    "acc": 0.9118
+   },
+   "overlap": {
+    "n": 7,
+    "frac": 0.206
+   },
+   "why_misleading": "identical accuracy suggests the chain adds nothing, but the two selections share only 7 of 34 structures \u2014 same accuracy on largely DIFFERENT structures. B1's K=8 vote confidence takes only 6 values with 82/210 tied at 1.0, so a top-k cut is mostly an arbitrary tie-break, not a ranking."
+  },
+  "stratified_test": {
+   "strata": [
+    {
+     "b1_conf": 0.5,
+     "n": 19,
+     "n_agree": 3,
+     "acc_agree": 0.667,
+     "acc_disagree": 0.375,
+     "lift": 0.292
+    },
+    {
+     "b1_conf": 0.625,
+     "n": 33,
+     "n_agree": 4,
+     "acc_agree": 0.75,
+     "acc_disagree": 0.517,
+     "lift": 0.233
+    },
+    {
+     "b1_conf": 0.75,
+     "n": 31,
+     "n_agree": 4,
+     "acc_agree": 1.0,
+     "acc_disagree": 0.444,
+     "lift": 0.556
+    },
+    {
+     "b1_conf": 0.875,
+     "n": 43,
+     "n_agree": 8,
+     "acc_agree": 0.875,
+     "acc_disagree": 0.514,
+     "lift": 0.361
+    },
+    {
+     "b1_conf": 1.0,
+     "n": 82,
+     "n_agree": 15,
+     "acc_agree": 1.0,
+     "acc_disagree": 0.701,
+     "lift": 0.299
+    }
+   ],
+   "all_strata_positive": true,
+   "mean_lift_unweighted": 0.3478,
+   "sd": 0.1246,
+   "se": 0.0557,
+   "t": 6.24,
+   "df": 4,
+   "mean_lift_n_weighted": 0.3386,
+   "cmh_z": 3.767,
+   "significant": true
+  },
+  "headline": "chain agreement carries correctness information BEYOND the answerer's own confidence. Among the 82 structures where B1 is UNANIMOUS across all 8 samples it is right 70.1% alone but 100% (15/15) when the verified chain independently agrees \u2014 self-consistency cannot separate those cases, an independently-derived chain can.",
+  "does_not_change": "H7b still FAILS (rule required acc>=0.80 AT coverage>=0.5; coverage is 0.16). This explains why the certified slice is good; it does not rescue the hypothesis.",
+  "caveats": [
+   "1 seed, K=8, single eval set",
+   "strata thin (agree-n 3-15)",
+   "CMH treats strata as independent"
+  ]
+ }
+}

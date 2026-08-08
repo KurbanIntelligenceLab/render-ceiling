@@ -1,0 +1,60 @@
+\section*{Reproducibility statement}
+The oracle, the label pipeline and both classical baselines are deterministic and CPU-only; the released
+artifact contains the render protocol, the labelling tolerances and sweep, the exact feature specification
+and seed for the cell-metric reference, the verbatim model prompts, and per-structure predictions for every
+arm reported here, so each accuracy in this paper recomputes from released vectors without API access.
+Every numeric claim was written by a script that reads the corresponding checkpoint record rather than
+transcribed, and a verification gate refuses any manuscript sentence carrying a value absent from those
+records or an accuracy without its sample and decode budget. Each analysis was pre-registered before its
+numbers existed; the pre-registrations are released alongside the results, including for the analyses whose
+outcome contradicted the registered expectation. Values that did not reproduce are documented as
+non-recoveries (see Limitations). Dataset metadata is provided in Croissant format validated against the
+reference library.
+
+\section*{Ethics statement}
+This work involves no human subjects and no personally identifying data. Recruitment of qualified
+crystallographers for a human baseline was attempted and failed, so no human-subjects protocol was
+executed and no human-performance claim is made. The structures are drawn from a public
+crystallographic database under its stated licence, and every render, label and prediction vector is
+released with the paper. The models evaluated are third-party systems accessed through their public
+interfaces under their terms of service; we report their identifiers and decode budgets rather than
+anonymising them, since the accuracy claims are only interpretable against a named arm. We see one
+foreseeable misuse: an oracle that recovers structure from a render measures information, not
+scientific competence, and a ceiling reported here should not be read as evidence that a model, or a
+person, can solve the underlying task. The withdrawn claims and non-recoveries are published
+alongside the surviving ones for that reason.
+
+\section*{Statement on the use of AI tools}
+This work was carried out with substantial use of an AI research assistant; this section is the disclosure,
+and per the author guidelines it does not count against the page limit.
+
+\textbf{Categories that apply.} The assistant participated in proposing and refining hypotheses (the
+attribution-ladder design, the cue-sufficiency partition, the visibility conditions); designing and giving
+feedback on methodology and experiments (every pre-registration in the released ledger was drafted by it
+before the corresponding numbers existed); implementing methods (the render pipeline, the oracle, the label
+pipeline, every evaluation harness, every figure script); cleaning and reformatting datasets (retrieval,
+composition exclusion, the symmetry-tolerance quarantine); and interpreting results. Of the recommended
+categories it also drafted parts of this paper, created the figures, and performed literature search.
+
+\textbf{What is mechanically checked rather than asserted.} Every numeric claim here is read from a
+checkpoint record by script; a build gate refuses any sentence carrying a value absent from those records,
+or an accuracy stated without its sample and decode budget. All six figures regenerate from their
+checkpoint records and are verified byte-for-byte. A separate linter checks the source for unescaped
+percent signs, unbalanced math, and undefined references. Each check was itself tested against a deliberate
+violation of the rule it enforces.
+
+\textbf{Errors it introduced, and how they were caught.} We report these because the failure modes are the
+useful part. First, a published minimum-detectable-difference of 0.162 for the render-convention null was
+computed with an unpaired two-proportion approximation carrying no power term, for a test that was paired.
+Recomputing per comparison showed significance was unreachable in 7 of 16 comparisons at any outcome, which
+made the null weaker than the retracted figure implied, and the contribution was demoted accordingly.
+Second, a figure plotted parameter counts for models whose sizes are undisclosed; the axis was deleted and
+undisclosed-size models are now barred from any parameter axis. Third, a zero-shot sweep ran twice and an
+aggregation step silently mixed both runs; the leaderboard was rebuilt from single-run per-structure
+vectors and the second run is published as a labelled replication whose run-to-run spread is reported as a
+property of the benchmark. Further withdrawals, including three documented non-recoveries, are verbatim in
+the supplementary's retraction record.
+
+\textbf{What a human is accountable for.} The authors take responsibility for every claim in this paper,
+including those produced or checked by the assistant, and for the decision about which results ship and
+which are reported as withdrawn.

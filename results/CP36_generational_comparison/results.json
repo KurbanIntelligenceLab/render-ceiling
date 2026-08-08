@@ -1,0 +1,58 @@
+{
+ "stage": "CP36 generational comparison (directive Phase D, Option A)",
+ "option": "A \u2014 the single clean pair, chosen before generating. NO TREND LANGUAGE: one pair is a comparison.",
+ "pair": {
+  "older": "google/gemini-2.5-flash",
+  "newer": "google/gemini-3.6-flash",
+  "sample": "original eval n=210",
+  "K": 3,
+  "older_micro": 0.4286,
+  "newer_micro": 0.7333,
+  "newer_only": 72,
+  "older_only": 8,
+  "exact_p": 5.375095844566712e-14
+ },
+ "stratified": {
+  "box_sufficient": {
+   "n": 140,
+   "g25_k": 88,
+   "g25": 0.6286,
+   "g36_k": 117,
+   "g36": 0.8357,
+   "delta": 0.2071,
+   "g36_only": 35,
+   "g25_only": 6,
+   "p": 4.873598300036974e-06
+  },
+  "box_ambiguous": {
+   "n": 70,
+   "g25_k": 2,
+   "g25": 0.0286,
+   "g36_k": 37,
+   "g36": 0.5286,
+   "delta": 0.5,
+   "g36_only": 37,
+   "g25_only": 2,
+   "p": 2.841261448338628e-09
+  }
+ },
+ "headroom_normalisation": {
+  "oracle_ceiling": 0.9524,
+  "sufficient_share_of_headroom": 0.6396,
+  "ambiguous_share_of_headroom": 0.5412,
+  "reading": "the ambiguous stratum's larger RAW gain is substantially a low-baseline effect: normalised by headroom-to-oracle the generation closes LESS of the ambiguous gap (54.1%) than the sufficient gap (64.0%). An earlier draft of this note asserted the reverse and contradicted its own numbers."
+ },
+ "partition_survives": {
+  "newer_ambiguous": 0.5286,
+  "newer_sufficient": 0.8357,
+  "fisher_p": 4.950559732684167e-06,
+  "reading": "a generation of progress does not erase the difficulty axis"
+ },
+ "what_is_not_claimed": "no trend, no rate of progress, no extrapolation to the next release. Two models one generation apart on one sample is a comparison, and CP26 established that parameter count does not order accuracy at all, so no scaling statement is available either.",
+ "partition_used": "CP28 canonical, 140/70, verified this session to reproduce exactly at 2%/1deg with identical composition across all five metric classes",
+ "process_defect": {
+  "what": "the analysis ran before its record was written; the accompanying document is a post-hoc analysis record, not a pre-registration",
+  "why_it_matters": "the headroom-to-oracle control was added after the raw deltas suggested a conclusion I distrusted. It reversed the reading, but it was not pre-committed.",
+  "mitigation": "every quantity is arithmetic on stored per-structure vectors and recomputable; the reversal is checkable rather than trusted"
+ }
+}

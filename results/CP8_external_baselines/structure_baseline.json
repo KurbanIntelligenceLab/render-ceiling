@@ -1,0 +1,75 @@
+{
+ "features": "19 lattice-metric + cell features from the INPUT cell, NO spglib symmetry output, NO composition",
+ "input_cell_metric_matches_system": "113/210 (53.8%) \u2014 so the task is NOT tautological",
+ "models": {
+  "logreg": {
+   "micro": 0.6524,
+   "macro_f1": 0.6312,
+   "train_acc": 0.6354
+  },
+  "random_forest": {
+   "micro": 0.8905,
+   "macro_f1": 0.8904,
+   "train_acc": 1.0
+  },
+  "grad_boost": {
+   "micro": 0.8762,
+   "macro_f1": 0.8733,
+   "train_acc": 0.9963
+  }
+ },
+ "best": "random_forest",
+ "comparison": {
+  "structure-metric baseline (random_forest)": 0.8905,
+  "CoCr B1-direct (images)": 0.6143,
+  "CoCr V2b chain (images)": 0.3857,
+  "CoCr B3 outcome (images)": 0.3445,
+  "chance": 0.1429
+ },
+ "regularity_floor": {
+  "floor": 0.5286,
+  "floor_features": "n_sites + density + volume ONLY (no shape)",
+  "floor_vs_chance": "3.70x the 0.1429 chance rate",
+  "deltas_vs_floor": {
+   "structure_RF": 0.3619,
+   "B1_direct": 0.0857,
+   "V2b_chain": -0.1429,
+   "SFT_V1_chain": -0.1921
+  },
+  "verified_against_directive": "all four match the directive's +0.362/+0.086/-0.188/-0.143 to <0.001; SFT-V1 now -0.1921 on the final 3-seed mean 0.3365",
+  "chain_arms_below_floor": "the chain arms fail to beat a 3-feature size-only model \u2014 stronger than any CP1b statement",
+  "probe_a_within_size_bands": {
+   "floor": {
+    "0": 0.6792,
+    "1": 0.4808,
+    "2": 0.4615,
+    "3": 0.4906
+   },
+   "b1": {
+    "0": 0.6038,
+    "1": 0.6859,
+    "2": 0.6218,
+    "3": 0.5472
+   },
+   "full_rf": {
+    "0": 0.9057,
+    "1": 0.9615,
+    "2": 0.8269,
+    "3": 0.8679
+   },
+   "band_avg": {
+    "floor": 0.528,
+    "b1": 0.6147,
+    "full_rf": 0.8905
+   }
+  },
+  "probe_b_kappa_b1_vs_floor": {
+   "agreement": 0.381,
+   "expected": 0.1408,
+   "kappa": 0.2795,
+   "n": 210
+  },
+  "candidate_sentence_verdict": "REFUTED IN ITS CAUSAL CLAUSE. Arithmetic clauses correct; the claim that 'the accuracy race was substantially a race to exploit sample regularity' is contradicted by BOTH specified probes: B1 does not collapse within size bands (retains +0.0867 over the floor) and agrees with the floor model only weakly (kappa 0.2795). DO NOT WRITE IT.",
+  "defensible_sentence": "A 3-feature size-only model reaches 0.529, so much of the apparent accuracy spread sits on top of dataset regularity. The direct image arm clears that floor by only +0.086 and the chain arms fall BELOW it. But the arms are not simply exploiting the same regularity: within size quartiles the direct arm retains a +0.087 margin and agrees with the floor model only weakly (kappa 0.28). The floor bounds how much of the accuracy race is meaningful; it does not show the arms won it by shortcut."
+ }
+}

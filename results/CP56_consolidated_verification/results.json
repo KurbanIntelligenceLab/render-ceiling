@@ -1,0 +1,95 @@
+{
+ "stage": "CP56 consolidated verification (ICLR directive)",
+ "gate": "scripts/verify_manuscript_numbers.py \u2014 exits non-zero on any failure",
+ "checks": {
+  "1_value_equality": "every 4-dp literal must EQUAL a ledger value; presence is not equality",
+  "2_sample_and_K": "every accuracy in a table row names its sample and decode budget. WAS DEAD CODE when first shipped \u2014 computed but never wired into the status or the output \u2014 while this file claimed it was enforced. Now wired and VERIFIED LIVE against a probe document that violates only this rule.",
+  "3_paired_discordance": "every paired claim carries its discordance counts"
+ },
+ "exception_classes": {
+  "derived": "computed from stored counts; each member recomputed by hand before the class was allowed",
+  "prior_work": "a number from a cited paper, absent from our ledger by construction",
+  "constants": "enumerated sample-specific baselines"
+ },
+ "per_document": {
+  "REPORT.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "abstract_cvpr.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "ai_disclosure.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "appendices_R_S.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "discussion_cvpr.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "discussion_pre_replication_snapshot.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "introduction_cvpr.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "related_work_cvpr.md": {
+   "unmatched": 0,
+   "accuracy_without_sample_or_K": 0,
+   "paired_without_counts": 0,
+   "status": "OK"
+  },
+  "results_cvpr.md": {
+   "unmatched": 6,
+   "accuracy_without_sample_or_K": 4,
+   "paired_without_counts": 1,
+   "status": "FAIL"
+  }
+ },
+ "exit_code": 1,
+ "documents_passing": 8,
+ "documents_total": 9,
+ "remaining_failures_are_cut_list": "the 6 unmatched values in results_cvpr.md are the certification result (directive section 7: cut entirely) and the superseded 137/73 stratified table (relocated to Appendix S). The gate flags them because the paper will no longer cite those checkpoints. Clearing them is a CUT performed at manuscript assembly, not a fix.",
+ "indexer_defects_found_in_my_own_checker": {
+  "sign": "a stored diff of -0.5935 appears as '0.5935' in prose; index both signs. 4 false flags.",
+  "prose_fields": "numbers live inside string fields too; indexing only numeric JSON missed 4 more.",
+  "truncated_output": "I reported REPORT.md clean from a tail-piped summary when it had 4 unmatched. Read a gate's verdict from a fresh run, never from a pipe tail.",
+  "derived_overreach": "every member of the derived class was recomputed by hand before the pattern was accepted, so the exception cannot hide a real defect"
+ },
+ "real_defect_found": "a quantization claim quoted two p-values with no discordance counts although the counts were stored; corrected to 'gained 11 lost 1, p = 0.0063; gained 6 lost 0, p = 0.0312'",
+ "not_checked": "figure axis values are not traced by script; that would need figures to emit their plotted series to a sidecar, which is not built. The fabricated-parameter defect is prevented by convention.",
+ "dead_check_defect": {
+  "what": "check_sample_and_k ran and was assigned to bk, but status was computed from bv and bp only and bk was never printed",
+  "consequence": "the check could neither fail a document nor appear in output, so 'the gate enforces three checks' was false",
+  "found_by": "external review, not by me",
+  "fix": "wired into status and output; proven live with a single-rule probe that fails with exit 1",
+  "real_defects_it_then_found": {
+   "REPORT.md": 13,
+   "results_cvpr.md": 4,
+   "annotations_added": 18
+  },
+  "detector_narrowing": "a first version flagged arXiv ids, p-values and correction notes as accuracies \u2014 20 false positives around 4 real ones \u2014 so the matcher was narrowed to an indented label with a trailing 4-dp value",
+  "lesson": "a gate must be tested against a deliberate violation of EACH rule it claims to enforce; otherwise 'the gate passes' is untestable"
+ }
+}

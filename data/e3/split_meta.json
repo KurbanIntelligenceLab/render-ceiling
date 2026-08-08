@@ -1,0 +1,30 @@
+{
+ "reserved_elements": [
+  "Cd",
+  "Ce",
+  "Hg",
+  "In",
+  "Ir",
+  "La",
+  "Mn",
+  "Os",
+  "Re",
+  "Ru",
+  "Tc",
+  "Ti",
+  "Tl"
+ ],
+ "split_type": "composition-exclusion",
+ "n_train": 1610,
+ "n_eval": 210,
+ "per_system_train": 230,
+ "per_system_eval": 30,
+ "leakage": {
+  "train_inter_eval": 0,
+  "train_inter_prior": 0,
+  "eval_inter_prior": 0
+ },
+ "eval_all_have_unseen_element": true,
+ "seed": 23,
+ "prior_used_excluded": 448
+}

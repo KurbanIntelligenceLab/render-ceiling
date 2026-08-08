@@ -1,0 +1,2483 @@
+{
+ "arm": "V2b",
+ "seed": 0,
+ "n_eval": 210,
+ "samples": 8,
+ "temperature": 0.7,
+ "decode": "majority_vote",
+ "micro_acc": 0.4,
+ "macro_acc": 0.40945553848779653,
+ "faithfulness": 0.29411428571428566,
+ "per_system": {
+  "cubic": {
+   "n": 27,
+   "acc": 0.9629629629629629
+  },
+  "triclinic": {
+   "n": 34,
+   "acc": 0.0
+  },
+  "trigonal": {
+   "n": 30,
+   "acc": 1.0
+  },
+  "tetragonal": {
+   "n": 31,
+   "acc": 0.9032258064516129
+  },
+  "hexagonal": {
+   "n": 27,
+   "acc": 0.0
+  },
+  "orthorhombic": {
+   "n": 32,
+   "acc": 0.0
+  },
+  "monoclinic": {
+   "n": 29,
+   "acc": 0.0
+  }
+ },
+ "predictions": [
+  {
+   "material_id": "mp-22422",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.484,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.020, b=4.020, c=4.020 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square on every face (a trace along each principal axis yields a square).\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbo"
+  },
+  {
+   "material_id": "mp-1183806",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.598,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.410, b=5.410, c=5.410 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square seen from each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) "
+  },
+  {
+   "material_id": "mp-1080470",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.467,
+   "votes": {
+    "tetragonal": 1,
+    "cubic": 6,
+    "trigonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=9.987, b=9.987, c=9.987 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square-truncated cube.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) encodes: the le"
+  },
+  {
+   "material_id": "mp-30388",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.352,
+   "votes": {
+    "cubic": 5,
+    "tetragonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.212, b=7.212, c=7.212 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-865254",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.675,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.392, b=7.392, c=7.392 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, p"
+  },
+  {
+   "material_id": "mp-862563",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.495,
+   "votes": {
+    "cubic": 6,
+    "tetragonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.908, b=3.908, c=3.908 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-979751",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.555,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.122, b=7.122, c=7.122 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-753983",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.428,
+   "votes": {
+    "cubic": 6,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.341, b=5.341, c=5.341 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-1185963",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.412,
+   "votes": {
+    "tetragonal": 2,
+    "cubic": 6
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.261, b=4.261, c=4.261 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, p"
+  },
+  {
+   "material_id": "mp-1196347",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.375,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=9.000, b=9.000, c=9.000 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis (a=b, gamma=90 deg in a skewed projection).\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin sy"
+  },
+  {
+   "material_id": "mp-19803",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.41,
+   "votes": {
+    "cubic": 6,
+    "tetragonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=9.350, b=9.350, c=9.350 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol Fm-3m (No. 225, point group m-3m) enco"
+  },
+  {
+   "material_id": "mp-865746",
+   "truth": "cubic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.41,
+   "votes": {
+    "tetragonal": 4,
+    "cubic": 4
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.848, b=3.848, c=3.848 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-1078353",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.056,
+   "votes": {
+    "tetragonal": 4,
+    "cubic": 2,
+    "trigonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.312, b=3.312, c=9.432 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1211014",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.472,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.362, b=10.362, c=8.338 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-865981",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.545,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=13.440, b=13.440, c=8.083 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis and a distinct height along c (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' m"
+  },
+  {
+   "material_id": "mp-1104547",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.333,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.576, b=5.576, c=5.576 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, p"
+  },
+  {
+   "material_id": "mp-1184740",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.728,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.872, b=7.872, c=7.872 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol Fm-3m (No. 225, point group m-3m) enco"
+  },
+  {
+   "material_id": "mp-1183885",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.349,
+   "votes": {
+    "cubic": 4,
+    "tetragonal": 4
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.737, b=6.737, c=6.737 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square on every face.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) encodes: the lea"
+  },
+  {
+   "material_id": "mp-972478",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.684,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.597, b=10.597, c=10.597 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) e"
+  },
+  {
+   "material_id": "mp-865214",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.643,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.761, b=5.761, c=5.761 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square/hexagon along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -4"
+  },
+  {
+   "material_id": "mp-1095170",
+   "truth": "tetragonal",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.062,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.882, b=3.882, c=3.882 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, p"
+  },
+  {
+   "material_id": "mp-976595",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.4,
+   "votes": {
+    "cubic": 5,
+    "tetragonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.551, b=5.551, c=5.551 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-865463",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.521,
+   "votes": {
+    "tetragonal": 3,
+    "cubic": 5
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.631, b=4.631, c=7.389 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-754918",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.517,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.020, b=8.020, c=8.020 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, p"
+  },
+  {
+   "material_id": "mp-1113975",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.63,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.537, b=5.537, c=5.537 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol Fm-3m (No. 225, p"
+  },
+  {
+   "material_id": "mp-1206179",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.619,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.769, b=4.769, c=7.684 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1111955",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.387,
+   "votes": {
+    "cubic": 5,
+    "tetragonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.072, b=7.072, c=7.072 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, p"
+  },
+  {
+   "material_id": "mp-861883",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.685,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.592, b=7.592, c=7.592 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square projection along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol Fm-3m (No. 225, point group"
+  },
+  {
+   "material_id": "mp-1187731",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.572,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.959, b=7.959, c=7.959 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-1209061",
+   "truth": "cubic",
+   "pred": "cubic",
+   "correct": true,
+   "faith": 0.344,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.563, b=5.563, c=5.563 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-5933",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.152,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.766, b=6.766, c=12.722 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1210077",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.162,
+   "votes": {
+    "trigonal": 7,
+    "hexagonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.746, b=7.746, c=15.232 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-22156",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.139,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.761, b=3.761, c=11.342 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a "
+  },
+  {
+   "material_id": "mp-7073",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.142,
+   "votes": {
+    "trigonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.547, b=7.547, c=5.026 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1211250",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.111,
+   "votes": {
+    "cubic": 1,
+    "trigonal": 7
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.169, b=4.169, c=8.338 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-22662",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.118,
+   "votes": {
+    "trigonal": 6,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.876, b=4.876, c=7.389 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1194358",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.063,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.252, b=7.252, c=5.273 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a r"
+  },
+  {
+   "material_id": "mp-510567",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.145,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.967, b=3.967, c=12.379 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1205952",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.118,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.488, b=7.488, c=4.463 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-22718",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.142,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.867, b=10.867, c=4.565 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-1079623",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.136,
+   "votes": {
+    "tetragonal": 5,
+    "cubic": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.492, b=7.492, c=5.903 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-867318",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.165,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.306, b=4.306, c=9.492 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a r"
+  },
+  {
+   "material_id": "mp-13312",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.146,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.192, b=4.192, c=8.400 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-11548",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.156,
+   "votes": {
+    "trigonal": 6,
+    "cubic": 1,
+    "hexagonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.521, b=3.521, c=8.063 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows two equal axes at 120 deg plus a distinct c (a=b, gamma=120 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the hexagonal crystal system, Bravais lattice hP.\n[SYMMETRY] The Hermann-Mauguin symbol P6_3/mmc (No. 194, point group 6/mmm) encodes: the leading 'P' marks a primitive "
+  },
+  {
+   "material_id": "mp-569819",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.16,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.443, b=4.443, c=7.379 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-16305",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.153,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.438, b=7.438, c=4.961 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-28282",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.062,
+   "votes": {
+    "cubic": 1,
+    "tetragonal": 7
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.377, b=7.377, c=7.794 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mbm (No. 127, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-862668",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.153,
+   "votes": {
+    "trigonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.341, b=7.341, c=4.278 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1226482",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.069,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.372, b=4.372, c=11.183 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-542939",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.155,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.815, b=4.815, c=11.879 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-3598",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.145,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.827, b=3.827, c=10.052 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1111",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.139,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.370, b=5.370, c=10.607 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1178388",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.118,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.067, b=7.067, c=11.480 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-865045",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.174,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.808, b=7.808, c=4.380 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-11580",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.158,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.441, b=4.441, c=8.926 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-20608",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.104,
+   "votes": {
+    "cubic": 2,
+    "trigonal": 6
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.298, b=7.298, c=4.655 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a r"
+  },
+  {
+   "material_id": "mp-1206604",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.161,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.475, b=10.475, c=7.901 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-542806",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.176,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.641, b=4.641, c=10.878 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a "
+  },
+  {
+   "material_id": "mp-867352",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.16,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.158, b=4.158, c=8.789 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a r"
+  },
+  {
+   "material_id": "mp-20051",
+   "truth": "hexagonal",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.163,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.713, b=5.713, c=10.829 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1215967",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.146,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.092, b=5.092, c=10.611 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-752705",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.042,
+   "votes": {
+    "tetragonal": 5,
+    "cubic": 2,
+    "trigonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.250, b=7.250, c=5.930 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-11913",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.049,
+   "votes": {
+    "trigonal": 1,
+    "tetragonal": 7
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.602, b=7.602, c=5.434 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a pr"
+  },
+  {
+   "material_id": "mp-1175684",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.071,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.222, b=5.222, c=7.460 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1188397",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.039,
+   "votes": {
+    "tetragonal": 7,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.910, b=10.910, c=8.838 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis (a=b) with a distinct height (c!=a); the cell projects to a square along the main diagonal (a square along one axis, a rhombus along the other).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The"
+  },
+  {
+   "material_id": "mp-28875",
+   "truth": "monoclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.038,
+   "votes": {
+    "tetragonal": 3,
+    "cubic": 5
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.737, b=5.737, c=7.880 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1100482",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.083,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.165, b=5.165, c=10.486 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-675832",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.083,
+   "votes": {
+    "trigonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.186, b=4.186, c=8.770 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1224603",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.056,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.984, b=7.984, c=33.072 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-680610",
+   "truth": "monoclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.014,
+   "votes": {
+    "trigonal": 3,
+    "tetragonal": 3,
+    "hexagonal": 1,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.406, b=8.406, c=16.077 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1225601",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.014,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.650, b=6.650, c=10.045 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-753601",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.069,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.315, b=10.315, c=6.652 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a "
+  },
+  {
+   "material_id": "mp-1290385",
+   "truth": "triclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.014,
+   "votes": {
+    "cubic": 5,
+    "tetragonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=12.808, b=12.808, c=12.808 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) e"
+  },
+  {
+   "material_id": "mp-11904",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.035,
+   "votes": {
+    "tetragonal": 6,
+    "trigonal": 1,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=11.216, b=11.216, c=7.357 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one principal axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P"
+  },
+  {
+   "material_id": "mp-18456",
+   "truth": "monoclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.035,
+   "votes": {
+    "trigonal": 4,
+    "tetragonal": 3,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.778, b=5.778, c=9.036 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1226891",
+   "truth": "monoclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.073,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.309, b=10.309, c=5.900 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive "
+  },
+  {
+   "material_id": "mp-582828",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.035,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.989, b=4.989, c=15.841 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a p"
+  },
+  {
+   "material_id": "mp-1228063",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.007,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.522, b=7.522, c=11.428 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-4658",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.028,
+   "votes": {
+    "tetragonal": 5,
+    "trigonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.183, b=7.183, c=12.415 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-6200",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.076,
+   "votes": {
+    "tetragonal": 6,
+    "trigonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=9.726, b=9.726, c=16.801 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1218620",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.056,
+   "votes": {
+    "tetragonal": 7,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.856, b=3.856, c=8.636 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1223043",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.042,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.357, b=7.357, c=4.324 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis and a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a pri"
+  },
+  {
+   "material_id": "mp-1207399",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.069,
+   "votes": {
+    "tetragonal": 7,
+    "hexagonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.873, b=6.873, c=13.256 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1190146",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.036,
+   "votes": {
+    "tetragonal": 4,
+    "cubic": 4
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.510, b=7.510, c=7.510 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square projection along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group"
+  },
+  {
+   "material_id": "mp-759465",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.097,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.125, b=4.125, c=12.962 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mbm (No. 127, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1192586",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.052,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.579, b=7.579, c=8.733 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a pr"
+  },
+  {
+   "material_id": "mp-556480",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.09,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.270, b=7.270, c=10.770 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1221675",
+   "truth": "monoclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.118,
+   "votes": {
+    "tetragonal": 2,
+    "cubic": 5,
+    "trigonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.887, b=7.887, c=7.887 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square in every projection.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) encodes: t"
+  },
+  {
+   "material_id": "mp-1287546",
+   "truth": "triclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.08,
+   "votes": {
+    "tetragonal": 2,
+    "cubic": 3,
+    "hexagonal": 2,
+    "trigonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.349, b=5.349, c=10.176 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows two equal axes at 120 deg plus a distinct c (a=b, gamma=120 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the hexagonal crystal system, Bravais lattice hP.\n[SYMMETRY] The Hermann-Mauguin symbol P6_3/mmc (No. 194, point group 6/mmm) encodes: the leading 'P' marks a primitive"
+  },
+  {
+   "material_id": "mp-607829",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.056,
+   "votes": {
+    "tetragonal": 5,
+    "cubic": 2,
+    "triclinic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.572, b=7.572, c=4.802 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a pr"
+  },
+  {
+   "material_id": "mp-1189296",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.108,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.008, b=8.008, c=8.008 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-669645",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.132,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.744, b=3.744, c=7.802 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-27398",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.069,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.121, b=7.121, c=7.121 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis; a cube (or its projection).\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No."
+  },
+  {
+   "material_id": "mp-1105844",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.079,
+   "votes": {
+    "cubic": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.413, b=6.413, c=6.413 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square projection along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group"
+  },
+  {
+   "material_id": "mp-1222966",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.076,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=11.037, b=11.037, c=9.182 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive "
+  },
+  {
+   "material_id": "mp-1191990",
+   "truth": "orthorhombic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.076,
+   "votes": {
+    "trigonal": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.840, b=3.840, c=10.092 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1228672",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.09,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.267, b=6.267, c=12.613 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1078316",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.111,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.376, b=5.376, c=10.688 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1094851",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.073,
+   "votes": {
+    "cubic": 6,
+    "tetragonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.418, b=4.418, c=4.418 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-3463",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.083,
+   "votes": {
+    "cubic": 1,
+    "tetragonal": 7
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.211, b=5.211, c=10.624 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mbm (No. 127, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1225903",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.127,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.765, b=7.765, c=10.602 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1223394",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.087,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.691, b=7.691, c=12.843 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1047671",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.068,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.216, b=7.216, c=12.673 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1191553",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.083,
+   "votes": {
+    "cubic": 1,
+    "tetragonal": 7
+   },
+   "text": "[GEOMETRY] Cell parameters: a=11.011, b=11.011, c=15.598 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive"
+  },
+  {
+   "material_id": "mp-8154",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.139,
+   "votes": {
+    "tetragonal": 7,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.537, b=4.537, c=10.055 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1206811",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.061,
+   "votes": {
+    "cubic": 6,
+    "tetragonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.142, b=10.142, c=6.079 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a "
+  },
+  {
+   "material_id": "mp-560530",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.128,
+   "votes": {
+    "cubic": 4,
+    "tetragonal": 4
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.349, b=4.349, c=7.752 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1025558",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.227,
+   "votes": {
+    "tetragonal": 7,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.851, b=3.851, c=10.803 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mbm (No. 127, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1206300",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.097,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.051, b=7.051, c=20.855 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-777972",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.094,
+   "votes": {
+    "tetragonal": 6,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.496, b=5.496, c=8.781 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-649033",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.083,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.930, b=5.930, c=10.646 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1094927",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.132,
+   "votes": {
+    "tetragonal": 7,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.288, b=7.288, c=14.306 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-20666",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.066,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.787, b=5.787, c=5.787 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square on each face.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) encodes: the lead"
+  },
+  {
+   "material_id": "mp-1228014",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.076,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.048, b=10.048, c=4.128 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive "
+  },
+  {
+   "material_id": "mp-675930",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.09,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.036, b=4.036, c=14.038 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1105259",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.076,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.952, b=7.952, c=3.452 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1219552",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.125,
+   "votes": {
+    "tetragonal": 7,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.619, b=8.619, c=12.775 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1029448",
+   "truth": "orthorhombic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.056,
+   "votes": {
+    "cubic": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.216, b=7.216, c=7.216 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square on every face.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) encodes: the lea"
+  },
+  {
+   "material_id": "mp-768605",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.073,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.782, b=3.782, c=16.067 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1222734",
+   "truth": "orthorhombic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.097,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.781, b=3.781, c=17.282 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-3907",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.66,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.216, b=10.216, c=14.248 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive"
+  },
+  {
+   "material_id": "mp-1207157",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.836,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.642, b=4.642, c=13.926 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1069477",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.458,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.442, b=7.442, c=6.924 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1080173",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.715,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.563, b=4.563, c=13.800 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1221660",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.75,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.212, b=4.212, c=10.680 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mbm (No. 127, point group 4/mmm) encodes: the leading 'P' marks a p"
+  },
+  {
+   "material_id": "mp-30411",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.601,
+   "votes": {
+    "tetragonal": 6,
+    "trigonal": 1,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.299, b=5.299, c=7.038 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-569954",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.527,
+   "votes": {
+    "tetragonal": 6,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.133, b=5.133, c=12.374 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1207394",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.618,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.397, b=7.397, c=3.979 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-28843",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.632,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.548, b=3.548, c=12.702 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1223395",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.483,
+   "votes": {
+    "tetragonal": 7,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=9.809, b=9.809, c=20.731 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1212462",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.569,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.757, b=4.757, c=11.472 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1102524",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.733,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.889, b=5.889, c=17.722 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1105793",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.493,
+   "votes": {
+    "cubic": 2,
+    "tetragonal": 6
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.802, b=10.802, c=7.709 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a "
+  },
+  {
+   "material_id": "mp-571457",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.625,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.359, b=5.359, c=10.328 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-558557",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.708,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.822, b=10.822, c=9.533 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive "
+  },
+  {
+   "material_id": "mp-1204787",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.625,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.518, b=4.518, c=6.692 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-569089",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.639,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.798, b=6.798, c=10.631 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-574369",
+   "truth": "tetragonal",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.306,
+   "votes": {
+    "cubic": 5,
+    "tetragonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.438, b=7.438, c=7.438 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-1217777",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.486,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.511, b=7.511, c=13.914 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1219131",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.569,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.348, b=5.348, c=13.193 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1104930",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.715,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.688, b=3.688, c=10.601 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-21366",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.639,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.391, b=10.391, c=6.893 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis (a=b) with a distinct c (a rectangular box).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primiti"
+  },
+  {
+   "material_id": "mp-1201760",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.576,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.282, b=7.282, c=4.389 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a pr"
+  },
+  {
+   "material_id": "mp-1025144",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.479,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.062, b=7.062, c=16.584 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-23192",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.653,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.395, b=4.395, c=12.598 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mbm (No. 127, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1227817",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.472,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.353, b=10.237, c=10.237 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis (a=b) with a distinct height (c!=a); a right angle along the c* direction.\n[SYSTEM/BRAVAIS] These metric constraints identify the square-centered tetragonal crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -4"
+  },
+  {
+   "material_id": "mp-20980",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.701,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.582, b=5.582, c=12.253 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1201769",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.632,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.066, b=7.066, c=17.139 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-8179",
+   "truth": "tetragonal",
+   "pred": "tetragonal",
+   "correct": true,
+   "faith": 0.653,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.025, b=6.025, c=14.467 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-20911",
+   "truth": "tetragonal",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.342,
+   "votes": {
+    "cubic": 5,
+    "tetragonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.271, b=7.271, c=5.610 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1101441",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.104,
+   "votes": {
+    "trigonal": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.331, b=7.331, c=4.815 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-752479",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.101,
+   "votes": {
+    "hexagonal": 3,
+    "trigonal": 5
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.818, b=8.818, c=8.937 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-779095",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.097,
+   "votes": {
+    "cubic": 2,
+    "trigonal": 1,
+    "tetragonal": 5
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.107, b=4.107, c=9.449 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-647035",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.007,
+   "votes": {
+    "tetragonal": 6,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.551, b=7.551, c=12.974 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mbm (No. 127, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-757987",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.03,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.310, b=7.310, c=5.192 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1210977",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.215,
+   "votes": {
+    "tetragonal": 7,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.422, b=8.422, c=3.831 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-31232",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.028,
+   "votes": {
+    "tetragonal": 4,
+    "trigonal": 1,
+    "cubic": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.721, b=6.721, c=6.721 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); the cell projects to a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, p"
+  },
+  {
+   "material_id": "mp-1219636",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.083,
+   "votes": {
+    "trigonal": 3,
+    "tetragonal": 3,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.218, b=8.218, c=10.778 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1301347",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.167,
+   "votes": {
+    "cubic": 1,
+    "tetragonal": 7
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.979, b=7.979, c=8.232 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a pr"
+  },
+  {
+   "material_id": "mp-1284734",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.188,
+   "votes": {
+    "tetragonal": 6,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.605, b=4.605, c=10.089 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1220826",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.153,
+   "votes": {
+    "tetragonal": 5,
+    "trigonal": 1,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.851, b=10.851, c=10.851 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) e"
+  },
+  {
+   "material_id": "mp-765581",
+   "truth": "triclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.052,
+   "votes": {
+    "cubic": 4,
+    "trigonal": 3,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=11.067, b=11.067, c=4.642 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-861170",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.153,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.128, b=10.128, c=4.823 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis (a=b) with a distinct height (c!=a); a 90-deg angle along the principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the square-centered tetragonal crystal system, Bravais lattice cP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point grou"
+  },
+  {
+   "material_id": "mp-505236",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.047,
+   "votes": {
+    "tetragonal": 5,
+    "cubic": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.387, b=7.387, c=7.387 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square on every face (e.g. the bottom, top, and front faces are all squares); a cube-like projection along the main diagonal.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Brav"
+  },
+  {
+   "material_id": "mp-568020",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.056,
+   "votes": {
+    "tetragonal": 5,
+    "cubic": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.181, b=5.181, c=5.181 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) enco"
+  },
+  {
+   "material_id": "mp-32682",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.104,
+   "votes": {
+    "trigonal": 5,
+    "tetragonal": 1,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.513, b=6.513, c=5.412 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1100547",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.007,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.978, b=3.978, c=7.089 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a r"
+  },
+  {
+   "material_id": "mp-776963",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.184,
+   "votes": {
+    "tetragonal": 6,
+    "orthorhombic": 1,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.349, b=7.349, c=11.232 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1218572",
+   "truth": "triclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.085,
+   "votes": {
+    "tetragonal": 2,
+    "cubic": 6
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.718, b=4.718, c=8.971 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1174283",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.038,
+   "votes": {
+    "tetragonal": 7,
+    "trigonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.273, b=4.273, c=12.991 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-1100516",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.042,
+   "votes": {
+    "tetragonal": 5,
+    "cubic": 2,
+    "trigonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.198, b=8.198, c=7.530 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-626800",
+   "truth": "triclinic",
+   "pred": "cubic",
+   "correct": false,
+   "faith": 0.035,
+   "votes": {
+    "cubic": 5,
+    "tetragonal": 1,
+    "trigonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.038, b=7.038, c=7.038 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square on every face.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol Fm-3m (No. 225, point group m-3m) encodes: the lea"
+  },
+  {
+   "material_id": "mp-1175184",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.125,
+   "votes": {
+    "tetragonal": 3,
+    "cubic": 2,
+    "trigonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.158, b=10.158, c=10.158 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three mutually perpendicular axes of equal length (a=b=c, all angles 90 deg); a square along each principal axis.\n[SYSTEM/BRAVAIS] These metric constraints identify the cubic crystal system, Bravais lattice cF.\n[SYMMETRY] The Hermann-Mauguin symbol F-43m (No. 216, point group -43m) e"
+  },
+  {
+   "material_id": "mp-1223576",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.192,
+   "votes": {
+    "tetragonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.392, b=4.392, c=10.730 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/nmm (No. 129, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-505619",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.156,
+   "votes": {
+    "tetragonal": 6,
+    "trigonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.256, b=4.256, c=11.720 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive l"
+  },
+  {
+   "material_id": "mp-756230",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.09,
+   "votes": {
+    "trigonal": 5,
+    "tetragonal": 2,
+    "orthorhombic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.796, b=5.637, c=11.349 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows three unequal perpendicular axes (a!=b!=c, all angles 90 deg); a rectangular box.\n[SYSTEM/BRAVAIS] These metric constraints identify the orthorhombic crystal system, Bravais lattice oC.\n[SYMMETRY] The Hermann-Mauguin symbol Cmcm (No. 63, point group mmm) encodes: the leading 'C' marks "
+  },
+  {
+   "material_id": "mp-780308",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.149,
+   "votes": {
+    "tetragonal": 6,
+    "cubic": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.571, b=7.571, c=8.804 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1303744",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.069,
+   "votes": {
+    "cubic": 2,
+    "tetragonal": 3,
+    "trigonal": 3
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.951, b=3.951, c=6.571 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square base with a distinct height (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leading 'P' marks a primitive la"
+  },
+  {
+   "material_id": "mp-1213091",
+   "truth": "triclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.062,
+   "votes": {
+    "trigonal": 3,
+    "tetragonal": 4,
+    "cubic": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.150, b=7.150, c=5.023 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1175337",
+   "truth": "triclinic",
+   "pred": "trigonal",
+   "correct": false,
+   "faith": 0.063,
+   "votes": {
+    "trigonal": 5,
+    "cubic": 2,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.839, b=7.839, c=5.598 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-755003",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.667,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.582, b=4.582, c=10.530 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a "
+  },
+  {
+   "material_id": "mp-1182608",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.705,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.560, b=10.560, c=8.253 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1227461",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.374,
+   "votes": {
+    "trigonal": 7,
+    "tetragonal": 1
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.300, b=8.300, c=6.529 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a r"
+  },
+  {
+   "material_id": "mp-570314",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.491,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.760, b=5.760, c=17.280 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-771649",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.622,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.292, b=6.292, c=18.027 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-567336",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.458,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.123, b=5.123, c=19.752 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1207106",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.347,
+   "votes": {
+    "cubic": 2,
+    "trigonal": 6
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.971, b=5.971, c=7.912 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1221846",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.819,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.619, b=4.619, c=11.852 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-570158",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.639,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.872, b=8.872, c=6.697 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-28865",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.806,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=8.067, b=8.067, c=5.180 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-2629",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.741,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.231, b=3.231, c=8.339 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-8176",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.811,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.313, b=4.313, c=15.359 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a "
+  },
+  {
+   "material_id": "mp-1223148",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.486,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.454, b=7.454, c=5.184 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-1007907",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.812,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.961, b=5.961, c=10.857 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a "
+  },
+  {
+   "material_id": "mp-1227521",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.825,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.732, b=10.732, c=8.899 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-1385417",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.813,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.539, b=4.539, c=16.784 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1048868",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.705,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.671, b=4.671, c=13.982 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1215704",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.472,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.637, b=4.637, c=12.765 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-989611",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.625,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.676, b=4.676, c=12.939 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-18075",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.451,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=5.266, b=5.266, c=10.532 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1220207",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.834,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.760, b=4.760, c=12.101 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-766789",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.299,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.690, b=4.690, c=10.513 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-1071269",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.274,
+   "votes": {
+    "trigonal": 6,
+    "tetragonal": 2
+   },
+   "text": "[GEOMETRY] Cell parameters: a=6.008, b=6.008, c=13.086 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R3m (No. 166, point group 3m) encodes: the leading 'R' marks a "
+  },
+  {
+   "material_id": "mp-1217153",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.781,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=3.976, b=3.976, c=8.102 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  },
+  {
+   "material_id": "mp-754538",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.832,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=4.516, b=4.516, c=11.458 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks "
+  },
+  {
+   "material_id": "mp-989455",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.623,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.911, b=10.911, c=7.121 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-2025375",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.451,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.927, b=10.927, c=4.035 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-1187591",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.632,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=10.237, b=10.237, c=4.102 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks"
+  },
+  {
+   "material_id": "mp-2011964",
+   "truth": "monoclinic",
+   "pred": "tetragonal",
+   "correct": false,
+   "faith": 0.038,
+   "votes": {
+    "cubic": 1,
+    "tetragonal": 7
+   },
+   "text": "[GEOMETRY] Cell parameters: a=7.629, b=7.629, c=8.712 Ang; alpha=90.0, beta=90.0, gamma=90.0 deg. The cell shows a square along one axis and a distinct height along the c axis (a=b!=c, all angles 90 deg).\n[SYSTEM/BRAVAIS] These metric constraints identify the tetragonal crystal system, Bravais lattice tP.\n[SYMMETRY] The Hermann-Mauguin symbol P4/mmm (No. 123, point group 4/mmm) encodes: the leadin"
+  },
+  {
+   "material_id": "mp-773911",
+   "truth": "trigonal",
+   "pred": "trigonal",
+   "correct": true,
+   "faith": 0.616,
+   "votes": {
+    "trigonal": 8
+   },
+   "text": "[GEOMETRY] Cell parameters: a=9.284, b=9.284, c=6.018 Ang; alpha=90.0, beta=90.0, gamma=120.0 deg. The cell shows a rhombohedral/hexagonal-family cell (a=b, gamma=120 deg in the hexagonal setting).\n[SYSTEM/BRAVAIS] These metric constraints identify the trigonal crystal system, Bravais lattice hR.\n[SYMMETRY] The Hermann-Mauguin symbol R-3m (No. 166, point group -3m) encodes: the leading 'R' marks a"
+  }
+ ]
+}

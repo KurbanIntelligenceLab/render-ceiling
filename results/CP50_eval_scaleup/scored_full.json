@@ -1,0 +1,34 @@
+{
+ "n": 1995,
+ "per_system": {
+  "cubic": 285,
+  "trigonal": 285,
+  "hexagonal": 285,
+  "tetragonal": 285,
+  "orthorhombic": 285,
+  "monoclinic": 285,
+  "triclinic": 285
+ },
+ "quarantined": 0,
+ "leakage": {
+  "train": 0,
+  "eval210": 0,
+  "expansion": 0
+ },
+ "oracle": {
+  "k": 1755,
+  "n": 1995,
+  "micro": 0.8797,
+  "errors": 0
+ },
+ "rf_lattice19": {
+  "k": 1735,
+  "n": 1995,
+  "micro": 0.8697
+ },
+ "floor_3feat": {
+  "k": 417,
+  "n": 1995,
+  "micro": 0.209
+ }
+}

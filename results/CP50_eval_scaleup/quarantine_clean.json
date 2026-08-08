@@ -1,0 +1,32 @@
+{
+ "quarantined_n": 62,
+ "quarantine_rate": 0.0311,
+ "criterion": "flipped OR not neighborhood_stable OR keep_for_training False",
+ "n_clean": 1933,
+ "per_system": {
+  "cubic": 285,
+  "trigonal": 278,
+  "hexagonal": 279,
+  "tetragonal": 282,
+  "orthorhombic": 283,
+  "monoclinic": 280,
+  "triclinic": 246
+ },
+ "p1_count": 109,
+ "distinct_space_groups": 144,
+ "oracle": {
+  "k": 1696,
+  "n": 1933,
+  "micro": 0.8774
+ },
+ "floor_3feat": {
+  "k": 397,
+  "n": 1933,
+  "micro": 0.2054
+ },
+ "rf_lattice19": {
+  "k": 1689,
+  "n": 1933,
+  "micro": 0.8738
+ }
+}

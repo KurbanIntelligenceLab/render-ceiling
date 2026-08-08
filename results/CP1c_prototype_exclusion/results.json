@@ -1,0 +1,207 @@
+{
+ "stage": "CP1c \u2014 structure-prototype-exclusion (built) + double-OOD stratified probe (run)",
+ "prereg": "prereg.md, committed before any evaluation on this split",
+ "structures_refetched": {
+  "n": 1820,
+  "source": "Materials Project by material_id",
+  "label_audit": {
+   "method": "CP0 audit \u2014 recompute spglib labels and compare with labels_sidecar.json",
+   "match": 1820,
+   "n": 1820,
+   "rate": 1.0,
+   "mismatch": 0,
+   "missing": 0,
+   "meaning": "the structures used for prototyping are provably the ones the VLM was labelled against"
+  }
+ },
+ "split_built": {
+  "path": "data/e3proto/",
+  "split_type": "structure-prototype-exclusion",
+  "prototype_definition": "AFLOW-style: (space group number, anonymized reduced stoichiometry, sorted per-element Wyckoff (multiplicity,letter) multiset); element identities anonymized so isostructural compounds share a prototype",
+  "n_structures": 1820,
+  "n_prototypes": 883,
+  "n_singleton_prototypes": 613,
+  "n_train": 1610,
+  "n_eval": 210,
+  "per_system_eval": 30,
+  "prototype_overlap_train_eval": 0,
+  "eval_only_elements": 0,
+  "contrast": "controlled complement of data/e3: same sizes, balance, renders, labels; data/e3 withholds CHEMISTRY, this withholds GEOMETRY"
+ },
+ "blocker_found": {
+  "issue": "189/210 (90.0%) of data/e3proto/eval sits in data/e3 TRAIN, i.e. the existing checkpoints were trained on it",
+  "clean_remainder": 21,
+  "clean_remainder_balance": {
+   "cubic": 1,
+   "hexagonal": 6,
+   "monoclinic": 2,
+   "orthorhombic": 1,
+   "tetragonal": 2,
+   "triclinic": 5,
+   "trigonal": 4
+  },
+  "consequence": "evaluating existing checkpoints on the built split would mostly measure memorization of SEEN structures; the clean test requires RETRAINING on data/e3proto/train, which is NOT done and NOT claimed"
+ },
+ "probe_run": {
+  "name": "double-OOD subset",
+  "n": 83,
+  "definition": "data/e3 eval structures whose PROTOTYPE is also absent from data/e3 train -> simultaneously composition-OOD (unseen element) and prototype-OOD (unseen arrangement) w.r.t. what the checkpoints trained on",
+  "per_system": {
+   "hexagonal": 8,
+   "monoclinic": 17,
+   "orthorhombic": 9,
+   "tetragonal": 12,
+   "triclinic": 21,
+   "trigonal": 16,
+   "cubic": 0
+  },
+  "caveat": "unbalanced and contains NO cubic (the easiest system), which lowers all arms' absolute numbers; therefore only the WITHIN-ARM DELTA is interpreted",
+  "cost": "zero new generation \u2014 stratified re-scoring of existing predictions"
+ },
+ "results": {
+  "B1": {
+   "full": 0.6143,
+   "full_seeds": [
+    0.59,
+    0.567,
+    0.686
+   ],
+   "double_ood": 0.5583,
+   "double_ood_seeds": [
+    0.5181,
+    0.6145,
+    0.5422
+   ],
+   "delta": -0.056
+  },
+  "SFT_V1_s0": {
+   "full": 0.3524,
+   "double_ood": 0.2892,
+   "delta": -0.0632
+  },
+  "B3": {
+   "full": 0.3444,
+   "double_ood": 0.2811,
+   "delta": -0.0633
+  },
+  "V2a": {
+   "full": 0.3762,
+   "double_ood": 0.253,
+   "delta": -0.1232
+  },
+  "V2b": {
+   "full": 0.3857,
+   "double_ood": 0.257,
+   "delta": -0.1287
+  }
+ },
+ "BRANCH_TAKEN": "(iii) \u2014 ALL ARMS DROP TOGETHER (every magnitude > the pre-registered 0.05 threshold: B1 -0.0560, SFT-V1 -0.0632, B3 -0.0633, V2a -0.1232, V2b -0.1287). Branch (ii) required B1 to hold WITHIN 0.05 and 0.0560 exceeds it. Per the pre-registration this is a DIFFICULTY SHIFT and must NOT be read as evidence about memorization; only arm ORDERING may be compared.",
+ "consequence": "the CP1b question REMAINS OPEN \u2014 neither confirmed nor refuted by this probe. Arm ORDERING does NOT survive intact: full eval is B1 0.6143 > V2b 0.3857 > V2a 0.3762 > SFT-V1 0.3524 > B3 0.3444, but double-OOD is B1 0.5583 > SFT-V1 0.2892 > B3 0.2811 > V2b 0.2570 > V2a 0.2530 \u2014 both PROCESS arms fall BELOW SFT-V1 and B3, a rank inversion that is the same fact as their >2x larger drops. What survives: B1 remains first by +0.269 over the next arm on the subset, so CP1b's branch (a) is not disturbed. CP3's Gate-2 ordering (process > outcome) DOES invert here, and under branch (iii) that cannot be read as a memorization/generalization result \u2014 it is confounded with the subset being harder for every arm. Arbitrating requires the clean retrained test on data/e3proto (built and audited, not run) or a difficulty-matched geometric-OOD subset.",
+ "secondary_observation_NOT_established": "under branch (iii) the subset is harder for every arm, so this is a DIFFERENTIAL SENSITIVITY observation and NOT a geometric-OOD mechanism: both process arms degrade ~2x more than the outcome arm and the SFT baseline (-0.123/-0.129 vs -0.063/-0.063). NOT established: n=83, single split, no SFT-V1 seeds, per-arm contamination differs, and no memorization reading is licensed. Flagged for the retrain.",
+ "correction": "This file originally recorded BRANCH (ii) 'B1 HOLDS' and concluded the CP1b robustness finding STRENGTHENS and the IID-in-decisive-feature explanation was NOT SUFFICIENT. That violated the pre-registered rule: 0.0560 > 0.050. Corrected to branch (iii); the memorization-relevant conclusions are RETRACTED. Pre-correction finding text preserved in finding_prebranchfix_snapshot.md. SECOND CORRECTION: this file also claimed arm ordering was 'unchanged' on the subset. FALSE \u2014 V2a and V2b invert below SFT-V1 and B3. Corrected above with both orderings listed.",
+ "ordering": {
+  "full_eval": [
+   "B1 0.6143",
+   "V2b 0.3857",
+   "V2a 0.3762",
+   "SFT-V1 0.3524",
+   "B3 0.3444"
+  ],
+  "double_ood": [
+   "B1 0.5583",
+   "SFT-V1 0.2892",
+   "B3 0.2811",
+   "V2b 0.2570",
+   "V2a 0.2530"
+  ],
+  "inversion": "both process arms (V2a, V2b) fall below SFT-V1 and B3 on the double-OOD subset",
+  "survives": "B1 first in both, by +0.2286 (full) and +0.269 (subset)"
+ },
+ "post_hoc_stratified_analysis": {
+  "STATUS": "EXPLORATORY AND POST-HOC \u2014 designed AFTER the pre-registered analysis returned branch (iii), specifically to remove the difficulty confound. Labelled, not promoted.",
+  "design": "the 210 eval structures split into 83 prototype-OOD + 127 prototype-IID, BOTH composition-OOD by construction; effect = mean over the 6 systems with >=5 structures on both sides of (acc on prototype-OOD - acc on prototype-IID), equal weight per system. Cubic dropped (0 prototype-OOD).",
+  "systems_used": [
+   "hexagonal",
+   "monoclinic",
+   "orthorhombic",
+   "tetragonal",
+   "triclinic",
+   "trigonal"
+  ],
+  "effects": {
+   "B1": {
+    "mean": -0.0856,
+    "sd_sys": 0.1283,
+    "se": 0.0524,
+    "t": -1.63,
+    "verdict": "NOT distinguishable from 0"
+   },
+   "SFT-V1": {
+    "mean": -0.0126,
+    "sd_sys": 0.039,
+    "se": 0.0159,
+    "t": -0.79,
+    "verdict": "NOT distinguishable from 0"
+   },
+   "B3": {
+    "mean": -0.0353,
+    "sd_sys": 0.1017,
+    "se": 0.0415,
+    "t": -0.85,
+    "verdict": "NOT distinguishable from 0"
+   },
+   "V2a": {
+    "mean": -0.0253,
+    "sd_sys": 0.0763,
+    "se": 0.0311,
+    "t": -0.81,
+    "verdict": "NOT distinguishable from 0"
+   },
+   "V2b": {
+    "mean": -0.0293,
+    "sd_sys": 0.0995,
+    "se": 0.0406,
+    "t": -0.72,
+    "verdict": "NOT distinguishable from 0"
+   }
+  },
+  "b1_per_seed": [
+   -0.053,
+   -0.1253,
+   -0.0786
+  ],
+  "tempting_read_NOT_supported": "on point estimates this resembles pre-registered branch (i): B1 is the only arm exceeding the 0.05 threshold (-0.0856) while every chain/process arm sits at -0.013 to -0.035, and B1's gap to V2b (0.0563) exceeds B1's seed SD (0.0299). That would mean B1's robustness is chemistry-specific. IT DOES NOT SURVIVE ERROR BARS: with n=6 systems the system-to-system spread (0.04-0.19) swamps every effect (0.01-0.09) and NO arm reaches |t|>1.8 (B1 t=-1.63).",
+  "CONCLUSION": "HONEST NULL \u2014 underpowered. Neither rescues branch (i) nor strengthens branch (iii). Two independent analyses now fail to resolve the CP1b question, which is itself the finding: THIS DATA CANNOT SETTLE IT. Requires the clean retrain on data/e3proto, or a geometric-OOD eval set built system-balanced on BOTH sides.",
+  "DO_NOT_CITE": "the -0.0856 vs -0.029 contrast \u2014 it is a point estimate with t=-1.63"
+ },
+ "balanced_split_built": {
+  "path": "data/e3geo/",
+  "status": "BUILT AND VERIFIED, not run (requires retrain)",
+  "n_train": 1610,
+  "n_eval": 210,
+  "per_system_eval": {
+   "cubic": 30,
+   "hexagonal": 30,
+   "monoclinic": 30,
+   "orthorhombic": 30,
+   "tetragonal": 30,
+   "triclinic": 30,
+   "trigonal": 30
+  },
+  "per_system_train": {
+   "cubic": 230,
+   "hexagonal": 230,
+   "monoclinic": 230,
+   "orthorhombic": 230,
+   "tetragonal": 230,
+   "triclinic": 230,
+   "trigonal": 230
+  },
+  "prototype_overlap_train_eval": 0,
+  "eval_only_elements": 0,
+  "overlap_with_e3proto_eval": 83,
+  "overlap_with_e3_composition_eval": 13,
+  "fixes": "all 7 systems usable (30 eval/230 train each) vs the 6 unbalanced strata that left the post-hoc analysis underpowered",
+  "HARD_CONSTRAINT": "197/210 (93.8%) of this eval set is in data/e3 TRAIN, so it must NOT be used to score the current adapters \u2014 retrain-only"
+ }
+}

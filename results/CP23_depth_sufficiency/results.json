@@ -1,0 +1,111 @@
+{
+ "stage": "CP23 depth-ordering sufficiency (directive Stage 0b)",
+ "method": "lattice preserved; only view-axis atom coordinates degraded; spglib symprec 1e-2; stratified 6/system x 3 axis views = 126 measurements per set",
+ "quantized_results": {
+  "original": {
+   "box_sufficient": {
+    "P": 0.4286,
+    "Q4": 0.5595,
+    "Q8": 0.5595,
+    "Q16": 0.5595,
+    "F": 1.0
+   },
+   "box_ambiguous": {
+    "P": 0.2381,
+    "Q4": 0.2381,
+    "Q8": 0.2381,
+    "Q16": 0.2381,
+    "F": 1.0
+   }
+  },
+  "expansion": {
+   "box_sufficient": {
+    "P": 0.4023,
+    "Q4": 0.4713,
+    "Q8": 0.4828,
+    "Q16": 0.4828,
+    "F": 1.0
+   },
+   "box_ambiguous": {
+    "P": 0.1282,
+    "Q4": 0.2564,
+    "Q8": 0.2564,
+    "Q16": 0.2564,
+    "F": 1.0
+   }
+  }
+ },
+ "branch": "MIXED - D3 on original (helps only box-sufficient, ambiguous 0.2381->0.2381), D1 on expansion (ambiguous doubles 0.1282->0.2564). Third render-related split across these two samples.",
+ "ceiling": "even at 16 levels, box-ambiguous recovery is 0.2564 vs 1.0000 with full depth: ordinal depth closes at most ~13 of ~75 available points",
+ "quantization_saturates_at": "NOT ESTABLISHED - claim withdrawn",
+ "rank_variant_defect": {
+  "values": {
+   "original_box_sufficient": {
+    "P": 0.4286,
+    "R": 0.2619
+   },
+   "expansion_box_sufficient": {
+    "P": 0.4023,
+    "R": 0.2414
+   }
+  },
+  "cause": "uniform rank spacing is a NONLINEAR DISTORTION along the view axis; it moves atoms to positions they do not occupy and destroys metric relations a flat projection leaves intact. It measured the harm of a distortion, not the value of an added cue.",
+  "detection": "R < P is incoherent for a variant that supposedly ADDS information",
+  "design_warning": "an ordinal depth cue interpreted as evenly spaced is WORSE than no depth cue; depth grading must be metric-faithful, not merely monotone"
+ },
+ "recommendation": "do NOT commission Stage 1 as an accuracy intervention; keep Q4-saturation and metric-faithfulness as free render-design observations",
+ "limits": "perfect atom localisation assumed, as in the oracle; bounds what depth COULD carry given extraction, not what any model reads",
+ "quantization_saturation_per_stratum": {
+  "original/box_sufficient": 4,
+  "original/box_ambiguous": 4,
+  "expansion/box_sufficient": 8,
+  "expansion/box_ambiguous": 4,
+  "note": "expansion/box_sufficient gains 0.0115 (1 of 87 measurements) between Q4 and Q8 and only then flattens, so the across-strata saturation point is 8. An earlier version hard-coded 4 and licensed 'four levels is enough', which its own per-stratum data contradicted."
+ },
+ "powered_quantization_1260_measurements": {
+  "original/box_sufficient": {
+   "P": 0.4444,
+   "Q4": 0.5255,
+   "Q8": 0.5301,
+   "Q16": 0.5324,
+   "n": 432
+  },
+  "original/box_ambiguous": {
+   "P": 0.1616,
+   "Q4": 0.1566,
+   "Q8": 0.1869,
+   "Q16": 0.197,
+   "n": 198
+  },
+  "expansion/box_sufficient": {
+   "P": 0.4535,
+   "Q4": 0.4558,
+   "Q8": 0.458,
+   "Q16": 0.4603,
+   "n": 441
+  },
+  "expansion/box_ambiguous": {
+   "P": 0.1005,
+   "Q4": 0.2116,
+   "Q8": 0.2169,
+   "Q16": 0.2275,
+   "n": 189
+  }
+ },
+ "paired_quantization_tests_pooled": {
+  "Q4toQ8": {
+   "gained": 11,
+   "lost": 1,
+   "p": 0.0063,
+   "verdict": "REAL"
+  },
+  "Q8toQ16": {
+   "gained": 6,
+   "lost": 0,
+   "p": 0.0312,
+   "verdict": "REAL"
+  },
+  "conclusion": "BOTH steps significant - no saturation at 4 or 8 within the tested range; the earlier flatness was a low-power artifact of a 252-measurement subsample"
+ },
+ "correction_history": "claim stated 3x and wrong each time: 'saturates at 4' (subsample, self-contradictory), corrected to 'by 8' after review, now WITHDRAWN once powered at 1260 measurements. No level-count recommendation is shipped."
+}

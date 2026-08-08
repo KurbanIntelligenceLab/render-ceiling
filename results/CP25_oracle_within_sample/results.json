@@ -1,0 +1,232 @@
+{
+ "stage": "CP25 oracle on the evaluation sets, within-sample paired (directive item 1)",
+ "branch": "W1 \u2014 oracle >> every arm, paired, on BOTH sets. Sample-disjointness caveat REMOVED.",
+ "oracle_accuracy": {
+  "original_eval": {
+   "4v": 0.9524,
+   "5v": 0.9524,
+   "n": 210,
+   "errors": 0
+  },
+  "expansion_eval": {
+   "4v": 0.8952,
+   "5v": 0.9095,
+   "n": 210,
+   "errors": 0
+  },
+  "note": "CP24's cross-sample oracle was 0.9357 on its own 280 sample; the original eval set is HIGHER, so the cross-sample bracket UNDERSTATED the gap there"
+ },
+ "paired_original_eval": {
+  "A3_native": {
+   "arm": 0.6905,
+   "oracle": 0.9524,
+   "delta": 0.2619,
+   "orc_only": 61,
+   "arm_only": 6,
+   "p": 1.4944372779199244e-12
+  },
+  "B1_direct": {
+   "arm": 0.619,
+   "oracle": 0.9524,
+   "delta": 0.3333,
+   "orc_only": 76,
+   "arm_only": 6,
+   "p": 1.5686991122453906e-16
+  },
+  "V2b_chain": {
+   "arm": 0.381,
+   "oracle": 0.9524,
+   "delta": 0.5714,
+   "orc_only": 122,
+   "arm_only": 2,
+   "p": 7.28900537057884e-34
+  },
+  "B3_chain": {
+   "arm": 0.281,
+   "oracle": 0.9524,
+   "delta": 0.6714,
+   "orc_only": 145,
+   "arm_only": 4,
+   "p": 5.681270631187155e-38
+  }
+ },
+ "paired_expansion_eval": {
+  "B1_direct": {
+   "arm": 0.4524,
+   "oracle": 0.9095,
+   "delta": 0.4571,
+   "orc_only": 104,
+   "arm_only": 8,
+   "p": 1.9808264979368398e-22
+  },
+  "V2b_chain": {
+   "arm": 0.4,
+   "oracle": 0.9095,
+   "delta": 0.5095,
+   "orc_only": 118,
+   "arm_only": 11,
+   "p": 8.605553550243274e-24
+  }
+ },
+ "arm_accuracy_crosscheck": {
+  "B1_original": 0.619,
+  "V2b_original": 0.381,
+  "A3_original": 0.6905,
+  "B1_expansion": 0.4524,
+  "V2b_expansion": 0.4,
+  "note": "all reproduce the recorded leaderboard values exactly, confirming the per-structure vectors are the same ones the leaderboard was built from"
+ },
+ "licensed": "on these exact 420 structures under the frozen protocol, ideal atom extraction recovers the crystal system on 90-95% while the best model recovers 45-69%, per-structure and overwhelmingly one-sided (61 vs 6 discordant on the original set). The information IS present in these renders; these models do not recover it.",
+ "not_licensed": "perfect atom localisation is assumed - the oracle reads ground-truth coordinates, not the image, so this bounds what is unrecovered GIVEN extraction and does NOT show a model could have extracted positions from pixels",
+ "cp15_classifier_not_recoverable": {
+  "recorded_split": "137/73",
+  "my_2pct_1deg": "140/70",
+  "my_1pct_0.5deg": "144/66",
+  "composition_agreement": "5 of 6 metric classes match exactly; differs only in 3 monoclinic entries",
+  "consequence": "the HEADLINE paired result does not depend on the partition and is unaffected; the stratified breakdown does, and is reported as approximate",
+  "standing_rule": "SECOND unrecoverable classifier after the RF feature list - any classifier whose output is cited must have its exact parameters written into the ledger at first use",
+  "exhaustive_grid_search": {
+   "grid": "5 length tolerances x 5 angle tolerances x 2 monoclinic branch variants = 50 combinations",
+   "combos_matching_count_73": 2,
+   "combos_matching_composition": 0,
+   "near_match_at_3pct_0.5deg": {
+    "mine": {
+     "monoclinic": 1,
+     "orthorhombic": 2,
+     "tetragonal": 7,
+     "cubic": 3,
+     "hexagonal_or_trigonal": 60
+    },
+    "recorded": {
+     "tetragonal": 4,
+     "monoclinic": 3,
+     "trigonal_rhombohedral": 1,
+     "orthorhombic": 2,
+     "cubic": 3,
+     "hexagonal_or_trigonal": 60
+    },
+    "differs_on": {
+     "monoclinic": [
+      1,
+      3
+     ],
+     "tetragonal": [
+      7,
+      4
+     ],
+     "trigonal_rhombohedral": [
+      0,
+      1
+     ]
+    }
+   },
+   "conclusion": "no tolerance setting of the documented rule produces CP15's split; the count match at 3%/0.5deg is a coincidence of totals with a different composition. CP15 used a structurally different rule than its finding.md describes."
+  }
+ },
+ "stratified_approximate_140_70": {
+  "A3_native": {
+   "suff": {
+    "arm": 0.7014,
+    "orc": 0.9653,
+    "delta": 0.2639,
+    "n01": 39,
+    "n10": 1,
+    "p": 7.457856554538012e-11
+   },
+   "amb": {
+    "arm": 0.6667,
+    "orc": 0.9242,
+    "delta": 0.2576,
+    "n01": 22,
+    "n10": 5,
+    "p": 0.0015137195587158203
+   }
+  },
+  "B1_direct": {
+   "suff": {
+    "arm": 0.6597,
+    "orc": 0.9653,
+    "delta": 0.3056,
+    "n01": 47,
+    "n10": 3,
+    "p": 3.708322537931963e-11
+   },
+   "amb": {
+    "arm": 0.5303,
+    "orc": 0.9242,
+    "delta": 0.3939,
+    "n01": 29,
+    "n10": 3,
+    "p": 2.5560148060321808e-06
+   }
+  },
+  "V2b_chain": {
+   "suff": {
+    "arm": 0.3542,
+    "orc": 0.9653,
+    "delta": 0.6111,
+    "n01": 88,
+    "n10": 0,
+    "p": 6.462348535570529e-27
+   },
+   "amb": {
+    "arm": 0.4394,
+    "orc": 0.9242,
+    "delta": 0.4848,
+    "n01": 34,
+    "n10": 2,
+    "p": 1.941225491464138e-08
+   }
+  },
+  "B3_chain": {
+   "suff": {
+    "arm": 0.1875,
+    "orc": 0.9653,
+    "delta": 0.7778,
+    "n01": 114,
+    "n10": 2,
+    "p": 1.6339108165695212e-31
+   },
+   "amb": {
+    "arm": 0.4848,
+    "orc": 0.9242,
+    "delta": 0.4394,
+    "n01": 31,
+    "n10": 2,
+    "p": 1.3085082173347473e-07
+   }
+  }
+ },
+ "discordance_ratios": {
+  "original": {
+   "A3_native": "61:6 = 10.2:1",
+   "B1_direct": "76:6 = 12.7:1",
+   "V2b_chain": "122:2 = 61.0:1",
+   "B3_chain": "145:4 = 36.2:1"
+  },
+  "expansion": {
+   "B1_direct": "104:8 = 13.0:1",
+   "V2b_chain": "118:11 = 10.7:1"
+  },
+  "range": "10.2:1 to 61.0:1",
+  "note": "the frequently-quoted '~10:1' is the BEST arm's ratio and the weakest of the six; the chain arms run up to 61:1. State the range or name the arm, never '~10:1' for all."
+ },
+ "A3_stratum_drop_no_replication": {
+  "partition": "the CANONICAL predicate (2% length, 1 deg angle, monoclinic branch requiring beta genuinely non-90), specified in CP28 and reproducing 140/70 exactly on rerun. This block predates CP28 and originally called the split 'approximate' because CP15's recorded 137/73 rule was the reference; CP28 established that CP15's rule is unrecoverable and THIS predicate is canonical, so the values here are canonical rather than approximate. Counts verified identical to CP28's A3 row.",
+  "n_sufficient": 140,
+  "n_ambiguous": 70,
+  "k_sufficient": 98,
+  "k_ambiguous": 47,
+  "acc_sufficient": 0.7,
+  "acc_ambiguous": 0.6714,
+  "drop": 0.0286,
+  "fisher_p": 0.7518,
+  "overall": {
+   "k": 145,
+   "n": 210,
+   "acc": 0.6905
+  },
+  "robustness": "on a 137/73 split the same arm gives 96/137 = 0.7007 and 49/73 = 0.6712, drop +0.0295, Fisher p = 0.7541 \u2014 the same conclusion, so the non-replication does not depend on which partition is used",
+  "conclusion": "NO significant stratum drop for the native-resolution arm; the THIRD independent failure of the stratified-accuracy claim"
+ }
+}

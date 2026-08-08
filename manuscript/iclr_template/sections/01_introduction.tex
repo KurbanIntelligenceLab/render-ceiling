@@ -1,0 +1,38 @@
+\section{Introduction}
+A model that misreads a scientific figure and a model that misreasons about it produce the same wrong
+answer. Separating the two requires knowing what the figure contains, and for natural images that quantity
+does not exist: there is no procedure that reads a photograph's information content without a model.
+
+Rendered scientific figures are different. A ball-and-stick crystal render is an orthographic projection of
+a structure whose atomic coordinates are known exactly, under a camera set the experimenter chose. The
+projection is invertible in a sense we make precise in Section~\ref{sec:setup}: given the render's own
+geometry, atom positions can be recovered by triangulating across views, and a deterministic symmetry
+algorithm applied to the reconstruction returns the answer the images support without consulting a model at
+any step. This paper builds that instrument and reports what it attributes.
+
+The shape of the argument has prior art. \citet{arc2512} argue that the gap on abstract-reasoning
+benchmarks reflects visual perception rather than inductive reasoning, and verify it with a two-stage
+pipeline that converts each image to a natural-language description before inducing rules.
+\citet{xcrys2506} reach a compatible conclusion for crystallographic images, and \citet{allangles2504} show
+that multi-view geometric correspondence is a known weakness. What differs here is the exactness of the
+separation. In every prior design we found, the perception stage is itself a model, so the split compares
+two model configurations and inherits the describer's errors, and no quantity in the design states how much
+of the task is answerable from the image at all. Our separation is deterministic and closed-form, and it
+returns a number.
+
+Three contributions follow.
+\textbf{(i) A certified-label benchmark with a measured identifiability ceiling.} Labels are computed by a
+symmetry algorithm from the source structures rather than annotated, and the evaluation split excludes
+every chemical composition present in training, following \citet{xcrys2506}. The ceiling is 0.9524 rather
+than 1.0: the render protocol withholds a measurable amount of what the structure contains, so the gap
+between the ceiling and a model is separable from the gap between the ceiling and the label
+(Proposition~\ref{prop:ident} characterises exactly when the two coincide).
+\textbf{(ii) A four-rung attribution ladder.} Each rung removes one capability on the same named
+structures, all comparisons paired (Definition~\ref{def:ladder}). Its outcome contradicts the
+perception-bottleneck reading it was built to test: with exact geometry supplied as text, the symbolic
+residual is the larger deficit for 12 of 14 scored models, and the perception share tracks model strength.
+\textbf{(iii) A render-convention intervention, one leg conclusive and one inconclusive.} Two of the frozen
+protocol's geometric choices are measurably information-suboptimal by the oracle. A 70-structure model
+probe detected no corresponding change, but its discordance rates leave 7 of 16 paired comparisons unable
+to detect one at any outcome, so the model leg is \emph{inconclusive rather than null} and is reported as
+such.

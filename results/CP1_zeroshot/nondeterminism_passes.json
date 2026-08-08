@@ -1,0 +1,19 @@
+{
+ "element_anonymized_passes": {
+  "pass1": 25,
+  "pass2": 20,
+  "pass3": 27,
+  "n": 70
+ },
+ "B_restyle_passes": [
+  24,
+  21,
+  19
+ ],
+ "C_rotation_passes": [
+  6,
+  9,
+  12
+ ],
+ "note": "correct-count /70 per independent pass on identical renders; temperature=0 non-determinism via OpenRouter"
+}

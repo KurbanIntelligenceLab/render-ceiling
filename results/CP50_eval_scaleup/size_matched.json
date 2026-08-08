@@ -1,0 +1,14 @@
+{
+ "cap_atoms": 37,
+ "n": 721,
+ "per_system": 103,
+ "median_atoms": 17.0,
+ "oracle": {
+  "k": 682,
+  "micro": 0.9459
+ },
+ "floor": {
+  "k": 159,
+  "micro": 0.2205
+ }
+}

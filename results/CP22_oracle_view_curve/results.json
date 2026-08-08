@@ -1,0 +1,73 @@
+{
+ "stage": "CP22 oracle vs view count (directive Stage 0c)",
+ "n": 280,
+ "curve": {
+  "2": {
+   "crystal_system": 0.7429,
+   "point_group": 0.6464,
+   "space_group": 0.4107
+  },
+  "3": {
+   "crystal_system": 0.9143,
+   "point_group": 0.8357,
+   "space_group": 0.7429
+  },
+  "4": {
+   "crystal_system": 0.9357,
+   "point_group": 0.9143,
+   "space_group": 0.9071
+  },
+  "5": {
+   "crystal_system": 0.9393,
+   "point_group": 0.9179,
+   "space_group": 0.9107
+  }
+ },
+ "deltas_crystal_system": {
+  "2to3": 0.1714,
+  "3to4": 0.0214,
+  "4to5": 0.0036
+ },
+ "knee": "FOUR views, not three. The 3->4 step is 7-1 at p=0.0703 (not resolved), so 3-view saturation is not supported; 4->5 moves one structure of 280. The protocol ships 5, so the slack is ONE view. Supersedes the earlier 'saturates at 3'.",
+ "one_view": "GEOMETRICALLY IMPOSSIBLE - triangulation needs >=2 projections; oracle undefined",
+ "eight_views": "DO NOT EXIST - the frozen protocol defines exactly 5 cameras; adding more changes the protocol and is out of Stage-0 scope",
+ "sampling_note": {
+  "rerun_4v": 0.9357,
+  "recorded_4v": 0.9321,
+  "counts": [
+   262,
+   261
+  ],
+  "cause": "different samples - 21 of 280 material_ids differ despite --seed 0, because the harness samples from a live database query whose pool has changed; the seed fixes draw ORDER not the candidate pool",
+  "original_sample_2_3_4": [
+   0.7393,
+   0.9071,
+   0.9321
+  ],
+  "verdict": "SAME KNEE on both samples; not a computation discrepancy",
+  "action_required": "any future oracle number must ship its material_id list"
+ },
+ "licenses": "the frozen 5-view protocol delivers crystal-system information that saturates at 3 views",
+ "does_not_license": "that reducing to 3 views leaves MODEL accuracy unchanged - the oracle assumes perfect extraction and a model may use redundancy the oracle does not need",
+ "paired_tests_mcnemar_exact": {
+  "2to3": {
+   "gained": 50,
+   "lost": 2,
+   "p": "<1e-4",
+   "verdict": "REAL"
+  },
+  "3to4": {
+   "gained": 7,
+   "lost": 1,
+   "p": 0.0703,
+   "verdict": "NOT RESOLVED"
+  },
+  "4to5": {
+   "gained": 1,
+   "lost": 0,
+   "p": 1.0,
+   "verdict": "not resolved"
+  }
+ },
+ "superseded_claim": "'saturates at 3 views' - retired; it compared marginal rates rather than running the paired test the directive specified"
+}

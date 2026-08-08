@@ -1,0 +1,156 @@
+{
+ "stage": "CP1b \u2014 B1-direct and SFT-V1 on the composition-exclusion split",
+ "prereg": "prereg.md, committed before any number was inspected",
+ "eval": {
+  "set": "210-structure composition-exclusion (every structure has a train-unseen element)",
+  "protocol": "3-sample majority vote, temp 0.7, 512 max new tokens \u2014 identical to the E3 matrix arms"
+ },
+ "results": {
+  "B1_direct": {
+   "seeds": [
+    0.59,
+    0.567,
+    0.686
+   ],
+   "mean": 0.6143,
+   "sd": 0.0515,
+   "faithfulness": 0.0,
+   "note": "emits a bare crystal-system label, no chain to score"
+  },
+  "SFT_V1": {
+   "seeds": [
+    0.3524,
+    0.3286,
+    0.3286
+   ],
+   "mean": 0.3365,
+   "sd": 0.0112,
+   "faith_seeds": [
+    0.2489,
+    0.2189,
+    0.289
+   ],
+   "faith_mean": 0.2523,
+   "faith_sd": 0.0287,
+   "status": "COMPLETE \u2014 all 3 seeds",
+   "comparisons_vs_pooled_noise": {
+    "convention": "pooled = sqrt((s1^2+s2^2)/2) \u2014 program-wide, see ledger/CONVENTIONS.md (was quadrature-sum here before unification)",
+    "B3_minus_SFTV1": {
+     "delta": 0.008,
+     "pooled_sd": 0.0328,
+     "verdict": "WITHIN pooled noise \u2014 not distinguishable"
+    },
+    "V2a_minus_SFTV1": {
+     "delta": 0.0397,
+     "pooled_sd": 0.0127,
+     "verdict": "EXCEEDS pooled noise"
+    },
+    "V2b_minus_SFTV1": {
+     "delta": 0.0492,
+     "pooled_sd": 0.0079,
+     "verdict": "EXCEEDS pooled noise"
+    },
+    "note": "unifying the convention changed no verdict; the adopted form gives smaller (less conservative) thresholds"
+   },
+   "reading": "FROZEN at 3 seeds (the freeze rule earned its keep \u2014 the direction FLIPPED between seed 1 and seed 2). process-verified GRPO improved on its SFT initialization (+0.040 V2a, +0.049 V2b, both exceeding pooled seed noise); outcome-only GRPO did not measurably (+0.008 vs pooled 0.046). Per the directive this must be confirmed with PAIRED PER-STRUCTURE stats before the sentence is frozen for the paper \u2014 seed means alone are used here."
+  },
+  "B3": {
+   "seeds": [
+    0.281,
+    0.371,
+    0.381
+   ],
+   "mean": 0.344,
+   "sd": 0.045,
+   "faithfulness": 0.258
+  },
+  "V2a": {
+   "seeds": [
+    0.381,
+    0.357,
+    0.39
+   ],
+   "mean": 0.376,
+   "sd": 0.014,
+   "faithfulness": 0.306
+  },
+  "V2b": {
+   "seeds": [
+    0.386,
+    0.386,
+    0.386
+   ],
+   "mean": 0.386,
+   "sd": 0.0,
+   "faithfulness": 0.299
+  }
+ },
+ "b1_iid_reference": {
+  "value": 0.711,
+  "source": "E2 test split, n=30",
+  "degradation_to_exclusion": -0.0967,
+  "relative": "-13.6%"
+ },
+ "decision_rule": {
+  "a": "B1 >= ~0.60 -> accuracy story dead, E3 scale-up deprioritized",
+  "b": "B1 <= ~0.40 -> memorize/generalize headline, E3 scale-up justified",
+  "intermediate": "0.40 < B1 < 0.60 -> report partial, do not force a branch"
+ },
+ "BRANCH_TAKEN": "(a) \u2014 observed mean 0.614 >= 0.60. THE ACCURACY STORY IS DEAD. E3 scale-up DEPRIORITIZED.",
+ "robustness": {
+  "worst_b1_seed": 0.567,
+  "best_chain_arm": 0.386,
+  "margin": 0.181,
+  "verdict": "branch (a) does not depend on the 0.60 boundary \u2014 even the worst B1 seed beats the best chain arm by +0.181"
+ },
+ "hypothesis": {
+  "predicted": "B1 degrades substantially OOD while GRPO chain arms retain more (per Chu et al. arXiv 2501.17161)",
+  "outcome": "REFUTED \u2014 B1 lost only 13.6% relative and leads every GRPO arm by +0.23 to +0.27",
+  "candidate_reasons_untested": [
+   "composition-exclusion withholds ELEMENTS, not the lattice geometry the task depends on \u2014 likely IID in the decisive feature",
+   "our GRPO arms ran 300 steps from a weak SFT ckpt and never beat it on accuracy, so this is not the comparison 2501.17161's claim addresses",
+   "B1's 4-8 token label target is the easiest thing to fit and least sensitive to nuisance shift"
+  ]
+ },
+ "budget_accounting": {
+  "required_by": "arXiv 2509.21882 (budget mismatch confound)",
+  "measured_from": "live Qwen3-VL processor at max_pixels=200704, NOT formula-derived",
+  "visual_tokens_per_view": 171,
+  "n_views": 5,
+  "prefill_tokens_per_sample": 938,
+  "question_tokens": 75,
+  "generated_tokens": {
+   "B1": 6,
+   "chain": 400
+  },
+  "accounting_1_generated_tokens": {
+   "chain": 1200,
+   "B1": 18,
+   "ratio": 66.7
+  },
+  "accounting_2_flops_proportional": {
+   "chain": 4014,
+   "B1": 2832,
+   "ratio": 1.417,
+   "prefill_share_chain": 0.701,
+   "prefill_share_B1": 0.994,
+   "USED_FOR_BRANCH": true
+  },
+  "accounting_3_wall_clock_measured": {
+   "B1_min_per_seed": 5,
+   "V1_min_per_seed": 171,
+   "ratio": ">34x",
+   "cause": "SFT-V1 reaches [ANSWER] 1.1% of the time so every generation runs to the 512-token cap"
+  },
+  "note": "under accounting (1) B1 uses 67x LESS compute and still wins, which strengthens branch (a)"
+ },
+ "secondary_finding": {
+  "claim": "2501.17161's format-stabilisation half REPRODUCES even though its generalization half does not",
+  "evidence": "SFT-V1 reached [ANSWER] 1.1%; post-GRPO arms reach ~65-85% (B3 10/12, V2a 8/12, V2b 10/12)"
+ },
+ "consequences": [
+  "E3 scale-up DEPRIORITIZED (branch (a) withdraws the accuracy justification)",
+  "the paper's claim must be verifiability / faithfulness / test-time scaling, not accuracy",
+  "defensible headline: a direct image->label mapping is accuracy-optimal here; the verified chain's value is that it is CHECKABLE"
+ ]
+}

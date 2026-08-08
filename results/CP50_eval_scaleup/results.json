@@ -1,0 +1,124 @@
+{
+ "stage": "CP50 evaluation-set scale-up (ICLR directive)",
+ "branch": "S2 FIRES \u2014 the shape-free floor does NOT survive at scale (0.5286 -> 0.2090), retiring the below-floor claim as a task property. S3's apparent failure is a CELL-SIZE effect, not scale: at matched cell size the oracle returns to 0.9459, within 0.0065 of the original.",
+ "sample": {
+  "n": 1995,
+  "per_system": {
+   "cubic": 285,
+   "trigonal": 285,
+   "hexagonal": 285,
+   "tetragonal": 285,
+   "orthorhombic": 285,
+   "monoclinic": 285,
+   "triclinic": 285
+  },
+  "quarantine_rate": 0.0311,
+  "filters": "MP, 2-4 elements, conventional cell <= 80 atoms, stratified by crystal system",
+  "leakage_audit": {
+   "train": 0,
+   "eval210": 0,
+   "expansion": 0
+  },
+  "train_compositions_excluded": 1198,
+  "quarantined_n": 62,
+  "quarantine_criterion": "flipped OR not neighborhood_stable OR keep_for_training False",
+  "n_clean": 1933,
+  "per_system_after_quarantine": {
+   "cubic": 285,
+   "trigonal": 278,
+   "hexagonal": 279,
+   "tetragonal": 282,
+   "orthorhombic": 283,
+   "monoclinic": 280,
+   "triclinic": 246
+  }
+ },
+ "full_sample": {
+  "oracle": {
+   "k": 1755,
+   "n": 1995,
+   "micro": 0.8797,
+   "errors": 0
+  },
+  "rf_lattice19": {
+   "k": 1735,
+   "n": 1995,
+   "micro": 0.8697
+  },
+  "floor_3feat": {
+   "k": 417,
+   "n": 1995,
+   "micro": 0.209
+  },
+  "note": "SUPERSEDED \u2014 these include 62 structures that should have been quarantined. Retained as data; the clean values in full_sample_CANONICAL_clean are canonical. Largest shift 0.0041."
+ },
+ "size_matched_control": {
+  "cap_atoms": 37,
+  "n": 721,
+  "per_system": 103,
+  "median_atoms": 17.0,
+  "oracle": {
+   "k": 682,
+   "micro": 0.9459
+  },
+  "floor": {
+   "k": 159,
+   "micro": 0.2205
+  },
+  "purpose": "the pre-registration required checking composition before calling anything a scale effect. The 1995 sample has median 38 atoms per cell against the original's 14."
+ },
+ "two_causes_separated": {
+  "oracle": "CELL-SIZE effect. 0.9524 (n=210, median 14 atoms) -> 0.9459 (matched, median 17) -> 0.8797 (full, median 38). More atoms means more projective coincidence and correspondence ambiguity. The identifiability result generalises once cell size is held fixed.",
+  "floor": "NOT a cell-size effect. 0.5286 -> 0.2205 (matched) -> 0.2090 (full). The floor stays near 0.22 at both cell-size regimes, so 0.5286 was a property of the ORIGINAL 210 DRAW rather than of the task.",
+  "deltas": {
+   "floor_210_minus_matched": 0.3081,
+   "floor_210_minus_full": 0.3196,
+   "oracle_210_minus_matched": 0.0065,
+   "oracle_210_minus_full": 0.0727,
+   "note": "differences of stored values, published so the prose has provenance"
+  }
+ },
+ "claim_retired": {
+  "claim": "all 13 zero-shot models fall below a composition-only baseline",
+  "status": "RE-SCOPED to the original 210 sample; no longer a task property",
+  "best_zeroshot": 0.4429,
+  "vs_210_floor": "BELOW (0.5286)",
+  "vs_matched_floor": "ABOVE (0.2205)",
+  "vs_full_floor": "ABOVE (0.2090)",
+  "thesis_unaffected": "the thesis rests on the oracle-to-model gap, which SURVIVES at matched size (0.9459 vs 0.4429), not on the below-floor comparison \u2014 which is why the abstract sentence was written to survive the floor moving"
+ },
+ "mechanism_not_claimed": "why the original 3-feature floor was so high is NOT established. What is established is that 0.5286 does not reproduce on an independently drawn, composition-excluded, identically stratified sample at either cell-size regime.",
+ "not_run": "the tiered MODEL arms on the 500-structure core subset (19,500 calls). Every model number in the package still rests on n=210 and is reported with that sample named.",
+ "full_sample_CANONICAL_clean": {
+  "n": 1933,
+  "oracle": {
+   "k": 1696,
+   "n": 1933,
+   "micro": 0.8774
+  },
+  "floor_3feat": {
+   "k": 397,
+   "n": 1933,
+   "micro": 0.2054
+  },
+  "rf_lattice19": {
+   "k": 1689,
+   "n": 1933,
+   "micro": 0.8738
+  }
+ },
+ "self_defect": {
+  "what": "published 'quarantine rate 0'; the true rate is 3.11%",
+  "cause": "the quarantine test read a top-level tolerance_robust key that the schema nests under 'tolerance', so .get(...,True) defaulted to True for every structure and the filter never fired. The loop's printed 'quarantined 0' was the count of a filter that could not fire.",
+  "cost": "none to the conclusions \u2014 rescoring without the 62 shifts every quantity by at most 0.0041, so S2 still fires. But the pre-registered 10% gate was untested until the audit.",
+  "lesson": "a zero from a gate is only evidence the gate ran. Assert the gate fires on a known-bad case, or read the field path back from the schema before trusting a count of zero."
+ },
+ "spglib_warning_audit": {
+  "warnings_seen": "ssm_get_exact_positions failed",
+  "test": "a silent fallback to the trivial group would show as an excess of P1",
+  "p1_count": 109,
+  "p1_frac_of_triclinic": 0.3825,
+  "distinct_space_groups": 144,
+  "verdict": "CLEAN \u2014 a normal distribution for a triclinic-inclusive draw, not a degenerate one"
+ }
+}

@@ -1,0 +1,2896 @@
+{
+ "n": 210,
+ "records": [
+  {
+   "material_id": "mp-1235466",
+   "truth": "triclinic",
+   "metric": [
+    589.0649999999996,
+    555.849913602507,
+    643.209945931523,
+    84.0,
+    85.0,
+    61.999999999999986
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-2215870",
+   "truth": "triclinic",
+   "metric": [
+    627.5,
+    629.111734067621,
+    561.7260119109131,
+    63.0,
+    85.0,
+    80.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1246840",
+   "truth": "triclinic",
+   "metric": [
+    519.0,
+    637.8401871576773,
+    713.030420890542,
+    74.0,
+    86.00000000000001,
+    45.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1273441",
+   "truth": "triclinic",
+   "metric": [
+    588.5,
+    631.5702928110336,
+    692.3363136440377,
+    90.0,
+    89.0,
+    45.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1215015",
+   "truth": "triclinic",
+   "metric": [
+    664.5,
+    429.0,
+    512.7017538758395,
+    74.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1246507",
+   "truth": "triclinic",
+   "metric": [
+    593.6191180895396,
+    651.3789197766625,
+    600.3683663535764,
+    72.0,
+    74.0,
+    68.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1048072",
+   "truth": "triclinic",
+   "metric": null,
+   "detected": false,
+   "pred": null
+  },
+  {
+   "material_id": "mp-1391233",
+   "truth": "triclinic",
+   "metric": [
+    561.2159862957578,
+    590.3699999999994,
+    547.8446377950211,
+    71.0,
+    59.0,
+    60.000000000000014
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-2225355",
+   "truth": "triclinic",
+   "metric": [
+    621.11,
+    696.3091539496157,
+    772.9601282636168,
+    71.00000000000001,
+    74.0,
+    51.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1345578",
+   "truth": "triclinic",
+   "metric": [
+    582.5,
+    611.6242177713639,
+    596.9936587918123,
+    83.00000000000001,
+    61.0,
+    65.99999999999999
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1046784",
+   "truth": "triclinic",
+   "metric": null,
+   "detected": false,
+   "pred": null
+  },
+  {
+   "material_id": "mp-2231502",
+   "truth": "triclinic",
+   "metric": [
+    587.5,
+    600.2113869920086,
+    558.8545321458575,
+    61.0,
+    60.000000000000014,
+    86.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-673678",
+   "truth": "triclinic",
+   "metric": [
+    645.0637982333594,
+    612.9749999999999,
+    567.5755430559838,
+    55.0,
+    54.999999999999986,
+    45.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1046464",
+   "truth": "triclinic",
+   "metric": [
+    656.024911824602,
+    657.2903725115624,
+    138.0,
+    86.0,
+    86.00000000000001,
+    90.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-733975",
+   "truth": "triclinic",
+   "metric": [
+    549.0,
+    637.0283560202896,
+    603.3438506813993,
+    73.00000000000001,
+    76.0,
+    79.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1046939",
+   "truth": "triclinic",
+   "metric": [
+    683.266444895566,
+    656.196267077851,
+    155.34500000000003,
+    85.0,
+    85.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1275776",
+   "truth": "triclinic",
+   "metric": [
+    569.0,
+    595.5969756072129,
+    729.1220940148,
+    69.00000000000001,
+    71.0,
+    87.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1046323",
+   "truth": "triclinic",
+   "metric": [
+    655.4441705825532,
+    676.756612958759,
+    153.0,
+    87.99999999999999,
+    89.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1206411",
+   "truth": "triclinic",
+   "metric": [
+    653.5,
+    648.7247745344546,
+    630.0197239928484,
+    74.99999999999999,
+    80.0,
+    89.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1247817",
+   "truth": "triclinic",
+   "metric": [
+    647.9559448003364,
+    641.4531410052647,
+    629.7945412046737,
+    66.0,
+    74.0,
+    76.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-2228346",
+   "truth": "triclinic",
+   "metric": [
+    663.0,
+    604.8502821288422,
+    191.5,
+    85.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-2217558",
+   "truth": "triclinic",
+   "metric": [
+    560.0,
+    659.1666168464121,
+    569.1135173744278,
+    63.0,
+    77.00000000000001,
+    65.00000000000001
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1235944",
+   "truth": "triclinic",
+   "metric": [
+    667.7276244710163,
+    614.29,
+    702.353177926132,
+    76.0,
+    45.0,
+    65.00000000000001
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1046128",
+   "truth": "triclinic",
+   "metric": [
+    683.6165886057544,
+    654.2176101281007,
+    171.0,
+    83.99999999999999,
+    85.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1046536",
+   "truth": "triclinic",
+   "metric": [
+    655.1213121379241,
+    683.0370932320059,
+    159.99999999999997,
+    87.0,
+    85.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1245986",
+   "truth": "triclinic",
+   "metric": [
+    610.0323757256313,
+    643.5577052002569,
+    591.0675015976478,
+    75.00000000000001,
+    80.0,
+    65.99999999999999
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1046312",
+   "truth": "triclinic",
+   "metric": [
+    694.06,
+    685.661625702674,
+    175.0,
+    89.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1046501",
+   "truth": "triclinic",
+   "metric": [
+    661.4369962153395,
+    685.1145056409323,
+    161.27500000000003,
+    86.0,
+    85.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-756745",
+   "truth": "triclinic",
+   "metric": [
+    550.0,
+    651.7780577068304,
+    645.7629418319406,
+    90.0,
+    74.0,
+    86.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1102961",
+   "truth": "triclinic",
+   "metric": [
+    571.1549999999997,
+    567.9114909184015,
+    655.9250671266254,
+    78.0,
+    83.0,
+    60.000000000000014
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1237061",
+   "truth": "monoclinic",
+   "metric": [
+    675.5,
+    657.5584411550512,
+    455.76027365346397,
+    87.99999999999999,
+    90.0,
+    19.0
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1232849",
+   "truth": "monoclinic",
+   "metric": null,
+   "detected": false,
+   "pred": null
+  },
+  {
+   "material_id": "mp-1104453",
+   "truth": "monoclinic",
+   "metric": [
+    659.5,
+    607.858006669773,
+    425.9871721944671,
+    53.0,
+    90.0,
+    11.000000000000004
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1214786",
+   "truth": "monoclinic",
+   "metric": [
+    637.5,
+    572.83,
+    595.5464452794888,
+    68.99999999999999,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-6215",
+   "truth": "monoclinic",
+   "metric": [
+    615.0,
+    653.0,
+    515.0360324961209,
+    66.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228753",
+   "truth": "monoclinic",
+   "metric": [
+    692.0,
+    512.0,
+    530.8337272711476,
+    87.99999999999999,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-14561",
+   "truth": "monoclinic",
+   "metric": [
+    674.3999999999996,
+    588.5,
+    623.6927007448307,
+    87.99999999999999,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228427",
+   "truth": "monoclinic",
+   "metric": [
+    646.0,
+    481.0,
+    594.7778362593237,
+    55.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1214797",
+   "truth": "monoclinic",
+   "metric": [
+    648.0,
+    538.9521793066253,
+    540.5,
+    55.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-3751",
+   "truth": "monoclinic",
+   "metric": [
+    667.5199999999995,
+    434.4200000000001,
+    651.1723000450803,
+    17.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1214784",
+   "truth": "monoclinic",
+   "metric": [
+    635.0,
+    562.0,
+    598.0346662960326,
+    68.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1188260",
+   "truth": "monoclinic",
+   "metric": [
+    659.0,
+    597.4681624473482,
+    526.2082352996297,
+    59.0,
+    90.0,
+    21.999999999999993
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1228721",
+   "truth": "monoclinic",
+   "metric": [
+    612.0,
+    689.5,
+    616.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1228728",
+   "truth": "monoclinic",
+   "metric": [
+    610.0,
+    689.5,
+    615.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-754198",
+   "truth": "monoclinic",
+   "metric": [
+    584.855,
+    654.0,
+    379.7855515571446,
+    76.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1079632",
+   "truth": "monoclinic",
+   "metric": [
+    630.0,
+    580.8805068183018,
+    542.5738891091512,
+    55.0,
+    90.0,
+    29.999999999999993
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1078874",
+   "truth": "monoclinic",
+   "metric": [
+    629.5,
+    577.0339696378657,
+    542.877714888805,
+    55.0,
+    90.0,
+    30.000000000000004
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1214987",
+   "truth": "monoclinic",
+   "metric": [
+    663.23,
+    431.305,
+    454.2752038690782,
+    72.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1102943",
+   "truth": "monoclinic",
+   "metric": [
+    645.0,
+    468.5,
+    569.973398136175,
+    62.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-997001",
+   "truth": "monoclinic",
+   "metric": [
+    646.0,
+    510.5,
+    561.8869792094589,
+    72.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228801",
+   "truth": "monoclinic",
+   "metric": [
+    690.1099999999997,
+    555.6147252691578,
+    492.5,
+    87.99999999999999,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228416",
+   "truth": "monoclinic",
+   "metric": [
+    645.0,
+    399.0,
+    566.8928838627423,
+    45.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-567929",
+   "truth": "monoclinic",
+   "metric": null,
+   "detected": false,
+   "pred": null
+  },
+  {
+   "material_id": "mp-1246198",
+   "truth": "monoclinic",
+   "metric": [
+    680.0,
+    640.5,
+    547.4690792642757,
+    15.999999999999998,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1105940",
+   "truth": "monoclinic",
+   "metric": [
+    674.0,
+    415.0,
+    470.28478937827737,
+    85.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1104047",
+   "truth": "monoclinic",
+   "metric": [
+    682.5,
+    428.5,
+    405.7921337569107,
+    72.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1214794",
+   "truth": "monoclinic",
+   "metric": [
+    634.5,
+    563.89,
+    595.225201143195,
+    68.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1104804",
+   "truth": "monoclinic",
+   "metric": [
+    664.5,
+    602.8429056088941,
+    430.12441478765356,
+    53.0,
+    90.0,
+    14.999999999999996
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-1232615",
+   "truth": "monoclinic",
+   "metric": [
+    651.0,
+    431.0,
+    462.46071297994774,
+    74.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-752827",
+   "truth": "monoclinic",
+   "metric": [
+    649.5,
+    441.0,
+    502.6568308861854,
+    66.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1105758",
+   "truth": "orthorhombic",
+   "metric": [
+    682.5,
+    628.0,
+    618.1499999999996,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1539038",
+   "truth": "orthorhombic",
+   "metric": [
+    681.0,
+    699.0,
+    601.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1178550",
+   "truth": "orthorhombic",
+   "metric": [
+    688.5,
+    680.9400000000005,
+    506.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1079890",
+   "truth": "orthorhombic",
+   "metric": [
+    675.0,
+    546.5,
+    563.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1258701",
+   "truth": "orthorhombic",
+   "metric": [
+    693.0,
+    460.5,
+    393.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-10910",
+   "truth": "orthorhombic",
+   "metric": [
+    667.0,
+    532.0,
+    509.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-560067",
+   "truth": "orthorhombic",
+   "metric": [
+    694.0,
+    523.5,
+    514.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-16529",
+   "truth": "orthorhombic",
+   "metric": [
+    680.5,
+    640.315,
+    546.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1096576",
+   "truth": "orthorhombic",
+   "metric": [
+    724.0,
+    722.0,
+    522.5999999999999,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1096644",
+   "truth": "orthorhombic",
+   "metric": [
+    724.0,
+    717.5,
+    472.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1093553",
+   "truth": "orthorhombic",
+   "metric": [
+    727.0,
+    701.5,
+    498.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1245824",
+   "truth": "orthorhombic",
+   "metric": [
+    682.5,
+    533.0,
+    494.68000000000274,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1093903",
+   "truth": "orthorhombic",
+   "metric": [
+    727.0,
+    683.0,
+    489.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1097386",
+   "truth": "orthorhombic",
+   "metric": [
+    727.5,
+    684.7649999999999,
+    481.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1097410",
+   "truth": "orthorhombic",
+   "metric": [
+    727.5,
+    685.5,
+    468.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1093720",
+   "truth": "orthorhombic",
+   "metric": [
+    726.5,
+    695.0,
+    497.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-29674",
+   "truth": "orthorhombic",
+   "metric": null,
+   "detected": false,
+   "pred": null
+  },
+  {
+   "material_id": "mp-1183276",
+   "truth": "orthorhombic",
+   "metric": [
+    680.4749999999995,
+    694.3499999999967,
+    603.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1095763",
+   "truth": "orthorhombic",
+   "metric": [
+    727.0,
+    693.5,
+    491.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1097597",
+   "truth": "orthorhombic",
+   "metric": [
+    726.5,
+    699.0,
+    498.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1097296",
+   "truth": "orthorhombic",
+   "metric": [
+    727.5,
+    690.0,
+    491.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1096466",
+   "truth": "orthorhombic",
+   "metric": [
+    726.0,
+    717.0,
+    513.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1095930",
+   "truth": "orthorhombic",
+   "metric": [
+    726.5,
+    695.265,
+    496.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1182863",
+   "truth": "orthorhombic",
+   "metric": [
+    688.5,
+    683.0,
+    567.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1096308",
+   "truth": "orthorhombic",
+   "metric": [
+    727.0,
+    712.4549999999999,
+    509.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1097427",
+   "truth": "orthorhombic",
+   "metric": [
+    727.5,
+    657.0,
+    455.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-504676",
+   "truth": "orthorhombic",
+   "metric": [
+    683.5,
+    669.0399999999995,
+    593.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1248716",
+   "truth": "orthorhombic",
+   "metric": [
+    727.5,
+    617.2849999999999,
+    490.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1096345",
+   "truth": "orthorhombic",
+   "metric": [
+    726.5,
+    707.5,
+    504.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-1093958",
+   "truth": "orthorhombic",
+   "metric": [
+    726.5,
+    697.5,
+    497.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-33615",
+   "truth": "tetragonal",
+   "metric": [
+    680.9850000000006,
+    680.0,
+    680.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1182875",
+   "truth": "tetragonal",
+   "metric": [
+    701.0,
+    700.5,
+    620.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1228935",
+   "truth": "tetragonal",
+   "metric": [
+    677.5,
+    674.0,
+    394.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-22412",
+   "truth": "tetragonal",
+   "metric": [
+    644.3850000000002,
+    643.885,
+    264.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1214759",
+   "truth": "tetragonal",
+   "metric": [
+    670.3600000000002,
+    670.3600000000024,
+    289.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-867347",
+   "truth": "tetragonal",
+   "metric": [
+    684.525,
+    685.0249999999996,
+    360.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1068010",
+   "truth": "tetragonal",
+   "metric": [
+    672.0899999999992,
+    671.5050000000001,
+    234.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-5606",
+   "truth": "tetragonal",
+   "metric": [
+    719.5,
+    719.0,
+    426.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1183257",
+   "truth": "tetragonal",
+   "metric": [
+    698.47,
+    697.5,
+    366.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1228890",
+   "truth": "tetragonal",
+   "metric": [
+    719.0,
+    718.5,
+    527.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1069712",
+   "truth": "tetragonal",
+   "metric": [
+    674.88,
+    674.8800000000001,
+    312.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-7909",
+   "truth": "tetragonal",
+   "metric": [
+    681.5,
+    681.9449999999997,
+    384.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-557233",
+   "truth": "tetragonal",
+   "metric": [
+    670.5,
+    670.5,
+    299.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1246276",
+   "truth": "tetragonal",
+   "metric": [
+    668.5,
+    667.5,
+    467.3000000000002,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-7906",
+   "truth": "tetragonal",
+   "metric": [
+    683.0,
+    682.5,
+    400.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-10909",
+   "truth": "tetragonal",
+   "metric": [
+    703.0,
+    702.0,
+    244.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-570256",
+   "truth": "tetragonal",
+   "metric": [
+    721.5,
+    704.0,
+    704.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "orthorhombic"
+  },
+  {
+   "material_id": "mp-7910",
+   "truth": "tetragonal",
+   "metric": [
+    683.5,
+    683.2550000000001,
+    383.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-7188",
+   "truth": "tetragonal",
+   "metric": [
+    698.5,
+    697.5,
+    289.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1214765",
+   "truth": "tetragonal",
+   "metric": [
+    688.665,
+    688.165,
+    295.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-4109",
+   "truth": "tetragonal",
+   "metric": [
+    657.8799999999998,
+    657.8699999999999,
+    254.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1214823",
+   "truth": "tetragonal",
+   "metric": [
+    725.5,
+    725.0,
+    574.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1214750",
+   "truth": "tetragonal",
+   "metric": [
+    662.22,
+    662.2200000000003,
+    293.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1228817",
+   "truth": "tetragonal",
+   "metric": [
+    696.5,
+    695.5,
+    304.1700000000001,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1189716",
+   "truth": "tetragonal",
+   "metric": [
+    696.0,
+    696.0,
+    586.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-29816",
+   "truth": "tetragonal",
+   "metric": [
+    669.5,
+    669.5,
+    516.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1228926",
+   "truth": "tetragonal",
+   "metric": [
+    675.1049999999996,
+    678.5,
+    390.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-1228809",
+   "truth": "tetragonal",
+   "metric": [
+    698.9449999999997,
+    698.5,
+    301.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-3038",
+   "truth": "tetragonal",
+   "metric": [
+    682.0,
+    682.0,
+    394.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "tetragonal"
+  },
+  {
+   "material_id": "mp-38417",
+   "truth": "tetragonal",
+   "metric": [
+    678.5,
+    678.0,
+    679.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-8279",
+   "truth": "trigonal",
+   "metric": [
+    615.1302739945638,
+    600.1302739945638,
+    568.92,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1214834",
+   "truth": "trigonal",
+   "metric": [
+    608.2205185320837,
+    608.5755185320837,
+    567.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228698",
+   "truth": "trigonal",
+   "metric": [
+    595.9300166851624,
+    599.8810153898254,
+    335.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-13369",
+   "truth": "trigonal",
+   "metric": [
+    509.6396765691039,
+    546.6147110995564,
+    606.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228150",
+   "truth": "trigonal",
+   "metric": [
+    600.2599324574297,
+    599.2753584037847,
+    170.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-643047",
+   "truth": "trigonal",
+   "metric": [
+    591.4371993857744,
+    562.5971993857743,
+    544.7249999999995,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1245583",
+   "truth": "trigonal",
+   "metric": null,
+   "detected": false,
+   "pred": null
+  },
+  {
+   "material_id": "mp-18733",
+   "truth": "trigonal",
+   "metric": [
+    611.2592579582451,
+    579.6792579582452,
+    538.0799999999999,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228354",
+   "truth": "trigonal",
+   "metric": [
+    585.5348422488471,
+    572.0860204454345,
+    473.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228085",
+   "truth": "trigonal",
+   "metric": [
+    597.7927210257267,
+    598.0541003577506,
+    215.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1095623",
+   "truth": "trigonal",
+   "metric": [
+    600.1490393760942,
+    567.5674909112817,
+    525.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228866",
+   "truth": "trigonal",
+   "metric": [
+    587.1163645103732,
+    587.7563509461097,
+    170.98499999999967,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-12832",
+   "truth": "trigonal",
+   "metric": [
+    509.57414499942143,
+    549.559642963892,
+    606.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1214580",
+   "truth": "trigonal",
+   "metric": [
+    594.8574927617631,
+    549.8591146657666,
+    518.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1246182",
+   "truth": "trigonal",
+   "metric": [
+    623.9956906885119,
+    626.4956906885118,
+    512.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228699",
+   "truth": "trigonal",
+   "metric": [
+    596.5151239110537,
+    601.4481366129459,
+    337.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228074",
+   "truth": "trigonal",
+   "metric": [
+    594.4858681484666,
+    594.1971438891326,
+    223.76000000000002,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228925",
+   "truth": "trigonal",
+   "metric": [
+    599.6789906040547,
+    600.8739906040547,
+    191.84999999999974,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-554669",
+   "truth": "trigonal",
+   "metric": [
+    507.6168930564161,
+    548.6168930564161,
+    608.435,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1070275",
+   "truth": "trigonal",
+   "metric": [
+    596.8306205208778,
+    543.3414056989989,
+    528.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228180",
+   "truth": "trigonal",
+   "metric": [
+    597.0229334455397,
+    597.3417587019976,
+    170.50000000000003,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-2226142",
+   "truth": "trigonal",
+   "metric": [
+    569.6142513000722,
+    544.6545292613158,
+    502.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228995",
+   "truth": "trigonal",
+   "metric": null,
+   "detected": false,
+   "pred": null
+  },
+  {
+   "material_id": "mp-1228197",
+   "truth": "trigonal",
+   "metric": [
+    518.9160719931958,
+    553.9013900363364,
+    598.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-8150",
+   "truth": "trigonal",
+   "metric": [
+    610.4809303032813,
+    603.9809303032813,
+    566.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228643",
+   "truth": "trigonal",
+   "metric": [
+    519.2541424716169,
+    553.2796671352088,
+    600.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-2228574",
+   "truth": "trigonal",
+   "metric": [
+    594.1359730944708,
+    595.1083828858883,
+    206.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-8281",
+   "truth": "trigonal",
+   "metric": [
+    611.1056707139928,
+    600.1056707139928,
+    568.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228461",
+   "truth": "trigonal",
+   "metric": [
+    597.0498733262546,
+    599.1245309303091,
+    227.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1214828",
+   "truth": "trigonal",
+   "metric": [
+    616.3474803042284,
+    599.3474803042284,
+    563.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-19213",
+   "truth": "hexagonal",
+   "metric": [
+    594.2860241463973,
+    595.2810241463974,
+    191.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183380",
+   "truth": "hexagonal",
+   "metric": [
+    578.2903521750172,
+    587.7903521750172,
+    454.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-985290",
+   "truth": "hexagonal",
+   "metric": [
+    625.7311277377551,
+    614.6226938971996,
+    584.22,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183261",
+   "truth": "hexagonal",
+   "metric": [
+    576.2044473798995,
+    586.2044473798995,
+    466.9200000000001,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1228634",
+   "truth": "hexagonal",
+   "metric": [
+    584.8009746970347,
+    616.5408133955774,
+    385.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-17535",
+   "truth": "hexagonal",
+   "metric": [
+    581.112379059186,
+    568.0323790591868,
+    363.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-2294",
+   "truth": "hexagonal",
+   "metric": [
+    607.5252684431196,
+    610.5252684431197,
+    443.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1029626",
+   "truth": "hexagonal",
+   "metric": [
+    579.462362537713,
+    576.8612388460974,
+    397.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183229",
+   "truth": "hexagonal",
+   "metric": [
+    622.7140709493365,
+    598.0198015560566,
+    574.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183051",
+   "truth": "hexagonal",
+   "metric": [
+    583.7796105318382,
+    589.7796105318382,
+    464.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-13854",
+   "truth": "hexagonal",
+   "metric": [
+    616.6720697726183,
+    621.6720697726182,
+    227.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-754157",
+   "truth": "hexagonal",
+   "metric": [
+    593.1867035197027,
+    594.7127459407959,
+    272.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-9324",
+   "truth": "hexagonal",
+   "metric": [
+    581.7406826756923,
+    575.0621319274328,
+    389.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-2217621",
+   "truth": "hexagonal",
+   "metric": [
+    571.7068732633852,
+    570.8704140819145,
+    581.1750000000002,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183238",
+   "truth": "hexagonal",
+   "metric": [
+    590.3758506353228,
+    590.9499089634361,
+    473.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183252",
+   "truth": "hexagonal",
+   "metric": [
+    628.0679357254269,
+    635.0679357254269,
+    535.585,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183049",
+   "truth": "hexagonal",
+   "metric": [
+    625.4349828984623,
+    632.1514676058961,
+    590.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-862289",
+   "truth": "hexagonal",
+   "metric": [
+    575.6818359572105,
+    587.6818359572105,
+    412.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1245965",
+   "truth": "hexagonal",
+   "metric": [
+    578.7670035538645,
+    575.5930045384146,
+    402.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183563",
+   "truth": "hexagonal",
+   "metric": [
+    578.4700189650495,
+    587.9700189650493,
+    461.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183263",
+   "truth": "hexagonal",
+   "metric": [
+    578.0929359733443,
+    587.0929359733443,
+    426.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1026813",
+   "truth": "hexagonal",
+   "metric": [
+    581.8272536428285,
+    550.6966410505413,
+    548.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-4887",
+   "truth": "hexagonal",
+   "metric": [
+    611.3001313129791,
+    612.303451203041,
+    290.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-11772",
+   "truth": "hexagonal",
+   "metric": [
+    580.6045103935252,
+    569.9725921563231,
+    271.59500000000025,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183188",
+   "truth": "hexagonal",
+   "metric": [
+    579.0494317172371,
+    585.0494317172371,
+    486.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1183231",
+   "truth": "hexagonal",
+   "metric": [
+    581.4586226157166,
+    589.4586226157166,
+    440.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-997617",
+   "truth": "hexagonal",
+   "metric": [
+    624.5709330125742,
+    632.5709330125741,
+    594.5,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-11816",
+   "truth": "hexagonal",
+   "metric": [
+    607.0731587522931,
+    605.5731587522931,
+    462.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1188147",
+   "truth": "hexagonal",
+   "metric": [
+    515.1772755342582,
+    565.1772755342582,
+    604.0,
+    90.0,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "monoclinic"
+  },
+  {
+   "material_id": "mp-1246088",
+   "truth": "hexagonal",
+   "metric": [
+    584.5626883457554,
+    573.0412091233364,
+    452.4435214512216,
+    21.000000000000007,
+    90.0,
+    59.99999999999999
+   ],
+   "detected": true,
+   "pred": "triclinic"
+  },
+  {
+   "material_id": "mp-862873",
+   "truth": "cubic",
+   "metric": [
+    664.675,
+    660.3449999999993,
+    665.1750000000002,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-867321",
+   "truth": "cubic",
+   "metric": [
+    659.5,
+    659.0,
+    659.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183192",
+   "truth": "cubic",
+   "metric": [
+    683.0,
+    678.5,
+    682.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183136",
+   "truth": "cubic",
+   "metric": [
+    679.8099999999995,
+    676.6800000000001,
+    678.87,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1182878",
+   "truth": "cubic",
+   "metric": [
+    721.5,
+    719.5,
+    721.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183140",
+   "truth": "cubic",
+   "metric": [
+    720.5,
+    720.5,
+    720.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183135",
+   "truth": "cubic",
+   "metric": [
+    669.0,
+    669.0,
+    669.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-867775",
+   "truth": "cubic",
+   "metric": [
+    669.0,
+    669.0,
+    668.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-862695",
+   "truth": "cubic",
+   "metric": [
+    669.0,
+    669.0,
+    669.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-756317",
+   "truth": "cubic",
+   "metric": [
+    676.0,
+    678.0,
+    676.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-864644",
+   "truth": "cubic",
+   "metric": [
+    671.5,
+    670.5,
+    672.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-985443",
+   "truth": "cubic",
+   "metric": [
+    723.0,
+    723.5,
+    723.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183199",
+   "truth": "cubic",
+   "metric": [
+    664.0,
+    664.0,
+    664.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-865989",
+   "truth": "cubic",
+   "metric": [
+    670.0,
+    670.0,
+    670.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183190",
+   "truth": "cubic",
+   "metric": [
+    658.0,
+    658.0,
+    658.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183071",
+   "truth": "cubic",
+   "metric": [
+    685.5649999999996,
+    682.5,
+    685.065,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-631567",
+   "truth": "cubic",
+   "metric": [
+    671.4049999999997,
+    671.0,
+    671.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-866031",
+   "truth": "cubic",
+   "metric": [
+    669.5,
+    669.0,
+    669.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1885",
+   "truth": "cubic",
+   "metric": [
+    725.0,
+    724.5,
+    724.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183133",
+   "truth": "cubic",
+   "metric": [
+    719.1399999999999,
+    717.0,
+    719.14,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183067",
+   "truth": "cubic",
+   "metric": [
+    681.0,
+    681.0,
+    681.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-866203",
+   "truth": "cubic",
+   "metric": [
+    681.44,
+    677.2049999999995,
+    681.8650000000002,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183118",
+   "truth": "cubic",
+   "metric": [
+    691.0,
+    689.5,
+    690.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183160",
+   "truth": "cubic",
+   "metric": [
+    720.7599999999998,
+    722.0350000000001,
+    721.2750000000001,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183060",
+   "truth": "cubic",
+   "metric": [
+    665.0,
+    664.5450000000001,
+    665.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-867338",
+   "truth": "cubic",
+   "metric": [
+    664.0,
+    663.0,
+    663.5,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-867125",
+   "truth": "cubic",
+   "metric": [
+    669.0,
+    669.0,
+    669.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183121",
+   "truth": "cubic",
+   "metric": [
+    663.0,
+    663.0,
+    663.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-1183110",
+   "truth": "cubic",
+   "metric": [
+    724.0,
+    723.0,
+    723.0,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  },
+  {
+   "material_id": "mp-866225",
+   "truth": "cubic",
+   "metric": [
+    684.0,
+    681.665,
+    683.665,
+    90.0,
+    90.0,
+    90.0
+   ],
+   "detected": true,
+   "pred": "cubic"
+  }
+ ]
+}

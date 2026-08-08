@@ -1,0 +1,161 @@
+{
+ "stage": "CP35 stratified frontier expansion (directive Phase D)",
+ "branch": "D1 FIRES \u2014 3 of 3 arms widen on the ambiguous stratum on BOTH samples. This CONTRADICTS the expectation recorded in the pre-registration, which said 'I expect D3'.",
+ "protocol": {
+  "models": [
+   "anthropic/claude-opus-4.8",
+   "google/gemini-3.6-flash",
+   "x-ai/grok-4.5"
+  ],
+  "sample": "expansion eval n=210 (original rows from CP14)",
+  "K": 3,
+  "temperature": 0.7,
+  "unparseable": 0,
+  "api_errors": 0,
+  "prompt": "CP14 verbatim"
+ },
+ "partition": {
+  "predicate": "CP28 canonical, verified this session",
+  "original": "140/70",
+  "expansion": "141/69",
+  "composition_reproduces_record": true
+ },
+ "rf_control": {
+  "spec": "frozen classifier_specifications.json, INPUT cell not conventionalised",
+  "original": 0.8952,
+  "expansion": 0.881,
+  "reproduces_canonical_188": true,
+  "drops_across_strata": {
+   "original": {
+    "sufficient": 0.9214,
+    "ambiguous": 0.8429
+   },
+   "expansion": {
+    "sufficient": 0.9433,
+    "ambiguous": 0.7536
+   }
+  }
+ },
+ "primary_contrast_pixel_minus_rf": {
+  "anthropic/claude-opus-4.8": {
+   "original": {
+    "sufficient": {
+     "n": 140,
+     "pixel": 0.6214,
+     "rf": 0.9214,
+     "gap": -0.3
+    },
+    "ambiguous": {
+     "n": 70,
+     "pixel": 0.5,
+     "rf": 0.8429,
+     "gap": -0.3429
+    },
+    "fisher_p_pixel_between_strata": 0.10401179183398723,
+    "gap_widens_on_ambiguous": true
+   },
+   "expansion": {
+    "sufficient": {
+     "n": 141,
+     "pixel": 0.6738,
+     "rf": 0.9433,
+     "gap": -0.2695
+    },
+    "ambiguous": {
+     "n": 69,
+     "pixel": 0.3913,
+     "rf": 0.7536,
+     "gap": -0.3623
+    },
+    "fisher_p_pixel_between_strata": 0.00017330085120444716,
+    "gap_widens_on_ambiguous": true
+   }
+  },
+  "google/gemini-3.6-flash": {
+   "original": {
+    "sufficient": {
+     "n": 140,
+     "pixel": 0.8357,
+     "rf": 0.9214,
+     "gap": -0.0857
+    },
+    "ambiguous": {
+     "n": 70,
+     "pixel": 0.5286,
+     "rf": 0.8429,
+     "gap": -0.3143
+    },
+    "fisher_p_pixel_between_strata": 4.950559732684167e-06,
+    "gap_widens_on_ambiguous": true
+   },
+   "expansion": {
+    "sufficient": {
+     "n": 141,
+     "pixel": 0.8582,
+     "rf": 0.9433,
+     "gap": -0.0851
+    },
+    "ambiguous": {
+     "n": 69,
+     "pixel": 0.4928,
+     "rf": 0.7536,
+     "gap": -0.2609
+    },
+    "fisher_p_pixel_between_strata": 4.001476858024928e-08,
+    "gap_widens_on_ambiguous": true
+   }
+  },
+  "x-ai/grok-4.5": {
+   "original": {
+    "sufficient": {
+     "n": 140,
+     "pixel": 0.6643,
+     "rf": 0.9214,
+     "gap": -0.2571
+    },
+    "ambiguous": {
+     "n": 70,
+     "pixel": 0.5143,
+     "rf": 0.8429,
+     "gap": -0.3286
+    },
+    "fisher_p_pixel_between_strata": 0.050152206538541494,
+    "gap_widens_on_ambiguous": true
+   },
+   "expansion": {
+    "sufficient": {
+     "n": 141,
+     "pixel": 0.7163,
+     "rf": 0.9433,
+     "gap": -0.227
+    },
+    "ambiguous": {
+     "n": 69,
+     "pixel": 0.3333,
+     "rf": 0.7536,
+     "gap": -0.4203
+    },
+    "fisher_p_pixel_between_strata": 2.310354721448291e-07,
+    "gap_widens_on_ambiguous": true
+   }
+  }
+ },
+ "n_arms_widening_both_samples": 3,
+ "why_not_CP15": "CP15 compared raw accuracy across strata, which moves with intrinsic difficulty; the RF control drops too. The pixel-minus-RF contrast is what the prereg named primary and what replicates. CP15's withdrawal stands \u2014 this is a weaker, controlled claim.",
+ "confound_stated": {
+  "ambiguous_is_largely_one_degeneracy": {
+   "original_hex_or_trig": 60,
+   "original_n": 70,
+   "expansion_hex_or_trig": 58,
+   "expansion_n": 69
+  },
+  "consequence": "'cue-ambiguous' and 'hexagonal/trigonal confusion' are close to the same partition here; both descriptions are reported"
+ },
+ "de_concentration_check": {
+  "original_residual_n": 10,
+  "expansion_residual_n": 12,
+  "gap_persists": true,
+  "reading": "SUGGESTIVE ONLY. At n=10 and n=12 a single structure moves the value 8-10 points, so this is not evidence the effect is independent of the hex/trig degeneracy. Reported because the pre-registration required it."
+ },
+ "not_established": "any mechanism, and any separation of the effect from the hexagonal/trigonal confusion"
+}

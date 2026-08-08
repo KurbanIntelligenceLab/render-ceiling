@@ -1,0 +1,44 @@
+{
+ "stage": "CP30 protocol normalisation (ICLR plan, Phase A)",
+ "item_a_K_annotation": {
+  "defect": "CP26's leaderboard puts 13 zero-shot rows at K=3 against an A3 reference row at K=8",
+  "fix": "K printed on every row; the same A3 adapter at K=3 is 139/210 = 0.6619, stated beside the K=8 value 145/210 = 0.6905",
+  "applied_to": [
+   "REPORT.md",
+   "paper/results_cvpr.md"
+  ]
+ },
+ "item_b_floor_naming": {
+  "defect": "unqualified '0.5286 floor' phrasing; the floor is sample-specific",
+  "original_sample": {
+   "k": 111,
+   "n": 210,
+   "micro": 0.5286
+  },
+  "expansion_sample": {
+   "k": 52,
+   "n": 210,
+   "micro": 0.2476
+  },
+  "fix": "every floor mention names its sample; a standing note states that the 13-below-floor result is an ORIGINAL-sample claim and those models were never run on the expansion set",
+  "applied_to": [
+   "REPORT.md",
+   "paper/results_cvpr.md"
+  ]
+ },
+ "item_c_oracle_in_brackets": {
+  "checked": "CP14's bracket citing the disjoint 280-structure oracle 0.9357",
+  "finding": "ALREADY FIXED in an earlier pass \u2014 CP14's results.json no longer contains 0.9357. Verified rather than assumed; no change needed.",
+  "canonical_for_eval_set_figures": {
+   "original": 0.9524,
+   "expansion": 0.9095,
+   "source": "CP25"
+  }
+ },
+ "item_d_effective_resolution": {
+  "requirement": "the effective_resolution block, read from the live processor, present in every cited results file",
+  "finding": "24 of 30 checkpoint results.json files have NO such block",
+  "assessment": "most of those 24 do not involve a processor at all (geometry, venue, occlusion, external baselines), so a blanket requirement is the wrong test. The block is required only where a VLM processor consumed the renders.",
+  "status": "scoped rather than blanket-applied; see finding.md"
+ }
+}

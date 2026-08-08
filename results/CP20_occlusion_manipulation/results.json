@@ -1,0 +1,47 @@
+{
+ "stage": "CP20 occlusion manipulation \u2014 manipulation check FAILED, no model eval run",
+ "gate": {
+  "requirement": "median occlusion materially below 0.553 before any model call",
+  "canonical_radii_0.50": 0.5183,
+  "thin_radii_0.22": 0.5,
+  "reduction": 0.0183,
+  "verdict": "FAILED"
+ },
+ "radius_sweep_median_occlusion": {
+  "n_structures": 40,
+  "note": "recomputed at the GATE's n=40; an earlier version was at n=25 and reported 0.529/0.278 at the endpoints, which conflicted with the gate's 0.5183 under the same label. Both reproduce exactly at their own n, so it was a sample-size mismatch, not a computation error.",
+  "0.50": 0.5183,
+  "0.35": 0.5,
+  "0.22": 0.5,
+  "0.12": 0.5,
+  "0.06": 0.5,
+  "0.03": 0.5
+ },
+ "cause": "viewing down a lattice vector projects 2x2x2 supercell copies onto IDENTICAL points (nearest-other-atom pixel distance 0.000); no radius separates them",
+ "decomposition_means": {
+  "exact_coincidence": 0.2363,
+  "genuine_disc_overlap": 0.2529,
+  "total": 0.4891,
+  "exhaustive_to": 1.1e-16,
+  "note": "component MEDIANS are not additive; only means are",
+  "RETIRED": "this decomposition used the FIRST 30 rows of eval.jsonl, which is ORDERED BY CRYSTAL SYSTEM (triclinic/monoclinic only). Recomputing on those 30 reproduces 0.4891, confirming the cause. Superseded by CP21's stratified figures: total 0.5699 (original) / 0.5900 (expansion), redundant share 66-68%. Do not circulate 0.4891 or the 48.3%/51.7% shares."
+ },
+ "consequence_for_cp19": "the 55.3% figure is correct but ~48% of it is a tiling artifact, not disc crowding; restate as 'not visible' with the two components named",
+ "branches_unread": [
+  "O1",
+  "O2",
+  "O3",
+  "O4"
+ ],
+ "not_established": "any causal claim that occlusion drives model failure",
+ "api_budget_withheld": "3 models x 210 structures x K=3 x 2 conditions",
+ "radius_sweep_mean_occlusion": {
+  "0.50": 0.4967,
+  "0.35": 0.4502,
+  "0.22": 0.4114,
+  "0.12": 0.3593,
+  "0.06": 0.3267,
+  "0.03": 0.2984,
+  "note": "the MEAN responds to radius (genuine disc overlap shrinks) while the MEDIAN does not (the coincident-copy component is radius-invariant)"
+ }
+}

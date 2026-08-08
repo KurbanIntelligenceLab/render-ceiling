@@ -1,0 +1,262 @@
+{
+  "@context": {
+    "@language": "en",
+    "@vocab": "https://schema.org/",
+    "cr": "http://mlcommons.org/croissant/",
+    "sc": "https://schema.org/",
+    "dct": "http://purl.org/dc/terms/",
+    "data": {
+      "@id": "cr:data",
+      "@type": "@json"
+    },
+    "dataType": {
+      "@id": "cr:dataType",
+      "@type": "@vocab"
+    },
+    "field": "cr:field",
+    "fileObject": "cr:fileObject",
+    "fileSet": "cr:fileSet",
+    "format": "cr:format",
+    "includes": "cr:includes",
+    "isLiveDataset": "cr:isLiveDataset",
+    "jsonPath": "cr:jsonPath",
+    "key": "cr:key",
+    "md5": "cr:md5",
+    "parentField": "cr:parentField",
+    "path": "cr:path",
+    "recordSet": "cr:recordSet",
+    "references": "cr:references",
+    "regex": "cr:regex",
+    "repeated": "cr:repeated",
+    "replace": "cr:replace",
+    "sha256": "sc:sha256",
+    "source": "cr:source",
+    "subField": "cr:subField",
+    "transform": "cr:transform",
+    "citeAs": "cr:citeAs",
+    "column": "cr:column",
+    "conformsTo": "dct:conformsTo",
+    "examples": {
+      "@id": "cr:examples",
+      "@type": "@json"
+    },
+    "extract": "cr:extract",
+    "fileProperty": "cr:fileProperty",
+    "rai": "http://mlcommons.org/croissant/RAI/",
+    "separator": "cr:separator",
+    "equivalentProperty": "cr:equivalentProperty",
+    "samplingRate": "cr:samplingRate"
+  },
+  "@type": "sc:Dataset",
+  "conformsTo": "http://mlcommons.org/croissant/1.1",
+  "name": "CoCr-Symmetry",
+  "description": "A benchmark for reading crystal symmetry from multi-view ball-and-stick renders. Each record pairs five orthographic renders of a conventional cell with a deterministic spglib symmetry label at three hierarchy levels (crystal system, point group, space group). Evaluation uses a composition-exclusion split: no chemical composition appears in both train and eval. Ships with a model-free geometric oracle that measures the information the renders afford, an orbit decomposition of occlusion into redundant and informative components, and per-structure prediction vectors for every reported model row.",
+  "license": "https://creativecommons.org/licenses/by/4.0/",
+  "url": "https://doi.org/PLACEHOLDER-ON-DEPOSIT",
+  "citeAs": "@misc{cocr2026, title={CoCr-Symmetry}, note={anonymised for review}, year={2026}}",
+  "version": "1.0.0",
+  "datePublished": "2026-08-06",
+  "isLiveDataset": false,
+  "keywords": [
+    "crystallography",
+    "vision-language models",
+    "symmetry classification",
+    "benchmark",
+    "space group",
+    "identifiability ceiling"
+  ],
+  "distribution": [
+    {
+      "@type": "cr:FileObject",
+      "@id": "eval-original",
+      "name": "eval_original.jsonl",
+      "description": "210 evaluation records, original composition-exclusion split",
+      "contentUrl": "data/e3/eval.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "26e0afcfeec1fb296760428e87fdca8fdc43392f2d79bb7232e31f12a890c0ef",
+      "contentSize": "152481"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "train-original",
+      "name": "train_original.jsonl",
+      "description": "1610 training records, disjoint in composition from eval",
+      "contentUrl": "data/e3/train.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "a2f227d856179f2169e1ed1f157cb145ff0babb93d3309b441e975889de6365c",
+      "contentSize": "1173362"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "eval-expansion",
+      "name": "eval_expansion.jsonl",
+      "description": "210 independently drawn evaluation records used for replication",
+      "contentUrl": "data/e3x/eval.jsonl",
+      "encodingFormat": "application/jsonlines",
+      "sha256": "55dff185964e893dd9040f8f811ecb501e3c8e0cc0f8abd6c57c2ead1b31a9ed",
+      "contentSize": "153232"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "structures-original",
+      "name": "structures_original.json",
+      "description": "CIF text per material_id, the input to the render pipeline and the oracle",
+      "contentUrl": "data/e3/structures.json",
+      "encodingFormat": "application/json",
+      "sha256": "79cf752062983d7da1b9a1ac8fba8fdcceb5e34ad38f01fb870a93418fde42f4",
+      "contentSize": "2352415"
+    },
+    {
+      "@type": "cr:FileObject",
+      "@id": "structures-expansion",
+      "name": "structures_expansion.json",
+      "description": "CIF text per material_id for the expansion split",
+      "contentUrl": "data/e3x/structures.json",
+      "encodingFormat": "application/json",
+      "sha256": "aedf82809a07ca8b51e19cd4ddee119a2d225f618037678eff5345716cefabf3",
+      "contentSize": "354955"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "renders-original",
+      "name": "renders_original",
+      "description": "1050 PNG renders, five orthographic views per structure (axis_a, axis_b, axis_c, body_diagonal, oblique2) at 768 px",
+      "containedIn": {
+        "@id": "eval-original"
+      },
+      "encodingFormat": "image/png",
+      "includes": "data/e3/renders/eval/*.png"
+    },
+    {
+      "@type": "cr:FileSet",
+      "@id": "renders-expansion",
+      "name": "renders_expansion",
+      "description": "1050 PNG renders for the expansion split, identical camera set",
+      "containedIn": {
+        "@id": "eval-expansion"
+      },
+      "encodingFormat": "image/png",
+      "includes": "data/e3x/renders/eval/*.png"
+    }
+  ],
+  "recordSet": [
+    {
+      "@type": "cr:RecordSet",
+      "@id": "eval",
+      "name": "eval",
+      "description": "One record per evaluated structure.",
+      "field": [
+        {
+          "@type": "cr:Field",
+          "@id": "eval/material_id",
+          "name": "material_id",
+          "dataType": "sc:Text",
+          "description": "source-database identifier; the join key for renders and predictions",
+          "source": {
+            "fileObject": {
+              "@id": "eval-original"
+            },
+            "extract": {
+              "column": "material_id"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "eval/crystal_system",
+          "name": "crystal_system",
+          "dataType": "sc:Text",
+          "description": "deterministic spglib label, one of seven; the primary scored target",
+          "source": {
+            "fileObject": {
+              "@id": "eval-original"
+            },
+            "extract": {
+              "column": "crystal_system"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "eval/elements",
+          "name": "elements",
+          "dataType": "sc:Text",
+          "repeated": true,
+          "description": "element symbols present; used by the composition-exclusion split",
+          "source": {
+            "fileObject": {
+              "@id": "eval-original"
+            },
+            "extract": {
+              "column": "elements"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "eval/images",
+          "name": "images",
+          "dataType": "sc:ImageObject",
+          "repeated": true,
+          "description": "five render paths in the frozen camera order",
+          "source": {
+            "fileObject": {
+              "@id": "eval-original"
+            },
+            "extract": {
+              "column": "images"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "eval/question",
+          "name": "question",
+          "dataType": "sc:Text",
+          "description": "the VERBATIM frozen prompt string; the no-image control removes only the image blocks",
+          "source": {
+            "fileObject": {
+              "@id": "eval-original"
+            },
+            "extract": {
+              "column": "question"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "eval/split",
+          "name": "split",
+          "dataType": "sc:Text",
+          "description": "train or eval under composition exclusion",
+          "source": {
+            "fileObject": {
+              "@id": "eval-original"
+            },
+            "extract": {
+              "column": "split"
+            }
+          }
+        },
+        {
+          "@type": "cr:Field",
+          "@id": "eval/source",
+          "name": "source",
+          "dataType": "sc:Text",
+          "description": "origin database of the structure",
+          "source": {
+            "fileObject": {
+              "@id": "eval-original"
+            },
+            "extract": {
+              "column": "source"
+            }
+          }
+        }
+      ],
+      "key": {
+        "@id": "eval/material_id"
+      }
+    }
+  ]
+}

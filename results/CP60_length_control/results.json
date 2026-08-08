@@ -1,0 +1,183 @@
+{
+ "stage": "CP60 length control on the symbolic share (directive P4 / A1b)",
+ "branch": "L2 FIRES \u2014 pooled negative association, and the pre-registered crystal-system control AMPLIFIES rather than attenuates it, so list length is implicated. The symbolic share is downgraded to an UPPER BOUND on a symmetry-reasoning deficit.",
+ "api_calls": 0,
+ "provenance": "CP53's 14 per-structure prediction vectors; all 14 reproduce their recorded R3 micro exactly (max deviation < 1e-3)",
+ "sample": {
+  "eval_set": "original",
+  "n": 210,
+  "k": 3,
+  "atom_count_median": 14,
+  "atom_count_range": [
+   2,
+   57
+  ]
+ },
+ "per_model": {
+  "google/gemini-3.6-flash": {
+   "rho": -0.0538,
+   "p": 0.4381,
+   "n": 210,
+   "acc": 0.8524
+  },
+  "x-ai/grok-4.5": {
+   "rho": -0.0672,
+   "p": 0.3322,
+   "n": 210,
+   "acc": 0.8524
+  },
+  "anthropic/claude-opus-4.8": {
+   "rho": 0.0484,
+   "p": 0.4852,
+   "n": 210,
+   "acc": 0.6667
+  },
+  "qwen/qwen3-vl-235b-a22b-instruct": {
+   "rho": -0.095,
+   "p": 0.17,
+   "n": 210,
+   "acc": 0.5429
+  },
+  "meta-llama/llama-4-scout": {
+   "rho": -0.0796,
+   "p": 0.2505,
+   "n": 210,
+   "acc": 0.5048
+  },
+  "meta-llama/llama-4-maverick": {
+   "rho": -0.0923,
+   "p": 0.1826,
+   "n": 210,
+   "acc": 0.4952
+  },
+  "amazon/nova-pro-v1": {
+   "rho": -0.0824,
+   "p": 0.2343,
+   "n": 210,
+   "acc": 0.4667
+  },
+  "mistralai/mistral-medium-3.1": {
+   "rho": -0.0883,
+   "p": 0.2024,
+   "n": 210,
+   "acc": 0.4524
+  },
+  "mistralai/mistral-small-2603": {
+   "rho": -0.1081,
+   "p": 0.1183,
+   "n": 210,
+   "acc": 0.4524
+  },
+  "qwen/qwen3-vl-32b-instruct": {
+   "rho": -0.1372,
+   "p": 0.0471,
+   "n": 210,
+   "acc": 0.4524
+  },
+  "qwen/qwen3-vl-8b-instruct": {
+   "rho": -0.1254,
+   "p": 0.0698,
+   "n": 210,
+   "acc": 0.4524
+  },
+  "z-ai/glm-4.6v": {
+   "rho": -0.1213,
+   "p": 0.0795,
+   "n": 210,
+   "acc": 0.4476
+  },
+  "bytedance-seed/seed-1.6": {
+   "rho": -0.116,
+   "p": 0.0936,
+   "n": 210,
+   "acc": 0.4238
+  },
+  "openai/gpt-4.1-mini": {
+   "rho": -0.1899,
+   "p": 0.0058,
+   "n": 210,
+   "acc": 0.4143
+  }
+ },
+ "pooled": {
+  "rho": -0.0908,
+  "p": 8.133220955625717e-07,
+  "n_pairs": 2940,
+  "n_models": 14,
+  "n_individually_significant": 2,
+  "n_negative_rho": 13
+ },
+ "effect_size_at_median_split": {
+  "threshold_atoms": 14,
+  "small_cells": {
+   "k": 816,
+   "n": 1470,
+   "acc": 0.5551
+  },
+  "large_cells": {
+   "k": 754,
+   "n": 1470,
+   "acc": 0.5129
+  },
+  "drop": 0.0422,
+  "fisher_p": 0.024101377683758543
+ },
+ "confound_control_preregistered": {
+  "confound_is_real": {
+   "atom_count_vs_symmetry_rank_rho": -0.1866,
+   "p": 0.0067056061307553295
+  },
+  "within_system": {
+   "cubic": {
+    "n_structures": 30,
+    "rho": -0.4438,
+    "p": 0.0
+   },
+   "hexagonal": {
+    "n_structures": 30,
+    "rho": -0.0541,
+    "p": 0.2686
+   },
+   "monoclinic": {
+    "n_structures": 30,
+    "rho": -0.315,
+    "p": 0.0
+   },
+   "orthorhombic": {
+    "n_structures": 30,
+    "rho": 0.1422,
+    "p": 0.0035
+   },
+   "tetragonal": {
+    "n_structures": 30,
+    "rho": -0.3369,
+    "p": 0.0
+   },
+   "triclinic": {
+    "n_structures": 30,
+    "rho": -0.0542,
+    "p": 0.2676
+   },
+   "trigonal": {
+    "n_structures": 30,
+    "rho": 0.3246,
+    "p": 0.0
+   }
+  },
+  "mean_within_system_rho": -0.1053,
+  "verdict": "the within-system association (-0.1053) is STRONGER than the pooled one (-0.0908). Controlling for crystal system amplifies the effect by 16% rather than attenuating it, so the association is not symmetry difficulty masquerading as list length.",
+  "dissenting_systems": {
+   "orthorhombic": 0.1422,
+   "trigonal": 0.3246,
+   "note": "reported rather than pooled away; consistent with atom count proxying symmetry richness in those classes, which is the confound the pre-registration named"
+  }
+ },
+ "what_it_downgrades": {
+  "cp53_median_perception_share": 0.3092,
+  "symbolic_share": 0.6908,
+  "new_status": "UPPER BOUND on a symmetry-reasoning deficit, not a measurement of one; reported in the same paragraph as the median share",
+  "rename_applied": "reasoning share -> symbolic share (A1a)"
+ },
+ "what_it_does_not_touch": "the oracle-to-model gap is measured against pixels, not text; CP53's direction is unaffected",
+ "limits": "effect is small (0.042 across the median split); original sample only; 2 of 7 systems run positive"
+}

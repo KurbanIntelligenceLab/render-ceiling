@@ -1,0 +1,330 @@
+{
+ "stage": "CP53 rung R3 \u2014 ground-truth coordinates as text (ICLR directive)",
+ "branch": "C3 FIRES on all 14 scored arms. C1 and C2 do NOT fire. The pre-registered decomposition CONTRADICTS the directive's perception-bottleneck thesis: perception is the MINORITY share for 12 of 14 models (majority-perception: 2).",
+ "n": 210,
+ "eval_set": "original",
+ "k_votes": 3,
+ "temperature": 0.7,
+ "roster": {
+  "attempted": 15,
+  "scored": 14,
+  "unscored": {
+   "qwen/qwen2.5-vl-72b-instruct": {
+    "api_errors": 217,
+    "api_error_rate": 0.3444,
+    "unparseable_rate": 0.0571,
+    "gate": "5%",
+    "reason": "both gates exceeded; reported UNSCORED not dropped"
+   }
+  }
+ },
+ "rows": {
+  "google/gemini-3.6-flash": {
+   "pixel": 0.7333,
+   "text_formula_only": 0.1619,
+   "r3_coords": 0.8524,
+   "k": 179,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.1191,
+   "r3_only": 45,
+   "pixel_only": 20,
+   "p": 0.0026263768106840374,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 1
+  },
+  "x-ai/grok-4.5": {
+   "pixel": 0.6143,
+   "text_formula_only": 0.1238,
+   "r3_coords": 0.8524,
+   "k": 179,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.2381,
+   "r3_only": 69,
+   "pixel_only": 19,
+   "p": 7.8366246313468e-08,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "anthropic/claude-opus-4.8": {
+   "pixel": 0.581,
+   "text_formula_only": 0.1667,
+   "r3_coords": 0.6667,
+   "k": 140,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.0857,
+   "r3_only": 62,
+   "pixel_only": 44,
+   "p": 0.09824250442243807,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "qwen/qwen3-vl-235b-a22b-instruct": {
+   "pixel": 0.3333,
+   "text_formula_only": 0.1429,
+   "r3_coords": 0.5429,
+   "k": 114,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.2096,
+   "r3_only": 73,
+   "pixel_only": 29,
+   "p": 1.5502681985416567e-05,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "meta-llama/llama-4-scout": {
+   "pixel": 0.2048,
+   "text_formula_only": 0.1762,
+   "r3_coords": 0.5048,
+   "k": 106,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.3,
+   "r3_only": 89,
+   "pixel_only": 26,
+   "p": 2.9523783298817333e-09,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "meta-llama/llama-4-maverick": {
+   "pixel": 0.4429,
+   "text_formula_only": 0.1381,
+   "r3_coords": 0.4952,
+   "k": 104,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.0523,
+   "r3_only": 63,
+   "pixel_only": 52,
+   "p": 0.3511253697554322,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "amazon/nova-pro-v1": {
+   "pixel": 0.181,
+   "text_formula_only": 0.1429,
+   "r3_coords": 0.4667,
+   "k": 98,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.2857,
+   "r3_only": 73,
+   "pixel_only": 13,
+   "p": 2.7188213670780667e-11,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "mistralai/mistral-medium-3.1": {
+   "pixel": 0.2286,
+   "text_formula_only": 0.1476,
+   "r3_coords": 0.4524,
+   "k": 95,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.2238,
+   "r3_only": 72,
+   "pixel_only": 25,
+   "p": 1.9187392502875328e-06,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "mistralai/mistral-small-2603": {
+   "pixel": 0.1476,
+   "text_formula_only": 0.1619,
+   "r3_coords": 0.4524,
+   "k": 95,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.3048,
+   "r3_only": 84,
+   "pixel_only": 20,
+   "p": 1.6380501511665785e-10,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "qwen/qwen3-vl-32b-instruct": {
+   "pixel": 0.2286,
+   "text_formula_only": 0.119,
+   "r3_coords": 0.4524,
+   "k": 95,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.2238,
+   "r3_only": 66,
+   "pixel_only": 19,
+   "p": 3.040683333139466e-07,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "qwen/qwen3-vl-8b-instruct": {
+   "pixel": 0.3762,
+   "text_formula_only": 0.1667,
+   "r3_coords": 0.4524,
+   "k": 95,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.0762,
+   "r3_only": 71,
+   "pixel_only": 55,
+   "p": 0.18122406088142368,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 1
+  },
+  "z-ai/glm-4.6v": {
+   "pixel": 0.4429,
+   "text_formula_only": 0.1286,
+   "r3_coords": 0.4476,
+   "k": 94,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.0047,
+   "r3_only": 63,
+   "pixel_only": 62,
+   "p": 1.0,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "bytedance-seed/seed-1.6": {
+   "pixel": 0.2571,
+   "text_formula_only": 0.1524,
+   "r3_coords": 0.4238,
+   "k": 89,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.1667,
+   "r3_only": 76,
+   "pixel_only": 41,
+   "p": 0.0015572017627745848,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  },
+  "openai/gpt-4.1-mini": {
+   "pixel": 0.3667,
+   "text_formula_only": 0.0,
+   "r3_coords": 0.4143,
+   "k": 87,
+   "n": 210,
+   "delta_r3_minus_pixel": 0.0476,
+   "r3_only": 60,
+   "pixel_only": 50,
+   "p": 0.39092745669950557,
+   "n_paired": 210,
+   "unparseable": 0,
+   "api_errors": 0
+  }
+ },
+ "decomposition": {
+  "google/gemini-3.6-flash": {
+   "perception_share": 0.1191,
+   "reasoning_share": 0.1,
+   "perception_fraction": 0.5436
+  },
+  "x-ai/grok-4.5": {
+   "perception_share": 0.2381,
+   "reasoning_share": 0.1,
+   "perception_fraction": 0.7043
+  },
+  "anthropic/claude-opus-4.8": {
+   "perception_share": 0.0857,
+   "reasoning_share": 0.2857,
+   "perception_fraction": 0.2308
+  },
+  "qwen/qwen3-vl-235b-a22b-instruct": {
+   "perception_share": 0.2096,
+   "reasoning_share": 0.4095,
+   "perception_fraction": 0.3386
+  },
+  "meta-llama/llama-4-scout": {
+   "perception_share": 0.3,
+   "reasoning_share": 0.4476,
+   "perception_fraction": 0.4013
+  },
+  "meta-llama/llama-4-maverick": {
+   "perception_share": 0.0523,
+   "reasoning_share": 0.4572,
+   "perception_fraction": 0.1027
+  },
+  "amazon/nova-pro-v1": {
+   "perception_share": 0.2857,
+   "reasoning_share": 0.4857,
+   "perception_fraction": 0.3704
+  },
+  "mistralai/mistral-medium-3.1": {
+   "perception_share": 0.2238,
+   "reasoning_share": 0.5,
+   "perception_fraction": 0.3092
+  },
+  "mistralai/mistral-small-2603": {
+   "perception_share": 0.3048,
+   "reasoning_share": 0.5,
+   "perception_fraction": 0.3787
+  },
+  "qwen/qwen3-vl-32b-instruct": {
+   "perception_share": 0.2238,
+   "reasoning_share": 0.5,
+   "perception_fraction": 0.3092
+  },
+  "qwen/qwen3-vl-8b-instruct": {
+   "perception_share": 0.0762,
+   "reasoning_share": 0.5,
+   "perception_fraction": 0.1323
+  },
+  "z-ai/glm-4.6v": {
+   "perception_share": 0.0047,
+   "reasoning_share": 0.5048,
+   "perception_fraction": 0.0092
+  },
+  "bytedance-seed/seed-1.6": {
+   "perception_share": 0.1667,
+   "reasoning_share": 0.5286,
+   "perception_fraction": 0.2398
+  },
+  "openai/gpt-4.1-mini": {
+   "perception_share": 0.0476,
+   "reasoning_share": 0.5381,
+   "perception_fraction": 0.0813
+  }
+ },
+ "oracle_R1": 0.9524,
+ "text_formula_only_mean": 0.1357,
+ "perception_fraction": {
+  "median": 0.3092,
+  "min": 0.0092,
+  "max": 0.7043,
+  "majority_perception_models": 2,
+  "majority_reasoning_models": 12
+ },
+ "spearman_pixel_vs_perception_share": {
+  "rho": -0.6439,
+  "p": 0.013
+ },
+ "significant_gains": {
+  "n_significant": 9,
+  "n_total": 14,
+  "alpha": 0.05,
+  "not_pooled": true
+ },
+ "prompt_length": {
+  "mean_tokens_approx": 177,
+  "median": 170,
+  "max": 250,
+  "truncated_structures": 0,
+  "note": "SHORTER than the 5-image pixel prompts, so a length advantage cannot explain the gain"
+ },
+ "control_pair": {
+  "cp41_formula_only": "every scored arm at 7-way chance",
+  "cp53_full_geometry": "0.4143-0.8524",
+  "inference": "the two controls differ in exactly one thing, so the jump is attributable to the GEOMETRY, not to text-mode prompting"
+ },
+ "prior_use": "the CIF-supplied condition of 2605.29446 and the no-image family of 2604.16060; only the measurement is claimed",
+ "limits": "ground-truth geometry, original sample only. Bounds symbolic reasoning GIVEN perfect perception.",
+ "count_provenance": {
+  "majority_reasoning": 12,
+  "majority_perception": 2,
+  "n_decomposed": 14,
+  "note": "computed as len() over the decomposition block in the same cell that writes the branch text. An earlier branch field said 11, which contradicted this file's own perception_fraction block."
+ }
+}

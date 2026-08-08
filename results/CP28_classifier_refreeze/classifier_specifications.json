@@ -1,0 +1,1002 @@
+{
+ "random_forest_lattice19": {
+  "classifier": "sklearn.ensemble.RandomForestClassifier",
+  "hyperparameters": {
+   "n_estimators": 500,
+   "random_state": 23,
+   "all others": "sklearn defaults"
+  },
+  "features_ordered": [
+   "a",
+   "b",
+   "c",
+   "alpha",
+   "beta",
+   "gamma",
+   "volume",
+   "edge_ratio_min_mid",
+   "edge_ratio_mid_max",
+   "edge_ratio_min_max",
+   "abs_alpha_minus_90",
+   "abs_beta_minus_90",
+   "abs_gamma_minus_90",
+   "abs_gamma_minus_120",
+   "angle_range",
+   "angle_std_pop",
+   "edge_cv_pop",
+   "n_sites",
+   "density"
+  ],
+  "n_features": 19,
+  "feature_definitions": {
+   "a,b,c,alpha,beta,gamma,volume": "pymatgen Lattice of the INPUT cell (not conventionalised)",
+   "edge_ratio_*": "the three ratios of SORTED edge lengths (min/mid, mid/max, min/max) \u2014 sorted so the features are invariant to axis labelling, which is what 'scale-free' requires",
+   "abs_*_minus_90": "absolute deviation of each angle from 90 degrees",
+   "abs_gamma_minus_120": "absolute deviation of gamma from 120 degrees",
+   "angle_range": "max(angles) - min(angles)",
+   "angle_std_pop": "population SD of the three angles (ddof=0)",
+   "edge_cv_pop": "population SD of the three edges divided by their mean (ddof=0)",
+   "n_sites": "len(structure)",
+   "density": "structure.density"
+  },
+  "deliberately_excluded": [
+   "any spglib symmetry output (space group, Wyckoff, Bravais) \u2014 would leak the label",
+   "composition and element identity"
+  ],
+  "split": {
+   "train": 1610,
+   "eval": 210,
+   "source": "identical material_ids as every CoCr arm, data/e3"
+  },
+  "environment": {
+   "sklearn": "1.9.0",
+   "numpy": "2.4.6",
+   "scipy": "1.17.1",
+   "python": "3.11.15"
+  },
+  "result": {
+   "k": 188,
+   "n": 210,
+   "micro": 0.8952,
+   "macro_f1": 0.8952,
+   "train_accuracy": 1.0
+  },
+  "per_structure": {
+   "mp-1235466": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-2215870": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1246840": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1273441": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1215015": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1246507": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1048072": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1391233": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-2225355": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1345578": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1046784": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-2231502": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-673678": {
+    "pred": "tetragonal",
+    "truth": "triclinic"
+   },
+   "mp-1046464": {
+    "pred": "monoclinic",
+    "truth": "triclinic"
+   },
+   "mp-733975": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1046939": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1275776": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1046323": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1206411": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1247817": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-2228346": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-2217558": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1235944": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1046128": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1046536": {
+    "pred": "monoclinic",
+    "truth": "triclinic"
+   },
+   "mp-1245986": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1046312": {
+    "pred": "monoclinic",
+    "truth": "triclinic"
+   },
+   "mp-1046501": {
+    "pred": "monoclinic",
+    "truth": "triclinic"
+   },
+   "mp-756745": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1102961": {
+    "pred": "triclinic",
+    "truth": "triclinic"
+   },
+   "mp-1237061": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1232849": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1104453": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1214786": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-6215": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1228753": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-14561": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1228427": {
+    "pred": "orthorhombic",
+    "truth": "monoclinic"
+   },
+   "mp-1214797": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-3751": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1214784": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1188260": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1228721": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1228728": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-754198": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1079632": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1078874": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1214987": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1102943": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-997001": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1228801": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1228416": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-567929": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1246198": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1105940": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1104047": {
+    "pred": "triclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1214794": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1104804": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1232615": {
+    "pred": "triclinic",
+    "truth": "monoclinic"
+   },
+   "mp-752827": {
+    "pred": "monoclinic",
+    "truth": "monoclinic"
+   },
+   "mp-1105758": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1539038": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1178550": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1079890": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1258701": {
+    "pred": "monoclinic",
+    "truth": "orthorhombic"
+   },
+   "mp-10910": {
+    "pred": "monoclinic",
+    "truth": "orthorhombic"
+   },
+   "mp-560067": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-16529": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1096576": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1096644": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1093553": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1245824": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1093903": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1097386": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1097410": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1093720": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-29674": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1183276": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1095763": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1097597": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1097296": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1096466": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1095930": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1182863": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1096308": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1097427": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-504676": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1248716": {
+    "pred": "monoclinic",
+    "truth": "orthorhombic"
+   },
+   "mp-1096345": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-1093958": {
+    "pred": "orthorhombic",
+    "truth": "orthorhombic"
+   },
+   "mp-33615": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1182875": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1228935": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-22412": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1214759": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-867347": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1068010": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-5606": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1183257": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1228890": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1069712": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-7909": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-557233": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1246276": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-7906": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-10909": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-570256": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-7910": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-7188": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1214765": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-4109": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1214823": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1214750": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1228817": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1189716": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-29816": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1228926": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-1228809": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-3038": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-38417": {
+    "pred": "tetragonal",
+    "truth": "tetragonal"
+   },
+   "mp-8279": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1214834": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228698": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-13369": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228150": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-643047": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1245583": {
+    "pred": "hexagonal",
+    "truth": "trigonal"
+   },
+   "mp-18733": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228354": {
+    "pred": "hexagonal",
+    "truth": "trigonal"
+   },
+   "mp-1228085": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1095623": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228866": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-12832": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1214580": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1246182": {
+    "pred": "hexagonal",
+    "truth": "trigonal"
+   },
+   "mp-1228699": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228074": {
+    "pred": "monoclinic",
+    "truth": "trigonal"
+   },
+   "mp-1228925": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-554669": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1070275": {
+    "pred": "hexagonal",
+    "truth": "trigonal"
+   },
+   "mp-1228180": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-2226142": {
+    "pred": "hexagonal",
+    "truth": "trigonal"
+   },
+   "mp-1228995": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228197": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-8150": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228643": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-2228574": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-8281": {
+    "pred": "trigonal",
+    "truth": "trigonal"
+   },
+   "mp-1228461": {
+    "pred": "monoclinic",
+    "truth": "trigonal"
+   },
+   "mp-1214828": {
+    "pred": "hexagonal",
+    "truth": "trigonal"
+   },
+   "mp-19213": {
+    "pred": "orthorhombic",
+    "truth": "hexagonal"
+   },
+   "mp-1183380": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-985290": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183261": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1228634": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-17535": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-2294": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1029626": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183229": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183051": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-13854": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-754157": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-9324": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-2217621": {
+    "pred": "trigonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183238": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183252": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183049": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-862289": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1245965": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183563": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183263": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1026813": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-4887": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-11772": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183188": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1183231": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-997617": {
+    "pred": "orthorhombic",
+    "truth": "hexagonal"
+   },
+   "mp-11816": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1188147": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-1246088": {
+    "pred": "hexagonal",
+    "truth": "hexagonal"
+   },
+   "mp-862873": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-867321": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183192": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183136": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1182878": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183140": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183135": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-867775": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-862695": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-756317": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-864644": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-985443": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183199": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-865989": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183190": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183071": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-631567": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-866031": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1885": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183133": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183067": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-866203": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183118": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183160": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183060": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-867338": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-867125": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183121": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-1183110": {
+    "pred": "cubic",
+    "truth": "cubic"
+   },
+   "mp-866225": {
+    "pred": "cubic",
+    "truth": "cubic"
+   }
+  }
+ },
+ "variant_sensitivity": {
+  "note": "12 defensible readings of the recorded prose, all n_estimators=500 seed 23",
+  "grid": "edge-ratio form (plain a/b,b/c,a/c | min-over-max | sorted) x angle_std ddof (0,1) x edge_cv ddof (0,1)",
+  "range_k": [
+   183,
+   188
+  ],
+  "results": [
+   {
+    "k": 188,
+    "ratio_form": "sorted",
+    "angle_std_ddof": 0,
+    "edge_cv_ddof": 1
+   },
+   {
+    "k": 188,
+    "ratio_form": "sorted",
+    "angle_std_ddof": 0,
+    "edge_cv_ddof": 0
+   },
+   {
+    "k": 188,
+    "ratio_form": "min_over_max",
+    "angle_std_ddof": 0,
+    "edge_cv_ddof": 1
+   },
+   {
+    "k": 188,
+    "ratio_form": "min_over_max",
+    "angle_std_ddof": 0,
+    "edge_cv_ddof": 0
+   },
+   {
+    "k": 187,
+    "ratio_form": "sorted",
+    "angle_std_ddof": 1,
+    "edge_cv_ddof": 1
+   },
+   {
+    "k": 187,
+    "ratio_form": "sorted",
+    "angle_std_ddof": 1,
+    "edge_cv_ddof": 0
+   },
+   {
+    "k": 187,
+    "ratio_form": "min_over_max",
+    "angle_std_ddof": 1,
+    "edge_cv_ddof": 1
+   },
+   {
+    "k": 187,
+    "ratio_form": "min_over_max",
+    "angle_std_ddof": 1,
+    "edge_cv_ddof": 0
+   },
+   {
+    "k": 184,
+    "ratio_form": "plain",
+    "angle_std_ddof": 0,
+    "edge_cv_ddof": 1
+   },
+   {
+    "k": 184,
+    "ratio_form": "plain",
+    "angle_std_ddof": 0,
+    "edge_cv_ddof": 0
+   },
+   {
+    "k": 183,
+    "ratio_form": "plain",
+    "angle_std_ddof": 1,
+    "edge_cv_ddof": 1
+   },
+   {
+    "k": 183,
+    "ratio_form": "plain",
+    "angle_std_ddof": 1,
+    "edge_cv_ddof": 0
+   }
+  ],
+  "reaches_186_recorded_reproduction": false,
+  "reaches_187_original": true,
+  "conclusion": "the recorded 186/210 is NOT recoverable under any of the 12 readings; 187 is reachable but only by an angle_std convention (ddof=1) that is not stated in the record. The canonical form was chosen on the ARGUMENT that 'scale-free' requires axis-label invariance (hence sorted edges), before consulting which variant scored best."
+ },
+ "historical_values": {
+  "0.8905": "original run, 187/210, feature list never saved, NOT reproducible",
+  "0.8857": "a later reproduction, 186/210, NOT reproducible by any variant tested here",
+  "0.8762": "gradient boosting on the same features (184/210) \u2014 coincidentally equal to the plain-ratio RF variant's count; the two are different models (GB under this protocol gives 183/210)"
+ },
+ "gradient_boosting_reference": {
+  "k": 183,
+  "n": 210,
+  "note": "GradientBoostingClassifier(random_state=23), same features as the plain variant"
+ }
+}

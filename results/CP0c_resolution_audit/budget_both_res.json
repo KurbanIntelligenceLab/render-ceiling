@@ -1,0 +1,27 @@
+{
+ "visual_tokens_per_view": {
+  "mp_200704": 169,
+  "mp_589824": 576
+ },
+ "non_visual_prompt_tokens": 93,
+ "prefill_per_sample": {
+  "416x416": 938,
+  "768x768": 2973
+ },
+ "flops_ratio_chain_over_b1": {
+  "416x416": 1.417,
+  "768x768": 1.132
+ },
+ "prefill_share": {
+  "416x416": {
+   "chain": 0.701,
+   "b1": 0.9936
+  },
+  "768x768": {
+   "chain": 0.8814,
+   "b1": 0.998
+  }
+ },
+ "generated_token_ratio": 66.7,
+ "correction_to_cp1b": "CP1b quoted 171 visual tokens/view; the audit measured 169 (the extra 2 were per-image delimiters). Measured prefill total 938 is unchanged \u2014 only the attribution shifts."
+}
