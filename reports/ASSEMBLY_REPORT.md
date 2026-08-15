@@ -1,5 +1,11 @@
 # Assembly report: revised_new
 
+> **Historical record.** This document describes work on the ICLR-era drafts, which are no longer part of
+> this repository — the manuscript is now the Digital Discovery submission, whose source is not distributed
+> here. Paths it names under `manuscript/iclr_template/`, `manuscript/revised_new/` and
+> `manuscript/internal_review_version/` no longer resolve. It is kept because the reasoning and the
+> provenance trail it records are not reproduced anywhere else.
+
 Target tree: `manuscript/revised_new/`. Source: `manuscript/internal_review_version/`. Neither
 `internal_review_version/` nor `manuscript/iclr_template/` was modified.
 

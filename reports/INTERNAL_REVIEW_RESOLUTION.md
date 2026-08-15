@@ -1,5 +1,11 @@
 # Internal review resolution ledger
 
+> **Historical record.** This document describes work on the ICLR-era drafts, which are no longer part of
+> this repository — the manuscript is now the Digital Discovery submission, whose source is not distributed
+> here. Paths it names under `manuscript/iclr_template/`, `manuscript/revised_new/` and
+> `manuscript/internal_review_version/` no longer resolve. It is kept because the reasoning and the
+> provenance trail it records are not reproduced anywhere else.
+
 Disposition of every finding raised against the internal review version of *The Render Ceiling:
 Model-Free Identifiability Limits for Multimodal Benchmarks*, with the evidence that settles it.
 

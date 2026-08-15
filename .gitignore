@@ -14,8 +14,14 @@ __pycache__/
 .venv/
 venv/
 
-# LaTeX build products. The .tex sources and the six figure PDFs are tracked;
-# everything a compiler regenerates is not.
+# The manuscript itself is not published from this repository — the article is the
+# journal's to distribute. manuscript/codes/ IS tracked: the figure generators are
+# part of the reproducibility package and are what a reader runs.
+manuscript/*
+!manuscript/codes/
+!manuscript/codes/**
+
+# LaTeX build products.
 *.aux
 *.bbl
 *.blg
@@ -27,9 +33,6 @@ venv/
 *.out
 *.synctex.gz
 *.toc
-manuscript/render-ceiling-dd/main.pdf
-manuscript/render-ceiling-dd/si.pdf
-manuscript/render-ceiling-dd/cover_letter.pdf
 
 # OS and editor
 .DS_Store

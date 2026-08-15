@@ -37,8 +37,7 @@ def main(root="."):
         return 1
 
     # 1 structure
-    for d in ("manuscript", "manuscript/codes", "manuscript/render-ceiling-dd",
-              "manuscript/render-ceiling-dd/figures", "reports", "results", "scripts",
+    for d in ("manuscript", "manuscript/codes", "reports", "results", "scripts",
               "scripts/src/cocr", "release"):
         check(os.path.isdir(f"{root}/{d}"), f"[1] missing folder: {d}")
     res_dirs = sorted(d for d in os.listdir(f"{root}/results")
@@ -48,9 +47,19 @@ def main(root="."):
     stray = [f for f in os.listdir(f"{root}/results")
              if not os.path.isdir(f"{root}/results/{f}") and f != "INDEX.json"]
     check(not stray, f"[1] loose files directly in results/ (expected one folder per checkpoint): {stray}")
+    # The manuscript source is not published from this repository (see .gitignore), so the checks
+    # that read it run only where it is present — a working tree — and are reported as skipped in a
+    # clean clone rather than failing it. Everything that constitutes the reproducibility package —
+    # records, scripts, generators, release — is checked unconditionally.
+    DD = f"{root}/manuscript/render-ceiling-dd"
+    HAVE_MS = os.path.isdir(DD)
+    if not HAVE_MS:
+        WARN.append("[2-5,7,11] manuscript source not present; the checks that read it are skipped. "
+                    "They run in the authors' working tree, where the manuscript lives.")
     counts = {
-        "figures": len([f for f in os.listdir(f"{root}/manuscript/render-ceiling-dd/figures")
-                        if f.endswith(".pdf")]),
+        "figures": len([f for f in os.listdir(f"{DD}/figures") if f.endswith(".pdf")]) if HAVE_MS
+                   else len([f for f in os.listdir(f"{root}/manuscript/codes")
+                             if f.startswith("make_fig")]),
         "results_json": sum(len([f for f in os.listdir(f"{root}/results/{d}") if f.endswith(".json")])
                             for d in res_dirs),
         "results_dirs": len(res_dirs),
@@ -71,8 +80,7 @@ def main(root="."):
     # 2-4 manuscript
     # the Digital Discovery submission is main.tex plus its \input section files; the ESI
     # (si.tex + sections/si_body.tex) is checked alongside it, since labels cross between them
-    DD = f"{root}/manuscript/render-ceiling-dd"
-    tex = "".join(open(p).read() for p in
+    tex = "" if not HAVE_MS else "".join(open(p).read() for p in
                   [f"{DD}/main.tex", f"{DD}/si.tex"] +
                   sorted(f"{DD}/sections/{f}" for f in os.listdir(f"{DD}/sections")
                          if f.endswith(".tex")))
@@ -130,7 +138,9 @@ def main(root="."):
                                capture_output=True, text=True)
             if not check(r.returncode == 0, f"[7] figure script failed: {script} ({r.stderr.strip()[-120:]})"):
                 continue
-            shipped = f"{root}/manuscript/render-ceiling-dd/figures/{fig}.pdf"
+            shipped = f"{DD}/figures/{fig}.pdf"
+            if not HAVE_MS:
+                continue  # generator ran clean; there is no shipped copy here to compare against
             if not check(os.path.exists(shipped), f"[7] shipped figure missing: {fig}.pdf"):
                 continue
             a = hashlib.md5(open(out, "rb").read()).hexdigest()
@@ -174,10 +184,11 @@ def main(root="."):
     # lint the prose the authors write, not main.tex: the RSC template's preamble uses trailing `%`
     # as a line-continuation throughout, which the linter's unescaped-percent rule flags by design.
     lint_targets = sorted(f"{DD}/sections/{f}" for f in os.listdir(f"{DD}/sections")
-                          if f.endswith(".tex"))
-    lint = subprocess.run([sys.executable, f"{root}/scripts/lint_latex.py"] + lint_targets,
-                          capture_output=True, text=True)
-    check(lint.returncode == 0, f"[11] LaTeX linter findings:\n{lint.stdout.strip()[:600]}")
+                          if f.endswith(".tex")) if HAVE_MS else []
+    if lint_targets:
+        lint = subprocess.run([sys.executable, f"{root}/scripts/lint_latex.py"] + lint_targets,
+                              capture_output=True, text=True)
+        check(lint.returncode == 0, f"[11] LaTeX linter findings:\n{lint.stdout.strip()[:600]}")
 
     # 10 report consistency — the WHOLE document, not a prefix. A prefix comparison passes while the
     # two diverge anywhere after character 400, which is most of the report.

@@ -1,0 +1,6 @@
+# Reproducing the figures and re-running the verification gates needs only this group.
+# Versions are the ones the released figures were produced under; nothing here is
+# version-sensitive beyond matplotlib, which controls figure layout.
+numpy==2.4.6
+scipy==1.17.1
+matplotlib==3.11.0

@@ -20,6 +20,10 @@ Submitted to *Digital Discovery* (Royal Society of Chemistry).
 
 A vision–language model that misreads a rendered crystal structure and one that misreasons about it produce the same wrong answer, and every existing method for separating them puts a second model in the loop. When a benchmark is built by rendering a structure whose coordinates are known, no model is needed: inverting the known cameras and re-solving cross-view correspondence returns the answer the images support, a quantity we call the render ceiling. We characterise exactly when that ceiling reaches 1, by an emptiness condition on a set of geometric phantoms, and certify that the condition holds on 2160 structures drawn from the Materials Project, so every point of a model's deficit is attributable to the model. Used as the top rung of an attribution ladder over fourteen vision–language models under a frozen evaluation protocol, the ceiling reverses the prevailing explanation of multimodal failure: supplying exact geometry as text lifts every model but closes the minority of the gap, leaving 13 of 14 limited more by what survives perception than by perception itself. The same instrument catches what a leaderboard cannot: a strong model used as the structure-extraction stage emits syntactically perfect coordinates whose median recall against ground truth is zero, a fabrication downstream accuracy would score as bad reasoning. The construction transfers to any benchmark whose forward rendering is known and invertible, and it returns design rules for benchmark builders: which camera placements are robust to extraction noise, and the tolerance at which a pipeline's own reading, not the images, becomes the binding ceiling.
 
+The manuscript source is not distributed here — the article is the journal's to publish — but the code that
+produces every figure in it is, under `manuscript/codes/`, together with the records those figures are drawn
+from.
+
 ## What is in this repository
 
 The code implementing the geometric oracle, the render protocol, the labelling pipeline and every analysis
@@ -43,8 +47,7 @@ as bad reasoning.
 
 | path | contents |
 |---|---|
-| `manuscript/render-ceiling-dd/` | the Digital Discovery submission: `main.tex`, `si.tex`, `cover_letter.tex`, and its 6 vector figures in `figures/` |
-| `manuscript/codes/` | one generator per figure, plus the shared style module; see its README for the placement-width and panel conventions |
+| `manuscript/codes/` | one generator per article figure, plus the shared style module; see its README for the placement-width and panel conventions |
 | `results/` | 54 experiment records: 99 JSON records and 92 markdown records (every pre-registration and finding) |
 | `results/INDEX.json` | run order of those records, whose directory names describe what each measures rather than when it ran |
 | `reports/` | `SUPPLEMENTARY_INFORMATION.md`, the single merged document, plus `REPORT.md` (its Part I), `CONVENTIONS.md` (standalone), and `sources/` holding the two documents it is built from |
@@ -52,6 +55,14 @@ as bad reasoning.
 | `scripts/` | 37 top-level scripts and the 11-module `src/cocr` package |
 | `release/` | 82 files: per-structure prediction vectors, frozen prompts, Croissant metadata |
 | `weights/` | 2.82 GB of trained LoRA adapters, git-ignored; see `weights/README.md` for the manifest and sha256 |
+
+Two things this repository does not carry. The 2,100 rendered PNGs that are the benchmark's model inputs
+(five orthographic views for each of the 420 evaluation structures) are deposited with the dataset rather
+than committed; `data/` carries the structures, labels and splits they are rendered from, and
+`release/harnesses/` carries the render module that produces them deterministically. The trained adapters
+are distributed out of band for size. Neither is needed to reproduce any number in the article: the
+per-structure prediction vectors in `release/predictions/` are the reproducible artifact, and every
+accuracy recomputes from them.
 
 Experiment records are named for what they measure rather than by checkpoint number. The numeric prefixes
 that earlier versions used encoded run order, which `results/INDEX.json` now carries explicitly along with
@@ -61,22 +72,26 @@ each record's identifier in the project's own history.
 
 Nothing here is transcribed. Each command reads the records and rewrites its output:
 
-    python manuscript/codes/make_fig2_ladder.py results manuscript/render-ceiling-dd/figures/ladder.pdf
+    python manuscript/codes/make_fig2_ladder.py results ladder.pdf
     python scripts/build_si.py . reports/SUPPLEMENTARY_INFORMATION.md
     python scripts/verify_manuscript_numbers.py
     python scripts/validate_package.py .
 
+Those four commands need only `numpy`, `scipy` and `matplotlib` (`pip install -r requirements.txt`).
+Re-running the pipeline itself — rendering, labelling, scoring the oracle, the model arms — needs the
+structure and imaging stack in `requirements-full.txt`.
+
 Paths are repository-relative through `scripts/_paths.py`; override the root with `RENDER_CEILING_ROOT`.
-The manuscript compiles with any TeX distribution carrying the RSC article class dependencies, four
-`pdflatex` passes plus one `bibtex`.
+Each generator takes a records directory and an output path, and writes a vector PDF with a pinned creation
+date, so two runs of the same generator on the same records produce byte-identical files.
 
 `validate_package.py` is the gate for the whole package and exit 0 means it is complete and internally
-consistent. It regenerates all 6 figures and compares them byte-for-byte against the shipped PDFs,
-requires every four-decimal number in the manuscript and in every prose document to trace by value to a
-record under `results/`, requires every accuracy to carry its sample and decode budget, checks that every
-cross-reference and citation resolves and that no placeholder survived, and refuses the repository if the
-merged supplementary document differs by one byte from what its generator produces from the current
-`results/`.
+consistent. It runs all 6 figure generators, requires every four-decimal number in every prose document to
+trace by value to a record under `results/`, requires every accuracy to carry its sample and decode budget,
+and refuses the repository if the merged supplementary document differs by one byte from what its generator
+produces from the current `results/`. A few checks read the manuscript source — that every figure it
+references resolves, that its cross-references and citations resolve, that no placeholder survived, and that
+each of its numbers traces to a record. Those run in the authors' working tree and report as skipped here.
 
 Each of those checks was tested against a deliberate violation of the rule it enforces; three were found to
 crash or silently pass rather than report, and were fixed. The staleness check compares bytes rather than

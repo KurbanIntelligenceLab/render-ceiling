@@ -1,5 +1,9 @@
 # Checkpoint 1.2 — the delta/tau relationship in the main text
 
+> **Historical record.** Section and file names below refer to the ICLR-era draft
+> (`sections/03_method.tex` and similar), which is not part of this repository. The revision it describes
+> is present in the current manuscript; only the file layout has changed.
+
 ## What was required
 
 State delta = 0.15 A explicitly in the method (it appeared only inside the algorithm block), state

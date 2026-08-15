@@ -4,10 +4,9 @@ Everything a reviewer needs to check every number in the paper without rerunning
 
 ## What resolves from a DOI
 
-`croissant.json` — MLCommons Croissant 1.1 metadata, VALIDATED with the official `mlcroissant` library
-(distribution of 7 file objects/sets, one record set, seven fields, SHA-256 per file object). The
-`url` field carries a DOI placeholder that must be replaced with the Zenodo DOI at deposit; everything
-else in the document is final. License: CC BY 4.0.
+`croissant.json` — MLCommons Croissant 1.1 metadata, validated with the official `mlcroissant` library
+(distribution of 7 file objects/sets, one record set, seven fields, SHA-256 per file object). Its `url`
+currently points at the source repository; replace it with the dataset DOI at deposit. Licence: CC BY 4.0.
 
 Payload to deposit alongside it:
   data/e3/eval.jsonl              210 evaluation records, original composition-exclusion split
