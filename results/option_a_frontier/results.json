@@ -3,16 +3,8 @@
  "branch": "option_a_revision",
  "what": "Consolidated checkpoint for the Option A revision: exact identifiability, the extraction-tolerance frontier, the kappa correction, the pre-registered kappa noise test, the phantom census, and the ladder under both reference points. Source of record for every red-marked value in manuscript/revised_new.",
  "provenance": {
-  "ck_1_1_kappa.json": "reports/option_a/ck_1_1_kappa.json",
-  "ck_1_3_citations.md": "reports/option_a/ck_1_3_citations.md",
-  "ck_2_1_kappa_prediction.json": "reports/option_a/ck_2_1_kappa_prediction.json",
-  "ck_2_2_noise10.json": "reports/option_a/ck_2_2_noise10.json",
-  "ck_2_3_phantoms1933.json": "reports/option_a/ck_2_3_phantoms1933.json",
-  "ck_2_4_frontier1933.json": "reports/option_a/ck_2_4_frontier1933.json",
-  "ck_2_5_phase2_summary.md": "reports/option_a/ck_2_5_phase2_summary.md",
-  "ck_3_10_latex_check.log": "reports/option_a/ck_3_10_latex_check.log",
-  "ck_3_3_ladder_stats.json": "reports/option_a/ck_3_3_ladder_stats.json",
-  "ck_3_9_verification.log": "reports/option_a/ck_3_9_verification.log"
+  "note": "Working files that fed this record have been retired; every value they held is a field of this record, which is the single source. The consolidated fields are ck_1_1_kappa, ck_2_1_kappa_prediction, ck_2_2_noise10, ck_2_3_phantoms1933, ck_2_4_frontier1933 and ck_3_3_ladder_stats.",
+  "consolidated_from": "exactness revision working set (retired)"
  },
  "ck_1_1_kappa": {
   "task": "1.1 kappa correction",

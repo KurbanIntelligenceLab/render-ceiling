@@ -52,21 +52,33 @@ as bad reasoning.
 | `results/INDEX.json` | run order of those records, whose directory names describe what each measures rather than when it ran |
 | `reports/` | `SUPPLEMENTARY_INFORMATION.md`, the single merged document, plus `REPORT.md` (its Part I), `CONVENTIONS.md` (standalone), and `sources/` holding the two documents it is built from |
 | `data/` | 13 files: structures, labels and evaluation splits for all three samples (20 MB) |
-| `scripts/` | 37 top-level scripts and the 11-module `src/cocr` package |
+| `scripts/` | 36 top-level scripts and the 11-module `src/cocr` package |
 | `release/` | 82 files: per-structure prediction vectors, frozen prompts, Croissant metadata |
 | `weights/` | 2.82 GB of trained LoRA adapters, git-ignored; see `weights/README.md` for the manifest and sha256 |
 
-Two things this repository does not carry. The 2,100 rendered PNGs that are the benchmark's model inputs
-(five orthographic views for each of the 420 evaluation structures) are deposited with the dataset rather
-than committed; `data/` carries the structures, labels and splits they are rendered from, and
-`release/harnesses/` carries the render module that produces them deterministically. The trained adapters
-are distributed out of band for size. Neither is needed to reproduce any number in the article: the
-per-structure prediction vectors in `release/predictions/` are the reproducible artifact, and every
-accuracy recomputes from them.
+The rendered images the models read are not committed. They are a build product: 2,100 PNGs, five
+orthographic views for each of the 420 evaluation structures, and a pure function of inputs that are here.
+Rebuild them from the CIFs with no API key and no network:
+
+    python scripts/render_from_cifs.py --sample e3  --split eval
+    python scripts/render_from_cifs.py --sample e3x --split eval
+
+Each writes to the paths the `images` field of the corresponding `eval.jsonl` already names and then
+verifies that every one of them resolves. The render is deterministic — the camera set and pixel size are
+frozen constants and no stage draws a random number — so re-rendering a CIF reproduces its image. The
+trained adapters are the other omission, distributed out of band for size. Neither is needed to reproduce a
+number in the article: the per-structure prediction vectors in `release/predictions/` are the reproducible
+artifact, and every accuracy recomputes from them.
 
 Experiment records are named for what they measure rather than by checkpoint number. The numeric prefixes
 that earlier versions used encoded run order, which `results/INDEX.json` now carries explicitly along with
 each record's identifier in the project's own history.
+
+This repository carries the submitted work and nothing else. Earlier drafts and the process documents that
+served them — the assembly and internal-review logs, the working set for the exactness revision, the
+reframing memo — have been retired rather than kept as history: every value they held is a field of a record
+under `results/`, and their prose describes manuscripts that no longer exist. `requirements-full.txt` names
+what re-running the pipeline needs; `requirements.txt` alone reproduces the figures and the gates.
 
 ## Reproducing
 
@@ -77,7 +89,7 @@ Nothing here is transcribed. Each command reads the records and rewrites its out
     python scripts/verify_manuscript_numbers.py
     python scripts/validate_package.py .
 
-Those four commands need only `numpy`, `scipy` and `matplotlib` (`pip install -r requirements.txt`).
+Those commands need only `numpy`, `scipy` and `matplotlib` (`pip install -r requirements.txt`).
 Re-running the pipeline itself — rendering, labelling, scoring the oracle, the model arms — needs the
 structure and imaging stack in `requirements-full.txt`.
 

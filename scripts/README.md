@@ -18,7 +18,8 @@ separate text-reasoning study cited nowhere in this paper.
 | `fetch_e3_structures.py` | data fetch |
 | `finish_cp18.py` | eval_expansion eval expansion |
 | `probe_frontier.py` | frontier_ceiling/model_sweep/stratified_frontier_expansion/no_image_control/render_convention_sweep frontier + zero-shot arms |
-| `render_e3.py` | render pipeline |
+| `render_e3.py` | render pipeline, structures fetched from the Materials Project (needs `MP_API_KEY`) |
+| `render_from_cifs.py` | the same renders from the CIFs in `data/`, offline and with no API key |
 | `run_cp31_conditions.py` | visibility_corrected_oracle visibility-corrected oracle |
 | `run_cp52_r2.py` | rung_R2_detector_oracle rung R2 |
 | `run_cp58_transplant.py` | perception_transplant perception transplant |
@@ -28,7 +29,6 @@ separate text-reasoning study cited nowhere in this paper.
 | `run_e7_tts.py` | test_time_scaling test-time scaling |
 | `score_e7.py` | test_time_scaling scoring |
 | `score_expert.py` | expert_study expert study (unrun) |
-| `test_reward_text.py` | reward function tests |
 | `train_alignn_cpu.py` | external_baselines ALIGNN baseline |
 | `train_alignn_e8.py` | external_baselines ALIGNN |
 | `train_e2_lora.py` | sft_chain SFT training |
