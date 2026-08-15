@@ -1,0 +1,47 @@
+[project]
+name = "render-ceiling"
+version = "1.0.0"
+description = "A model-free ceiling for vision-language model evaluation on rendered crystal structures"
+readme = "README.md"
+requires-python = ">=3.11"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Can Polat" },
+    { name = "Mustafa Kurban", email = "kurbanm@ankara.edu.tr" },
+    { name = "Erchin Serpedin" },
+    { name = "Hasan Kurban", email = "hkurban@hbku.edu.qa" },
+]
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+]
+
+[project.urls]
+Repository = "https://github.com/KurbanIntelligenceLab/render-ceiling"
+
+[project.optional-dependencies]
+pipeline = [
+    "pymatgen",
+    "spglib",
+    "ase",
+    "Pillow",
+    "mp-api",
+]
+arms = [
+    "torch",
+    "transformers",
+    "peft",
+    "trl",
+]
+baselines = [
+    "dgl",
+    "alignn",
+    "jarvis-tools",
+]
+
+[tool.uv]
+package = false
+
+[tool.setuptools]
+py-modules = []

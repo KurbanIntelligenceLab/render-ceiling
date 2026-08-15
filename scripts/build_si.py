@@ -63,7 +63,7 @@ def main(root, out):
     # writes reports/sources/SUPPLEMENTARY_SECTIONS.md, which is kept as the standalone S1-S14 document.
     sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
     import build_supplementary
-    sect_path = f"{root}/reports/sources/SUPPLEMENTARY_SECTIONS.md"
+    sect_path = f"{root}/docs/reports/sources/SUPPLEMENTARY_SECTIONS.md"
     build_supplementary.main(rdir, sect_path)
     sections = open(sect_path).read()
     # drop its standalone title, it becomes a part here
@@ -96,10 +96,10 @@ def main(root, out):
             part4.append(f"\n### {f}\n\n```\n" + open(f"{rdir}/{cp}/{f}").read().rstrip() + "\n```\n")
 
     doc = (HEADER + "\n".join(toc) + "\n\n---\n\n"
-           + "\n# PART I — NARRATIVE REPORT\n\n" + open(f"{root}/reports/REPORT.md").read()
+           + "\n# PART I — NARRATIVE REPORT\n\n" + open(f"{root}/docs/reports/REPORT.md").read()
            + "\n\n---\n\n# PART II — SUPPLEMENTARY SECTIONS\n\n" + sections
            + "\n\n---\n\n# PART III — REVIEWER QUESTIONS, ANSWERED FROM THE RECORDS\n\n"
-           + re.sub(r"\A# [^\n]*\n", "", open(f"{root}/reports/sources/PART_C_ANSWERS.md").read()).lstrip()
+           + re.sub(r"\A# [^\n]*\n", "", open(f"{root}/docs/reports/sources/PART_C_ANSWERS.md").read()).lstrip()
            + "\n\n---\n\n# PART IV — COMPLETE CHECKPOINT RECORD\n" + "\n".join(part4))
     open(out, "w").write(doc)
     nback = sum(len(backing_files(rdir, c)) for c in cps)

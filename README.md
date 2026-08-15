@@ -21,7 +21,7 @@ Submitted to *Digital Discovery* (Royal Society of Chemistry).
 A vision–language model that misreads a rendered crystal structure and one that misreasons about it produce the same wrong answer, and every existing method for separating them puts a second model in the loop. When a benchmark is built by rendering a structure whose coordinates are known, no model is needed: inverting the known cameras and re-solving cross-view correspondence returns the answer the images support, a quantity we call the render ceiling. We characterise exactly when that ceiling reaches 1, by an emptiness condition on a set of geometric phantoms, and certify that the condition holds on 2160 structures drawn from the Materials Project, so every point of a model's deficit is attributable to the model. Used as the top rung of an attribution ladder over fourteen vision–language models under a frozen evaluation protocol, the ceiling reverses the prevailing explanation of multimodal failure: supplying exact geometry as text lifts every model but closes the minority of the gap, leaving 13 of 14 limited more by what survives perception than by perception itself. The same instrument catches what a leaderboard cannot: a strong model used as the structure-extraction stage emits syntactically perfect coordinates whose median recall against ground truth is zero, a fabrication downstream accuracy would score as bad reasoning. The construction transfers to any benchmark whose forward rendering is known and invertible, and it returns design rules for benchmark builders: which camera placements are robust to extraction noise, and the tolerance at which a pipeline's own reading, not the images, becomes the binding ceiling.
 
 The manuscript source is not distributed here — the article is the journal's to publish — but the code that
-produces every figure in it is, under `manuscript/codes/`, together with the records those figures are drawn
+produces every figure in it is, under `docs/manuscript/codes/`, together with the records those figures are drawn
 from.
 
 ## What is in this repository
@@ -47,14 +47,14 @@ as bad reasoning.
 
 | path | contents |
 |---|---|
-| `manuscript/codes/` | one generator per article figure, plus the shared style module; see its README for the placement-width and panel conventions |
+| `docs/manuscript/codes/` | one generator per article figure, plus the shared style module; see its README for the placement-width and panel conventions |
 | `results/` | 54 experiment records: 99 JSON records and 92 markdown records (every pre-registration and finding) |
 | `results/INDEX.json` | run order of those records, whose directory names describe what each measures rather than when it ran |
-| `reports/` | `SUPPLEMENTARY_INFORMATION.md`, the single merged document, plus `REPORT.md` (its Part I), `CONVENTIONS.md` (standalone), and `sources/` holding the two documents it is built from |
+| `docs/reports/` | `SUPPLEMENTARY_INFORMATION.md`, the single merged document, plus `REPORT.md` (its Part I), `CONVENTIONS.md` (standalone), and `sources/` holding the two documents it is built from |
 | `data/` | 13 files: structures, labels and evaluation splits for all three samples (20 MB) |
 | `scripts/` | 36 top-level scripts and the 11-module `src/cocr` package |
 | `release/` | 82 files: per-structure prediction vectors, frozen prompts, Croissant metadata |
-| `weights/` | 2.82 GB of trained LoRA adapters, git-ignored; see `weights/README.md` for the manifest and sha256 |
+| `weights/` | trained LoRA adapters for the fine-tuned arm, git-ignored and not distributed here; available from the corresponding authors on request, with the manifest and sha256 in `weights/README.md` |
 
 The rendered images the models read are not committed. They are a build product: 2,100 PNGs, five
 orthographic views for each of the 420 evaluation structures, and a pure function of inputs that are here.
@@ -77,21 +77,26 @@ each record's identifier in the project's own history.
 This repository carries the submitted work and nothing else. Earlier drafts and the process documents that
 served them — the assembly and internal-review logs, the working set for the exactness revision, the
 reframing memo — have been retired rather than kept as history: every value they held is a field of a record
-under `results/`, and their prose describes manuscripts that no longer exist. `requirements-full.txt` names
-what re-running the pipeline needs; `requirements.txt` alone reproduces the figures and the gates.
+under `results/`, and their prose describes manuscripts that no longer exist. Dependencies are declared in
+`pyproject.toml` and pinned in `uv.lock`: the base group reproduces the figures and the gates, and the
+`pipeline`, `arms` and `baselines` extras name what re-running each stage of the pipeline needs.
 
 ## Reproducing
 
 Nothing here is transcribed. Each command reads the records and rewrites its output:
 
-    python manuscript/codes/make_fig2_ladder.py results ladder.pdf
-    python scripts/build_si.py . reports/SUPPLEMENTARY_INFORMATION.md
-    python scripts/verify_manuscript_numbers.py
-    python scripts/validate_package.py .
+    uv run python docs/manuscript/codes/make_fig2_ladder.py results ladder.pdf
+    uv run python scripts/build_si.py . docs/reports/SUPPLEMENTARY_INFORMATION.md
+    uv run python scripts/verify_manuscript_numbers.py
+    uv run python scripts/validate_package.py .
 
-Those commands need only `numpy`, `scipy` and `matplotlib` (`pip install -r requirements.txt`).
-Re-running the pipeline itself — rendering, labelling, scoring the oracle, the model arms — needs the
-structure and imaging stack in `requirements-full.txt`.
+`uv run` resolves the environment from `uv.lock` on first use, so no separate install step is needed; those
+commands need only the base group (`numpy`, `scipy`, `matplotlib`). Re-running the pipeline itself —
+rendering, labelling, scoring the oracle, the model arms — needs the extras:
+
+    uv sync --extra pipeline      # rendering, labelling, oracle scoring
+    uv sync --extra arms          # fine-tuning and inference for the model arms
+    uv sync --extra baselines     # the external GNN baselines
 
 Paths are repository-relative through `scripts/_paths.py`; override the root with `RENDER_CEILING_ROOT`.
 Each generator takes a records directory and an output path, and writes a vector PDF with a pinned creation
@@ -110,13 +115,13 @@ crash or silently pass rather than report, and were fixed. The staleness check c
 line counts because the shipped supplementary was once out of date against its own generator while a
 line-count glance read as a pass.
 
-Read `reports/SUPPLEMENTARY_INFORMATION.md` first. It is the whole project in one file, in four parts: the
+Read `docs/reports/SUPPLEMENTARY_INFORMATION.md` first. It is the whole project in one file, in four parts: the
 narrative report, the supplementary sections, reviewer questions answered from the records, and every
 record's pre-registration and finding verbatim. Each section opens with a line naming the exact JSON files
 its claims come from, so any number traces from prose to source without searching. The document is
 generated, never edited by hand.
 
-`reports/CONVENTIONS.md` is the exception to that: it is standalone, not a build input, and not absorbed
+`docs/reports/CONVENTIONS.md` is the exception to that: it is standalone, not a build input, and not absorbed
 anywhere. It records the program-wide statistical conventions the records were run under — how seed spread
 is pooled, when a paired test is required, what an accuracy must carry — and several pre-registrations cite
 it by name. None of its 225 substantive lines appears in the merged document.

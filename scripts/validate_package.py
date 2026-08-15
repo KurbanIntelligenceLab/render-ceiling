@@ -37,7 +37,7 @@ def main(root="."):
         return 1
 
     # 1 structure
-    for d in ("manuscript", "manuscript/codes", "reports", "results", "scripts",
+    for d in ("docs/manuscript", "docs/manuscript/codes", "docs/reports", "results", "scripts",
               "scripts/src/cocr", "release"):
         check(os.path.isdir(f"{root}/{d}"), f"[1] missing folder: {d}")
     res_dirs = sorted(d for d in os.listdir(f"{root}/results")
@@ -51,14 +51,14 @@ def main(root="."):
     # that read it run only where it is present — a working tree — and are reported as skipped in a
     # clean clone rather than failing it. Everything that constitutes the reproducibility package —
     # records, scripts, generators, release — is checked unconditionally.
-    DD = f"{root}/manuscript/render-ceiling-dd"
+    DD = f"{root}/docs/manuscript/render-ceiling-dd"
     HAVE_MS = os.path.isdir(DD)
     if not HAVE_MS:
         WARN.append("[2-5,7,11] manuscript source not present; the checks that read it are skipped. "
                     "They run in the authors' working tree, where the manuscript lives.")
     counts = {
         "figures": len([f for f in os.listdir(f"{DD}/figures") if f.endswith(".pdf")]) if HAVE_MS
-                   else len([f for f in os.listdir(f"{root}/manuscript/codes")
+                   else len([f for f in os.listdir(f"{root}/docs/manuscript/codes")
                              if f.startswith("make_fig")]),
         "results_json": sum(len([f for f in os.listdir(f"{root}/results/{d}") if f.endswith(".json")])
                             for d in res_dirs),
@@ -122,7 +122,7 @@ def main(root="."):
     check(not untraced, f"[5] manuscript numbers not traceable to any results.json: {sorted(set(untraced))}")
 
     # 6 SI coverage
-    si = open(f"{root}/reports/SUPPLEMENTARY_INFORMATION.md").read()
+    si = open(f"{root}/docs/reports/SUPPLEMENTARY_INFORMATION.md").read()
     for d in res_dirs:
         check(f"## {d}" in si, f"[6] checkpoint in results/ but not in the SI: {d}")
 
@@ -134,7 +134,7 @@ def main(root="."):
     if os.path.isdir(ledger):
         for script, fig in FIGS:
             out = tempfile.mktemp(suffix=".pdf")
-            r = subprocess.run([sys.executable, f"{root}/manuscript/codes/{script}.py", ledger, out],
+            r = subprocess.run([sys.executable, f"{root}/docs/manuscript/codes/{script}.py", ledger, out],
                                capture_output=True, text=True)
             if not check(r.returncode == 0, f"[7] figure script failed: {script} ({r.stderr.strip()[-120:]})"):
                 continue
@@ -155,8 +155,14 @@ def main(root="."):
           f"[7b] manuscript figures with no generating script: {sorted(referenced - scripted)}")
 
     # 8-9 hygiene
+    # The scan covers the PACKAGE, not the working tree. A resolved virtual environment, the git
+    # object store and the staging area are git-ignored and never published, and a third-party
+    # wheel that ships a file named test_smoke.py is not this project's scratch — walking into
+    # .venv reports thousands of such hits and fails a clean package on its own dependencies.
+    SKIP_DIRS = {".git", ".venv", "venv", "to_be_deleted", "__pycache__", "node_modules"}
     junk, a4 = [], []
-    for dp, _, fs in os.walk(root):
+    for dp, dns, fs in os.walk(root):
+        dns[:] = [d for d in dns if d not in SKIP_DIRS]
         for f in fs:
             # *_snapshot.md under results/ is the DELIBERATE pre-correction record — the evidence
             # a withdrawal actually happened — and is not scratch. Everything else matching is.
@@ -169,9 +175,11 @@ def main(root="."):
     # files silently appeared here just from running the audit tooling. This check WARNS rather than
     # fails, because running the validator itself imports the figure modules and so creates bytecode —
     # a hard failure here would be self-defeating, reporting a defect the check's own execution caused.
-    pyc = [os.path.relpath(os.path.join(dp, f), root)
-           for dp, _, fs in os.walk(root) for f in fs
-           if f.endswith(".pyc") or os.path.basename(dp) == "__pycache__"]
+    pyc = []
+    for dp, dns, fs in os.walk(root):
+        dns[:] = [d for d in dns if d not in (SKIP_DIRS - {"__pycache__"})]
+        pyc += [os.path.relpath(os.path.join(dp, f), root) for f in fs
+                if f.endswith(".pyc") or os.path.basename(dp) == "__pycache__"]
     if pyc:
         WARN.append(f"[8b] compiled bytecode present ({len(pyc)} files, e.g. {pyc[0]}). Regenerated on "
                     f"every run and machine-specific — delete before publishing: "
@@ -192,8 +200,8 @@ def main(root="."):
 
     # 10 report consistency — the WHOLE document, not a prefix. A prefix comparison passes while the
     # two diverge anywhere after character 400, which is most of the report.
-    rep = open(f"{root}/reports/REPORT.md").read()
-    check(rep.strip() in si, "[10] SI Part I is not reports/REPORT.md verbatim")
+    rep = open(f"{root}/docs/reports/REPORT.md").read()
+    check(rep.strip() in si, "[10] SI Part I is not docs/reports/REPORT.md verbatim")
 
     # 13 the shipped SI must be EXACTLY what its generator produces from the current results/.
     # A shipped file that its own builder no longer reproduces breaks the reproducibility guarantee,
@@ -204,9 +212,9 @@ def main(root="."):
                    capture_output=True, text=True)
     try:
         fresh = open(_tmp, "rb").read()
-        shipped = open(f"{root}/reports/SUPPLEMENTARY_INFORMATION.md", "rb").read()
+        shipped = open(f"{root}/docs/reports/SUPPLEMENTARY_INFORMATION.md", "rb").read()
         check(fresh == shipped,
-              "[13] reports/SUPPLEMENTARY_INFORMATION.md is STALE: build_si.py produces a different "
+              "[13] docs/reports/SUPPLEMENTARY_INFORMATION.md is STALE: build_si.py produces a different "
               f"file from the current results/ ({len(fresh.splitlines())} lines vs "
               f"{len(shipped.splitlines())} shipped). Re-run build_si.py.")
     except FileNotFoundError:
@@ -217,7 +225,7 @@ def main(root="."):
     # 13c anything filed under reports/sources/ is claimed by the README to be a BUILD INPUT whose
     # content appears in full in the merged document. That claim was once made for a file it was not
     # true of, which would have let a reader delete content surviving nowhere else. Test it per file.
-    srcdir = f"{root}/reports/sources"
+    srcdir = f"{root}/docs/reports/sources"
     if os.path.isdir(srcdir):
         for f in sorted(os.listdir(srcdir)):
             if not f.endswith(".md"):
@@ -225,7 +233,7 @@ def main(root="."):
             lines = [l for l in open(f"{srcdir}/{f}").read().splitlines() if len(l.split()) > 6]
             absent = [l for l in lines if l not in si]
             check(not absent,
-                  f"[13c] reports/sources/{f} is filed as a build input but {len(absent)} of "
+                  f"[13c] docs/reports/sources/{f} is filed as a build input but {len(absent)} of "
                   f"{len(lines)} substantive lines are ABSENT from the merged document. Either it is "
                   f"not a source, or the merged document is stale.")
 

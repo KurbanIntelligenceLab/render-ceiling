@@ -112,7 +112,7 @@ if __name__ == "__main__":
     # is right to reject those in prose and must not reject them in the archival record whose purpose
     # is to document the retraction; its Parts I-III are gated via their sources.
     docs = {p: open(p).read()
-            for p in sorted(glob.glob(f"{ROOT}/reports/*.md") + glob.glob(f"{ROOT}/reports/sources/*.md"))
+            for p in sorted(glob.glob(f"{ROOT}/docs/reports/*.md") + glob.glob(f"{ROOT}/docs/reports/sources/*.md"))
             if os.path.basename(p) != "SUPPLEMENTARY_INFORMATION.md"}
     vals, src = ledger_values()
     # derived quantities: computed from stored counts rather than stored themselves
