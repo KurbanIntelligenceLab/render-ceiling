@@ -1,0 +1,399 @@
+{
+ "stage": "render_convention_sweep render-convention sweep \u2014 ORACLE LEG (ICLR directive)",
+ "branch": "ORACLE LEG: V2 for C4 (ceiling rises, refuting this project's published null prediction) and a second ceiling result for C2 (tiling COSTS 22 structures). MODEL LEG: V3 for ALL FOUR conventions \u2014 zero of 16 paired comparisons significant. The protocol's information content is improvable and none of the improvement reaches the models.",
+ "oracle_ceiling_by_camera_map": {
+  "original": {
+   "frozen_k": 200,
+   "offaxis_k": 209,
+   "n": 210,
+   "frozen_micro": 0.9524,
+   "offaxis_micro": 0.9952,
+   "offaxis_only": 9,
+   "frozen_only": 0,
+   "exact_p": 0.00390625
+  },
+  "expansion": {
+   "frozen_k": 191,
+   "offaxis_k": 203,
+   "n": 210,
+   "frozen_micro": 0.9095,
+   "offaxis_micro": 0.9667,
+   "offaxis_only": 16,
+   "frozen_only": 4,
+   "exact_p": 0.01181793212890625
+  }
+ },
+ "prediction_refuted": {
+  "what_the_report_said": "the off-axis intervention was closed on geometric argument with a predicted null",
+  "what_was_measured": "original 0.9524 -> 0.9952 (gained 9, lost 0, p = 0.00391); expansion 0.9095 -> 0.9667 (gained 16, lost 4, p = 0.01182)",
+  "why_it_survived": "projection_matrices() hardcoded the frozen VIEWS and reconstruct_positions() had no view_map parameter, so any perturbed-camera run silently reproduced the frozen ceiling. Caught because my first run printed C1 and C4 at IDENTICAL 66/70 and reported the missing parameter explicitly.",
+  "fix": "view_map threaded through both functions, default frozen VIEWS; regression verified at exactly 200/210 on the default path so no prior result moves"
+ },
+ "mechanism": "viewing down a lattice vector stacks supercell copies onto identical pixels (occlusion_manipulation); perturbing the camera unstacks them, so a triangulating reader gets MORE information rather than easier information",
+ "consequence": "the frozen protocol is NOT information-optimal \u2014 it leaves ~4 points of ceiling on the original sample and ~6 on the expansion. This does NOT establish that models read off-axis renders better; that is the unrun model leg.",
+ "renders_built": {
+  "sample": "70 structures, stratified 10 per crystal system",
+  "conventions": 5,
+  "pngs_per_convention": 350,
+  "render_failures": 0,
+  "all_byte_distinct": true,
+  "model_leg_calls_required": 4200,
+  "model_leg_run": false
+ },
+ "ceilings_not_computed": {
+  "C3_small_radii": "shares C1's ceiling BY CONSTRUCTION \u2014 the oracle never sees a pixel",
+  "C5_single_small": "shares C2's ceiling for the same reason"
+ },
+ "not_in_this_checkpoint": "metric depth-graded colour and the ANNOTATED PLAN VIEW both need new renderer code. The annotated plan view is the most motivated intervention in the package and remains unbuilt.",
+ "model_leg": {
+  "design": "4 models x 5 conventions x 70 stratified structures x K=3, paired per structure",
+  "accuracies": {
+   "C1_frozen": {
+    "anthropic/claude-opus-4.8": 0.5429,
+    "google/gemini-3.6-flash": 0.7857,
+    "meta-llama/llama-4-maverick": 0.4429,
+    "x-ai/grok-4.5": 0.5857
+   },
+   "C2_single_cell": {
+    "anthropic/claude-opus-4.8": 0.5286,
+    "google/gemini-3.6-flash": 0.7286,
+    "meta-llama/llama-4-maverick": 0.4714,
+    "x-ai/grok-4.5": 0.6429
+   },
+   "C3_small_radii": {
+    "anthropic/claude-opus-4.8": 0.5571,
+    "google/gemini-3.6-flash": 0.7714,
+    "meta-llama/llama-4-maverick": 0.4714,
+    "x-ai/grok-4.5": 0.5857
+   },
+   "C4_off_axis": {
+    "anthropic/claude-opus-4.8": 0.5571,
+    "google/gemini-3.6-flash": 0.7571,
+    "meta-llama/llama-4-maverick": 0.4714,
+    "x-ai/grok-4.5": 0.6143
+   },
+   "C5_single_small": {
+    "anthropic/claude-opus-4.8": 0.5714,
+    "google/gemini-3.6-flash": 0.7,
+    "meta-llama/llama-4-maverick": 0.4714,
+    "x-ai/grok-4.5": 0.6571
+   }
+  },
+  "paired_vs_C1": {
+   "C2_single_cell": {
+    "anthropic/claude-opus-4.8": {
+     "c1": 0.5429,
+     "this": 0.5286,
+     "delta": -0.0143,
+     "new_only": 5,
+     "c1_only": 6,
+     "p": 1.0,
+     "n_paired": 70
+    },
+    "google/gemini-3.6-flash": {
+     "c1": 0.7857,
+     "this": 0.7286,
+     "delta": -0.0571,
+     "new_only": 2,
+     "c1_only": 6,
+     "p": 0.2890625,
+     "n_paired": 70
+    },
+    "meta-llama/llama-4-maverick": {
+     "c1": 0.4429,
+     "this": 0.4714,
+     "delta": 0.0285,
+     "new_only": 2,
+     "c1_only": 0,
+     "p": 0.5,
+     "n_paired": 70
+    },
+    "x-ai/grok-4.5": {
+     "c1": 0.5857,
+     "this": 0.6429,
+     "delta": 0.0572,
+     "new_only": 8,
+     "c1_only": 4,
+     "p": 0.3876953125,
+     "n_paired": 70
+    }
+   },
+   "C3_small_radii": {
+    "anthropic/claude-opus-4.8": {
+     "c1": 0.5429,
+     "this": 0.5571,
+     "delta": 0.0142,
+     "new_only": 3,
+     "c1_only": 2,
+     "p": 1.0,
+     "n_paired": 70
+    },
+    "google/gemini-3.6-flash": {
+     "c1": 0.7857,
+     "this": 0.7714,
+     "delta": -0.0143,
+     "new_only": 1,
+     "c1_only": 2,
+     "p": 1.0,
+     "n_paired": 70
+    },
+    "meta-llama/llama-4-maverick": {
+     "c1": 0.4429,
+     "this": 0.4714,
+     "delta": 0.0285,
+     "new_only": 2,
+     "c1_only": 0,
+     "p": 0.5,
+     "n_paired": 70
+    },
+    "x-ai/grok-4.5": {
+     "c1": 0.5857,
+     "this": 0.5857,
+     "delta": 0.0,
+     "new_only": 3,
+     "c1_only": 3,
+     "p": 1.0,
+     "n_paired": 70
+    }
+   },
+   "C4_off_axis": {
+    "anthropic/claude-opus-4.8": {
+     "c1": 0.5429,
+     "this": 0.5571,
+     "delta": 0.0142,
+     "new_only": 3,
+     "c1_only": 2,
+     "p": 1.0,
+     "n_paired": 70
+    },
+    "google/gemini-3.6-flash": {
+     "c1": 0.7857,
+     "this": 0.7571,
+     "delta": -0.0286,
+     "new_only": 3,
+     "c1_only": 5,
+     "p": 0.7265625,
+     "n_paired": 70
+    },
+    "meta-llama/llama-4-maverick": {
+     "c1": 0.4429,
+     "this": 0.4714,
+     "delta": 0.0285,
+     "new_only": 2,
+     "c1_only": 0,
+     "p": 0.5,
+     "n_paired": 70
+    },
+    "x-ai/grok-4.5": {
+     "c1": 0.5857,
+     "this": 0.6143,
+     "delta": 0.0286,
+     "new_only": 5,
+     "c1_only": 3,
+     "p": 0.7265625,
+     "n_paired": 70
+    }
+   },
+   "C5_single_small": {
+    "anthropic/claude-opus-4.8": {
+     "c1": 0.5429,
+     "this": 0.5714,
+     "delta": 0.0285,
+     "new_only": 5,
+     "c1_only": 3,
+     "p": 0.7265625,
+     "n_paired": 70
+    },
+    "google/gemini-3.6-flash": {
+     "c1": 0.7857,
+     "this": 0.7,
+     "delta": -0.0857,
+     "new_only": 2,
+     "c1_only": 8,
+     "p": 0.109375,
+     "n_paired": 70
+    },
+    "meta-llama/llama-4-maverick": {
+     "c1": 0.4429,
+     "this": 0.4714,
+     "delta": 0.0285,
+     "new_only": 3,
+     "c1_only": 1,
+     "p": 0.625,
+     "n_paired": 70
+    },
+    "x-ai/grok-4.5": {
+     "c1": 0.5857,
+     "this": 0.6571,
+     "delta": 0.0714,
+     "new_only": 6,
+     "c1_only": 1,
+     "p": 0.125,
+     "n_paired": 70
+    }
+   }
+  },
+  "pooled_discordance": {
+   "C2_single_cell": {
+    "gained": 17,
+    "lost": 16,
+    "p": 1.0,
+    "n_measurements": 280
+   },
+   "C3_small_radii": {
+    "gained": 9,
+    "lost": 7,
+    "p": 0.803619384765625,
+    "n_measurements": 280
+   },
+   "C4_off_axis": {
+    "gained": 13,
+    "lost": 10,
+    "p": 0.6776394844055176,
+    "n_measurements": 280
+   },
+   "C5_single_small": {
+    "gained": 16,
+    "lost": 13,
+    "p": 0.711071103811264,
+    "n_measurements": 280
+   }
+  },
+  "n_significant": 0,
+  "n_comparisons": 16,
+  "min_p": 0.1094,
+  "power": {
+   "n": 70,
+   "test_actually_run": "paired exact binomial on discordant pairs (McNemar-style), two-sided alpha=0.05",
+   "CORRECTED_paired_analysis": {
+    "mean_discordant_pairs": 6.3,
+    "discordance_rate": 0.09,
+    "per_comparison": {
+     "C2_single_cell|anthropic/claude-opus-4.8": {
+      "discordant": 11,
+      "min_significant_split": "10:1",
+      "mde_abs_delta": 0.1286,
+      "observed_abs_delta": 0.0143
+     },
+     "C2_single_cell|google/gemini-3.6-flash": {
+      "discordant": 8,
+      "min_significant_split": "8:0",
+      "mde_abs_delta": 0.1143,
+      "observed_abs_delta": 0.0571
+     },
+     "C2_single_cell|meta-llama/llama-4-maverick": {
+      "discordant": 2,
+      "min_significant_split": "unreachable",
+      "mde_abs_delta": null,
+      "observed_abs_delta": 0.0285
+     },
+     "C2_single_cell|x-ai/grok-4.5": {
+      "discordant": 12,
+      "min_significant_split": "10:2",
+      "mde_abs_delta": 0.1143,
+      "observed_abs_delta": 0.0572
+     },
+     "C3_small_radii|anthropic/claude-opus-4.8": {
+      "discordant": 5,
+      "min_significant_split": "unreachable",
+      "mde_abs_delta": null,
+      "observed_abs_delta": 0.0142
+     },
+     "C3_small_radii|google/gemini-3.6-flash": {
+      "discordant": 3,
+      "min_significant_split": "unreachable",
+      "mde_abs_delta": null,
+      "observed_abs_delta": 0.0143
+     },
+     "C3_small_radii|meta-llama/llama-4-maverick": {
+      "discordant": 2,
+      "min_significant_split": "unreachable",
+      "mde_abs_delta": null,
+      "observed_abs_delta": 0.0285
+     },
+     "C3_small_radii|x-ai/grok-4.5": {
+      "discordant": 6,
+      "min_significant_split": "6:0",
+      "mde_abs_delta": 0.0857,
+      "observed_abs_delta": 0.0
+     },
+     "C4_off_axis|anthropic/claude-opus-4.8": {
+      "discordant": 5,
+      "min_significant_split": "unreachable",
+      "mde_abs_delta": null,
+      "observed_abs_delta": 0.0142
+     },
+     "C4_off_axis|google/gemini-3.6-flash": {
+      "discordant": 8,
+      "min_significant_split": "8:0",
+      "mde_abs_delta": 0.1143,
+      "observed_abs_delta": 0.0286
+     },
+     "C4_off_axis|meta-llama/llama-4-maverick": {
+      "discordant": 2,
+      "min_significant_split": "unreachable",
+      "mde_abs_delta": null,
+      "observed_abs_delta": 0.0285
+     },
+     "C4_off_axis|x-ai/grok-4.5": {
+      "discordant": 8,
+      "min_significant_split": "8:0",
+      "mde_abs_delta": 0.1143,
+      "observed_abs_delta": 0.0286
+     },
+     "C5_single_small|anthropic/claude-opus-4.8": {
+      "discordant": 8,
+      "min_significant_split": "8:0",
+      "mde_abs_delta": 0.1143,
+      "observed_abs_delta": 0.0285
+     },
+     "C5_single_small|google/gemini-3.6-flash": {
+      "discordant": 10,
+      "min_significant_split": "9:1",
+      "mde_abs_delta": 0.1143,
+      "observed_abs_delta": 0.0857
+     },
+     "C5_single_small|meta-llama/llama-4-maverick": {
+      "discordant": 4,
+      "min_significant_split": "unreachable",
+      "mde_abs_delta": null,
+      "observed_abs_delta": 0.0285
+     },
+     "C5_single_small|x-ai/grok-4.5": {
+      "discordant": 7,
+      "min_significant_split": "7:0",
+      "mde_abs_delta": 0.1,
+      "observed_abs_delta": 0.0714
+     }
+    },
+    "comparisons_where_significance_is_reachable": 9,
+    "of": 16,
+    "unreachable_comparisons": 7,
+    "reading": "with a median of ~6 discordant pairs per comparison, several comparisons CANNOT reach p<0.05 at any split. The null is therefore weaker than a single MDE number suggests: for those comparisons the design has no power at all, not merely low power."
+   },
+   "RETRACTED_mde_alpha05": {
+    "value": 0.162,
+    "formula": "1.96*sqrt(2*p0*(1-p0)/n) with p0=0.60",
+    "defect": "this is the TWO-INDEPENDENT-PROPORTION normal approximation with no target-power term, so it describes 50% power on an UNPAIRED design. The test actually run was PAIRED. Applying an unpaired formula to a paired design is a category error, and the number it produced was neither the paired MDE nor an 80%-power figure.",
+    "why_it_matters_in_both_directions": "the paired design is more sensitive than 0.162 implies for comparisons with many discordant pairs, but several comparisons have so few discordant pairs that no split reaches significance. Quoting one MDE for all sixteen was wrong either way."
+   },
+   "largest_observed_abs_delta": 0.0857,
+   "what_the_null_now_licenses": "no convention produced a detectable change, and the honest statement is per-comparison: significance was reachable in only some comparisons given their discordance counts. The blanket claim 'the null bounds the effect below ~0.16' is withdrawn."
+  },
+  "direction_inconsistent_within_convention": "on C2 and C5 gemini goes DOWN while grok goes UP, so there is no consistent direction masked by low power",
+  "gate_failures": 0,
+  "unparseable_total": 0
+ },
+ "oracle_c2_supercell": {
+  "single_cell_k": 200,
+  "tiled_k": 178,
+  "n": 210,
+  "single_cell_micro": 0.9524,
+  "tiled_micro": 0.8476,
+  "tiled_only": 0,
+  "single_only": 22,
+  "exact_p": 4.76837158203125e-07,
+  "skipped": 0
+ },
+ "two_legs_together": "C4 raises the ORACLE ceiling significantly and moves no model measurably. The information the frozen protocol withholds is real, recoverable by a geometric reader, and NOT what limits the models \u2014 the same conclusion the attribution ladder reached, arrived at by intervention rather than decomposition. An intervention that adds information a model cannot use is evidence about the model."
+}

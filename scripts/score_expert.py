@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-CP11 expert-study scorer. Scores one or more returned response sheets against ANSWER_KEY.json,
+expert_study expert-study scorer. Scores one or more returned response sheets against ANSWER_KEY.json,
 applies the pre-registered authenticity screen (S1-S4), and reports the hierarchical levels.
 
 Usage: python score_expert.py --key ANSWER_KEY.json --sheets r1.csv r2.csv r3.csv --out results.json

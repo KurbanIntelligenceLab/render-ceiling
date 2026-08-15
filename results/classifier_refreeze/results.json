@@ -1,0 +1,126 @@
+{
+ "stage": "classifier_refreeze classifier refreeze (ICLR plan, Phase A)",
+ "random_forest": {
+  "canonical_k": 188,
+  "n": 210,
+  "canonical_micro": 0.8952,
+  "spec_file": "classifier_specifications.json",
+  "variant_range": [
+   183,
+   188
+  ],
+  "reproduces_published_186": false,
+  "verdict": "third non-recovery; forward reproducibility fixed, historical value not recovered",
+  "canonical_form_selection": {
+   "form": "ratios of SORTED edge lengths; population standard deviations for dispersion features",
+   "justification": "a scale-free descriptor must be invariant to axis labelling \u2014 a property of the feature",
+   "NOT_blinded": "the variant grid had already computed and printed all 12 rankings when this form was selected, with both sorted variants tied top at 188/210. An earlier version of the finding claimed the choice was fixed before the grid was read; that was false and is corrected. The invariance argument stands independently, but the selection was not blinded and is not described as such.",
+   "canonical_is_also_top_scoring": true
+  }
+ },
+ "partition_canonical": {
+  "rule": "2% length / 1 degree angle; monoclinic branch requires beta genuinely non-90",
+  "original": {
+   "sufficient": 140,
+   "ambiguous": 70,
+   "composition": {
+    "tetragonal": 4,
+    "trigonal_rhombohedral": 1,
+    "orthorhombic": 2,
+    "cubic": 3,
+    "hexagonal_or_trigonal": 60
+   },
+   "reproduces_CP25_140_70": true
+  },
+  "expansion": {
+   "sufficient": 141,
+   "ambiguous": 69,
+   "composition": {
+    "hexagonal_or_trigonal": 58,
+    "orthorhombic": 5,
+    "tetragonal": 5,
+    "cubic": 1
+   },
+   "recorded_was": "140/70",
+   "note": "one-structure disagreement, stated not tuned away"
+  },
+  "predicate_code": {
+   "rule": "_metric_system at tol=2e-2 (length, relative) and 1.0 degree (angle), then _box_sufficient: hexagonal_or_trigonal is always ambiguous; trigonal_rhombohedral is sufficient only if truth is trigonal; otherwise sufficient iff the metric class equals the true system",
+   "reference_implementation": "scripts/run_e05_oracle.py::_metric_system/_box_sufficient, BUT that file hardcodes tol=1e-2 and 0.5 degrees, which gives 144/66. The canonical partition needs 2e-2 and 1.0.",
+   "verified_2026_08_06": {
+    "sufficient": 140,
+    "ambiguous": 70,
+    "composition_identical_to_record": true
+   },
+   "note": "I briefly recorded this as a fourth non-recovery after running the reference file at ITS default tolerance rather than the canonical one. That was my error, not a record defect: at the canonical tolerance the split and all five composition classes reproduce exactly. The retracted claim is noted here so the correction is visible rather than silent."
+  }
+ },
+ "stratified_original_canonical": {
+  "A3_native_K8": {
+   "box_sufficient": 0.7,
+   "box_ambiguous": 0.6714,
+   "drop": 0.0286,
+   "fisher_p": 0.751806,
+   "counts": "98/140, 47/70"
+  },
+  "B1_direct_K8": {
+   "box_sufficient": 0.6571,
+   "box_ambiguous": 0.5429,
+   "drop": 0.1143,
+   "fisher_p": 0.131835,
+   "counts": "92/140, 38/70"
+  },
+  "V2b_chain_K8": {
+   "box_sufficient": 0.3643,
+   "box_ambiguous": 0.4143,
+   "drop": -0.05,
+   "fisher_p": 0.547071,
+   "counts": "51/140, 29/70"
+  },
+  "B3_chain_K8": {
+   "box_sufficient": 0.1857,
+   "box_ambiguous": 0.4714,
+   "drop": -0.2857,
+   "fisher_p": 3.4e-05,
+   "counts": "26/140, 33/70"
+  },
+  "RF_lattice19_refrozen": {
+   "box_sufficient": 0.9214,
+   "box_ambiguous": 0.8429,
+   "drop": 0.0786,
+   "fisher_p": 0.095699,
+   "counts": "129/140, 59/70"
+  }
+ },
+ "significance_change": {
+  "arm": "B1_direct_K8",
+  "published_on_137_73": {
+   "drop": 0.151,
+   "fisher_p": 0.037,
+   "significant": true
+  },
+  "canonical_on_140_70": {
+   "drop": 0.1143,
+   "fisher_p": 0.131835,
+   "significant": false
+  },
+  "consequence": "the ORIGINAL-sample leg of the stratified claim is a FOURTH independent failure"
+ },
+ "open_observation": {
+  "arm": "B3_chain_K8",
+  "drop": -0.2857,
+  "fisher_p": 3.4e-05,
+  "note": "runs OPPOSITE to the proposed mechanism \u2014 better on ambiguous structures. Not explained."
+ },
+ "recovered_inputs": {
+  "source": "box1_all_json.tar.gz + box2_all.tar.gz artifacts",
+  "arms_recovered": [
+   "A3_native_K8",
+   "B1_direct_K8",
+   "V2b_chain_K8",
+   "B3_chain_K8"
+  ],
+  "verification": "all four reproduce their recorded accuracy exactly (145/130/80/59 of 210)",
+  "note": "the per-structure vectors were believed swept; they were in saved box harvests, so no GPU regeneration was needed"
+ }
+}

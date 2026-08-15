@@ -7,7 +7,7 @@ exist in any record, the line says BLOCKED rather than supplying a plausible fig
 ---
 
 ## S1. Dataset construction and label certification
-SOURCE: CP0_pipeline, CP0b_identifiability, CP50_eval_scaleup
+SOURCE: pipeline, identifiability, eval_scaleup
 
 SOURCE DATABASES. Materials Project and JARVIS-DFT. The pilot drew 49 structures from MP
 and 49 from JARVIS; the identifiability sample drew 140 and
@@ -45,7 +45,7 @@ PER-SAMPLE BOUNDS FOR THE TWO 210-STRUCTURE EVALUATION SETS: **BLOCKED** — not
 ---
 
 ## S2. Render protocol
-SOURCE: CP0_pipeline, CP0c_resolution_audit
+SOURCE: pipeline, resolution_audit
 
 CAMERA SPECIFICATION. Five orthographic views: three principal-axis and two oblique. The direction vectors
 are the frozen `VIEWS` map in `scripts/src/cocr/render.py`, which is the normative specification. They are
@@ -53,7 +53,7 @@ referenced rather than transcribed here so the two cannot drift.
 
 RESOLUTION, READ FROM THE LIVE PROCESSOR RATHER THAN ASSUMED. max_pixels
 589824, 576 effective visual
-tokens per view, read from the live processor, not a formula. This matters because CP0c found the DEPLOYED configuration
+tokens per view, read from the live processor, not a formula. This matters because resolution_audit found the DEPLOYED configuration
 differed from the DOCUMENTED one by 3.408x in area. The audit's pre-registration stated its own asymmetry
 in advance: only an INCREASE at native resolution would have been a clean positive. The outcome landed in
 the ambiguous branch, so resolution is NOT excluded as a factor and no claim is attached to it.
@@ -64,7 +64,7 @@ the numeric values is **BLOCKED** — not in any checkpoint record; must be meas
 ---
 
 ## S3. The geometric oracle
-SOURCE: CP25, CP24, CP31
+SOURCE: oracle_within_sample, oracle_stratified, visibility_corrected_oracle
 
 WHY THE CEILING CAN BE BELOW 1.0, AND WHY THAT IS THE POINT. The oracle forward-projects ground-truth
 positions through each frozen camera, DISCARDS cross-view correspondence, re-solves by ray intersection,
@@ -84,14 +84,14 @@ RUNTIME, WHICH IS THE REPRODUCIBILITY ARGUMENT. The pilot pipeline labelled and 
 in 31.8 s, both on CPU only — the oracle has no GPU dependency anywhere in
 `reconstruct.py`, so anyone can rerun it on a laptop. Per-run wall-clock for the full evaluation sweeps was
 not recorded.
-MATCH TOLERANCE AND THE PER-STRUCTURE FAILURE-MODE BREAKDOWN: **BLOCKED** — not in any checkpoint record; must be measured or the sentence dropped. (the CP58 extraction scoring
+MATCH TOLERANCE AND THE PER-STRUCTURE FAILURE-MODE BREAKDOWN: **BLOCKED** — not in any checkpoint record; must be measured or the sentence dropped. (the perception_transplant extraction scoring
 tolerance IS recorded, at 0.15 in fractional coordinates, but that is a
 different quantity from the oracle's own cross-view match criterion.)
 
 ---
 
 ## S4. The attribution ladder
-SOURCE: CP25, CP53, CP58, CP60
+SOURCE: oracle_within_sample, rung_R3_coords_as_text, perception_transplant, length_control
 
 R0 IS DEFINITIONAL. Applying the symmetry algorithm to ground-truth positions returns the label by
 construction, so R0 = 1.0000 exactly. Treating R0 as approximately equal to R1 would discard the interval
@@ -107,7 +107,7 @@ isolates symmetry reasoning. Median perception share 0.3092 across the
 -0.6439 at p =
 0.013.
 
-WHY IT IS ONLY A BOUND (CP60, 0 new API calls). Regressing per-structure R3 correctness on
+WHY IT IS ONLY A BOUND (length_control, 0 new API calls). Regressing per-structure R3 correctness on
 conventional-cell atom count over the same records: pooled Spearman -0.0908 at p =
 8.13e-07 over 2940 model-structure pairs, with
 13 of 14 models negative and
@@ -134,14 +134,14 @@ THE CONTROL PAIR. Formula-only collapses every model toward seven-way chance (me
 The two conditions differ in one thing, which is what makes the lift attributable to the geometry rather
 than to text-mode prompting. PROMPT LENGTH: {"mean_tokens_approx": 177, "median": 170, "max": 250, "truncated_structures": 0, "note": "SHORTER than the 5-image pixel prompts, so a length advantage cannot explain the gain"} — the geometry prompts are
 shorter than the five-image prompts they outperform, which rules out a length artefact in the LIFT (a
-different question from CP60's, which is about the residual's composition).
+different question from length_control's, which is about the residual's composition).
 
 PER-MODEL R3 AND R4 VECTORS: `release/predictions/`, one file per model.
 
 ---
 
 ## S5. The extraction fabrication
-SOURCE: CP58
+SOURCE: perception_transplant
 
 THE PROMPTS, VERBATIM: `release/frozen_prompts.json`, entries `CP58_extraction_strong_model` (462
 characters, symmetry question deliberately withheld so the extraction cannot leak an answer) and
@@ -181,23 +181,23 @@ the zero-match count and the emitted-atom distribution are recorded; the full hi
 ---
 
 ## S6. Roster, prompts, decoding, and the model arms
-SOURCE: CP2, CP3, CP12, CP14, CP26, CP41, CP53
+SOURCE: sft_chain, process_reward, sota_push, frontier_ceiling, model_sweep, no_image_control, rung_R3_coords_as_text
 
 THREE ROSTERS, WHICH IS WHY NO BARE COUNT APPEARS ANYWHERE IN THE PAPER.
 
 | condition | attempted | scored | unscored, and under which gate |
 |---|---|---|---|
-| CP26 zero-shot leaderboard | 14 pre-registered | 13 | `moonshotai/kimi-k2.6` — ENDPOINT FAILURE: no response on a 2-structure K=1 probe after 10 minutes, so the failure is the endpoint not the harness |
-| CP41 image-removal control | 16 | 13 | 3, over a pre-registered 5\% API-error gate |
-| CP53 coordinates-as-text | 15 | 14 | `qwen/qwen2.5-vl-72b-instruct` — both gates exceeded at 34.4\% errors |
+| model_sweep zero-shot leaderboard | 14 pre-registered | 13 | `moonshotai/kimi-k2.6` — ENDPOINT FAILURE: no response on a 2-structure K=1 probe after 10 minutes, so the failure is the endpoint not the harness |
+| no_image_control image-removal control | 16 | 13 | 3, over a pre-registered 5\% API-error gate |
+| rung_R3_coords_as_text coordinates-as-text | 15 | 14 | `qwen/qwen2.5-vl-72b-instruct` — both gates exceeded at 34.4\% errors |
 
 Every unscored entry is reported UNSCORED rather than dropped.
 
-THE MODEL ARMS. Base `Qwen/Qwen3-VL-8B-Instruct`. SFT (CP2): QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train /
-30 test structures, seeds [0, 1, 2]. GRPO (CP3): from SFT checkpoint
+THE MODEL ARMS. Base `Qwen/Qwen3-VL-8B-Instruct`. SFT (sft_chain): QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train /
+30 test structures, seeds [0, 1, 2]. GRPO (process_reward): from SFT checkpoint
 `V1_s0`, lr 1e-05, KL beta 0.02, group size
 8, 300 steps, 1610 train prompts,
-TRL 1.9.0 GRPOTrainer. A3 (CP12): 3220 examples from
+TRL 1.9.0 GRPOTrainer. A3 (sota_push): 3220 examples from
 1610 structures, 3 epochs, 1206
 steps, final loss 0.1419, 29551 s wall clock.
 AUGMENTATION: 6 extra cameras, disjoint from the 5 frozen eval views — disjoint from the five frozen eval views, which is what
@@ -208,7 +208,7 @@ WHAT IS NOT CLAIMED FOR A3. SINGLE-SEED. 139/210 =
 145/210 =
 0.6905 at K=8. It sits INSIDE the reference arm's across-seed
 spread (0.590 / 0.567 / 0.686), exceeding that arm's best seed by ONE structure at K=8 and TRAILING it by
-FIVE at K=3. No improvement over the reference arm is claimed. CP37, the three-seed extension, was CUT;
+FIVE at K=3. No improvement over the reference arm is claimed. a3_seeds, the three-seed extension, was CUT;
 its record holds the quantitative argument that seed variation cannot close the oracle-to-model margin of
 55
 structures, which is the comparison A3 is actually used for.
@@ -221,13 +221,13 @@ Mean absolute difference
 0.052. Every headline claim survives
 both runs independently.
 
-CP41'S REFUSAL CASE, whose raw response would be the strongest single argument for the control's validity:
+no_image_control'S REFUSAL CASE, whose raw response would be the strongest single argument for the control's validity:
 **BLOCKED** — not in any checkpoint record; must be measured or the sentence dropped.
 
 ---
 
 ## S7. What the render protocol withholds
-SOURCE: CP31, CP32, CP19
+SOURCE: visibility_corrected_oracle, extraction_operating_point, atom_detection
 
 THE FOUR VISIBILITY CONDITIONS, expansion sample, four views, n = 210:
 
@@ -245,14 +245,14 @@ a flat recovery curve is not a plumbing failure. The pre-registered control rule
 the control dominates, and it does.
 
 UNTRIANGULABLE FRACTIONS, PER-SAMPLE REDUNDANT AND INFORMATIVE MEANS, THE AXIS-VERSUS-OBLIQUE RATIO: in
-CP31's `axis_vs_oblique` and `cross_view_recoverability` fields and CP21's record. The axis/oblique
+visibility_corrected_oracle's `axis_vs_oblique` and `cross_view_recoverability` fields and occlusion_redundancy's record. The axis/oblique
 comparison matters because it means every occlusion figure published before that extension was measured on
 the protocol's three worst cameras.
 
 ---
 
 ## S8. Cue sufficiency
-SOURCE: CP15, CP28, CP18, CP35
+SOURCE: box_sufficiency, classifier_refreeze, eval_expansion, stratified_frontier_expansion
 
 Moved here from the main text because the section ended by disclaiming itself.
 
@@ -280,7 +280,7 @@ suggestive and establishes nothing.
 ---
 
 ## S9. Generational comparison
-SOURCE: CP36
+SOURCE: generational_comparison
 
 Moved here from the main text because the section ended by disclaiming itself.
 
@@ -304,7 +304,7 @@ ONE MODEL PAIR IS A COMPARISON AND NOT A TREND.
 ---
 
 ## S10. Render conventions
-SOURCE: CP54, CP23
+SOURCE: render_convention_sweep, depth_sufficiency
 
 THE ORACLE LEG IS CONCLUSIVE, AND IT REFUTED TWO OF THIS PROJECT'S OWN PREDICTIONS. Off-axis cameras raise
 the ceiling from 0.9524 to
@@ -330,19 +330,19 @@ distortion of true depth, so any depth grading must be METRIC-FAITHFUL rather th
 is what justifies that word in any recommendation. Quantization saturates at
 NOT ESTABLISHED - claim withdrawn levels across all four strata, having been stated as four and corrected.
 
-THE 16-COMPARISON TABLE with discordance counts and exact p: CP54's `paired_vs_C1` field.
+THE 16-COMPARISON TABLE with discordance counts and exact p: render_convention_sweep's `paired_vs_C1` field.
 
 ---
 
 ## S11. Classical baselines
-SOURCE: CP28_classifier_refreeze, CP8, CP50
+SOURCE: classifier_refreeze, external_baselines, eval_scaleup
 
 THE SHAPE-FREE FLOOR. Three features — atom count, density, cell volume — deliberately blind to shape.
 Canonical 111/210
 = 0.5286 on the original sample.
 
 THE CELL-METRIC RANDOM FOREST. Ordered 19-feature list, library versions and seed in
-`results/CP28_classifier_refreeze/`. Canonical 188/210 = 0.8952.
+`results/classifier_refreeze/`. Canonical 188/210 = 0.8952.
 ONE FEATURE-SOURCE TRAP IS RECORDED: the features come from the INPUT cell, not the conventionalised cell.
 Feeding conventional cells is off by one structure.
 
@@ -366,7 +366,7 @@ SOURCE: project retraction and superseded-results record
 
 Verbatim in `reports/SUPPLEMENTARY_INFORMATION.md` Part II, which carries every checkpoint's finding
 including every withdrawal. Referenced from the reproducibility statement and the AI-use disclosure, and
-from nowhere in the main text. The CP54 power-calculation retraction is among them.
+from nowhere in the main text. The render_convention_sweep power-calculation retraction is among them.
 
 ---
 
@@ -374,8 +374,8 @@ from nowhere in the main text. The CP54 power-calculation retraction is among th
 SOURCE: every checkpoint's prereg.md
 
 Verbatim in Part II of `SUPPLEMENTARY_INFORMATION.md`, in numeric checkpoint order, including the ones
-whose outcome CONTRADICTED the registered expectation, the ones that landed BETWEEN branches, CP37's cut
-record and CP10's subsumption record. Of the 53 checkpoints, 27 carry a pre-registration; the
+whose outcome CONTRADICTED the registered expectation, the ones that landed BETWEEN branches, a3_seeds's cut
+record and merged_retrain's subsumption record. Of the 54 checkpoints, 26 carry a pre-registration; the
 rest say so in their own finding text rather than implying one existed.
 
 ---

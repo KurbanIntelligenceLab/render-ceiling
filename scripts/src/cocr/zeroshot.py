@@ -5,7 +5,7 @@ Evaluates VLMs (via OpenRouter, OpenAI-compatible chat/completions with image in
 zero-shot on four crystallographic perception tasks, sweeping view count, with a
 contamination-control (perturbed re-render) arm. No training.
 
-Tasks (each with a strict parseable answer format scored against the CP0 labels):
+Tasks (each with a strict parseable answer format scored against the pipeline labels):
   crystal_system  : 7-way classification
   lattice_angles  : read alpha/beta/gamma (degrees) from the cell
   space_group_topk: name up to k candidate space-group numbers (top-k accuracy)

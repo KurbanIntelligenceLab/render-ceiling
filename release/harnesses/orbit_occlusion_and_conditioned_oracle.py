@@ -1,6 +1,6 @@
-"""CP31 — visibility-corrected oracle, four conditions, both eval sets, 4 and 5 views.
+"""visibility_corrected_oracle — visibility-corrected oracle, four conditions, both eval sets, 4 and 5 views.
 Conditions (per view, never global):
-  O0 all detections present            reproduces CP25 (harness check)
+  O0 all detections present            reproduces oracle_within_sample (harness check)
   O1 informative occlusion removed     target condition
   O2 all occlusion removed             upper bound on visibility cost
   O3 redundant occlusion only removed  control governing interpretability
@@ -17,7 +17,7 @@ from cocr import reconstruct as RC
 from cocr.reconstruct import projection_matrices, project, _ray, _ray_intersection
 
 def reconstruct_cond(conv, view_names, vis, tol=0.15):
-    """CP25's oracle with per-view visibility. Acceptance rule is CP25's EXACTLY: anchor on the first
+    """oracle_within_sample's oracle with per-view visibility. Acceptance rule is oracle_within_sample's EXACTLY: anchor on the first
     two views in which the atom is observable, then require EVERY other view to hit an observed
     same-species point OR to have that point REMOVED (an excused miss). With nothing removed this
     reduces to reconstruct_positions term for term."""
@@ -26,7 +26,7 @@ def reconstruct_cond(conv, view_names, vis, tol=0.15):
     proj=[project(cart,R) for R in Rs]
     obs=[set(np.where(vis[v])[0].tolist()) for v in range(nv)]
     cand=[]
-    # anchor pair: CP25 uses views 0 and 1. Keep that, but allow a later pair when an atom is not
+    # anchor pair: oracle_within_sample uses views 0 and 1. Keep that, but allow a later pair when an atom is not
     # observable in view 0 or 1 (removal can make the anchor pair unavailable).
     pairs=[(0,1)]+[(a,b) for a in range(nv) for b in range(a+1,nv) if (a,b)!=(0,1)]
     for v0,v1 in pairs:
@@ -47,7 +47,7 @@ def reconstruct_cond(conv, view_names, vis, tol=0.15):
                     if sr and np.linalg.norm(proj[vk][sr]-scr,axis=1).min()<=tol: continue
                     ok=False; break
                 if ok: cand.append((X,s0))
-        if cand: break          # CP25 uses ONE anchor pair; fall through only if it yields nothing
+        if cand: break          # oracle_within_sample uses ONE anchor pair; fall through only if it yields nothing
     kept=[]
     for X,s in cand:
         if not any(sy==s and np.linalg.norm(X-Y)<tol for Y,sy in kept): kept.append((X,s))
@@ -95,7 +95,7 @@ def run(evjs, stjs, masks, nviews, cond):
     return out
 
 if __name__=="__main__":
-    masks=json.load(open(f"{RESULTS}/CP31_visibility_corrected_oracle/per_view_masks.json"))
+    masks=json.load(open(f"{RESULTS}/visibility_corrected_oracle/per_view_masks.json"))
     SETS={"original":(f"{DATA}/e3/eval.jsonl",f"{DATA}/e3/structures.json"),
           "expansion":(f"{DATA}/e3x/eval.jsonl",f"{DATA}/e3x/structures.json")}
     RES={}
@@ -105,5 +105,5 @@ if __name__=="__main__":
                 key=f"{setname}_{nviews}v_{cond}"
                 print(f"  === {key}", flush=True)
                 RES[key]=run(ev, stj, masks[setname], nviews, cond)
-                json.dump(RES, open(f"{RESULTS}/CP31_visibility_corrected_oracle/conditions_raw.json","w"))
+                json.dump(RES, open(f"{RESULTS}/visibility_corrected_oracle/conditions_raw.json","w"))
     print("ALL CONDITIONS COMPLETE", flush=True)

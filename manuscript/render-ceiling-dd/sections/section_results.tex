@@ -1,0 +1,270 @@
+\section{Results and discussion} \label{sec:experiments} We report the ceiling and the ceiling-to-model gap,
+then the design consequences, then the controls that decide what the gap may be attributed to.
+\subsection{Model roster}
+\label{sec:roster}
+Main text names every model arm by role rather than by vendor identifier (Section~\ref{sec:method}); this
+subsection binds each role to its identifier, run conditions, and the accuracies attached to it elsewhere in
+the paper, and is the reference for contributions (i) and (ii).
+Table~\ref{tab:roster} gives the binding: for each role, the exact identifier, the condition(s) it was run
+under, its sample and decode budget, and the accuracies attached to it elsewhere in the paper. The
+supervised reference arm discussed alongside \rlFinetuned{} shares the same base model but differs in
+training recipe, and is bound on that basis rather than treated as a separate vendor model.
+
+\begin{table*}[t]
+\centering
+\caption{Role-label roster. Every accuracy figure here is reported elsewhere in the paper under the same
+role label; this table adds only the vendor identifier and the run conditions. \rlLadderShort{} and
+\rlWeakestShort{} are the short forms used in the columns of Table~\ref{tab:rungs}.}
+\label{tab:roster}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{0.17\textwidth}>{\raggedright\arraybackslash}p{0.21\textwidth}>{\raggedright\arraybackslash}p{0.27\textwidth}>{\raggedright\arraybackslash}p{0.25\textwidth}@{}}
+\toprule
+Role label & Identifier & Conditions and sample & Accuracies \\
+\midrule
+\rlLadder{} (\rlLadderShort) & \ident{gemini-\allowbreak 3.6-\allowbreak flash} & Ladder ($\Rzero$/$\Rone$/$\Rthree$/$\Rfour$), $n{=}210$, $K{=}3$; also the newer arm in the one-generation comparison (same model, same label, not a second arm) &
+$\Rzero{=}1.0000$; $\Rone{=}1.0000$; $\Rthree{=}0.8524$; $\Rfour{=}0.7333$; closes 54.1\% of its generational headroom, computed against $\RoneRel$ \\
+\rlWeakest{} (\rlWeakestShort) & \ident{gpt-\allowbreak 4.1-\allowbreak mini} & Coordinate condition ($\Rthree$/$\Rfour$), $n{=}210$, $K{=}3$ &
+$\Rthree{=}0.4143$ (minimum of the 14 scored); $\Rfour{=}0.3667$ \\
+\rlFinetuned{} & \ident{Qwen/\allowbreak Qwen3-\allowbreak VL-\allowbreak 8B-\allowbreak Instruct} & Supervised-then-GRPO, single seed; $n{=}210$; headline at $K{=}8$, also reported at $K{=}3$ &
+$0.6905$ at $K{=}8$; $139/210{=}0.6619$ at $K{=}3$; model side of the ceiling-to-model gap (discordance $61{:}6$, $p{=}1.5\times10^{-12}$) \\
+Supervised reference arm & \ident{Qwen/\allowbreak Qwen3-\allowbreak VL-\allowbreak 8B-\allowbreak Instruct} (same base as \rlFinetuned{}, supervised-only recipe, no GRPO) & Supervised LoRA, three seeds, 416\,px, 1{,}610 training examples, no augmentation &
+Mean $0.6143$ (SD $0.0515$); per-seed $0.590 / 0.567 / 0.686$ \\
+\rlBudget{} & \ident{claude-\allowbreak opus-\allowbreak 5} & Two reasoning-budget settings (minimal, provider default), $n{=}210$, $K{=}3$ &
+$130/210{=}0.6190$ under both settings; $169/210$ agreement, discordance split $13{:}13$, $p{=}1.0000$ \\
+\rlOldGen{} & \ident{gemini-\allowbreak 2.5-\allowbreak flash} & Zero-shot leaderboard, $n{=}210$, $K{=}3$ &
+Leaderboard best row $0.4429$; closes 64.0\% of its generational headroom, computed against $\RoneRel$ \\
+\bottomrule
+\end{tabular*}
+\end{table*}
+
+\textbf{Roster composition by condition.} The zero-shot leaderboard scored 13 of a pre-registered 14; the
+image-removal control scored 13 of 16; the coordinate condition scored 14 of 15. Every exclusion is a
+pre-registered API-error, parse or endpoint gate, and every unscored entry is reported unscored rather than
+dropped.
+
+\textbf{Protocol detail: composition-exclusion split.} The random seed fixing the composition-exclusion
+split of Section~\ref{sec:benchmark} is 23. The 13 elements reserved for evaluation only are Cd, Ce, Hg, In,
+Ir, La, Mn, Os, Re, Ru, Tc, Ti and Tl.
+
+The zero-shot leaderboard behind the headline gap is given in Figure~\ref{fig:leaderboard}; the remaining
+secondary-axis figures are in Section~S7 of the ESI\dag{}.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/leaderboard.pdf}
+\caption{No scored model reaches half the oracle's 1.0000 on the original sample. Zero-shot crystal-system
+accuracy, $n=210$, $K=3$, 13 models across eight vendors. Solid line: the shape-free baseline on this sample,
+0.5286; dashed line: seven-way chance, 0.1429. Error bars: measured run-to-run spread of $K{=}3$ majority
+voting, a mean of 5.0 of 210 structures across two sweep runs. Every model on this draw falls below the
+shape-free baseline; that pattern is specific to this draw and does not hold at $n = 1933$
+(Section~\ref{sec:controls}).}
+\label{fig:leaderboard}
+\end{figure*}
+
+\subsection{Main results}
+\label{sec:results}
+
+\textbf{Rosters.} The three conditions score overlapping but non-identical model sets. The 13 scored zero-shot
+models ran on the frozen protocol with a verbatim prompt and no per-model tuning; the best reaches
+$93/210 = 0.4429$, far below the oracle's 1.0000. A cell-metric random forest, whose feature specification and
+reading sensitivity are detailed in Section~S5 of the ESI\dag{}, reaches 0.8952 on the same label,
+above every model, which reproduces an established capability rather than contributing one and is not
+comparable to composition-only predictors, since it reads cell geometry rather than chemical composition.
+
+The 0.6905 fine-tuned figure is a single-seed supervised-then-GRPO run at $K{=}8$, distinct from the strongest
+zero-shot $R_4$ of 0.7333 on the ladder, and it sits inside the supervised reference arm's across-seed spread,
+so \emph{we make no claim that it improves on that arm}; it is used only as the model side of the
+ceiling-to-model gap, which survives any seed in that spread.
+
+\subsection{Perception versus the post-perception residual}
+\label{sec:residual}
+
+\textbf{Perception dominance is a property of the top of the roster, not of the task.} Supplying ground-truth
+geometry as text, the CIF-supplied condition introduced in Related Work and used here as prior methodology,
+lifts every model substantially, and none reaches the oracle: the best is 0.8524 against 1.0000
+(Figure~\ref{fig:ladder}). The
+pre-registered decomposition of Definition~\ref{def:ladder} gives a median perception share of 29.0\% across
+the 14 models scored under the coordinate condition (bootstrap 95\% CI $[0.149, 0.358]$), with the
+post-perception residual the larger of the two for 13 of them ($p = 0.0018$); the two columns of
+Table~\ref{tab:rungs} differ in share by a factor of 5.9. The single exception is the model with the
+second-highest $R_4$, tied first on $R_3$, which is why studies confined to frontier models see perception
+dominate: their sample sits inside the one region of the roster where it does. Because
+$\Rone = \Rzero = 1.0000$ these shares need no reference correction; read against $\RoneRel$ the same
+decomposition gives 12 of 14 ($p = 0.0129$), so the conclusion holds at either point of the frontier.
+
+The natural strengthening, that the share rises with model strength, is \emph{not} supported: across the
+14 models the share and pixel accuracy are unrelated (Spearman $\rho = -0.1588$, $p = 0.5877$), and we report
+the negative rather than the ordering. The raw component moves the other way, $R_3 - R_4$ correlating with
+$R_4$ at $\rho = -0.6439$, so the strongest pixel performers are those for whom exact geometry adds least
+even though the \emph{share} it closes shows no trend.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/ladder.pdf}
+\caption{Exact geometry as text lifts every model and none reaches the oracle, and the share it closes
+tracks no trend in pixel accuracy. Marker shape and colour identify the model in both panels (key below).
+(a) Per-model $\Rfour$ (pixels, open marker) and $\Rthree$ (exact geometry as text, filled marker) on the
+original evaluation sample ($n=210$, $K=3$), rungs as in Definition~\ref{def:ladder}, with the $\Rone$
+oracle at 1.0000 and seven-way chance drawn; $\Rtwo$ is omitted (unscored under its pre-registered gate).
+(b) Perception share of the deficit against $\Rfour$: 13 of the 14 models fall below the parity line, so the
+deficit that survives exact geometry is the larger one for most of the roster, and the share tracks no trend
+in pixel accuracy (Spearman $\rho = -0.1588$, $p = 0.5877$). Shares, the median 0.2901 and its bootstrap
+95\% CI $[0.1492, 0.3576]$ (band) are computed against the exact ceiling $\Rone = 1.0000$.}
+\label{fig:ladder}
+\end{figure*}
+
+\textbf{A control pair makes $R_3$ readable.} The same prompt carrying the chemical formula alone collapses
+every scored model toward chance, while with full geometry substituted for images every model reaches between
+0.4143 and 0.8524, so the lift is the geometry rather than text-mode prompting.
+
+\subsection{The ceiling is exact; the frontier is in extraction tolerance}
+\label{sec:frontier}
+
+\textbf{Identifiability is exact.} Enumerating the phantom set over all ten independent view pairs finds
+$\Phi_0 = \emptyset$ on every one of the 2160 certified structures under the released five-camera protocol,
+and the oracle returns the correct label for all of them, reconstructing positions to
+$3.9\times10^{-15}$\,\AA{} with no atom dropped and no phantom accepted. So $\Rone = 1.0000$ on both samples
+at any $\delta \le \tau$, and the hypothesis of Theorem~\ref{thm:ident}(c) is met rather than assumed.
+Emptiness is a property of the protocol and not of the construction: the same census over camera subsets
+leaves $\Phi_0$ nonempty on 15.4\% of two-view subset-structure pairs and 1.9\% of three-view pairs, so the
+fifth camera is doing real work.
+
+\textbf{What degrades is the extraction stage.} A practitioner does not have exact centroids, and the merge
+tolerance $\delta$ is the parameter that matters. Reading the same oracle across $\delta$ at fixed $\tau$
+traces a frontier: 1.0000 at $\delta \le \tau$, 0.9810 at $5\tau$, and
+$\RoneRel = 0.9524$ at the released $15\tau$, with $0.8785$ there on the scaled sample. The loss is entirely
+over-merging rather than coincidence, since every structure it costs recovers the correct atom count and has
+its closest same-species pair at more than eleven times $\delta$.
+
+This relocates the quantity a reader should treat as the ceiling: identifiability from the renders is total,
+and what an actual pipeline achieves is a property of its extraction stage. Every ceiling-to-model gap below
+is wider under this reading than at the released tolerance, so no comparison depends on which point of the
+frontier is chosen.
+
+\subsection{Controls and intermediate verification}
+\label{sec:controls}
+
+\textbf{The residual is an upper bound, and we tested it.} It may include long-list handling rather than
+symmetry reasoning: regressing per-structure $R_3$ correctness on atom count, 13 of 14 models show a negative
+association ($p=0.0018$) that is not symmetry difficulty in disguise, so $S(m)$
+bounds a symmetry-reasoning deficit rather than measuring one.
+
+\textbf{A learned extractor fabricates its output.} Substituting a strong model as the extraction stage,
+prompted for species and positions with the symmetry question withheld, then having a weaker model answer from
+that text, yields exactly the majority stratum's base rate, so downstream accuracy measures nothing. The
+informative measurement is the intermediate, scored against ground truth: median recall 0.0000, with 105 of
+206 structures having not one emitted atom within tolerance of a real one despite a median of 48 well-formed
+atoms each, where a connected-component blob detector reaches 0.400 on the same task. \emph{A two-stage
+pipeline whose intermediate cannot be checked will
+attribute fabrication to reasoning}, and only a model-free reference distinguishes the two.
+
+\textbf{The models use the image, and have not memorised the answer.} We ran an image-absent control, the
+identical prompt carrying the chemical formula and no renders, which is also the control pair that makes
+$R_3$ readable in Section~\ref{sec:residual}. Every scored model collapses toward
+chance (mean 0.1487 against 0.1429) and the paired difference is significant for 10 of 13, the three nulls
+being the three weakest models. This also bounds pretraining
+contamination, which composition exclusion does not: a model that had memorised composition-to-symmetry
+mappings would beat chance on the formula alone, and none does.
+
+\textbf{Image-removal control, per model.} Figure~\ref{fig:noimage} gives the per-model breakdown: each model answered the identical prompt with the five
+renders and with the chemical formula alone, and the paired difference is significant for 10 of the 13
+scored, the three nulls being the three weakest models.
+
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/noimage.pdf}
+\caption{Removing the image collapses every model toward chance. Each model answered the identical prompt
+with the five renders and with the chemical formula alone, paired per structure (original sample, $n=210$,
+$K=3$, 13 scored of 16 attempted); model identifiers are drawn at the end of each bar pair. Stars mark
+models whose paired difference is significant, 10 of the 13, the three nulls being the three weakest models
+(two of which are at chance even with images); the dashed line is seven-way chance.}
+\label{fig:noimage}
+\end{figure*}
+
+\textbf{A below-baseline comparison is scoped to its sample, and does not survive scale-up.} On the
+original sample every model falls below a shape-free baseline reading only atom count, density and cell
+volume (0.4429 against 0.5286, one-sided $p = 0.0078$), but a larger set at $n = 1933$ generated under
+identical rules puts that baseline at 0.2054, so \emph{the 0.5286 is a property of the original draw, not of
+the task}. The same size-matched control shows the oracle's apparent drop at scale \emph{is} a cell-size
+effect, 0.8774 on the full sample against 0.9459 at matched cell size, since more atoms per cell means more
+candidate coincidences of the kind Definition~\ref{def:phantom} counts. The ceiling-to-model gap therefore
+survives scale-up while the baseline comparison does not.
+
+\textbf{What the controls do and do not isolate.} Three competing explanations for the gap are excluded by
+design: that the renders lack the answer, by $R_1$ and the occluder classification; that models pattern-match
+or have memorised the label, by the image-removal control; that the $R_3$ lift is text mode rather than
+geometry, by the formula-only arm. Two are not excluded: the residual is an upper bound, and the extraction
+share is bounded from neither side. A second execution of the
+sweep differs by 5.0 structures on average, so adjacent leaderboard rows are not separable.
+
+\subsection{Render conventions}
+\label{sec:conventions}
+
+At exact extraction the frozen protocol, the off-axis camera perturbation and the released tiled geometry
+each return all 210 labels, so no camera choice in this family withholds any part of the task; what separates
+them is conditioning. Before measuring we fixed $\kappa = 2.7321$ for the frozen cameras and
+$\kappa = 8.4258$ for the off-axis perturbation, predicted that the more poorly conditioned protocol would
+tolerate proportionally less centroid error, and recorded a noise budget from the band of
+Proposition~\ref{prop:scope}. Injecting per-view Gaussian centroid noise returns one confirmation and two
+failures, and we report all three. The prediction that held is the one that isolates $\kappa$: frozen and
+off-axis differ in camera placement alone, and the frozen protocol tolerates $2.1\times$ the noise, with
+paired comparison separating them at $\sigma = 0.02$\,\AA{} (102 structures against 2,
+$p = 5.4\times10^{-28}$). Two predictions failed, the three-way ordering including the tiled arm and the
+absolute noise budget, the latter optimistic by a factor of 31 because the band is sufficient rather than
+tight. So $\kappa$ orders protocols differing only in cameras and delivers neither a usable noise budget nor a
+cross-density ordering; stating both is the point of fixing the prediction first. View count behaves as
+Corollary~S1(a) of the ESI\dag{} says, and what the protocol withholds through occlusion remains under 1\% of
+atoms and changes no classification. The noise grid, both failure mechanisms, per-pair $\kappa$ values, the
+density decomposition and the probe power analysis are in Section~S6 of the ESI\dag{}.
+
+\textbf{Occluder classification.} This is the occlusion audit referenced in Section~\ref{sec:controls}.
+Because the oracle assumes ideal extraction, occluders in the released
+renders were classified by whether each one hides a symmetry-equivalent copy of the atom it occludes; most
+occlusion hides nothing recoverable, and since triangulation needs only two clear views this holds for
+under 1\% of atoms (0.26\% and 0.87\% of the two samples) even before classification. The redundant-only
+control removes only occluders in that recoverable class, leaving informative occlusion untouched.
+Figure~\ref{fig:conditions} reports recovery under all three conditions on both evaluation samples.
+
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.92\textwidth]{figures/conditions.pdf}
+\caption{Removing informative occlusion from the oracle's input changes no classification, so what the
+renders hide is small and redundant, and the removals do reach the reconstructor. Expansion sample,
+$n = 210$, four views. (a) Symmetry recovery under the four occlusion conditions: O0 unconditioned, O1
+informative occluders removed, O2 all occluders removed, O3 the pre-registered random-removal control; the
+dashed line is O0. (b) Exact atom-count match under the same conditions, which moves across them, so the
+flat recovery in (a) is a property of what occlusion hides rather than a failure of the intervention to
+reach the reconstructor.}
+\label{fig:conditions}
+\end{figure*}
+
+\subsection{Limitations and scope}
+\label{sec:limits}
+ The construction needs a known, invertible
+forward rendering, which holds for procedurally generated benchmarks generally but is instantiated here on one
+task in one domain, so what is not shown is that a second instantiation reproduces the same qualitative
+findings; it does not depend on orthography as heavily as the algebra suggests, since under calibrated
+perspective Theorem~\ref{thm:ident} survives while Corollary~S1(b) of the ESI\dag{} fails and $\kappa$ becomes
+position-dependent. The oracle assumes ideal extraction, so $R_1$ bounds what is recoverable rather than what
+is achievable, and the one extractor evaluated end to end fails the hypothesis of
+Proposition~\ref{prop:scope} on soundness, completeness and localisation together; a visibility-conditioned
+variant is a distinct measurement we have not built, and no human baseline exists. Because $\Phi_0$ is empty
+here, identifiability contributes nothing to the ceiling-to-model gap, which sharpens the instrument but means
+the single headline number a reader might want does not exist: what exists is the frontier plus the
+class-membership statement of Proposition~\ref{prop:scope}, and $\kappa$ governs one axis of that frontier
+only, so it is a design comparator rather than a tolerance budget. Finally, the labels are computed rather
+than annotated, but the databases they are cross-checked against derive their own assignments through the same
+library (Section~\ref{sec:benchmark}), so certification establishes stability within one algorithm family
+rather than agreement between distinct ones; the rosters carry no current-frontier arm beyond the three
+compared and no prompt-sensitivity sweep was run, the remaining secondary-axis findings are collected in
+Section~S7 of the ESI\dag{}, $R_3$ used a single textual schema, and the model arms were not
+re-run at $n=1933$, so that gap is bounded on the oracle side only. Each limit is given in full in
+Section~S8 of the ESI\dag{}.
+
+An oracle that recovers structure from a render measures information, not scientific competence, and a
+ceiling reported here should not be read as evidence that a model, or a person, can solve the underlying
+task. Every ceiling in this article is reported with the tolerance at which it was read, so no number can be
+quoted without the regime that produced it, and the per-structure prediction vectors are released so any
+ceiling can be re-derived rather than cited.
+

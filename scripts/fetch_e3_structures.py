@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 """
 Re-fetch the atomic structures for the E3 dataset by material_id, and VERIFY that our
-spglib labels reproduce the sidecar exactly (the CP0 audit method).
+spglib labels reproduce the sidecar exactly (the pipeline audit method).
 
 This unblocks two things that both need coordinates, which data/e3/*.jsonl does not carry:
   - item 5: the structure-PROTOTYPE-exclusion split (needs structure matching / prototypes)
@@ -56,7 +56,7 @@ def fetch_mp(mids: list[str]) -> dict[str, str]:
 def audit(structs: dict[str, str], sidecar: dict) -> dict:
     """Recompute labels from the fetched structures and compare with the sidecar.
 
-    This is the CP0 audit method: the fetched structure must reproduce the SAME
+    This is the pipeline audit method: the fetched structure must reproduce the SAME
     crystal_system / space_group / bravais_lattice the sidecar recorded, at the same
     frozen tolerance. A mismatch means the structure we are about to hand the GNN
     baselines is not the structure the VLM was labelled against.

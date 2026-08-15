@@ -1,0 +1,21 @@
+% Notation macros shared by the article and the ESI.
+\newcommand{\spg}{\mathrm{spg}_\tau}
+\newcommand{\Rzero}{R_0}   % true positions / symmetry algorithm on ground truth
+\newcommand{\Rone}{R_1}    % render-geometry oracle (the render ceiling)
+\newcommand{\RoneRel}{R_1^{0.15}} % the same oracle at the released merge tolerance
+\newcommand{\Rtwo}{R_2}    % oracle on a learned detector's output (unscored)
+\newcommand{\Rthree}{R_3}  % exact geometry supplied as text
+\newcommand{\Rfour}{R_4}   % pixel renders (model perception)
+\newcommand{\Symprec}{\mathrm{symprec}}
+\newcommand{\PostPerception}[1]{R_1 - R_3(#1)}
+\newcommand{\PerceptionComp}[1]{R_3(#1) - R_4(#1)}
+\newcommand{\ident}[1]{{\footnotesize\ttfamily #1}}
+
+% Role macros for model arms; identifiers are bound once, in the roster table.
+\newcommand{\rlLadder}{the strongest scored model}
+\newcommand{\rlWeakest}{the weakest of the fourteen by $R_3$}
+\newcommand{\rlFinetuned}{the fine-tuned model arm}
+\newcommand{\rlBudget}{the model run at a controlled reasoning budget}
+\newcommand{\rlOldGen}{an earlier-generation model}
+\newcommand{\rlLadderShort}{Strongest}
+\newcommand{\rlWeakestShort}{Weakest}

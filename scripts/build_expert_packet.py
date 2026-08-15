@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-E0.5 human-expert study packet builder -> ledger/CP0b_identifiability/expert_packet/
+E0.5 human-expert study packet builder -> ledger/identifiability/expert_packet/
 
 Assembles a turnkey blind study for crystallographers to close Gate 0:
   renders/          50 structures x 4 blind views (frozen view set), blinded IDs
@@ -23,7 +23,7 @@ from cocr.data import fetch_mp_stratified, fetch_jarvis_stratified
 from cocr.render import render_views, conventional_cell, VIEW_ORDER
 from cocr.labels import make_labels
 
-LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "CP0b_identifiability")
+LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "identifiability")
 PACKET = os.path.join(LEDGER, "expert_packet")
 
 

@@ -5,7 +5,7 @@ E2 dataset builder -> data/e2/
 Builds the SFT dataset for the three arms (B1 direct / B2 free-CoT / V1 CoCr chain) on a
 stratified held-out sample, DISJOINT from the E0.5/E1 samples (no train/eval leakage). For
 each structure: render the frozen 5-view set (conventional cell, 2x2x2 supercell), compute the
-CP0 label, and emit one training record per arm sharing the same images+question.
+pipeline label, and emit one training record per arm sharing the same images+question.
 
 Outputs:
   data/e2/renders/<split>/<stem>_view{0..4}.png
@@ -32,9 +32,9 @@ ARMS = ["B1", "B2", "V1"]
 
 
 def _prior_ids():
-    """material_ids already used in E0.5 (CP0b) and E1 samples -> exclude for disjointness."""
+    """material_ids already used in E0.5 (identifiability) and E1 samples -> exclude for disjointness."""
     used = set()
-    for p in ["ledger/CP0b_identifiability/results.json", "ledger/CP1_zeroshot/sample.json"]:
+    for p in ["ledger/identifiability/results.json", "ledger/zeroshot/sample.json"]:
         fp = os.path.join(ROOT, p)
         if not os.path.exists(fp):
             continue
@@ -51,7 +51,7 @@ def build(args):
     t0 = time.time()
     os.makedirs(E2, exist_ok=True)
     exclude = _prior_ids()
-    print(f"[E2] excluding {len(exclude)} material_ids used in CP0b/CP1 (disjointness)")
+    print(f"[E2] excluding {len(exclude)} material_ids used in identifiability/zeroshot (disjointness)")
 
     # oversample then filter out prior ids, keep per_system balance across both sources
     mp = fetch_mp_stratified(args.per_system * 3, num_elements=(2, 4), num_sites=(2, args.max_sites))
@@ -83,7 +83,7 @@ def build(args):
             conv = conventional_cell(rc["structure"])
             lab = make_labels(rc["structure"], str(rc["material_id"]), rc["source"])
             if not lab["label_policy"]["keep_for_training"]:
-                continue  # honor CP0 frozen quarantine policy
+                continue  # honor pipeline frozen quarantine policy
             split = split_of(str(rc["material_id"]))
             stem = f"{rc['source']}_{rc['material_id']}".replace("/", "_")
             rdir = os.path.join(E2, "renders", split)
@@ -113,7 +113,7 @@ def build(args):
         "split_sizes_examples": {s: len(records[s]) for s in records},
         "per_system": {s: dict(persys[s]) for s in persys},
         "excluded_prior_ids": len(exclude),
-        "disjoint_from": ["CP0b_identifiability", "CP1_zeroshot"],
+        "disjoint_from": ["identifiability", "zeroshot"],
         "render": {"views": VIEW_SWEEP[5], "supercell": "2x2x2", "cell": "conventional_standard"},
         "property_targets": ["band_gap", "formation_energy_per_atom"],
         "elapsed_sec": round(time.time() - t0, 1),

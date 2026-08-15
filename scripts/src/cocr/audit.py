@@ -13,7 +13,7 @@ Runs the four E0 checks over a sample drawn from MP and JARVIS:
       that crystal system is identifiable from pixels (surfaced as images, scored
       externally). This module emits the subset manifest.
 
-Writes results.json + a per-structure table; the CP0 finding is written by the
+Writes results.json + a per-structure table; the pipeline finding is written by the
 driver script.
 """
 from __future__ import annotations

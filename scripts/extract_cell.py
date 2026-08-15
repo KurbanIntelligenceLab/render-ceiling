@@ -1,10 +1,10 @@
 #!/usr/bin/env python
 """
-CP17 — DETERMINISTIC cell-geometry extractor from the frozen renders.
+extractor — DETERMINISTIC cell-geometry extractor from the frozen renders.
 
 Not a learned model and NOT a proposed method: an instrument for localising the gap between the
-CP0b oracle (0.9321 under ideal atom extraction) and the ~0.50 pixel models reach on the
-box-ambiguous stratum (CP15).
+identifiability oracle (0.9321 under ideal atom extraction) and the ~0.50 pixel models reach on the
+box-ambiguous stratum (box_sufficiency).
 
 The three axis views are ORTHOGRAPHIC projections down a, b, c (VIEWS in src/cocr/render.py),
 drawn by ASE with show_unit_cell=2, so cell edges appear as straight dark segments whose 2D
@@ -14,7 +14,7 @@ Pipeline per structure:
   1. isolate the wireframe by darkness threshold (cell lines are drawn darker than atom spheres)
   2. Hough-transform line segments, cluster by orientation
   3. from each axis view recover the two in-plane edge lengths and their included angle
-  4. assemble (a,b,c,alpha,beta,gamma) and classify with the SAME tolerance rule as CP15
+  4. assemble (a,b,c,alpha,beta,gamma) and classify with the SAME tolerance rule as box_sufficiency
 
 Denominators are FIXED: a structure whose line detection fails is scored WRONG, never dropped.
 """
@@ -106,7 +106,7 @@ def view_geometry(path):
 
 
 def classify(metric, tol_len=0.02, tol_ang=1.0):
-    """Same rule as CP15, so the two checkpoints are commensurable."""
+    """Same rule as box_sufficiency, so the two checkpoints are commensurable."""
     a, b, c, al, be, ga = metric
     eq = lambda p, q: abs(p - q) / max(p, q) < tol_len
     n90 = lambda v: abs(v - 90) < tol_ang
@@ -152,7 +152,7 @@ def main():
     ap.add_argument("--eval-jsonl", required=True)
     ap.add_argument("--renders", required=True)
     ap.add_argument("--structures", required=True, help="for the VALIDATION GATE (true cells)")
-    ap.add_argument("--strata", default=None, help="CP15 results.json, to report per-stratum")
+    ap.add_argument("--strata", default=None, help="box_sufficiency results.json, to report per-stratum")
     ap.add_argument("--prefix", default="MP_")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()

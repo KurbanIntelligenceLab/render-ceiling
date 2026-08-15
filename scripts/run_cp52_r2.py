@@ -1,4 +1,4 @@
-"""CP52 rung R2 — the oracle run on DETECTOR output instead of ground-truth projections.
+"""rung_R2_detector_oracle rung R2 — the oracle run on DETECTOR output instead of ground-truth projections.
 
 The detector gives pixel centres per view with no species and no correspondence. The oracle's
 reconstruct_positions needs species-labelled projections, so R2 must supply species from the detected
@@ -122,7 +122,7 @@ if __name__ == "__main__":
                              ("expansion", "data/e3x/eval.jsonl", "data/e3x/structures.json", "data/e3x/renders/eval")):
         print(f"=== {tag}", flush=True)
         RES[tag] = run(ev, stj, rd, tag)
-        json.dump(RES, open("ledger/CP52_rung_R2_detector_oracle/r2_raw.json", "w"))
+        json.dump(RES, open("ledger/rung_R2_detector_oracle/r2_raw.json", "w"))
         k = sum(1 for x in RES[tag] if x.get("cs_ok")); e = sum(1 for x in RES[tag] if "error" in x)
         print(f"  {tag}: {k}/{len(RES[tag])} = {k/len(RES[tag]):.4f} | errors {e}", flush=True)
     print("R2 COMPLETE", flush=True)

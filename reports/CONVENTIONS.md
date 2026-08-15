@@ -1,13 +1,13 @@
 # CoCr ledger — statistical conventions (program-wide, adopted 2026-07-27)
 
-Unified after an inconsistency was found between CP3 and the CP1b SFT comparison.
+Unified after an inconsistency was found between process_reward and the exclusion_baselines SFT comparison.
 
 ## 1. POOLED SEED SD
     pooled = sqrt( (s1^2 + s2^2) / 2 )        <- RMS of the two arms' seed SDs
-This is CP3's definition and it is now the program-wide convention, chosen because Gate 2 was
+This is process_reward's definition and it is now the program-wide convention, chosen because Gate 2 was
 PRE-REGISTERED with it (changing it retroactively would alter a pre-registered threshold).
 
-The CP1b SFT-V1 comparison originally used quadrature-sum pooling, sqrt(s1^2 + s2^2), which
+The exclusion_baselines SFT-V1 comparison originally used quadrature-sum pooling, sqrt(s1^2 + s2^2), which
 gives LARGER (more conservative) thresholds. Recomputed under the adopted convention:
 
     comparison        delta     pooled(adopted)   verdict     pooled(old)   verdict(old)
@@ -15,30 +15,30 @@ gives LARGER (more conservative) thresholds. Recomputed under the adopted conven
     V2a  - SFT-V1    +0.0397        0.0127       EXCEEDS        0.0180       EXCEEDS
     V2b  - SFT-V1    +0.0492        0.0079       EXCEEDS        0.0112       EXCEEDS
 
-NO VERDICT CHANGES. Verification that CP3 really used this definition: V2b-B3 macro delta 0.041
-vs pooled(0.000, 0.045) = 0.0318, matching the 0.032 recorded in CP3's gate2 block.
+NO VERDICT CHANGES. Verification that process_reward really used this definition: V2b-B3 macro delta 0.041
+vs pooled(0.000, 0.045) = 0.0318, matching the 0.032 recorded in process_reward's gate2 block.
 
 ## 2. DDOF
 POPULATION standard deviation (ddof = 0) throughout, as previously disclosed. With n = 3 seeds
 the sample SD (ddof = 1) is ~22% larger; every threshold in the ledger is the population form.
 Rationale: the 3 seeds are the complete set of runs performed, not a sample from a larger pool,
-and the population form was used consistently from CP2 onward.
+and the population form was used consistently from sft_chain onward.
 
 ## 3. MOVEMENT THRESHOLD
-0.05 absolute is the standing movement threshold for pre-registered branch rules (CP0c, CP1c),
+0.05 absolute is the standing movement threshold for pre-registered branch rules (resolution_audit, prototype_exclusion),
 chosen as the largest single-arm seed SD observed at the time it was set (B1, 0.0515).
 
-## 4. EFFECTIVE RESOLUTION (standing field, adopted after CP0c)
+## 4. EFFECTIVE RESOLUTION (standing field, adopted after resolution_audit)
 Every results.json carries, read from the LIVE processor and never derived by formula:
     {max_pixels, grid_thw, patch_size, merge_size, effective_px, visual_tokens_per_view,
      n_views, non_visual_prompt_tokens, prefill_tokens_per_sample}
-All results through CP9 were measured at max_pixels=200704 => 416x416 effective, 169 visual
-tokens/view. See CP0c_resolution_audit/.
+All results through calibration were measured at max_pixels=200704 => 416x416 effective, 169 visual
+tokens/view. See resolution_audit/.
 
 ## 5. DIRECTION CLAIMS
 Every ordering, above/below, and delta-vs-threshold statement is COMPUTED and printed before it
 enters prose or a record. Adopted after three direction errors were caught in one session
-(SFT-V1 vs B3; the CP1c branch classification; the CP1c arm ordering) — in each case the
+(SFT-V1 vs B3; the prototype_exclusion branch classification; the prototype_exclusion arm ordering) — in each case the
 computed values were correct and the narration was not.
 
 ## Job-monitoring conventions learned the hard way (2026-07-27)
@@ -66,7 +66,7 @@ card contends rather than helps, which is why the certification queue was left s
 ## exit 124: the wrapper timed out — RE-CHECK before concluding the work survived (2026-07-28)
 ## (heading corrected: it previously read "...not that the work died", which asserted the very
 ##  claim the body retracts. In this instance the work DID die.)
-CORRECTED ENTRY. The CP7b comparator job returned exit_code 124 (SIGTERM from timeout) after its
+CORRECTED ENTRY. The certification comparator job returned exit_code 124 (SIGTERM from timeout) after its
 21600s limit. At first inspection the generation process was still alive, and I recorded that the
 child survives the wrapper. THAT WAS WRONG: the SIGTERM propagated moments later and the SFT-V1
 arm died after ~3h with NO output written. ~3h of GPU time was lost. The accurate rule is that a
@@ -86,7 +86,7 @@ costs at most the in-flight arm rather than the whole loop. WRITE OUTPUT INCREME
 possible: run_e7_tts.py writes only at completion, which is why a timeout loses the entire arm.
 
 ## THREAT CLOSED: tolerance-flip policy (brief §6) — decided, frozen, and VERIFIED IMPLEMENTED
-THE POLICY (frozen in CP0_pipeline/finding.md, not re-litigated here):
+THE POLICY (frozen in pipeline/finding.md, not re-litigated here):
     keep_for_training = (neighborhood_stable AND source_agrees)
     i.e. CARRY the production-tolerance (canonical, symprec 0.01 / angle 5.0) label, and quarantine
     ONLY structures that are unstable in a NEIGHBOURHOOD of the production tolerance AND disagree
@@ -103,7 +103,7 @@ VERIFIED ON THE PRODUCTION DATASET (this session, not assumed):
     range across systems: 0.0000 to 0.0000
 So the stratified-balance concern DOES NOT BIND on the E3 data: every one of the 1820 structures
 is neighbourhood-stable AND source-agreeing, the splits are exactly 260/system by construction,
-and no class is thinned at all. The 7.1% figure belongs to the CP0 label-correctness AUDIT
+and no class is thinned at all. The 7.1% figure belongs to the pipeline label-correctness AUDIT
 (n=224, a separate certification exercise) and must NOT be quoted as an exclusion rate on the
 1820-structure production set. These two numbers have distinct provenance and are easy to conflate.
 
@@ -140,7 +140,7 @@ handful of measurements, report the uncertainty instead of the recommendation.
 
 ## Standing rule: A CITED CLASSIFIER MUST HAVE ITS EXACT PARAMETERS IN THE LEDGER
 Two classifiers in this package cannot be reproduced from the record: the random-forest 19-feature list
-(0.8905 vs a reproducible 0.8857) and CP15's box-sufficiency rule (137/73 recorded; 140/70 at the
+(0.8905 vs a reproducible 0.8857) and box_sufficiency's box-sufficiency rule (137/73 recorded; 140/70 at the
 documented 2%/1deg tolerances, 144/66 at 1%/0.5deg, with the ambiguous stratum matching on 5 of 6
 metric classes). Both were caught only when a downstream analysis failed to reconcile. THE RULE: when a
 classifier's output is cited anywhere, its exact parameters — feature list, tolerances, branch order,
@@ -172,7 +172,7 @@ Note that a byte-identical file can still show a smaller character count than it
 that is UTF-8 multibyte, not missing content; compare CONTENT, not sizes.
 
 RULE (2026-08-06, from a silent whole-arm loss): A SHELL LOOP'S "DONE" IS NOT EVIDENCE THE ARM RAN.
-Two CP41 roster arms printed DONE and wrote NO output file. Cause: probe_frontier.py's ask() returns None
+Two no_image_control roster arms printed DONE and wrote NO output file. Cause: probe_frontier.py's ask() returns None
 when every retry is exhausted, and the aggregation called txt.startswith(...) on it, raising
 AttributeError AFTER all 630 calls had been paid for. The `echo DONE` in the driving loop fires on the
 next iteration regardless of the python exit status, so the loss was invisible in the log.
@@ -183,7 +183,7 @@ caught 14 of 16 present, which is how the two losses were found at all.
 
 RULE (2026-08-06, from a scope count that contradicted its own data): NEVER STATE A COUNT YOU HAVE NOT
 LENGTHED, AND NEVER ADD TWO DIFFERENT UNITS.
-The CP43 scope note said "eleven rows" — arrived at by adding 8 PAPERS to 3 INSTRUMENT ROWS, two different
+The related_work_audit scope note said "eleven rows" — arrived at by adding 8 PAPERS to 3 INSTRUMENT ROWS, two different
 units — while the results.json it sat in held 13 paper-keyed entries. The cell that wrote the note printed
 "rows total: 13" three lines earlier, so the contradiction was visible in my own output and I did not check.
 THE CHECK: any count appearing in prose must be computed as len(...) of the structure it describes, in the
@@ -219,7 +219,7 @@ false-positive rate is near zero, because a gate that cries wolf is a gate nobod
 
 RULE (2026-08-06, from a discarded biased sample whose figures survived in prose): DISCARDING A BIASED
 SAMPLE FOR ONE QUANTITY IS NOT DISCARDING IT. RECOMPUTE EVERY FIGURE DERIVED FROM IT.
-In CP58 I read a 43-record partial result off a CLASS-ORDERED file, correctly identified it as a biased
+In perception_transplant I read a 43-record partial result off a CLASS-ORDERED file, correctly identified it as a biased
 prefix, and discarded it for the accuracy number — then let its atoms-emitted median of 45 stand in the prose
 of finding.md and results.json, while the numeric field in the same JSON object correctly held 48. The two
 were written from one dict literal in a single cell, so the contradiction was introduced at write time and a

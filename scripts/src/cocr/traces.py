@@ -1,7 +1,7 @@
 """
 CoCr E2 SFT trace synthesis.
 
-Turns a CP0 label record (from cocr.labels.make_labels) into supervised targets for
+Turns a pipeline label record (from cocr.labels.make_labels) into supervised targets for
 the three E2 arms, all sharing the same (images, question) input but differing in the
 target completion:
 
@@ -15,11 +15,11 @@ target completion:
                    step is programmatically checkable (this is what E3's process reward
                    scores). No step asserts anything not in the label.
 
-The primary task is crystal-system identification (7-way), consistent with E1/CP0b; the
+The primary task is crystal-system identification (7-way), consistent with E1/identifiability; the
 chain still surfaces the finer labels (point/space group, Wyckoff) as intermediate steps
 so V1 carries the full hierarchical supervision the schema hypothesis (H1) is about.
 
-Design choices grounded in the CP0 schema (verified against make_labels output):
+Design choices grounded in the pipeline schema (verified against make_labels output):
   - space_group carries {symbol, number}; point_group is the Hermann-Mauguin PG symbol.
   - wyckoff is a list of {element, wyckoff_letter, multiplicity}; multiplicities sum to
     conventional_n_atoms (the wyckoff_sum_consistent invariant).
@@ -60,7 +60,7 @@ def _fmt_lattice(lat: dict[str, Any]) -> str:
 def _qualitative_geometry(lat: dict[str, Any]) -> str:
     """View-MEASURABLE qualitative geometry only — NO exact cell parameters.
 
-    Used by the V1b arm (CP2 follow-up item 3). The renders let a viewer judge
+    Used by the V1b arm (sft_chain follow-up item 3). The renders let a viewer judge
     edge-length RELATIONS (equal vs distinct), the angle family (~90 / ~120 / oblique),
     and a COARSE axial-ratio bin (roughly cubic / moderately elongated / very elongated),
     but not exact Angstrom values. Supervising on those exact values (as V1 did) demands a

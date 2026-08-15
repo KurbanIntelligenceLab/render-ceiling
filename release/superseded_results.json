@@ -41,7 +41,7 @@
     "fisher_p": 0.471
    }
   },
-  "replaced_by": "CP28 canonical 140/70 table; frontier rows never recomputed on it and are historical"
+  "replaced_by": "classifier_refreeze canonical 140/70 table; frontier rows never recomputed on it and are historical"
  },
  "S2_mechanism_prose": {
   "claim": "the information is in the cell parameters; what fails is reading them off a drawing",

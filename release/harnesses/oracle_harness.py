@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-E0.5 tool-oracle identifiability sweep -> ledger/CP0b_identifiability/
+E0.5 tool-oracle identifiability sweep -> ledger/identifiability/
 
 For a stratified sample across all 7 crystal systems (MP + JARVIS), reconstruct 3D
 structure from the multi-view projections and run spglib, as a function of:
@@ -20,9 +20,9 @@ from cocr.render import conventional_cell, VIEW_ORDER
 from cocr.labels import make_labels
 from cocr.reconstruct import reconstruct_positions, recover_symmetry
 
-LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "CP0b_identifiability")
+LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "identifiability")
 
-VIEW_COUNTS = [2, 3, 4, 5]   # extended for CP22: 5 added. 1 view is GEOMETRICALLY
+VIEW_COUNTS = [2, 3, 4, 5]   # extended for oracle_view_curve: 5 added. 1 view is GEOMETRICALLY
                              # IMPOSSIBLE (triangulation needs >=2 rays); 8 does not
                              # exist (only 5 cameras in the frozen protocol).
 # The oracle upper-bounds identifiability under PERFECT centroid extraction (noise=0):
@@ -47,7 +47,7 @@ def score(recovered, truth):
 
 
 def _metric_system(lat, tol=1e-2):
-    """CP15's conventional-cell metric rule, verbatim, so strata are comparable across checkpoints."""
+    """box_sufficiency's conventional-cell metric rule, verbatim, so strata are comparable across checkpoints."""
     a, b, c = lat.abc
     al, be, ga = lat.angles
     eq = lambda x, y: abs(x - y) < tol * max(abs(x), abs(y), 1e-9)

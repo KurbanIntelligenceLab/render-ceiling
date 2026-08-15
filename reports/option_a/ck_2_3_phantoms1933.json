@@ -1,0 +1,110 @@
+{
+ "task": "2.3 phantom census at scale",
+ "sample": "e50 neighborhood-stable subset",
+ "n": 1950,
+ "tau": 1e-06,
+ "census": {
+  "views_5": {
+   "subsets_per_structure": 1,
+   "structure_subset_pairs": 1950,
+   "with_nonempty_Phi0": 0,
+   "frac_nonempty": 0.0,
+   "total_phantoms": 0,
+   "spearman_phantoms_vs_atoms": {
+    "rho": NaN,
+    "p": NaN
+   },
+   "binned_mean_phantoms_by_atoms_per_cell": {
+    "0-20": 0.0,
+    "20-40": 0.0,
+    "40-60": 0.0,
+    "60-100": 0.0
+   }
+  },
+  "views_3": {
+   "subsets_per_structure": 10,
+   "structure_subset_pairs": 19500,
+   "with_nonempty_Phi0": 365,
+   "frac_nonempty": 0.0187,
+   "total_phantoms": 8039,
+   "spearman_phantoms_vs_atoms": {
+    "rho": -0.1471,
+    "p": 6.74883644140567e-11
+   },
+   "binned_mean_phantoms_by_atoms_per_cell": {
+    "0-20": 2.143,
+    "20-40": 0.53,
+    "40-60": 10.135,
+    "60-100": 5.083
+   }
+  },
+  "views_2": {
+   "subsets_per_structure": 10,
+   "structure_subset_pairs": 19500,
+   "with_nonempty_Phi0": 3007,
+   "frac_nonempty": 0.1542,
+   "total_phantoms": 136663,
+   "spearman_phantoms_vs_atoms": {
+    "rho": 0.4571,
+    "p": 2.7175437484819186e-101
+   },
+   "binned_mean_phantoms_by_atoms_per_cell": {
+    "0-20": 12.409,
+    "20-40": 40.388,
+    "40-60": 103.042,
+    "60-100": 192.004
+   }
+  }
+ },
+ "Phi0_empty_at_5_views": true,
+ "density_dependence": {
+  "views_2": {
+   "n_structures": 1950,
+   "subsets": 10,
+   "frac_structures_with_any_phantom": 0.7221,
+   "spearman_total_vs_atoms": {
+    "rho": 0.4571,
+    "p": 2.7175437484819186e-101
+   },
+   "spearman_among_structures_with_phantoms": {
+    "rho": 0.8331,
+    "p": 0.0,
+    "n": 1408
+   },
+   "spearman_P(any_phantom)_vs_atoms": {
+    "rho": 0.0299,
+    "p": 0.18628326029891631
+   },
+   "spearman_phantoms_per_atom_vs_atoms": {
+    "rho": 0.2946,
+    "p": 2.4846296729869174e-40
+   },
+   "median_atoms": 30.0
+  },
+  "views_3": {
+   "n_structures": 1950,
+   "subsets": 10,
+   "frac_structures_with_any_phantom": 0.1872,
+   "spearman_total_vs_atoms": {
+    "rho": -0.1471,
+    "p": 6.74883644140567e-11
+   },
+   "spearman_among_structures_with_phantoms": {
+    "rho": 0.8273,
+    "p": 6.400506015439033e-93,
+    "n": 365
+   },
+   "spearman_P(any_phantom)_vs_atoms": {
+    "rho": -0.1875,
+    "p": 6.906499536800946e-17
+   },
+   "spearman_phantoms_per_atom_vs_atoms": {
+    "rho": -0.1575,
+    "p": 2.6706167749867368e-12
+   },
+   "median_atoms": 30.0
+  }
+ },
+ "density_dependence_reading": "The pooled Spearman of phantom count against atoms per cell has OPPOSITE SIGNS at two views (+0.4571) and three views (-0.1471), so a single rate would misreport it. Decomposing resolves the sign flip. Conditional on Phi_0 being nonempty, count rises steeply with atoms per cell at both view counts (rho 0.8331 at two views, n=1408; rho 0.8273 at three, n=365). What differs is the probability of being nonempty at all: flat in atoms at two views (rho 0.0299, p = 0.19) but DECREASING at three (rho -0.1875, p = 6.9e-17). The three-view pooled negative is therefore a mixture effect - larger cells are less likely to admit any phantom under three-view verification, but produce many when they do - and not evidence that density protects against phantoms. This is the measurement the method section promises in place of a proved rate; we report the decomposition rather than a single coefficient.",
+ "note_on_binned_means": "The binned means at three views (2.143, 0.530, 10.135, 5.083 across 0-20, 20-40, 40-60, 60-100 atoms) are non-monotone because only 18.72% of structures have any phantom at three views, so each bin mean is dominated by zeros and a few large counts. The conditional statistics above are the interpretable form; the bin means are reported for completeness only."
+}

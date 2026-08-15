@@ -1,0 +1,52 @@
+{
+ "task": "1.1 kappa correction",
+ "definition": "kappa = max over enumerated independent view pairs of ||[P_v; P_w]^+||_2 (Proposition 2)",
+ "kappa_frozen_per_pair": {
+  "axis_a|axis_b": 1.0,
+  "axis_a|axis_c": 1.0,
+  "axis_a|body_diagonal": 1.4142,
+  "axis_a|oblique2": 2.7321,
+  "axis_b|axis_c": 1.0,
+  "axis_b|body_diagonal": 2.0,
+  "axis_b|oblique2": 1.1547,
+  "axis_c|body_diagonal": 1.328,
+  "axis_c|oblique2": 1.328,
+  "body_diagonal|oblique2": 2.2823
+ },
+ "kappa_frozen_max": 2.7321,
+ "kappa_offaxis_per_pair": {
+  "axis_a|axis_b": 1.0975,
+  "axis_a|axis_c": 1.0001,
+  "axis_a|body_diagonal": 1.9308,
+  "axis_a|oblique2": 8.4258,
+  "axis_b|axis_c": 1.0072,
+  "axis_b|body_diagonal": 1.4398,
+  "axis_b|oblique2": 1.0066,
+  "axis_c|body_diagonal": 1.1117,
+  "axis_c|oblique2": 1.0291,
+  "body_diagonal|oblique2": 2.4638
+ },
+ "kappa_offaxis_max": 8.4258,
+ "ratio_offaxis_over_frozen": 3.084,
+ "empirical_max_amplification_realizable": 2.7318,
+ "superseded_value": 1.7689,
+ "superseded_value_diagnosis": "1.7689 = 1.33^2; 1.328 is the kappa of pairs axis_c|body_diagonal and axis_c|oblique2, so a squaring slip is the likely origin. No formulation tested (stacked, transposed, hstacked, Frobenius, sigma_max/sigma_min) reproduces 1.7689.",
+ "band": {
+  "eps_median_angstrom": 0.025490472821026858,
+  "tau": 0.01,
+  "half_width_old_kappa": 0.0902,
+  "half_width_new_kappa": 0.1393,
+  "closest_interatomic_distance": 1.0951,
+  "band_upper_edge_new": 0.1493,
+  "closest_distance_over_band_upper_edge": 7.34,
+  "band_still_avoided": true
+ },
+ "kappa_vs_angular_separation": {
+  "90deg": 1.0,
+  "45deg": 1.8478,
+  "10deg": 8.1131,
+  "5deg": 16.2108,
+  "2deg": 40.5163,
+  "1deg": 81.0295
+ }
+}

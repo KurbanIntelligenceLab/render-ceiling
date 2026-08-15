@@ -1,0 +1,567 @@
+% ESI body. Printed order follows the order each section is first pointed to from the article:
+% notation, proofs, statistical procedures, label granularity, tabular classifier, render
+% conventions, secondary axes, extended limitations, reproducibility record.
+% The model roster, the zero-shot leaderboard, the per-model image-removal control and the
+% occluder-condition figure sit in the article itself, not here.
+
+\section{Notation at a glance}
+\label{app:glance}
+The argument turns on four quantities that recur across the method, results, and proofs: two tolerances that
+must be kept in a fixed relation to each other, a set that characterises the oracle's only failure mode, and a
+constant that governs how sensitive a protocol is to extraction noise. Table~\ref{tab:glance} collects their
+definitions and what each one governs, as a single point of reference for the notation used throughout the
+paper.
+
+\begin{table}[htbp]
+\centering
+\caption{The four quantities the argument turns on, collected in one place.}
+\label{tab:glance}
+\small
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}>{\raggedright\arraybackslash}p{0.13\textwidth}>{\raggedright\arraybackslash}p{0.30\textwidth}>{\raggedright\arraybackslash}p{0.47\textwidth}@{}}
+\toprule
+Symbol & What it is & What it governs \\
+\midrule
+$\tau$ & Symmetry tolerance of the label map, fixed at $0.01$\,\AA{} & The displacement at which $\spg$ changes its answer \\
+$\delta$ & Merge tolerance of the extraction stage & Whether the reconstruction is exact, read as $\Rone$ at $\delta \le \tau$ and $\RoneRel$ at the released $0.15$\,\AA{} \\
+$\Phi_\tau$ & Phantom set (Definition~2 of the article) & The oracle's only failure mode; empty here, so identifiability is exact \\
+$\kappa$ & Conditioning constant of the camera set (Proposition~2 of the article) & Which of two protocols degrades first under centroid noise; a comparator, not a noise budget \\
+\bottomrule
+\end{tabular*}
+\end{table}
+
+\section{Proofs}
+\label{app:proof}
+Contribution (iii): the proofs of Theorem~1, Proposition~2 and Corollary~\ref{cor:design} of the article, with the mechanical checks that accompany them.
+
+
+\begin{corollary}[Two design consequences]
+\label{cor:design}
+(a) If $\mathcal{C}$ contains two independent directions then, at $\tau = 0$,
+$\Phi_0(s, \mathcal{C} \cup \{c\}) \subseteq \Phi_0(s, \mathcal{C})$: adding a view can never destroy
+identifiability. (b) If $d_v \parallel t$ for a lattice vector $t \in L$ then $\Pi_v(p + kt) = \Pi_v(p)$, so
+view $v$ separates no atoms differing by multiples of $t$.
+\end{corollary}
+
+\begin{definition}[Phantom set, componentwise]
+\label{def:phantom-full}
+Fix $\tau \ge 0$. A species-labelled point $(p, z)$ lies in $\Phi_\tau(s,\mathcal{C})$ if
+(i) $\|p - L x_i\| > \tau$ for every atom $i$ with $z_i = z$;
+(ii) there are views $v \neq w$ and atoms $a \neq b$ of species $z$ with $\Pi_v(p) = \Pi_v(L x_a)$ and
+$\Pi_w(p) = \Pi_w(L x_b)$; and
+(iii) every view $u \in \mathcal{C}$ has an atom $i$ of species $z$ with
+$\|\Pi_u(p) - \Pi_u(L x_i)\| \le \tau$.
+The set depends on $s$ and $\mathcal{C}$ alone.
+\end{definition}
+
+\textbf{Why the tolerances must be tied.} The merge in (c) is performed at $\delta$ while the label map
+decides at $\tau$. If $\delta > \tau$, two genuinely distinct atoms separated by more than $2\tau$ can still
+fall within $\delta$ of one another and be merged; the surviving point is displaced by up to $\delta/2$, which
+exceeds the resolution at which $\spg$ distinguishes configurations, so the reconstruction can carry the
+correct atom count and still return the wrong symmetry. Keeping $\delta \le \tau$ removes that mode and makes
+the merge the one (c) assumes.
+
+\textbf{Theorem~1(a) of the article.} Let atom $a$ sit at $p$ and let $v,w$ have linearly independent
+directions. Its images are $q = P_v p$ and $q' = P_w p$, and the back-projections are the affine lines
+$\ell_v = \{x : P_v x = q\}$ with direction $d_v$ and $\ell_w = \{x : P_w x = q'\}$ with direction $d_w$.
+Both contain $p$, and two non-parallel lines in $\mathbb{R}^3$ that meet do so in one point, so
+$\ell_v \cap \ell_w = \{p\}$ and the intersection step returns $p$. Condition~(iii) holds at $p$ with
+$i = a$ in every view, so $p$ is accepted. The pair was arbitrary among independent pairs, which gives
+order-independence: every such pair produces the same point and the enumeration order cannot change the
+accepted set.
+
+\textbf{(b).} A point $\hat p$ accepted by Algorithm~\ref{alg:oracle} arises as the intersection of the
+back-projections of two same-species atom images, which is Definition~\ref{def:phantom-full}(ii), and passes
+verification in the remaining views; since it also projects exactly onto an atom image in $v$ and in $w$, it
+satisfies~(iii) in every view. If in addition $\hat p$ is further than $\tau$ from all same-species atoms
+then~(i) holds and $\hat p \in \Phi_\tau$. Conversely, if $(p,z) \in \Phi_\tau$ then~(ii) supplies a pair
+of atom images whose back-projections the algorithm enumerates and whose intersection is $p$, and~(iii)
+supplies the verification, so $p$ is accepted.
+
+\textbf{(c).} Suppose $\Phi_\tau = \emptyset$. By (b) every accepted point lies within $\tau$ of some
+same-species atom, and by (a) every atom is accepted. Merging accepted points at tolerance $\tau$ therefore
+produces one cluster per atom, provided no cluster can absorb two atoms; that is exactly the separation
+hypothesis, since two atoms more than $2\tau$ apart cannot both lie within $\tau$ of a common point.
+Applying $\spg$ to $X$ returns $y(s)$ by the definition of the label. \hfill$\square$
+
+\textbf{Proposition~2 of the article.} At $\varepsilon = 0$ the extractor returns the true centroids, every
+quantity the pipeline compares equals the oracle's, the accepted sets coincide, and the labels agree. For
+$\varepsilon > 0$, write $M = [P_v; P_w]$ for an enumerated pair. The triangulated point solves
+$M \hat p = b$ with $b$ the stacked 2D observations, so perturbing $b$ by at most $2\varepsilon$ in norm
+perturbs $\hat p$ by at most $\|M^{+}\|_2 \cdot 2\varepsilon \le 2\kappa\varepsilon$. Each compared
+distance is between two such quantities, so it differs from the oracle's by at most $2\kappa\varepsilon$,
+and a comparison against $\tau$ has the same outcome in both whenever the oracle's distance is further than
+$2\kappa\varepsilon$ from $\tau$. On structures satisfying that margin the accepted sets, and hence the
+labels, coincide. \hfill$\square$
+
+The band must be taken as $2\kappa\varepsilon$ rather than $2\varepsilon$ whenever $\kappa > 1$: for two view
+directions $5^\circ$ apart, $\kappa \approx 16$, so using the unscaled $2\varepsilon$ would understate the
+true error band by more than an order of magnitude.
+
+\textbf{Corollary~\ref{cor:design}(a).} Let $\tau = 0$ and $(p,z) \in \Phi_0(s,\mathcal{C}\cup\{c\})$. By
+(iii) every view $u \in \mathcal{C}\cup\{c\}$, in particular every $u \in \mathcal{C}$, has an atom $i_u$ of
+species $z$ with $\Pi_u(p) = \Pi_u(L x_{i_u})$. Pick two independent views $v',w' \in \mathcal{C}$. If
+$i_{v'} = i_{w'} = i$ then $p$ and $L x_i$ share both projections, and by the uniqueness argument of (a)
+$p = L x_i$, contradicting~(i) at $\tau = 0$; so $i_{v'} \neq i_{w'}$ and~(ii) holds within $\mathcal{C}$.
+Condition~(iii) holds on the smaller set because it held on the larger, and~(i) is unchanged. Hence
+$(p,z) \in \Phi_0(s,\mathcal{C})$. \hfill$\square$
+
+\textbf{Corollary~\ref{cor:design}(b).} $P_v$ has rows orthonormal and orthogonal to $d_v$, so $P_v t = 0$
+whenever $t \parallel d_v$, and $\Pi_v(p + kt) = P_v p + k P_v t = \Pi_v(p)$. \hfill$\square$
+
+Every step above was checked mechanically: the two algebraic identities in a computer algebra system, the
+set inclusion of Corollary~\ref{cor:design}(a) by exhaustive enumeration on random structures, and the
+constant $\kappa$ and its empirical amplification for the frozen camera set numerically. The script ships
+with the artifact.
+
+\begin{algorithm}[htbp]
+\caption{Geometric oracle $O(s, \mathcal{C})$}
+\label{alg:oracle}
+\begin{algorithmic}[1]
+\For{each view $v$}
+  \State $Q_v \gets \{(\Pi_v(L x_i),\, z_i) : i = 1,\dots,N\}$
+  \Comment{projected, species-labelled 2D points; cross-view identity discarded}
+\EndFor
+\For{each pair of views $(v, w)$ and each same-species pair $(q, q') \in Q_v \times Q_w$}
+  \State $\hat{p} \gets$ intersection of the back-projected rays $\Pi_v^{-1}(q)$, $\Pi_w^{-1}(q')$, if they meet
+  \State accept $\hat{p}$ iff its projection lies within tolerance of a same-species point in every
+         remaining view
+\EndFor
+\State merge accepted points lying within $\delta$ of one another
+\State \Return $\spg(\text{merged reconstruction})$
+\end{algorithmic}
+\end{algorithm}
+
+\section{Statistical procedures}
+\label{app:stats}
+The tests behind the 13-of-14 attribution finding and the fabrication scoring are specified here in full,
+along with every other procedure used in Sections~3.2--3.6 of the article.
+
+\textbf{Paired comparisons.} Every model-versus-model and model-versus-oracle comparison on a shared sample
+is a paired exact binomial (sign) test on discordant structures: with $g$ structures one arm alone gets
+right and $l$ the other alone, the two-sided $p$ is that of $\mathrm{Bin}(g+l, 1/2)$ evaluated at
+$\min(g,l)$. For the render-convention probe, the per-comparison minimum detectable difference is the
+smallest $|g-l|/n$ reaching $p<0.05$ given that comparison's observed $g+l$; with $g+l \le 5$ no split
+reaches it, which is the source of the 7-of-16 unreachable comparisons in
+Section~3.6 of the article.
+\textbf{Perception share.} The median share is reported with a percentile bootstrap over models
+($B = 20{,}000$, resampling the 14 model-level shares). Whether the post-perception residual exceeds the
+perception component is a per-model binary, so the count of 13 of 14 is tested with an exact sign test
+against parity. Any statement about how the share is \emph{ordered} across models is a Spearman
+correlation on $n = 14$ and has no useful power; we report the correlation and decline the ordering claim.
+Note that the share $P/(R_1 - R_4)$ carries $R_4$ in both numerator and denominator, so a correlation
+between share and $R_4$ is partly structural and should not be read as a mechanism.
+
+\textbf{Clustered observations.} Per-structure regressions pooled across models place 14 non-independent
+observations on each structure. We report the pooled statistics as descriptive only and base every claim on
+the model-level sign test, which respects the clustering.
+
+\textbf{Atom-count association behind the residual bound (Section~3.5 of the article).} Pooling the 2940
+model-structure pairs of the atom-count regression gives $\rho=-0.0908$ ($p=8.1\times10^{-7}$) and a drop
+from 0.5551 to 0.5129 across the median cell size (Fisher $p=0.0241$), both descriptive only given the
+clustering above. Atom count correlates with crystal system ($\rho=-0.1866$), but the mean within-system
+association ($-0.1053$) is stronger than the pooled figure, so the atom-count effect behind the residual
+bound is not symmetry difficulty in disguise.
+
+\textbf{Label certification.} Label agreement is measured on a stratified sample of $n=224$ structures (112
+Materials Project, 112 JARVIS-DFT, 32 per crystal system), disjoint from training and evaluation; the
+stability policy quarantines 4, leaving 220 kept. The one-sided exact 95\% lower bound for $k/k$ agreements is
+$0.05^{1/k}$; for $k = 220$ this is $0.9865$. The source databases reach spglib through pymatgen and JARVIS's
+own wrapper respectively.
+\textbf{Run-to-run spread.} The second sweep execution is retained as a labelled replication; spread is
+reported as the mean and maximum absolute per-model difference in correct counts.
+
+\section{Label granularity}
+\label{app:granularity}
+This section supports the granularity claim of Section~2.3 of the article: the identifiability result is a
+property of the reconstruction and not of the seven-way label. We score four labels of increasing granularity
+for the model-free arms. The oracle is flat across granularity because a
+reconstruction is either right or wrong and all four labels follow from it; the cell-metric baseline falls
+from 0.8952 at crystal system to 0.6810 at space group, because point group and space group depend on atom
+positions that lattice parameters do not encode. The identifiability claim is therefore not specific to the
+seven-way label.
+\section{Tabular classifier: feature specification and reading sensitivity}
+\label{app:classifier}
+The cell-metric random forest of Section~3.2 of the article (0.8952 on crystal system) uses 19 features: the
+six lattice parameters and cell volume, three scale-free edge-length ratios, four angle-deviation terms, an
+angle range, an angle-dispersion term, an edge-dispersion term, site count and density. The scale-free
+ratios are defined as ratios of \emph{sorted} edge lengths (min/mid, mid/max, min/max) rather than of
+edges in their native axis order, and the dispersion terms are population standard deviations; both choices
+are made for invariance to axis labelling, a property a scale-free descriptor must have. Under this
+canonical specification the classifier reaches $188/210=0.8952$.
+Twelve combinatorially possible readings of the same specification (crossing edge-ratio sortedness with
+the dispersion convention) span exactly four distinct values: 183, 184, 187 and 188 of 210. The canonical
+form is the top-scoring reading, and its selection is justified by the invariance argument on its own
+merits rather than by where it ranks. We report the achievable range rather than a single number because a
+reader recomputing the specification from its natural-language description could reach any of the four
+values depending on which convention they infer for edge-ratio ordering and dispersion.
+
+\section{Render conventions: full statement}
+\label{app:conventions}
+Contribution (iv): the full render-convention measurements summarised in Section~3.6 of the article,
+including the two pre-registered predictions that failed, the failure mechanisms, and the paired tests of
+Table~\ref{tab:conventions}.
+
+\begin{table}[htbp]
+\centering
+\caption{The oracle under render-protocol interventions and centroid noise, original sample ($n = 210$),
+mean accuracy over ten seeds per cell, with the merge tolerance $\delta$ scaled to the noise. At
+$\sigma = 0$ all three protocols return every label, so the protocols are identifiability-equivalent and
+differ only in conditioning. The crossing row is the interpolated $\sigma$ at which each protocol falls below
+$R_1 = 0.95$. Frozen and off-axis differ in camera placement alone, so their ratio tests $\kappa$; the tiled
+arm also changes atom density and does not.}
+\label{tab:conventions}
+\small
+\setlength{\tabcolsep}{6pt}
+\begin{tabular}{@{}l S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]@{}}
+\toprule
+$\sigma$ (\AA{}) & {0} & {0.001} & {0.003} & {0.01} & {0.02} & {Crossing $\sigma$} \\
+\midrule
+Frozen ($\kappa = 2.7321$)   & 1.0000 & 1.0000 & 0.9971 & 0.9790 & 0.9152 & 0.0146 \\
+Off-axis ($\kappa = 8.4258$) & 1.0000 & 0.9990 & 0.9986 & 0.9110 & 0.4495 & 0.0069 \\
+Tiled geometry               & 1.0000 & 0.9867 & 0.9695 & 0.8924 & 0.8167 & 0.0048 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Paired per-structure comparison of the frozen against the off-axis protocol, scoring a structure by majority
+correctness across the ten seeds, gives no discordance at $\sigma \le 0.003$\,\AA{}, then 18 structures the
+frozen protocol alone resolves against 3 the other way at $\sigma = 0.01$\,\AA{} ($p = 0.0015$, exact
+binomial), and 102 against 2 at $\sigma = 0.02$\,\AA{} ($p = 5.4\times10^{-28}$).
+
+\textbf{Noise-tolerance crossings.} The frozen protocol holds $\Rone \ge 0.95$ to $\sigma = 0.0146$\,\AA{}
+against $0.0069$\,\AA{} for the off-axis set and $0.0048$\,\AA{} for the tiled arm, so tripling $\kappa$ costs
+roughly half the noise tolerance, in the direction Proposition~2 of the article requires. Paired
+per-structure comparison of frozen against off-axis gives no discordance at $\sigma \le 0.003$\,\AA{}, then 18
+structures against 3 at $\sigma = 0.01$\,\AA{} ($p = 0.0015$). At $\delta \le \tau$ the five-camera set reaches
+1.0000 and structure-level violations of monotonicity fall to 9 of 11{,}550 nested comparisons, against 195 of
+22{,}050 at the released tolerance. An off-axis set does not raise the ceiling, as reading the same
+measurement at $\delta > \tau$ would suggest; that apparent gain disappears once the tolerances are tied.
+
+\textbf{Scope guidance from Proposition~2 of the article.} The constant rises steeply as two view directions
+approach parallel: $\kappa = 16.2108$ at $5^\circ$ separation and $81.0295$ at $1^\circ$. Within the pipeline
+class the proposition covers, the render choices that keep an extraction stage inside it are those that keep
+centroids well defined: flat shading, atom radii small enough that same-species discs do not merge in
+projection, and bond geometry that does not bias a disc's centre. The proposition also states what a
+sufficient extraction experiment must show, namely bounded centroid error with no spurious detections rather
+than high recall alone.
+
+\textbf{Why the two predictions failed.} The three-way ordering treated tiling as $\kappa$-preserving, which
+it is not: tiling multiplies atoms per cell eightfold and shrinks same-species separations, so it degrades
+robustness through density rather than through camera geometry, and that arm therefore cannot score $\kappa$
+in either direction. The absolute budget failed because the band of Proposition~2 of the article is
+sufficient rather than tight: the binding constraint is the displacement at which $\spg$ flips, not the
+distance at which two atoms collide, which is why the predicted $\sigma = 0.4456$\,\AA{} overstates the
+measured crossing at $0.0146$\,\AA{} by a factor of 31.
+
+\textbf{Per-pair conditioning constants.} The constant of Proposition~2 of the article, evaluated over the ten
+independent pairs of the five-camera set. Frozen: 1.0000 (axis-$a$/axis-$b$), 1.0000 ($a$/$c$), 1.4142
+($a$/body-diagonal), 2.7321 ($a$/oblique-2), 1.0000 ($b$/$c$), 2.0000 ($b$/body-diagonal), 1.1547
+($b$/oblique-2), 1.3280 ($c$/body-diagonal), 1.3280 ($c$/oblique-2), 2.2823 (body-diagonal/oblique-2); the
+maximum is 2.7321. Off-axis: the maximum rises to 8.4258, on the same $a$/oblique-2 pair. A random-perturbation
+check reproduces the frozen maximum empirically at 2.7318 over $2\times10^{4}$ draws restricted to realizable
+perturbations. This value supersedes an earlier one of 1.7689 for the same protocol, which equals $1.3280^2$
+for the constant of two other pairs and so appears to arise from an algebraic error in squaring; no
+formulation we tried (stacked, transposed, horizontally stacked, Frobenius, or the ratio of extreme singular
+values) reproduces it. The band half-width $2\kappa\varepsilon$ at the measured median extraction error
+therefore moves from $0.0902$\,\AA{} to $0.1393$\,\AA{}, and the conclusion it supports is unchanged: the
+closest compared distance in the sample, $1.0951$\,\AA{}, still clears the band's upper edge by a factor of
+7.34.
+
+\textbf{Phantom density.} The dependence of $|\Phi_0|$ on atoms per cell does not reduce to one coefficient,
+and the pooled Spearman correlation changes sign with view count: $+0.4571$ at two views, $-0.1471$ at three
+($n = 1950$ structures, ten subsets each; this census set is the one described in
+Section~3.4 of the article). Decomposing resolves it. Conditional on $\Phi_0$ being nonempty the
+count climbs steeply with density at both view counts ($\rho = 0.8331$, $n = 1408$ at two views;
+$\rho = 0.8273$, $n = 365$ at three). What differs is the probability of being nonempty at all: flat in density
+at two views ($\rho = 0.0299$, $p = 0.19$) and falling at three ($\rho = -0.1875$, $p = 6.9\times10^{-17}$).
+The three-view negative is therefore a mixture effect, larger cells being less likely to admit any phantom
+under three-view verification while producing many when they do, and is not evidence that density protects
+against phantoms. This is the measurement Section~2.1 of the article promises in place of a proved rate; we
+report the decomposition and not the pooled coefficient.
+
+\textbf{Tiling and identifiability.} The released tiling's translations parallel three of the five cameras,
+so by Corollary~\ref{cor:design}(b) those three separate no atoms differing by them; the two oblique cameras
+do, and clause (a) then leaves identifiability intact, so at exact extraction the tiled geometry returns every
+label. What tiling costs is conditioning rather than identifiability, since it multiplies atoms per cell
+eightfold and shrinks same-species separations, which is the arm measured in Table~\ref{tab:conventions}.
+
+\textbf{View-count sweep.} Corollary~\ref{cor:design}(a) predicts a third effect: $R_1$ non-decreasing as
+views are added, at $\tau=0$. Over the 26 view subsets of size 2 to 5 drawn from the frozen five-camera set
+on the $n=210$ evaluation sample (deterministic, CPU-only, at the production tolerance $\tau>0$), mean
+ceiling rises with subset size, as Table~\ref{tab:viewsweep} reports:
+
+\begin{table}[htbp]
+\centering
+\caption{Mean render ceiling $R_1$ by view-subset size, over all subsets of that size drawn from the frozen
+five-camera set ($n=210$ per subset).}
+\label{tab:viewsweep}
+\small
+\begin{tabular}{@{}l S[table-format=2.0] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]@{}}
+\toprule
+Views & {Subsets} & {Mean $R_1$} & {Min} & {Max} \\
+\midrule
+2 & 10 & 0.7481 & 0.6762 & 0.8000 \\
+3 & 10 & 0.9152 & 0.8857 & 0.9524 \\
+4 & 5  & 0.9371 & 0.9095 & 0.9524 \\
+5 & 1  & 0.9524 & 0.9524 & 0.9524 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+This table is computed at the released $\delta = 0.15$\,\AA{}, and is
+retained because it is the setting under which the monotonicity violations below were found. At
+$\delta \le \tau$ the same sweep gives mean $R_1$ of 0.9800 at two views, 0.9990 at three, 1.0000 at four and
+1.0000 at five, and structure-level violations fall to 9 of 11{,}550 nested comparisons, all inside two-view
+subsets, from 195 of 22{,}050 here. The full five-camera set reproduces $\RoneRel = 200/210 = 0.9524$ through
+this independent implementation. Of the 105 nested subset pairs $\mathcal{C}\subset\mathcal{C}'$, the aggregate mean
+rises in 103; the two exceptions share a starting subset and both add a single camera that trades gained
+structures for more lost ones. At the level of individual structures, 195 of the $22{,}050$
+subset-by-structure comparisons (0.884\%) go the wrong way, affecting 25 of the 210 structures, so unlike
+the tiling and camera-perturbation results above this check is not perfectly one-sided; the violations are
+consistent with running the sweep at $\tau>0$ rather than with a failure of the theorem, which is proved at
+$\tau=0$.
+
+$n_{\mathrm{recovered}} < n_{\mathrm{true}}$ never occurs in any of the 5460 reconstructions, so the oracle
+never drops an atom, exactly as Theorem~1 of the article predicts; every failure is instead a phantom, a
+spurious point that survives cross-view verification. The mean phantom excess falls monotonically with
+view count, from 4.911 at two views to 0.480, 0.048 and exactly 0.000 at five, where all 210 structures
+recover the true atom count. Extra views past three therefore buy reconstruction fidelity rather than
+additional accuracy, and the 10 remaining errors at the full camera set are label-tolerance failures inside
+$\spg$ rather than view-geometry failures.
+
+\begin{table}[htbp]
+\centering
+\caption{The ceiling as a frontier in extraction tolerance $\delta$, at fixed symmetry tolerance
+$\tau = 0.01$\,\AA{}. The same oracle and the same structures throughout; only $\delta$ changes. Values at
+$\delta \le \tau$ are the exact-identifiability regime of Theorem~1 of the article; the $\delta = 0.15$\,\AA{}
+column is the released reading $\RoneRel$.}
+\label{tab:frontier}
+\small
+\begin{tabular}{@{}l S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4] S[table-format=1.4]@{}}
+\toprule
+$\delta$ (\AA{}) & {0.005} & {0.01} & {0.05} & {0.10} & {0.15} & {0.50} \\
+\midrule
+$\Rone$, original ($n = 210$)   & 1.0000 & 1.0000 & 0.9810 & 0.9619 & 0.9524 & 0.8857 \\
+$\Rone$, scaled ($n = 1933$)    & 0.9995 & 1.0000 & 0.9585 & 0.9164 & 0.8785 & {--} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Why the tolerance frontier of Table~\ref{tab:frontier} is not perfectly monotone at the tight end.}
+The extraction-tolerance frontier reported in Section~3.4 of the article has one non-monotone point: at
+$n=1933$, $\delta = 0.005$\,\AA{} costs one structure where $\delta = 0.01$\,\AA{} costs none. This is the
+opposite failure mode from the over-merging that costs the frontier elsewhere: too tight a $\delta$ can fail
+to combine two ray-intersection candidates that triangulate the same atom from different view pairs, so the
+reconstruction reports two points where one atom exists, rather than one point where two atoms exist. Both
+failure directions are consistent with the merge step of Algorithm~\ref{alg:oracle} and with
+Theorem~1(c) of the article, which assumes $\delta \le \tau$ rather than $\delta \to 0$.
+
+\textbf{Power against the models.} Four strong models across five conventions on a stratified 70-structure
+subsample give zero significant changes in 16 paired comparisons, with near-symmetric discordance. Power
+is low and we state it per comparison: discordance averages 6.3 of 70, and significance is reachable in
+only 9 of the 16, the other 7 having too few discordant pairs for any split to reach $p<0.05$
+(Section~\ref{app:stats} gives the procedure and the per-comparison minimum detectable differences, which
+run 0.0857 to 0.1286 across the 9 comparisons where significance is reachable at all). The largest effect
+observed anywhere in the probe is 0.0857, and it occurred in a comparison whose own threshold was higher
+than that, so no comparison came within its own detection limit. These are paired per-comparison
+thresholds; a single pooled minimum detectable difference computed under an unpaired approximation is not
+valid for this design and is not reported, and the per-comparison analysis it would have replaced makes the
+null weaker rather than stronger. We therefore do not claim the null bounds
+the effect at any particular size; what it supports is that no convention produced a detectable change,
+and that for seven comparisons the design could not have detected one.
+
+\section{Secondary axes and supporting figures}
+\label{app:secondary}
+No main-text claim rests on this section; the leaderboard and the per-model image-removal control are in the
+main text (Section~3.1 of the article, Section~3.5 of the article), and this section carries the remaining
+secondary-axis figures.
+
+\textbf{Cue sufficiency.} Whether the conventional-cell metric alone determines the crystal system splits
+the samples $140/70$ and $141/69$ and is a stable property of the render convention with no accuracy
+mechanism attached, testing four independent ways for pixel accuracy to simply drop on the ambiguous
+stratum and finding none that holds. A contrast against a cell-metric control does widen on that stratum for
+all three frontier models on both samples (Figure~\ref{fig:cuesuff}), but the stratum is $60/70$ and
+$58/69$ hexagonal-or-trigonal, so the finding is close to a restatement of that one degeneracy: the
+$69$-structure sample's residual after removing that degeneracy is $69-58=11$ structures (5 orthorhombic,
+5 tetragonal, 1 cubic), and the $70$-structure sample's is $n=10$.
+
+\textbf{One generation of model progress.} It does not erase the axis (Figure~\ref{fig:generational}): from
+\rlOldGen{} to \rlLadder{} (identifiers in Section~3.1 of the article), which is the same arm that heads the
+ladder, the newer model gains more on the ambiguous stratum in raw terms but
+closes less of its headroom to the oracle (54.1\% against 64.0\%, both computed against $\RoneRel$), and one
+model pair is a comparison rather than a trend.
+
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/cuesuff.pdf}
+\caption{The pixel-minus-numeric gap widens on cue-ambiguous structures for all three arms on both
+samples. Pixel accuracy minus a cell-metric random forest on the same structures, by cue-sufficiency
+stratum, three frontier models ($K=3$). Negative means the pixel model trails the numeric reader.
+(a) Original evaluation sample, $n = 140$ box-sufficient $+\,70$ box-ambiguous. (b) Expansion sample,
+$n = 141 + 69$. The ambiguous stratum is largely one degeneracy, 60/70 and 58/69 of its structures being
+hexagonal or trigonal, so the contrast is close to a hexagonal/trigonal effect; with those removed the
+residual strata are $n = 10$ and $n = 11$, which is suggestive only. See Section~\ref{app:secondary}.}
+\label{fig:cuesuff}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[width=\linewidth]{figures/generational.pdf}
+\caption{One generation of model progress: the raw gain is larger on the ambiguous stratum, but the
+headroom-normalised gain is smaller there, so the raw reading is a low-baseline effect. Original sample,
+$n=210$, $K=3$. (a) Raw accuracy by cue-sufficiency stratum, with the oracle ceiling and seven-way chance
+drawn. (b) The same gains normalised by headroom to the oracle: the raw gain is $+0.50$ on the ambiguous stratum
+against $+0.21$ on the sufficient one, but only 54.1\% of the ambiguous headroom is closed against 64.0\% of
+the sufficient. The ceiling drawn here and the headroom
+percentages are computed against $\RoneRel = 0.9524$, not against the exact $\Rone = 1.0000$ of Section~3.4
+of the article; the two readings differ by 4.8 points, so every percentage in this figure would shift if
+renormalised against the exact ceiling.}
+\label{fig:generational}
+\end{figure}
+
+\section{Extended limitations}
+\label{app:extraction}
+Each limitation Section~3.7 of the article states in brief is given in full here.
+
+\textbf{Extraction share.} $R_1$ assumes ideal extraction, so it cannot by itself say how much of the
+ceiling-to-model gap a real extraction stage would close. The one extractor evaluated end to end at the
+pixel level, a connected-component blob detector working from colour thresholds, was scored against its own
+pre-registered 5\% triangulation-failure gate and failed it on two independently drawn samples (40/210 =
+19.0\% and 47/210 = 22.4\% of structures recovering zero atoms), so it is reported as a diagnostic rather than
+entered into the ladder. Its two recall figures measure different things and should not be compared directly:
+0.400 is the median per-structure recall of reconstructed atoms reported in Section~3.5 of the article, while
+0.4227 below is the median per-view recall of 2D detections.
+
+That failure is not an anomaly but what Proposition~2 of the article predicts, and the margins are
+measurable. Characterising the same detector against the proposition's own hypothesis over all 210
+evaluation structures and all five frozen views (1{,}050 view measurements, 54{,}258 matched detections)
+gives median precision 0.4278 and median recall 0.4227, so it is neither sound nor complete: most
+detections are spurious and roughly 58\% of atoms are missed outright at any tolerance. Localisation fails
+by a wide margin even on the atoms it does find and match, with median centroid error $0.0329$~\AA{}
+against the $\tau/2 = 0.005$~\AA{} the proposition requires, a factor of $6.6$; only 38 of 54{,}258 matched
+centroids ($0.07\%$) meet the requirement. Taking $\varepsilon$ per structure as the median centroid error,
+the ambiguity band $[\tau - 2\kappa\varepsilon,\ \tau + 2\kappa\varepsilon]$ has median half-width
+$0.1393$~\AA{} and every structure's compared distances avoid it, but that check is uninformative here: the
+closest interatomic distance anywhere in the sample is $1.0951$~\AA{}, about seven times the band's upper
+edge, so no physically realisable structure could fail it at this tolerance.
+
+The limitation is therefore that the available detector is too weak to attribute the gap, not that the
+measurement is missing. Closing it needs an extractor roughly seven times better at localisation and
+materially better at both soundness and completeness, which is a new method rather than a rerun; such an
+extractor, meeting the condition of Proposition~2 of the article, is the single most valuable missing
+measurement.
+
+\textbf{Fabrication denominator.} In the learned-extractor fabrication finding of
+Section~3.5 of the article, the denominator is 206 rather than the full $n=210$: four
+structures (\texttt{mp-1391233},
+\texttt{mp-733975}, \texttt{mp-1104047}, \texttt{mp-1214794}) elicited no parseable atom list and fail the
+pre-registered unparseable- and fewer-than-3-atoms gates, so they are excluded from the median-recall
+denominator while counting as unanswered in the full-$n{=}210$ accuracy figure. This is the intermediate a
+model-in-the-loop split has no model-free reference to check, which is why the fabrication would have read
+as bad reasoning under such a split rather than as fabrication.
+
+\textbf{Roster currency and decode protocol.} The rosters were frozen before the current frontier
+generation and carry no arm beyond the three frontier models already compared in
+Section~\ref{app:secondary}, so the leaderboard is a snapshot rather than a ranking; the gap could narrow
+under a stronger roster. No prompt-sensitivity sweep was run: each condition used one verbatim prompt with no
+per-model tuning, and the $R_3$ condition supplied geometry in a single normalised textual schema, so
+differences between plausible schemas (for instance a raw crystallographic file against normalised fields)
+are untested.
+
+The scored arms set no reasoning or extended-thinking parameter, so each ran at its provider's platform
+default rather than at a controlled budget. One model was tested against a controlled budget, and on that
+model the setting does not move accuracy; the axis is uncontrolled for the remaining arms, so what follows
+bounds the effect for a single frontier model rather than for the roster. Running \rlBudget{} (identifier
+in Section~3.1 of the article) on
+the full original sample at $K{=}3$ under two settings,
+a minimal reasoning budget and the provider default, gives \emph{identical} accuracy, $130/210 = 0.6190$
+under both, while the default emits $5.4\times$ the output tokens (482 against 89 per call) and takes
+$3.4\times$ the wall time. The totals are not the same predictions: the settings agree on $169/210$ and
+break even on the discordant ones, 13 against 13, an exact two-sided $p = 1.0000$. The default also
+returned empty content on 11 of 210 structures where the minimal budget returned none, and restricting to
+the 199 both settings answered leaves them indistinguishable ($0.6332$ against $0.6533$, $p = 0.5235$).
+The reshuffling is structured even though the total does not move: extra deliberation helps on tetragonal
+and trigonal and hurts on hexagonal and triclinic, the strata where the cell metric is closest to
+degenerate, though at $n=30$ per stratum those differences are individually underpowered and we report
+them as description. The relevant consequence for this paper is that for this model the distance to the
+ceiling is not a deliberation deficit: $5.4\times$ more reasoning closes none of it. Whether that holds
+across the roster is untested, since only this one arm was run at a controlled budget.
+
+\textbf{Sample size and feature-definition sensitivity.} All model numbers rest on two samples of 210,
+where the minimum detectable paired difference is near 0.09, so adjacent leaderboard rows are not
+separable. The model arms were not re-run at $n=1933$, so the gap at scale is bounded on the oracle side
+only; the oracle and both classical baselines are complete on the full 1933. The tabular classifier of
+Section~3.2 of the article reaches 183 to 188 of 210 across defensible readings of its feature
+specification, with the canonical form at the top of that range (Section~\ref{app:classifier}); the
+cue-sufficiency stratum of Section~\ref{app:secondary} rests on similarly small strata ($n=10$ and
+$n=11$) once its one dominant degeneracy is removed.
+
+\textbf{Size-matched control for the scale-up baseline (Section~3.5 of the article).} The $n=1933$ sample has
+larger cells than the original (median 38 atoms against 14), so the drop in the shape-free baseline at scale
+(0.5286 to 0.2054) could in principle be a cell-size artefact rather than a property of the larger draw. A
+control restricted to the $n=1933$ structures at or below the original sample's 95th-percentile cell size
+puts the baseline at 0.2205, close to the unrestricted 0.2054 and far from the original 0.5286, so the shift
+survives size-matching and is a property of the draw.
+
+\textbf{Beyond orthographic cameras: full statement.} The identifiability argument does not depend on orthography as heavily
+as the algebra suggests, and the changes a calibrated perspective protocol would require are worth stating
+even though we have not measured them. Back-projections become rays through a known camera centre rather than
+parallel lines, so two rays from independent views still meet in one point and Theorem~1(a) of the article
+survives with the intersection argument unchanged; the phantom-set characterisation in (b) is likewise a
+statement about coincident projections and does not use parallelism. Two things do change.
+Corollary~\ref{cor:design}(b) fails, since a perspective camera does not project lattice-translated copies
+onto the same point, which removes the tiling degeneracy but also removes the clean statement about it. And
+$\kappa$ would have to be redefined from the projective Jacobian at each point rather than from a fixed
+$2\times3$ matrix, so conditioning becomes position-dependent and the single per-protocol constant of
+Proposition~2 of the article becomes a field over the scene. Renderers that are not injective on the visible
+content, such as those producing identical silhouettes for distinct objects, fall outside the construction
+altogether rather than merely complicating it.
+
+\textbf{Superseded reading of the off-axis protocol.} Read at $\delta > \tau$, the off-axis camera set
+appears to raise the ceiling above the frozen protocol. That ordering is an artefact of merging above the
+symmetry tolerance rather than a property of the cameras, and it disappears once $\delta \le \tau$, at which
+point the two protocols are equally exact and separate only under centroid noise
+(Section~3.6 of the article). The superseded reading is released with the surviving one.
+
+\textbf{Values that do not reproduce from their own records.} Three quantities in the project's history
+could not be recovered from the specifications that produced them, and are reported as unrecoverable
+rather than replaced by a nearby figure: a cue-sufficiency stratification rule, whose ambiguous-stratum
+count is reproducible but whose stratum composition is not, under a fifty-combination grid over
+tolerances and branch orderings; an oracle view-count curve, which was computed against a live database
+query whose candidate pool drifts between runs at a fixed seed and so cannot be re-derived on the same
+structures; and two earlier readings of the tabular classifier, one whose feature list was never saved
+and one that no defensible reading of the saved specification reaches. The superseded values are
+released as data alongside the surviving ones so a reader can see exactly what moved.
+
+\section{Reproducibility record}
+\label{app:repro}
+The released artifact contains the render protocol, the labelling tolerances and sweep, the exact feature specification
+and seed for the cell-metric reference, the verbatim model prompts, and per-structure predictions for every
+arm reported here, so each accuracy in this paper recomputes from released vectors without API access.
+Every numeric claim was generated from the corresponding released numerical record rather than
+transcribed, and a verification step refuses any manuscript sentence carrying a value absent from those
+records or an accuracy without its sample and decode budget. Each analysis was pre-registered before its
+numbers existed; the pre-registrations are released alongside the results, including for the analyses whose
+outcome differed from the registered expectation. Dataset metadata is provided in Croissant format
+validated against the reference library.
+
+\textbf{Provenance and access.} The structures are drawn from a public crystallographic database under its
+stated licence, and every render, label and prediction vector is released with the paper. The models
+evaluated are third-party systems accessed through their public interfaces under their terms of service;
+their identifiers and decode budgets are reported in the roster of Section~3.1 of the article rather than
+anonymised, since the accuracy claims are only interpretable against a named arm, and the main text refers
+to each by a role label defined from that same roster. The work involves no human subjects and no personally
+identifying data; recruitment of qualified crystallographers for a human baseline was attempted and failed,
+so no human-subjects protocol was executed and no human-performance claim is made.
+
+\textbf{Compute.} The oracle and label pipeline are deterministic and CPU-only, 19--99 s per evaluation
+pass; the exact processor is not recorded. Fine-tuning used a single rented consumer GPU; the headline
+fine-tuned arm trained for 8 hours 12 minutes. Model arms ran through a commercial inference aggregator;
+per-condition call counts range from 3{,}780 to 28{,}350, and no aggregate spend was recorded. For
+locally-run decoding, sampling used temperature 0.7, top-$p$ 0.95, majority vote over $K$ samples, and a
+900-token budget; per-model decode settings and the verbatim prompts are in the released prompt
+specification. No reasoning
+or extended-thinking parameter was set in any scored request, so every model ran at its provider's own
+default; the one condition that varies the budget deliberately is the paired contrast described above, whose
+two legs are released with the per-structure predictions.

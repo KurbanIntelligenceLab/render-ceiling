@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-E1 — zero-shot symmetry-perception probe -> ledger/CP1_zeroshot/
+E1 — zero-shot symmetry-perception probe -> ledger/zeroshot/
 
 Evaluates the open base model + frontier VLMs (via OpenRouter) zero-shot on four
 tasks, sweeping view count {1,3,5}, on canonical AND contamination-control (perturbed
@@ -21,7 +21,7 @@ from cocr.render import (render_views, conventional_cell, VIEW_SWEEP, VIEWS,
                          VIEWS_PERTURBED)
 from cocr.labels import make_labels
 
-LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "CP1_zeroshot")
+LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "zeroshot")
 RENDERS = os.path.join(os.path.dirname(__file__), "..", "data", "renders", "e1")
 VIEW_COUNTS = [1, 3, 5]
 

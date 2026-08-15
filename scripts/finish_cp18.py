@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-"""Finish CP18 once V2b's expansion generations land: pooled paired tests at n=420."""
+"""Finish eval_expansion once V2b's expansion generations land: pooled paired tests at n=420."""
 import json, sys, collections
 import numpy as np
 from scipy.stats import binomtest

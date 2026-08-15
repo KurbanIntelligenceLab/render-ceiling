@@ -1,0 +1,19 @@
+Creative Commons Attribution 4.0 International (CC BY 4.0)
+
+Copyright (c) 2026 Can Polat, Mustafa Kurban, Erchin Serpedin, Hasan Kurban
+
+The data in this repository — the contents of `data/`, `results/` and
+`release/` — are licensed under the Creative Commons Attribution 4.0
+International License. You are free to share and adapt the material for any
+purpose, including commercially, provided you give appropriate credit, link to
+the licence, and indicate whether changes were made.
+
+Full licence text: https://creativecommons.org/licenses/by/4.0/legalcode
+Summary: https://creativecommons.org/licenses/by/4.0/
+
+The code in this repository — the contents of `scripts/` and
+`manuscript/codes/` — is licensed separately under the MIT License; see LICENSE.
+
+Source structures are drawn from the Materials Project, which distributes its
+data under CC BY 4.0. Attribution to the Materials Project is required for any
+reuse of the structural data, in addition to attribution to this work.

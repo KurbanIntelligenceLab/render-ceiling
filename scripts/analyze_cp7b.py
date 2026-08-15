@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-CP7b certification analysis — runs the PRE-REGISTERED endpoint with its homogeneity gate.
+certification certification analysis — runs the PRE-REGISTERED endpoint with its homogeneity gate.
 
 Reads the K=8 generations for B1 (answerer) and each certifying chain, then for every chain:
   - the 2x2 (agree/disagree x correct/incorrect) stratified by B1 self-confidence

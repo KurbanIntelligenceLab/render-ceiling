@@ -1,0 +1,182 @@
+\section{Methods} \label{sec:method} The method has three parts: an oracle that answers the task
+with no model in it, the theory that says when it is exact and what it bounds, and the ladder that uses it.
+
+\subsection{Geometric oracle and identifiability}
+\label{sec:oracle}
+
+\textbf{Structures and labels.} A crystal structure is a triple $s = (L, X, Z)$ of lattice, fractional
+coordinates $X = \{x_i\}_{i=1}^{N}$ and species. The label map $y(s) = \spg(s)$ is the crystal system returned
+by a deterministic symmetry algorithm \citep[spglib,][]{spglib2024} at a fixed tolerance $\tau$, so label
+correctness is not a competing explanation for model error.
+
+\textbf{Renders.} The frozen protocol renders a $2\times2\times2$ tiling of the conventional cell through five
+orthographic cameras $\mathcal{C} = \{c_v\}_{v=1}^{5}$ (three principal-axis, two oblique) at $768$ px. The
+tiling is a legibility choice inherited from the convention. Each camera is a known unit direction $d_v$ with
+orthographic projection $\Pi_v(p) = P_v\, p$ for a fixed $2\times3$ matrix $P_v$ with orthonormal rows
+perpendicular to $d_v$. The task given to a model is: from $(I_1,\dots,I_5)$, name the crystal system.
+
+\textbf{The oracle.} The oracle answers the same question from the renders' own geometry instead of from
+pixels: where classical orthographic factorisation estimates the cameras, the render protocol fixes them, so
+we invert them in closed form. It forward-projects the ground-truth atom positions of the conventional cell
+through each frozen camera, \emph{discards} the correspondence between views, re-solves it by ray intersection
+with cross-view verification, and applies $\spg$ to the reconstruction (Algorithm~S1 of the ESI\dag{}). It is
+deterministic and CPU-only, and assumes \emph{ideal extraction}: every atom's centroid is available in every view, including
+atoms an image hides, so $R_1$ bounds identifiability from the projection geometry rather than from the
+pixels, and a visibility-conditioned variant is a separate measurement we have not built.
+
+\textbf{Two tolerances, and why they must be tied.} The oracle carries a tolerance $\delta$ at
+which it accepts a ray intersection and merges the resulting candidates, and the label map carries the
+symmetry tolerance $\tau$ at which $\spg$ decides. They interact: at $\delta > \tau$ a merge can combine two
+distinct atoms and displace the survivor by an amount $\spg$ can see, so the reconstruction is faithful in
+atom count yet wrong in symmetry. \emph{The operating rule is therefore to keep $\delta \le \tau$}, and the
+identifiability result below assumes exactly this merge. Throughout $\tau = 0.01$\,\AA{}, and every oracle
+number is reported with both values stated. Our released pipeline used $\delta = 0.15$\,\AA{}; we write
+$\Rone$ for the ceiling in the exact regime $\delta \le \tau$ and $\RoneRel$ for the same oracle read at that
+released tolerance (the governing notation is collected in Section~S1 of the ESI\dag{}).
+
+\begin{definition}[Render ceiling] \label{def:ceiling} For an evaluation sample $\mathcal{S}$ under a frozen
+protocol $\mathcal{C}$, the \emph{render ceiling} is $\Rone = |\mathcal{S}|^{-1}\sum_{s \in \mathcal{S}}
+\mathbf{1}[\,O(s,\mathcal{C}) = y(s)\,]$. \end{definition}
+
+\begin{definition}[Phantom set]
+\label{def:phantom}
+Fix $\tau \ge 0$. A species-labelled point $(p,z)$ lies in $\Phi_\tau(s,\mathcal{C})$ if it is further than
+$\tau$ from every same-species atom, arises as the intersection of the back-projections of two \emph{distinct}
+same-species atom images in some pair of views, and projects within $\tau$ of some same-species atom image in
+every view. The set depends on $s$ and $\mathcal{C}$ alone; the componentwise statement accompanies the
+proofs.
+\end{definition}
+
+\begin{theorem}[Soundness and completeness of the oracle]
+\label{thm:ident}
+Assume at least two directions in $\mathcal{C}$ are linearly independent and distinct same-species atoms are
+more than $2\tau$ apart. Then (a) every atom is recovered exactly, by every independent view pair, so the
+accepted set contains the atom set $X$ and does not depend on the enumeration order; (b) every accepted
+point further than $\tau$ from all same-species atoms lies in $\Phi_\tau(s,\mathcal{C})$, and conversely
+every element of $\Phi_\tau(s,\mathcal{C})$ is accepted; and (c) if $\Phi_\tau(s,\mathcal{C}) = \emptyset$
+then merging accepted points at tolerance $\tau$ returns exactly $X$, hence $O(s,\mathcal{C}) = y(s)$.
+\end{theorem}
+
+Proofs are in Section~S2 of the ESI\dag{}. Parts (a) and (b) say the oracle has no failure mode other than
+$\Phi_\tau$: exact on the atoms, and everything it can get wrong is a coincidence fixed by the structure and
+cameras. The separation hypothesis in (c) is not cosmetic, and the statement does not lift to labels, since a
+reconstruction containing a phantom may still return $y(s)$.
+
+The hypothesis of (c) is satisfied on this benchmark rather than assumed: a direct census of $\Phi_0$ finds
+it empty on every certified structure under the released five-camera protocol, and nonempty once cameras are
+removed, so $\Rone = 1.0000$ whenever $\delta \le \tau$ and emptiness is a property of the protocol rather
+than of the construction. That census is why we treat identifiability as exact and place the operational
+degradation in the extraction tolerance instead.
+
+\begin{proposition}[What the ceiling bounds, and what it does not]
+\label{prop:scope}
+Let $\kappa = \max_{v \neq w} \|[P_v; P_w]^{+}\|_2$ over the enumerated independent view pairs. Call a
+procedure a \emph{centroid-triangulating pipeline} if it extracts species-labelled 2D centroids per view
+with error at most $\varepsilon$, triangulates at tolerance $\tau$, and applies $\spg$. At
+$\varepsilon = 0$ it returns $O(s,\mathcal{C})$ on every structure, so its accuracy is exactly $R_1$; for
+$\varepsilon > 0$ the same holds on every structure none of whose compared distances lies within
+$2\kappa\varepsilon$ of $\tau$.
+\end{proposition}
+
+The constant is a property of the camera set, $\kappa = 2.7321$ here, and it diverges as two directions
+approach parallel, so a protocol of nearly collinear cameras has a ceiling that is fragile to extraction error
+even when it is high. Because identifiability here is exact, that fragility is the whole of what distinguishes
+protocols on this benchmark, and $\kappa$ is used to
+predict it in advance rather than to explain it afterwards. The proposition licenses reading $R_1$ as a
+ceiling and fixes the limits: it covers no procedure using shading, occlusion ordering or bond rendering, and
+no model that answers without reconstructing. Its band is sufficient for label agreement rather than tight,
+which we test empirically.
+
+Two design consequences follow (Corollary~S1 of the ESI\dag{}): adding a view can never destroy identifiability,
+and a camera aligned with a lattice vector separates no atoms differing by multiples of it.
+
+Part (b) constrains a single camera and with five it does not bind, so tiling is not an identifiability
+question on this protocol but a conditioning one. We prove no rate for how $\Phi_\tau$ grows with atoms per
+cell, since the natural union bound needs generic positions and crystal atoms sit on special positions; that
+dependence is measured instead and reported as a decomposition.
+
+\subsection{The attribution ladder}
+\label{sec:ladder}
+
+\begin{definition}[Rungs and shares]
+\label{def:ladder}
+For a model $m$ evaluated on the same structures, let
+$\Rzero = \tfrac{1}{n}\sum \mathbf{1}[\spg(s) = y(s)]$ (the symmetry algorithm on ground-truth positions),
+$\Rone$ the oracle ceiling of Definition~\ref{def:ceiling},
+$\Rthree(m)$ the accuracy of $m$ given ground-truth fractional coordinates, species and cell parameters as
+text, and
+$\Rfour(m)$ the accuracy of $m$ on the pixel renders. Define the \emph{perception component}
+$P(m) = \PerceptionComp{m}$, the \emph{post-perception residual} (elsewhere the \emph{symbolic residual})
+$S(m) = \PostPerception{m}$, and the \emph{perception share} $P(m) / (R_1 - R_4(m))$. $\Rtwo$ denotes the oracle run
+on a learned detector's output.
+\end{definition}
+
+$R_1 - R_4(m)$ is a model's total deficit against a model-free reference, $P(m)$ the slice closed by supplying
+perception's output as text, and $S(m)$ the slice that supplying it does not close. Because $R_1$ carries no
+model in its own measurement, the split is a subtraction against a fixed, certified quantity rather than
+against a second model's output. Three conditions make the shares interpretable: the rungs are scored on the
+same structures with all comparisons paired; $R_3$ and $R_4$ share a decode budget; and $S(m)$ bounds rather
+than isolates symmetry reasoning, a bound we test below and which the test does not clear. Referencing to
+$R_1$ rather than $R_0$ costs nothing here, since $\Rzero = \Rone = 1.0000$ and the shares in
+Table~\ref{tab:rungs} need no correction; at $\RoneRel$ the two rungs differ by $0.0476$ and every share
+would shift downward, which is one practical reason to tie $\delta$ to $\tau$. Note that $R_4$ enters both
+numerator and denominator, so the share cannot vary independently of pixel accuracy.
+
+\begin{table*}[t]
+\centering
+\caption{The attribution ladder ($n = 210$, $K{=}3$). \rlLadderShort{} and \rlWeakestShort{} are
+\rlLadder{} and \rlWeakest{}, chosen to span the range. Every derived quantity is a difference of rows above
+it. $\Rzero$ is definitional: the label \emph{is} the algorithm applied to the structure. $\Rone$ is
+measured, and equal to $\Rzero$: with the extraction tolerance tied to the symmetry tolerance the phantom set
+is empty on all 210 structures and the oracle returns every label, so the render protocol withholds nothing
+and the entire deficit below is the model's; read at the released merge tolerance this row is
+$\RoneRel = 0.9524$. $\Rtwo$, the oracle on a learned detector's output, is unscored under a pre-registered
+triangulation-failure gate.}
+\label{tab:rungs}
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ll S[table-format=1.4] S[table-format=1.4]@{}}
+\toprule
+& & \multicolumn{2}{c}{Accuracy} \\
+\cmidrule(l){3-4}
+Rung & Reader & {\small \rlLadderShort} & {\small \rlWeakestShort} \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{Model-free}} \\
+\quad $\Rzero$\; true positions        & symmetry algorithm      & \multicolumn{2}{c}{1.0000} \\
+\quad $\Rone$\; render geometry       & inversion, then algorithm & \multicolumn{2}{c}{1.0000} \\[1pt]
+\multicolumn{4}{@{}l}{\emph{Model}} \\
+\quad $\Rthree$\; exact geometry as text & model                  & 0.8524 & 0.4143 \\
+\quad $\Rfour$\; five renders (pixels)  & model                  & 0.7333 & 0.3667 \\
+\midrule
+\multicolumn{4}{@{}l}{\emph{Derived} (Definition~\ref{def:ladder})} \\
+\quad perception component $\Rthree{-}\Rfour$        & & 0.1191 & 0.0476 \\
+\quad post-perception residual $\Rone{-}\Rthree$    & & 0.1476 & 0.5857 \\
+\quad perception share $P/(P+S)$              & & \bfseries 0.4466 & \bfseries 0.0752 \\
+\bottomrule
+\end{tabular*}
+\end{table*}
+
+\subsection{Benchmark construction}
+\label{sec:benchmark}
+
+\textbf{Certified labels.} Each structure's crystal system, Bravais lattice, point group and space group
+are derived from its coordinates by $\spg$ at the canonical tolerance ($\Symprec=0.01$, angle
+tolerance $5^\circ$), with a tolerance sweep that quarantines any structure whose space group is not stable
+across it. On a separate stratified sample disjoint from training and evaluation, our labels agree with the
+source-database space group in $220/220$ cases (one-sided exact 95\% lower bound $0.9865$; sampling detail in
+Section~S3 of the ESI\dag{}). This is not a check against an independent symmetry-detection method: both source
+databases derive their space groups through the same spglib library used here, so this certifies
+tolerance-consistency within one algorithm family rather than agreement between distinct algorithms.
+
+\textbf{Source structures.} Structures are drawn from the Materials Project \citep{jain2013commentary} as conventional-cell CIFs under
+a composition-exclusion split reserving 13 elements for evaluation only. The released 1,820 structures (1,610 train / 210 eval) have zero
+train/eval/prior leakage, under the Materials Project's CC~BY~4.0 licence; the database snapshot is not
+recorded.
+
+\textbf{Composition exclusion.} No chemical composition in any evaluation set appears in training. Without
+this, symmetry is partly predictable from composition alone, and a model could score well without reading the
+image.
+
+\textbf{Label granularity.} The crystal system is the headline label, but the same reconstruction determines
+the Bravais lattice, point group and space group, so neither the identifiability result nor the ceiling is
+specific to the seven-way target; Section~S4 of the ESI\dag{} scores all four.

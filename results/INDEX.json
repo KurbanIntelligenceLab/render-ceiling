@@ -1,0 +1,275 @@
+{
+ "note": "Run order of the experiment records. Directory names describe what each record measures; this file preserves the order in which they were run, which the names no longer encode. `legacy_id` is the identifier used in the project's own history and in reports/ prose.",
+ "records": [
+  {
+   "order": 1,
+   "name": "pipeline",
+   "legacy_id": "CP0_pipeline"
+  },
+  {
+   "order": 2,
+   "name": "identifiability",
+   "legacy_id": "CP0b_identifiability"
+  },
+  {
+   "order": 3,
+   "name": "resolution_audit",
+   "legacy_id": "CP0c_resolution_audit"
+  },
+  {
+   "order": 4,
+   "name": "zeroshot",
+   "legacy_id": "CP1_zeroshot"
+  },
+  {
+   "order": 5,
+   "name": "exclusion_baselines",
+   "legacy_id": "CP1b_exclusion_baselines"
+  },
+  {
+   "order": 6,
+   "name": "sft_chain",
+   "legacy_id": "CP2_sft_chain"
+  },
+  {
+   "order": 7,
+   "name": "process_reward",
+   "legacy_id": "CP3_process_reward"
+  },
+  {
+   "order": 8,
+   "name": "test_time_scaling",
+   "legacy_id": "CP7_test_time_scaling"
+  },
+  {
+   "order": 9,
+   "name": "certification",
+   "legacy_id": "CP7b_certification"
+  },
+  {
+   "order": 10,
+   "name": "external_baselines",
+   "legacy_id": "CP8_external_baselines"
+  },
+  {
+   "order": 11,
+   "name": "calibration",
+   "legacy_id": "CP9_calibration"
+  },
+  {
+   "order": 12,
+   "name": "merged_retrain",
+   "legacy_id": "CP10_merged_retrain"
+  },
+  {
+   "order": 13,
+   "name": "expert_study",
+   "legacy_id": "CP11_expert_study"
+  },
+  {
+   "order": 14,
+   "name": "sota_push",
+   "legacy_id": "CP12_sota_push"
+  },
+  {
+   "order": 15,
+   "name": "trigonal_hexagonal",
+   "legacy_id": "CP13_trigonal_hexagonal"
+  },
+  {
+   "order": 16,
+   "name": "frontier_ceiling",
+   "legacy_id": "CP14_frontier_ceiling"
+  },
+  {
+   "order": 17,
+   "name": "box_sufficiency",
+   "legacy_id": "CP15_box_sufficiency"
+  },
+  {
+   "order": 18,
+   "name": "paired_resolution",
+   "legacy_id": "CP16_paired_resolution"
+  },
+  {
+   "order": 19,
+   "name": "extractor",
+   "legacy_id": "CP17_extractor"
+  },
+  {
+   "order": 20,
+   "name": "eval_expansion",
+   "legacy_id": "CP18_eval_expansion"
+  },
+  {
+   "order": 21,
+   "name": "atom_detection",
+   "legacy_id": "CP19_atom_detection"
+  },
+  {
+   "order": 22,
+   "name": "occlusion_manipulation",
+   "legacy_id": "CP20_occlusion_manipulation"
+  },
+  {
+   "order": 23,
+   "name": "occlusion_redundancy",
+   "legacy_id": "CP21_occlusion_redundancy"
+  },
+  {
+   "order": 24,
+   "name": "oracle_view_curve",
+   "legacy_id": "CP22_oracle_view_curve"
+  },
+  {
+   "order": 25,
+   "name": "depth_sufficiency",
+   "legacy_id": "CP23_depth_sufficiency"
+  },
+  {
+   "order": 26,
+   "name": "oracle_stratified",
+   "legacy_id": "CP24_oracle_stratified"
+  },
+  {
+   "order": 27,
+   "name": "oracle_within_sample",
+   "legacy_id": "CP25_oracle_within_sample"
+  },
+  {
+   "order": 28,
+   "name": "model_sweep",
+   "legacy_id": "CP26_model_sweep"
+  },
+  {
+   "order": 29,
+   "name": "classifier_refreeze",
+   "legacy_id": "CP28_classifier_refreeze"
+  },
+  {
+   "order": 30,
+   "name": "v2b_seed_hygiene",
+   "legacy_id": "CP29_v2b_seed_hygiene"
+  },
+  {
+   "order": 31,
+   "name": "protocol_normalisation",
+   "legacy_id": "CP30_protocol_normalisation"
+  },
+  {
+   "order": 32,
+   "name": "visibility_corrected_oracle",
+   "legacy_id": "CP31_visibility_corrected_oracle"
+  },
+  {
+   "order": 33,
+   "name": "extraction_operating_point",
+   "legacy_id": "CP32_extraction_operating_point"
+  },
+  {
+   "order": 34,
+   "name": "stratified_frontier_expansion",
+   "legacy_id": "CP35_stratified_frontier_expansion"
+  },
+  {
+   "order": 35,
+   "name": "generational_comparison",
+   "legacy_id": "CP36_generational_comparison"
+  },
+  {
+   "order": 36,
+   "name": "a3_seeds",
+   "legacy_id": "CP37_a3_seeds"
+  },
+  {
+   "order": 37,
+   "name": "claim_ledger",
+   "legacy_id": "CP38_claim_ledger"
+  },
+  {
+   "order": 38,
+   "name": "figures",
+   "legacy_id": "CP39_figures"
+  },
+  {
+   "order": 39,
+   "name": "limitations",
+   "legacy_id": "CP40_limitations"
+  },
+  {
+   "order": 40,
+   "name": "no_image_control",
+   "legacy_id": "CP41_no_image_control"
+  },
+  {
+   "order": 41,
+   "name": "related_work_audit",
+   "legacy_id": "CP43_related_work_audit"
+  },
+  {
+   "order": 42,
+   "name": "eval_scaleup",
+   "legacy_id": "CP50_eval_scaleup"
+  },
+  {
+   "order": 43,
+   "name": "label_ladder",
+   "legacy_id": "CP51_label_ladder"
+  },
+  {
+   "order": 44,
+   "name": "rung_R2_detector_oracle",
+   "legacy_id": "CP52_rung_R2_detector_oracle"
+  },
+  {
+   "order": 45,
+   "name": "rung_R3_coords_as_text",
+   "legacy_id": "CP53_rung_R3_coords_as_text"
+  },
+  {
+   "order": 46,
+   "name": "render_convention_sweep",
+   "legacy_id": "CP54_render_convention_sweep"
+  },
+  {
+   "order": 47,
+   "name": "consolidated_verification",
+   "legacy_id": "CP56_consolidated_verification"
+  },
+  {
+   "order": 48,
+   "name": "perception_transplant",
+   "legacy_id": "CP58_perception_transplant"
+  },
+  {
+   "order": 49,
+   "name": "length_control",
+   "legacy_id": "CP60_length_control"
+  },
+  {
+   "order": 50,
+   "name": "view_subset_sweep",
+   "legacy_id": "CP61_view_subset_sweep"
+  },
+  {
+   "order": 51,
+   "name": "detector_characterisation",
+   "legacy_id": "CP62_detector_characterisation"
+  },
+  {
+   "order": 52,
+   "name": "endpoint_drift",
+   "legacy_id": "CP63_endpoint_drift"
+  },
+  {
+   "order": 53,
+   "name": "reasoning_budget",
+   "legacy_id": "CP64_reasoning_budget"
+  },
+  {
+   "order": 54,
+   "name": "option_a_frontier",
+   "legacy_id": "CP65_option_a_frontier"
+  }
+ ]
+}

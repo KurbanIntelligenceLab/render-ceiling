@@ -1,0 +1,391 @@
+{
+ "stage": "no_image_control no-image control (ICLR plan, Phase D)",
+ "branch": "N2 FIRES \u2014 TEXT significantly below IMAGE on every scored model; the images carry the signal",
+ "protocol": {
+  "K": 3,
+  "temperature": 0.7,
+  "n": 210,
+  "set": "original eval",
+  "text_arm": "byte-identical prompt text with image blocks removed; formula preamble retained",
+  "image_arm": "model_sweep rows reused verbatim, not re-run"
+ },
+ "paired": {
+  "meta-llama/llama-4-maverick": {
+   "image": 0.4429,
+   "text": 0.1381,
+   "delta": 0.3048,
+   "image_only": 73,
+   "text_only": 9,
+   "p": 1.3767370902215938e-13,
+   "n": 210,
+   "status": "scored",
+   "text_vs_floor_p": 2.7396301658602245e-32,
+   "text_below_floor": true
+  },
+  "openai/gpt-4.1-mini": {
+   "status": "NOT SCORED \u2014 refusal",
+   "unparseable": 210,
+   "n": 210
+  },
+  "qwen/qwen3-vl-8b-instruct": {
+   "image": 0.3762,
+   "text": 0.1667,
+   "delta": 0.2095,
+   "image_only": 60,
+   "text_only": 16,
+   "p": 3.850977823529725e-07,
+   "n": 210,
+   "status": "scored",
+   "text_vs_floor_p": 1.570888164193015e-27,
+   "text_below_floor": true
+  },
+  "bytedance-seed/seed-1.6": {
+   "image": 0.2571,
+   "text": 0.1524,
+   "delta": 0.1048,
+   "image_only": 37,
+   "text_only": 15,
+   "p": 0.003185253447776759,
+   "n": 210,
+   "status": "scored",
+   "text_vs_floor_p": 7.723985160938348e-30,
+   "text_below_floor": true
+  }
+ },
+ "refusal": {
+  "model": "openai/gpt-4.1-mini",
+  "unparseable": 210,
+  "n": 210,
+  "mechanism_verified": "raw response is an explicit request for the missing images, not a wrong answer",
+  "handling": "reported as REFUSAL and excluded by the pre-registered >5% unparseable gate; NOT scored as accuracy 0.0"
+ },
+ "text_vs_floor": {
+  "floor_k": 111,
+  "floor": 0.5286,
+  "chance": 0.1429,
+  "finding": "both scored TEXT arms sit at CHANCE (0.1381, 0.1667), far BELOW the composition-only floor, p = 2.7e-32 and 1.6e-27"
+ },
+ "registered_expectation_was_wrong": {
+  "predicted": "TEXT would land NEAR the shape-free floor, since the floor is a composition-only model and the preamble supplies the formula",
+  "observed": "TEXT lands at chance, far below the floor",
+  "consequence": "the floor is a HARDER reference than a text-only VLM, so the thirteen-below-floor result is STRONGER than if TEXT had matched the floor"
+ },
+ "not_established": [
+  "two scored models of four attempted, original sample only",
+  "nothing about the fine-tuned arms, which were trained on renders",
+  "nothing about WHICH visual cue carries the 0.21-0.30"
+ ],
+ "summary": {
+  "scored": 3,
+  "refused": 1,
+  "image_contribution_range": [
+   0.1048,
+   0.3048
+  ],
+  "all_text_arms_below_floor": true,
+  "all_text_arms_near_chance": true
+ },
+ "roster_extension": {
+  "branch": "R2 FIRES, NOT R1. 10 of 13 scored models show a significant positive image contribution; 3 do not and are named individually.",
+  "n_attempted": 16,
+  "n_scored": 13,
+  "n_unscored": 3,
+  "paired": {
+   "google/gemini-3.6-flash": {
+    "image": 0.7333,
+    "text": 0.1619,
+    "delta": 0.5714,
+    "image_only": 139,
+    "text_only": 19,
+    "p": 1.0020173797447985e-23,
+    "n": 210,
+    "text_k": 34,
+    "text_vs_floor_p": 2.7658278786863016e-28,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "x-ai/grok-4.5": {
+    "status": "NOT SCORED",
+    "unparseable": 27,
+    "unparse_rate": 0.1286,
+    "api_errors": 0,
+    "api_error_rate": 0.0,
+    "gate": "unparseable >5%"
+   },
+   "anthropic/claude-opus-4.8": {
+    "image": 0.581,
+    "text": 0.1667,
+    "delta": 0.4143,
+    "image_only": 98,
+    "text_only": 11,
+    "p": 1.3281749873159826e-18,
+    "n": 210,
+    "text_k": 35,
+    "text_vs_floor_p": 1.570888164193015e-27,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "z-ai/glm-4.6v": {
+    "image": 0.4429,
+    "text": 0.1286,
+    "delta": 0.3143,
+    "image_only": 77,
+    "text_only": 11,
+    "p": 2.401553173434181e-13,
+    "n": 210,
+    "text_k": 27,
+    "text_vs_floor_p": 5.243904627978719e-34,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "meta-llama/llama-4-maverick": {
+    "image": 0.4429,
+    "text": 0.1381,
+    "delta": 0.3048,
+    "image_only": 73,
+    "text_only": 9,
+    "p": 1.3767370902215938e-13,
+    "n": 210,
+    "text_k": 29,
+    "text_vs_floor_p": 2.7396301658602245e-32,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "google/gemini-2.5-flash": {
+    "status": "NOT SCORED",
+    "unparseable": 25,
+    "unparse_rate": 0.119,
+    "api_errors": 302,
+    "api_error_rate": 0.4794,
+    "gate": "unparseable >5%"
+   },
+   "qwen/qwen3-vl-8b-instruct": {
+    "image": 0.3762,
+    "text": 0.1667,
+    "delta": 0.2095,
+    "image_only": 60,
+    "text_only": 16,
+    "p": 3.850977823529725e-07,
+    "n": 210,
+    "text_k": 35,
+    "text_vs_floor_p": 1.570888164193015e-27,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "openai/gpt-4.1-mini": {
+    "status": "NOT SCORED",
+    "unparseable": 210,
+    "unparse_rate": 1.0,
+    "api_errors": 0,
+    "api_error_rate": 0.0,
+    "gate": "unparseable >5%"
+   },
+   "qwen/qwen3-vl-235b-a22b-instruct": {
+    "image": 0.3333,
+    "text": 0.1429,
+    "delta": 0.1905,
+    "image_only": 58,
+    "text_only": 18,
+    "p": 4.713242239575157e-06,
+    "n": 210,
+    "text_k": 30,
+    "text_vs_floor_p": 1.8657683408037444e-31,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "bytedance-seed/seed-1.6": {
+    "image": 0.2571,
+    "text": 0.1524,
+    "delta": 0.1048,
+    "image_only": 37,
+    "text_only": 15,
+    "p": 0.003185253447776759,
+    "n": 210,
+    "text_k": 32,
+    "text_vs_floor_p": 7.723985160938348e-30,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "qwen/qwen2.5-vl-72b-instruct": {
+    "image": 0.2524,
+    "text": 0.1286,
+    "delta": 0.1238,
+    "image_only": 43,
+    "text_only": 17,
+    "p": 0.0010657657791434353,
+    "n": 210,
+    "text_k": 27,
+    "text_vs_floor_p": 5.243904627978719e-34,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "qwen/qwen3-vl-32b-instruct": {
+    "image": 0.2286,
+    "text": 0.119,
+    "delta": 0.1095,
+    "image_only": 41,
+    "text_only": 18,
+    "p": 0.0037937056353716074,
+    "n": 210,
+    "text_k": 25,
+    "text_vs_floor_p": 8.494116061408236e-36,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "mistralai/mistral-medium-3.1": {
+    "image": 0.2286,
+    "text": 0.1476,
+    "delta": 0.081,
+    "image_only": 40,
+    "text_only": 23,
+    "p": 0.04295654552438921,
+    "n": 210,
+    "text_k": 31,
+    "text_vs_floor_p": 1.2230029429165645e-30,
+    "text_below_floor": true,
+    "significant": true,
+    "status": "scored"
+   },
+   "meta-llama/llama-4-scout": {
+    "image": 0.2048,
+    "text": 0.1762,
+    "delta": 0.0286,
+    "image_only": 30,
+    "text_only": 24,
+    "p": 0.49661743531793345,
+    "n": 210,
+    "text_k": 37,
+    "text_vs_floor_p": 4.5830555718800134e-26,
+    "text_below_floor": true,
+    "significant": false,
+    "status": "scored"
+   },
+   "amazon/nova-pro-v1": {
+    "image": 0.181,
+    "text": 0.1429,
+    "delta": 0.0381,
+    "image_only": 16,
+    "text_only": 8,
+    "p": 0.15158963203430176,
+    "n": 210,
+    "text_k": 30,
+    "text_vs_floor_p": 1.8657683408037444e-31,
+    "text_below_floor": true,
+    "significant": false,
+    "status": "scored"
+   },
+   "mistralai/mistral-small-2603": {
+    "image": 0.1476,
+    "text": 0.1619,
+    "delta": -0.0143,
+    "image_only": 22,
+    "text_only": 25,
+    "p": 0.7708669945730263,
+    "n": 210,
+    "text_k": 34,
+    "text_vs_floor_p": 2.7658278786863016e-28,
+    "text_below_floor": true,
+    "significant": false,
+    "status": "scored"
+   }
+  },
+  "significant": {
+   "models": [
+    "anthropic/claude-opus-4.8",
+    "bytedance-seed/seed-1.6",
+    "google/gemini-3.6-flash",
+    "meta-llama/llama-4-maverick",
+    "mistralai/mistral-medium-3.1",
+    "qwen/qwen2.5-vl-72b-instruct",
+    "qwen/qwen3-vl-235b-a22b-instruct",
+    "qwen/qwen3-vl-32b-instruct",
+    "qwen/qwen3-vl-8b-instruct",
+    "z-ai/glm-4.6v"
+   ],
+   "n": 10,
+   "delta_range": [
+    0.081,
+    0.5714
+   ],
+   "max_p": 0.04295654552438921
+  },
+  "not_significant": {
+   "meta-llama/llama-4-scout": {
+    "image_k": 43,
+    "image": 0.2048,
+    "delta": 0.0286,
+    "p": 0.4966,
+    "vs_chance_p": 0.009,
+    "verdict": "GENUINELY AMBIGUOUS \u2014 above chance yet no image contribution"
+   },
+   "amazon/nova-pro-v1": {
+    "image_k": 38,
+    "image": 0.181,
+    "delta": 0.0381,
+    "p": 0.1516,
+    "vs_chance_p": 0.0728,
+    "verdict": "FLOOR EFFECT \u2014 not above chance with images"
+   },
+   "mistralai/mistral-small-2603": {
+    "image_k": 31,
+    "image": 0.1476,
+    "delta": -0.0143,
+    "p": 0.7709,
+    "vs_chance_p": 0.4515,
+    "verdict": "FLOOR EFFECT \u2014 not above chance with images"
+   }
+  },
+  "why_most_nulls_are_not_formula_lookup": "a formula-lookup row must score ABOVE chance WITH images; a floor-effect row is already at chance so removal has nothing to cost. 2 of 3 nulls are not above chance with images and are therefore uninformative about formula-lookup; only llama-4-scout is a real open case.",
+  "delta_tracks_capability": {
+   "spearman_rho": 0.9725,
+   "p": 2.6567371990515992e-08,
+   "reading": "the PRE-REGISTERED arithmetic caveat: a model near chance with images has no room to drop, so the roster claim is scoped to models that can do the task at all"
+  },
+  "R3_does_not_fire": {
+   "all_text_below_floor": true,
+   "text_range": [
+    0.119,
+    0.1762
+   ],
+   "chance": 0.1429
+  },
+  "unscored": {
+   "x-ai/grok-4.5": {
+    "status": "NOT SCORED",
+    "unparseable": 27,
+    "unparse_rate": 0.1286,
+    "api_errors": 0,
+    "api_error_rate": 0.0,
+    "gate": "unparseable >5%"
+   },
+   "google/gemini-2.5-flash": {
+    "status": "NOT SCORED",
+    "unparseable": 25,
+    "unparse_rate": 0.119,
+    "api_errors": 302,
+    "api_error_rate": 0.4794,
+    "gate": "unparseable >5%"
+   },
+   "openai/gpt-4.1-mini": {
+    "status": "NOT SCORED",
+    "unparseable": 210,
+    "unparse_rate": 1.0,
+    "api_errors": 0,
+    "api_error_rate": 0.0,
+    "gate": "unparseable >5%"
+   }
+  },
+  "harness_defect_found_and_fixed": "two arms initially printed DONE and wrote NO file: ask() returns None when retries are exhausted and the aggregation called .startswith() on it, raising AttributeError after all 630 calls were paid for. Fixed (None counted as an api_error). model_sweep was audited and is unaffected \u2014 all 13 rows have files.",
+  "mean_text_accuracy_scored": 0.1487,
+  "mean_text_accuracy_note": "mean of the 13 scored models' image-absent accuracies. Stored because the manuscript quotes it and the verification gate requires every published value to exist in a results file."
+ }
+}

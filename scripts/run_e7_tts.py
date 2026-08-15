@@ -1,12 +1,12 @@
 #!/usr/bin/env python
 """
-E7 / CP7 — test-time scaling with the CIF-grounded checker (runs ON the GPU box).
+E7 / test_time_scaling — test-time scaling with the CIF-grounded checker (runs ON the GPU box).
 
 Generates K samples per structure ONCE, then scores every selection rule offline from those
 same samples. This matters: it means every row (deployable and oracle) sees IDENTICAL
 generations, so differences are the selection rule and never sampling luck.
 
-HARD PARTITION (see ledger/CP7_test_time_scaling/prereg.md) — a row is one or the other:
+HARD PARTITION (see ledger/test_time_scaling/prereg.md) — a row is one or the other:
   DEPLOYABLE (no ground truth at inference time)
     D1  majority vote over K
     D2  internal step-consistency: do the model's OWN emitted lattice relations imply the
@@ -14,10 +14,10 @@ HARD PARTITION (see ledger/CP7_test_time_scaling/prereg.md) — a row is one or 
     D3  tool-coupled: parse the coordinates/lattice the model EMITS, run spglib on them, and
         prefer samples whose claimed system matches spglib's verdict on their own numbers.
   ORACLE (consults truth; an upper bound, never a deployable claim)
-    O1  rerank by the CP0-truth geometry-step score (the CP9 AUC 0.81 signal)
+    O1  rerank by the pipeline-truth geometry-step score (the calibration AUC 0.81 signal)
     O2  best-of-K by final correctness (absolute ceiling)
 
-Eval runs at max_pixels=200704 (416x416 effective) — MATCHED TO TRAINING, per CP0c's
+Eval runs at max_pixels=200704 (416x416 effective) — MATCHED TO TRAINING, per resolution_audit's
 demonstrated train/test mismatch artifact. effective_resolution is logged in the output.
 
 Usage:
@@ -100,7 +100,7 @@ def main() -> None:
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--max-new-tokens", type=int, default=512)
     ap.add_argument("--max-pixels", type=int, default=200704,
-                    help="416x416 effective — MATCHED TO TRAINING per CP0c")
+                    help="416x416 effective — MATCHED TO TRAINING per resolution_audit")
     ap.add_argument("--out", required=True)
     args = ap.parse_args()
 
@@ -156,7 +156,7 @@ def main() -> None:
                 "claim": parse_answer(txt),
                 "emitted_lattice": lat,
                 "metric_implies": system_from_metric(lat) if lat else None,
-                "text": txt,           # FULL text stored (CP9 logged truncation as a debt)
+                "text": txt,           # FULL text stored (calibration logged truncation as a debt)
             })
         out.append({"material_id": ex["material_id"], "truth": ex["crystal_system"],
                     "samples": samples})

@@ -1,0 +1,176 @@
+\section{Introduction}
+Vision--language models are entering materials and chemistry workflows as readers of rendered structures,
+diffraction data and figures, and benchmarks of that capability now exist for crystal renders and XRD images
+alike \citep{xcrys2506,xrdbench2605}. When such a model fails, the remedy depends on where the failure sits:
+a perception failure is fixed at the input, in the render protocol or the representation, while a reasoning
+failure is fixed in the model. Separating the two requires an independent read of what an image contains,
+and for natural photographs that reference does not exist: no procedure recovers a photograph's
+information content without invoking a model of some kind. Rendered scientific figures are different. A
+ball-and-stick crystal render is an orthographic projection of a structure whose coordinates are known
+exactly, under a camera set the experimenter chose, and inverting that projection, by triangulating atom
+positions across views and applying a deterministic symmetry algorithm to the reconstruction, returns the
+answer the images support with no model at any step. This paper builds that instrument and reports what it
+attributes. A two-stage pipeline, which replaces that inversion with a second model, has no model-free row at
+all.
+
+\begin{figure*}[t]
+\centering
+\resizebox{0.92\textwidth}{!}{%
+\begin{tikzpicture}[
+  font=\small,
+  x=8.2cm, y=1cm,
+  free/.style={circle, draw=black!70, fill=teal!70!black, inner sep=0pt, minimum size=5.4pt},
+  mod/.style={circle, draw=black!70, fill=blue!55!black, inner sep=0pt, minimum size=5.4pt},
+  lab/.style={anchor=east, inner sep=1pt},
+  sub/.style={anchor=east, inner sep=1pt, black!50, font=\footnotesize},
+  val/.style={anchor=west, inner sep=0pt, font=\footnotesize},
+  iv/.style={black!45, {|[width=4.5pt]}-{|[width=4.5pt]}},
+  ivl/.style={font=\footnotesize, black!55}]
+
+\def\rA{2.10}\def\rB{1.20}\def\rC{0.00}\def\rD{-0.90}
+\draw[black!25, dashed] (0.1429,-1.95) -- (0.1429,2.55);
+\node[anchor=south, black!45, font=\footnotesize] at (0.1429,2.56) {chance};
+
+\foreach \y in {\rA,\rB,\rC,\rD}{\draw[black!10] (0,\y) -- (1,\y);}
+
+\node[lab] at (-0.03,\rA) {$\Rzero$\ \ true positions};
+\node[sub] at (-0.03,\rA-0.36) {symmetry algorithm};
+\node[free] at (1,\rA) {}; \node[val] at (1.015,\rA) {1.0000};
+
+\node[lab] at (-0.03,\rB) {$\Rone$\ \ render geometry};
+\node[sub] at (-0.03,\rB-0.36) {inversion, then algorithm};
+\node[free] at (1.0,\rB) {}; \node[val] at (1.015,\rB) {1.0000};
+\node[anchor=east, font=\footnotesize\bfseries, teal!55!black] at (0.9840,\rB) {no model};
+
+\node[lab] at (-0.03,\rC) {$\Rthree$\ \ exact geometry as text};
+\node[sub] at (-0.03,\rC-0.36) {model};
+\node[mod] at (0.8524,\rC) {}; \node[val] at (1.015,\rC) {0.8524};
+
+\node[lab] at (-0.03,\rD) {$\Rfour$\ \ five renders (pixels)};
+\node[sub] at (-0.03,\rD-0.36) {model};
+\node[mod] at (0.7333,\rD) {}; \node[val] at (1.015,\rD) {0.7333};
+
+\draw[iv] (0.8524,0.62) -- (1.0,0.62);
+\node[ivl, anchor=south] at (0.9262,0.70) {residual 0.1476};
+\draw[iv] (0.7333,-1.42) -- (0.8524,-1.42);
+\node[ivl, anchor=north] at (0.7929,-1.50) {perception 0.1191};
+
+\draw[black!35] (0,-1.95) -- (1,-1.95);
+\foreach \x/\t in {0/0, 0.25/0.25, 0.5/0.50, 0.75/0.75, 1/1.00}{
+  \draw[black!35] (\x,-1.95) -- (\x,-2.07);
+  \node[anchor=north, black!55, font=\footnotesize] at (\x,-2.09) {\t};}
+\node[anchor=north, black!55, font=\footnotesize] at (0.5,-2.44) {crystal-system accuracy};
+\end{tikzpicture}}
+\caption{The attribution ladder ($n = 210$, $K{=}3$). Each rung answers the same question on the same
+structures with one capability removed, and $\Rone$ answers it from the renders' own projection geometry with
+no model in the measurement, which is what fixes the top of the ladder. With the extraction tolerance matched
+to the symmetry tolerance, $\Rone$ and $\Rzero$ coincide at 1.0000, so the whole 0.2667 the strongest model
+leaves is the model's. Model rungs are \rlLadder{} (Section~\ref{sec:roster}).}
+\label{fig:teaser}
+\end{figure*}
+
+The shape of the argument has prior art. Several studies attribute multimodal failure to perception rather
+than inference, whether by converting the image into a model-written description \citep{arc2512} or by
+decoupling the two stages in post-training \citep{decouple2605}, but in every prior design we found the
+perception stage is itself a model, so the split compares two model configurations, inherits the describer's
+errors, and states no quantity for how much of the task the image answers at all. Our separation differs from
+those closest in kind on three axes at once: the perception stage is a closed-form inversion rather than a
+model or a written description; the reference is an accuracy on the same labels and structures, so it enters
+the ladder as a rung; and the split is task-level rather than mechanistic, where attention-masking analyses
+locate the layer at which visual access stops mattering \citep{vab2607}. What that buys is a number. Benchmark
+headroom is otherwise taken to be one minus the best score, which assumes a ceiling of 1
+\citep{zerobench2502}, and assumed ceilings can be wrong by enough to change conclusions
+\citep{ceilingart2605}. Where a ceiling is measured rather than assumed, existing practice still puts a model
+in it, typically a best-case ensemble over several models' predictions or a hypothetical selector computed
+against the labels: an analytical device for what current models can reach rather than a measurement of what
+the images contain. The render ceiling is the first such quantity computable with no model anywhere in the
+measurement, and it comes with a characterisation of exactly when it is exact (Figure~\ref{fig:teaser}). Here we construct that ceiling, certify the condition under which it is exact, and use it as the top rung of an attribution ladder over fourteen vision-language models. Four contributions follow.
+
+\textbf{(i) Perception is not the bottleneck for most of the roster, once the ceiling is measured.} Used as
+the top rung of an attribution ladder on 210 structures under a frozen evaluation protocol, the oracle contradicts
+the perception-bottleneck reading it was built to test: with exact geometry supplied as text, the residual
+that survives is the larger deficit for 13 of 14 scored models. The single exception ranks second on pixels
+and joint-first with exact geometry, so perception dominance is confined to the top of the roster rather than
+being a property of the task, which reconciles this result with model-in-the-loop studies that examine
+frontier models. We test for a monotone trend across the roster, do not find one at $n=14$, and report the
+negative.
+
+\textbf{(ii) A failure a leaderboard cannot see.} A strong model used as the extraction stage emits
+syntactically perfect coordinate lists whose median recall against ground truth is 0.0000, a fabrication that
+downstream accuracy alone would have scored as bad reasoning and that is detectable only against a model-free
+reference.
+
+\textbf{(iii) A characterisation of when a render determines its label, and of what the resulting ceiling
+bounds.} Our identifiability result shows the oracle recovers exactly the atoms plus a set of geometric
+phantoms, so it never drops an atom and its only failure mode is coincidence. That condition is met here, and
+emptiness is a property of the released protocol rather than of the construction, since the same census finds
+phantoms once cameras are removed. A companion scope result fixes the reading: the ceiling bounds an
+exact-extraction centroid-triangulating pipeline and nothing outside that class. Because $\Rzero$ and $\Rone$
+coincide at 1.0000, every point of a model's deficit is attributable to the model.
+
+\textbf{(iv) What a practitioner does with the ceiling: a frontier and a conditioning constant.}
+Identifiability being exact, what a practitioner faces is set by the tolerance $\delta$ at which their
+extraction stage merges triangulated candidates, and the frontier we trace across $\delta$ says what an
+imperfect reader of the same images would lose, which is narrower than what the images withhold. Camera
+placement acts through the conditioning constant $\kappa$: fixed in advance for two protocols differing in
+cameras alone, it predicted which would be less robust to extraction noise, and we report that prediction with two
+that failed. Labels are computed rather than annotated, under a composition-exclusion protocol.
+
+A sceptical reading is that an assumed ceiling of 1 was right all along. Measuring converts that assumption
+into a certificate, the certificate fails at two and three views so emptiness is designable rather than given,
+and at the merge tolerance our released pipeline used the same oracle reads $\RoneRel = 0.9524$, so an
+instrument built on that pipeline alone would have charged 4.8 points of every model's deficit to the
+images.
+
+\subsection{Related work}
+\label{sec:related}
+
+\textbf{Model-in-the-loop attributions of multimodal failure.} The claim that multimodal failures are
+perceptual rather than inferential is argued in several places, always by putting a second model in the loop,
+whether as the describer, the decoupled perception stage, or the masked probe of the attribution studies
+cited in the introduction. \citet{textoracle2512} serialise the visual stream into
+text and conclude that the ceiling is set by the backbone's reasoning; their oracle is a ground-truth
+\emph{description}, so it fixes the model's input but leaves the image's information content unmeasured.
+\citet{mathlens2510} decompose performance into perception, reasoning and integration on geometry problems
+whose diagrams and descriptions come from a common symbolic specification, and find integration dominant;
+their perception measure is bundled together with integration rather than isolated. Additional reasoning can
+even \emph{reduce} accuracy \citep{dual2509, cotdeg2604}. \citet{vdlm2404} convert raster vector graphics to
+SVG with a rule-based encoder before a learned abstraction step; their symbolic stage is still learned, and
+none of these designs reports a quantity for how much of the task the image answers on its own.
+
+\textbf{Crystallography with vision--language models.} \citet{xcrys2506} stress-test nine VLMs on rendered
+crystal structures under spatial- and com\-po\-si\-tion-exclusion protocols and report that supplying the source
+crystallo\-graphic file alongside the image narrows but does not close the gap; the ceiling their gap is read
+against is the best observed score rather than a measured bound. \citet{xrdbench2605} benchmark VLMs on XRD
+peak indexing, establish that models fail on rendered crystallographic images, and likewise report that
+supplying the source file alongside the image fails to close the gap on that target. On the model-free side,
+\citet{cryspnet2003} and \citet{extinction2411} predict symmetry from composition and from
+diffraction-consistent descriptors respectively, taking chemical or diffraction input rather than an image.
+\citet{ziletti2018insightful} classifies crystal symmetry from computed diffraction images with a learned
+network, so the reader itself is a trained model rather than a closed-form procedure.
+
+\textbf{Resolution and render protocol.} \citet{resbench2510} and \citet{nativevis2506} show that dynamic
+resolution input is a live failure mode for vision-language models. Multi-view correspondence is documented
+as a weakness \citep{allangles2504}, and view selection has been optimised through a differentiable renderer
+\citep{mvtn2011}, in both cases treating the render or view configuration as something to be learned or
+searched rather than analysed for the conditioning it induces.
+
+\textbf{Identifiability from multiple views.} Recovering shape from several orthographic views is classical
+\citep{tomasi1992factorization}, and recent work does it with learned self-supervised objectives
+\citep{gaussiancad2026}. On the representation-learning side, \citet{daunhawer2023identifiability} give
+identifiability guarantees for the latent factors a multi-view contrastive objective recovers; the guarantee
+concerns what a learned model recovers rather than exact geometric identifiability of scene content under a
+known renderer.
+
+\textbf{Verifying intermediate steps.} \citet{groundscore2603} verify explicit visual premises to make process
+reward models reliable, and \citet{cvt2511} add continuous visual tokens for intermediate reasoning; both
+treat the intermediate representation as something to be made checkable, without an exact ground-truth
+reference against which to check it.
+
+Across these lines, the shared gap is a model-free reference: every design above puts a second model, a
+learned encoder, or a searched configuration where a closed-form inversion could stand instead, and none
+reports a quantity for how much of the task an image answers on its own. Where the present findings and the
+model-in-the-loop attributions overlap, the disagreement is one of measurement rather than finding: exact
+geometry closes only a minority of the deficit for 13 of 14 models on the roster used here, and the two
+readings are compatible once roster position is conditioned on, since the model-in-the-loop studies above
+examine frontier models and the present perception-dominant exception is itself one.

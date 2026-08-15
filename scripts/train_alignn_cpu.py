@@ -3,17 +3,17 @@ _s.path.insert(0, _o.path.join(_o.path.dirname(_o.path.abspath(__file__)), ''))
 from _paths import SRC
 #!/usr/bin/env python
 """
-CP21 — the PUBLISHED ALIGNN architecture on OUR exact composition-exclusion split, CPU only.
+occlusion_redundancy — the PUBLISHED ALIGNN architecture on OUR exact composition-exclusion split, CPU only.
 
 Why this exists: the GPU box could not run ALIGNN because DGL ships no compiled graphbolt library
-for the torch version the vision stack pins (documented in CP8_external_baselines/ENVIRONMENT.md).
+for the torch version the vision stack pins (documented in external_baselines/ENVIRONMENT.md).
 Dropping the CUDA requirement removes that constraint entirely — DGL 2.2.0 ships CPU graphbolt for
 torch <= 2.3.0, so a pinned CPU environment runs the real architecture.
 
 PROTOCOL, matched to our other structure-input baselines so the comparison is fair:
   - train on the 1610 TRAIN structures, evaluate on the 210 composition-exclusion EVAL structures
   - epoch selected on a VALIDATION split carved out of TRAIN, never on eval (the mistake corrected
-    in CP8's first GNN run)
+    in external_baselines's first GNN run)
   - 3 seeds, population SD reported (project convention)
   - graphs built from the CONVENTIONAL cell, matching what the renders draw
 """

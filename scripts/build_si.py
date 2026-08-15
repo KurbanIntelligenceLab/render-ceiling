@@ -12,7 +12,7 @@ the exact JSON without searching.
 
 Usage:  python scripts/build_si.py <repo_root> <out.md>
 """
-import os, re, sys, json
+import json, os, re, sys, json
 
 HEADER = """# render-ceiling — Supplementary Information
 
@@ -50,8 +50,13 @@ def backing_files(rdir, cp):
 
 def main(root, out):
     rdir = f"{root}/results"
-    cps = sorted((d for d in os.listdir(rdir) if d.startswith("CP")),
-                 key=lambda x: (int(re.match(r"CP(\d+)", x).group(1)), x))
+    # Records are named for what they measure, so the directory name no longer carries the run
+    # order. results/INDEX.json does; it is the ordering authority and any record missing from it
+    # is appended alphabetically rather than silently dropped.
+    index = json.load(open(f"{rdir}/INDEX.json"))["records"]
+    ordered = [r["name"] for r in sorted(index, key=lambda r: r["order"])]
+    present = {d for d in os.listdir(rdir) if os.path.isdir(f"{rdir}/{d}")}
+    cps = [n for n in ordered if n in present] + sorted(present - set(ordered))
 
     # Part II is generated IN PROCESS, not copied and not shelled out to — this document cannot drift
     # from its own generator, and there is one builder rather than two. build_supplementary.main also

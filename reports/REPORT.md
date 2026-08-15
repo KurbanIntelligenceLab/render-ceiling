@@ -16,7 +16,7 @@ the adequacy result it makes possible, then the two positive findings, then the 
 gathered in one place rather than scattered as corrections. An earlier version of this report asserted the
 stratified-accuracy mechanism early and withdrew it much later in the same document; that ordering is
 gone, and the withdrawn material now lives in Appendix S with the retraction in Appendix R.
-## 1. The instrument: a model-free geometric oracle   [CP0_pipeline, CP0b_identifiability, CP0c_resolution_audit]
+## 1. The instrument: a model-free geometric oracle   [pipeline, identifiability, resolution_audit]
 
 Crystal structures from public databases, rendered as standardized multi-view ball-and-stick images
 at a frozen protocol: conventional cell, 2x2x2 supercell, 5 views, 768 px. Ground truth for every
@@ -35,7 +35,7 @@ pre-registration fixed the interpretation in advance, including the asymmetry th
 would be a clean positive; the result landed in the ambiguous branch, so we do NOT claim resolution
 is excluded as a factor.
 
-## 2. The renders are adequate: what the protocol withholds, measured   [CP31, CP32, CP28, CP29, CP30]
+## 2. The renders are adequate: what the protocol withholds, measured   [visibility_corrected_oracle, extraction_operating_point, classifier_refreeze, v2b_seed_hygiene, protocol_normalisation]
 
 THE VISIBILITY CORRECTION THIS SECTION WAS BUILT TO REPORT IS EXACTLY ZERO, AND SAYING SO FIRST IS THE
 honest ordering. The oracle assumes perfect extraction of every atom, so its 0.9524 bounds
@@ -48,7 +48,7 @@ VIEW under four conditions.
   O1 informative occlusion removed       200/210 0.9524   191/210 0.9095
   O2 all occlusion removed               122/210 0.5810   113/210 0.5381
   O3 redundant occlusion only (CONTROL)  194/210 0.9238   170/210 0.8095
-O0 reproduces CP25 EXACTLY, which was the pre-registered gate. O1 changes NOT ONE structure on either
+O0 reproduces oracle_within_sample EXACTLY, which was the pre-registered gate. O1 changes NOT ONE structure on either
 set (paired McNemar p = 1.0000), while the CONTROL removes 6 and 21. The pre-registered rule was that if
 the control's delta reaches half the target's, the analysis is measuring detection count rather than
 information; with the target at zero the control dominates completely, so O1 IS UNREADABLE by the rule
@@ -67,12 +67,12 @@ OBLIQUE VIEWS. Every occlusion figure published in this package before this exte
 the three worst cameras in the protocol.
 WHAT DOES COST ACCURACY IS TOTAL VISIBILITY: removing ALL occlusion costs 78 structures. So visibility
 matters in aggregate; the INFORMATIVE component specifically does not.
-EXTRACTION FAILS AT VISIBILITY AND SEGMENTATION, NOT PRECISION (CP32, argument from measured values):
+EXTRACTION FAILS AT VISIBILITY AND SEGMENTATION, NOT PRECISION (extraction_operating_point, argument from measured values):
 recall median 0.400, precision median 0.233, centroid error median 0.717 px on matched atoms, recall
 correlating -0.792 with occlusion against -0.411 with atom count, and recall halving across occlusion
 terciles (0.528 -> 0.239) while precision stays flat (0.383 -> 0.360).
 
-## 3. The signal is visual: the no-image control   [CP41]
+## 3. The signal is visual: the no-image control   [no_image_control]
 
 Every zero-shot row is prompted with renders AND a formula preamble, so nothing established that the
 IMAGE was doing the work. A control with the byte-identical prompt text and the image blocks removed,
@@ -116,7 +116,7 @@ thirteen scored TEXT arms lands at CHANCE instead — the range is 0.1190 to 0.1
 the floor is a HARDER reference than a text-only VLM, and the thirteen-below-floor result is stronger
 than if text-only had matched it.
 
-## 3b. The attribution ladder: which stage the deficit lives in   [CP51, CP52, CP53]
+## 3b. The attribution ladder: which stage the deficit lives in   [label_ladder, rung_R2_detector_oracle, rung_R3_coords_as_text]
 
 THE INSTRUMENT CLAIM NEEDED A LADDER, NOT A SINGLE CEILING. R1 (the oracle) never touches a pixel, so
 "perception is the bottleneck" rested on an instrument that assumes perception. Three rungs were added.
@@ -144,14 +144,14 @@ arms, and the pre-registered decomposition then gives
   bottleneck for the two strongest models and not for the rest, and the direction is systematic:
   Spearman(pixel accuracy, perception share) = -0.6439, p = 0.0130. The bottleneck MOVES with model strength.
 
-THE CONTROL PAIR IS WHAT MAKES R3 READABLE. CP41 removed the images and left the formula: every scored arm
-collapsed to 7-way chance (mean 0.1357). CP53 removes the images and supplies full geometry: every arm
+THE CONTROL PAIR IS WHAT MAKES R3 READABLE. no_image_control removed the images and left the formula: every scored arm
+collapsed to 7-way chance (mean 0.1357). rung_R3_coords_as_text removes the images and supplies full geometry: every arm
 lands between 0.4143 and 0.8524. The two differ in exactly one thing, so the jump is the geometry
 rather than text-mode prompting. R3 prompts are also SHORTER than the five-image prompts they beat
 (mean 177 tokens, max 250, zero structures truncated), so prompt length cannot explain it.
 
 R2 IS REPORTED UNSCORED BY ITS OWN PRE-REGISTERED GATE, AND THE ATTRIBUTION IT WOULD HAVE PROVIDED REMAINS
-UNMEASURED. Substituting the CP19 detector's real detections into the identical inversion gives 16/210 and
+UNMEASURED. Substituting the atom_detection detector's real detections into the identical inversion gives 16/210 and
 18/210 — below every model — but 40 of 210 and 47 of 210 structures recover ZERO atoms, over the 5% gate
 written before the run. Mandatory operating point, to be quoted wherever R2 appears: median recall
 0.4, median precision 0.2333, median centroid error 0.7171 px. The pipeline is correct — zero exceptions in 420
@@ -183,7 +183,7 @@ MACRO-F1 IS WITHHELD on the finer labels as pre-registered — space group has 1
 present — and BOTH chance definitions are reported because majority-class (0.1095) and 1/n_classes (0.0043)
 diverge more than twentyfold at space group.
 
-## 3c. An intervention that works, and a prediction this report got wrong   [CP54]
+## 3c. An intervention that works, and a prediction this report got wrong   [render_convention_sweep]
 
 THE FROZEN CAMERA SET IS NOT INFORMATION-OPTIMAL. Perturbing the cameras off the principal axes raises the
 oracle's identifiability ceiling on both samples:
@@ -241,7 +241,7 @@ is real and recoverable by a geometric reader, and it is not what limits the mod
 ladder's conclusion reached by intervention instead of decomposition — an intervention that adds information
 a model cannot use is evidence about the model, not about the render.
 
-## 3d. A learned extractor that fabricates its output   [CP58]
+## 3d. A learned extractor that fabricates its output   [perception_transplant]
 
 Substituting a strong model as the extraction stage — it sees the renders and emits species and coordinates,
 the symmetry question withheld — and having a weak model answer from that text gives 30/210 = 0.1429 (K=3).
@@ -274,7 +274,7 @@ exact coordinates (section 3b), so that is its ceiling in this design; comparing
 model's own 0.7333 on pixels would overstate the shortfall by 0.23. The pre-registration named this asymmetry
 before the run.
 
-## 3e. The scale-up, and the claim it retires   [CP50]
+## 3e. The scale-up, and the claim it retires   [eval_scaleup]
 
 THE PACKAGE'S MOST-QUOTED CLAIM DOES NOT SURVIVE AT SCALE, and the pre-registration named this as the
 outcome most expensive to absorb. A fresh 1995-structure sample — MP, 2-4 elements, conventional cell at
@@ -316,10 +316,10 @@ either cell-size regime.
 THE MODEL ARMS AT SCALE ARE NOT RUN (500 x 13 x K=3 = 19,500 calls), so every model number in this package
 still rests on n=210 and is reported with that sample named.
 
-## 3f. Where the pixel reader falls behind a numeric one, and one generation of progress   [CP35, CP36]
+## 3f. Where the pixel reader falls behind a numeric one, and one generation of progress   [stratified_frontier_expansion, generational_comparison]
 
 THE CUE-SUFFICIENCY PARTITION PREDICTS WHERE A PIXEL MODEL TRAILS A NUMERIC READER OF THE SAME CELL, and
-this replicates on both samples against a control — unlike the CP15 claim it replaces, which compared raw
+this replicates on both samples against a control — unlike the box_sufficiency claim it replaces, which compared raw
 accuracy and was withdrawn. The contrast is pixel-minus-RF; negative means the pixel model trails:
 
   arm                sample      suff gap   amb gap   pixel amb-vs-suff Fisher p   (K=3, model-free RF)
@@ -334,7 +334,7 @@ THREE OF THREE ARMS WIDEN ON THE AMBIGUOUS STRATUM ON BOTH SAMPLES — branch D1
 expectation recorded before the run. My pre-registration said "I expect D3" and named the existing data as
 pointing away from the claim; it was wrong.
 WHY THE CONTROL MATTERS. The RF drops across strata too (0.9214 to 0.8429 original, 0.9433 to 0.7536
-expansion), so a raw pixel drop proves nothing. That is precisely the defect that invalidated CP15, whose
+expansion), so a raw pixel drop proves nothing. That is precisely the defect that invalidated box_sufficiency, whose
 withdrawal stands.
 THE CONFOUND, STATED RATHER THAN BURIED. The ambiguous stratum is 60 of 70 and 58 of 69
 hexagonal-or-trigonal, so this is close to a hex/trig effect and both descriptions are reported. Removing
@@ -348,13 +348,13 @@ closing the render-imposed gap faster. NORMALISED BY HEADROOM TO THE ORACLE IT C
 sufficient gap against 54.1% of the ambiguous one. The larger raw gain is substantially a low-baseline
 effect — the ambiguous stratum started at 0.0286. And the newer model still separates the strata
 (0.5286 against 0.8357, Fisher p = 4.95e-06), so the difficulty axis survives a generation.
-NO TREND LANGUAGE: one pair is a comparison, and CP26 established that parameter count does not order
+NO TREND LANGUAGE: one pair is a comparison, and model_sweep established that parameter count does not order
 accuracy at all, so no scaling statement is available either.
 
-## 4. The models fail universally   [CP26_model_sweep]
+## 4. The models fail universally   [model_sweep]
 
 A four-row leaderboard cannot establish that a task is hard. Thirteen models across EIGHT vendors were
-run zero-shot on the frozen protocol, CP14 prompt verbatim, no per-model tuning, denominators fixed at
+run zero-shot on the frozen protocol, frontier_ceiling prompt verbatim, no per-model tuning, denominators fixed at
 210, parse failures scored as errors. All counts recomputed from per-structure prediction vectors.
 
     zero-shot leaderboard, ORIGINAL eval sample n=210, K=3 majority vote:
@@ -414,7 +414,7 @@ different training exposure. They bound task difficulty, not method quality. One
 (kimi-k2.6) hangs indefinitely on this workload and is reported UNSCORED rather than dropped, so the
 roster is 13 of a pre-registered 14.
 
-## 5. Where every model sits, on one sample   [CP14_frontier_ceiling, CP8_external_baselines, CP1_zeroshot]
+## 5. Where every model sits, on one sample   [frontier_ceiling, external_baselines, zeroshot]
 
 All on the frozen 210-structure composition-exclusion evaluation set, micro accuracy.
 
@@ -462,15 +462,15 @@ evaluation set, and section 3 explains why it bounds identifiability from the ST
 from the IMAGES.
 
 FOOTNOTE — THE RANDOM FOREST HAS ONE CANONICAL VALUE AND TWO RETIRED ONES.
-Canonical: 0.8952 = 188/210, the CP28 refit, which is the ONLY value with a frozen executable
-specification attached (ledger/CP28_classifier_refreeze/classifier_specifications.json: ordered feature
+Canonical: 0.8952 = 188/210, the classifier_refreeze refit, which is the ONLY value with a frozen executable
+specification attached (ledger/classifier_refreeze/classifier_specifications.json: ordered feature
 list, library versions, per-structure prediction vector). Retired: 0.8905 = 187/210 (original run, feature
 list never saved) and 0.8857 = 186/210 (a later reproduction, also unrecoverable). Twelve defensible
 readings of the recorded feature prose span 183-188 of 210 and NONE reproduces 186, so the recorded
 protocol is underdetermined rather than merely mis-transcribed. Separately, 0.8762 = 184/210 is GRADIENT
 BOOSTING on the same features, not a random forest; under the canonical protocol GB gives 183/210.
 
-## 6. The cue-sufficiency partition, as a render-convention property   [CP15, CP19, CP20, CP21, CP22, CP23, CP13]
+## 6. The cue-sufficiency partition, as a render-convention property   [box_sufficiency, atom_detection, occlusion_manipulation, occlusion_redundancy, oracle_view_curve, depth_sufficiency, trigonal_hexagonal]
 
 THE FROZEN PROTOCOL IS AN INHERITED PLAN VIEW WITH ITS ANNOTATIONS DROPPED, and saying so first
 prevents a false discovery claim. The crystallographic plan view is a projection down a principal
@@ -484,7 +484,7 @@ visualization and human-read annotations may not suit a VLM asked about symmetry
 dropped the component that made it readable.
 
 A structure is BOX-SUFFICIENT if the conventional-cell metric — the cell the renders draw — uniquely
-implies its crystal system. On the CANONICAL predicate (CP28, specified and reproducing exactly) that is
+implies its crystal system. On the CANONICAL predicate (classifier_refreeze, specified and reproducing exactly) that is
 140/210 = 0.6667 on the original evaluation set and
 141/210 = 0.6714 on the independently drawn expansion set. The ambiguous
 stratum is dominated by the trigonal/hexagonal pair on both samples — 60 of 70 = 85.7% and
@@ -573,7 +573,7 @@ shared, the failure cannot be a learned bias inherited from a common source; wha
 inability to separate the pair, which is the signature of a model reading the drawn cell outline well
 and the atom motif poorly.
 
-## 7. Where the failure lives, within sample and paired   [CP25, CP24]
+## 7. Where the failure lives, within sample and paired   [oracle_within_sample, oracle_stratified]
 
 THE HEADLINE IS WITHIN-SAMPLE AND PAIRED. The oracle is a deterministic geometric computation over
 ground-truth positions and the frozen cameras, so it runs on the evaluation sets directly — 210
@@ -633,10 +633,10 @@ bracket is assembled across samples and is never a per-structure claim. And the 
 models near the floor on box-ambiguous — FAILED TO REPLICATE on the expansion set, so any localisation
 statement inherits that non-replication in the same sentence.
 
-## 8. Nulls and withdrawals I — two classifiers refrozen   [CP28]
+## 8. Nulls and withdrawals I — two classifiers refrozen   [classifier_refreeze]
 
 The lattice random forest and the box-sufficiency predicate were both cited without reproducible
-specifications. The predicate is now fixed and reproduces CP25's 140/70 split EXACTLY. The forest is a
+specifications. The predicate is now fixed and reproduces oracle_within_sample's 140/70 split EXACTLY. The forest is a
 THIRD NON-RECOVERY: refitting under the recorded protocol gives 188/210 = 0.8952, and twelve defensible
 readings of the recorded prose span 183-188 without reproducing the published 186. Forward
 reproducibility is fixed; the historical value is not recovered.
@@ -656,7 +656,7 @@ V2b's identical macro-F1 across three seeds (macro_sd = 0.000) is DECODE COLLAPS
 the three adapters differ by ~1.5% relative L2 over 43.6M parameters, where identical adapters would
 give exactly zero. The 0.000 SD is removed rather than explained; no claim used it.
 
-## 9. Nulls and withdrawals II — the replication reversal   [CP18_eval_expansion, CP16_paired_resolution]
+## 9. Nulls and withdrawals II — the replication reversal   [eval_expansion, paired_resolution]
 
 We doubled the evaluation set — 210 new structures under the identical composition-exclusion rule,
 zero leakage, verified — because a paired-McNemar audit showed the central comparison was
@@ -700,8 +700,8 @@ to drop — becomes the ONLY significant dropper.
 A THIRD INDEPENDENT INSTANCE, derivable from numbers already in the package and therefore stated here
 rather than left for a reviewer to find. The native-resolution arm (A3) shows NO stratum drop on the
 ORIGINAL set: overall 0.6905, box-sufficient 98/140 = 0.7000, box-ambiguous 47/70 = 0.6714, drop
-+0.0286, Fisher p = 0.7518. Those strata are the APPROXIMATE 140/70 split, not CP15's recorded
-137/73, because CP15's exact classifier is not recoverable; on a 137/73 split the same arm gives
++0.0286, Fisher p = 0.7518. Those strata are the APPROXIMATE 140/70 split, not box_sufficiency's recorded
+137/73, because box_sufficiency's exact classifier is not recoverable; on a 137/73 split the same arm gives
 0.7007 and 0.6712, drop +0.0295, p = 0.7541 — the same conclusion either way. So the stratified-accuracy claim now fails on three independent occasions — the expansion
 set, the RF control's behaviour there, and the native-resolution arm on the original set. Three
 instances is not a replication failure to explain away; it is the result. The cause is the floor again: it fell to 0.2286 on
@@ -711,7 +711,7 @@ floor on box-ambiguous structures. That holds on the original sample, survives e
 confusion pair, and fails to replicate on an independently drawn second sample. What replicates is
 the partition itself.
 
-## 10. Prior art, checked against primary sources   [CP43]
+## 10. Prior art, checked against primary sources   [related_work_audit]
 
 Eight named works were fetched from the arXiv API and read, not recalled. Three of our claims are
 demoted and one of the plan's own characterisations is corrected.
@@ -752,7 +752,7 @@ closing the three instrument rows — from arXiv titles and abstracts. Not searc
 pre-deep-learning crystallography, where a metric-to-symmetry lookup is likely classical textbook material
 rather than a citable result.
 
-## 11. Other results   [CP2, CP3, CP7, CP7b, CP9, CP10, CP11, CP12, CP17, CP1b, CP1c]
+## 11. Other results   [sft_chain, process_reward, test_time_scaling, certification, calibration, merged_retrain, expert_study, sota_push, extractor, exclusion_baselines, prototype_exclusion]
 
 FABRICATION. The chain arm emits 30 distinct cell-parameter strings across 90 generations, one
 recurring 22 times, and then reasons correctly from those fabricated premises. It is responsive to
@@ -792,14 +792,14 @@ which is what a visibility limit looks like rather than a weak algorithm. A temp
 was WITHDRAWN when 6 of 84 measurements exceeded the supposed bound, leaving the covariate ordinal
 rather than quantitative.
 
-SUBSUMED AND NOT-RUN CHECKPOINTS, recorded rather than left as silent gaps. CP10_merged_retrain's
+SUBSUMED AND NOT-RUN CHECKPOINTS, recorded rather than left as silent gaps. merged_retrain's
 pre-registered work was absorbed into the native-resolution scaling run above, and its second half
 was cancelled because an earlier result had already answered the question it asked.
-CP17_extractor holds the failed wireframe reader plus the scope-deviation record and the verified
-pixel-projection calibration that CP19's detector depends on. CP11_expert_study is a not-run record
+extractor holds the failed wireframe reader plus the scope-deviation record and the verified
+pixel-projection calibration that atom_detection's detector depends on. expert_study is a not-run record
 carrying the required limitations language verbatim.
 
-NO HUMAN BASELINE  [CP11_expert_study]. The 50-structure expert packet was built with a pre-registered authenticity
+NO HUMAN BASELINE  [expert_study]. The 50-structure expert packet was built with a pre-registered authenticity
 screen. No qualified respondent returned it, and the single sheet received scored at chance and
 failed four independent authenticity diagnostics. We therefore do NOT claim the renders are
 human-solvable, and the "checkable by eye" framing is deleted rather than softened. The oracle

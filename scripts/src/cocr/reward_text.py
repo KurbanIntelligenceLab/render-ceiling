@@ -20,7 +20,7 @@ Chain schema (A4):
 
 FORMAT reward mirrors reward.py exactly: +1 well-formed and terminating, 0.0 terminates
 but malformed, -1 never terminates. The -1 branch is what starves the repetition trap
-(the text analogue of the MOTIF loop that sank the pure-SFT chains in CP2).
+(the text analogue of the MOTIF loop that sank the pure-SFT chains in sft_chain).
 
 REWARD-HACKING GUARD (the E4 audit lesson, ported forward). A step whose arithmetic is
 merely internally true ("1+1=2") is trivially emittable and would let the process arms

@@ -1,0 +1,109 @@
+{
+ "stage": "related_work_audit related work audit (ICLR plan, Phase F)",
+ "method": "eight named rows, titles and abstracts fetched from the arXiv API, not recalled",
+ "rows": {
+  "2604.16060": {
+   "title": "Chain-of-Thought Degrades Visual Spatial Reasoning Capabilities of Multimodal LLMs",
+   "verdict": "DEMOTED TO CITED REPLICATION \u2014 occupies direct-beats-chain"
+  },
+  "2607.12815": {
+   "title": "Visual Access Boundaries in Vision-Language Model Reasoning",
+   "verdict": "OCCUPIED for the general perception-boundary finding; our contribution is the instrument"
+  },
+  "2606.01558": {
+   "title": "Attention-guided Fine-tuning of Multimodal Large Language Models Improves Chain-of-Thought Reasoning",
+   "verdict": "PLAN MISCHARACTERISED IT \u2014 it CONFIRMS CoT degradation and proposes a fix; it is support for our premise, not a demotion. Claim 4's demotion rests on 2604.16060 alone."
+  },
+  "2509.25848": {
+   "title": "More Thought, Less Accuracy? On the Dual Nature of Reasoning in Vision-Language Models",
+   "verdict": "ADJACENT; cited, occupies nothing exactly"
+  },
+  "2605.20177": {
+   "title": "From Seeing to Thinking: Decoupling Perception and Reasoning Improves Post-Training of Vision-Language Models",
+   "verdict": "CONCLUSION OCCUPIED \u2014 states perception-not-reasoning directly. Unoccupied: measuring the ceiling geometrically rather than inferring it from a training intervention."
+  },
+  "2511.19418": {
+   "title": "Chain-of-Visual-Thought: Teaching VLMs to See and Think Better with Continuous Visual Tokens",
+   "verdict": "method paper on the same diagnosis; no collision since we propose no method"
+  },
+  "2506.13051": {
+   "title": "Stress-Testing Multimodal Foundation Models for Crystallographic Reasoning",
+   "verdict": "CLOSEST NEIGHBOUR, NOT FLAGGED BY THE PLAN. Has a Compositional-Exclusion benchmark, nine VLMs on crystal images, space-group validity scoring. BENCHMARK-DESIGN CLAIM DEMOTED. Ours retains deterministic spglib ground truth with tolerance quarantine and the exact-label 3-level hierarchy."
+  },
+  "2605.29446": {
+   "title": "CrystalXRD-Bench: Benchmarking Vision-Language Models for XRD Peak Indexing Across Diverse Crystalline Materials",
+   "verdict": "OCCUPIED FOR THE HEADLINE. Published crystallography VLM benchmark reporting failure on rendered images AND separating extraction from reasoning by supplying the CIF. Our difference: a geometric oracle on the images rather than handing over ground-truth text."
+  },
+  "2510.16926": {
+   "title": "Res-Bench: Benchmarking the Robustness of Multimodal Large Language Models to Dynamic Resolution Input",
+   "verdict": "ROW A OCCUPIED as a general question \u2014 14,400 samples over 12 resolution levels with stability metrics. Our resolution finding is a domain instance and a CONFOUND CONTROL, not a contribution."
+  },
+  "2506.12776": {
+   "title": "Native Visual Understanding: Resolving Resolution Dilemmas in Vision-Language Models",
+   "verdict": "ROW A supporting \u2014 frames the same 'Resolution Dilemma' and notes benchmarks neglect resolution"
+  },
+  "2003.14328": {
+   "title": "CRYSPNet: Crystal Structure Predictions via Neural Network",
+   "verdict": "ROW B NOT OCCUPIED \u2014 verdict REVERSED. CRYSPNet predicts symmetry 'based ONLY on its chemical composition', the OPPOSITE input to our cell-metric control. Different and harder task. Cited instead as the reason our COMPOSITION-EXCLUSION split matters: it blocks the CRYSPNet route. Retracted: 'the numeric-cell-to-symmetry mapping our RF performs is a published task'."
+  },
+  "2411.00803": {
+   "title": "Designing a Dataset for Convolutional Neural Networks to Predict Space Groups Consistent with Extinction Laws",
+   "verdict": "ROW B adjacent, overlap OVERSTATED in my first verdict. Its ceiling is ANALYTIC (extinction laws give the maximum in closed form for a synthetic pattern); ours is EMPIRICAL (a reconstruction on actual renders). Same goal, route unavailable to us."
+  },
+  "2603.16253": {
+   "title": "Grounding the Score: Explicit Visual Premise Verification for Reliable Vision-Language Process Reward Models",
+   "verdict": "ROW C ADJACENT, NOT OCCUPIED \u2014 publishes the perception/reasoning ENTANGLEMENT problem in verifiers (cite as motivation). Unoccupied: a DETERMINISTIC GEOMETRIC checker that cannot misperceive, since every cited verifier is itself learned."
+  },
+  "2512.21329": {
+   "title": "Your Reasoning Benchmark May Not Test Reasoning: Revealing Perception Bottleneck in Abstract Reasoning Benchmarks",
+   "verdict": "CLOSEST NEIGHBOUR, MISSED BY THE FIRST TWO PASSES. Challenges the reasoning-deficit interpretation of the ARC gap and hypothesises it arises primarily from limitations in VISUAL PERCEPTION, verified with a two-stage pipeline explicitly separating perception from reasoning. WE MUST STOP CLAIMING perception-as-bottleneck as a finding. OUR DELTA, and it is real: their perception stage converts each image to a natural-language description WITH A MODEL, so their separation is model-mediated and inherits the describer's errors. Ours is a DETERMINISTIC GEOMETRIC inversion with a closed-form ground truth, giving a numeric ceiling rather than a two-stage comparison."
+  },
+  "2504.15280": {
+   "title": "Seeing from Another Perspective: Evaluating Multi-View Understanding in MLLMs",
+   "verdict": "ADJACENT \u2014 All-Angles Bench, 2100+ annotated multi-view QA pairs over 90 real scenes, testing multi-view geometric consistency and cross-view correspondence. Establishes that multi-view correspondence is a known MLLM weakness, which SUPPORTS our premise. Not occupied: real scenes with human annotation, no closed-form ceiling, and no crystallography."
+  }
+ },
+ "surviving_contributions": [
+  "the geometric oracle (camera inversion + correspondence re-solution + spglib), 0.9524/0.9095, paired vs every arm at p<1e-11",
+  "orbit decomposition of occlusion on 210 structures x 5 views per set, and the 2.25-3.34x axis-vs-oblique asymmetry",
+  "the measurement that the frozen 5-view protocol withholds under 1% of atoms"
+ ],
+ "withdrawn_after_visibility_corrected_oracle": [
+  "the visibility-corrected ceiling",
+  "the render-imposed vs model-imposed separation"
+ ],
+ "open_rows": [],
+ "gate": "by the plan's own rule, no claim resting on an open row enters as a contribution until filled",
+ "rows_closed_second_pass": {
+  "row_A_resolution_vs_reseed": "OCCUPIED generally; ours is a confound control, never claimed as a finding",
+  "row_B_cue_sufficiency": "DIRECTLY OCCUPIED by CRYSPNet; the RF control is a reproduction. The stratified claim built on this row is withdrawn anyway (Appendix R1), so nothing surviving rests on it.",
+  "row_C_oracle_only_checker": "ADJACENT; the entanglement problem is published, the deterministic geometric checker is not"
+ },
+ "audit_scope_limit": "fifteen cited works across three passes (eight named prior works, five closing the three instrument rows, two added in the third pass), all from arXiv titles and abstracts. NOT searched: non-arXiv venues, and pre-deep-learning crystallography where a metric-to-symmetry lookup is likely classical textbook material. The unoccupied claim rests on fifteen searched works, not an exhaustive search.",
+ "row_accounting": {
+  "pass_1_named_prior_works": 8,
+  "pass_2_instrument_row_closures": 5,
+  "pass_3_additions": 2,
+  "total_cited_works": 15,
+  "instrument_rows_closed_in_pass_2": 3,
+  "note": "'rows' is keyed by PAPER; instrument rows are a different unit and are counted separately."
+ },
+ "reversals_third_pass": {
+  "2003.14328": "demotion REVERSED \u2014 composition input, not cell metric; different task",
+  "2411.00803": "overlap DOWNGRADED \u2014 analytic ceiling, not empirical",
+  "note": "both were my errors from reading a verdict into an abstract rather than off it. Recorded as reversals with the retracted sentences preserved."
+ },
+ "primary_citation_verification_2506.13051": {
+  "checked": "2026-08-06 against the arXiv API abstract and a live HEAD on the code URL",
+  "CONFIRMED_from_the_abstract": [
+   "title exactly as cited",
+   "Compositional-Exclusion benchmark",
+   "Spatial-Exclusion benchmark",
+   "nine vision-language foundation models",
+   "prompted with crystallographic images"
+  ],
+  "NOT_confirmed_from_the_abstract": "the dataset name 'xCrysAlloys' does not appear in the abstract. It is cited in our related work as the dataset name; that must come from the paper body or the repository, not from the abstract I verified.",
+  "code_url": "github.com/KurbanIntelligenceLab/StressTestingMMFMinCR \u2014 HEAD 200, resolves",
+  "correction_to_my_earlier_statement": "I said this citation 'checks out completely'. Five of six elements are confirmed from the abstract; the dataset name is not, so 'completely' overstated the scope of what I had actually checked. The substantive claims our positioning depends on \u2014 the exclusion protocols and the nine-model VLM evaluation \u2014 are all confirmed."
+ }
+}

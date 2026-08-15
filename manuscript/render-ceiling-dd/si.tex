@@ -1,0 +1,60 @@
+% Electronic Supplementary Information (ESI) for Digital Discovery.
+% Compiled as a standalone single-column document; RSC publishes ESI "as is".
+\documentclass[11pt,a4paper]{article}
+\usepackage[left=2.2cm,right=2.2cm,top=2.4cm,bottom=2.4cm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{mathptmx}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{booktabs}
+\usepackage{siunitx}
+\sisetup{detect-weight=true,detect-inline-weight=math}
+\usepackage[flushleft]{threeparttable}
+\usepackage{graphicx}
+\usepackage{microtype}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{xcolor}
+\usepackage{array}
+\usepackage[super,sort&compress,comma]{natbib}
+\usepackage[hidelinks]{hyperref}
+
+\graphicspath{{figures/}}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{definition}{Definition}
+\newtheorem{assumption}{Assumption}
+\input{macros}
+
+% Supplementary numbering: S1, S2, ... throughout.
+\renewcommand{\thesection}{S\arabic{section}}
+\renewcommand{\thetable}{S\arabic{table}}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\theequation}{S\arabic{equation}}
+\renewcommand{\thealgorithm}{S\arabic{algorithm}}
+\renewcommand{\thetheorem}{S\arabic{theorem}}
+\renewcommand{\thedefinition}{S\arabic{definition}}
+
+\title{\textbf{Electronic Supplementary Information}\\[0.4em]
+A model-free ceiling for vision--language model evaluation on rendered crystal structures}
+\author{Can Polat, Mustafa Kurban, Erchin Serpedin, Hasan Kurban}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+\noindent This document is the Electronic Supplementary Information for the article of the same name.
+Section, figure, table and algorithm numbers carry an S prefix throughout; references to unprefixed
+numbers point to the main article.
+
+\tableofcontents
+\vspace{1em}
+
+\input{sections/si_body}
+
+% No reference list here: the ESI cites nothing of its own, and per the article's
+% data-availability statement any work cited only in the ESI is listed in the
+% article's reference list.
+\end{document}

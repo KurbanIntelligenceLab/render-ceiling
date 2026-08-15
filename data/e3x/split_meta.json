@@ -17,7 +17,7 @@
  ],
  "n_new_eval": 210,
  "seed": 23,
- "target_rationale": "CP16 paired-McNemar power: n=400-500 resolves the 0.03-0.09 band; 210 existing + 210 new = 420",
+ "target_rationale": "paired_resolution paired-McNemar power: n=400-500 resolves the 0.03-0.09 band; 210 existing + 210 new = 420",
  "leakage": {
   "new_inter_existing_structures": 0,
   "new_inter_eval": 0,

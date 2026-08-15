@@ -5,30 +5,30 @@ rather than filling the gap.
 
 ## C1 — the fine-tuned arm
 
-THREE CHECKPOINTS, NOT ONE, AND THE PAPER'S BEST NUMBER COMES FROM CP12.
+THREE CHECKPOINTS, NOT ONE, AND THE PAPER'S BEST NUMBER COMES FROM sota_push.
 
 | checkpoint | what it holds |
 |---|---|
-| `CP2_sft_chain` | the SFT stage: `Qwen/Qwen3-VL-8B-Instruct`, QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train / 30 test structures, seeds [0, 1, 2] |
-| `CP3_process_reward` | GRPO on top of SFT: lr 1e-05, KL beta 0.02, group size 8, 300 steps, 1610 train prompts, TRL 1.9.0 GRPOTrainer, from checkpoint `V1_s0`. Arms {'B3': {'macro': [0.281, 0.3714, 0.381], 'macro_mean': 0.3445, 'macro_sd': 0.045, 'faith': [0.2109, 0.2707, 0.2936], 'faith_mean': 0.2584, 'faith_sd': 0.0349}, 'V2a': {'macro': [0.3571, 0.381, 0.3905], 'macro_mean': 0.3762, 'macro_sd': 0.0141, 'faith': [0.2787, 0.3125, 0.3278], 'faith_mean': 0.3063, 'faith_sd': 0.0205}, 'V2b': {'macro': [0.3857, 0.3857, 0.3857], 'macro_mean': 0.3857, 'macro_sd': 0.0, 'faith': [0.2744, 0.3106, 0.3133], 'faith_mean': 0.2994, 'faith_sd': 0.0177}} |
-| `CP12_sota_push` | THE CITED ARM (A3). 139/210 = 0.6619 at K=3, Wilson95 [0.5955, 0.7225], 1 seed |
+| `sft_chain` | the SFT stage: `Qwen/Qwen3-VL-8B-Instruct`, QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train / 30 test structures, seeds [0, 1, 2] |
+| `process_reward` | GRPO on top of SFT: lr 1e-05, KL beta 0.02, group size 8, 300 steps, 1610 train prompts, TRL 1.9.0 GRPOTrainer, from checkpoint `V1_s0`. Arms {'B3': {'macro': [0.281, 0.3714, 0.381], 'macro_mean': 0.3445, 'macro_sd': 0.045, 'faith': [0.2109, 0.2707, 0.2936], 'faith_mean': 0.2584, 'faith_sd': 0.0349}, 'V2a': {'macro': [0.3571, 0.381, 0.3905], 'macro_mean': 0.3762, 'macro_sd': 0.0141, 'faith': [0.2787, 0.3125, 0.3278], 'faith_mean': 0.3063, 'faith_sd': 0.0205}, 'V2b': {'macro': [0.3857, 0.3857, 0.3857], 'macro_mean': 0.3857, 'macro_sd': 0.0, 'faith': [0.2744, 0.3106, 0.3133], 'faith_mean': 0.2994, 'faith_sd': 0.0177}} |
+| `sota_push` | THE CITED ARM (A3). 139/210 = 0.6619 at K=3, Wilson95 [0.5955, 0.7225], 1 seed |
 
 BASE MODEL: `Qwen/Qwen3-VL-8B-Instruct`. ADAPTER: QLoRA 4-bit nf4, rank 16, lr 1e-4 for SFT; GRPO then runs on the SFT
 checkpoint at lr 1e-5 with KL beta 0.02.
-TRAINING SET CONSTRUCTION (CP12): 3220 examples from 1610 structures,
+TRAINING SET CONSTRUCTION (sota_push): 3220 examples from 1610 structures,
 3 epochs, 1206 steps, final loss 0.1419, 29551s wall clock. Augmentation is
 "6 extra cameras, disjoint from the 5 frozen eval views" — the six extra cameras are DISJOINT from the five frozen eval views,
 which is what stops the augmentation leaking the eval protocol.
 RESOLUTION IS READ, NOT ASSUMED: max_pixels 589824, 576 visual tokens per view,
-"read from the live processor, not a formula". CP0c found the deployed config differed from the documented one by 3.408x in
+"read from the live processor, not a formula". resolution_audit found the deployed config differed from the documented one by 3.408x in
 area, which is why this is read from the live processor.
 COMPOSITION-EXCLUSION GUARANTEE: no chemical composition in any evaluation set appears in training. This is
-enforced at dataset construction and re-verified in CP50, whose leakage audit reports 0 overlap with the
+enforced at dataset construction and re-verified in eval_scaleup, whose leakage audit reports 0 overlap with the
 1610-structure training set and 0 with both earlier evaluation samples.
 THE NUMBER THE PAPER USES: 0.6905 at K=8, against the oracle's 0.9524, paired per structure,
 discordance 61:6, p = 1.5e-12.
 CAVEAT YOU SHOULD CARRY INTO S6: A3 IS SINGLE-SEED and sits inside the reference arm's own across-seed
-spread (B1: 0.590 / 0.567 / 0.686). CP37 was the three-seed extension and was CUT — see its finding for the
+spread (B1: 0.590 / 0.567 / 0.686). a3_seeds was the three-seed extension and was CUT — see its finding for the
 quantitative argument that seed variation cannot close a 55-structure margin. Report A3 as a point
 estimate with no error bar, which is what the manuscript does.
 
@@ -39,25 +39,25 @@ questions, which is why the package states them as "13 of a pre-registered 14".
 THE UNSCORED ENTRY IS `moonshotai/kimi-k2.6`, under the ENDPOINT-FAILURE gate, not the error-rate gate. The
 recorded reason: it hangs indefinitely, with no response on a 2-structure K=1 probe after 10 minutes, so the
 failure is the model endpoint rather than the harness. It is reported UNSCORED rather than dropped.
-A SEPARATE ROSTER EXISTS FOR CP41 and it has its own accounting: 16 attempted,
+A SEPARATE ROSTER EXISTS FOR no_image_control and it has its own accounting: 16 attempted,
 13 scored, 3 unscored under the pre-registered 5% API-error gate. Do not merge the two
-rosters — CP26 is the zero-shot leaderboard and CP41 is the no-image control.
+rosters — model_sweep is the zero-shot leaderboard and no_image_control is the no-image control.
 
-## C3 — do CP53, CP58 and CP60 exist
+## C3 — do rung_R3_coords_as_text, perception_transplant and length_control exist
 
 | checkpoint | exists | results.json | prereg | finding |
 |---|---|---|---|---|
-| CP53_rung_R3_coords_as_text | YES | yes | yes | yes |
-| CP58_perception_transplant | YES | yes | yes | yes |
-| CP60 (length control) | NO | — | — | — |
+| rung_R3_coords_as_text | YES | yes | yes | yes |
+| perception_transplant | YES | yes | yes | yes |
+| length_control (length control) | NO | — | — | — |
 
-CP53 AND CP58 ARE COMPLETED CHECKPOINTS. They were proposed as new work and then run; that is why the draft
+rung_R3_coords_as_text AND perception_transplant ARE COMPLETED CHECKPOINTS. They were proposed as new work and then run; that is why the draft
 already contains the R3 condition and the fabrication result.
-CP60 DOES NOT EXIST AND DOES NOT NEED TO. The length control it proposes is already inside CP53, under the
+length_control DOES NOT EXIST AND DOES NOT NEED TO. The length control it proposes is already inside rung_R3_coords_as_text, under the
 key `prompt_length`: the geometry prompts are SHORTER than the five-image prompts they outperform, which is
-the confound CP60 was meant to rule out. CP53 also carries a `control_pair` block — formula-only against
+the confound length_control was meant to rule out. rung_R3_coords_as_text also carries a `control_pair` block — formula-only against
 full geometry — which is what makes the lift attributable to the geometry rather than to text-mode
-prompting. Writing CP60 would duplicate both.
+prompting. Writing length_control would duplicate both.
 
 ## C4 — the n=1933 model budget
 
@@ -70,7 +70,7 @@ NOT AFFORDABLE AT FULL ROSTER, AFFORDABLE AS A CORE SUBSET. At the measured thro
 | 500-structure core x 13 models x K=3 | 19,500 | 11.7 h |
 | 500-structure core x 4 strong models x K=3 | 6,000 | 3.6 h |
 
-The tiering was pre-registered in CP50 exactly for this: oracle and classical baselines on the FULL sample
+The tiering was pre-registered in eval_scaleup exactly for this: oracle and classical baselines on the FULL sample
 because they are free, model arms on a 500-structure core if run at all. WRITE THE LIMITATION AS A STATED
 COST DECISION: the oracle and both classical baselines are complete at n=1933; the model arms are not, so
 every model number rests on n=210 and the ceiling-to-model gap at scale is bounded on the oracle side only.
@@ -97,7 +97,7 @@ THE PROMPTS ARE NOW IN THE RELEASE; THEY WERE MISSING UNTIL THIS AUDIT. `release
 carries three labelled entries: the main zero-shot prompt, `CP58_extraction_strong_model` (462 chars, with
 the symmetry question deliberately withheld so the extraction cannot leak an answer), and
 `CP58_answer_weak_model`.
-THE RAW OUTPUTS ARE A REAL GAP AND I WILL NOT PRETEND OTHERWISE. `CP58/a3_raw.json` retains 210 records with
+THE RAW OUTPUTS ARE A REAL GAP AND I WILL NOT PRETEND OTHERWISE. `perception_transplant/a3_raw.json` retains 210 records with
 fields ['correct', 'emitted', 'material_id', 'n_atoms_emitted', 'pred', 'truth', 'votes'] — the PARSED coordinate lists, the vote records, and
 the per-structure verdict. IT DOES NOT RETAIN THE VERBATIM MODEL TEXT. The harness parsed each response into
 the `emitted` array and discarded the original string.
@@ -107,7 +107,7 @@ median recall 0.0 against ground truth with 105 of 206 structures having not one
 tolerance. A reader can see a well-formed coordinate list beside the true structure and check the mismatch
 themselves.
 WHAT IT CANNOT SAY: nothing about the model's prose, its stated confidence, or its reasoning around the
-list. If S5 needs verbatim examples, CP58 must be re-run with response text retained — that is 210 calls to
+list. If S5 needs verbatim examples, perception_transplant must be re-run with response text retained — that is 210 calls to
 one strong model, roughly 8 minutes, and it is the cheapest outstanding item in the package.
 
 ## C7 — figure sources and gate coverage
@@ -116,12 +116,12 @@ THREE OF THE SIX MANUSCRIPT FIGURES REGENERATE FROM CHECKPOINT RECORDS BY SCRIPT
 
 | figure | script | reads |
 |---|---|---|
-| `noimage.png` | `scripts/figures/make_fig3_noimage.py` | CP41 results.json |
-| `cuesuff.png` | `scripts/figures/make_fig4_cuesuff.py` | CP35 results.json |
-| `generational.png` | `scripts/figures/make_fig5_generational.py` | CP36 results.json |
-| `ladder.png` | none — produced inside CP53's analysis run | source data in results/ |
-| `leaderboard.png` | none — produced inside CP26's analysis run | source data in results/ |
-| `conditions.png` | none — produced inside CP31's analysis run | source data in results/ |
+| `noimage.png` | `manuscript/codes/make_fig3_noimage.py` | no_image_control results.json |
+| `cuesuff.png` | `manuscript/codes/make_fig4_cuesuff.py` | stratified_frontier_expansion results.json |
+| `generational.png` | `manuscript/codes/make_fig5_generational.py` | generational_comparison results.json |
+| `ladder.png` | none — produced inside rung_R3_coords_as_text's analysis run | source data in results/ |
+| `leaderboard.png` | none — produced inside model_sweep's analysis run | source data in results/ |
+| `conditions.png` | none — produced inside visibility_corrected_oracle's analysis run | source data in results/ |
 
 The three scripted figures reproduce byte-for-byte, which `scripts/validate_package.py` check 7 enforces by
 regenerating each and comparing MD5.

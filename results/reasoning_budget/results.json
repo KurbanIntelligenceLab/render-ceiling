@@ -1,0 +1,40 @@
+{
+ "n": 210,
+ "minimal_k": 130,
+ "default_k": 130,
+ "agreement": 169,
+ "mcnemar_all": {
+  "minimal_only": 13,
+  "default_only": 13,
+  "discordant": 26,
+  "p_two_sided": 1.0
+ },
+ "default_unanswered": 11,
+ "minimal_unanswered": 0,
+ "both_answered": {
+  "n": 199,
+  "minimal_k": 126,
+  "default_k": 130,
+  "minimal_micro": 0.6332,
+  "default_micro": 0.6533,
+  "mcnemar": {
+   "minimal_only": 9,
+   "default_only": 13,
+   "p_two_sided": 0.5235
+  }
+ },
+ "tokens": {
+  "minimal_per_call": 89,
+  "default_per_call": 482,
+  "ratio": 5.4
+ },
+ "cost": {
+  "minimal": 14.4474,
+  "default": 19.5481,
+  "total": 34.0
+ },
+ "elapsed_s": {
+  "minimal": 608.3,
+  "default": 2072.7
+ }
+}

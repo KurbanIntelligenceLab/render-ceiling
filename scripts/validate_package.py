@@ -37,15 +37,20 @@ def main(root="."):
         return 1
 
     # 1 structure
-    for d in ("manuscript", "manuscript/figs", "figures", "reports", "results", "scripts",
-              "scripts/figures", "scripts/src/cocr", "release"):
+    for d in ("manuscript", "manuscript/codes", "manuscript/render-ceiling-dd",
+              "manuscript/render-ceiling-dd/figures", "reports", "results", "scripts",
+              "scripts/src/cocr", "release"):
         check(os.path.isdir(f"{root}/{d}"), f"[1] missing folder: {d}")
     res_dirs = sorted(d for d in os.listdir(f"{root}/results")
                       if os.path.isdir(f"{root}/results/{d}"))
-    stray = [f for f in os.listdir(f"{root}/results") if not os.path.isdir(f"{root}/results/{f}")]
+    # INDEX.json is the run-order authority for the records, whose directory names describe what
+    # they measure rather than when they ran; it is expected at the top of results/.
+    stray = [f for f in os.listdir(f"{root}/results")
+             if not os.path.isdir(f"{root}/results/{f}") and f != "INDEX.json"]
     check(not stray, f"[1] loose files directly in results/ (expected one folder per checkpoint): {stray}")
     counts = {
-        "figures": len([f for f in os.listdir(f"{root}/figures") if f.endswith(".png")]),
+        "figures": len([f for f in os.listdir(f"{root}/manuscript/render-ceiling-dd/figures")
+                        if f.endswith(".pdf")]),
         "results_json": sum(len([f for f in os.listdir(f"{root}/results/{d}") if f.endswith(".json")])
                             for d in res_dirs),
         "results_dirs": len(res_dirs),
@@ -64,13 +69,25 @@ def main(root="."):
               f"[1] README does not state the actual {k} count ({v})")
 
     # 2-4 manuscript
-    tex = open(f"{root}/manuscript/cocr_iclr.tex").read()
-    for f in set(re.findall(r"includegraphics\[[^\]]*\]\{figs/([^}]+)\}", tex)):
-        check(os.path.exists(f"{root}/manuscript/figs/{f}"), f"[2] figure referenced but absent: {f}")
+    # the Digital Discovery submission is main.tex plus its \input section files; the ESI
+    # (si.tex + sections/si_body.tex) is checked alongside it, since labels cross between them
+    DD = f"{root}/manuscript/render-ceiling-dd"
+    tex = "".join(open(p).read() for p in
+                  [f"{DD}/main.tex", f"{DD}/si.tex"] +
+                  sorted(f"{DD}/sections/{f}" for f in os.listdir(f"{DD}/sections")
+                         if f.endswith(".tex")))
+    for f in set(re.findall(r"includegraphics\[[^\]]*\]\{figures/([^}]+)\}", tex)):
+        check(os.path.exists(f"{DD}/figures/{f}"), f"[2] figure referenced but absent: {f}")
     refs = set(re.findall(r"\\ref\{([^}]+)\}", tex))
     labs = set(re.findall(r"\\label\{([^}]+)\}", tex))
     check(not (refs - labs), f"[3] dangling references: {sorted(refs - labs)}")
-    check(not (labs - refs), f"[3] unreferenced labels (floating float): {sorted(labs - refs)}")
+    # NOTE: not a failure in this manuscript. The RSC house style cross-refers between the article
+    # and the ESI by literal number ("Section 3.4 of the article"), since \ref cannot cross the two
+    # documents, so section labels are legitimately unreferenced. A DANGLING ref above is still a
+    # failure; an unused label is reported for information only.
+    if labs - refs:
+        WARN.append(f"[3] labels defined but never \\ref'd (expected for cross-document "
+                    f"references): {sorted(labs - refs)}")
     check(not re.findall(r"NUM_[A-Z_0-9]+", tex), "[4] unsubstituted NUM_ placeholders in manuscript")
 
     # 5 numeric provenance
@@ -91,7 +108,7 @@ def main(root="."):
             if f.endswith(".json"):
                 try: walk(json.load(open(f"{root}/results/{d}/{f}")))
                 except Exception: pass
-    body = tex[:tex.find(r"\begin{thebibliography}")]
+    body = tex  # DD cites via \bibliography{references}; there is no inline thebibliography
     untraced = [m.group(1) for m in re.finditer(r"(?<![\d.])(\d\.\d{4})(?![\d])", body)
                 if round(float(m.group(1)), 4) not in vals]
     check(not untraced, f"[5] manuscript numbers not traceable to any results.json: {sorted(set(untraced))}")
@@ -108,22 +125,22 @@ def main(root="."):
     ledger = os.environ.get("COCR_LEDGER", f"{root}/results")
     if os.path.isdir(ledger):
         for script, fig in FIGS:
-            out = tempfile.mktemp(suffix=".png")
-            r = subprocess.run([sys.executable, f"{root}/scripts/figures/{script}.py", ledger, out],
+            out = tempfile.mktemp(suffix=".pdf")
+            r = subprocess.run([sys.executable, f"{root}/manuscript/codes/{script}.py", ledger, out],
                                capture_output=True, text=True)
             if not check(r.returncode == 0, f"[7] figure script failed: {script} ({r.stderr.strip()[-120:]})"):
                 continue
-            shipped = f"{root}/manuscript/figs/{fig}.png"
-            if not check(os.path.exists(shipped), f"[7] shipped figure missing: {fig}.png"):
+            shipped = f"{root}/manuscript/render-ceiling-dd/figures/{fig}.pdf"
+            if not check(os.path.exists(shipped), f"[7] shipped figure missing: {fig}.pdf"):
                 continue
             a = hashlib.md5(open(out, "rb").read()).hexdigest()
             b = hashlib.md5(open(shipped, "rb").read()).hexdigest()
-            check(a == b, f"[7] {script} does not reproduce the shipped {fig}.png")
+            check(a == b, f"[7] {script} does not reproduce the shipped {fig}.pdf")
     else:
         WARN.append(f"[7] ledger not found at {ledger}; set COCR_LEDGER to re-run the figure scripts")
     # 7b no manuscript figure may lack a script
     scripted = {fig for _, fig in FIGS}
-    referenced = {f[:-4] for f in re.findall(r"includegraphics\[[^\]]*\]\{figs/([^}]+)\}", tex)}
+    referenced = {f[:-4] for f in re.findall(r"includegraphics\[[^\]]*\]\{figures/([^}]+)\}", tex)}
     check(referenced <= scripted,
           f"[7b] manuscript figures with no generating script: {sorted(referenced - scripted)}")
 
@@ -154,8 +171,12 @@ def main(root="."):
     check(not a4, f"[9] files from the unrelated A4 study: {a4[:6]}")
 
     # 11 latex linter
-    lint = subprocess.run([sys.executable, f"{root}/scripts/lint_latex.py",
-                           f"{root}/manuscript/cocr_iclr.tex"], capture_output=True, text=True)
+    # lint the prose the authors write, not main.tex: the RSC template's preamble uses trailing `%`
+    # as a line-continuation throughout, which the linter's unescaped-percent rule flags by design.
+    lint_targets = sorted(f"{DD}/sections/{f}" for f in os.listdir(f"{DD}/sections")
+                          if f.endswith(".tex"))
+    lint = subprocess.run([sys.executable, f"{root}/scripts/lint_latex.py"] + lint_targets,
+                          capture_output=True, text=True)
     check(lint.returncode == 0, f"[11] LaTeX linter findings:\n{lint.stdout.strip()[:600]}")
 
     # 10 report consistency — the WHOLE document, not a prefix. A prefix comparison passes while the

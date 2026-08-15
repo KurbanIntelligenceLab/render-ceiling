@@ -1,0 +1,38 @@
+cff-version: 1.2.0
+message: If you use this software or dataset, please cite the article below.
+title: "A model-free ceiling for vision-language model evaluation on rendered crystal structures"
+abstract: >-
+  A vision-language model that misreads a rendered crystal structure and one that misreasons about it
+  produce the same wrong answer. When a benchmark is built by rendering a structure whose coordinates are
+  known, no model is needed to separate them: inverting the known cameras and re-solving cross-view
+  correspondence returns the answer the images support, a quantity we call the render ceiling.
+type: software
+license: MIT
+repository-code: https://github.com/KurbanIntelligenceLab/render-ceiling
+authors:
+  - family-names: Polat
+    given-names: Can
+    affiliation: "Department of Electrical and Computer Engineering, Texas A&M University"
+  - family-names: Kurban
+    given-names: Mustafa
+    affiliation: "Department of Prosthetics and Orthotics, Ankara University"
+  - family-names: Serpedin
+    given-names: Erchin
+    affiliation: "Department of Electrical and Computer Engineering, Texas A&M University"
+  - family-names: Kurban
+    given-names: Hasan
+    affiliation: "College of Science and Engineering, Hamad Bin Khalifa University"
+preferred-citation:
+  type: article
+  title: "A model-free ceiling for vision-language model evaluation on rendered crystal structures"
+  journal: "Digital Discovery"
+  year: 2026
+  authors:
+    - family-names: Polat
+      given-names: Can
+    - family-names: Kurban
+      given-names: Mustafa
+    - family-names: Serpedin
+      given-names: Erchin
+    - family-names: Kurban
+      given-names: Hasan

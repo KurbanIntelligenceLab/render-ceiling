@@ -1,12 +1,38 @@
-# Trained adapter weights — 2.82 GB. GitHub rejects blobs over 100 MB, and large binaries do not
-# belong in git history even when they fit. Publish via a release asset, Zenodo, or the HF Hub.
-# See weights/README.md for the manifest, the sha256, and which arm is NOT in the archive.
-weights/*.tar.gz
-weights/adapters*/
+# Trained adapter weights — 2.6 GB, distributed out of band.
+# weights/README.md records the manifest and the sha256 to verify a download against,
+# and is tracked; the archive itself is not.
+weights/*
+!weights/README.md
 
-# Compiled bytecode — regenerated on every run, machine- and interpreter-specific.
+# Staging area for material not referenced by the manuscript, pending deletion.
+to_be_deleted/
+
+# Python
 __pycache__/
-*.pyc
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
 
-# macOS
+# LaTeX build products. The .tex sources and the six figure PDFs are tracked;
+# everything a compiler regenerates is not.
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.synctex.gz
+*.toc
+manuscript/render-ceiling-dd/main.pdf
+manuscript/render-ceiling-dd/si.pdf
+manuscript/render-ceiling-dd/cover_letter.pdf
+
+# OS and editor
 .DS_Store
+.idea/
+.vscode/
+*.swp

@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 """
-CP14 — frontier ceiling on the EXACT 210-structure composition-exclusion eval set.
+frontier_ceiling — frontier ceiling on the EXACT 210-structure composition-exclusion eval set.
 
 Protocol is deliberately identical to the trained arms (eval_e3.py): same structures, same frozen
 5-view renders, same QUESTION prompt, majority vote over K samples, denominators FIXED at 210 with
@@ -31,7 +31,7 @@ def parse_system(text):
     return max(hits)[1] if hits else None
 
 
-NO_IMAGES = False   # CP41 control switch, set from --no-images
+NO_IMAGES = False   # no_image_control control switch, set from --no-images
 
 
 def ask(model, question, image_paths, key, temperature, max_retries=4):
@@ -143,7 +143,7 @@ def main():
     ap.add_argument("--renders-anon", default=None, help="element-anonymized render dir")
     ap.add_argument("--models", nargs="+", required=True)
     ap.add_argument("--no-images", action="store_true",
-                help="CP41 control: send the byte-identical prompt with image blocks REMOVED")
+                help="no_image_control control: send the byte-identical prompt with image blocks REMOVED")
     ap.add_argument("--k", type=int, default=3)
     ap.add_argument("--temperature", type=float, default=0.7)
     ap.add_argument("--limit", type=int, default=0)

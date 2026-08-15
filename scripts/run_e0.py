@@ -1,13 +1,13 @@
 #!/usr/bin/env python
 """
-E0 — Pipeline validation driver -> ledger/CP0_pipeline/
+E0 — Pipeline validation driver -> ledger/pipeline/
 
 Runs the four E0 checks (label correctness, tolerance flip rate, metadata-leakage
 guard, human-solvability subset) on a stratified sample drawn from BOTH sources
 (Materials Project + JARVIS-DFT), and writes:
-    ledger/CP0_pipeline/results.json     — full audit table + summary
-    ledger/CP0_pipeline/samples/         — a stratified render subset for human/vision check
-    ledger/CP0_pipeline/run.txt          — provenance
+    ledger/pipeline/results.json     — full audit table + summary
+    ledger/pipeline/samples/         — a stratified render subset for human/vision check
+    ledger/pipeline/run.txt          — provenance
 The finding.md is written after inspecting results (pass condition >98% agreement).
 """
 import argparse
@@ -24,7 +24,7 @@ warnings.filterwarnings("ignore")
 from cocr.data import fetch_mp_stratified, fetch_jarvis_stratified
 from cocr.audit import audit_sample
 
-LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "CP0_pipeline")
+LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "pipeline")
 RENDER_ROOT = os.path.join(os.path.dirname(__file__), "..", "data", "renders", "e0")
 
 

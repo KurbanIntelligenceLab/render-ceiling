@@ -64,7 +64,7 @@ def load_examples(path, arm_for_prompt, data_dir):
     # with no 'arm' field — use all rows in that case.
     if rows and "arm" in rows[0]:
         rows = [r for r in rows if r["arm"] == "V1"]
-    # labels come from the precomputed CP0 sidecar (jsonl rows carry only metadata)
+    # labels come from the precomputed pipeline sidecar (jsonl rows carry only metadata)
     sidecar = json.load(open(os.path.join(data_dir, "labels_sidecar.json")))
     base = os.path.basename(path)
     split = "train" if "train" in base else ("eval" if "eval" in base else ("val" if "val" in base else "test"))
@@ -90,7 +90,7 @@ def build_reward_fn(arm):
     credit assignment; token/segment-level advantage attribution is untested future work.
     """
     def reward_fn(prompts=None, completions=None, label=None, **kw):
-        # MATRIX DESIGN (CP3 pre-registration item 2): the FORMAT term is COMMON to all
+        # MATRIX DESIGN (process_reward pre-registration item 2): the FORMAT term is COMMON to all
         # three arms, so the ONLY manipulated variable is what per-step verification the
         # base reward aggregates:
         #   B3  = final-answer reward           + 0.25*format   (outcome-only)

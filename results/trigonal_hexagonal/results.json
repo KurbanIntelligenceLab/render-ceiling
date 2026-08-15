@@ -1,0 +1,45 @@
+{
+ "stage": "trigonal_hexagonal trigonal/hexagonal \u2014 Q4 model half",
+ "finding": "both arms fail on the same pair in OPPOSITE directions; evidence for intrinsic render ambiguity",
+ "direct_arm_B1_k8": {
+  "micro": 0.619,
+  "macro_f1": 0.5793,
+  "per_system_f1": {
+   "cubic": 0.5909,
+   "hexagonal": 0.6818,
+   "monoclinic": 0.697,
+   "orthorhombic": 0.7222,
+   "tetragonal": 0.5714,
+   "triclinic": 0.6667,
+   "trigonal": 0.125
+  },
+  "per_system_accuracy": {
+   "cubic": "13/30",
+   "hexagonal": "30/30",
+   "monoclinic": "23/30",
+   "orthorhombic": "26/30",
+   "tetragonal": "20/30",
+   "triclinic": "16/30",
+   "trigonal": "2/30"
+  },
+  "note": "macro-F1 is 0.0397 BELOW micro, driven almost entirely by trigonal (F1 0.125)"
+ },
+ "the_mirror": {
+  "direct_arm": "trigonal -> hexagonal, 28/30; hexagonal 30/30 correct",
+  "chain_arm": "all 30 true hexagonals -> trigonal; chain never emits hexagonal (certification prediction support)",
+  "interpretation": "opposite collapse directions rule out a shared learned bias; what is shared is failure to SEPARATE the pair"
+ },
+ "geometry": "in the conventional hexagonal setting trigonal and hexagonal share a=b, gamma=120deg, so the cell outline cannot separate them; separation requires the atom motif",
+ "other_confusions": {
+  "cubic->tetragonal": 15,
+  "triclinic->monoclinic": 10,
+  "tetragonal->orthorhombic": 8,
+  "note": "all symmetry-descent pairs \u2014 the physically sensible error mode"
+ },
+ "open": "expert_study human study is the other half of Q4; its pre-registered P3' predicts trigonal as the single human failure mode (0/7 separable by cell outline alone)",
+ "conventions": {
+  "micro": "fixed denominator 210, parse failures scored as errors",
+  "macro_f1": "unweighted mean of per-class F1 over the 7 systems",
+  "decoding": "K=8 majority vote, temperature 0.7"
+ }
+}

@@ -1,4 +1,4 @@
-"""CP56 — script verification of every manuscript number against a checkpoint results.json.
+"""consolidated_verification — script verification of every manuscript number against a checkpoint results.json.
 
 Exit non-zero on any failure. Three checks, each of which caught a real defect in this package:
   1 VALUE EQUALITY, not presence. An earlier presence-only check ("does the string appear?") validated
@@ -18,7 +18,8 @@ L = RESULTS
 def ledger_values():
     """Every numeric literal anywhere in any checkpoint results.json, as a set of rounded floats."""
     vals, src = set(), {}
-    for f in glob.glob(f"{L}/CP*/*.json"):
+    # records are named for what they measure; INDEX.json carries their run order
+    for f in glob.glob(f"{L}/*/*.json"):
         try: d = json.load(open(f))
         except Exception: continue
         def walk(o):

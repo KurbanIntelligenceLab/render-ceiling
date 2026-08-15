@@ -1,4 +1,4 @@
-"""CP58 arm A3 — strong model extracts, weak model reasons.
+"""perception_transplant arm A3 — strong model extracts, weak model reasons.
 
 Two legs per structure. Leg 1: the strong model sees the five renders and emits ONLY species and
 fractional coordinates, with the symmetry question withheld so it cannot leak an answer. Leg 2: the weak
@@ -79,8 +79,8 @@ if __name__ == "__main__":
         for i, f in enumerate(futs):
             out.append(f.result())
             if i % 30 == 29: print(f"  {i+1}/{len(rows)} {time.time()-t0:.0f}s", flush=True)
-            json.dump(out, open(f"{ROOT}/ledger/CP58_perception_transplant/a3_raw.json", "w"))
+            json.dump(out, open(f"{ROOT}/ledger/perception_transplant/a3_raw.json", "w"))
     k = sum(1 for x in out if x.get("correct")); n = len(out)
     print(f"A3: {k}/{n} = {k/n:.4f} | extract errors {sum(1 for x in out if x.get('extract_error'))} "
           f"| unparseable extractions {sum(1 for x in out if x.get('unparseable_extraction'))}", flush=True)
-    print("CP58 A3 COMPLETE", flush=True)
+    print("perception_transplant A3 COMPLETE", flush=True)

@@ -26,59 +26,60 @@ own work. Retracted values are preserved inside labelled correction notes rather
 
 | checkpoint | pre-registered | results files | status |
 |---|---|---|---|
-| [CP0_pipeline](#cp0-pipeline) | no | 2 |  |
-| [CP0b_identifiability](#cp0b-identifiability) | no | 1 |  |
-| [CP0c_resolution_audit](#cp0c-resolution-audit) | yes | 2 | DONE for all three arms (B1, V2b, V1 — seed 0 each; V1 and V1_s0 rows are in |
-| [CP1_zeroshot](#cp1-zeroshot) | no | 6 |  |
-| [CP1b_exclusion_baselines](#cp1b-exclusion-baselines) | yes | 1 | DONE — B1-direct (3 seeds) AND SFT-V1 (3 seeds) both complete. |
-| [CP1c_prototype_exclusion](#cp1c-prototype-exclusion) | yes | 1 | DONE as a no-retrain stratified probe (double-OOD subset). The full retrained |
-| [CP2_sft_chain](#cp2-sft-chain) | no | 1 |  |
-| [CP3_process_reward](#cp3-process-reward) | no | 2 |  |
-| [CP7_test_time_scaling](#cp7-test-time-scaling) | yes | 1 | DONE (1 seed, K=8, 210-structure composition-exclusion eval, 416-eff matched to training) |
-| [CP7b_certification](#cp7b-certification) | yes | 7 | COMPLETE. All six certifier configurations ran (process seeds 0 and 1, outcome, SFT-only, |
-| [CP8_external_baselines](#cp8-external-baselines) | no | 5 | DONE. Both structure-input baselines are trained and reported on the 210-structure |
-| [CP9_calibration](#cp9-calibration) | no | 1 | DONE (re-scoring only, no new GPU generation). RESULT: dense deterministic process |
-| [CP10_merged_retrain](#cp10-merged-retrain) | yes | 0 | CLOSED — SUBSUMED, NOT ABANDONED. The Q2 half was executed and is recorded as CP12_sota_pu |
-| [CP11_expert_study](#cp11-expert-study) | no | 2 | NOT RUN — no qualified respondent was collected. This is recorded as an open gap, NOT as a |
-| [CP12_sota_push](#cp12-sota-push) | yes | 1 | RUN 2 DONE (native resolution + view augmentation, 1 seed). PRE-REGISTERED RULE FIRES |
-| [CP13_trigonal_hexagonal](#cp13-trigonal-hexagonal) | no | 1 | DONE for the model half (the human half is CP11, still awaiting raters). RESULT: the two |
-| [CP14_frontier_ceiling](#cp14-frontier-ceiling) | yes | 2 | DONE. Three frontier models on all 210 composition-exclusion structures, same prompt, same |
-| [CP15_box_sufficiency](#cp15-box-sufficiency) | no | 2 | DONE, THEN PARTLY OVERTURNED BY ITS OWN REPLICATION. Read the REPLICATION section |
-| [CP16_paired_resolution](#cp16-paired-resolution) | no | 1 | DONE, zero compute. The review's item 2(b) is correct that the half-width screen is the |
-| [CP17_extractor](#cp17-extractor) | yes | 2 | DONE — VALIDATION GATE FAILED. **SCOPE WARNING: this is NOT the probe directive item 4 |
-| [CP18_eval_expansion](#cp18-eval-expansion) | no | 2 | BOTH ARMS DONE. The primary question is RESOLVED. The V2b arm returned a result that |
-| [CP19_atom_detection](#cp19-atom-detection) | no | 1 | PARTIAL — the ground-truth instrument is BUILT AND VERIFIED; the detector FAILS its gate |
-| [CP20_occlusion_manipulation](#cp20-occlusion-manipulation) | yes | 1 | THE MANIPULATION CHECK FAILED, SO NO MODEL EVALUATION WAS RUN — exactly as the |
-| [CP21_occlusion_redundancy](#cp21-occlusion-redundancy) | yes | 1 | DONE, BRANCH R3 (MIXED) ON BOTH EVALUATION SETS. ALL NUMBERS BELOW ARE FROM |
-| [CP22_oracle_view_curve](#cp22-oracle-view-curve) | no | 1 | DONE, AND THE SATURATION CLAIM IS WEAKER THAN FIRST STATED. A paired test on the same 280 |
-| [CP23_depth_sufficiency](#cp23-depth-sufficiency) | yes | 1 | DONE. THE QUANTIZATION-SATURATION CLAIM IS WITHDRAWN ENTIRELY — at full power neither four |
-| [CP24_oracle_stratified](#cp24-oracle-stratified) | yes | 1 | DONE, AND NOW SUPERSEDED AS THE HEADLINE BY CP25, which runs the same oracle ON the |
-| [CP25_oracle_within_sample](#cp25-oracle-within-sample) | yes | 1 | DONE. BRANCH W1 FIRES ON BOTH EVALUATION SETS. The oracle runs on the evaluation sets with |
-| [CP26_model_sweep](#cp26-model-sweep) | yes | 2 | DONE. BRANCH S1 FIRES, AND IT FIRES ON TWO INDEPENDENT RUNS. All 13 models fall below the |
-| [CP27_venue](#cp27-venue) | no | 1 | DONE, AND THE DEADLINE COMPARISON OVERTURNS THE STANDING RECOMMENDATION. The NeurIPS track |
-| [CP28_classifier_refreeze](#cp28-classifier-refreeze) | yes | 2 | DONE. THE PARTITION IS REFROZEN AND REPRODUCES. THE RANDOM FOREST IS A THIRD NON-RECOVERY: |
-| [CP29_v2b_seed_hygiene](#cp29-v2b-seed-hygiene) | no | 1 | DONE, AND THE CAUSE IS SETTLED. The three adapters are NOT identical, so this is not a see |
-| [CP30_protocol_normalisation](#cp30-protocol-normalisation) | no | 1 | DONE. Items (a) and (b) applied. Item (c) was ALREADY FIXED and is recorded as verified ra |
-| [CP31_visibility_corrected_oracle](#cp31-visibility-corrected-oracle) | yes | 4 | DONE. THE PRIMARY QUANTITY IS EXACTLY ZERO ON BOTH EVAL SETS, AND THE O3 CONTROL BLOCKS TH |
-| [CP32_extraction_operating_point](#cp32-extraction-operating-point) | no | 1 | DONE, AND THE CONCLUSION IS NARROWER THAN THE PLAN ANTICIPATED. This is ARGUMENT from thre |
-| [CP33_zeroshot_chain_vs_direct](#cp33-zeroshot-chain-vs-direct) | no | 0 | NOT RUN — CUT ON THE DIRECTIVE'S OWN INSTRUCTION, WITH THE ARGUMENT RECORDED. This is a de |
-| [CP34_second_family_sft](#cp34-second-family-sft) | no | 0 | NOT RUN — CUT, AND THE REASON IS THAT ITS OWN DESIGN CANNOT SUPPORT A CLAIM THIS PAPER MAK |
-| [CP35_stratified_frontier_expansion](#cp35-stratified-frontier-expansion) | yes | 4 | DONE. BRANCH D1 FIRES, 3 OF 3 ARMS ON BOTH SAMPLES — AND THIS CONTRADICTS THE EXPECTATION  |
-| [CP36_generational_comparison](#cp36-generational-comparison) | yes | 1 | DONE, ZERO NEW COMPUTE. Both arms already existed; this is analysis of stored per-structur |
-| [CP37_a3_seeds](#cp37-a3-seeds) | no | 0 | NOT RUN — CUT AFTER A QUANTITATIVE TEST OF WHETHER IT COULD CHANGE ANYTHING, NOT ON COST A |
-| [CP38_claim_ledger](#cp38-claim-ledger) | no | 2 | DONE. TEN CLAIMS ENUMERATED. Four are contributions, two are supporting replications, TWO  |
-| [CP39_figures](#cp39-figures) | no | 1 | CLOSED AS A NON-CHECKPOINT. It holds one rendered figure (bracket_and_claims.png) whose un |
-| [CP40_limitations](#cp40-limitations) | no | 1 | DONE. TEN LIMITATIONS, each with its consequence for what may be claimed. Three are inhere |
-| [CP41_no_image_control](#cp41-no-image-control) | yes | 1 | DONE. BRANCH N2 FIRES DECISIVELY — the images carry the signal. And the expectation I |
-| [CP43_related_work_audit](#cp43-related-work-audit) | no | 1 | DONE FOR THE EIGHT NAMED ROWS, ALL VERIFIED FROM PRIMARY SOURCES (arXiv API titles and |
-| [CP50_eval_scaleup](#cp50-eval-scaleup) | yes | 4 | DONE, AND BRANCH S2 FIRES. THE SHAPE-FREE FLOOR DOES NOT SURVIVE AT SCALE, WHICH RETIRES T |
-| [CP51_label_ladder](#cp51-label-ladder) | yes | 1 | DONE. FOUR LABELS SCORED FOR THREE MODEL-FREE ARMS. The headline is that the ORACLE IS FLA |
-| [CP52_rung_R2_detector_oracle](#cp52-rung-r2-detector-oracle) | yes | 2 | DONE AND REPORTED UNSCORED BY MY OWN PRE-REGISTERED GATE. The rung does not enter the ladd |
-| [CP53_rung_R3_coords_as_text](#cp53-rung-r3-coords-as-text) | yes | 1 | DONE, 14 OF 15 ARMS SCORED. BRANCH C3 FIRES ON ALL 14 — AND THE DECOMPOSITION CONTRADICTS  |
-| [CP54_render_convention_sweep](#cp54-render-convention-sweep) | yes | 5 | BOTH LEGS DONE. The oracle leg REFUTES A PREDICTION THIS PROJECT PUBLISHED. The model leg  |
-| [CP56_consolidated_verification](#cp56-consolidated-verification) | no | 1 | DONE. scripts/verify_manuscript_numbers.py is a BUILD GATE that exits non-zero. 8 of 9 |
-| [CP58_perception_transplant](#cp58-perception-transplant) | yes | 2 | DONE. NO PRE-REGISTERED BRANCH FIRES, AND THE ACCURACY IS NOT THE RESULT. The informative  |
-| [CP60_length_control](#cp60-length-control) | yes | 1 | DONE. BRANCH L2 FIRES, THE CONFOUND CONTROL DOES NOT RESCUE IT, AND A HEADLINE NUMBER IS |
+| [pipeline](#pipeline) | no | 2 |  |
+| [identifiability](#identifiability) | no | 1 |  |
+| [resolution_audit](#resolution-audit) | yes | 2 | DONE for all three arms (B1, V2b, V1 — seed 0 each; V1 and V1_s0 rows are in |
+| [zeroshot](#zeroshot) | no | 6 |  |
+| [exclusion_baselines](#exclusion-baselines) | yes | 1 | DONE — B1-direct (3 seeds) AND SFT-V1 (3 seeds) both complete. |
+| [sft_chain](#sft-chain) | no | 1 |  |
+| [process_reward](#process-reward) | no | 2 |  |
+| [test_time_scaling](#test-time-scaling) | yes | 1 | DONE (1 seed, K=8, 210-structure composition-exclusion eval, 416-eff matched to training) |
+| [certification](#certification) | yes | 7 | COMPLETE. All six certifier configurations ran (process seeds 0 and 1, outcome, SFT-only, |
+| [external_baselines](#external-baselines) | no | 5 | DONE. Both structure-input baselines are trained and reported on the 210-structure |
+| [calibration](#calibration) | no | 1 | DONE (re-scoring only, no new GPU generation). RESULT: dense deterministic process |
+| [merged_retrain](#merged-retrain) | yes | 0 | CLOSED — SUBSUMED, NOT ABANDONED. The Q2 half was executed and is recorded as sota_push |
+| [expert_study](#expert-study) | no | 2 | NOT RUN — no qualified respondent was collected. This is recorded as an open gap, NOT as a |
+| [sota_push](#sota-push) | yes | 1 | RUN 2 DONE (native resolution + view augmentation, 1 seed). PRE-REGISTERED RULE FIRES |
+| [trigonal_hexagonal](#trigonal-hexagonal) | no | 1 | DONE for the model half (the human half is expert_study, still awaiting raters). RESULT: t |
+| [frontier_ceiling](#frontier-ceiling) | yes | 2 | DONE. Three frontier models on all 210 composition-exclusion structures, same prompt, same |
+| [box_sufficiency](#box-sufficiency) | no | 2 | DONE, THEN PARTLY OVERTURNED BY ITS OWN REPLICATION. Read the REPLICATION section |
+| [paired_resolution](#paired-resolution) | no | 1 | DONE, zero compute. The review's item 2(b) is correct that the half-width screen is the |
+| [extractor](#extractor) | yes | 2 | DONE — VALIDATION GATE FAILED. **SCOPE WARNING: this is NOT the probe directive item 4 |
+| [eval_expansion](#eval-expansion) | no | 2 | BOTH ARMS DONE. The primary question is RESOLVED. The V2b arm returned a result that |
+| [atom_detection](#atom-detection) | no | 1 | PARTIAL — the ground-truth instrument is BUILT AND VERIFIED; the detector FAILS its gate |
+| [occlusion_manipulation](#occlusion-manipulation) | yes | 1 | THE MANIPULATION CHECK FAILED, SO NO MODEL EVALUATION WAS RUN — exactly as the |
+| [occlusion_redundancy](#occlusion-redundancy) | yes | 1 | DONE, BRANCH R3 (MIXED) ON BOTH EVALUATION SETS. ALL NUMBERS BELOW ARE FROM |
+| [oracle_view_curve](#oracle-view-curve) | no | 1 | DONE, AND THE SATURATION CLAIM IS WEAKER THAN FIRST STATED. A paired test on the same 280 |
+| [depth_sufficiency](#depth-sufficiency) | yes | 1 | DONE. THE QUANTIZATION-SATURATION CLAIM IS WITHDRAWN ENTIRELY — at full power neither four |
+| [oracle_stratified](#oracle-stratified) | yes | 1 | DONE, AND NOW SUPERSEDED AS THE HEADLINE BY oracle_within_sample, which runs the same orac |
+| [oracle_within_sample](#oracle-within-sample) | yes | 1 | DONE. BRANCH W1 FIRES ON BOTH EVALUATION SETS. The oracle runs on the evaluation sets with |
+| [model_sweep](#model-sweep) | yes | 2 | DONE. BRANCH S1 FIRES, AND IT FIRES ON TWO INDEPENDENT RUNS. All 13 models fall below the |
+| [classifier_refreeze](#classifier-refreeze) | yes | 2 | DONE. THE PARTITION IS REFROZEN AND REPRODUCES. THE RANDOM FOREST IS A THIRD NON-RECOVERY: |
+| [v2b_seed_hygiene](#v2b-seed-hygiene) | no | 1 | DONE, AND THE CAUSE IS SETTLED. The three adapters are NOT identical, so this is not a see |
+| [protocol_normalisation](#protocol-normalisation) | no | 1 | DONE. Items (a) and (b) applied. Item (c) was ALREADY FIXED and is recorded as verified ra |
+| [visibility_corrected_oracle](#visibility-corrected-oracle) | yes | 4 | DONE. THE PRIMARY QUANTITY IS EXACTLY ZERO ON BOTH EVAL SETS, AND THE O3 CONTROL BLOCKS TH |
+| [extraction_operating_point](#extraction-operating-point) | no | 1 | DONE, AND THE CONCLUSION IS NARROWER THAN THE PLAN ANTICIPATED. This is ARGUMENT from thre |
+| [stratified_frontier_expansion](#stratified-frontier-expansion) | yes | 4 | DONE. BRANCH D1 FIRES, 3 OF 3 ARMS ON BOTH SAMPLES — AND THIS CONTRADICTS THE EXPECTATION  |
+| [generational_comparison](#generational-comparison) | yes | 1 | DONE, ZERO NEW COMPUTE. Both arms already existed; this is analysis of stored per-structur |
+| [a3_seeds](#a3-seeds) | no | 0 | NOT RUN — CUT AFTER A QUANTITATIVE TEST OF WHETHER IT COULD CHANGE ANYTHING, NOT ON COST A |
+| [claim_ledger](#claim-ledger) | no | 2 | DONE. TEN CLAIMS ENUMERATED. Four are contributions, two are supporting replications, TWO  |
+| [figures](#figures) | no | 1 | CLOSED AS A NON-CHECKPOINT. It holds one rendered figure (bracket_and_claims.png) whose un |
+| [limitations](#limitations) | no | 1 | DONE. TEN LIMITATIONS, each with its consequence for what may be claimed. Three are inhere |
+| [no_image_control](#no-image-control) | yes | 1 | DONE. BRANCH N2 FIRES DECISIVELY — the images carry the signal. And the expectation I |
+| [related_work_audit](#related-work-audit) | no | 1 | DONE FOR THE EIGHT NAMED ROWS, ALL VERIFIED FROM PRIMARY SOURCES (arXiv API titles and |
+| [eval_scaleup](#eval-scaleup) | yes | 4 | DONE, AND BRANCH S2 FIRES. THE SHAPE-FREE FLOOR DOES NOT SURVIVE AT SCALE, WHICH RETIRES T |
+| [label_ladder](#label-ladder) | yes | 1 | DONE. FOUR LABELS SCORED FOR THREE MODEL-FREE ARMS. The headline is that the ORACLE IS FLA |
+| [rung_R2_detector_oracle](#rung-r2-detector-oracle) | yes | 2 | DONE AND REPORTED UNSCORED BY MY OWN PRE-REGISTERED GATE. The rung does not enter the ladd |
+| [rung_R3_coords_as_text](#rung-r3-coords-as-text) | yes | 1 | DONE, 14 OF 15 ARMS SCORED. BRANCH C3 FIRES ON ALL 14 — AND THE DECOMPOSITION CONTRADICTS  |
+| [render_convention_sweep](#render-convention-sweep) | yes | 5 | BOTH LEGS DONE. The oracle leg REFUTES A PREDICTION THIS PROJECT PUBLISHED. The model leg  |
+| [consolidated_verification](#consolidated-verification) | no | 1 | DONE. scripts/verify_manuscript_numbers.py is a BUILD GATE that exits non-zero. 8 of 9 |
+| [perception_transplant](#perception-transplant) | yes | 2 | DONE. NO PRE-REGISTERED BRANCH FIRES, AND THE ACCURACY IS NOT THE RESULT. The informative  |
+| [length_control](#length-control) | yes | 1 | DONE. BRANCH L2 FIRES, THE CONFOUND CONTROL DOES NOT RESCUE IT, AND A HEADLINE NUMBER IS |
+| [view_subset_sweep](#view-subset-sweep) | no | 2 | DONE. THE PREDICTION HOLDS IN AGGREGATE AT 103 OF 105 NESTED PAIRS, AND THE TWO |
+| [detector_characterisation](#detector-characterisation) | no | 2 | DONE. THE DETECTOR FAILS THE PRECONDITION ON ALL THREE AXES, BY MARGINS THAT EXPLAIN rung_ |
+| [endpoint_drift](#endpoint-drift) | no | 3 | DONE, AND IT BLOCKS G3/G5/G6 AS SCOPED. A validation slice against a released arm does not |
+| [reasoning_budget](#reasoning-budget) | no | 3 | DONE. A CLEAN PAIRED NULL. 5.4x the reasoning tokens buys ZERO accuracy on this task. |
+| [option_a_frontier](#option-a-frontier) | no | 1 |  |
 
 ---
 
@@ -103,7 +104,7 @@ the adequacy result it makes possible, then the two positive findings, then the 
 gathered in one place rather than scattered as corrections. An earlier version of this report asserted the
 stratified-accuracy mechanism early and withdrew it much later in the same document; that ordering is
 gone, and the withdrawn material now lives in Appendix S with the retraction in Appendix R.
-## 1. The instrument: a model-free geometric oracle   [CP0_pipeline, CP0b_identifiability, CP0c_resolution_audit]
+## 1. The instrument: a model-free geometric oracle   [pipeline, identifiability, resolution_audit]
 
 Crystal structures from public databases, rendered as standardized multi-view ball-and-stick images
 at a frozen protocol: conventional cell, 2x2x2 supercell, 5 views, 768 px. Ground truth for every
@@ -122,7 +123,7 @@ pre-registration fixed the interpretation in advance, including the asymmetry th
 would be a clean positive; the result landed in the ambiguous branch, so we do NOT claim resolution
 is excluded as a factor.
 
-## 2. The renders are adequate: what the protocol withholds, measured   [CP31, CP32, CP28, CP29, CP30]
+## 2. The renders are adequate: what the protocol withholds, measured   [visibility_corrected_oracle, extraction_operating_point, classifier_refreeze, v2b_seed_hygiene, protocol_normalisation]
 
 THE VISIBILITY CORRECTION THIS SECTION WAS BUILT TO REPORT IS EXACTLY ZERO, AND SAYING SO FIRST IS THE
 honest ordering. The oracle assumes perfect extraction of every atom, so its 0.9524 bounds
@@ -135,7 +136,7 @@ VIEW under four conditions.
   O1 informative occlusion removed       200/210 0.9524   191/210 0.9095
   O2 all occlusion removed               122/210 0.5810   113/210 0.5381
   O3 redundant occlusion only (CONTROL)  194/210 0.9238   170/210 0.8095
-O0 reproduces CP25 EXACTLY, which was the pre-registered gate. O1 changes NOT ONE structure on either
+O0 reproduces oracle_within_sample EXACTLY, which was the pre-registered gate. O1 changes NOT ONE structure on either
 set (paired McNemar p = 1.0000), while the CONTROL removes 6 and 21. The pre-registered rule was that if
 the control's delta reaches half the target's, the analysis is measuring detection count rather than
 information; with the target at zero the control dominates completely, so O1 IS UNREADABLE by the rule
@@ -154,12 +155,12 @@ OBLIQUE VIEWS. Every occlusion figure published in this package before this exte
 the three worst cameras in the protocol.
 WHAT DOES COST ACCURACY IS TOTAL VISIBILITY: removing ALL occlusion costs 78 structures. So visibility
 matters in aggregate; the INFORMATIVE component specifically does not.
-EXTRACTION FAILS AT VISIBILITY AND SEGMENTATION, NOT PRECISION (CP32, argument from measured values):
+EXTRACTION FAILS AT VISIBILITY AND SEGMENTATION, NOT PRECISION (extraction_operating_point, argument from measured values):
 recall median 0.400, precision median 0.233, centroid error median 0.717 px on matched atoms, recall
 correlating -0.792 with occlusion against -0.411 with atom count, and recall halving across occlusion
 terciles (0.528 -> 0.239) while precision stays flat (0.383 -> 0.360).
 
-## 3. The signal is visual: the no-image control   [CP41]
+## 3. The signal is visual: the no-image control   [no_image_control]
 
 Every zero-shot row is prompted with renders AND a formula preamble, so nothing established that the
 IMAGE was doing the work. A control with the byte-identical prompt text and the image blocks removed,
@@ -203,7 +204,7 @@ thirteen scored TEXT arms lands at CHANCE instead — the range is 0.1190 to 0.1
 the floor is a HARDER reference than a text-only VLM, and the thirteen-below-floor result is stronger
 than if text-only had matched it.
 
-## 3b. The attribution ladder: which stage the deficit lives in   [CP51, CP52, CP53]
+## 3b. The attribution ladder: which stage the deficit lives in   [label_ladder, rung_R2_detector_oracle, rung_R3_coords_as_text]
 
 THE INSTRUMENT CLAIM NEEDED A LADDER, NOT A SINGLE CEILING. R1 (the oracle) never touches a pixel, so
 "perception is the bottleneck" rested on an instrument that assumes perception. Three rungs were added.
@@ -231,14 +232,14 @@ arms, and the pre-registered decomposition then gives
   bottleneck for the two strongest models and not for the rest, and the direction is systematic:
   Spearman(pixel accuracy, perception share) = -0.6439, p = 0.0130. The bottleneck MOVES with model strength.
 
-THE CONTROL PAIR IS WHAT MAKES R3 READABLE. CP41 removed the images and left the formula: every scored arm
-collapsed to 7-way chance (mean 0.1357). CP53 removes the images and supplies full geometry: every arm
+THE CONTROL PAIR IS WHAT MAKES R3 READABLE. no_image_control removed the images and left the formula: every scored arm
+collapsed to 7-way chance (mean 0.1357). rung_R3_coords_as_text removes the images and supplies full geometry: every arm
 lands between 0.4143 and 0.8524. The two differ in exactly one thing, so the jump is the geometry
 rather than text-mode prompting. R3 prompts are also SHORTER than the five-image prompts they beat
 (mean 177 tokens, max 250, zero structures truncated), so prompt length cannot explain it.
 
 R2 IS REPORTED UNSCORED BY ITS OWN PRE-REGISTERED GATE, AND THE ATTRIBUTION IT WOULD HAVE PROVIDED REMAINS
-UNMEASURED. Substituting the CP19 detector's real detections into the identical inversion gives 16/210 and
+UNMEASURED. Substituting the atom_detection detector's real detections into the identical inversion gives 16/210 and
 18/210 — below every model — but 40 of 210 and 47 of 210 structures recover ZERO atoms, over the 5% gate
 written before the run. Mandatory operating point, to be quoted wherever R2 appears: median recall
 0.4, median precision 0.2333, median centroid error 0.7171 px. The pipeline is correct — zero exceptions in 420
@@ -270,7 +271,7 @@ MACRO-F1 IS WITHHELD on the finer labels as pre-registered — space group has 1
 present — and BOTH chance definitions are reported because majority-class (0.1095) and 1/n_classes (0.0043)
 diverge more than twentyfold at space group.
 
-## 3c. An intervention that works, and a prediction this report got wrong   [CP54]
+## 3c. An intervention that works, and a prediction this report got wrong   [render_convention_sweep]
 
 THE FROZEN CAMERA SET IS NOT INFORMATION-OPTIMAL. Perturbing the cameras off the principal axes raises the
 oracle's identifiability ceiling on both samples:
@@ -328,7 +329,7 @@ is real and recoverable by a geometric reader, and it is not what limits the mod
 ladder's conclusion reached by intervention instead of decomposition — an intervention that adds information
 a model cannot use is evidence about the model, not about the render.
 
-## 3d. A learned extractor that fabricates its output   [CP58]
+## 3d. A learned extractor that fabricates its output   [perception_transplant]
 
 Substituting a strong model as the extraction stage — it sees the renders and emits species and coordinates,
 the symmetry question withheld — and having a weak model answer from that text gives 30/210 = 0.1429 (K=3).
@@ -361,7 +362,7 @@ exact coordinates (section 3b), so that is its ceiling in this design; comparing
 model's own 0.7333 on pixels would overstate the shortfall by 0.23. The pre-registration named this asymmetry
 before the run.
 
-## 3e. The scale-up, and the claim it retires   [CP50]
+## 3e. The scale-up, and the claim it retires   [eval_scaleup]
 
 THE PACKAGE'S MOST-QUOTED CLAIM DOES NOT SURVIVE AT SCALE, and the pre-registration named this as the
 outcome most expensive to absorb. A fresh 1995-structure sample — MP, 2-4 elements, conventional cell at
@@ -403,10 +404,10 @@ either cell-size regime.
 THE MODEL ARMS AT SCALE ARE NOT RUN (500 x 13 x K=3 = 19,500 calls), so every model number in this package
 still rests on n=210 and is reported with that sample named.
 
-## 3f. Where the pixel reader falls behind a numeric one, and one generation of progress   [CP35, CP36]
+## 3f. Where the pixel reader falls behind a numeric one, and one generation of progress   [stratified_frontier_expansion, generational_comparison]
 
 THE CUE-SUFFICIENCY PARTITION PREDICTS WHERE A PIXEL MODEL TRAILS A NUMERIC READER OF THE SAME CELL, and
-this replicates on both samples against a control — unlike the CP15 claim it replaces, which compared raw
+this replicates on both samples against a control — unlike the box_sufficiency claim it replaces, which compared raw
 accuracy and was withdrawn. The contrast is pixel-minus-RF; negative means the pixel model trails:
 
   arm                sample      suff gap   amb gap   pixel amb-vs-suff Fisher p   (K=3, model-free RF)
@@ -421,7 +422,7 @@ THREE OF THREE ARMS WIDEN ON THE AMBIGUOUS STRATUM ON BOTH SAMPLES — branch D1
 expectation recorded before the run. My pre-registration said "I expect D3" and named the existing data as
 pointing away from the claim; it was wrong.
 WHY THE CONTROL MATTERS. The RF drops across strata too (0.9214 to 0.8429 original, 0.9433 to 0.7536
-expansion), so a raw pixel drop proves nothing. That is precisely the defect that invalidated CP15, whose
+expansion), so a raw pixel drop proves nothing. That is precisely the defect that invalidated box_sufficiency, whose
 withdrawal stands.
 THE CONFOUND, STATED RATHER THAN BURIED. The ambiguous stratum is 60 of 70 and 58 of 69
 hexagonal-or-trigonal, so this is close to a hex/trig effect and both descriptions are reported. Removing
@@ -435,13 +436,13 @@ closing the render-imposed gap faster. NORMALISED BY HEADROOM TO THE ORACLE IT C
 sufficient gap against 54.1% of the ambiguous one. The larger raw gain is substantially a low-baseline
 effect — the ambiguous stratum started at 0.0286. And the newer model still separates the strata
 (0.5286 against 0.8357, Fisher p = 4.95e-06), so the difficulty axis survives a generation.
-NO TREND LANGUAGE: one pair is a comparison, and CP26 established that parameter count does not order
+NO TREND LANGUAGE: one pair is a comparison, and model_sweep established that parameter count does not order
 accuracy at all, so no scaling statement is available either.
 
-## 4. The models fail universally   [CP26_model_sweep]
+## 4. The models fail universally   [model_sweep]
 
 A four-row leaderboard cannot establish that a task is hard. Thirteen models across EIGHT vendors were
-run zero-shot on the frozen protocol, CP14 prompt verbatim, no per-model tuning, denominators fixed at
+run zero-shot on the frozen protocol, frontier_ceiling prompt verbatim, no per-model tuning, denominators fixed at
 210, parse failures scored as errors. All counts recomputed from per-structure prediction vectors.
 
     zero-shot leaderboard, ORIGINAL eval sample n=210, K=3 majority vote:
@@ -501,7 +502,7 @@ different training exposure. They bound task difficulty, not method quality. One
 (kimi-k2.6) hangs indefinitely on this workload and is reported UNSCORED rather than dropped, so the
 roster is 13 of a pre-registered 14.
 
-## 5. Where every model sits, on one sample   [CP14_frontier_ceiling, CP8_external_baselines, CP1_zeroshot]
+## 5. Where every model sits, on one sample   [frontier_ceiling, external_baselines, zeroshot]
 
 All on the frozen 210-structure composition-exclusion evaluation set, micro accuracy.
 
@@ -549,15 +550,15 @@ evaluation set, and section 3 explains why it bounds identifiability from the ST
 from the IMAGES.
 
 FOOTNOTE — THE RANDOM FOREST HAS ONE CANONICAL VALUE AND TWO RETIRED ONES.
-Canonical: 0.8952 = 188/210, the CP28 refit, which is the ONLY value with a frozen executable
-specification attached (ledger/CP28_classifier_refreeze/classifier_specifications.json: ordered feature
+Canonical: 0.8952 = 188/210, the classifier_refreeze refit, which is the ONLY value with a frozen executable
+specification attached (ledger/classifier_refreeze/classifier_specifications.json: ordered feature
 list, library versions, per-structure prediction vector). Retired: 0.8905 = 187/210 (original run, feature
 list never saved) and 0.8857 = 186/210 (a later reproduction, also unrecoverable). Twelve defensible
 readings of the recorded feature prose span 183-188 of 210 and NONE reproduces 186, so the recorded
 protocol is underdetermined rather than merely mis-transcribed. Separately, 0.8762 = 184/210 is GRADIENT
 BOOSTING on the same features, not a random forest; under the canonical protocol GB gives 183/210.
 
-## 6. The cue-sufficiency partition, as a render-convention property   [CP15, CP19, CP20, CP21, CP22, CP23, CP13]
+## 6. The cue-sufficiency partition, as a render-convention property   [box_sufficiency, atom_detection, occlusion_manipulation, occlusion_redundancy, oracle_view_curve, depth_sufficiency, trigonal_hexagonal]
 
 THE FROZEN PROTOCOL IS AN INHERITED PLAN VIEW WITH ITS ANNOTATIONS DROPPED, and saying so first
 prevents a false discovery claim. The crystallographic plan view is a projection down a principal
@@ -571,7 +572,7 @@ visualization and human-read annotations may not suit a VLM asked about symmetry
 dropped the component that made it readable.
 
 A structure is BOX-SUFFICIENT if the conventional-cell metric — the cell the renders draw — uniquely
-implies its crystal system. On the CANONICAL predicate (CP28, specified and reproducing exactly) that is
+implies its crystal system. On the CANONICAL predicate (classifier_refreeze, specified and reproducing exactly) that is
 140/210 = 0.6667 on the original evaluation set and
 141/210 = 0.6714 on the independently drawn expansion set. The ambiguous
 stratum is dominated by the trigonal/hexagonal pair on both samples — 60 of 70 = 85.7% and
@@ -660,7 +661,7 @@ shared, the failure cannot be a learned bias inherited from a common source; wha
 inability to separate the pair, which is the signature of a model reading the drawn cell outline well
 and the atom motif poorly.
 
-## 7. Where the failure lives, within sample and paired   [CP25, CP24]
+## 7. Where the failure lives, within sample and paired   [oracle_within_sample, oracle_stratified]
 
 THE HEADLINE IS WITHIN-SAMPLE AND PAIRED. The oracle is a deterministic geometric computation over
 ground-truth positions and the frozen cameras, so it runs on the evaluation sets directly — 210
@@ -720,10 +721,10 @@ bracket is assembled across samples and is never a per-structure claim. And the 
 models near the floor on box-ambiguous — FAILED TO REPLICATE on the expansion set, so any localisation
 statement inherits that non-replication in the same sentence.
 
-## 8. Nulls and withdrawals I — two classifiers refrozen   [CP28]
+## 8. Nulls and withdrawals I — two classifiers refrozen   [classifier_refreeze]
 
 The lattice random forest and the box-sufficiency predicate were both cited without reproducible
-specifications. The predicate is now fixed and reproduces CP25's 140/70 split EXACTLY. The forest is a
+specifications. The predicate is now fixed and reproduces oracle_within_sample's 140/70 split EXACTLY. The forest is a
 THIRD NON-RECOVERY: refitting under the recorded protocol gives 188/210 = 0.8952, and twelve defensible
 readings of the recorded prose span 183-188 without reproducing the published 186. Forward
 reproducibility is fixed; the historical value is not recovered.
@@ -743,7 +744,7 @@ V2b's identical macro-F1 across three seeds (macro_sd = 0.000) is DECODE COLLAPS
 the three adapters differ by ~1.5% relative L2 over 43.6M parameters, where identical adapters would
 give exactly zero. The 0.000 SD is removed rather than explained; no claim used it.
 
-## 9. Nulls and withdrawals II — the replication reversal   [CP18_eval_expansion, CP16_paired_resolution]
+## 9. Nulls and withdrawals II — the replication reversal   [eval_expansion, paired_resolution]
 
 We doubled the evaluation set — 210 new structures under the identical composition-exclusion rule,
 zero leakage, verified — because a paired-McNemar audit showed the central comparison was
@@ -787,8 +788,8 @@ to drop — becomes the ONLY significant dropper.
 A THIRD INDEPENDENT INSTANCE, derivable from numbers already in the package and therefore stated here
 rather than left for a reviewer to find. The native-resolution arm (A3) shows NO stratum drop on the
 ORIGINAL set: overall 0.6905, box-sufficient 98/140 = 0.7000, box-ambiguous 47/70 = 0.6714, drop
-+0.0286, Fisher p = 0.7518. Those strata are the APPROXIMATE 140/70 split, not CP15's recorded
-137/73, because CP15's exact classifier is not recoverable; on a 137/73 split the same arm gives
++0.0286, Fisher p = 0.7518. Those strata are the APPROXIMATE 140/70 split, not box_sufficiency's recorded
+137/73, because box_sufficiency's exact classifier is not recoverable; on a 137/73 split the same arm gives
 0.7007 and 0.6712, drop +0.0295, p = 0.7541 — the same conclusion either way. So the stratified-accuracy claim now fails on three independent occasions — the expansion
 set, the RF control's behaviour there, and the native-resolution arm on the original set. Three
 instances is not a replication failure to explain away; it is the result. The cause is the floor again: it fell to 0.2286 on
@@ -798,7 +799,7 @@ floor on box-ambiguous structures. That holds on the original sample, survives e
 confusion pair, and fails to replicate on an independently drawn second sample. What replicates is
 the partition itself.
 
-## 10. Prior art, checked against primary sources   [CP43]
+## 10. Prior art, checked against primary sources   [related_work_audit]
 
 Eight named works were fetched from the arXiv API and read, not recalled. Three of our claims are
 demoted and one of the plan's own characterisations is corrected.
@@ -839,7 +840,7 @@ closing the three instrument rows — from arXiv titles and abstracts. Not searc
 pre-deep-learning crystallography, where a metric-to-symmetry lookup is likely classical textbook material
 rather than a citable result.
 
-## 11. Other results   [CP2, CP3, CP7, CP7b, CP9, CP10, CP11, CP12, CP17, CP1b, CP1c]
+## 11. Other results   [sft_chain, process_reward, test_time_scaling, certification, calibration, merged_retrain, expert_study, sota_push, extractor, exclusion_baselines, prototype_exclusion]
 
 FABRICATION. The chain arm emits 30 distinct cell-parameter strings across 90 generations, one
 recurring 22 times, and then reasons correctly from those fabricated premises. It is responsive to
@@ -879,14 +880,14 @@ which is what a visibility limit looks like rather than a weak algorithm. A temp
 was WITHDRAWN when 6 of 84 measurements exceeded the supposed bound, leaving the covariate ordinal
 rather than quantitative.
 
-SUBSUMED AND NOT-RUN CHECKPOINTS, recorded rather than left as silent gaps. CP10_merged_retrain's
+SUBSUMED AND NOT-RUN CHECKPOINTS, recorded rather than left as silent gaps. merged_retrain's
 pre-registered work was absorbed into the native-resolution scaling run above, and its second half
 was cancelled because an earlier result had already answered the question it asked.
-CP17_extractor holds the failed wireframe reader plus the scope-deviation record and the verified
-pixel-projection calibration that CP19's detector depends on. CP11_expert_study is a not-run record
+extractor holds the failed wireframe reader plus the scope-deviation record and the verified
+pixel-projection calibration that atom_detection's detector depends on. expert_study is a not-run record
 carrying the required limitations language verbatim.
 
-NO HUMAN BASELINE  [CP11_expert_study]. The 50-structure expert packet was built with a pre-registered authenticity
+NO HUMAN BASELINE  [expert_study]. The 50-structure expert packet was built with a pre-registered authenticity
 screen. No qualified respondent returned it, and the single sheet received scored at chance and
 failed four independent authenticity diagnostics. We therefore do NOT claim the renders are
 human-solvable, and the "checkable by eye" framing is deleted rather than softened. The oracle
@@ -956,7 +957,7 @@ exist in any record, the line says BLOCKED rather than supplying a plausible fig
 ---
 
 ## S1. Dataset construction and label certification
-SOURCE: CP0_pipeline, CP0b_identifiability, CP50_eval_scaleup
+SOURCE: pipeline, identifiability, eval_scaleup
 
 SOURCE DATABASES. Materials Project and JARVIS-DFT. The pilot drew 49 structures from MP
 and 49 from JARVIS; the identifiability sample drew 140 and
@@ -994,7 +995,7 @@ PER-SAMPLE BOUNDS FOR THE TWO 210-STRUCTURE EVALUATION SETS: **BLOCKED** — not
 ---
 
 ## S2. Render protocol
-SOURCE: CP0_pipeline, CP0c_resolution_audit
+SOURCE: pipeline, resolution_audit
 
 CAMERA SPECIFICATION. Five orthographic views: three principal-axis and two oblique. The direction vectors
 are the frozen `VIEWS` map in `scripts/src/cocr/render.py`, which is the normative specification. They are
@@ -1002,7 +1003,7 @@ referenced rather than transcribed here so the two cannot drift.
 
 RESOLUTION, READ FROM THE LIVE PROCESSOR RATHER THAN ASSUMED. max_pixels
 589824, 576 effective visual
-tokens per view, read from the live processor, not a formula. This matters because CP0c found the DEPLOYED configuration
+tokens per view, read from the live processor, not a formula. This matters because resolution_audit found the DEPLOYED configuration
 differed from the DOCUMENTED one by 3.408x in area. The audit's pre-registration stated its own asymmetry
 in advance: only an INCREASE at native resolution would have been a clean positive. The outcome landed in
 the ambiguous branch, so resolution is NOT excluded as a factor and no claim is attached to it.
@@ -1013,7 +1014,7 @@ the numeric values is **BLOCKED** — not in any checkpoint record; must be meas
 ---
 
 ## S3. The geometric oracle
-SOURCE: CP25, CP24, CP31
+SOURCE: oracle_within_sample, oracle_stratified, visibility_corrected_oracle
 
 WHY THE CEILING CAN BE BELOW 1.0, AND WHY THAT IS THE POINT. The oracle forward-projects ground-truth
 positions through each frozen camera, DISCARDS cross-view correspondence, re-solves by ray intersection,
@@ -1033,14 +1034,14 @@ RUNTIME, WHICH IS THE REPRODUCIBILITY ARGUMENT. The pilot pipeline labelled and 
 in 31.8 s, both on CPU only — the oracle has no GPU dependency anywhere in
 `reconstruct.py`, so anyone can rerun it on a laptop. Per-run wall-clock for the full evaluation sweeps was
 not recorded.
-MATCH TOLERANCE AND THE PER-STRUCTURE FAILURE-MODE BREAKDOWN: **BLOCKED** — not in any checkpoint record; must be measured or the sentence dropped. (the CP58 extraction scoring
+MATCH TOLERANCE AND THE PER-STRUCTURE FAILURE-MODE BREAKDOWN: **BLOCKED** — not in any checkpoint record; must be measured or the sentence dropped. (the perception_transplant extraction scoring
 tolerance IS recorded, at 0.15 in fractional coordinates, but that is a
 different quantity from the oracle's own cross-view match criterion.)
 
 ---
 
 ## S4. The attribution ladder
-SOURCE: CP25, CP53, CP58, CP60
+SOURCE: oracle_within_sample, rung_R3_coords_as_text, perception_transplant, length_control
 
 R0 IS DEFINITIONAL. Applying the symmetry algorithm to ground-truth positions returns the label by
 construction, so R0 = 1.0000 exactly. Treating R0 as approximately equal to R1 would discard the interval
@@ -1056,7 +1057,7 @@ isolates symmetry reasoning. Median perception share 0.3092 across the
 -0.6439 at p =
 0.013.
 
-WHY IT IS ONLY A BOUND (CP60, 0 new API calls). Regressing per-structure R3 correctness on
+WHY IT IS ONLY A BOUND (length_control, 0 new API calls). Regressing per-structure R3 correctness on
 conventional-cell atom count over the same records: pooled Spearman -0.0908 at p =
 8.13e-07 over 2940 model-structure pairs, with
 13 of 14 models negative and
@@ -1083,14 +1084,14 @@ THE CONTROL PAIR. Formula-only collapses every model toward seven-way chance (me
 The two conditions differ in one thing, which is what makes the lift attributable to the geometry rather
 than to text-mode prompting. PROMPT LENGTH: {"mean_tokens_approx": 177, "median": 170, "max": 250, "truncated_structures": 0, "note": "SHORTER than the 5-image pixel prompts, so a length advantage cannot explain the gain"} — the geometry prompts are
 shorter than the five-image prompts they outperform, which rules out a length artefact in the LIFT (a
-different question from CP60's, which is about the residual's composition).
+different question from length_control's, which is about the residual's composition).
 
 PER-MODEL R3 AND R4 VECTORS: `release/predictions/`, one file per model.
 
 ---
 
 ## S5. The extraction fabrication
-SOURCE: CP58
+SOURCE: perception_transplant
 
 THE PROMPTS, VERBATIM: `release/frozen_prompts.json`, entries `CP58_extraction_strong_model` (462
 characters, symmetry question deliberately withheld so the extraction cannot leak an answer) and
@@ -1130,23 +1131,23 @@ the zero-match count and the emitted-atom distribution are recorded; the full hi
 ---
 
 ## S6. Roster, prompts, decoding, and the model arms
-SOURCE: CP2, CP3, CP12, CP14, CP26, CP41, CP53
+SOURCE: sft_chain, process_reward, sota_push, frontier_ceiling, model_sweep, no_image_control, rung_R3_coords_as_text
 
 THREE ROSTERS, WHICH IS WHY NO BARE COUNT APPEARS ANYWHERE IN THE PAPER.
 
 | condition | attempted | scored | unscored, and under which gate |
 |---|---|---|---|
-| CP26 zero-shot leaderboard | 14 pre-registered | 13 | `moonshotai/kimi-k2.6` — ENDPOINT FAILURE: no response on a 2-structure K=1 probe after 10 minutes, so the failure is the endpoint not the harness |
-| CP41 image-removal control | 16 | 13 | 3, over a pre-registered 5\% API-error gate |
-| CP53 coordinates-as-text | 15 | 14 | `qwen/qwen2.5-vl-72b-instruct` — both gates exceeded at 34.4\% errors |
+| model_sweep zero-shot leaderboard | 14 pre-registered | 13 | `moonshotai/kimi-k2.6` — ENDPOINT FAILURE: no response on a 2-structure K=1 probe after 10 minutes, so the failure is the endpoint not the harness |
+| no_image_control image-removal control | 16 | 13 | 3, over a pre-registered 5\% API-error gate |
+| rung_R3_coords_as_text coordinates-as-text | 15 | 14 | `qwen/qwen2.5-vl-72b-instruct` — both gates exceeded at 34.4\% errors |
 
 Every unscored entry is reported UNSCORED rather than dropped.
 
-THE MODEL ARMS. Base `Qwen/Qwen3-VL-8B-Instruct`. SFT (CP2): QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train /
-30 test structures, seeds [0, 1, 2]. GRPO (CP3): from SFT checkpoint
+THE MODEL ARMS. Base `Qwen/Qwen3-VL-8B-Instruct`. SFT (sft_chain): QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train /
+30 test structures, seeds [0, 1, 2]. GRPO (process_reward): from SFT checkpoint
 `V1_s0`, lr 1e-05, KL beta 0.02, group size
 8, 300 steps, 1610 train prompts,
-TRL 1.9.0 GRPOTrainer. A3 (CP12): 3220 examples from
+TRL 1.9.0 GRPOTrainer. A3 (sota_push): 3220 examples from
 1610 structures, 3 epochs, 1206
 steps, final loss 0.1419, 29551 s wall clock.
 AUGMENTATION: 6 extra cameras, disjoint from the 5 frozen eval views — disjoint from the five frozen eval views, which is what
@@ -1157,7 +1158,7 @@ WHAT IS NOT CLAIMED FOR A3. SINGLE-SEED. 139/210 =
 145/210 =
 0.6905 at K=8. It sits INSIDE the reference arm's across-seed
 spread (0.590 / 0.567 / 0.686), exceeding that arm's best seed by ONE structure at K=8 and TRAILING it by
-FIVE at K=3. No improvement over the reference arm is claimed. CP37, the three-seed extension, was CUT;
+FIVE at K=3. No improvement over the reference arm is claimed. a3_seeds, the three-seed extension, was CUT;
 its record holds the quantitative argument that seed variation cannot close the oracle-to-model margin of
 55
 structures, which is the comparison A3 is actually used for.
@@ -1170,13 +1171,13 @@ Mean absolute difference
 0.052. Every headline claim survives
 both runs independently.
 
-CP41'S REFUSAL CASE, whose raw response would be the strongest single argument for the control's validity:
+no_image_control'S REFUSAL CASE, whose raw response would be the strongest single argument for the control's validity:
 **BLOCKED** — not in any checkpoint record; must be measured or the sentence dropped.
 
 ---
 
 ## S7. What the render protocol withholds
-SOURCE: CP31, CP32, CP19
+SOURCE: visibility_corrected_oracle, extraction_operating_point, atom_detection
 
 THE FOUR VISIBILITY CONDITIONS, expansion sample, four views, n = 210:
 
@@ -1194,14 +1195,14 @@ a flat recovery curve is not a plumbing failure. The pre-registered control rule
 the control dominates, and it does.
 
 UNTRIANGULABLE FRACTIONS, PER-SAMPLE REDUNDANT AND INFORMATIVE MEANS, THE AXIS-VERSUS-OBLIQUE RATIO: in
-CP31's `axis_vs_oblique` and `cross_view_recoverability` fields and CP21's record. The axis/oblique
+visibility_corrected_oracle's `axis_vs_oblique` and `cross_view_recoverability` fields and occlusion_redundancy's record. The axis/oblique
 comparison matters because it means every occlusion figure published before that extension was measured on
 the protocol's three worst cameras.
 
 ---
 
 ## S8. Cue sufficiency
-SOURCE: CP15, CP28, CP18, CP35
+SOURCE: box_sufficiency, classifier_refreeze, eval_expansion, stratified_frontier_expansion
 
 Moved here from the main text because the section ended by disclaiming itself.
 
@@ -1229,7 +1230,7 @@ suggestive and establishes nothing.
 ---
 
 ## S9. Generational comparison
-SOURCE: CP36
+SOURCE: generational_comparison
 
 Moved here from the main text because the section ended by disclaiming itself.
 
@@ -1253,7 +1254,7 @@ ONE MODEL PAIR IS A COMPARISON AND NOT A TREND.
 ---
 
 ## S10. Render conventions
-SOURCE: CP54, CP23
+SOURCE: render_convention_sweep, depth_sufficiency
 
 THE ORACLE LEG IS CONCLUSIVE, AND IT REFUTED TWO OF THIS PROJECT'S OWN PREDICTIONS. Off-axis cameras raise
 the ceiling from 0.9524 to
@@ -1279,19 +1280,19 @@ distortion of true depth, so any depth grading must be METRIC-FAITHFUL rather th
 is what justifies that word in any recommendation. Quantization saturates at
 NOT ESTABLISHED - claim withdrawn levels across all four strata, having been stated as four and corrected.
 
-THE 16-COMPARISON TABLE with discordance counts and exact p: CP54's `paired_vs_C1` field.
+THE 16-COMPARISON TABLE with discordance counts and exact p: render_convention_sweep's `paired_vs_C1` field.
 
 ---
 
 ## S11. Classical baselines
-SOURCE: CP28_classifier_refreeze, CP8, CP50
+SOURCE: classifier_refreeze, external_baselines, eval_scaleup
 
 THE SHAPE-FREE FLOOR. Three features — atom count, density, cell volume — deliberately blind to shape.
 Canonical 111/210
 = 0.5286 on the original sample.
 
 THE CELL-METRIC RANDOM FOREST. Ordered 19-feature list, library versions and seed in
-`results/CP28_classifier_refreeze/`. Canonical 188/210 = 0.8952.
+`results/classifier_refreeze/`. Canonical 188/210 = 0.8952.
 ONE FEATURE-SOURCE TRAP IS RECORDED: the features come from the INPUT cell, not the conventionalised cell.
 Feeding conventional cells is off by one structure.
 
@@ -1315,7 +1316,7 @@ SOURCE: project retraction and superseded-results record
 
 Verbatim in `reports/SUPPLEMENTARY_INFORMATION.md` Part II, which carries every checkpoint's finding
 including every withdrawal. Referenced from the reproducibility statement and the AI-use disclosure, and
-from nowhere in the main text. The CP54 power-calculation retraction is among them.
+from nowhere in the main text. The render_convention_sweep power-calculation retraction is among them.
 
 ---
 
@@ -1323,8 +1324,8 @@ from nowhere in the main text. The CP54 power-calculation retraction is among th
 SOURCE: every checkpoint's prereg.md
 
 Verbatim in Part II of `SUPPLEMENTARY_INFORMATION.md`, in numeric checkpoint order, including the ones
-whose outcome CONTRADICTED the registered expectation, the ones that landed BETWEEN branches, CP37's cut
-record and CP10's subsumption record. Of the 53 checkpoints, 27 carry a pre-registration; the
+whose outcome CONTRADICTED the registered expectation, the ones that landed BETWEEN branches, a3_seeds's cut
+record and merged_retrain's subsumption record. Of the 54 checkpoints, 26 carry a pre-registration; the
 rest say so in their own finding text rather than implying one existed.
 
 ---
@@ -1358,30 +1359,30 @@ rather than filling the gap.
 
 ## C1 — the fine-tuned arm
 
-THREE CHECKPOINTS, NOT ONE, AND THE PAPER'S BEST NUMBER COMES FROM CP12.
+THREE CHECKPOINTS, NOT ONE, AND THE PAPER'S BEST NUMBER COMES FROM sota_push.
 
 | checkpoint | what it holds |
 |---|---|
-| `CP2_sft_chain` | the SFT stage: `Qwen/Qwen3-VL-8B-Instruct`, QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train / 30 test structures, seeds [0, 1, 2] |
-| `CP3_process_reward` | GRPO on top of SFT: lr 1e-05, KL beta 0.02, group size 8, 300 steps, 1610 train prompts, TRL 1.9.0 GRPOTrainer, from checkpoint `V1_s0`. Arms {'B3': {'macro': [0.281, 0.3714, 0.381], 'macro_mean': 0.3445, 'macro_sd': 0.045, 'faith': [0.2109, 0.2707, 0.2936], 'faith_mean': 0.2584, 'faith_sd': 0.0349}, 'V2a': {'macro': [0.3571, 0.381, 0.3905], 'macro_mean': 0.3762, 'macro_sd': 0.0141, 'faith': [0.2787, 0.3125, 0.3278], 'faith_mean': 0.3063, 'faith_sd': 0.0205}, 'V2b': {'macro': [0.3857, 0.3857, 0.3857], 'macro_mean': 0.3857, 'macro_sd': 0.0, 'faith': [0.2744, 0.3106, 0.3133], 'faith_mean': 0.2994, 'faith_sd': 0.0177}} |
-| `CP12_sota_push` | THE CITED ARM (A3). 139/210 = 0.6619 at K=3, Wilson95 [0.5955, 0.7225], 1 seed |
+| `sft_chain` | the SFT stage: `Qwen/Qwen3-VL-8B-Instruct`, QLoRA 4bit nf4, r16, 3 epochs, lr1e-4, 115 train / 30 test structures, seeds [0, 1, 2] |
+| `process_reward` | GRPO on top of SFT: lr 1e-05, KL beta 0.02, group size 8, 300 steps, 1610 train prompts, TRL 1.9.0 GRPOTrainer, from checkpoint `V1_s0`. Arms {'B3': {'macro': [0.281, 0.3714, 0.381], 'macro_mean': 0.3445, 'macro_sd': 0.045, 'faith': [0.2109, 0.2707, 0.2936], 'faith_mean': 0.2584, 'faith_sd': 0.0349}, 'V2a': {'macro': [0.3571, 0.381, 0.3905], 'macro_mean': 0.3762, 'macro_sd': 0.0141, 'faith': [0.2787, 0.3125, 0.3278], 'faith_mean': 0.3063, 'faith_sd': 0.0205}, 'V2b': {'macro': [0.3857, 0.3857, 0.3857], 'macro_mean': 0.3857, 'macro_sd': 0.0, 'faith': [0.2744, 0.3106, 0.3133], 'faith_mean': 0.2994, 'faith_sd': 0.0177}} |
+| `sota_push` | THE CITED ARM (A3). 139/210 = 0.6619 at K=3, Wilson95 [0.5955, 0.7225], 1 seed |
 
 BASE MODEL: `Qwen/Qwen3-VL-8B-Instruct`. ADAPTER: QLoRA 4-bit nf4, rank 16, lr 1e-4 for SFT; GRPO then runs on the SFT
 checkpoint at lr 1e-5 with KL beta 0.02.
-TRAINING SET CONSTRUCTION (CP12): 3220 examples from 1610 structures,
+TRAINING SET CONSTRUCTION (sota_push): 3220 examples from 1610 structures,
 3 epochs, 1206 steps, final loss 0.1419, 29551s wall clock. Augmentation is
 "6 extra cameras, disjoint from the 5 frozen eval views" — the six extra cameras are DISJOINT from the five frozen eval views,
 which is what stops the augmentation leaking the eval protocol.
 RESOLUTION IS READ, NOT ASSUMED: max_pixels 589824, 576 visual tokens per view,
-"read from the live processor, not a formula". CP0c found the deployed config differed from the documented one by 3.408x in
+"read from the live processor, not a formula". resolution_audit found the deployed config differed from the documented one by 3.408x in
 area, which is why this is read from the live processor.
 COMPOSITION-EXCLUSION GUARANTEE: no chemical composition in any evaluation set appears in training. This is
-enforced at dataset construction and re-verified in CP50, whose leakage audit reports 0 overlap with the
+enforced at dataset construction and re-verified in eval_scaleup, whose leakage audit reports 0 overlap with the
 1610-structure training set and 0 with both earlier evaluation samples.
 THE NUMBER THE PAPER USES: 0.6905 at K=8, against the oracle's 0.9524, paired per structure,
 discordance 61:6, p = 1.5e-12.
 CAVEAT YOU SHOULD CARRY INTO S6: A3 IS SINGLE-SEED and sits inside the reference arm's own across-seed
-spread (B1: 0.590 / 0.567 / 0.686). CP37 was the three-seed extension and was CUT — see its finding for the
+spread (B1: 0.590 / 0.567 / 0.686). a3_seeds was the three-seed extension and was CUT — see its finding for the
 quantitative argument that seed variation cannot close a 55-structure margin. Report A3 as a point
 estimate with no error bar, which is what the manuscript does.
 
@@ -1392,25 +1393,25 @@ questions, which is why the package states them as "13 of a pre-registered 14".
 THE UNSCORED ENTRY IS `moonshotai/kimi-k2.6`, under the ENDPOINT-FAILURE gate, not the error-rate gate. The
 recorded reason: it hangs indefinitely, with no response on a 2-structure K=1 probe after 10 minutes, so the
 failure is the model endpoint rather than the harness. It is reported UNSCORED rather than dropped.
-A SEPARATE ROSTER EXISTS FOR CP41 and it has its own accounting: 16 attempted,
+A SEPARATE ROSTER EXISTS FOR no_image_control and it has its own accounting: 16 attempted,
 13 scored, 3 unscored under the pre-registered 5% API-error gate. Do not merge the two
-rosters — CP26 is the zero-shot leaderboard and CP41 is the no-image control.
+rosters — model_sweep is the zero-shot leaderboard and no_image_control is the no-image control.
 
-## C3 — do CP53, CP58 and CP60 exist
+## C3 — do rung_R3_coords_as_text, perception_transplant and length_control exist
 
 | checkpoint | exists | results.json | prereg | finding |
 |---|---|---|---|---|
-| CP53_rung_R3_coords_as_text | YES | yes | yes | yes |
-| CP58_perception_transplant | YES | yes | yes | yes |
-| CP60 (length control) | NO | — | — | — |
+| rung_R3_coords_as_text | YES | yes | yes | yes |
+| perception_transplant | YES | yes | yes | yes |
+| length_control (length control) | NO | — | — | — |
 
-CP53 AND CP58 ARE COMPLETED CHECKPOINTS. They were proposed as new work and then run; that is why the draft
+rung_R3_coords_as_text AND perception_transplant ARE COMPLETED CHECKPOINTS. They were proposed as new work and then run; that is why the draft
 already contains the R3 condition and the fabrication result.
-CP60 DOES NOT EXIST AND DOES NOT NEED TO. The length control it proposes is already inside CP53, under the
+length_control DOES NOT EXIST AND DOES NOT NEED TO. The length control it proposes is already inside rung_R3_coords_as_text, under the
 key `prompt_length`: the geometry prompts are SHORTER than the five-image prompts they outperform, which is
-the confound CP60 was meant to rule out. CP53 also carries a `control_pair` block — formula-only against
+the confound length_control was meant to rule out. rung_R3_coords_as_text also carries a `control_pair` block — formula-only against
 full geometry — which is what makes the lift attributable to the geometry rather than to text-mode
-prompting. Writing CP60 would duplicate both.
+prompting. Writing length_control would duplicate both.
 
 ## C4 — the n=1933 model budget
 
@@ -1423,7 +1424,7 @@ NOT AFFORDABLE AT FULL ROSTER, AFFORDABLE AS A CORE SUBSET. At the measured thro
 | 500-structure core x 13 models x K=3 | 19,500 | 11.7 h |
 | 500-structure core x 4 strong models x K=3 | 6,000 | 3.6 h |
 
-The tiering was pre-registered in CP50 exactly for this: oracle and classical baselines on the FULL sample
+The tiering was pre-registered in eval_scaleup exactly for this: oracle and classical baselines on the FULL sample
 because they are free, model arms on a 500-structure core if run at all. WRITE THE LIMITATION AS A STATED
 COST DECISION: the oracle and both classical baselines are complete at n=1933; the model arms are not, so
 every model number rests on n=210 and the ceiling-to-model gap at scale is bounded on the oracle side only.
@@ -1450,7 +1451,7 @@ THE PROMPTS ARE NOW IN THE RELEASE; THEY WERE MISSING UNTIL THIS AUDIT. `release
 carries three labelled entries: the main zero-shot prompt, `CP58_extraction_strong_model` (462 chars, with
 the symmetry question deliberately withheld so the extraction cannot leak an answer), and
 `CP58_answer_weak_model`.
-THE RAW OUTPUTS ARE A REAL GAP AND I WILL NOT PRETEND OTHERWISE. `CP58/a3_raw.json` retains 210 records with
+THE RAW OUTPUTS ARE A REAL GAP AND I WILL NOT PRETEND OTHERWISE. `perception_transplant/a3_raw.json` retains 210 records with
 fields ['correct', 'emitted', 'material_id', 'n_atoms_emitted', 'pred', 'truth', 'votes'] — the PARSED coordinate lists, the vote records, and
 the per-structure verdict. IT DOES NOT RETAIN THE VERBATIM MODEL TEXT. The harness parsed each response into
 the `emitted` array and discarded the original string.
@@ -1460,7 +1461,7 @@ median recall 0.0 against ground truth with 105 of 206 structures having not one
 tolerance. A reader can see a well-formed coordinate list beside the true structure and check the mismatch
 themselves.
 WHAT IT CANNOT SAY: nothing about the model's prose, its stated confidence, or its reasoning around the
-list. If S5 needs verbatim examples, CP58 must be re-run with response text retained — that is 210 calls to
+list. If S5 needs verbatim examples, perception_transplant must be re-run with response text retained — that is 210 calls to
 one strong model, roughly 8 minutes, and it is the cheapest outstanding item in the package.
 
 ## C7 — figure sources and gate coverage
@@ -1469,12 +1470,12 @@ THREE OF THE SIX MANUSCRIPT FIGURES REGENERATE FROM CHECKPOINT RECORDS BY SCRIPT
 
 | figure | script | reads |
 |---|---|---|
-| `noimage.png` | `scripts/figures/make_fig3_noimage.py` | CP41 results.json |
-| `cuesuff.png` | `scripts/figures/make_fig4_cuesuff.py` | CP35 results.json |
-| `generational.png` | `scripts/figures/make_fig5_generational.py` | CP36 results.json |
-| `ladder.png` | none — produced inside CP53's analysis run | source data in results/ |
-| `leaderboard.png` | none — produced inside CP26's analysis run | source data in results/ |
-| `conditions.png` | none — produced inside CP31's analysis run | source data in results/ |
+| `noimage.png` | `manuscript/codes/make_fig3_noimage.py` | no_image_control results.json |
+| `cuesuff.png` | `manuscript/codes/make_fig4_cuesuff.py` | stratified_frontier_expansion results.json |
+| `generational.png` | `manuscript/codes/make_fig5_generational.py` | generational_comparison results.json |
+| `ladder.png` | none — produced inside rung_R3_coords_as_text's analysis run | source data in results/ |
+| `leaderboard.png` | none — produced inside model_sweep's analysis run | source data in results/ |
+| `conditions.png` | none — produced inside visibility_corrected_oracle's analysis run | source data in results/ |
 
 The three scripted figures reproduce byte-for-byte, which `scripts/validate_package.py` check 7 enforces by
 regenerating each and comparing MD5.
@@ -1532,15 +1533,15 @@ one-submission cap is a cycle-level planning decision above this package.
 
 # PART IV — COMPLETE CHECKPOINT RECORD
 
-## CP0_pipeline
+## pipeline
 
-BACKED BY: `results/CP0_pipeline/results.json`, `results/CP0_pipeline/results_ci.json`
+BACKED BY: `results/pipeline/results.json`, `results/pipeline/results_ci.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP0_pipeline          GAP: premise for all          STATUS: done (human-solvability component deferred to E0.5)
+CHECKPOINT: pipeline          GAP: premise for all          STATUS: done (human-solvability component deferred to E0.5)
 
 METHOD DONE: Built the render and step-label pipelines and audited stratified
 samples from BOTH sources (Materials Project + JARVIS-DFT), balanced across the 7
@@ -1601,7 +1602,7 @@ conservative" was WRONG and is retracted. The correct, verified statement:
   mp-862982 R-3c#167->C2/c#15 (rhombohedral->monoclinic pseudosymmetry); JVASP-28565
   P3m1#156->Cm#8 (Janus-TMD 3-fold broken by mixed W/Mo + chalcogen occupancy).
 
-FROZEN LABELING POLICY (decided at CP0, not to be re-litigated downstream):
+FROZEN LABELING POLICY (decided at pipeline, not to be re-litigated downstream):
 keep_for_training = (neighborhood_stable AND source_agrees). Carry the
 production-tolerance (canonical) label; quarantine ONLY structures that are unstable
 inside the production neighborhood OR whose canonical label disagrees with the source
@@ -1631,7 +1632,7 @@ condition specifies a 50-structure human-expert check. Only a 7-image montage
 spot-check was run here (crystal system reads cleanly from conventional-cell
 geometry across all 7 systems). The full 50-sample study is NOT done — it is
 DEFERRED to E0.5, which runs both a tool-oracle recovery study and a 50-structure
-crystallographer study on the same renders. This CP0 component is therefore
+crystallographer study on the same renders. This pipeline component is therefore
 partially deferred, not cleared.
 
 INTERPRETATION: The shared infrastructure is validated on its verifiable
@@ -1671,15 +1672,15 @@ SURPRISE / BUGS FOUND IN VERIFICATION:
 ```
 
 
-## CP0b_identifiability
+## identifiability
 
-BACKED BY: `results/CP0b_identifiability/results.json`
+BACKED BY: `results/identifiability/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP0b_identifiability   GAP: premise for flagship label   STATUS: done (Gate 0 provisional pending human arm)
+CHECKPOINT: identifiability   GAP: premise for flagship label   STATUS: done (Gate 0 provisional pending human arm)
 
 METHOD DONE: Tool-oracle identifiability study. For a stratified sample of 280
 structures (140 Materials Project + 140 JARVIS-DFT, 20 per crystal system per
@@ -1702,11 +1703,11 @@ RESULT DONE: Oracle recovery (micro), ideal extraction, by view count:
    4 views      93.6%       91.4%      90.7%        98.9%
    5 views      93.9%       91.8%      91.1%        99.6%
 TABLE REFRESHED FROM THE CURRENT results.json (2026-07-29). The harness was rerun to record the
-box-sufficiency classification per row for CP24, which also added the 5-view column. The original
+box-sufficiency classification per row for oracle_stratified, which also added the 5-view column. The original
 table read 73.9 / 90.7 / 93.2% at 2/3/4 views; the rerun reads 74.3 /
 91.4 / 93.6%. The differences are 1-2 structures out of 280
 and arise because the harness draws from a LIVE database, so the seed fixes draw order but not the
-candidate pool — the non-reproducibility recorded in CP22 applies here too. These rates match CP22's
+candidate pool — the non-reproducibility recorded in oracle_view_curve applies here too. These rates match oracle_view_curve's
 independently computed curve to 4 decimal places at all four view counts.
 Space-group macro-F1 at 4 views = 0.80 (crystal-system macro-F1 = 0.93). Recovery
 rises steeply with view count (SG 40.7 -> 73.9 -> 91.1%), confirming the full 4-view
@@ -1750,7 +1751,7 @@ SURPRISE: The rhombohedral setting is the single systematic failure mode — not
 low-symmetry cells in general (triclinic recovers at 95%). Perfectly reconstructed
 rhombohedral structures (counts exact) are assigned a lower monoclinic/triclinic
 setting by spglib on the reconstruction, the same trigonal/hexagonal-family ambiguity
-CP0 flagged, now localized specifically to R-centered groups (8 of 9 with exact atom
+pipeline flagged, now localized specifically to R-centered groups (8 of 9 with exact atom
 counts; 1, mp-1229124, is instead a genuine over-triangulation, 60 vs 48 atoms). Also: the naive
 "noise arm = identifiability under imperfect vision" framing was wrong — it measured
 the triangulator, not the renders; caught by diagnosing that atom counts matched
@@ -1797,9 +1798,9 @@ checkability framing still requires the human study and must be dropped if that 
 ```
 
 
-## CP0c_resolution_audit
+## resolution_audit
 
-BACKED BY: `results/CP0c_resolution_audit/results.json`, `results/CP0c_resolution_audit/budget_both_res.json`
+BACKED BY: `results/resolution_audit/results.json`, `results/resolution_audit/budget_both_res.json`
 
 
 ### prereg.md
@@ -1809,13 +1810,13 @@ BACKED BY: `results/CP0c_resolution_audit/results.json`, `results/CP0c_resolutio
 # Written and committed BEFORE any re-eval number was produced.
 
 ## THE CONFOUND (verified from the live processor, not from formula)
-Every CoCr run to date (E1, E2, E3, CP1b, CP9) used max_pixels=200704. Measured on the box
+Every CoCr run to date (E1, E2, E3, exclusion_baselines, calibration) used max_pixels=200704. Measured on the box
 with the actual Qwen3-VL processor on a real 768x768 render:
 
   image_grid_thw          = [1, 26, 26] patches
   patch_size / merge_size = 16 / 2   (=> 32 px per emitted visual token)
   EFFECTIVE PIXELS        = 416 x 416
-  visual tokens per view  = 169   (the 171 quoted in CP1b included 2 delimiter tokens)
+  visual tokens per view  = 169   (the 171 quoted in exclusion_baselines included 2 delimiter tokens)
   downsample vs 768px     = 1.846x linear, 3.408x in AREA
 
 So the models never saw the 768x768 renders we designed and validated; they saw 416x416.
@@ -1850,9 +1851,9 @@ observed arm SD), and report geometry-step movement against its own spread.
 
   (i)  ANY arm's accuracy OR geometry-step correctness moves UP by > 0.05
        => RESOLUTION IS A CONFOUND in every perception claim. Actions: rerun the affected
-          evals at native resolution; annotate ALL prior findings (CP1, CP2, CP3, CP1b, CP9)
+          evals at native resolution; annotate ALL prior findings (zeroshot, sft_chain, process_reward, exclusion_baselines, calibration)
           with the effective resolution they were measured at; and explicitly reconsider
-          whether CP2's geometry FABRICATION finding partially reflects cell edges that were
+          whether sft_chain's geometry FABRICATION finding partially reflects cell edges that were
           unreadable at 416px rather than a pure grounding failure.
   (ii) Movement DOWN by > 0.05 => record as "confounded by train/test mismatch; not
           resolvable without retraining"; do NOT claim resolution is excluded.
@@ -1866,7 +1867,7 @@ Every future results.json carries an `effective_resolution` block:
 read from the live processor, never computed by formula.
 
 ## KNOWN DOWNSTREAM CORRECTION (independent of the outcome)
-CP1b's budget accounting used 171 visual tokens/view and 938 prefill tokens/sample. The
+exclusion_baselines's budget accounting used 171 visual tokens/view and 938 prefill tokens/sample. The
 correct current-config numbers are 169 tokens/view and the same 938 measured prefill (the
 delimiters are real prompt tokens, so the prefill total stands; only the attribution changes).
 At native resolution prefill becomes ~2973 tokens/sample, which CHANGES the FLOPs ratio
@@ -1877,7 +1878,7 @@ between B1 and the chain arms and must be recomputed if native resolution is ado
 ### finding.md
 
 ```
-CHECKPOINT: CP0c_resolution_audit     GAP: were all perception claims measured at a resolution
+CHECKPOINT: resolution_audit     GAP: were all perception claims measured at a resolution
                                             that could support them?
 STATUS: DONE for all three arms (B1, V2b, V1 — seed 0 each; V1 and V1_s0 rows are in
         results.json under results_like_for_like_per_seed). The earlier header said the V1
@@ -1891,10 +1892,10 @@ without retraining at native resolution".
 Measured from the live processor on a real 768x768 render, and independently confirmed in the
 harness code (scripts/eval_e3.py:46, --max-pixels default 200704):
 
-  max_pixels used in EVERY run to date (E1, E2, E3, CP1b, CP9): 200704
+  max_pixels used in EVERY run to date (E1, E2, E3, exclusion_baselines, calibration): 200704
   image_grid_thw = [1, 26, 26] patches; patch_size 16, merge_size 2 (=> 32 px per visual token)
   EFFECTIVE PIXELS SEEN BY THE MODEL:  416 x 416      (not 768 x 768)
-  visual tokens per view: 169     (CP1b quoted 171; the extra 2 were image delimiters)
+  visual tokens per view: 169     (exclusion_baselines quoted 171; the extra 2 were image delimiters)
   downsample vs the designed renders: 1.846x linear, 3.408x IN AREA
   native 768x768 requires max_pixels >= 589824 -> grid 48x48 -> 576 tokens/view
     (values above 589824 buy nothing; the render is the ceiling)
@@ -1939,7 +1940,7 @@ WHAT CAN BE SAID:
     accuracy (-0.014) and faithfulness (-0.005). This is meaningful evidence that the chain
     arms' weak geometry was NOT primarily caused by unreadable cell edges at 416px — the
     information they were failing to use was already present at the lower resolution.
-  - Therefore the CP2 geometry-FABRICATION diagnosis is NOT overturned by this audit. It is not
+  - Therefore the sft_chain geometry-FABRICATION diagnosis is NOT overturned by this audit. It is not
     fully vindicated either (V1 pending, single seed), but the resolution explanation for it is
     now the LESS likely one.
   - No prior conclusion is retracted on the basis of this audit.
@@ -1979,7 +1980,7 @@ REPRODUCE
 Both candidate sentences were written BEFORE the numbers existed (geometry_step_prereg.md).
 The data picked reading (b), and a follow-up test made it sharper than the pre-registered form.
 
-V2b seed 0, same 210 structures, geometry-STEP accuracy scored against CP0 truth:
+V2b seed 0, same 210 structures, geometry-STEP accuracy scored against pipeline truth:
     @ max_pixels 200704 (416x416):  0.6349
     @ max_pixels 589824 (768x768):  0.6476
     DELTA = +0.0127          -> FLAT (|delta| <= 0.05) -> pre-registered branch (ii)
@@ -2012,7 +2013,7 @@ better a direction than, changing the random seed. The mean improvement from mor
  than changing the random seed does: 53% of per-structure scores move, but symmetrically
  (58 up, 53 down, sign-test z = 0.47) and with a net effect (+0.013) smaller than seed-to-seed
  drift (+0.021). The step is responsive to the image without being informed by it — which is
- the fabrication signature, and is why the CP2 diagnosis survives the resolution audit."
+ the fabrication signature, and is why the sft_chain diagnosis survives the resolution audit."
 
 ## WHY THIS IS THE STRONGER RESULT
 It converts a null (nothing improved) into positive mechanistic evidence: genuine measurement
@@ -2022,21 +2023,21 @@ because if the chain were reading available information, more of it should have 
 directionally. It did not.
 
 CAVEATS: single seed at native resolution (V2b_s0), single arm; the native run is also
-train/test resolution-mismatched (CP0c branch (ii)), which could suppress a real gain. The
+train/test resolution-mismatched (resolution_audit branch (ii)), which could suppress a real gain. The
 noise-floor comparison partly controls for that by using a same-resolution reseed as the
 yardstick, but a native-TRAINED model is still the clean test (queued in the merged retrain).
 ```
 
 
-## CP1_zeroshot
+## zeroshot
 
-BACKED BY: `results/CP1_zeroshot/results.json`, `results/CP1_zeroshot/legible_reprobe.json`, `results/CP1_zeroshot/decomp_base_perstructure.json`, `results/CP1_zeroshot/sample.json`, `results/CP1_zeroshot/anon_base_perstructure.json`, `results/CP1_zeroshot/nondeterminism_passes.json`
+BACKED BY: `results/zeroshot/results.json`, `results/zeroshot/legible_reprobe.json`, `results/zeroshot/decomp_base_perstructure.json`, `results/zeroshot/sample.json`, `results/zeroshot/anon_base_perstructure.json`, `results/zeroshot/nondeterminism_passes.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP1_zeroshot          GAP: G1          STATUS: done (Gate 1 = CLEARS, certified via element-anonymized control)
+CHECKPOINT: zeroshot          GAP: G1          STATUS: done (Gate 1 = CLEARS, certified via element-anonymized control)
 
 PROVENANCE OF THE DECISION RULE (deviation from the pasted verification checklist, recorded
 for audit): the pasted follow-up doc (pasted-text-2026-07-23) item 2 mandated a post-cutoff
@@ -2053,7 +2054,7 @@ asymmetric rule.
 
 [Numbers below are the CORRECTED set. The original pre-correction numbers are preserved
 verbatim in results.json -> "pre_correction_summary" and in finding_precorrection_snapshot.md.
-Corrections applied per CP1 verification follow-ups: denominators fixed at n=70 with parse
+Corrections applied per zeroshot verification follow-ups: denominators fixed at n=70 with parse
 failures scored as errors; paired McNemar + exact binomial statistics added; element-anonymized
 primary control added; overclaims softened.]
 
@@ -2064,7 +2065,7 @@ Gemini 3.6-flash) via OpenRouter, on a stratified held-out sample of 70 structur
 reading, space-group top-k (k=5), coordination number. View-count sweep {1,3,5}. Exactly
 8,400 queries (5 models x 1,680 = 4 tasks x 3 views x 2 styles x 70 structures;
 results.jsonl verified complete: 8,400 rows, 0 malformed, 0 duplicate cell keys,
-1,680/model) scored deterministically against CP0 labels via a required ANSWER: line.
+1,680/model) scored deterministically against pipeline labels via a required ANSWER: line.
 Denominator is FIXED at 70 for every model/condition; api_fail or empty/unparseable
 cells count as INCORRECT (not dropped). Re-query protocol (uniform for all models):
 reasoning models (GPT-5.6, Gemini 3.6) exhausted low token budgets before the answer;
@@ -2188,7 +2189,7 @@ date-based control is needed to disambiguate.
 ### finding_precorrection_snapshot.md
 
 ```
-CHECKPOINT: CP1_zeroshot          GAP: G1          STATUS: done (Gate 1 = CLEARS, after decomposing the contamination control)
+CHECKPOINT: zeroshot          GAP: G1          STATUS: done (Gate 1 = CLEARS, after decomposing the contamination control)
 
 METHOD DONE: Zero-shot symmetry-perception probe (no training) of the open base model
 Qwen3-VL-8B plus four current-frontier VLMs (GPT-5.6-pro, Claude Opus 4.8, Grok 4.5,
@@ -2198,7 +2199,7 @@ reading, space-group top-k (k=5), coordination number. View-count sweep {1,3,5} 
 the frozen render set. Contamination control: the SAME structures re-rendered with
 rotated cameras + restyled palette/radii ("perturbed"); the canonical-minus-perturbed
 accuracy gap estimates memorization of standard MP/web visualization conventions.
-~8,200 model queries, scored deterministically against CP0 labels via a required
+~8,200 model queries, scored deterministically against pipeline labels via a required
 ANSWER: line. (Reasoning-heavy frontier models — GPT-5.6, Gemini 3.6 — needed a raised
 token budget; low budgets truncated before the answer and were re-queried.)
 
@@ -2262,9 +2263,9 @@ is not what this task rewards.
 ```
 
 
-## CP1b_exclusion_baselines
+## exclusion_baselines
 
-BACKED BY: `results/CP1b_exclusion_baselines/results.json`
+BACKED BY: `results/exclusion_baselines/results.json`
 
 
 ### prereg.md
@@ -2326,7 +2327,7 @@ the CoCr V1->GRPO lineage and for the observed termination fix (SFT-V1 reached [
 ### finding.md
 
 ```
-CHECKPOINT: CP1b_exclusion_baselines     GAP: does the accuracy story survive OOD chemistry?
+CHECKPOINT: exclusion_baselines     GAP: does the accuracy story survive OOD chemistry?
 STATUS: DONE — B1-direct (3 seeds) AND SFT-V1 (3 seeds) both complete.
 BRANCH TAKEN: (a) — B1 HOLDS. THE ACCURACY STORY IS DEAD.
 PRE-REGISTERED HYPOTHESIS: REFUTED.
@@ -2386,7 +2387,7 @@ reproduce. Candidate reasons (untested, listed as hypotheses not conclusions):
     task actually depends on. This is the most likely explanation and it is a limitation of
     our split design, not evidence against 2501.17161.
   - Chu et al.'s RL arms were trained to convergence on the task reward; our GRPO arms ran
-    300 steps from a weak SFT checkpoint and never exceeded it on accuracy at all (see CP3).
+    300 steps from a weak SFT checkpoint and never exceeded it on accuracy at all (see process_reward).
     Our comparison is therefore not the comparison their claim is about.
   - B1's target is a 4-8 token label mapping — the easiest possible thing to fit and the
     least likely to be destabilized by distribution shift in a nuisance variable.
@@ -2396,15 +2397,15 @@ reproduce. Candidate reasons (untested, listed as hypotheses not conclusions):
    for buying more compute. Per the item-4 gate, only branch (b) PLUS a growing eval gap
    justified the full rental; branch (a) removes half that condition before the probe runs.
 2. THE PAPER'S CLAIM must be verifiability / faithfulness / test-time scaling, NOT
-   accuracy. The defensible CoCr claims after CP1b + CP3 + CP9 are:
-     - process-verified rewards beat outcome-only on chain faithfulness (CP3 Gate 2, V2b)
+   accuracy. The defensible CoCr claims after exclusion_baselines + process_reward + calibration are:
+     - process-verified rewards beat outcome-only on chain faithfulness (process_reward Gate 2, V2b)
      - dense verification prevents the DAPO zero-advantage pathology (~2% vs ~49% silent
        groups) — a training-dynamics result independent of final accuracy
      - dense verification partially mitigates RLVR calibration degeneration, by hedging
-       (CP9: ECE 0.573 -> 0.493)
+       (calibration: ECE 0.573 -> 0.493)
      - an answer-INDEPENDENT verifiable step predicts final correctness at AUC ~0.81, well
        above the model's own confidence (~0.62) — the E7 reranking premise
-   NONE of these require the chain to be the most accurate predictor, and CP1b now says
+   NONE of these require the chain to be the most accurate predictor, and exclusion_baselines now says
    plainly that it is not.
 3. AN HONEST HEADLINE THE DATA SUPPORTS: on this task a direct image->label mapping is the
    accuracy-optimal model, and the value of the verified chain is that it is CHECKABLE, not
@@ -2474,394 +2475,15 @@ REPRODUCE
 ```
 
 
-## CP1c_prototype_exclusion
+## sft_chain
 
-BACKED BY: `results/CP1c_prototype_exclusion/results.json`
-
-
-### prereg.md
-
-```
-# PRE-REGISTRATION — structure-prototype-exclusion split (the arbiter of the B1 memorization headline)
-# Written and committed BEFORE any evaluation was run on this split.
-
-## WHY THIS SPLIT EXISTS
-CP1b took branch (a): B1-direct held at 0.6143 on the composition-exclusion split (vs IID
-0.711), refuting the pre-registered SFT-memorizes/RL-generalizes prediction. CP1b's own
-refutation note names the likely reason: composition-exclusion withholds ELEMENTS, not the
-lattice geometry the task actually depends on, so it is OOD in chemistry while plausibly IID
-in the decisive feature. This split tests that explanation directly.
-
-## THE SPLIT (built and verified; data/e3proto/)
-Prototype definition (AFLOW-style, deterministic, no external DB needed — computed from the
-existing sidecar): (space group number, anonymized reduced stoichiometry, sorted per-element
-Wyckoff (multiplicity, letter) multiset). Element identities are ANONYMIZED so isostructural
-compounds (NaCl / KBr) share a prototype — the point is to withhold the ARRANGEMENT.
-
-  structures 1820 -> 883 distinct prototypes (613 singletons = 33.7% of structures)
-  train 1610 / eval 210, whole prototype classes assigned to eval
-  eval balance: 30 per crystal system, all 7 systems (exactly matching data/e3)
-  prototype overlap train n eval = 0        (VERIFIED)
-  eval-only elements = 0                    (VERIFIED — chemistry held constant BY DESIGN)
-  renders reused from data/e3/renders (identical per material_id, same frozen view set)
-  seed 23 (same as the composition-exclusion split)
-
-This is the CONTROLLED COMPLEMENT of data/e3: same sizes, same balance, same renders, same
-labels — one withholds chemistry, the other withholds geometry.
-
-## WHAT WILL BE RUN
-The full CP1b table on the prototype-exclusion eval set, same protocol as everywhere else
-(3-sample majority vote, temp 0.7, 512 max new tokens): B1, SFT-V1, B3, V2a, V2b.
-NOTE: these checkpoints were TRAINED on the composition-exclusion train set, which overlaps
-the prototype-exclusion TRAIN ids only partially. This is an EVALUATION-ONLY probe of the
-existing checkpoints, not a retrained comparison — see the caveat below, which is why the
-decision rule is written on B1's DROP rather than on absolute cross-split levels.
-
-## DECISION RULE (pre-registered)
-Reference: B1 composition-exclusion 0.6143 +/- 0.0515 (seed SD). Movement threshold 0.05
-(the largest observed arm SD), consistent with CP0c.
-
-  (i)  B1 COLLAPSES under prototype exclusion (drops > 0.05, i.e. <= ~0.56) WHILE the chain
-       arms hold (within 0.05 of their composition-exclusion values)
-       => the memorization story PARTIALLY REVIVES. Report BOTH splits side by side; state
-          explicitly that B1's robustness is chemistry-specific and does not extend to unseen
-          structural arrangements. The legibility-tax frame then carries a second finding:
-          the tax is smaller (or reverses) on geometry-OOD data.
-  (ii) B1 HOLDS (within 0.05 of 0.6143)
-       => the CP1b robustness finding STRENGTHENS and the legibility-tax frame carries alone.
-          The "composition-exclusion is IID in the decisive feature" explanation is then NOT
-          sufficient, and we must say so.
-  (iii) ALL arms drop together (> 0.05)
-       => the split is simply harder for everyone; report as a difficulty shift, NOT as
-          evidence about memorization, and compare arm ORDERING rather than levels.
-
-## CAVEAT FIXED IN ADVANCE (so it cannot be reported selectively)
-The checkpoints were trained on data/e3's train split. Some prototype-exclusion EVAL
-structures were therefore SEEN IN TRAINING (they sit in data/e3 train). That means this probe
-UNDERSTATES any prototype-exclusion effect: it is a lower bound on the true geometric-OOD
-drop. A clean test requires retraining on data/e3proto/train, which is deferred and explicitly
-NOT claimed here. The number of eval ids that appear in data/e3's train split will be counted
-and reported alongside the result.
-```
+BACKED BY: `results/sft_chain/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP1c_prototype_exclusion     GAP: is B1's OOD robustness chemistry-specific?
-STATUS: DONE as a no-retrain stratified probe (double-OOD subset). The full retrained
-prototype-exclusion comparison is BUILT but NOT RUN (see "what was NOT done").
-RESULT: pre-registered BRANCH (iii) — ALL ARMS DROP TOGETHER. This is a DIFFICULTY SHIFT and
-the pre-registration FORBIDS reading it as evidence about memorization. The probe therefore
-DOES NOT arbitrate the CP1b question; only arm ORDERING may be compared.
-
-[CORRECTION — this record originally claimed BRANCH (ii) "B1 HOLDS" and drew the
- memorization-relevant conclusions that branch (iii) forbids. That was WRONG against my own
- pre-registered rule: branch (ii) required B1 to hold WITHIN 0.05 and B1's drop is 0.0560,
- which EXCEEDS 0.05. All four arms exceed the threshold (B1 -0.0560, B3 -0.0633,
- V2a -0.1232, V2b -0.1287), which is exactly the condition branch (iii) defines. I had noted
- in prose that B1's drop sat "right at the threshold" and then resolved the ambiguity toward
- the conclusion I preferred — the precise failure the pre-registration exists to prevent.
- Pre-correction text preserved in finding_prebranchfix_snapshot.md.]
-
-=================  WHY THIS CHECKPOINT EXISTS  =================
-CP1b took branch (a) (B1-direct 0.6143 on composition-exclusion vs 0.711 IID), refuting the
-SFT-memorizes/RL-generalizes prediction. CP1b's own refutation note offered the leading
-explanation: composition-exclusion withholds ELEMENTS, not the lattice geometry the task
-depends on, so it may be OOD in chemistry while IID in the decisive feature. CP1c tests that.
-
-=================  WHAT WAS BUILT  =================
-data/e3proto/ — a structure-PROTOTYPE-exclusion split, the controlled complement of data/e3.
-Prototype key (AFLOW-style, deterministic, computed from the existing sidecar — no external
-database): (space group number, anonymized reduced stoichiometry, sorted per-element Wyckoff
-(multiplicity, letter) multiset). Element identities ANONYMIZED so isostructural compounds
-(NaCl / KBr) share a prototype; the split therefore withholds the ARRANGEMENT.
-  1820 structures -> 883 distinct prototypes (613 singletons = 33.7% of structures)
-  train 1610 / eval 210, whole prototype classes assigned to eval
-  eval balanced 30 per crystal system, all 7 systems (matching data/e3 exactly)
-  prototype overlap train n eval = 0     VERIFIED
-  eval-only elements = 0                 VERIFIED (chemistry held constant BY DESIGN)
-  renders reused (identical per material_id), seed 23, sidecar reused
-
-Structures were re-fetched by material_id to build this (data/e3/structures.json, 1820 CIFs)
-and AUDITED against the sidecar by the CP0 method: 1820/1820 reproduce the recorded
-crystal_system AND space-group number (rate 1.0, 0 mismatch, 0 missing). So the structures
-used for prototyping are provably the ones the VLM was labelled against.
-
-=================  A BLOCKER FOUND, AND WHY THE PROBE CHANGED SHAPE  =================
-Evaluating the EXISTING checkpoints on data/e3proto/eval would be close to meaningless:
-189/210 (90.0%) of that eval set sits in data/e3's TRAIN split, i.e. the checkpoints were
-trained on it. Only 21/210 were never trained on, and those 21 are severely unbalanced
-(1 cubic, 6 hexagonal, 2 monoclinic, 1 orthorhombic, 2 tetragonal, 5 triclinic, 4 trigonal).
-Running the CP1b table there would mostly measure memorization of SEEN structures — the
-opposite of the intended test. This is logged rather than worked around.
-
-INSTEAD, a valid no-retrain probe exists in the data we already have: of data/e3's 210 eval
-structures, 83 have a PROTOTYPE that is also absent from data/e3's train split. Those 83 are
-simultaneously composition-OOD (unseen element, by the split's construction) AND
-prototype-OOD (unseen arrangement) with respect to what the checkpoints actually trained on.
-This "DOUBLE-OOD subset" needs zero new generation — it is a stratified re-scoring of the
-CP1b and CP3 predictions already in hand.
-  subset per-system: hexagonal 8, monoclinic 17, orthorhombic 9, tetragonal 12,
-                     triclinic 21, trigonal 16, cubic 0.
-  NOTE: unbalanced and contains NO cubic structures, so it is a STRATIFIED RE-ANALYSIS, not
-  a replacement for the balanced split. Cubic is the easiest system, and its absence lowers
-  all arms' absolute numbers — which is why only the WITHIN-ARM DELTA is interpreted.
-
-=================  RESULT  =================
-Same predictions, same protocol; full 210-structure eval vs the 83-structure double-OOD
-subset. Deltas are within-arm, so the subset's imbalance affects all arms identically.
-
-  arm            full 210                        double-OOD (83)                delta
-  B1-direct      0.590 / 0.567 / 0.686 = 0.6143  0.518 / 0.615 / 0.542 = 0.5583  -0.0560
-  SFT-V1 (s0)    0.3524                          0.2892                         -0.0632
-  B3             0.3444                          0.2811                         -0.0633
-  V2a            0.3762                          0.2530                         -0.1232
-  V2b            0.3857                          0.2570                         -0.1287
-
-BRANCH TAKEN: (iii) — ALL ARMS DROP TOGETHER. Every arm's magnitude exceeds the pre-registered
-0.05 threshold: B1 -0.0560, SFT-V1 -0.0632, B3 -0.0633, V2a -0.1232, V2b -0.1287. Branch (i)
-required the chain arms to hold (they do not); branch (ii) required B1 to hold within 0.05
-(0.0560 > 0.050, so it does not). Branch (iii) is therefore the rule that applies.
-
-WHAT THE PRE-REGISTRATION PERMITS AND FORBIDS HERE:
-  FORBIDDEN: reading this as evidence about memorization in either direction. The subset is
-    simply harder for every arm, so it CANNOT distinguish "B1's robustness is chemistry-
-    specific" from "B1's robustness is general". CP1b's proposed explanation (composition-
-    exclusion may be IID in the decisive feature) is NEITHER confirmed NOR refuted by this
-    probe, and this checkpoint does NOT strengthen the CP1b robustness finding.
-  PERMITTED: comparing arm ORDERING rather than levels. THE ORDERING DOES NOT SURVIVE INTACT —
-    an earlier version of this record wrongly claimed it was "unchanged". Actual orderings:
-      full eval (210):  B1 0.6143 > V2b 0.3857 > V2a 0.3762 > SFT-V1 0.3524 > B3 0.3444
-      double-OOD (83):  B1 0.5583 > SFT-V1 0.2892 > B3 0.2811 > V2b 0.2570 > V2a 0.2530
-    So BOTH PROCESS ARMS FALL BELOW SFT-V1 AND B3 on the harder subset — a rank INVERSION,
-    which is the direct consequence of their >2x larger drops noted below (the two statements
-    are the same fact; claiming "unchanged ordering" alongside it was self-contradictory).
-    What DOES survive: B1 remains first by a wide margin (+0.269 over the next arm on the
-    subset; +0.2286 over the best chain arm on the full set). So CP1b's branch (a) — B1 leads
-    — is not disturbed. But CP3's Gate-2 ordering (process > outcome) DOES invert here, and
-    under branch (iii) that inversion cannot be interpreted as a memorization or
-    generalization result; it is confounded with the subset simply being harder.
-  ALSO NOTED, without a memorization interpretation: B1's drop is the SMALLEST of the five and
-    lies inside its own seed SD (0.0515), while the process arms' drops are >2x larger. Under
-    branch (iii) that is a statement about relative difficulty sensitivity, NOT about
-    memorization.
-
-CONSEQUENCE: the CP1b question REMAINS OPEN. Arbitrating it requires the clean retrained test
-on data/e3proto (built and audited here, not run), or a difficulty-matched geometric-OOD
-subset. Do not cite this checkpoint as having settled it.
-
-A SECONDARY OBSERVATION (directional, not a claim; and note branch (iii) means the subset is
-harder for everyone, so this is a DIFFERENTIAL SENSITIVITY observation, not a geometric-OOD
-mechanism): the two PROCESS arms degrade roughly 2x more than the outcome arm and the SFT
-baseline on the harder subset. If that survives a
-retrained test it would mean dense per-step geometric supervision buys faithfulness at the
-cost of geometric generalization — an interesting and reportable tension. It is NOT
-established here: n=83, single split, no seeds for SFT-V1, and the contamination structure
-differs per arm. Flagged for the retrained run.
-
-=================  WHAT WAS NOT DONE  =================
-The clean test of the built split requires RETRAINING on data/e3proto/train and evaluating on
-data/e3proto/eval. That is not done and is not claimed. The double-OOD probe is a lower bound
-on the geometric-OOD effect for the existing checkpoints; the split is built, audited, and
-ready if the retrain is authorized.
-
-REPRODUCE
-  split build:   prototype keys from data/e3/labels_sidecar.json (see prereg.md for the key)
-  structures:    scripts/fetch_e3_structures.py -> data/e3/structures.json (+ label audit)
-  split files:   data/e3proto/{train,eval}.jsonl, split_meta.json, contamination.json,
-                 double_ood_subset.json
-  scoring:       stratified re-scoring of evals_cp1b/*.json and the harvested e3m_votes.json
-
-=================  APPENDIX: POST-HOC DIFFICULTY-CONTROLLED ANALYSIS  =================
-STATUS OF THIS APPENDIX: EXPLORATORY AND POST-HOC. It is NOT the pre-registered analysis.
-I designed it AFTER seeing the pre-registered comparison return branch (iii), specifically to
-try to remove the difficulty confound that forced branch (iii). Analyses invented after seeing
-a disappointing result, and which happen to point toward a preferred conclusion, are exactly
-the kind that must be labelled and not promoted. Recording it because the DESIGN is reusable
-and the NULL is informative — not because it settles anything.
-
-MOTIVATION. Branch (iii) fired because the double-OOD subset is harder for every arm. But the
-raw subset also has a DIFFERENT SYSTEM COMPOSITION than the full eval (no cubic at all,
-triclinic over-represented 21/83 vs 30/210), and crystal systems differ enormously in
-difficulty. So part of the uniform drop is system mix, not geometry.
-
-DESIGN. The 210 eval structures split into 83 prototype-OOD + 127 prototype-IID, and BOTH
-halves are composition-OOD by the split's construction. So a WITHIN-SYSTEM contrast between
-the halves isolates the geometric-OOD effect with chemistry-OOD held constant on both sides.
-Six systems have >=5 structures on both sides (hexagonal, monoclinic, orthorhombic,
-tetragonal, triclinic, trigonal; cubic has 0 prototype-OOD and is necessarily dropped).
-Effect = mean over those 6 systems of (accuracy on prototype-OOD - accuracy on prototype-IID),
-equal weight per system.
-
-RESULT (stratified geometric-OOD effect, and its honest error bar):
-
-  arm            effect    sd across systems    SE      t      distinguishable from 0?
-  B1            -0.0856          0.1283       0.0524   -1.63   NO
-  SFT-V1 (s0)   -0.0126          0.0390       0.0159   -0.79   NO
-  B3            -0.0353          0.1017       0.0415   -0.85   NO
-  V2a           -0.0253          0.0763       0.0311   -0.81   NO
-  V2b           -0.0293          0.0995       0.0406   -0.72   NO
-  (B1 per-seed effects: -0.0530 / -0.1253 / -0.0786; seed SD 0.0299)
-
-THE TEMPTING READ, AND WHY IT IS NOT SUPPORTED. On point estimates alone this looks like
-pre-registered branch (i): B1 is the ONLY arm whose effect exceeds the 0.05 threshold
-(-0.0856), every chain/process arm sits below it (-0.013 to -0.035), and B1's gap to V2b
-(0.0563) exceeds B1's own seed SD (0.0299). That pattern would mean B1's robustness IS
-chemistry-specific and the memorization story partially revives.
-IT DOES NOT SURVIVE ERROR BARS. With only 6 systems, the system-to-system spread (0.04-0.19)
-swamps every effect (0.01-0.09); NO arm reaches |t| > 1.8, B1 included (t = -1.63). The
-apparent "B1 breaks while the chains hold" structure is not statistically distinguishable from
-"nothing is happening to anyone".
-
-CONCLUSION OF THE APPENDIX: an HONEST NULL. The difficulty-controlled analysis is UNDERPOWERED
-and does not arbitrate the CP1b question either. It neither rescues branch (i) nor strengthens
-branch (iii)'s difficulty explanation. Two independent analyses (the pre-registered raw
-comparison and this post-hoc stratified one) both fail to resolve it, which is itself the
-useful finding: THIS DATA CANNOT SETTLE THE QUESTION. Settling it requires the clean retrained
-test on data/e3proto (built and audited here) — or, cheaper, a geometric-OOD eval set
-constructed to be system-balanced on BOTH sides so the contrast is not limited to 6 unbalanced
-strata. The prototype-key machinery for building that already exists.
-
-DO NOT cite the -0.0856 vs -0.029 contrast as evidence. It is a point estimate with t = -1.63.
-
-=================  DELIVERABLE FOR THE CLEAN TEST: data/e3geo/  =================
-The appendix concluded that this data cannot settle the CP1b question and named what would:
-a geometric-OOD eval set system-balanced on BOTH sides. That set is now BUILT and VERIFIED.
-
-data/e3geo/ — structure-prototype exclusion, balanced on both sides:
-  train 1610 (230 per system, all 7)   eval 210 (30 per system, all 7)
-  eval drawn from 209 whole prototype classes
-  prototype overlap train n eval = 0                       VERIFIED (computed, not assumed)
-  eval-only elements = 0                                   VERIFIED (chemistry held constant)
-  overlap with data/e3proto eval  =  83/210
-  overlap with data/e3 (chemistry) eval = 13/210 -> independent of the chemistry split
-  renders reused (identical per material_id), sidecar reused, seed 23
-
-WHY IT FIXES THE POWER PROBLEM: the post-hoc analysis was underpowered because the usable
-within-system contrast collapsed to 6 unbalanced strata (cubic had 0 prototype-OOD structures),
-leaving system-to-system spread (0.04-0.19) larger than every effect (0.01-0.09). Here all 7
-systems carry 30 eval / 230 train, so a retrained comparison gets a balanced 7-stratum contrast
-instead of 6 lopsided ones.
-
-HARD CONSTRAINT, RECORDED SO IT CANNOT BE MISUSED: 197/210 (93.8%) of this eval set sits in
-data/e3's TRAIN split. Scoring the CURRENT adapters on it would reproduce exactly the
-contamination that invalidated the data/e3proto probe (90.0%). This split is for a RETRAINED
-comparison ONLY. Do not use it to evaluate the existing checkpoints.
-
-COST OF THE CLEAN TEST (for the record, not a recommendation): retrain the arms of interest on
-data/e3geo/train, then evaluate on data/e3geo/eval with the standard protocol. At the measured
-~2 hr/GRPO run and ~5 min/seed for a B1-style eval, a minimal B1-vs-V2b retrained contrast at
-3 seeds is roughly a day of GPU. Given CP1b branch (a) deprioritized accuracy work, this is
-listed as available, not urgent.
-```
-
-
-### finding_prebranchfix_snapshot.md
-
-```
-CHECKPOINT: CP1c_prototype_exclusion     GAP: is B1's OOD robustness chemistry-specific?
-STATUS: DONE as a no-retrain stratified probe (double-OOD subset). The full retrained
-prototype-exclusion comparison is BUILT but NOT RUN (see "what was NOT done").
-RESULT: pre-registered BRANCH (ii) — B1 HOLDS. The memorization story does NOT revive.
-
-=================  WHY THIS CHECKPOINT EXISTS  =================
-CP1b took branch (a) (B1-direct 0.6143 on composition-exclusion vs 0.711 IID), refuting the
-SFT-memorizes/RL-generalizes prediction. CP1b's own refutation note offered the leading
-explanation: composition-exclusion withholds ELEMENTS, not the lattice geometry the task
-depends on, so it may be OOD in chemistry while IID in the decisive feature. CP1c tests that.
-
-=================  WHAT WAS BUILT  =================
-data/e3proto/ — a structure-PROTOTYPE-exclusion split, the controlled complement of data/e3.
-Prototype key (AFLOW-style, deterministic, computed from the existing sidecar — no external
-database): (space group number, anonymized reduced stoichiometry, sorted per-element Wyckoff
-(multiplicity, letter) multiset). Element identities ANONYMIZED so isostructural compounds
-(NaCl / KBr) share a prototype; the split therefore withholds the ARRANGEMENT.
-  1820 structures -> 883 distinct prototypes (613 singletons = 33.7% of structures)
-  train 1610 / eval 210, whole prototype classes assigned to eval
-  eval balanced 30 per crystal system, all 7 systems (matching data/e3 exactly)
-  prototype overlap train n eval = 0     VERIFIED
-  eval-only elements = 0                 VERIFIED (chemistry held constant BY DESIGN)
-  renders reused (identical per material_id), seed 23, sidecar reused
-
-Structures were re-fetched by material_id to build this (data/e3/structures.json, 1820 CIFs)
-and AUDITED against the sidecar by the CP0 method: 1820/1820 reproduce the recorded
-crystal_system AND space-group number (rate 1.0, 0 mismatch, 0 missing). So the structures
-used for prototyping are provably the ones the VLM was labelled against.
-
-=================  A BLOCKER FOUND, AND WHY THE PROBE CHANGED SHAPE  =================
-Evaluating the EXISTING checkpoints on data/e3proto/eval would be close to meaningless:
-189/210 (90.0%) of that eval set sits in data/e3's TRAIN split, i.e. the checkpoints were
-trained on it. Only 21/210 were never trained on, and those 21 are severely unbalanced
-(1 cubic, 6 hexagonal, 2 monoclinic, 1 orthorhombic, 2 tetragonal, 5 triclinic, 4 trigonal).
-Running the CP1b table there would mostly measure memorization of SEEN structures — the
-opposite of the intended test. This is logged rather than worked around.
-
-INSTEAD, a valid no-retrain probe exists in the data we already have: of data/e3's 210 eval
-structures, 83 have a PROTOTYPE that is also absent from data/e3's train split. Those 83 are
-simultaneously composition-OOD (unseen element, by the split's construction) AND
-prototype-OOD (unseen arrangement) with respect to what the checkpoints actually trained on.
-This "DOUBLE-OOD subset" needs zero new generation — it is a stratified re-scoring of the
-CP1b and CP3 predictions already in hand.
-  subset per-system: hexagonal 8, monoclinic 17, orthorhombic 9, tetragonal 12,
-                     triclinic 21, trigonal 16, cubic 0.
-  NOTE: unbalanced and contains NO cubic structures, so it is a STRATIFIED RE-ANALYSIS, not
-  a replacement for the balanced split. Cubic is the easiest system, and its absence lowers
-  all arms' absolute numbers — which is why only the WITHIN-ARM DELTA is interpreted.
-
-=================  RESULT  =================
-Same predictions, same protocol; full 210-structure eval vs the 83-structure double-OOD
-subset. Deltas are within-arm, so the subset's imbalance affects all arms identically.
-
-  arm            full 210                        double-OOD (83)                delta
-  B1-direct      0.590 / 0.567 / 0.686 = 0.6143  0.518 / 0.615 / 0.542 = 0.5583  -0.0560
-  SFT-V1 (s0)    0.3524                          0.2892                         -0.0632
-  B3             0.3444                          0.2811                         -0.0633
-  V2a            0.3762                          0.2530                         -0.1232
-  V2b            0.3857                          0.2570                         -0.1287
-
-BRANCH TAKEN: (ii) — B1 HOLDS. Its drop (-0.0560) is at the pre-registered 0.05 threshold and
-INSIDE its own seed SD (0.0515), while both process arms lose more than twice as much
-(-0.123, -0.129). B1 still leads the best chain arm by +0.30 on the hardest subset.
-B1 drops LEAST, not most.
-
-CONSEQUENCE, stated as the pre-registration requires: the "composition-exclusion is IID in
-the decisive feature" explanation offered in CP1b is NOT SUFFICIENT. B1's robustness survives
-withholding the structural ARRANGEMENT as well as the chemistry. The memorization story does
-not revive, the CP1b robustness finding STRENGTHENS, and the legibility-tax frame carries
-alone. We should stop looking for a split that rescues an accuracy headline.
-
-A SECONDARY OBSERVATION (directional, not a claim): the two PROCESS arms degrade roughly 2x
-more than the outcome arm and the SFT baseline under geometric OOD. If that survives a
-retrained test it would mean dense per-step geometric supervision buys faithfulness at the
-cost of geometric generalization — an interesting and reportable tension. It is NOT
-established here: n=83, single split, no seeds for SFT-V1, and the contamination structure
-differs per arm. Flagged for the retrained run.
-
-=================  WHAT WAS NOT DONE  =================
-The clean test of the built split requires RETRAINING on data/e3proto/train and evaluating on
-data/e3proto/eval. That is not done and is not claimed. The double-OOD probe is a lower bound
-on the geometric-OOD effect for the existing checkpoints; the split is built, audited, and
-ready if the retrain is authorized.
-
-REPRODUCE
-  split build:   prototype keys from data/e3/labels_sidecar.json (see prereg.md for the key)
-  structures:    scripts/fetch_e3_structures.py -> data/e3/structures.json (+ label audit)
-  split files:   data/e3proto/{train,eval}.jsonl, split_meta.json, contamination.json,
-                 double_ood_subset.json
-  scoring:       stratified re-scoring of evals_cp1b/*.json and the harvested e3m_votes.json
-```
-
-
-## CP2_sft_chain
-
-BACKED BY: `results/CP2_sft_chain/results.json`
-
-
-### finding.md
-
-```
-CHECKPOINT: CP2_sft_chain          GAP: does a hierarchical reasoning chain help?          STATUS: done (pilot scale, n_train=115; full-scale SFT arm pending). E2 has NO pre-registered gate in the plan; it reports whether the chain schema helps and, per plan, an indistinguishable/negative result shifts the program's weight to E3.
+CHECKPOINT: sft_chain          GAP: does a hierarchical reasoning chain help?          STATUS: done (pilot scale, n_train=115; full-scale SFT arm pending). E2 has NO pre-registered gate in the plan; it reports whether the chain schema helps and, per plan, an indistinguishable/negative result shifts the program's weight to E3.
 
 [This is a CORRECTED record (two follow-up rounds). The original is preserved verbatim
 in finding_precorrection_snapshot.md. Round 1: (1) truncation audit — EXCLUDED, V1 row
@@ -2879,16 +2501,16 @@ confirmed. Audit outputs: samples/.]
 METHOD DONE: Fine-tuned Qwen3-VL-8B-Instruct with QLoRA (4-bit nf4, LoRA r=16 on
 attention+MLP proj, 3 epochs, lr 1e-4) on a held-out E2 dataset of 167 structures
 (train 115 / val 22 / test 30), stratified across the 7 crystal systems and drawn
-from BOTH sources (MP + JARVIS), DISJOINT from the CP0b/CP1 samples (0 leakage,
+from BOTH sources (MP + JARVIS), DISJOINT from the identifiability/zeroshot samples (0 leakage,
 verified). Three training arms share the identical (5 images, question) input and
 differ ONLY in the supervision target:
   B1  direct     -> "ANSWER: <crystal system>"
   B2  free CoT   -> free-form reasoning, then the answer
   V1  CoCr chain -> [GEOMETRY][SYSTEM/BRAVAIS][SYMMETRY][MOTIF][ANSWER], every step
-                    generated deterministically from the CP0 label (symmetry step
+                    generated deterministically from the pipeline label (symmetry step
                     justified by parsing the Hermann-Mauguin glyphs).
 Arms B1/B2/V1 trained at 3 seeds (9 LoRA runs); a fourth arm V1b (3 seeds) was added
-in the CP2 follow-up (see V1b section) for 12 runs total, all on an RTX 5090. Evaluated on the
+in the sft_chain follow-up (see V1b section) for 12 runs total, all on an RTX 5090. Evaluated on the
 held-out test split with deterministic decoding; primary metric = crystal-system
 accuracy (micro over 30 structures, macro over 7 systems).
 
@@ -2938,7 +2560,7 @@ downstream logic — see samples/mechanism_examples.json for 3 verbatim generati
     there. B2 is less collapsed (59/90 distinct) but still rounds to memorized values.
     (figures/mechanism.png panel a)
   - Termination: V1 reaches the [ANSWER] line in only 1.1% of generations, V1b in
-    0/90 (B1 and B2: 100%). DIAGNOSED (CP2 follow-up item 4, correcting my earlier
+    0/90 (B1 and B2: 100%). DIAGNOSED (sft_chain follow-up item 4, correcting my earlier
     "loops through chain steps" claim): a transition analysis shows the chain emits
     each section tag exactly ONCE (4-5 tags/gen) — it does NOT cycle the sections.
     The generation instead gets stuck in a REPETITION LOOP INSIDE the [MOTIF] Wyckoff
@@ -2987,7 +2609,7 @@ reciting. That is a prediction, not an established result here. E2's role is to
 MOTIVATE E3 and to specify its reward schema (see below), not to demonstrate E3's
 effect; the program's weight shifts to the RL stage.
 
-V1b ARM (fair-schema retest — CP2 follow-up item 3): V1's geometry step demanded exact
+V1b ARM (fair-schema retest — sft_chain follow-up item 3): V1's geometry step demanded exact
 cell parameters the renders cannot supply, so its collapse could be blamed on an
 ungroundable step rather than on the chain schema itself. V1b keeps the identical 5-part
 schema and identical steps 2-5, but replaces the [GEOMETRY] step with ONLY
@@ -3008,7 +2630,7 @@ RESULT: V1b does NOT rescue the chain. It is statistically indistinguishable fro
     RETRACTED here because V1b's qualitative vocabulary is low-cardinality BY DESIGN
     (~7 canonical patterns for 7 systems), so "4 distinct in 90 gens" is also what a
     perfectly grounded model would emit — the count only diagnosed collapse for V1's
-    continuous numeric strings). Scored per-structure against the CP0-label relations:
+    continuous numeric strings). Scored per-structure against the pipeline-label relations:
       component      V1 (exact geom)   V1b (qual geom)
       edge relation      0.500             0.678
       angle family       0.811             0.456
@@ -3081,18 +2703,18 @@ REPRODUCE:
 ### finding_precorrection_snapshot.md
 
 ```
-CHECKPOINT: CP2_sft_chain          GAP: does a hierarchical reasoning chain help?          STATUS: done (Gate 2: schema not supported by pure SFT; motivates E3)
+CHECKPOINT: sft_chain          GAP: does a hierarchical reasoning chain help?          STATUS: done (Gate 2: schema not supported by pure SFT; motivates E3)
 
 METHOD DONE: Fine-tuned Qwen3-VL-8B-Instruct with QLoRA (4-bit nf4, LoRA r=16 on
 attention+MLP proj, 3 epochs, lr 1e-4) on a held-out E2 dataset of 167 structures
 (train 115 / val 22 / test 30), stratified across the 7 crystal systems and drawn
-from BOTH sources (MP + JARVIS), DISJOINT from the CP0b/CP1 samples (0 leakage,
+from BOTH sources (MP + JARVIS), DISJOINT from the identifiability/zeroshot samples (0 leakage,
 verified). Three training arms share the identical (5 images, question) input and
 differ ONLY in the supervision target:
   B1  direct     -> "ANSWER: <crystal system>"
   B2  free CoT   -> free-form reasoning, then the answer
   V1  CoCr chain -> [GEOMETRY][SYSTEM/BRAVAIS][SYMMETRY][MOTIF][ANSWER], every step
-                    generated deterministically from the CP0 label (symmetry step
+                    generated deterministically from the pipeline label (symmetry step
                     justified by parsing the Hermann-Mauguin glyphs).
 Each arm trained at 3 seeds (9 LoRA runs total) on an RTX 5090. Evaluated on the
 held-out test split with deterministic decoding; primary metric = crystal-system
@@ -3165,15 +2787,15 @@ REPRODUCE:
 ```
 
 
-## CP3_process_reward
+## process_reward
 
-BACKED BY: `results/CP3_process_reward/results.json`, `results/CP3_process_reward/calibration.json`
+BACKED BY: `results/process_reward/results.json`, `results/process_reward/calibration.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP3_process_reward     GAP: G2, G3 (process-verified vs outcome-only reward)     STATUS: DONE — full 3-arm x 3-seed matrix run + evaluated. GATE 2: CONFIRMED for V2b (dense step-level, StepGRPO-style); V2a passes faithfulness decisively, borderline on accuracy. H1 SUPPORTED: process-verified rewards beat outcome-only, most clearly on chain faithfulness.
+CHECKPOINT: process_reward     GAP: G2, G3 (process-verified vs outcome-only reward)     STATUS: DONE — full 3-arm x 3-seed matrix run + evaluated. GATE 2: CONFIRMED for V2b (dense step-level, StepGRPO-style); V2a passes faithfulness decisively, borderline on accuracy. H1 SUPPORTED: process-verified rewards beat outcome-only, most clearly on chain faithfulness.
 
 =================  E3 MATRIX RESULT (Gate-2 verdict)  =================
 Full matrix: 3 arms (B3 outcome / V2a dense step-level / V2b dense step-level +final) x 3 seeds, 300 GRPO
@@ -3306,7 +2928,7 @@ ITEM 1 (wiring audit for "B3==V2b exactly") — RESOLVED, NO BUG. Adapter-weight
   collapsing two near-identical policies to identical discrete tokens, not identical
   weights. Reward trajectories DO differ (last-20 mean: B3 0.263, V2a 0.509, V2b 0.497).
   The faithfulness "drop" was a METRIC MISMATCH: SFT-V1 faithfulness on the SAME
-  reward-server metric = 0.274 (not the ~0.35 estimate, which came from CP2's different
+  reward-server metric = 0.274 (not the ~0.35 estimate, which came from sft_chain's different
   geometry-accuracy metric). True picture is flat: SFT 0.274 vs arms 0.244-0.263, within
   n=30 fallback noise. Consistent with frozen-KL; no mechanism puzzle.
 ITEM 2 (format reward common to all arms) — CONFOUND CONFIRMED, fixed for matrix. Pilot
@@ -3344,13 +2966,13 @@ ARMS (item 2 — FORMAT term common to all; only per-step verification is manipu
   non-terminating. Verified on synthetic chains: gold->1.25 all arms; wrong-system->B3
   0.25 vs V2a/V2b 0.54-0.58 (per-step credit isolated); non-terminating penalized in all.
 
-DATA (items 3, 4 — real eval set + scaled train set, built via the CP0 pipeline):
+DATA (items 3, 4 — real eval set + scaled train set, built via the pipeline pipeline):
   TRAIN: data/e3/train.jsonl — 1610 structures (230/system x 7), MP, keep-policy filtered.
   EVAL:  data/e3/eval.jsonl  — 210 structures (30/system x 7), COMPOSITION-EXCLUSION split.
   Split: 13 elements reserved for eval only (Cd Ce Hg In Ir La Mn Os Re Ru Tc Ti Tl);
   every eval structure contains >=1 element NEVER in any train structure. Leakage: 0
-  (train∩eval ids=0; both disjoint from all 448 prior CP0b/CP1/E2 ids; 0 eval structures
-  are fully composed of train-seen elements). Labels: deterministic CP0 sidecar
+  (train∩eval ids=0; both disjoint from all 448 prior identifiability/zeroshot/E2 ids; 0 eval structures
+  are fully composed of train-seen elements). Labels: deterministic pipeline sidecar
   data/e3/labels_sidecar.json (1820). Renders: frozen 5-view set (conventional cell,
   2x2x2, index-only filenames). split_meta.json records the full spec.
   Rationale: pilot trained 200 steps over 115 prompts = dozens of epochs (prompt
@@ -3394,10 +3016,10 @@ STANDING TRAINING PANEL (item 8): log the zero-reward-variance group fraction pe
 
 METHOD DONE: Built the CIF-grounded REWARD SERVER (src/cocr/reward.py) — the scientific
 core and shared infra for E4/E7. It parses an emitted CoCr chain and scores each step
-against the CP0 label: geometry (qualitative relations, per the CP2 lesson — NOT exact
+against the pipeline label: geometry (qualitative relations, per the sft_chain lesson — NOT exact
 cell parameters), system/Bravais and point/space group (hierarchical, coarse-credit:
 wrong system zeros the fine labels), motif (Wyckoff set Jaccard), a final-answer reward,
-and a FORMAT reward that hard-penalizes non-termination (targets the CP2 MOTIF trap).
+and a FORMAT reward that hard-penalizes non-termination (targets the sft_chain MOTIF trap).
 Validated: gold traces score 1.0 on every step (MP + JARVIS, 167/167 sidecar); a
 non-terminating MOTIF-trap chain gets format=-1 while the OUTCOME reward is fooled to
 1.0 on the same chain (the process-vs-outcome mechanism, demonstrated); 0.02 ms/chain.
@@ -3408,12 +3030,12 @@ checkpoint, 4-bit base, group size 8, HF-generate sampling, 200 steps) in three 
   V2a  dense step-level rewards, mean of per-step (final excluded)
   V2b  dense step-level rewards (StepGRPO-style; NOT per-step credit assignment)
 on the RTX 5090 (~1.3 hr/arm). Reward-parse validated against the live chat template
-before RL (plan mandate). Data: the E2 held-out sample + a precomputed CP0 label sidecar
+before RL (plan mandate). Data: the E2 held-out sample + a precomputed pipeline label sidecar
 (data/e2/labels_sidecar.json, 167 structs). Evaluated all three on the V1 test prompts.
 
 RESULT (crystal_system, test n=30):
   arm      micro   macro   faithfulness
-  SFT-V1   0.378   0.411   ~0.35          <- pre-GRPO baseline (CP2)
+  SFT-V1   0.378   0.411   ~0.35          <- pre-GRPO baseline (sft_chain)
   B3       0.333   0.414   0.263
   V2a      0.300   0.348   0.244
   V2b      0.333   0.414   0.263
@@ -3462,7 +3084,7 @@ REPRODUCE:
 ### finding_pilot_snapshot.md
 
 ```
-CHECKPOINT: CP3_process_reward     GAP: G2, G3 (process-verified vs outcome-only reward)     STATUS: pilot done (1 seed x 3 arms, 200 steps); FULL pre-registered matrix pending. This is a DE-RISKING pilot, NOT the Gate-2 verdict.
+CHECKPOINT: process_reward     GAP: G2, G3 (process-verified vs outcome-only reward)     STATUS: pilot done (1 seed x 3 arms, 200 steps); FULL pre-registered matrix pending. This is a DE-RISKING pilot, NOT the Gate-2 verdict.
 
 PLAN CONTEXT: E3 is the flagship — the pre-registered test of H1 (process-verified
 GRPO beats outcome-only GRPO). The full experiment is 3 matched arms x >=3 seeds with
@@ -3472,10 +3094,10 @@ the 1-seed pilot run first (per the user's de-risk-before-full-matrix decision).
 
 METHOD DONE: Built the CIF-grounded REWARD SERVER (src/cocr/reward.py) — the scientific
 core and shared infra for E4/E7. It parses an emitted CoCr chain and scores each step
-against the CP0 label: geometry (qualitative relations, per the CP2 lesson — NOT exact
+against the pipeline label: geometry (qualitative relations, per the sft_chain lesson — NOT exact
 cell parameters), system/Bravais and point/space group (hierarchical, coarse-credit:
 wrong system zeros the fine labels), motif (Wyckoff set Jaccard), a final-answer reward,
-and a FORMAT reward that hard-penalizes non-termination (targets the CP2 MOTIF trap).
+and a FORMAT reward that hard-penalizes non-termination (targets the sft_chain MOTIF trap).
 Validated: gold traces score 1.0 on every step (MP + JARVIS, 167/167 sidecar); a
 non-terminating MOTIF-trap chain gets format=-1 while the OUTCOME reward is fooled to
 1.0 on the same chain (the process-vs-outcome mechanism, demonstrated); 0.02 ms/chain.
@@ -3486,12 +3108,12 @@ checkpoint, 4-bit base, group size 8, HF-generate sampling, 200 steps) in three 
   V2a  scalar-sum of per-step verifiable rewards
   V2b  step-wise credit
 on the RTX 5090 (~1.3 hr/arm). Reward-parse validated against the live chat template
-before RL (plan mandate). Data: the E2 held-out sample + a precomputed CP0 label sidecar
+before RL (plan mandate). Data: the E2 held-out sample + a precomputed pipeline label sidecar
 (data/e2/labels_sidecar.json, 167 structs). Evaluated all three on the V1 test prompts.
 
 RESULT (crystal_system, test n=30):
   arm      micro   macro   faithfulness
-  SFT-V1   0.378   0.411   ~0.35          <- pre-GRPO baseline (CP2)
+  SFT-V1   0.378   0.411   ~0.35          <- pre-GRPO baseline (sft_chain)
   B3       0.333   0.414   0.263
   V2a      0.300   0.348   0.244
   V2b      0.333   0.414   0.263
@@ -3540,7 +3162,7 @@ REPRODUCE:
 ### finding_prematrix_snapshot.md
 
 ```
-CHECKPOINT: CP3_process_reward     GAP: G2, G3 (process-verified vs outcome-only reward)     STATUS: pilot done + pre-matrix audit done; FULL pre-registered matrix pending. This is a DE-RISKING pilot, NOT the Gate-2 verdict.
+CHECKPOINT: process_reward     GAP: G2, G3 (process-verified vs outcome-only reward)     STATUS: pilot done + pre-matrix audit done; FULL pre-registered matrix pending. This is a DE-RISKING pilot, NOT the Gate-2 verdict.
 
 [Pre-matrix audit (verify-then-do checklist). Prior pilot text preserved in
 finding_pilot_snapshot.md.
@@ -3553,7 +3175,7 @@ ITEM 1 (wiring audit for "B3==V2b exactly") — RESOLVED, NO BUG. Adapter-weight
   collapsing two near-identical policies to identical discrete tokens, not identical
   weights. Reward trajectories DO differ (last-20 mean: B3 0.263, V2a 0.509, V2b 0.497).
   The faithfulness "drop" was a METRIC MISMATCH: SFT-V1 faithfulness on the SAME
-  reward-server metric = 0.274 (not the ~0.35 estimate, which came from CP2's different
+  reward-server metric = 0.274 (not the ~0.35 estimate, which came from sft_chain's different
   geometry-accuracy metric). True picture is flat: SFT 0.274 vs arms 0.244-0.263, within
   n=30 fallback noise. Consistent with frozen-KL; no mechanism puzzle.
 ITEM 2 (format reward common to all arms) — CONFOUND CONFIRMED, fixed for matrix. Pilot
@@ -3591,13 +3213,13 @@ ARMS (item 2 — FORMAT term common to all; only per-step verification is manipu
   non-terminating. Verified on synthetic chains: gold->1.25 all arms; wrong-system->B3
   0.25 vs V2a/V2b 0.54-0.58 (per-step credit isolated); non-terminating penalized in all.
 
-DATA (items 3, 4 — real eval set + scaled train set, built via the CP0 pipeline):
+DATA (items 3, 4 — real eval set + scaled train set, built via the pipeline pipeline):
   TRAIN: data/e3/train.jsonl — 1610 structures (230/system x 7), MP, keep-policy filtered.
   EVAL:  data/e3/eval.jsonl  — 210 structures (30/system x 7), COMPOSITION-EXCLUSION split.
   Split: 13 elements reserved for eval only (Cd Ce Hg In Ir La Mn Os Re Ru Tc Ti Tl);
   every eval structure contains >=1 element NEVER in any train structure. Leakage: 0
-  (train∩eval ids=0; both disjoint from all 448 prior CP0b/CP1/E2 ids; 0 eval structures
-  are fully composed of train-seen elements). Labels: deterministic CP0 sidecar
+  (train∩eval ids=0; both disjoint from all 448 prior identifiability/zeroshot/E2 ids; 0 eval structures
+  are fully composed of train-seen elements). Labels: deterministic pipeline sidecar
   data/e3/labels_sidecar.json (1820). Renders: frozen 5-view set (conventional cell,
   2x2x2, index-only filenames). split_meta.json records the full spec.
   Rationale: pilot trained 200 steps over 115 prompts = dozens of epochs (prompt
@@ -3641,10 +3263,10 @@ STANDING TRAINING PANEL (item 8): log the zero-reward-variance group fraction pe
 
 METHOD DONE: Built the CIF-grounded REWARD SERVER (src/cocr/reward.py) — the scientific
 core and shared infra for E4/E7. It parses an emitted CoCr chain and scores each step
-against the CP0 label: geometry (qualitative relations, per the CP2 lesson — NOT exact
+against the pipeline label: geometry (qualitative relations, per the sft_chain lesson — NOT exact
 cell parameters), system/Bravais and point/space group (hierarchical, coarse-credit:
 wrong system zeros the fine labels), motif (Wyckoff set Jaccard), a final-answer reward,
-and a FORMAT reward that hard-penalizes non-termination (targets the CP2 MOTIF trap).
+and a FORMAT reward that hard-penalizes non-termination (targets the sft_chain MOTIF trap).
 Validated: gold traces score 1.0 on every step (MP + JARVIS, 167/167 sidecar); a
 non-terminating MOTIF-trap chain gets format=-1 while the OUTCOME reward is fooled to
 1.0 on the same chain (the process-vs-outcome mechanism, demonstrated); 0.02 ms/chain.
@@ -3655,12 +3277,12 @@ checkpoint, 4-bit base, group size 8, HF-generate sampling, 200 steps) in three 
   V2a  scalar-sum of per-step verifiable rewards
   V2b  step-wise credit
 on the RTX 5090 (~1.3 hr/arm). Reward-parse validated against the live chat template
-before RL (plan mandate). Data: the E2 held-out sample + a precomputed CP0 label sidecar
+before RL (plan mandate). Data: the E2 held-out sample + a precomputed pipeline label sidecar
 (data/e2/labels_sidecar.json, 167 structs). Evaluated all three on the V1 test prompts.
 
 RESULT (crystal_system, test n=30):
   arm      micro   macro   faithfulness
-  SFT-V1   0.378   0.411   ~0.35          <- pre-GRPO baseline (CP2)
+  SFT-V1   0.378   0.411   ~0.35          <- pre-GRPO baseline (sft_chain)
   B3       0.333   0.414   0.263
   V2a      0.300   0.348   0.244
   V2b      0.333   0.414   0.263
@@ -3706,22 +3328,22 @@ REPRODUCE:
 ```
 
 
-## CP7_test_time_scaling
+## test_time_scaling
 
-BACKED BY: `results/CP7_test_time_scaling/results.json`
+BACKED BY: `results/test_time_scaling/results.json`
 
 
 ### prereg.md
 
 ```
-# PRE-REGISTRATION — E7 / CP7 test-time scaling
+# PRE-REGISTRATION — E7 / test_time_scaling test-time scaling
 # Written and committed BEFORE any E7 inference was run.
 
 ## WHY E7 IS THE RIGHT EXPERIMENT NOW
-CP1b branch (a) killed the accuracy claim; CP8 showed a 19-feature structure model beats every
-image arm and that both chain arms sit BELOW a 3-feature size-only floor (0.5286). CP0c item 2
+exclusion_baselines branch (a) killed the accuracy claim; external_baselines showed a 19-feature structure model beats every
+image arm and that both chain arms sit BELOW a 3-feature size-only floor (0.5286). resolution_audit item 2
 showed the chain's geometry step is responsive to the image without being informed by it. What
-survives is CHECKABILITY, and CP9 supplied the premise: an ANSWER-INDEPENDENT deterministic
+survives is CHECKABILITY, and calibration supplied the premise: an ANSWER-INDEPENDENT deterministic
 checker (geometry step scored against CIF truth) predicts final correctness at AUC 0.811-0.818,
 far above the model's own self-consistency confidence (0.62). E7 tests whether that checker
 converts into deployable value.
@@ -3736,13 +3358,13 @@ Every reported row is labelled DEPLOYABLE or ORACLE. They are never mixed in one
     D3  tool-coupled: run spglib on the coordinates the model EMITS, and score consistency
         between that and the model's claimed system. Uses a tool, not the answer key.
   ORACLE — consults the sidecar/CIF truth; an upper bound, never a deployable claim:
-    O1  rerank K samples by the CP0-truth geometry-step score (the AUC 0.81 signal)
+    O1  rerank K samples by the pipeline-truth geometry-step score (the AUC 0.81 signal)
     O2  best-of-K by final correctness (the absolute ceiling)
 
 ## PRIMARY METRICS
 1. accuracy vs K (saturation curves), per row, per arm.
 2. RISK-COVERAGE with checker-score abstention: AURC and E-AURC, plus explicit operating
-   points at coverage 0.9 / 0.75 / 0.5. The CP8 regularity floor (0.5286) is drawn as a
+   points at coverage 0.9 / 0.75 / 0.5. The external_baselines regularity floor (0.5286) is drawn as a
    reference band on the risk-coverage figure (directive item 4).
 3. PREDICT-AND-CERTIFY system row: B1 answers, chain+checker certifies, disagreement abstains.
    Reported as (coverage, accuracy-on-covered) pairs — the deployable system claim.
@@ -3751,7 +3373,7 @@ Every reported row is labelled DEPLOYABLE or ORACLE. They are never mixed in one
 Arms: B1_s0 (answerer), V2b_s0 (chain/certifier), V2a_s0 and B3_s0 if budget allows.
 Eval: the 210-structure composition-exclusion set (data/e3), same as every other checkpoint.
 EVAL AT 416-EFF (max_pixels=200704) — MATCHED TO TRAINING, per the demonstrated train/test
-mismatch artifact in CP0c (B1 lost 0.133 at native). effective_resolution logged in results.json.
+mismatch artifact in resolution_audit (B1 lost 0.133 at native). effective_resolution logged in results.json.
 Sampling: temperature 0.7, max_new_tokens 512, K swept over {1,3,5,8}.
 Self-revision: ONE bounded pass, reported as a SEPARATE row, never folded into the verifier
 result — 2512.11109 (verified) reports iterative refinement often DEGRADES open VLMs.
@@ -3774,10 +3396,10 @@ Threshold 0.05 absolute (program convention, ledger/CONVENTIONS.md).
 
 ## WHAT WOULD MAKE E7 A NEGATIVE RESULT, STATED IN ADVANCE
 If no deployable row beats majority vote AND the certify row cannot reach 0.80 at coverage 0.5,
-then the checker is an oracle-only artifact and CoCr's verifiability claim rests on the CP3
+then the checker is an oracle-only artifact and CoCr's verifiability claim rests on the process_reward
 faithfulness result alone. That is a publishable but much weaker paper, and it must be reported
 as such rather than rescued with a post-hoc metric. (Two post-hoc rescues have already been
-attempted and labelled this session — CP1c's stratified analysis and the CP8 mechanism
+attempted and labelled this session — prototype_exclusion's stratified analysis and the external_baselines mechanism
 sentence. The pattern is logged; the standard is not negotiable.)
 
 ## COST
@@ -3790,7 +3412,7 @@ dominate and the K sweep is run on V2b_s0 only, with B1 swept cheaply.
 ### finding.md
 
 ```
-CHECKPOINT: CP7_test_time_scaling     GAP: does the CIF-grounded checker convert into
+CHECKPOINT: test_time_scaling     GAP: does the CIF-grounded checker convert into
                                             DEPLOYABLE test-time value?
 STATUS: DONE (1 seed, K=8, 210-structure composition-exclusion eval, 416-eff matched to training)
 RESULT: BOTH pre-registered hypotheses NOT MET. H7a fails outright — no deployable selection
@@ -3826,13 +3448,13 @@ Rule: some deployable row beats D1 by > 0.05 accuracy OR improves AURC by > 10% 
   B1:  D2/D3 accuracy +0.0000, AURC -34.1% RELATIVE WORSE
 Not a near miss in either direction: filtering samples by self-consistency makes the ranking
 WORSE than not filtering. The self-consistency signal is anti-correlated with correctness at
-selection time, even though the CP9 checker score correlates with it at AUC 0.81.
+selection time, even though the calibration checker score correlates with it at AUC 0.81.
 
-WHY THOSE TWO FACTS COEXIST (the substantive finding): CP9's AUC 0.81 was measured with the
+WHY THOSE TWO FACTS COEXIST (the substantive finding): calibration's AUC 0.81 was measured with the
 ANSWER-INDEPENDENT geometry step scored AGAINST CIF TRUTH. D2/D3 do not have truth; they can
 only ask whether the model's emitted numbers are consistent with the model's own claim. A chain
 that FABRICATES a clean lattice and then reasons correctly from it is maximally
-self-consistent and wrong — exactly the failure CP2 diagnosed and CP0c confirmed is not a
+self-consistent and wrong — exactly the failure sft_chain diagnosed and resolution_audit confirmed is not a
 resolution artifact. So self-consistency preferentially selects confident fabrications.
 => The checker's predictive power is REAL but ORACLE-ONLY: it requires the true structure, which
    at inference time is precisely what is unknown. This must be stated plainly in the paper.
@@ -3872,13 +3494,13 @@ LESSON RECORDED: a fallback path must be counted and surfaced, never silent.
 
 =================  WHAT THIS MEANS FOR THE PAPER  =================
 E7 was the experiment that could have supplied POSITIVE evidence for the verifiability claim.
-It did not. The honest position after CP1b, CP8 and now CP7:
- - accuracy claim: dead (CP1b branch (a); CP8 floor and structure baseline)
+It did not. The honest position after exclusion_baselines, external_baselines and now test_time_scaling:
+ - accuracy claim: dead (exclusion_baselines branch (a); external_baselines floor and structure baseline)
  - deployable test-time gain from the checker: REFUTED HERE (H7a)
  - deployable certification at useful coverage: REFUTED HERE (H7b), though the certified slice
    is 91% accurate
- - what SURVIVES: CP3's Gate-2 faithfulness result, the ~49%-vs-~2% silent-group training
-   mechanism, CP9's calibration improvement, and the CP0c/geometry-step evidence that the chain
+ - what SURVIVES: process_reward's Gate-2 faithfulness result, the ~49%-vs-~2% silent-group training
+   mechanism, calibration's calibration improvement, and the resolution_audit/geometry-step evidence that the chain
    is responsive to the image without being informed by it.
 The verifiability story is now narrower than "the checker is useful at inference": it is
 "process verification measurably improves chain faithfulness and training dynamics, and the
@@ -3897,7 +3519,7 @@ REPRODUCE
 
 =================  FOLLOW-UP: IS THE CERTIFIED SLICE JUST THE EASY STRUCTURES?  =================
 POST-HOC. Designed after seeing H7b fail, so it is exploratory and labelled as such — but unlike
-the CP1c post-hoc attempt it SURVIVES its control, and the control is the one that matters.
+the prototype_exclusion post-hoc attempt it SURVIVES its control, and the control is the one that matters.
 
 THE WORRY: the certified slice is 91% accurate vs 62% unconditional, but chain agreement might
 carry no information of its own — it could simply select structures B1 was already confident
@@ -3935,10 +3557,10 @@ WHAT THIS DOES *NOT* CHANGE: H7b still FAILS. The rule required accuracy >= 0.80
 rescuing the hypothesis, and the pre-registered verdict stands unchanged.
 
 WHAT IT ADDS TO THE PAPER: the certification claim is stronger and more precisely stated than
-CP7's headline suggested. Not merely "the chain agrees on easy cases" but "an independently
+test_time_scaling's headline suggested. Not merely "the chain agrees on easy cases" but "an independently
 verified chain supplies correctness information that the answerer's own confidence does not
 contain, including where the answerer is maximally confident." That is a genuine
-process-verification result and it is consistent with CP3 (faithfulness) and CP9 (the process
+process-verification result and it is consistent with process_reward (faithfulness) and calibration (the process
 arms hedge more appropriately) rather than in tension with them.
 
 STATUS AND CAVEATS: EXPLORATORY, 1 seed, K=8, single eval set. Strata are thin (agree-n of 3-15
@@ -3947,21 +3569,21 @@ the 3-seed matrix before it is stated as a finding in the paper. Do not report i
 ```
 
 
-## CP7b_certification
+## certification
 
-BACKED BY: `results/CP7b_certification/results.json`, `results/CP7b_certification/per_system_exploratory.json`, `results/CP7b_certification/seed2.json`, `results/CP7b_certification/sftonly.json`, `results/CP7b_certification/chain_necessity.json`, `results/CP7b_certification/replication.json`, `results/CP7b_certification/k16.json`
+BACKED BY: `results/certification/results.json`, `results/certification/per_system_exploratory.json`, `results/certification/seed2.json`, `results/certification/sftonly.json`, `results/certification/chain_necessity.json`, `results/certification/replication.json`, `results/certification/k16.json`
 
 
 ### prereg.md
 
 ```
-# PRE-REGISTRATION — CP7b, CERTIFICATION RE-RUN (confirmatory)
-# Written and committed BEFORE any number was regenerated. The CP7 exploratory run's strata are
+# PRE-REGISTRATION — certification, CERTIFICATION RE-RUN (confirmatory)
+# Written and committed BEFORE any number was regenerated. The test_time_scaling exploratory run's strata are
 # RE-DECLARED here rather than inherited; where they differ from the exploratory ones it is
 # stated explicitly.
 
 ## WHY THIS RUN EXISTS
-CP7's post-hoc follow-up found that chain agreement lifts B1's accuracy at every self-confidence
+test_time_scaling's post-hoc follow-up found that chain agreement lifts B1's accuracy at every self-confidence
 stratum (mean +0.348, CMH z=3.767). That analysis was EXPLORATORY — designed after H7b failed.
 It is currently the strongest candidate for the paper's positive claim, so it must be
 re-established under pre-registration with comparators and controls it lacked.
@@ -4042,22 +3664,22 @@ Arm B uses 2x the calls of arm A, so ALSO report:
     arm A': B1 K=16 self-consistency  (equal TOTAL sample budget to arm B)
 H-CERT-2: certification with the chain beats B1 K=16 self-consistency at matched coverage.
 If it does not, the honest statement is that the gain is a sampling-budget effect, not a
-verification effect. NOTE the prefill accounting from CP1b applies: because prefill dominates,
+verification effect. NOTE the prefill accounting from exclusion_baselines applies: because prefill dominates,
 2x the samples is NOT 2x the FLOPs; report the FLOPs ratio alongside the call ratio.
 
 ## REPORTING REQUIREMENTS (upgrade c) — NO CONDITIONAL ACCURACY WITHOUT ITS DENOMINATOR
 Every cell reports: n, accuracy, Wilson 95% CI. The full 2x2 (agree/disagree x stratum) is
-tabulated for every arm. A risk-coverage curve is reported per arm with the CP8 regularity floor
+tabulated for every arm. A risk-coverage curve is reported per arm with the external_baselines regularity floor
 (0.5286) drawn as a band. The exploratory run's headline "0.70 -> 1.00 where B1 is unanimous"
 must appear ONLY with n=82 total, n=15 agreeing, and the Wilson interval on 15/15 — which is
 wide, and saying so is part of the result.
 
 ## UNIFORMITY
 Both sides of every pre-registered comparison use the IDENTICAL K. No comparison mixes decode
-budgets (the CP3 lesson where an inconsistent budget nearly manufactured a gate pass).
+budgets (the process_reward lesson where an inconsistent budget nearly manufactured a gate pass).
 
 ## WHAT WOULD MAKE THIS UNINFORMATIVE
-If B1's accuracy on the certified slice does not exceed the CP8 regularity floor (0.5286) by
+If B1's accuracy on the certified slice does not exceed the external_baselines regularity floor (0.5286) by
 more than its Wilson interval, the certified slice has not demonstrated crystallographic
 reasoning and the certification claim is not available regardless of the odds ratios.
 
@@ -4104,7 +3726,7 @@ WHY THIS STRENGTHENS RATHER THAN WEAKENS THE STUDY: the V2b-vs-B3 comparator tes
 in DESIGN — it just has to be made per-stratum if homogeneity fails. And the concentration
 finding is itself informative: it predicts that the chain certifies where lattice metric alone
 is nearly decisive (cubic/tetragonal, high symmetry) and fails where it is not
-(monoclinic/triclinic, low symmetry) — consistent with CP2's fabrication diagnosis and CP0c's
+(monoclinic/triclinic, low symmetry) — consistent with sft_chain's fabrication diagnosis and resolution_audit's
 finding that the geometry step is responsive to the image without being informed by it.
 That prediction is TESTABLE against the comparator arms and is pre-registered here as a
 secondary hypothesis: H-CERT-3, the per-system coverage profile is similar across chains
@@ -4181,7 +3803,7 @@ monoclinic, or triclinic. H-CERT-3 now tests whether B3 and SFT-V1 show the same
 ### prereg_chain_necessity.md
 
 ```
-# CP7b — IS A CHAIN NECESSARY AT ALL?
+# certification — IS A CHAIN NECESSARY AT ALL?
 # COMMITTED BEFORE COMPUTING. Zero GPU: both generation sets already exist.
 
 ## WHY THIS TEST, AND WHY NOW
@@ -4193,7 +3815,7 @@ raises the obvious next question, and it is the one a reviewer will ask first:
     agrees" the entire mechanism?
 
 Every certifier tested so far emits a reasoning chain. If a DIRECT-answer model — no chain, no
-per-step verification, no reasoning trace — certifies just as well, then CP7b is not about chains,
+per-step verification, no reasoning trace — certifies just as well, then certification is not about chains,
 not about verification, and not about process supervision. It is about model-pair agreement, which
 is SelfCheckGPT-adjacent prior art and a far weaker contribution.
 
@@ -4209,7 +3831,7 @@ outcome chain 0.9032 (68.7%).
   C1 CHAIN IS NOT NECESSARY: the direct certifier recovers >= 50% of the headroom above A3's base
      rate (i.e. certified accuracy >= 0.8453) at p < 0.05 — the SAME bar the chain certifiers were
      held to.
-     -> The mechanism is model-pair agreement. CP7b must be reframed: the contribution is the
+     -> The mechanism is model-pair agreement. certification must be reframed: the contribution is the
         MEASUREMENT (a below-floor model certifies a stronger one, quantified against deterministic
         ground truth) and NOT any claim that verified reasoning is what does the work. The paper
         must cite SelfCheckGPT and arXiv 2606.13649 as the mechanism's prior art and differentiate
@@ -4240,7 +3862,7 @@ outcome chain 0.9032 (68.7%).
 ### prereg_endpoint_switch.md
 
 ```
-# CP7b — PRIMARY ENDPOINT SWITCH: certified accuracy -> FALSE-CERTIFICATION RATE
+# certification — PRIMARY ENDPOINT SWITCH: certified accuracy -> FALSE-CERTIFICATION RATE
 # COMMITTED BEFORE COMPUTING seed 1's false-certification rate. Zero GPU.
 
 ## WHY SWITCH (directive item 3, verified independently)
@@ -4282,15 +3904,15 @@ answerer's majority equals the certifier's. Lower is better. Wilson 95% interval
 ### prereg_replication.md
 
 ```
-# CP7b REPLICATION — SECOND ANSWERER
+# certification REPLICATION — SECOND ANSWERER
 # COMMITTED BEFORE THE SECOND ANSWERER'S GENERATIONS EXIST. Brief 4B requires a pre-registered
 # replication threshold; brief 5 requires thresholds as a FRACTION OF HEADROOM, not absolute units.
 
 ## WHAT IS BEING RUN AND WHY THIS ANSWERER
-The entire CP7b result rests on ONE answerer (B1 seed 0, 416px, 1610 examples, base rate 0.6143)
+The entire certification result rests on ONE answerer (B1 seed 0, 416px, 1610 examples, base rate 0.6143)
 and ONE certifier seed. Brief 4B asks for a second answerer, "a different B1 seed at minimum,
 ideally a different model".
-We use the CP12 adapter B1_aug_s0 (native 768px, 3220 augmented examples, base rate 0.6619). This
+We use the sota_push adapter B1_aug_s0 (native 768px, 3220 augmented examples, base rate 0.6619). This
 is a STRONGER test than a second seed of the same recipe: it differs in resolution, training-set
 size and view augmentation, so surviving it means the effect is a property of the CERTIFIER, not
 a quirk of one answerer checkpoint. It is also already trained and sitting on an idle GPU.
@@ -4326,7 +3948,7 @@ where the independently sampled V2b majority agrees with the A3 majority.
 
 ## SECONDARY, ALSO COMMITTED NOW
   - The OUTCOME chain (B3) must remain NULL on this answerer (p >= 0.05). If B3 suddenly certifies
-    the A3 answerer, the process-vs-outcome contrast is answerer-specific and the whole CP7b claim
+    the A3 answerer, the process-vs-outcome contrast is answerer-specific and the whole certification claim
     weakens, whatever V2b does. This is the sharper falsification test of the two.
   - FALSE-CERTIFICATION RATE: V2b's rate (B1: 3/130 = 0.0231) should stay below B3's. The
     error-decorrelation mechanism predicts this; a reversal falsifies the mechanism story.
@@ -4342,7 +3964,7 @@ where the independently sampled V2b majority agrees with the A3 majority.
 
 ## THRESHOLD ARITHMETIC RECOMPUTED — RULE UNCHANGED, INPUT CORRECTED
 # Written after generating but BEFORE computing any certification number.
-The pre-registration above used base rate 0.6619, taken from CP12's K=3 evaluation. The
+The pre-registration above used base rate 0.6619, taken from sota_push's K=3 evaluation. The
 replication runs at K=8, and the A3 answerer's K=8 majority-vote base rate on the same 210
 structures is 145/210 = 0.6905 (+0.0286 vs K=3 — more samples, better vote).
 Certification is computed on THESE generations, so the lift must be measured against the base
@@ -4361,13 +3983,13 @@ does not mean what it says.
 ### prereg_v1_snapshot.md
 
 ```
-# PRE-REGISTRATION — CP7b, CERTIFICATION RE-RUN (confirmatory)
-# Written and committed BEFORE any number was regenerated. The CP7 exploratory run's strata are
+# PRE-REGISTRATION — certification, CERTIFICATION RE-RUN (confirmatory)
+# Written and committed BEFORE any number was regenerated. The test_time_scaling exploratory run's strata are
 # RE-DECLARED here rather than inherited; where they differ from the exploratory ones it is
 # stated explicitly.
 
 ## WHY THIS RUN EXISTS
-CP7's post-hoc follow-up found that chain agreement lifts B1's accuracy at every self-confidence
+test_time_scaling's post-hoc follow-up found that chain agreement lifts B1's accuracy at every self-confidence
 stratum (mean +0.348, CMH z=3.767). That analysis was EXPLORATORY — designed after H7b failed.
 It is currently the strongest candidate for the paper's positive claim, so it must be
 re-established under pre-registration with comparators and controls it lacked.
@@ -4448,22 +4070,22 @@ Arm B uses 2x the calls of arm A, so ALSO report:
     arm A': B1 K=16 self-consistency  (equal TOTAL sample budget to arm B)
 H-CERT-2: certification with the chain beats B1 K=16 self-consistency at matched coverage.
 If it does not, the honest statement is that the gain is a sampling-budget effect, not a
-verification effect. NOTE the prefill accounting from CP1b applies: because prefill dominates,
+verification effect. NOTE the prefill accounting from exclusion_baselines applies: because prefill dominates,
 2x the samples is NOT 2x the FLOPs; report the FLOPs ratio alongside the call ratio.
 
 ## REPORTING REQUIREMENTS (upgrade c) — NO CONDITIONAL ACCURACY WITHOUT ITS DENOMINATOR
 Every cell reports: n, accuracy, Wilson 95% CI. The full 2x2 (agree/disagree x stratum) is
-tabulated for every arm. A risk-coverage curve is reported per arm with the CP8 regularity floor
+tabulated for every arm. A risk-coverage curve is reported per arm with the external_baselines regularity floor
 (0.5286) drawn as a band. The exploratory run's headline "0.70 -> 1.00 where B1 is unanimous"
 must appear ONLY with n=82 total, n=15 agreeing, and the Wilson interval on 15/15 — which is
 wide, and saying so is part of the result.
 
 ## UNIFORMITY
 Both sides of every pre-registered comparison use the IDENTICAL K. No comparison mixes decode
-budgets (the CP3 lesson where an inconsistent budget nearly manufactured a gate pass).
+budgets (the process_reward lesson where an inconsistent budget nearly manufactured a gate pass).
 
 ## WHAT WOULD MAKE THIS UNINFORMATIVE
-If B1's accuracy on the certified slice does not exceed the CP8 regularity floor (0.5286) by
+If B1's accuracy on the certified slice does not exceed the external_baselines regularity floor (0.5286) by
 more than its Wilson interval, the certified slice has not demonstrated crystallographic
 reasoning and the certification claim is not available regardless of the odds ratios.
 ```
@@ -4472,7 +4094,7 @@ reasoning and the certification claim is not available regardless of the odds ra
 ### finding.md
 
 ```
-CHECKPOINT: CP7b_certification    GAP: is a VERIFIED chain a better certifier than an unverified one?
+CHECKPOINT: certification    GAP: is a VERIFIED chain a better certifier than an unverified one?
 STATUS: COMPLETE. All six certifier configurations ran (process seeds 0 and 1, outcome, SFT-only,
         chainless, and the K=16 equal-budget answerer control). Read the LATER sections before this
         one: three pre-registered tests fired against the opening claim and each revised it DOWNWARD.
@@ -4522,9 +4144,9 @@ but the honest statement is that outcome-trained agreement carries NO usable inf
 it is anti-correlated. Agreeing with the
 outcome-trained chain is not evidence the answer is right.
 
-THIS IS THE POSITIVE RESULT THE PROGRAM HAS BEEN MISSING. CP3 showed process rewards win on
-held-out accuracy and faithfulness by small margins; CP7 showed the verifier is oracle-only and
-NO deployable selection rule beat majority vote. CP7b finds the deployable use that does work:
+THIS IS THE POSITIVE RESULT THE PROGRAM HAS BEEN MISSING. process_reward showed process rewards win on
+held-out accuracy and faithfulness by small margins; test_time_scaling showed the verifier is oracle-only and
+NO deployable selection rule beat majority vote. certification finds the deployable use that does work:
 not selecting among a chain's own samples, but CERTIFYING a separate, stronger, cheaper answerer.
 The chain's value is not that it answers well — it answers at 0.386 — but that its agreement
 carries information about someone else's answer, and ONLY when it was trained with verification.
@@ -4545,7 +4167,7 @@ REPRODUCE
     --chains V2b=gen_V2b_s0_k8_final.json B3=gen_B3_s0_k8_final.json --out cp7b_results.json
   NOTE: spglib_implies must be computed LOCALLY — spglib is absent from the GPU box and the
   enrichment's exception handler silently returns None there, which would degrade D3 to majority
-  vote. Guard asserts >=95% resolution before scoring. (Same trap as CP7; caught both times.)
+  vote. Guard asserts >=95% resolution before scoring. (Same trap as test_time_scaling; caught both times.)
 
 =================  MECHANISM: WHY PROCESS TRAINING MAKES A CERTIFIER  ========================
 (exploratory, run on the SAME generations, no new compute; pre-registers nothing but answers the
@@ -4578,7 +4200,7 @@ the CHAIN is wrong, how often does the answerer nonetheless agree with it?
 THE SHARPER CLAIM: process training did not make the chain a better answerer — it made the
 chain's errors DECORRELATED from the answerer's. That is what agreement-based certification
 actually requires, and it is why an outcome-trained chain of identical architecture, data and
-inference budget fails at it. This also connects to CP8's error-overlap result, where the
+inference budget fails at it. This also connects to external_baselines's error-overlap result, where the
 structure-metric RF and the image model failed on different structures: error decorrelation, not
 raw accuracy, is the recurring source of usable signal in this program.
 
@@ -4666,7 +4288,7 @@ INTERNAL COUNT RECONCILIATION (all verified): 210-80=130 and 210-59=151 (chain-w
 
 =================  REPLICATION ON A SECOND ANSWERER — MIXED, AND THE BAD HALF IS THE  ==========
 =================  ONE I PRE-REGISTERED AS THE SHARPER TEST                          ==========
-Second answerer: the CP12 adapter (native 768px, 3220 augmented examples), K=8, same 210
+Second answerer: the sota_push adapter (native 768px, 3220 augmented examples), K=8, same 210
 composition-exclusion structures, base rate 145/210 = 0.6905. The certifier chains (V2b, B3,
 seed 0, K=8) are REUSED UNCHANGED, so the answerer is the only varied factor.
 
@@ -4681,7 +4303,7 @@ on an answerer that is better trained, higher resolution and higher base rate.
 
 SECONDARY ENDPOINT: FAILED, AND IT MATTERS MORE. The pre-registration states verbatim: "The
 OUTCOME chain (B3) must remain NULL on this answerer (p >= 0.05). If B3 suddenly certifies the A3
-answerer, the process-vs-outcome contrast is answerer-specific and the whole CP7b claim weakens,
+answerer, the process-vs-outcome contrast is answerer-specific and the whole certification claim weakens,
 whatever V2b does. This is the sharper falsification test of the two."
 B3 certifies this answerer at 0.9032, p = 0.0053, recovering 68.7% of headroom. It does NOT
 remain null. By my own committed rule the process-vs-outcome contrast is ANSWERER-SPECIFIC.
@@ -4731,7 +4353,7 @@ threshold, and it falls BELOW the 0.8453 bar that C1 would have required.
 
 WHAT THIS RESCUES, AND WHAT IT DOES NOT.
   RESCUES: the chain structure IS load-bearing. A second independently sampled model agreeing is
-  NOT the whole mechanism — that variant certifies too, but roughly half as effectively. So CP7b
+  NOT the whole mechanism — that variant certifies too, but roughly half as effectively. So certification
   is not merely SelfCheckGPT-style self-consistency relabelled, and the earlier collapse of the
   process-vs-outcome contrast does not collapse the chain claim with it.
   DOES NOT RESCUE: "verification is required". Both a chain trained on outcome-only reward
@@ -4767,7 +4389,7 @@ All three take max_pixels as an explicit argument and every generation file reco
 effective_resolution READ FROM THE LIVE PROCESSOR (grid_thw, patch/merge size, visual tokens per
 view), per the brief's logging requirement.
 
-EVERY RUN WAS MATCHED TO ITS OWN TRAINING RESOLUTION, which is the correct choice given CP0c
+EVERY RUN WAS MATCHED TO ITS OWN TRAINING RESOLUTION, which is the correct choice given resolution_audit
 (a 416-trained adapter evaluated at 768 falls 0.5905 -> 0.4571 from train/test MISMATCH, not from
 resolution):
     A3 answerer   576 visual tokens/view (768px)  — trained native.  MATCHED
@@ -4905,7 +4527,7 @@ consistent with the second-answerer replication failure recorded above. That cla
 ### finding_pre2G_snapshot.md
 
 ```
-CHECKPOINT: CP7b_certification    GAP: is a VERIFIED chain a better certifier than an unverified one?
+CHECKPOINT: certification    GAP: is a VERIFIED chain a better certifier than an unverified one?
 STATUS: PRIMARY COMPARISON DONE (V2b vs B3). SFT-V1 arm and the K=16 equal-budget control are
 still generating on box 1; this record will be completed when they land.
 RESULT: PROCESS TRAINING IS WHAT MAKES THE CHAIN A CERTIFIER. The pre-registered contrast came
@@ -4941,9 +4563,9 @@ B3 does not merely certify worse — its agreement is if anything ANTI-correlate
 (0.525) sits BELOW the answerer's unconditional base rate (0.614). Agreeing with the
 outcome-trained chain is not evidence the answer is right.
 
-THIS IS THE POSITIVE RESULT THE PROGRAM HAS BEEN MISSING. CP3 showed process rewards win on
-held-out accuracy and faithfulness by small margins; CP7 showed the verifier is oracle-only and
-NO deployable selection rule beat majority vote. CP7b finds the deployable use that does work:
+THIS IS THE POSITIVE RESULT THE PROGRAM HAS BEEN MISSING. process_reward showed process rewards win on
+held-out accuracy and faithfulness by small margins; test_time_scaling showed the verifier is oracle-only and
+NO deployable selection rule beat majority vote. certification finds the deployable use that does work:
 not selecting among a chain's own samples, but CERTIFYING a separate, stronger, cheaper answerer.
 The chain's value is not that it answers well — it answers at 0.386 — but that its agreement
 carries information about someone else's answer, and ONLY when it was trained with verification.
@@ -4964,7 +4586,7 @@ REPRODUCE
     --chains V2b=gen_V2b_s0_k8_final.json B3=gen_B3_s0_k8_final.json --out cp7b_results.json
   NOTE: spglib_implies must be computed LOCALLY — spglib is absent from the GPU box and the
   enrichment's exception handler silently returns None there, which would degrade D3 to majority
-  vote. Guard asserts >=95% resolution before scoring. (Same trap as CP7; caught both times.)
+  vote. Guard asserts >=95% resolution before scoring. (Same trap as test_time_scaling; caught both times.)
 
 =================  MECHANISM: WHY PROCESS TRAINING MAKES A CERTIFIER  ========================
 (exploratory, run on the SAME generations, no new compute; pre-registers nothing but answers the
@@ -4991,7 +4613,7 @@ the answerer alone would have been right. The failure mode of certification here
 THE SHARPER CLAIM: process training did not make the chain a better answerer — it made the
 chain's errors DECORRELATED from the answerer's. That is what agreement-based certification
 actually requires, and it is why an outcome-trained chain of identical architecture, data and
-inference budget fails at it. This also connects to CP8's error-overlap result, where the
+inference budget fails at it. This also connects to external_baselines's error-overlap result, where the
 structure-metric RF and the image model failed on different structures: error decorrelation, not
 raw accuracy, is the recurring source of usable signal in this program.
 
@@ -5040,7 +4662,7 @@ would behave like in-support ones, which is an assumption and not a measurement.
 ### finding_pre_endpoint_switch_snapshot.md
 
 ```
-CHECKPOINT: CP7b_certification    GAP: is a VERIFIED chain a better certifier than an unverified one?
+CHECKPOINT: certification    GAP: is a VERIFIED chain a better certifier than an unverified one?
 STATUS: PRIMARY COMPARISON DONE (V2b vs B3). SFT-V1 arm and the K=16 equal-budget control are
 still generating on box 1; this record will be completed when they land.
 RESULT: PROCESS TRAINING IS WHAT MAKES THE CHAIN A CERTIFIER. The pre-registered contrast came
@@ -5078,9 +4700,9 @@ but the honest statement is that outcome-trained agreement carries NO usable inf
 it is anti-correlated. Agreeing with the
 outcome-trained chain is not evidence the answer is right.
 
-THIS IS THE POSITIVE RESULT THE PROGRAM HAS BEEN MISSING. CP3 showed process rewards win on
-held-out accuracy and faithfulness by small margins; CP7 showed the verifier is oracle-only and
-NO deployable selection rule beat majority vote. CP7b finds the deployable use that does work:
+THIS IS THE POSITIVE RESULT THE PROGRAM HAS BEEN MISSING. process_reward showed process rewards win on
+held-out accuracy and faithfulness by small margins; test_time_scaling showed the verifier is oracle-only and
+NO deployable selection rule beat majority vote. certification finds the deployable use that does work:
 not selecting among a chain's own samples, but CERTIFYING a separate, stronger, cheaper answerer.
 The chain's value is not that it answers well — it answers at 0.386 — but that its agreement
 carries information about someone else's answer, and ONLY when it was trained with verification.
@@ -5101,7 +4723,7 @@ REPRODUCE
     --chains V2b=gen_V2b_s0_k8_final.json B3=gen_B3_s0_k8_final.json --out cp7b_results.json
   NOTE: spglib_implies must be computed LOCALLY — spglib is absent from the GPU box and the
   enrichment's exception handler silently returns None there, which would degrade D3 to majority
-  vote. Guard asserts >=95% resolution before scoring. (Same trap as CP7; caught both times.)
+  vote. Guard asserts >=95% resolution before scoring. (Same trap as test_time_scaling; caught both times.)
 
 =================  MECHANISM: WHY PROCESS TRAINING MAKES A CERTIFIER  ========================
 (exploratory, run on the SAME generations, no new compute; pre-registers nothing but answers the
@@ -5134,7 +4756,7 @@ the CHAIN is wrong, how often does the answerer nonetheless agree with it?
 THE SHARPER CLAIM: process training did not make the chain a better answerer — it made the
 chain's errors DECORRELATED from the answerer's. That is what agreement-based certification
 actually requires, and it is why an outcome-trained chain of identical architecture, data and
-inference budget fails at it. This also connects to CP8's error-overlap result, where the
+inference budget fails at it. This also connects to external_baselines's error-overlap result, where the
 structure-metric RF and the image model failed on different structures: error decorrelation, not
 raw accuracy, is the recurring source of usable signal in this program.
 
@@ -5222,7 +4844,7 @@ INTERNAL COUNT RECONCILIATION (all verified): 210-80=130 and 210-59=151 (chain-w
 
 =================  REPLICATION ON A SECOND ANSWERER — MIXED, AND THE BAD HALF IS THE  ==========
 =================  ONE I PRE-REGISTERED AS THE SHARPER TEST                          ==========
-Second answerer: the CP12 adapter (native 768px, 3220 augmented examples), K=8, same 210
+Second answerer: the sota_push adapter (native 768px, 3220 augmented examples), K=8, same 210
 composition-exclusion structures, base rate 145/210 = 0.6905. The certifier chains (V2b, B3,
 seed 0, K=8) are REUSED UNCHANGED, so the answerer is the only varied factor.
 
@@ -5237,7 +4859,7 @@ on an answerer that is better trained, higher resolution and higher base rate.
 
 SECONDARY ENDPOINT: FAILED, AND IT MATTERS MORE. The pre-registration states verbatim: "The
 OUTCOME chain (B3) must remain NULL on this answerer (p >= 0.05). If B3 suddenly certifies the A3
-answerer, the process-vs-outcome contrast is answerer-specific and the whole CP7b claim weakens,
+answerer, the process-vs-outcome contrast is answerer-specific and the whole certification claim weakens,
 whatever V2b does. This is the sharper falsification test of the two."
 B3 certifies this answerer at 0.9032, p = 0.0053, recovering 68.7% of headroom. It does NOT
 remain null. By my own committed rule the process-vs-outcome contrast is ANSWERER-SPECIFIC.
@@ -5287,7 +4909,7 @@ threshold, and it falls BELOW the 0.8453 bar that C1 would have required.
 
 WHAT THIS RESCUES, AND WHAT IT DOES NOT.
   RESCUES: the chain structure IS load-bearing. A second independently sampled model agreeing is
-  NOT the whole mechanism — that variant certifies too, but roughly half as effectively. So CP7b
+  NOT the whole mechanism — that variant certifies too, but roughly half as effectively. So certification
   is not merely SelfCheckGPT-style self-consistency relabelled, and the earlier collapse of the
   process-vs-outcome contrast does not collapse the chain claim with it.
   DOES NOT RESCUE: "verification is required". Both a chain trained on outcome-only reward
@@ -5323,7 +4945,7 @@ All three take max_pixels as an explicit argument and every generation file reco
 effective_resolution READ FROM THE LIVE PROCESSOR (grid_thw, patch/merge size, visual tokens per
 view), per the brief's logging requirement.
 
-EVERY RUN WAS MATCHED TO ITS OWN TRAINING RESOLUTION, which is the correct choice given CP0c
+EVERY RUN WAS MATCHED TO ITS OWN TRAINING RESOLUTION, which is the correct choice given resolution_audit
 (a 416-trained adapter evaluated at 768 falls 0.5905 -> 0.4571 from train/test MISMATCH, not from
 resolution):
     A3 answerer   576 visual tokens/view (768px)  — trained native.  MATCHED
@@ -5396,15 +5018,15 @@ REVISED CLAIM AFTER ALL ARMS — this supersedes every earlier version in this f
 ```
 
 
-## CP8_external_baselines
+## external_baselines
 
-BACKED BY: `results/CP8_external_baselines/alignn_published_3seed.json`, `results/CP8_external_baselines/cgcnn_style_s0.json`, `results/CP8_external_baselines/error_overlap_exploratory.json`, `results/CP8_external_baselines/structure_baseline.json`, `results/CP8_external_baselines/cgcnn_style_3seed.json`
+BACKED BY: `results/external_baselines/alignn_published_3seed.json`, `results/external_baselines/cgcnn_style_s0.json`, `results/external_baselines/error_overlap_exploratory.json`, `results/external_baselines/structure_baseline.json`, `results/external_baselines/cgcnn_style_3seed.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP8_external_baselines     GAP: how does CoCr compare to structure-input models?
+CHECKPOINT: external_baselines     GAP: how does CoCr compare to structure-input models?
 STATUS: DONE. Both structure-input baselines are trained and reported on the 210-structure
         composition-exclusion eval set: a 19-feature lattice-metric random forest (0.8905) and
         the PUBLISHED ALIGNN architecture (0.6492 +/- 0.0287, 3 seeds, CPU). The earlier
@@ -5419,7 +5041,7 @@ structure-input model trained on OUR labels and OUR split. That is what this is.
 
 =================  WHAT WAS RUN  =================
 Inputs: the 1820 re-fetched CIFs (data/e3/structures.json), verified 1820/1820 to reproduce the
-sidecar labels by the CP0 audit method (rate 1.0) — so the structures are provably the ones the
+sidecar labels by the pipeline audit method (rate 1.0) — so the structures are provably the ones the
 VLM was labelled against.
 Features (19): a, b, c, alpha, beta, gamma, volume, three scale-free EDGE RATIOS, the three
 |angle-90| deviations, |gamma-120|, angle range, angle std, edge coefficient of variation,
@@ -5440,7 +5062,7 @@ the "baseline" would be a symmetry detector, not a model.
   Input-cell metric already matches its crystal system: 113/210 (53.8%).
     => these are largely PRIMITIVE/reduced cells, not conventional cells. The metric does NOT
        hand over the answer. (This is the same primitive-vs-conventional issue that produced a
-       real labeling bug in CP0 and a bad geometry step in CP2.)
+       real labeling bug in pipeline and a bad geometry step in sft_chain.)
   TEST 1 — hand-written metric RULE, no learning:            0.4143
     => the answer is genuinely NOT trivially readable; learning contributes ~0.48 absolute.
   TEST 2 — scale-free SHAPE features only (ratios/deviations): 0.8571
@@ -5463,7 +5085,7 @@ ALSO NOT LICENSED: treating 0.89 as the geometry ceiling. Test 3 shows >=0.53 of
 from dataset regularities with no shape information at all.
 
 =================  CONSEQUENCE FOR THE PAPER  =================
-This reinforces the CP1b branch-(a) reframe rather than undermining it. If the claim were
+This reinforces the exclusion_baselines branch-(a) reframe rather than undermining it. If the claim were
 "CoCr is accurate at crystal-system classification", this baseline refutes it outright at a
 fraction of the compute. The defensible claim is the one branch (a) already forced: CoCr's
 contribution is a VERIFIABLE, CHECKABLE chain from images — a legibility/verifiability result,
@@ -5501,7 +5123,7 @@ mean 0.3365 (the directive used the 2-seed 0.3405).
 
 THE CHAIN ARMS SIT BELOW THE FLOOR. They do not merely fail to beat the structure baseline;
 they fail to beat a 3-feature size-only model. That is a stronger and more uncomfortable
-statement than anything in CP1b, and it should be in the paper.
+statement than anything in exclusion_baselines, and it should be in the paper.
 
 ## THE CANDIDATE SENTENCE WAS TESTED AND DOES NOT SURVIVE
 The directive proposed (explicitly "verify before writing"): "above the dataset-regularity
@@ -5664,15 +5286,15 @@ here, so the ordering is NUMERIC CELL >> {coordinate GNN, pixel VLM} > floor > w
 ```
 
 
-## CP9_calibration
+## calibration
 
-BACKED BY: `results/CP9_calibration/results.json`
+BACKED BY: `results/calibration/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP9_calibration (E9-lite)     GAP: calibration under verifiable-reward RL
+CHECKPOINT: calibration (E9-lite)     GAP: calibration under verifiable-reward RL
 STATUS: DONE (re-scoring only, no new GPU generation). RESULT: dense deterministic process
 verification PARTIALLY mitigates outcome-RLVR calibration degeneration — but the gain is
 MORE HEDGING, not better discrimination.
@@ -5748,7 +5370,7 @@ arXiv 2509.21882 ("The Hidden Costs and Measurement Gaps of RLVR"): headline RLV
   answers, and (iii) benchmark data contamination", and recommends "budget-matched
   saturation curves with variance, calibration, and abstention tracking". This checkpoint
   IS the calibration-tracking component of that minimum standard for CoCr; the
-  budget-matching component is handled in CP1b's FLOPs accounting.
+  budget-matching component is handled in exclusion_baselines's FLOPs accounting.
 
 =================  CAVEATS  =================
 - Vote-share confidence is coarse (3 attainable levels) and is a self-consistency proxy,
@@ -5806,7 +5428,7 @@ unblocks the complete decomposition plus the E7 rerank study.
 ```
 
 
-## CP10_merged_retrain
+## merged_retrain
 
 BACKED BY: no numeric results — this checkpoint is a reasoned cut or was subsumed, and carries a finding only.
 
@@ -5814,26 +5436,26 @@ BACKED BY: no numeric results — this checkpoint is a reasoned cut or was subsu
 ### prereg.md
 
 ```
-# PRE-REGISTRATION — CP10, the MERGED retrain (closes CP1c and CP0c in one run)
+# PRE-REGISTRATION — merged_retrain, the MERGED retrain (closes prototype_exclusion and resolution_audit in one run)
 # Written and committed BEFORE the retrain was launched and before any retrain number existed.
 
 ## WHY ONE RUN CLOSES TWO QUESTIONS (team directive item 3)
 Two questions are currently open, and both need the SAME run:
 
-  Q1 (from CP1c, branch (iii)): is B1-direct's OOD robustness chemistry-specific, or does it
-     extend to unseen structural arrangements? CP1c could not answer this: the built
+  Q1 (from prototype_exclusion, branch (iii)): is B1-direct's OOD robustness chemistry-specific, or does it
+     extend to unseen structural arrangements? prototype_exclusion could not answer this: the built
      prototype-exclusion eval was 90.0% contaminated for existing checkpoints, and the valid
      no-retrain probe returned a DIFFICULTY SHIFT (all five arms past threshold), which the
      pre-registration explicitly forbids reading as a memorization result. A post-hoc
      difficulty-controlled analysis was underpowered (best |t| = 1.63).
-  Q2 (from CP0c, branch (ii)): was B1's 0.133 accuracy drop at native resolution a genuine
+  Q2 (from resolution_audit, branch (ii)): was B1's 0.133 accuracy drop at native resolution a genuine
      resolution effect or a train/test mismatch? Unresolvable without training at native
      resolution.
 
 A single run trained at NATIVE resolution on the BALANCED geometric-OOD split answers both.
 
 ## THE RUN
-  data:       data/e3geo  (built + audited in CP1c: 1610 train / 210 eval, 230 and 30 per system
+  data:       data/e3geo  (built + audited in prototype_exclusion: 1610 train / 210 eval, 230 and 30 per system
               across all 7 systems, 0 prototype overlap, 0 eval-only elements, seed 23)
   resolution: max_pixels = 589824  -> 48x48 grid -> 768x768 effective, 576 visual tokens/view
               (verified from the live processor; prefill 2973 tokens/sample)
@@ -5857,31 +5479,31 @@ composition-exclusion value 0.6143.
              advantage does not extend to unseen arrangements.
   Q1-(ii) B1 HOLDS within 0.05
           => B1's robustness is GENERAL across both OOD axes. The memorization story is closed
-             as refuted, and CP1b branch (a) is strengthened on a properly powered test.
+             as refuted, and exclusion_baselines branch (a) is strengthened on a properly powered test.
   Q1-(iii) BOTH arms drop > 0.05
           => difficulty shift again; compare ORDERING only, and state that a balanced
-             geometric-OOD split is simply harder. (Unlike CP1c this is now a TRAINED
+             geometric-OOD split is simply harder. (Unlike prototype_exclusion this is now a TRAINED
              comparison, so a joint drop is informative about task difficulty, not about
              contamination.)
-  In ALL cases: report each arm against the CP8 regularity floor (0.5286), not only against
+  In ALL cases: report each arm against the external_baselines regularity floor (0.5286), not only against
   chance, because an arm below the floor has not demonstrated crystallographic reasoning.
 
 ## DECISION RULES — Q2 (resolution)
 Compare each arm's native-trained/native-eval accuracy against its 416-trained/416-eval value.
 
   Q2-(i)  an arm IMPROVES by > 0.05 at native
-          => resolution WAS a real constraint; CP0c's B1 drop was train/test mismatch, now
+          => resolution WAS a real constraint; resolution_audit's B1 drop was train/test mismatch, now
              confirmed. All prior perception results must be annotated as resolution-limited,
              and future runs use native resolution.
   Q2-(ii) accuracies are FLAT within 0.05 for both arms
-          => resolution was NOT a constraint at this render size; CP0c's "resolution excluded"
-             becomes defensible (it is currently NOT, per CP0c branch (ii)), and the 416-eff
+          => resolution was NOT a constraint at this render size; resolution_audit's "resolution excluded"
+             becomes defensible (it is currently NOT, per resolution_audit branch (ii)), and the 416-eff
              results stand as-is.
   Q2-(iii) an arm DEGRADES by > 0.05 at native even when trained natively
           => a genuine and surprising result (more pixels hurting a natively-trained model);
              investigate before reporting, do not assert a mechanism.
   SECONDARY, pre-registered: geometry-STEP accuracy for V2b native-trained vs the 0.6349 /
-  0.6476 pair from CP0c item 2. If the natively-TRAINED geometry step still fails to beat the
+  0.6476 pair from resolution_audit item 2. If the natively-TRAINED geometry step still fails to beat the
   416 value by > 0.05, the fabrication diagnosis is confirmed under the strongest available
   test, and the "responsive to the image without being informed by it" sentence stands. If it
   DOES improve, that sentence must be weakened to apply only to 416-trained models.
@@ -5900,7 +5522,7 @@ Compare each arm's native-trained/native-eval accuracy against its 416-trained/4
   416-eff runs. This is a cost note, not a confound.
 
 ## WHAT WOULD MAKE THIS RUN UNINFORMATIVE
-If both arms land below the CP8 regularity floor (0.5286) on the balanced geometric-OOD eval,
+If both arms land below the external_baselines regularity floor (0.5286) on the balanced geometric-OOD eval,
 then neither arm demonstrated crystallographic reasoning on this split and both Q1 and Q2 become
 unanswerable from it — report that plainly rather than interpreting sub-floor differences.
 
@@ -5913,7 +5535,7 @@ unanswerable from it — report that plainly rather than interpreting sub-floor 
   labels_sidecar.json present in both dirs                        VERIFIED
 
 TWO GAPS FOUND AND CLOSED DURING PREP (recorded because they would have silently broken the run):
-1. data/e3geo was built in CP1c as an EVAL split, from the GRPO prompt format, and therefore
+1. data/e3geo was built in prototype_exclusion as an EVAL split, from the GRPO prompt format, and therefore
    LACKED the `target` and `arm` fields the SFT harness requires. Fixed by generating targets
    deterministically from labels_sidecar.json via cocr.traces.make_target for arms B1 and V1 ->
    data/e3geo_sft/. No new labels were invented; the targets come from the same sidecar that
@@ -5932,7 +5554,7 @@ RUN ORDER (V2b requires an SFT initialization at the SAME resolution, so the cha
   2. SFT V1 on data/e3geo_sft, 3 seeds, --max-pixels 589824      (V2b's initialization)
   3. GRPO V2b from each V1 seed, --data-dir data/e3geo, --max-pixels 589824
   4. eval B1 and V2b on data/e3geo/eval at --max-pixels 589824, 3-sample majority vote
-NOTE this makes CP10 larger than the "~1 day" estimate quoted earlier: native resolution is
+NOTE this makes merged_retrain larger than the "~1 day" estimate quoted earlier: native resolution is
 ~3x the prefill, and V2b needs its own SFT stage first. Expect ~2-3 days for the full 3-seed
 chain. A 1-seed pilot of steps 1-4 is the cheaper de-risking option and is the recommended
 first move, exactly as E3 was piloted before its matrix.
@@ -5954,7 +5576,7 @@ WHAT THE PILOT CAN AND CANNOT DECIDE — stated in advance so a 1-seed number is
        point estimate for both Q1 and Q2; expose any cost surprise before 3 seeds are committed.
   CANNOT: satisfy EITHER pre-registered decision rule. Both Q1 and Q2 compare against pooled
        seed SDs, which do not exist at n=1. NO branch may be declared from the pilot. Any pilot
-       number is explicitly a DE-RISKING observation, exactly as CP3's pilot was, and must be
+       number is explicitly a DE-RISKING observation, exactly as process_reward's pilot was, and must be
        labelled as such if reported.
 
 SCHEDULING NOTE: the pilot waits on E7 GENERATION only (SFT is compute-bound and would contend
@@ -5991,7 +5613,7 @@ Native = max_pixels >= 589824, verified from the LIVE processor (48x48 grid, 576
   GRPO cells
     G1  V2b from S2, native x comp      G2  V2b from S4, native x geo
   EVAL
-    every model at ITS OWN training resolution (CP0c mismatch rule, non-negotiable);
+    every model at ITS OWN training resolution (resolution_audit mismatch rule, non-negotiable);
     comp-trained models on the 210 composition eval, geo-trained on the 210 geometric eval;
     effective_resolution logged per run, read from the live processor.
 
@@ -6000,18 +5622,18 @@ Threshold 0.05 absolute; pooled SD per ledger/CONVENTIONS.md.
 
   Q1  RESOLUTION:  B1 (S1, native-comp-1610)  vs  B1 (S5, 416-comp-1610)
       Size and split are FIXED; only resolution varies. This is the clean version of the test
-      CP0c could not run.
-        Q1-(i)   native HIGHER by > 0.05  -> resolution WAS a real constraint; CP0c's B1 drop
+      resolution_audit could not run.
+        Q1-(i)   native HIGHER by > 0.05  -> resolution WAS a real constraint; resolution_audit's B1 drop
                  was train/test mismatch, now confirmed; annotate all 416-era perception results
                  as resolution-limited.
         Q1-(ii)  |delta| <= 0.05          -> resolution is NOT a constraint at this render size;
-                 CP0c's "resolution excluded" becomes defensible and the 416-era results stand.
+                 resolution_audit's "resolution excluded" becomes defensible and the 416-era results stand.
         Q1-(iii) native LOWER by > 0.05   -> surprising; investigate before asserting a mechanism.
 
   Q2  SPLIT:  per arm, native-comp-1610  vs  native-geo-1610
-      Size and resolution are FIXED; only the split varies. CP1c's branch rules apply verbatim
-      (Q1-(i)/(ii)/(iii) of the CP1c prereg: B1 collapses while chains hold / B1 holds / all drop).
-      Every arm is ALSO reported against the CP8 regularity floor 0.5286, not only chance.
+      Size and resolution are FIXED; only the split varies. prototype_exclusion's branch rules apply verbatim
+      (Q1-(i)/(ii)/(iii) of the prototype_exclusion prereg: B1 collapses while chains hold / B1 holds / all drop).
+      Every arm is ALSO reported against the external_baselines regularity floor 0.5286, not only chance.
 
   Q3  SCALE:  B1 (S5, 416-comp-1610)  vs  B1 (416-comp-115, the existing 0.6143)
       Resolution and split are FIXED; only SFT data size varies (14x). This is what the added
@@ -6022,7 +5644,7 @@ Threshold 0.05 absolute; pooled SD per ledger/CONVENTIONS.md.
       (i) or (iii), the V1 scale comparison is NOT made and is reported as unavailable.
 
 ## CHAIN-ARM 416 COMPARATOR
-The existing CP3 V2b (0.3857) was GRPO-trained on 1610 prompts but from an SFT stage of only 115
+The existing process_reward V2b (0.3857) was GRPO-trained on 1610 prompts but from an SFT stage of only 115
 examples. It may be cited for effect DIRECTION only, and the SFT-lineage caveat must appear
 wherever it is cited.
 
@@ -6032,7 +5654,7 @@ Pipeline validation + effect DIRECTION only. NO gate verdicts. The words "confir
 cannot be evaluated at n=1 and no branch may be declared from this run.
 Standing requirements carried over: snapshot the record before any correction; log the
 zero-variance-group panel for GRPO cells; run the adapter-diff audit across seeds when the
-matrix runs (bit-identical adapters would indicate a save-twice bug, as checked in CP3).
+matrix runs (bit-identical adapters would indicate a save-twice bug, as checked in process_reward).
 IF ANY Q SHOWS A DIRECTION THAT WOULD CHANGE THE E7 WRITE-UP, FLAG IT BEFORE THE MATRIX RUNS,
 not after.
 
@@ -6064,7 +5686,7 @@ S5 RESULT (cell complete, checkpoint verified):
   sample TAUGHT rather than to longer optimisation. State this when Q3 is reported.
 
 =================  PILOT PAUSED AND RESCOPED (team direction, 2026-07-27)  =================
-SEQUENCE DIRECTED: finish current cell -> CP7b certification re-run -> remaining Q1/Q3 cells ->
+SEQUENCE DIRECTED: finish current cell -> certification certification re-run -> remaining Q1/Q3 cells ->
 Q2 cells CUT.
 
 STATE AT PAUSE (stopped at a clean cell boundary; nothing lost):
@@ -6075,8 +5697,8 @@ STATE AT PAUSE (stopped at a clean cell boundary; nothing lost):
 S1's 241 min against the 200 min estimate confirms the corrected cost model to within ~20%.
 
 Q2 CELLS CUT FROM THE PILOT. Rationale (recorded so the cut is auditable): Q2 is the split axis,
-which serves the memorization question that CP1b branch (a) already made non-load-bearing and
-that CP1c returned an uninterpretable branch (iii) on. Deferred to the matrix stage, revived only
+which serves the memorization question that exclusion_baselines branch (a) already made non-load-bearing and
+that prototype_exclusion returned an uninterpretable branch (iii) on. Deferred to the matrix stage, revived only
 if the certification story needs a robustness row. The data/e3geo and data/e3geo_sft artifacts are
 BUILT, AUDITED and RETAINED (0 leakage, 0 missing renders, 3220 SFT rows) — holding them costs
 nothing and they are ready if Q2 is revived.
@@ -6104,26 +5726,26 @@ EVAL TRIM ADOPTED (split rule, not blanket):
 ### prereg_v1_snapshot.md
 
 ```
-# PRE-REGISTRATION — CP10, the MERGED retrain (closes CP1c and CP0c in one run)
+# PRE-REGISTRATION — merged_retrain, the MERGED retrain (closes prototype_exclusion and resolution_audit in one run)
 # Written and committed BEFORE the retrain was launched and before any retrain number existed.
 
 ## WHY ONE RUN CLOSES TWO QUESTIONS (team directive item 3)
 Two questions are currently open, and both need the SAME run:
 
-  Q1 (from CP1c, branch (iii)): is B1-direct's OOD robustness chemistry-specific, or does it
-     extend to unseen structural arrangements? CP1c could not answer this: the built
+  Q1 (from prototype_exclusion, branch (iii)): is B1-direct's OOD robustness chemistry-specific, or does it
+     extend to unseen structural arrangements? prototype_exclusion could not answer this: the built
      prototype-exclusion eval was 90.0% contaminated for existing checkpoints, and the valid
      no-retrain probe returned a DIFFICULTY SHIFT (all five arms past threshold), which the
      pre-registration explicitly forbids reading as a memorization result. A post-hoc
      difficulty-controlled analysis was underpowered (best |t| = 1.63).
-  Q2 (from CP0c, branch (ii)): was B1's 0.133 accuracy drop at native resolution a genuine
+  Q2 (from resolution_audit, branch (ii)): was B1's 0.133 accuracy drop at native resolution a genuine
      resolution effect or a train/test mismatch? Unresolvable without training at native
      resolution.
 
 A single run trained at NATIVE resolution on the BALANCED geometric-OOD split answers both.
 
 ## THE RUN
-  data:       data/e3geo  (built + audited in CP1c: 1610 train / 210 eval, 230 and 30 per system
+  data:       data/e3geo  (built + audited in prototype_exclusion: 1610 train / 210 eval, 230 and 30 per system
               across all 7 systems, 0 prototype overlap, 0 eval-only elements, seed 23)
   resolution: max_pixels = 589824  -> 48x48 grid -> 768x768 effective, 576 visual tokens/view
               (verified from the live processor; prefill 2973 tokens/sample)
@@ -6147,31 +5769,31 @@ composition-exclusion value 0.6143.
              advantage does not extend to unseen arrangements.
   Q1-(ii) B1 HOLDS within 0.05
           => B1's robustness is GENERAL across both OOD axes. The memorization story is closed
-             as refuted, and CP1b branch (a) is strengthened on a properly powered test.
+             as refuted, and exclusion_baselines branch (a) is strengthened on a properly powered test.
   Q1-(iii) BOTH arms drop > 0.05
           => difficulty shift again; compare ORDERING only, and state that a balanced
-             geometric-OOD split is simply harder. (Unlike CP1c this is now a TRAINED
+             geometric-OOD split is simply harder. (Unlike prototype_exclusion this is now a TRAINED
              comparison, so a joint drop is informative about task difficulty, not about
              contamination.)
-  In ALL cases: report each arm against the CP8 regularity floor (0.5286), not only against
+  In ALL cases: report each arm against the external_baselines regularity floor (0.5286), not only against
   chance, because an arm below the floor has not demonstrated crystallographic reasoning.
 
 ## DECISION RULES — Q2 (resolution)
 Compare each arm's native-trained/native-eval accuracy against its 416-trained/416-eval value.
 
   Q2-(i)  an arm IMPROVES by > 0.05 at native
-          => resolution WAS a real constraint; CP0c's B1 drop was train/test mismatch, now
+          => resolution WAS a real constraint; resolution_audit's B1 drop was train/test mismatch, now
              confirmed. All prior perception results must be annotated as resolution-limited,
              and future runs use native resolution.
   Q2-(ii) accuracies are FLAT within 0.05 for both arms
-          => resolution was NOT a constraint at this render size; CP0c's "resolution excluded"
-             becomes defensible (it is currently NOT, per CP0c branch (ii)), and the 416-eff
+          => resolution was NOT a constraint at this render size; resolution_audit's "resolution excluded"
+             becomes defensible (it is currently NOT, per resolution_audit branch (ii)), and the 416-eff
              results stand as-is.
   Q2-(iii) an arm DEGRADES by > 0.05 at native even when trained natively
           => a genuine and surprising result (more pixels hurting a natively-trained model);
              investigate before reporting, do not assert a mechanism.
   SECONDARY, pre-registered: geometry-STEP accuracy for V2b native-trained vs the 0.6349 /
-  0.6476 pair from CP0c item 2. If the natively-TRAINED geometry step still fails to beat the
+  0.6476 pair from resolution_audit item 2. If the natively-TRAINED geometry step still fails to beat the
   416 value by > 0.05, the fabrication diagnosis is confirmed under the strongest available
   test, and the "responsive to the image without being informed by it" sentence stands. If it
   DOES improve, that sentence must be weakened to apply only to 416-trained models.
@@ -6190,7 +5812,7 @@ Compare each arm's native-trained/native-eval accuracy against its 416-trained/4
   416-eff runs. This is a cost note, not a confound.
 
 ## WHAT WOULD MAKE THIS RUN UNINFORMATIVE
-If both arms land below the CP8 regularity floor (0.5286) on the balanced geometric-OOD eval,
+If both arms land below the external_baselines regularity floor (0.5286) on the balanced geometric-OOD eval,
 then neither arm demonstrated crystallographic reasoning on this split and both Q1 and Q2 become
 unanswerable from it — report that plainly rather than interpreting sub-floor differences.
 
@@ -6203,7 +5825,7 @@ unanswerable from it — report that plainly rather than interpreting sub-floor 
   labels_sidecar.json present in both dirs                        VERIFIED
 
 TWO GAPS FOUND AND CLOSED DURING PREP (recorded because they would have silently broken the run):
-1. data/e3geo was built in CP1c as an EVAL split, from the GRPO prompt format, and therefore
+1. data/e3geo was built in prototype_exclusion as an EVAL split, from the GRPO prompt format, and therefore
    LACKED the `target` and `arm` fields the SFT harness requires. Fixed by generating targets
    deterministically from labels_sidecar.json via cocr.traces.make_target for arms B1 and V1 ->
    data/e3geo_sft/. No new labels were invented; the targets come from the same sidecar that
@@ -6222,7 +5844,7 @@ RUN ORDER (V2b requires an SFT initialization at the SAME resolution, so the cha
   2. SFT V1 on data/e3geo_sft, 3 seeds, --max-pixels 589824      (V2b's initialization)
   3. GRPO V2b from each V1 seed, --data-dir data/e3geo, --max-pixels 589824
   4. eval B1 and V2b on data/e3geo/eval at --max-pixels 589824, 3-sample majority vote
-NOTE this makes CP10 larger than the "~1 day" estimate quoted earlier: native resolution is
+NOTE this makes merged_retrain larger than the "~1 day" estimate quoted earlier: native resolution is
 ~3x the prefill, and V2b needs its own SFT stage first. Expect ~2-3 days for the full 3-seed
 chain. A 1-seed pilot of steps 1-4 is the cheaper de-risking option and is the recommended
 first move, exactly as E3 was piloted before its matrix.
@@ -6244,7 +5866,7 @@ WHAT THE PILOT CAN AND CANNOT DECIDE — stated in advance so a 1-seed number is
        point estimate for both Q1 and Q2; expose any cost surprise before 3 seeds are committed.
   CANNOT: satisfy EITHER pre-registered decision rule. Both Q1 and Q2 compare against pooled
        seed SDs, which do not exist at n=1. NO branch may be declared from the pilot. Any pilot
-       number is explicitly a DE-RISKING observation, exactly as CP3's pilot was, and must be
+       number is explicitly a DE-RISKING observation, exactly as process_reward's pilot was, and must be
        labelled as such if reported.
 
 SCHEDULING NOTE: the pilot waits on E7 GENERATION only (SFT is compute-bound and would contend
@@ -6257,28 +5879,28 @@ utilization with E7 running.
 ### finding.md
 
 ```
-CHECKPOINT: CP10_merged_retrain    GAP: Q1 (geometric-OOD) + Q2 (native-resolution retrain)
-STATUS: CLOSED — SUBSUMED, NOT ABANDONED. The Q2 half was executed and is recorded as CP12_sota_push
+CHECKPOINT: merged_retrain    GAP: Q1 (geometric-OOD) + Q2 (native-resolution retrain)
+STATUS: CLOSED — SUBSUMED, NOT ABANDONED. The Q2 half was executed and is recorded as sota_push
         (the A3 arm IS this pre-registration's native-resolution retrain). The Q1 half was cancelled
         for a reason recorded in prereg.md itself, not dropped silently.
 
 WHERE THE Q2 HALF WENT. prereg.md asked: was B1's 0.133 accuracy drop at native resolution a genuine
-resolution effect or the train/test mismatch CP0c could not separate? Answer it by TRAINING at native
-resolution and evaluating at native resolution. That is exactly the A3 run in CP12_sota_push:
+resolution effect or the train/test mismatch resolution_audit could not separate? Answer it by TRAINING at native
+resolution and evaluating at native resolution. That is exactly the A3 run in sota_push:
 direct arm, max_pixels 589824 (576 visual tokens/view read from the live processor), 3220 examples
 (1610 structures x2 with 6-camera augmentation), evaluated on the same frozen 210-structure
 composition-exclusion split at matched resolution.
   RESULT: A3 = 0.6619 (139/210) vs the B1 416px reference 0.6143 +/- 0.0515. Branch Q2-(ii): FLAT
   within the 0.05 rule. The pre-registered stopping rule fired against the direction I was leaning
-  and no further runs were made. See CP12_sota_push/finding.md for the full record.
-  CONSEQUENCE for CP0c: because native-trained/native-eval is flat, CP0c's branch (ii) reading stands
+  and no further runs were made. See sota_push/finding.md for the full record.
+  CONSEQUENCE for resolution_audit: because native-trained/native-eval is flat, resolution_audit's branch (ii) reading stands
   — resolution is not shown to be a confound, and the 416px effective resolution used throughout the
   program is not a defect that inflated or deflated any reported number.
 
 WHY THE Q1 HALF WAS CANCELLED. Q1 asked whether B1-direct's OOD robustness is chemistry-specific by
-retraining on a geometric-OOD split. prereg.md records the reason it became non-load-bearing: CP1b
+retraining on a geometric-OOD split. prereg.md records the reason it became non-load-bearing: exclusion_baselines
 branch (a) already REFUTED the pre-registered hypothesis that B1-direct would collapse out of
-distribution (it reached 0.6143 on composition-exclusion vs 0.711 IID, only -13.6%), and CP1c's
+distribution (it reached 0.6143 on composition-exclusion vs 0.711 IID, only -13.6%), and prototype_exclusion's
 no-retrain prototype probe returned an uninterpretable branch (iii) (a difficulty shift affecting all
 five arms). With the memorization question already answered in the direction that made the retrain
 unnecessary, spending ~8 GPU-hours to re-answer it was not justified.
@@ -6294,15 +5916,15 @@ open, not answered.
 ```
 
 
-## CP11_expert_study
+## expert_study
 
-BACKED BY: `results/CP11_expert_study/cp11_ANSWER_KEY.json`, `results/CP11_expert_study/scoring_test.json`
+BACKED BY: `results/expert_study/cp11_ANSWER_KEY.json`, `results/expert_study/scoring_test.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP11_expert_study    GAP: is the 210-structure task human-solvable from the renders?
+CHECKPOINT: expert_study    GAP: is the 210-structure task human-solvable from the renders?
 STATUS: NOT RUN — no qualified respondent was collected. This is recorded as an open gap, NOT as a
         result, and no substitute assertion is made anywhere in the paper.
 
@@ -6322,13 +5944,13 @@ been convenient to blur it: no sheet may be excluded for producing an inconvenie
 WHAT THIS COSTS THE PAPER, STATED PLAINLY. The checkability framing — "the only row whose input a
 human could check by eye" — is NOT AVAILABLE and every sentence depending on it must be deleted
 rather than softened. The information question it would have answered is answered instead by the
-E0.5 oracle (CP0b): 93.6% crystal-system recovery from four frozen views under ideal atom
+E0.5 oracle (identifiability): 93.6% crystal-system recovery from four frozen views under ideal atom
 extraction, which isolates information content from human skill in a way a human baseline cannot.
   BUT the oracle does NOT substitute for human solvability: it assumes perfect atom localisation,
-  which is the hard part. See CP0b_identifiability/finding.md for the three corrections governing
+  which is the hard part. See identifiability/finding.md for the three corrections governing
   how that bound may be cited (it is space-group 91.1% vs crystal-system 93.6%; a 280-structure
   sample with ZERO overlap with the eval set; 4 of the 5 shipped views).
-  CP13's trigonal/hexagonal mirror also stops short of settling this: it shows BOTH model arms fail
+  trigonal_hexagonal's trigonal/hexagonal mirror also stops short of settling this: it shows BOTH model arms fail
   the same confusable pair in OPPOSITE directions, strong evidence of intrinsic render ambiguity,
   but only a human who separates the pair cleanly would prove the information is present and the
   failure is the models'.
@@ -6339,23 +5961,23 @@ IF VOLUNTEERS MATERIALIZE LATER, run as specified in protocol.md without modific
 structures, documented qualifications, inter-annotator agreement, the trigonal/hexagonal item,
 per-item confidence and time. The pre-registered authenticity screen applies to every sheet.
 
-RECONCILIATION [0.9321 -> 0.9357: the CP0b harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
+RECONCILIATION [0.9321 -> 0.9357: the identifiability harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
 ```
 
 
-## CP12_sota_push
+## sota_push
 
-BACKED BY: `results/CP12_sota_push/results.json`
+BACKED BY: `results/sota_push/results.json`
 
 
 ### prereg.md
 
 ```
-# PRE-REGISTRATION — CP12, THE SOTA PUSH (thread A3)
+# PRE-REGISTRATION — sota_push, THE SOTA PUSH (thread A3)
 # Written before any A3 training run. Lane A, box 2 (gpu-5090-vlm-project-2).
 
 ## THE TARGET AND WHY IT IS WORTH CHASING
-CP8 established the uncomfortable comparison: from ATOMIC STRUCTURE, published GNNs reach
+external_baselines established the uncomfortable comparison: from ATOMIC STRUCTURE, published GNNs reach
 ALIGNN 75.6% / CGCNN 63.4% on 7-way crystal-system classification (verified from the
 DeepCrysTet paper table; note the brief that first quoted these had the task rows transposed),
 and our own 19-feature random forest on lattice metrics reaches 0.8905 on OUR eval
@@ -6368,14 +5990,14 @@ though the structure-input number is higher, because the input is strictly weake
 
 ## WHAT CHANGES vs THE 0.6143 BASELINE (each is a separately ablatable axis)
   A. NATIVE RESOLUTION. Every prior run saw 416x416 (max_pixels 200704) — a 3.408x AREA
-     decimation of the 768x768 renders (CP0c). A3 trains at max_pixels >= 589824.
+     decimation of the 768x768 renders (resolution_audit). A3 trains at max_pixels >= 589824.
   B. FULL TRAINING SET. The 0.6143 reference was SFT-trained on 115 examples/arm; A3 uses the
-     full 1610 (CP10's Q3 axis, 14x).
+     full 1610 (merged_retrain's Q3 axis, 14x).
   C. VIEW AUGMENTATION. New: additional camera angles beyond the frozen 5-view set, as
      augmentation at train time only. The frozen set stays the EVAL protocol so every number
-     remains comparable to CP1b/CP3/CP7.
+     remains comparable to exclusion_baselines/process_reward/test_time_scaling.
   D. TOOL COUPLING (second stage, only if A-C land): emit coordinates, run spglib on them,
-     feed the result back. Note CP7 showed a tool-coupled SELECTION rule fails; this is
+     feed the result back. Note test_time_scaling showed a tool-coupled SELECTION rule fails; this is
      different — tooling inside the forward path, not as a post-hoc selector.
 
 ## PRE-REGISTERED TARGETS AND STOPPING RULE
@@ -6389,11 +6011,11 @@ SAME K=3 majority vote. Any change to the eval protocol invalidates the comparis
 STOPPING RULE, fixed now to prevent an open-ended spend: A3 gets at most FOUR training runs on
 box 2. If none clears T1, the honest finding is "image-input accuracy does not close on
 structure-input methods under resolution + data + view augmentation", which is itself a
-CVPR-relevant negative and pairs with the CP11 human row. No fifth run without a new hypothesis.
+CVPR-relevant negative and pairs with the expert_study human row. No fifth run without a new hypothesis.
 
 ## ABLATION REQUIREMENT (so a win is attributable)
 If T1 is cleared, the axes must be separated before the number enters a paper:
-    run 1  native res + full data                 (isolates A+B; this is CP10's S1 cell, done)
+    run 1  native res + full data                 (isolates A+B; this is merged_retrain's S1 cell, done)
     run 2  native res + full data + view aug      (isolates C)
 Any claim of the form "view augmentation gave us X" requires run 1 and run 2 to differ by more
 than seed noise, which at 1 seed cannot be established — so a single-seed A3 win is DIRECTIONAL
@@ -6406,14 +6028,14 @@ and must be re-run at 3 seeds before it is stated as SOTA.
  - Reporting against the RF's 0.8905 without noting it takes ATOMIC COORDINATES as input while
    A3 takes only pixels. The comparison is informative precisely because the inputs differ, and
    the paper must say so in the same sentence.
- - Beating T1 while falling below the CP8 regularity floor (0.5286) on any per-system cell
+ - Beating T1 while falling below the external_baselines regularity floor (0.5286) on any per-system cell
    would indicate the gain is dataset regularity, not crystallography. Report per-system.
 
 ## RELATIONSHIP TO THE OTHER THREADS
- - CP10's S1 adapter (B1 @ native x comp-1610, already trained on box 1, loss ->0.0146) IS
+ - merged_retrain's S1 adapter (B1 @ native x comp-1610, already trained on box 1, loss ->0.0146) IS
    A3's run 1. Do not retrain it; evaluate it and use it as the A3 baseline. This also gives
-   CP10's Q1/Q3 their number, so the two threads share the cell rather than duplicating it.
- - CP11's human row calibrates what T2/T3 mean. If experts score below T2 from the same
+   merged_retrain's Q1/Q3 their number, so the two threads share the cell rather than duplicating it.
+ - expert_study's human row calibrates what T2/T3 mean. If experts score below T2 from the same
    renders, then matching ALIGNN from pixels would exceed human performance on this task, and
    that framing needs the human number first.
 
@@ -6437,7 +6059,7 @@ AUGMENTATION VIEWS (axis C of the prereg), defined and verified:
 AUGMENTED TRAINING SET: each structure appears twice — once with the frozen 5 eval views, once
 with 5 of its 6 augmentation views (input shape held at 5 images/example). B1 training examples
 go 1610 -> 3220. THE EVAL FILE IS UNTOUCHED: eval remains the frozen 5-view protocol at K=3, so
-every A3 number stays comparable to CP1b/CP3/CP7.
+every A3 number stays comparable to exclusion_baselines/process_reward/test_time_scaling.
 
 TWO HARNESS MISMATCHES CAUGHT BY INLINE ASSERTIONS BEFORE ANY GPU TIME WAS SPENT (recorded
 because the second would have produced a meaningless number against T1):
@@ -6448,13 +6070,13 @@ because the second would have produced a meaningless number against T1):
     while the base 5-view renders lived on box 1. An `assert missing==0` stopped it. Without
     that line, training would have run for hours with half the examples failing to load and the
     resulting accuracy would have been reported against T1 as if it were real. Same class of
-    bug as CP7's silent spglib fallback. FIX: box 2 renders the frozen base set itself
+    bug as test_time_scaling's silent spglib fallback. FIX: box 2 renders the frozen base set itself
     (~15 min at the measured rate) rather than transferring 308 MB — this also keeps the two
     boxes independent, with no inter-box SSH keys.
 
 DELIBERATE ALLOCATION (no 308 MB adapter transfer): each box works on what it already holds.
   box 1 has the trained B1_compnat_s0 adapter -> it runs A3 RUN 1's evaluation locally, which
-        simultaneously produces CP10's Q1/Q3 number. One cell serves both threads.
+        simultaneously produces merged_retrain's Q1/Q3 number. One cell serves both threads.
   box 2 has the data + renderer -> it builds augmentation and runs A3 RUN 2 (new work).
 
 =================  ANALYSIS PRE-REGISTRATION, WRITTEN BEFORE THE A3 NUMBER EXISTS  ===========
@@ -6467,7 +6089,7 @@ once relative to the B1 reference (0.6143 +/- 0.0515 at 416px, 1610 examples):
     (ii)  view augmentation (6 extra cameras per structure, disjoint from the frozen eval views)
     (iii) training-set size 1610 -> 3220 examples
 A gain CANNOT be attributed to any one of these. The pre-registered ablation requirement stands:
-the CP10 pilot's S1 cell (native res, 1610 examples, NO augmentation) isolates (i)+(iii) from
+the merged_retrain pilot's S1 cell (native res, 1610 examples, NO augmentation) isolates (i)+(iii) from
 (ii), and is the ONLY comparison that licenses an augmentation claim.
 
 DECISION RULE, RESTATED FROM THE TOP OF THIS FILE:
@@ -6486,7 +6108,7 @@ WHAT WOULD MAKE A WIN UNINTERPRETABLE, CHECKED BEFORE ANY CELEBRATION:
   b. EVAL DRIFT. Run 2 must be evaluated on the SAME 210-structure composition-exclusion set, at
      the SAME K and temperature, as every row it is compared against. Any change makes the
      comparison invalid rather than favourable.
-  c. THE 416-TRAINED REFERENCE IS NOT A FAIR CEILING. CP0c showed B1 drops 0.5905 -> 0.4571 when
+  c. THE 416-TRAINED REFERENCE IS NOT A FAIR CEILING. resolution_audit showed B1 drops 0.5905 -> 0.4571 when
      a 416-TRAINED adapter is evaluated at 768 — a train/test mismatch, not a resolution effect.
      Run 2 is TRAINED at native, so it must be compared against B1's 416-trained-416-evaluated
      0.6143, and the mismatch row must not be quoted as the baseline.
@@ -6496,14 +6118,14 @@ WHAT WOULD MAKE A WIN UNINTERPRETABLE, CHECKED BEFORE ANY CELEBRATION:
 
 IF RUN 2 LANDS BELOW T1: that is a reportable negative and it strengthens, not weakens, the
 paper's framing — it would say the image-input ceiling is not a resolution or view-coverage
-artifact, which is exactly what the CP0c insensitivity result already suggests. Report it plainly.
+artifact, which is exactly what the resolution_audit insensitivity result already suggests. Report it plainly.
 ```
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP12_sota_push    GAP: Q3 — can pixel-input performance be pushed materially higher?
+CHECKPOINT: sota_push    GAP: Q3 — can pixel-input performance be pushed materially higher?
 STATUS: RUN 2 DONE (native resolution + view augmentation, 1 seed). PRE-REGISTERED RULE FIRES
         AGAINST THE DIRECTION I WAS LEANING: T1 NOT CLEARED. No further runs under the stopping
         rule. Reported as attempted-and-flat.
@@ -6513,7 +6135,7 @@ Direct arm, trained at NATIVE 768px (max_pixels 589824, 576 visual tokens/view r
 processor) on 3220 examples (1610 structures x2: base 5-view + 6-camera augmentation), 3 epochs,
 1206 steps, final loss 0.1419, 8h12m on an RTX 5090. Evaluated on the SAME frozen 210-structure
 composition-exclusion split, SAME K=3 / temperature 0.7 / 512 tokens, at native resolution
-(matched to training, NOT the train/test mismatch of CP0c).
+(matched to training, NOT the train/test mismatch of resolution_audit).
 
     A3 native + augmented   139/210 = 0.6619   Wilson 95% [0.5955, 0.7225]
     B1 reference (416px, 1610 examples, no augmentation)  0.6143 +/- 0.0515
@@ -6538,11 +6160,11 @@ before any comparison the paper cites, and the stopping rule forbids spending th
 
 THE THREE-WAY CONFOUND, STATED AS REQUIRED: run 2 changes resolution (416 -> 768), view
 augmentation (+6 cameras), AND training-set size (1610 -> 3220 examples) simultaneously. Even had
-T1 cleared, no single factor could be credited. The CP10 pilot's S1 cell (native, 1610, NO
+T1 cleared, no single factor could be credited. The merged_retrain pilot's S1 cell (native, 1610, NO
 augmentation) is the only comparison that would isolate augmentation, and it is not yet run.
 
 WHAT THIS DOES SUPPORT: the arm remains well ABOVE the regularity floor (+0.1333 over 0.5286), so
-it is reading shape, not size. And it is consistent with CP0c's finding that this task's image
+it is reading shape, not size. And it is consistent with resolution_audit's finding that this task's image
 arms are insensitive to large increases in visual information — 3.41x more pixels plus doubled
 data plus six extra viewpoints moved the number by less than the seed noise. That is the honest
 reading and it corroborates, rather than contradicts, the rest of the paper.
@@ -6569,17 +6191,17 @@ REPRODUCE
 ```
 
 
-## CP13_trigonal_hexagonal
+## trigonal_hexagonal
 
-BACKED BY: `results/CP13_trigonal_hexagonal/results.json`
+BACKED BY: `results/trigonal_hexagonal/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP13_trigonal_hexagonal    GAP: Q4 — is the trigonal/hexagonal confusion intrinsic to
+CHECKPOINT: trigonal_hexagonal    GAP: Q4 — is the trigonal/hexagonal confusion intrinsic to
                                         the render, or a model failure?
-STATUS: DONE for the model half (the human half is CP11, still awaiting raters). RESULT: the two
+STATUS: DONE for the model half (the human half is expert_study, still awaiting raters). RESULT: the two
         arms confuse the SAME pair in OPPOSITE DIRECTIONS, which is much stronger evidence for an
         intrinsic render ambiguity than either arm alone.
         Found while closing the brief's §6 requirement to report macro-F1 and per-system
@@ -6589,7 +6211,7 @@ STATUS: DONE for the model half (the human half is CP11, still awaiting raters).
 DIRECT arm (B1, K=8 majority vote, 210 composition-exclusion structures):
     trigonal   2/30 correct   -> 28 of 30 called HEXAGONAL
     hexagonal 30/30 correct   -> never called anything else
-CHAIN arm (recorded earlier, CP7b prediction support):
+CHAIN arm (recorded earlier, certification prediction support):
     all 30 true hexagonals called TRIGONAL; the chain never emits "hexagonal" at all.
 Same pair. Opposite direction. One arm collapses trigonal into hexagonal, the other collapses
 hexagonal into trigonal. Neither direction is shared, so neither is a learned bias inherited from
@@ -6597,7 +6219,7 @@ a common source — what is shared is that THE PAIR IS NOT SEPARATED.
 
 WHY THIS IS THE EXPECTED FAILURE IF THE AMBIGUITY IS INTRINSIC. In the conventional hexagonal
 setting a trigonal cell and a hexagonal cell have the SAME metric (a=b, gamma=120 deg), so the
-dashed cell outline — the primary cue, sufficient for 41/50 of the CP11 sample — cannot separate
+dashed cell outline — the primary cue, sufficient for 41/50 of the expert_study sample — cannot separate
 them. Separation requires reading the ATOM MOTIF inside the cell. A model that reads the outline
 well and the motif poorly must collapse the pair, and WHICH way it collapses is then determined by
 its prior, not by the image. Two arms with different training collapsing it in different
@@ -6619,7 +6241,7 @@ further evidence the model reads cell geometry rather than guessing.
 WHAT THIS DOES NOT SETTLE. It shows the pair is hard for BOTH model arms and explains why
 geometrically. It does NOT establish that the pair is unresolvable from the renders — only a human
 who separates it cleanly would show the information IS present and the failure is the models'.
-That is exactly CP11's pre-registered P3' prediction (trigonal is the single predicted human
+That is exactly expert_study's pre-registered P3' prediction (trigonal is the single predicted human
 failure mode, 0/7 separable by cell outline alone), and it remains the open half of Q4.
 
 REPRODUCE
@@ -6628,19 +6250,19 @@ REPRODUCE
 ```
 
 
-## CP14_frontier_ceiling
+## frontier_ceiling
 
-BACKED BY: `results/CP14_frontier_ceiling/results.json`, `results/CP14_frontier_ceiling/contamination.json`
+BACKED BY: `results/frontier_ceiling/results.json`, `results/frontier_ceiling/contamination.json`
 
 
 ### prereg.md
 
 ```
-# CP14 — FRONTIER CEILING ON THE EXACT EVAL SET
+# frontier_ceiling — FRONTIER CEILING ON THE EXACT EVAL SET
 # COMMITTED BEFORE ANY GENERATION. No GPU; API only.
 
 ## WHY
-The existing zero-shot probe (CP1) used 70 canonical renders; every trained arm uses the
+The existing zero-shot probe (zeroshot) used 70 canonical renders; every trained arm uses the
 210-structure composition-exclusion split. Those numbers are NOT comparable, and the paper
 currently has no ceiling row measured on the eval set. This supplies one, and it answers the
 "is 0.6143 bad?" question on the same data rather than by cross-dataset inference.
@@ -6658,7 +6280,7 @@ currently has no ceiling row measured on the eval set. This supplies one, and it
 ## CONTAMINATION CONTROL, RUN IN THE SAME PASS
 Materials Project structure pages are public and frontier models are the rows most exposed. Each
 model is run on BOTH canonical renders AND element-anonymized renders (all atoms identical
-spheres, same geometry). Reported side by side. Rationale: element anonymization was CP1's
+spheres, same geometry). Reported side by side. Rationale: element anonymization was zeroshot's
 pre-registered primary contamination control and it cleared for the base model; the frontier
 models have not been tested on it.
 
@@ -6676,17 +6298,17 @@ models have not been tested on it.
 
 ## COMMITMENTS
   - Report every model run, including any that fail to parse; no dropping a model post hoc.
-  - The bracket table will label the oracle row as a different sample (see CP0b's citation note)
+  - The bracket table will label the oracle row as a different sample (see identifiability's citation note)
     rather than presenting it as an eval-set measurement.
   - If API access is unavailable for a model, record that rather than substituting a cross-dataset
-    number from CP1.
+    number from zeroshot.
 ```
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP14_frontier_ceiling    GAP: no ceiling row measured on the EVAL SET
+CHECKPOINT: frontier_ceiling    GAP: no ceiling row measured on the EVAL SET
 STATUS: DONE. Three frontier models on all 210 composition-exclusion structures, same prompt, same
         frozen 5-view renders, K=3 majority vote, denominators FIXED at 210. Plus the
         element-anonymization contamination control on every model. 3780 API calls, ZERO api errors,
@@ -6717,7 +6339,7 @@ Only ONE of three frontier models beats our 8B fine-tune; the other two are at o
     oracle bound, and two of three sit within noise of a small fine-tune.
 
 CONTAMINATION CONTROL CLEARS ON ALL THREE, on the paired test. Element anonymization (every species
-replaced with one element, geometry untouched — a REIMPLEMENTATION; CP1's original code was not
+replaced with one element, geometry untouched — a REIMPLEMENTATION; zeroshot's original code was not
 recoverable from the scripts or the archive, and this is recorded as such). Verified by pixel
 palette: canonical carries 4+ distinct element colours and 1074 distinct RGB values, anonymized is
 uniform grey with 204.
@@ -6730,12 +6352,12 @@ uniform grey with 204.
 
 THE GROK TIE IS AGGREGATE-ONLY, AND THE TWO B1 QUANTITIES INVOLVED ARE DIFFERENT ONES.
 Grok 129/210 = 0.6143 coincides with B1's THREE-SEED MEAN AT K=3 (0.61433 exactly, from
-CP1b/results.json seeds 0.590/0.567/0.686). The item-level cross-tab below uses B1 SEED 0 AT K=8 =
+exclusion_baselines/results.json seeds 0.590/0.567/0.686). The item-level cross-tab below uses B1 SEED 0 AT K=8 =
 130/210 = 0.6190, a different quantity; the 129-vs-130 discrepancy follows from that rather than
 from a parse failure. Conclusion unaffected. Cross-tab: both right 90, ours only 40, grok only 39, neither 41. So 38% of
 the set is answered correctly by exactly one of the two, with near-symmetric disagreement. "Matches
 frontier accuracy" is supported; "behaves like a frontier model" is REFUTED by the item-level data.
-The symmetric disagreement is also the same error-decorrelation structure CP7b exploits, here
+The symmetric disagreement is also the same error-decorrelation structure certification exploits, here
 between systems sharing neither a base checkpoint nor a training pipeline — independent support for
 that mechanism. Full detail in tie_decomposition.md.
 
@@ -6750,7 +6372,7 @@ REPRODUCE
 =================  LABEL CORRECTION TO THE BRACKET FIGURE (reviewer finding, upheld)  =========
 The first version of figures/bracket.png labelled the 0.8905 bar "structure GNN (coords)". THAT IS
 WRONG and the correction reverses the conclusion a reader would draw.
-  0.8905 is `random_forest` in CP8/structure_baseline.json — a TABULAR classifier on 19
+  0.8905 is `random_forest` in external_baselines/structure_baseline.json — a TABULAR classifier on 19
     lattice-metric + cell features (train_acc 1.0, i.e. saturated). It is not a graph network and
     reads no coordinates as a graph.
   The project's actual coordinate GNN is the plain-tensor CGCNN-style reimplementation
@@ -6779,20 +6401,20 @@ direct arm clears it (+0.0857). The label correction strengthens this because it
 trained model below the floor; it does not extend the claim to the frontier models or to the
 tabular and oracle references, which all clear it.
 
-RECONCILIATION [0.9321 -> 0.9357: the CP0b harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
+RECONCILIATION [0.9321 -> 0.9357: the identifiability harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
 ```
 
 
-## CP15_box_sufficiency
+## box_sufficiency
 
-BACKED BY: `results/CP15_box_sufficiency/results.json`, `results/CP15_box_sufficiency/paired_resolution.json`
+BACKED BY: `results/box_sufficiency/results.json`, `results/box_sufficiency/paired_resolution.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP15_box_sufficiency   GAP: do the models read the drawn CELL BOX rather than the
-                                   atom MOTIF? (settles CP13's question without a human arm)
+CHECKPOINT: box_sufficiency   GAP: do the models read the drawn CELL BOX rather than the
+                                   atom MOTIF? (settles trigonal_hexagonal's question without a human arm)
 STATUS: DONE, THEN PARTLY OVERTURNED BY ITS OWN REPLICATION. Read the REPLICATION section
         at the end before citing anything above it. Zero compute — computed from per-structure predictions already on disk. This is the
         strongest mechanistic result in the package: every pixel-input model collapses to the
@@ -6804,8 +6426,8 @@ A structure is BOX-SUFFICIENT if the metric of the CONVENTIONAL cell — the cel
 actually draw — uniquely implies its crystal system, and BOX-AMBIGUOUS otherwise. Computed on all
 210 eval structures with tolerances 2% on lengths, 1 deg on angles.
     BOX-SUFFICIENT 137/210 = 0.6524      BOX-AMBIGUOUS 73/210 = 0.3476
-This is the RIGHT quantity and neither previously recorded number was it: CP8's 113/210 = 0.538 was
-computed on the STORED INPUT cells (often primitive, not what is drawn), and CP11's 41/50 = 0.820
+This is the RIGHT quantity and neither previously recorded number was it: external_baselines's 113/210 = 0.538 was
+computed on the STORED INPUT cells (often primitive, not what is drawn), and expert_study's 41/50 = 0.820
 was the 50-structure expert packet, not the eval set.
 WHAT MAKES A STRUCTURE AMBIGUOUS — 60 of the 73 are the trigonal/hexagonal pair, which shares
 a=b, gamma=120 deg in the conventional hexagonal setting, so the box cannot separate them at any
@@ -6845,15 +6467,15 @@ structures were simply "harder", every model would drop. They do not:
 
 WHAT THIS ESTABLISHES, AND WHAT IT REPLACES. The claim "these models read the cell box and not the
 atom motif" is now established on all 210 structures with a mechanism, rather than inferred from a
-single confusion pair. It also explains CP13's mirrored failure: the trigonal/hexagonal pair is 82%
+single confusion pair. It also explains trigonal_hexagonal's mirrored failure: the trigonal/hexagonal pair is 82%
 of the ambiguous stratum, so two arms collapsing it in OPPOSITE directions is the expected
 signature of models that read the outline well and the motif poorly — which way they collapse is
-then set by their prior, not by the image. CP13 and CP15 are one result and should be one section.
-NO HUMAN ARM IS REQUIRED for this. The question CP11 was built to answer — is the failure the
+then set by their prior, not by the image. trigonal_hexagonal and box_sufficiency are one result and should be one section.
+NO HUMAN ARM IS REQUIRED for this. The question expert_study was built to answer — is the failure the
 models' or the renders' — is answered for the box-ambiguous stratum by the RF control: the
 information is in the cell, and the pixel models do not extract it.
 
-WHAT IT DOES NOT ESTABLISH. That the motif is unreadable in principle — the oracle (CP0b) recovers
+WHAT IT DOES NOT ESTABLISH. That the motif is unreadable in principle — the oracle (identifiability) recovers
 93.6% of crystal systems from four views under ideal atom extraction, so the motif information is
 present in the renders. The gap between 0.9357 (ideal extraction) and ~0.50 (pixel models on the
 ambiguous stratum) is the extraction failure, and localising it is what the deterministic extractor
@@ -6874,7 +6496,7 @@ Raised because a reviewer recomputing the tables would hit them.
     (90, 104, 114). A mean of three integer counts need not be an integer, so the row is right and
     the denominator note is what was missing. It must be labelled as a 3-seed mean, not presented
     alongside single-run counts as though it were one.
-    A suspected carry-across was checked and EXCLUDED: 0.4889 also appears in CP3 as an outcome-arm
+    A suspected carry-across was checked and EXCLUDED: 0.4889 also appears in process_reward as an outcome-arm
     silent-group rate, but the GNN value traces independently to its own three seeds in
     cgcnn_style_3seed.json, so the coincidence is just a coincidence.
     Note also the SD: the file records 0.0469, which is the POPULATION sd of those three seeds; the
@@ -6887,8 +6509,8 @@ Raised because a reviewer recomputing the tables would hit them.
     floor 75+36=111, chain 51+29=80, A3 97+48=145). Recomputing the RF strata from the
     per-structure vectors gives exactly 125 + 61 = 186 = 0.8857.
     0.8857 IS THE REPRODUCED RF, not the recorded one. The recorded headline 0.8905 = 187/210 comes
-    from the original CP8 run, whose exact 19-feature list was never written down (documented as a
-    reproducibility gap in CP16). The stratification was computed on the REPRODUCED classifier, so
+    from the original external_baselines run, whose exact 19-feature list was never written down (documented as a
+    reproducibility gap in paired_resolution). The stratification was computed on the REPRODUCED classifier, so
     it is internally consistent with 186/210 and differs from the headline by exactly the one
     structure that gap accounts for.
     FIX APPLIED: the stratified RF row is labelled as the REPRODUCED classifier (0.8857 = 186/210,
@@ -6936,7 +6558,7 @@ WHY, AND IT IS THE FLOOR AGAIN. The floor collapsed on this sample (0.5286 -> 0.
 0.2286 on the ambiguous stratum), so "collapses to the floor" has no content here: the floor now
 sits far BELOW every model and there is nothing to collapse to. B1 on the expansion ambiguous
 stratum is +0.257 ABOVE the floor there, where in the original it sat within 0.027 of it. This is
-the same floor sample-sensitivity documented in CP18, now shown to break a MECHANISM claim and not
+the same floor sample-sensitivity documented in eval_expansion, now shown to break a MECHANISM claim and not
 only a threshold comparison.
 
 WHAT MAY AND MAY NOT BE CLAIMED, REVISED.
@@ -6954,19 +6576,19 @@ WHAT MAY AND MAY NOT BE CLAIMED, REVISED.
   the accuracy pattern (which does not). It must not be presented as the paper's strongest result
   without that qualification.
 
-RECONCILIATION [0.9321 -> 0.9357: the CP0b harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
+RECONCILIATION [0.9321 -> 0.9357: the identifiability harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
 ```
 
 
-## CP16_paired_resolution
+## paired_resolution
 
-BACKED BY: `results/CP16_paired_resolution/results.json`
+BACKED BY: `results/paired_resolution/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP16_paired_resolution   GAP: which inter-arm comparisons are actually resolved at
+CHECKPOINT: paired_resolution   GAP: which inter-arm comparisons are actually resolved at
                                      n=210, using the correct paired test?
 STATUS: DONE, zero compute. The review's item 2(b) is correct that the half-width screen is the
         wrong instrument. Acting on it produces a result that CONTRADICTS the review's own item
@@ -6981,7 +6603,7 @@ STATUS: DONE, zero compute. The review's item 2(b) is correct that the half-widt
 THESE TWO INSTRUCTIONS DISAGREE ABOUT B1-VS-FLOOR. Paired McNemar gives 63 discordant in B1's
 favour vs 44 against, exact p = 0.0814 — NOT resolved at n=210. We follow 2(b), because it names
 the correct instrument, and therefore DO NOT make the change 2(a) requests. The regularity-floor
-finding stands on its direction and on the CP15 stratification, not on a significant B1-vs-floor
+finding stands on its direction and on the box_sufficiency stratification, not on a significant B1-vs-floor
 margin at this n.
 
 =================  CORRECTED RESOLUTION TABLE (paired McNemar, same 210 structures)  ==========
@@ -7023,7 +6645,7 @@ which changes the GPU and API cost of item 5 by the same factor. Size the expans
 REPRODUCE
   Per-structure correctness vectors for every arm from the generation files (majority vote at the
   arm's own K) and from the regenerated RF/floor predictions. Paired McNemar = exact binomial on the
-  discordant pairs, matching the convention already used in CP1 and CP2.
+  discordant pairs, matching the convention already used in zeroshot and sft_chain.
   NOTE ON REPRODUCING THE RF/FLOOR: the recorded protocol is train on the 1610 TRAIN structures and
   test on the 210 EVAL structures (NOT cross-validation), features from the INPUT cell, RF
   n_estimators=500 seed 23. Under that protocol the FLOOR reproduces EXACTLY (0.5286) and the RF
@@ -7037,13 +6659,13 @@ against the ledger". That count was accurate for what it covered but the SCOPE w
 the sentence implied. THE BREAKDOWN, stated exactly (an earlier version of this paragraph said
 "three models x 4 plus six certifier configurations", which sums to 18, not 21 — that description
 was itself wrong and is corrected here):
-    CP14  3 frontier models x 4 values each (canonical micro, macro-F1, anonymized micro,
+    frontier_ceiling  3 frontier models x 4 values each (canonical micro, macro-F1, anonymized micro,
           paired p)                                                              = 12
-    CP7b  7 DISTINCT certified-accuracy values across sftonly.json, seed2.json, k16.json,
+    certification  7 DISTINCT certified-accuracy values across sftonly.json, seed2.json, k16.json,
           replication.json, chain_necessity.json                                 =  7
-    CP7b  2 false-certification rates from chain_necessity.json                  =  2
+    certification  2 false-certification rates from chain_necessity.json                  =  2
                                                                           TOTAL  = 21
-  THE CP7b DEDUP, VERIFIED RATHER THAN ASSERTED. Those five files hold 9 RAW chain entries over 6
+  THE certification DEDUP, VERIFIED RATHER THAN ASSERTED. Those five files hold 9 RAW chain entries over 6
   distinct arm names, which reduce to 7 distinct (arm, value) pairs:
       V2b_s0    3 entries -> 0.9118 (sftonly), 0.9118 (seed2), 0.9474 (k16)  = 2 DISTINCT values
                 (k16 differs because it is the K=16-answerer arm, a different configuration)
@@ -7054,16 +6676,16 @@ was itself wrong and is corrected here):
   once". THAT REASONING WAS WRONG — V2b_s0 carries TWO distinct values, not one, and the arm that is
   genuinely duplicated is V2b. The count of 7 is correct; the justification given for it was not,
   and was asserted before being computed. Corrected here after the raw count of 9 was traced.
-R10's CP12 numbers were NOT in that list.
+R10's sota_push numbers were NOT in that list.
 R10 has since been checked separately: all 8 of its values (0.6619, Wilson 0.5955/0.7225, 1206
 steps, loss 0.1419, 3220 examples, 589824 max_pixels, 576 visual tokens) are present in the paper
-and trace to CP12/results.json. The claim is now true as stated; it was overbroad when made.
+and trace to sota_push/results.json. The claim is now true as stated; it was overbroad when made.
 ```
 
 
-## CP17_extractor
+## extractor
 
-BACKED BY: `results/CP17_extractor/results.json`, `results/CP17_extractor/extraction.json`
+BACKED BY: `results/extractor/results.json`, `results/extractor/extraction.json`
 
 
 ### prereg.md
@@ -7071,17 +6693,17 @@ BACKED BY: `results/CP17_extractor/results.json`, `results/CP17_extractor/extrac
 ```
 [SUPERSEDED VALUE NOTE — appended after the fact, the text below is UNCHANGED because a
  pre-registration records what was believed BEFORE computing and must not be rewritten.
- The oracle values quoted below (0.9321 / 93.2% at four views) are from the ORIGINAL CP0b
+ The oracle values quoted below (0.9321 / 93.2% at four views) are from the ORIGINAL identifiability
  run. The harness was later rerun to record box-sufficiency per row; the current values are
  0.9357 (262/280) at four views and 0.9393 at five. The difference is one structure of 280
  and arises from a live-database draw, not a computation change. No pre-registered reading
  is affected.]
 
-PRE-REGISTRATION — CP17_extractor (review item 4)
+PRE-REGISTRATION — extractor (review item 4)
 COMMITTED BEFORE ANY EXTRACTION IS RUN. Nothing below is filled in after seeing a result.
 
-QUESTION. CP15 established that pixel-input models collapse to the regularity floor on
-box-ambiguous structures, while an RF reading the same cell NUMERICALLY does not. CP0b established
+QUESTION. box_sufficiency established that pixel-input models collapse to the regularity floor on
+box-ambiguous structures, while an RF reading the same cell NUMERICALLY does not. identifiability established
 that under IDEAL atom extraction plus spglib, four views recover 93.2% of crystal systems. The gap
 between 0.9321 and the ~0.50 the pixel models reach on the ambiguous stratum is therefore an
 EXTRACTION gap, and this checkpoint asks where in the pipeline it sits: can a DETERMINISTIC,
@@ -7102,7 +6724,7 @@ METHOD, FIXED NOW.
      distinct from the atom spheres), then Hough-transform line detection.
   2. From the three axis views recover the projected edge lengths and the in-plane angles.
   3. Assemble a metric estimate (a, b, c, alpha, beta, gamma) and classify with the SAME tolerance
-     rule CP15 used (2% on lengths, 1 deg on angles), so the two checkpoints are commensurable.
+     rule box_sufficiency used (2% on lengths, 1 deg on angles), so the two checkpoints are commensurable.
   Denominator FIXED at 210. A structure on which line detection fails is scored as WRONG, not
   dropped — dropping failures would silently convert a coverage problem into an accuracy claim.
 
@@ -7129,7 +6751,7 @@ BRANCHES, ON THE BOX-SUFFICIENT STRATUM (n=137), COMMITTED NOW.
       comparable to the VLMs", which is evidence the convention is genuinely hard to read.
   E4  extractor < 0.5474: the deterministic reader is at or below the shape-free floor. The render
       convention, not the models, is then the binding constraint, and the paper must say so
-      explicitly and soften CP15's "models do not extract it" to "no reader we built extracts it".
+      explicitly and soften box_sufficiency's "models do not extract it" to "no reader we built extracts it".
 
 WHAT NO OUTCOME LICENSES. None of E1-E4 says anything about the box-AMBIGUOUS stratum, where the
 cell metric cannot disambiguate the system at any precision — that is a convention limit already
@@ -7143,11 +6765,11 @@ localising the gap, not a baseline to be beaten, and must never be presented as 
 ### finding.md
 
 ```
-CHECKPOINT: CP17_extractor    GAP: can a DETERMINISTIC reader recover cell geometry from the
+CHECKPOINT: extractor    GAP: can a DETERMINISTIC reader recover cell geometry from the
                               renders well enough to classify? (review item 4)
 STATUS: DONE — VALIDATION GATE FAILED. **SCOPE WARNING: this is NOT the probe directive item 4
-        specified.** Item 4 asked for PNG -> ATOM CENTROIDS -> triangulation via CP0b's camera
-        inversion -> spglib, gated on detection PRECISION/RECALL. CP17 is a wireframe-only reader
+        specified.** Item 4 asked for PNG -> ATOM CENTROIDS -> triangulation via identifiability's camera
+        inversion -> spglib, gated on detection PRECISION/RECALL. extractor is a wireframe-only reader
         gated on edge-length ratios and never localises an atom. See scope_deviation.md. Item 4
         REMAINS OPEN and item 6 is BLOCKED on it. Per the pre-registration this is the checkpoint's RESULT,
         and NO conclusion about the renders or about the models may be drawn from the extractor's
@@ -7192,19 +6814,19 @@ Two things survive the gate failure, because they do not depend on the extractor
       is essentially exact at the median. So the cell OUTLINE is unambiguously present in the pixels
       at 768px; the renders are not visually degenerate.
   (b) THE HARD PART IS METRIC LENGTH, NOT ORIENTATION. This is a specific, testable localisation of
-      the difficulty and it is consistent with CP15: what separates crystal systems is largely
+      the difficulty and it is consistent with box_sufficiency: what separates crystal systems is largely
       length EQUALITY (a=b, a=b=c), and length is exactly what this reader recovers worst.
-      CP15 showed pixel models collapse to the floor when the box cannot disambiguate the system;
-      CP17 adds that even reading the box's lengths off the drawing is itself unreliable.
+      box_sufficiency showed pixel models collapse to the floor when the box cannot disambiguate the system;
+      extractor adds that even reading the box's lengths off the drawing is itself unreliable.
   These two are reported as observations about the render convention, NOT as the licensed E1-E4
   claims, which remain unavailable.
 
 =================  IMPLICATION FOR THE PAPER  =================
-CP15's wording must stay as it is and must NOT be strengthened. CP15 says pixel models fail to
+box_sufficiency's wording must stay as it is and must NOT be strengthened. box_sufficiency says pixel models fail to
 extract information that IS present in the cell parameters — that claim rests on the RF control
-(which reads the cell numerically and does not collapse), not on this extractor. CP17 does not
+(which reads the cell numerically and does not collapse), not on this extractor. extractor does not
 support the stronger reading "an easy deterministic reader beats the VLMs", and the paper must not
-imply it. Nor does CP17 license the opposite softening: a failed instrument is evidence about the
+imply it. Nor does extractor license the opposite softening: a failed instrument is evidence about the
 instrument.
 The honest one-line summary for the discussion: we attempted a non-learned reader of the render
 convention as a way to localise the extraction gap, it failed its own pre-registered validation
@@ -7214,29 +6836,29 @@ REPRODUCE
   scripts/extract_cell.py --eval-jsonl data/e3/eval.jsonl --renders data/e3/renders/eval
     --structures data/e3/structures.json --out extraction.json
   Gate computed against conventional_cell() lattices; RATIOS only, since an orthographic projection
-  has unknown global scale. Tolerances for the class rule are CP15's (2% length, 1 deg angle) so the
+  has unknown global scale. Tolerances for the class rule are box_sufficiency's (2% length, 1 deg angle) so the
   two checkpoints would have been commensurable had the gate passed.
 
-RECONCILIATION [0.9321 -> 0.9357: the CP0b harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
+RECONCILIATION [0.9321 -> 0.9357: the identifiability harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
 ```
 
 
-## CP18_eval_expansion
+## eval_expansion
 
-BACKED BY: `results/CP18_eval_expansion/results.json`, `results/CP18_eval_expansion/gen_V2b_e3x_k8.json`
+BACKED BY: `results/eval_expansion/results.json`, `results/eval_expansion/gen_V2b_e3x_k8.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP18_eval_expansion   GAP: resolve the comparisons CP16 showed are underpowered at
+CHECKPOINT: eval_expansion   GAP: resolve the comparisons paired_resolution showed are underpowered at
                                   n=210 (review item 5)
 STATUS: BOTH ARMS DONE. The primary question is RESOLVED. The V2b arm returned a result that
         MATERIALLY QUALIFIES the paper's below-floor claim and must not be glossed. The expansion also
         produced an unplanned result that changes how the regularity floor must be described.
 
 =================  THE PRIMARY RESULT: B1 vs THE FLOOR IS NOW RESOLVED  =======================
-CP16 showed B1-vs-floor was NOT resolved at n=210 (paired McNemar p = 0.0814) and projected that
+paired_resolution showed B1-vs-floor was NOT resolved at n=210 (paired McNemar p = 0.0814) and projected that
 n = 400-500 would resolve it. That projection was correct.
   sample                    d(acc)    discordant    paired p     verdict
   original      n=210      +0.0905     63 vs  44    8.1e-02    unresolved
@@ -7342,7 +6964,7 @@ therefore all-or-nothing: ~0.90-1.00 on the three classes it emits, EXACTLY 0.00
 never emits. Accuracy is nearly unchanged across the two samples only because the emitted classes
 happen to cover a similar share of each.
 This is a structural limitation of the chain arm, not a scoring artifact, and it bounds certification
-coverage exactly as CP7b recorded: a certifier that cannot name four of seven labels cannot certify
+coverage exactly as certification recorded: a certifier that cannot name four of seven labels cannot certify
 them at any competence.
 NOTE ON THE SAVED TEXT: every stored response is exactly 400 characters. That is a SAVE-TIME
 truncation in the harness, not the generation limit (max_new_tokens was 512), and predictions were
@@ -7351,16 +6973,16 @@ post-hoc chain analysis.
 ```
 
 
-## CP19_atom_detection
+## atom_detection
 
-BACKED BY: `results/CP19_atom_detection/detection_stratified.json`
+BACKED BY: `results/atom_detection/detection_stratified.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP19_atom_detection   GAP: directive item 4's REQUIRED detection-quality gate, which
-                                  CP17 skipped by building a wireframe reader instead
+CHECKPOINT: atom_detection   GAP: directive item 4's REQUIRED detection-quality gate, which
+                                  extractor skipped by building a wireframe reader instead
 STATUS: PARTIAL — the ground-truth instrument is BUILT AND VERIFIED; the detector FAILS its gate
         (median precision 0.233, recall 0.400 over 84 stratified view-measurements). Reported as an implementation limit, and it surfaces a property of the
         render convention that matters more than the detector does.
@@ -7370,7 +6992,7 @@ Item 4 requires, before any extractor branch may be read: ground-truth projected
 the CIF and the frozen cameras, then detection PRECISION and RECALL against them per view, the
 centroid error distribution, and per-structure projected-disc OVERLAP as a difficulty covariate.
 The ground-truth half is now exact and free (no GPU, no network). Getting it right took FIVE wrong
-transforms — see CP17_extractor/calibration.md, which records all five, because the fifth passed a
+transforms — see extractor/calibration.md, which records all five, because the fifth passed a
 2-atom cubic control at 100% and a 25-structure median at 1.000 while being WRONG (it missed
 equal-aspect letterboxing, and only a cell with a strongly non-square projected extent exposes it).
 Verified form: 30 structures, centre-on-ink median 1.000, P25 1.000, min 0.672, with the dense
@@ -7399,7 +7021,7 @@ merely hard to detect, they are NOT VISIBLE. This is a property of the frozen re
 (conventional cell, 2x2x2 supercell, radii 0.5 at 768px), not of any algorithm.
 It bounds what ANY extractor could achieve on these structures, and it is a concrete, measured
 statement of the kind item 4 was commissioned to produce — obtained even though the detector failed.
-It also sharpens CP0b: the oracle's 0.9357 assumes PERFECT centroid extraction of ALL atoms, but on
+It also sharpens identifiability: the oracle's 0.9357 assumes PERFECT centroid extraction of ALL atoms, but on
 dense cells a third of those atoms are occluded in the actual renders, so the oracle is an upper
 bound on identifiability from the STRUCTURE, not from the IMAGES.
 
@@ -7442,8 +7064,8 @@ REPRODUCE
   Ground truth: ASE PlottingVariables with equal-aspect letterboxing (see calibration.md).
   Matching: greedy nearest within max(3 px, half the projected disc diameter).
 
-=================  AMENDMENT FROM CP20: WHAT THE 55.3% IS MADE OF  ============================
-CP20 attempted to reduce occlusion by shrinking atom radii and found the covariate PINNED: a
+=================  AMENDMENT FROM occlusion_manipulation: WHAT THE 55.3% IS MADE OF  ============================
+occlusion_manipulation attempted to reduce occlusion by shrinking atom radii and found the covariate PINNED: a
 fourfold radius reduction moved the median by under 2 points. The cause decomposes the figure.
 Viewing down a lattice vector projects the 2x2x2 supercell copies onto IDENTICAL positions
 (nearest-other-atom pixel distance exactly 0.000 on the affected structures), so a fixed fraction of
@@ -7458,28 +7080,28 @@ accurate statement is that over half the atom centres are NOT VISIBLE, roughly h
 supercell copies coincide when viewed down a lattice vector and roughly half because a nearer disc
 covers them. This makes the limit harder to escape, not softer: the dominant component is intrinsic
 to rendering a periodic structure along its own axes, and removing the supercell — the one
-intervention that would eliminate it — was shown in CP1 to destroy genuine periodicity signal
+intervention that would eliminate it — was shown in zeroshot to destroy genuine periodicity signal
 (0.41 -> 0.21).
 NO BEHAVIOURAL CONSEQUENCE IS ESTABLISHED. The pre-registered causal test could not be run because
 the manipulation failed its own check, so this remains a geometric property of the renders.
 
-RECONCILIATION [0.9321 -> 0.9357: the CP0b harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
+RECONCILIATION [0.9321 -> 0.9357: the identifiability harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.]
 ```
 
 
-## CP20_occlusion_manipulation
+## occlusion_manipulation
 
-BACKED BY: `results/CP20_occlusion_manipulation/results.json`
+BACKED BY: `results/occlusion_manipulation/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP20 occlusion manipulation (directive item 4)
+PRE-REGISTRATION — occlusion_manipulation occlusion manipulation (directive item 4)
 WRITTEN AND SAVED BEFORE ANY RE-RENDERING OR ANY MODEL CALL. Nothing here is filled in after seeing
 a number.
 
-QUESTION. CP19 measured that the median rendered structure has 55.3% of its atom centres covered by
+QUESTION. atom_detection measured that the median rendered structure has 55.3% of its atom centres covered by
 a nearer atom's disc. That is a geometric fact about the render convention. It is NOT yet evidence
 that occlusion CAUSES any part of the models' failure. This checkpoint tests the causal claim.
 
@@ -7504,9 +7126,9 @@ minus canonical) on each stratum, per model, tested with paired McNemar on the s
       general legibility effect, NOT as evidence about occlusion and the motif. The render-design
       recommendation may still be made but must be framed as "clearer renders help generally".
   O3  neither significant                                 -> FALSIFIED. Occlusion at this level does
-      not bind. Report the null; CP19's 55.3% stays a geometric measurement with no demonstrated
+      not bind. Report the null; atom_detection's 55.3% stays a geometric measurement with no demonstrated
       behavioural consequence, and the report must say so.
-  O4  d_amb significant and NEGATIVE (reduced occlusion HURTS) -> report as a CP1-type finding: the
+  O4  d_amb significant and NEGATIVE (reduced occlusion HURTS) -> report as a zeroshot-type finding: the
       manipulation removed real signal. See the carried warning below.
 
 METHOD, FIXED NOW.
@@ -7525,14 +7147,14 @@ METHOD, FIXED NOW.
   arm would confound the manipulation with adaptation.
   Analysis: stratum x convention, paired McNemar within stratum, per model.
 
-CARRIED WARNING FROM CP1, AND IT IS THE REASON FOR O4. CP1's "more legible" single-cell redesign
+CARRIED WARNING FROM zeroshot, AND IT IS THE REASON FOR O4. zeroshot's "more legible" single-cell redesign
 LOWERED canonical accuracy 0.41 -> 0.21, because removing the supercell removed genuine
 translational-periodicity signal. Smaller radii could plausibly do something similar by making
 atoms harder to see at all. The supercell is NOT touched here, and O4 exists so that a negative
 result is reported as a finding rather than as a failed experiment.
 
 WHAT NO OUTCOME LICENSES. No outcome here says anything about whether an EXTRACTOR could recover
-atom positions — that is CP19's failed gate and remains open. No outcome licenses a claim about
+atom positions — that is atom_detection's failed gate and remains open. No outcome licenses a claim about
 our own trained arms, which are not evaluated in this checkpoint.
 ```
 
@@ -7540,11 +7162,11 @@ our own trained arms, which are not evaluated in this checkpoint.
 ### finding.md
 
 ```
-CHECKPOINT: CP20_occlusion_manipulation   GAP: does occlusion CAUSE part of the failure, or is
-                                          CP19's 55.3% only a geometric measurement? (item 4)
+CHECKPOINT: occlusion_manipulation   GAP: does occlusion CAUSE part of the failure, or is
+                                          atom_detection's 55.3% only a geometric measurement? (item 4)
 STATUS: THE MANIPULATION CHECK FAILED, SO NO MODEL EVALUATION WAS RUN — exactly as the
         pre-registration required. That check then explained WHY, and the explanation qualifies
-        CP19's headline occlusion figure. No API budget was spent.
+        atom_detection's headline occlusion figure. No API budget was spent.
 
 =================  THE PRE-REGISTERED GATE, AND WHY IT MATTERED  ==============================
 prereg.md required, before any model call: re-render with reduced projected-disc overlap, then
@@ -7575,22 +7197,22 @@ Investigating the pinning: 26 of 75 measurements sit at EXACTLY 0.5000, and on t
 nearest-other-atom PIXEL DISTANCE IS 0.000. Viewing down a lattice vector stacks the 2x2x2 supercell
 copies onto IDENTICAL projected positions, so exactly half the atoms are front copies and half are
 hidden back copies. No disc radius can separate atoms that project to the same point.
-DECOMPOSING CP19'S OCCLUSION FIGURE (n=30 structures x 3 views, verified exhaustive to 1e-16):
+DECOMPOSING atom_detection'S OCCLUSION FIGURE (n=30 structures x 3 views, verified exhaustive to 1e-16):
   EXACT COINCIDENCE (a copy at the identical projected point)   mean 0.2363
   GENUINE DISC OVERLAP (a nearer atom's disc covers it)         mean 0.2529
   total                                                         mean 0.4891
 So of the mean occlusion, 48% is a TILING ARTIFACT of viewing down principal axes and 52% is genuine
 disc overlap. Only the second half is addressable by radii; the first is addressable only by changing
-the camera set or the supercell, and CP1 established that removing the supercell destroys genuine
+the camera set or the supercell, and zeroshot established that removing the supercell destroys genuine
 translational-periodicity signal (canonical accuracy 0.41 -> 0.21).
 A METHODOLOGICAL NOTE ON THE DECOMPOSITION. Component MEDIANS are not additive (0.0528 + 0.1583 =
 0.2111, while the median total is 0.5261) — only the means are. Quoting a component median beside a
 total median would be misleading, so the split is reported in means.
 
-=================  WHAT THIS DOES TO CP19'S CLAIM  ============================================
-CP19 reported "the median structure has 55.3% of its atom centres covered by a nearer atom's disc".
+=================  WHAT THIS DOES TO atom_detection'S CLAIM  ============================================
+atom_detection reported "the median structure has 55.3% of its atom centres covered by a nearer atom's disc".
 That number is arithmetically correct but the wording implies disc-size crowding, when about half of
-it is exact projective coincidence from the tiling. The claim must be restated as (AND IS FURTHER CORRECTED BY CP21 BELOW:
+it is exact projective coincidence from the tiling. The claim must be restated as (AND IS FURTHER CORRECTED BY occlusion_redundancy BELOW:
 most of this occlusion hides a SYMMETRY-EQUIVALENT copy and therefore hides nothing, leaving an
 EFFECTIVE visibility deficit of ~0.18-0.20 rather than ~0.55): over half the
 atom centres are NOT VISIBLE in the median render, roughly half of that because supercell copies
@@ -7598,13 +7220,13 @@ project onto identical points when viewed down a lattice vector, and roughly hal
 atom's disc covers them.
 This makes the visibility limit HARDER to escape, not softer: the dominant component is intrinsic to
 rendering a periodic structure along its own axes, and the one intervention that would remove it is
-the intervention CP1 showed to be harmful.
+the intervention zeroshot showed to be harmful.
 
 =================  WHAT IS AND IS NOT ESTABLISHED  ============================================
 NOT ESTABLISHED: any causal claim that occlusion drives model failure. The pre-registered interaction
 test (improvement on the box-ambiguous stratum, no change on box-sufficient) was NOT RUN because the
 manipulation could not create the required contrast. Branches O1-O4 are all unread and remain open.
-CP19's occlusion measurement therefore stays a geometric property of the renders with NO demonstrated
+atom_detection's occlusion measurement therefore stays a geometric property of the renders with NO demonstrated
 behavioural consequence, and the report must say exactly that.
 ESTABLISHED: the occlusion is roughly half projective coincidence and half disc overlap; and it is
 not manipulable by the cheapest available intervention. A future test would need a camera set OFF the
@@ -7612,30 +7234,30 @@ principal axes, which changes the frozen protocol and is a larger commitment tha
 NOT SPENT: three frontier models x 210 structures x K=3 x 2 conditions of API budget, correctly
 withheld by the gate.
 
-=================  C1 — THE 0.4891 TOTAL IS RETIRED (SAME SLICE DEFECT AS CP21)  ==============
-Two total-occlusion means circulated: 0.4891 here and 0.5699 in CP21 on the "original set" — the same
+=================  C1 — THE 0.4891 TOTAL IS RETIRED (SAME SLICE DEFECT AS occlusion_redundancy)  ==============
+Two total-occlusion means circulated: 0.4891 here and 0.5699 in occlusion_redundancy on the "original set" — the same
 quantity on nominally the same sample, differing by 0.0808. Traced: THIS checkpoint's decomposition
 used the FIRST 30 structures of eval.jsonl, and that file is ORDERED BY CRYSTAL SYSTEM, so the slice is
 triclinic/monoclinic only. Recomputing on exactly those 30 reproduces 0.4891 to within 0.02, which
-confirms the cause rather than assuming it. It is the identical defect CP21 documents.
+confirms the cause rather than assuming it. It is the identical defect occlusion_redundancy documents.
   0.4891 (first-30 slice, triclinic/monoclinic only)  ->  RETIRED
   0.5699 (stratified 6/system, original set)          ->  the figure to use
   0.5900 (stratified 6/system, expansion set)         ->  the figure to use
 The COMPONENT SHARES (48.3% exact coincidence / 51.7% disc overlap) came from the same biased slice and
-are therefore also retired; CP21's stratified redundant/informative split (66-68% redundant) supersedes
-the whole decomposition. Only one total may appear in any circulated document, and it is CP21's.
+are therefore also retired; occlusion_redundancy's stratified redundant/informative split (66-68% redundant) supersedes
+the whole decomposition. Only one total may appear in any circulated document, and it is occlusion_redundancy's.
 ```
 
 
-## CP21_occlusion_redundancy
+## occlusion_redundancy
 
-BACKED BY: `results/CP21_occlusion_redundancy/results.json`
+BACKED BY: `results/occlusion_redundancy/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP21 occlusion redundancy partition (directive Stage 0a)
+PRE-REGISTRATION — occlusion_redundancy occlusion redundancy partition (directive Stage 0a)
 WRITTEN BEFORE COMPUTING. The directive calls this the decisive analysis and it is: it can shrink
 the paper's own occlusion claim, so the reading must be fixed in advance.
 
@@ -7667,14 +7289,14 @@ THE READING, COMMITTED BEFORE THE NUMBER EXISTS.
       informative component only, and treat Stage 1 as testing a smaller effect than 0.4891 implies.
 
 WHAT NO OUTCOME LICENSES. This is geometry, not behaviour. No outcome here shows that any occlusion
-component affects model accuracy — that remains untested after CP20's manipulation check failed.
+component affects model accuracy — that remains untested after occlusion_manipulation's manipulation check failed.
 ```
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP21_occlusion_redundancy   GAP: is the occlusion the paper reports actually hiding
+CHECKPOINT: occlusion_redundancy   GAP: is the occlusion the paper reports actually hiding
                                         INFORMATION, or is it hiding copies of what is already
                                         visible? (directive Stage 0a, "the decisive one")
 STATUS: DONE, BRANCH R3 (MIXED) ON BOTH EVALUATION SETS. ALL NUMBERS BELOW ARE FROM
@@ -7699,7 +7321,7 @@ roughly 0.20 (original) to 0.25 (expansion) of atom centres, NOT the 0.4891 tota
 reported. Most occlusion hides a symmetry-equivalent copy of an atom that is visible elsewhere in
 the same image, and seeing one such copy tells you everything about the other. The paper must
 report informative occlusion as the quantity of interest and keep the total only as a decomposition.
-THIS ALSO FULLY EXPLAINS CP20's FAILED MANIPULATION. A sixteenfold radius reduction could not move
+THIS ALSO FULLY EXPLAINS occlusion_manipulation's FAILED MANIPULATION. A sixteenfold radius reduction could not move
 the median because the coincident component is radius-invariant — and that component was largely
 carrying no independent information anyway. The intervention was aimed at the redundant part.
 CONSEQUENCE FOR THE PROPOSED DEPTH-RESTORATION LADDER (Stage 1): its expected payoff is bounded by
@@ -7755,7 +7377,7 @@ expected: with no symmetry beyond translation there are fewer equivalent copies.
 ESTABLISHED: the occlusion total decomposes into a ~61-64% redundant majority and a ~20-25%
 informative remainder, stably across two samples; the informative remainder is the correct
 visibility figure; trigonal/hexagonal are not preferentially occluded.
-NOT ESTABLISHED: any behavioural consequence. This is geometry. CP20's manipulation check failed, so
+NOT ESTABLISHED: any behavioural consequence. This is geometry. occlusion_manipulation's manipulation check failed, so
 no occlusion component has been shown to affect model accuracy, and nothing here changes that.
 
 =================  SAMPLING DEFECT FOUND MID-ANALYSIS, AND WHAT IT CHANGED  ===================
@@ -7784,8 +7406,8 @@ MORE informatively occluded. They are LESS:
   expansion       0.2216           0.1512          -0.0704        0.034  significant
 C2 — SIGNIFICANCE ON ONE SAMPLE OF TWO, AND THIS MUST BE STATED EVERY TIME. The DIRECTION replicates
 across both samples; the SIGNIFICANCE does not (original p = 0.395, expansion p = 0.034). That is the
-identical pattern that killed the CP15 accuracy claim, so this checkpoint cannot present the
-disjointness result as established while CP15's non-replication is offered as a cautionary tale. BOTH
+identical pattern that killed the box_sufficiency accuracy claim, so this checkpoint cannot present the
+disjointness result as established while box_sufficiency's non-replication is offered as a cautionary tale. BOTH
 p-VALUES APPEAR WHEREVER THE CLAIM APPEARS. The STRONGER LEG is the trigonal/hexagonal contrast
 (0.1499 vs 0.2077, p = 0.022), which is a single test on pooled stratified data rather than a
 direction-replicates-significance-does-not pair. So the structures that most need the
@@ -7812,15 +7434,15 @@ stack; hexagonal is best, which is why the trigonal/hexagonal stratum is the lea
 ```
 
 
-## CP22_oracle_view_curve
+## oracle_view_curve
 
-BACKED BY: `results/CP22_oracle_view_curve/results.json`
+BACKED BY: `results/oracle_view_curve/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP22_oracle_view_curve   GAP: how much information does the view SET deliver, as a
+CHECKPOINT: oracle_view_curve   GAP: how much information does the view SET deliver, as a
                                      function of view count, independent of any model?
                                      (directive Stage 0c)
 STATUS: DONE, AND THE SATURATION CLAIM IS WEAKER THAN FIRST STATED. A paired test on the same 280
@@ -7897,15 +7519,15 @@ name its task.
 ```
 
 
-## CP23_depth_sufficiency
+## depth_sufficiency
 
-BACKED BY: `results/CP23_depth_sufficiency/results.json`
+BACKED BY: `results/depth_sufficiency/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP23 depth-ordering sufficiency (directive Stage 0b)
+PRE-REGISTRATION — depth_sufficiency depth-ordering sufficiency (directive Stage 0b)
 WRITTEN BEFORE COMPUTING. This is the stated geometric precondition for the proposed
 depth-restoration ladder (Stage 1): "if depth ordering adds nothing on box-ambiguous structures, do
 not run Stage 1."
@@ -7945,7 +7567,7 @@ model reads it. A positive result here is necessary but not sufficient for Stage
 ### finding.md
 
 ```
-CHECKPOINT: CP23_depth_sufficiency   GAP: does depth ordering carry the information a flat projection
+CHECKPOINT: depth_sufficiency   GAP: does depth ordering carry the information a flat projection
                                      loses? The stated geometric precondition for the proposed
                                      depth-restoration ladder. (directive Stage 0b)
 STATUS: DONE. THE QUANTIZATION-SATURATION CLAIM IS WITHDRAWN ENTIRELY — at full power neither four
@@ -8013,11 +7635,11 @@ interprets the levels as evenly spaced, the result is WORSE than supplying no de
 grading must be metric-faithful, not merely monotone.
 
 =================  WHAT THIS MEANS FOR THE PROPOSED STAGE 1  ==================================
-Taken with CP21, the case for the depth-restoration ladder is weak on three counts, none of which
+Taken with occlusion_redundancy, the case for the depth-restoration ladder is weak on three counts, none of which
 required any API spend to establish:
-  1. Two thirds of the occlusion is REDUNDANT (CP21), so the visible-information deficit is ~0.18-0.20,
+  1. Two thirds of the occlusion is REDUNDANT (occlusion_redundancy), so the visible-information deficit is ~0.18-0.20,
      not ~0.55.
-  2. Box-ambiguous structures are LESS informatively occluded than box-sufficient ones (CP21 item 0e),
+  2. Box-ambiguous structures are LESS informatively occluded than box-sufficient ones (occlusion_redundancy item 0e),
      so restored visibility would land where it is least needed.
   3. Ordinal depth closes at most ~13 of the ~75 points available on the box-ambiguous stratum, and
      does so on only one of the two evaluation sets (this checkpoint).
@@ -8059,26 +7681,26 @@ which is the same failure mode as the rank variant, in milder form.
 ```
 
 
-## CP24_oracle_stratified
+## oracle_stratified
 
-BACKED BY: `results/CP24_oracle_stratified/results.json`
+BACKED BY: `results/oracle_stratified/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP24 oracle stratified by box-sufficiency (directive section D)
+PRE-REGISTRATION — oracle_stratified oracle stratified by box-sufficiency (directive section D)
 WRITTEN BEFORE COMPUTING. The directive calls this the strongest statement available and it can
 reposition the paper's headline, so the reading is fixed first.
 
 THE QUESTION. Three facts are separately established: the oracle recovers 0.9357 of crystal systems at
-4 views (CP22); box-ambiguous structures are LESS informatively occluded than box-sufficient ones
-(CP21 item 0e); pixel models sit near the shape-free floor on the box-ambiguous stratum (CP15, on the
+4 views (oracle_view_curve); box-ambiguous structures are LESS informatively occluded than box-sufficient ones
+(occlusion_redundancy item 0e); pixel models sit near the shape-free floor on the box-ambiguous stratum (box_sufficiency, on the
 ORIGINAL sample only - it did not replicate). Stratifying the oracle by box-sufficiency tests whether
 those facts close a bracket.
 
 COMPUTE. Partition the oracle's 280-structure sample by box-sufficiency using the SAME conventional-
-cell metric rule as CP15, then report 4-view crystal-system recovery on each stratum, with a
+cell metric rule as box_sufficiency, then report 4-view crystal-system recovery on each stratum, with a
 Fisher/chi-square test on the difference and Wilson intervals. Also report the 3-view and 5-view rows
 so the stratum result is not a single-view-count artifact.
 
@@ -8101,7 +7723,7 @@ mix. So the bracket is assembled from TWO DIFFERENT SAMPLES and must be stated t
 reading is licensed only as "the information is present and visible in structures of this kind", never
 as a per-structure claim about the evaluation set.
 A SECOND CONSTRAINT. The model half of the bracket (models near floor on box-ambiguous) FAILED TO
-REPLICATE on the expansion set (CP15 item 3: the drop reversed sign, p=0.557). Whatever V-branch
+REPLICATE on the expansion set (box_sufficiency item 3: the drop reversed sign, p=0.557). Whatever V-branch
 fires, the localization claim inherits that non-replication and must carry it. I will not present a
 bracket whose model leg is sample-specific as though it were established.
 
@@ -8113,10 +7735,10 @@ about what a model can extract from pixels; it bounds what is recoverable GIVEN 
 ### finding.md
 
 ```
-CHECKPOINT: CP24_oracle_stratified   GAP: is the information in box-ambiguous structures PRESENT and
+CHECKPOINT: oracle_stratified   GAP: is the information in box-ambiguous structures PRESENT and
                                      VISIBLE but UNUSED, or genuinely absent? (directive section D)
-STATUS: DONE, AND NOW SUPERSEDED AS THE HEADLINE BY CP25, which runs the same oracle ON the
-        evaluation sets and makes the comparison within-sample and paired. Read CP25 first. The
+STATUS: DONE, AND NOW SUPERSEDED AS THE HEADLINE BY oracle_within_sample, which runs the same oracle ON the
+        evaluation sets and makes the comparison within-sample and paired. Read oracle_within_sample first. The
         cross-sample result below stands as recorded, with two corrections added at the end.
 STATUS (original): DONE. THE PRE-REGISTERED BRANCHES DO NOT FIRE CLEANLY and the honest answer is between them.
         The oracle recovers box-ambiguous structures at 0.8554 — high, but SIGNIFICANTLY below its
@@ -8124,7 +7746,7 @@ STATUS (original): DONE. THE PRE-REGISTERED BRANCHES DO NOT FIRE CLEANLY and the
 
 =================  THE RESULT  ===============================================================
 Oracle (ideal extraction, triangulated) on its own 280-structure sample, split by the SAME
-conventional-cell metric rule CP15 uses. Box-sufficient 197 (0.704), box-ambiguous 83.
+conventional-cell metric rule box_sufficiency uses. Box-sufficient 197 (0.704), box-ambiguous 83.
   views   box-sufficient        box-ambiguous       difference   Fisher p
     2     0.9188 (181/197)      0.3253 ( 27/83)      -0.5935     <1e-4
     3     0.9645 (190/197)      0.7952 ( 66/83)      -0.1693     <1e-4
@@ -8149,7 +7771,7 @@ CORRECTION: an earlier version of this record named 0.5205 as "the best pixel mo
 delta 0.1979, which is arithmetically inconsistent (0.8554-0.5205=0.3349). The delta was computed
 correctly from the true maximum; only the quoted value was wrong. It propagated into REPORT.md before
 being caught, and it survived a verification pass that checked whether the figure APPEARED in the text
-rather than re-deriving it from the source table — the same failure mode recorded in CP16. Combined with CP21's finding that box-ambiguous structures are LESS
+rather than re-deriving it from the source table — the same failure mode recorded in paired_resolution. Combined with occlusion_redundancy's finding that box-ambiguous structures are LESS
 informatively occluded than average, the information there is mostly present and better-than-average
 visible, and models are not using it. That is a localization statement.
 NOT LICENSED — and these caveats are load-bearing, not decoration:
@@ -8157,7 +7779,7 @@ NOT LICENSED — and these caveats are load-bearing, not decoration:
       evaluation set carrying the model numbers, and draw on a different source mix (140 MP + 140
       JARVIS vs MP-only). The bracket is assembled across samples and can never be stated as a
       per-structure claim.
-  (2) THE MODEL LEG DID NOT REPLICATE. CP15 item 3: on the expansion set the box-ambiguous drop
+  (2) THE MODEL LEG DID NOT REPLICATE. box_sufficiency item 3: on the expansion set the box-ambiguous drop
       REVERSED SIGN (+0.1510 -> -0.0500, p = 0.557) and the RF control became the only significant
       dropper. Any "models fail where the oracle succeeds" claim inherits that non-replication and
       must carry it in the same sentence.
@@ -8175,7 +7797,7 @@ test the directive's framing implies, and it must be pre-registered as explorato
 The oracle sample is 197/280 = 0.7036 box-sufficient against the evaluation set's 137/210 = 0.6524.
 Fisher exact p = 0.2407 — within sampling noise. This needed no source-mix explanation and should not
 have been framed as something requiring one. The sample-disjointness flag on the ACCURACY comparison
-was a separate and legitimate concern, now resolved by CP25.
+was a separate and legitimate concern, now resolved by oracle_within_sample.
 
 =================  CORRECTION 2: THE STRATUM COMPOSITIONS DO DIFFER, AND IT MATTERED  =========
 The evaluation set's ambiguous stratum is 61/73 = 83.6% trigonal/hexagonal metric. The ORACLE sample's
@@ -8183,13 +7805,13 @@ is 80/83 = 96.4% (80 hexagonal_or_trigonal + 3 tetragonal, no monoclinic, orthor
 Fisher exact p = 0.0120 — the compositions DIFFER significantly.
 CONSEQUENCE FOR THE CROSS-SAMPLE READING: part of the 0.1979 gap was composition rather than unread
 information, exactly as a reviewer would have suspected. This is a real defect in the cross-sample
-bracket, and it is why CP25's within-sample computation was the right call rather than an optional
-tidy-up. CP25 supersedes this reading; the numbers here remain as the record of what was computed.
+bracket, and it is why oracle_within_sample's within-sample computation was the right call rather than an optional
+tidy-up. oracle_within_sample supersedes this reading; the numbers here remain as the record of what was computed.
 
 =================  THE IMPLIED RESULT THIS CHECKPOINT DERIVES BUT DID NOT WRITE  ==============
 The native-resolution arm (A3) shows NO stratum drop. On the original evaluation set: overall 0.6905,
 box-sufficient 0.7000 (n=140), box-ambiguous 0.6714 (n=70), drop +0.0286, Fisher p = 0.7518 — not
-significant. (Split from my reproduced classifier at 140/70; see CP25 for why CP15's exact 137/73 is
+significant. (Split from my reproduced classifier at 140/70; see oracle_within_sample for why box_sufficiency's exact 137/73 is
 not recoverable. The conclusion does not turn on the 3-structure difference.)
 THAT IS A THIRD INDEPENDENT INSTANCE of the stratified-accuracy claim failing, after the expansion-set
 non-replication and the RF control becoming the only significant dropper there. Three instances is no
@@ -8198,19 +7820,19 @@ already in the package, so omitting it would read badly.
 ```
 
 
-## CP25_oracle_within_sample
+## oracle_within_sample
 
-BACKED BY: `results/CP25_oracle_within_sample/results.json`
+BACKED BY: `results/oracle_within_sample/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP25 oracle on the EVALUATION sets (directive item 1)
-WRITTEN BEFORE COMPUTING. This converts CP24's cross-sample subtraction into a within-sample paired
+PRE-REGISTRATION — oracle_within_sample oracle on the EVALUATION sets (directive item 1)
+WRITTEN BEFORE COMPUTING. This converts oracle_stratified's cross-sample subtraction into a within-sample paired
 quantity, so the reading must be fixed first.
 
-THE PROBLEM IT SOLVES. CP24's localization bracket is assembled across two disjoint samples: oracle
+THE PROBLEM IT SOLVES. oracle_stratified's localization bracket is assembled across two disjoint samples: oracle
 0.8554 = 71/83 on its own 280-structure sample, best pixel model 0.6575 = 48/73 on the evaluation set.
 Every use of that result currently carries a sample-disjointness caveat. The oracle is a deterministic
 geometric computation over ground-truth positions and the frozen cameras, and the evaluation sets have
@@ -8218,7 +7840,7 @@ both, so it can be run on the SAME structures the models were scored on.
 
 COMPUTE. Run the ideal-extraction oracle (triangulate atom positions from the frozen cameras at
 perfect localisation, then spglib) on all 210 structures of BOTH evaluation sets, at the shipped 5
-views and at 4 for comparability with CP24. Then, on the SAME NAMED STRUCTURES:
+views and at 4 for comparability with oracle_stratified. Then, on the SAME NAMED STRUCTURES:
   - oracle vs each model arm, McNemar exact with discordant counts, overall and by box-sufficiency;
   - the oracle's own box-sufficient / box-ambiguous split.
 Report both evaluation sets in this first presentation, per standing discipline.
@@ -8228,7 +7850,7 @@ THE READING, COMMITTED BEFORE THE NUMBERS EXIST.
       and per-structure: the information is recoverable from these exact renders given extraction, and
       these exact models do not recover it. The sample-disjointness caveat is REMOVED and this becomes
       the paper's strongest single claim.
-  W2  NO SIGNIFICANT GAP on the evaluation sets (oracle within noise of the best model). Then CP24's
+  W2  NO SIGNIFICANT GAP on the evaluation sets (oracle within noise of the best model). Then oracle_stratified's
       0.1979 was substantially a SAMPLE-COMPOSITION artifact, the localization claim collapses, and
       the honest conclusion is that these renders are near the extraction-limited ceiling already.
       This would RETIRE the localization headline. I commit to reporting it if it fires.
@@ -8250,12 +7872,12 @@ null must be reportable without renegotiation.
 ### finding.md
 
 ```
-CHECKPOINT: CP25_oracle_within_sample   GAP: is the localization gap real on the SAME structures the
+CHECKPOINT: oracle_within_sample   GAP: is the localization gap real on the SAME structures the
                                         models were scored on, or an artifact of comparing two
                                         disjoint samples? (directive item 1)
 STATUS: DONE. BRANCH W1 FIRES ON BOTH EVALUATION SETS. The oracle runs on the evaluation sets with
         ZERO failures, so the gap is now WITHIN-SAMPLE, PER-STRUCTURE and PAIRED. The
-        sample-disjointness caveat that qualified every use of CP24's result is REMOVED.
+        sample-disjointness caveat that qualified every use of oracle_stratified's result is REMOVED.
 
 =================  IT RUNS, AND THERE WAS NO BLOCKER  ========================================
 The oracle is a deterministic geometric computation: triangulate atom positions from the frozen
@@ -8263,7 +7885,7 @@ cameras at perfect localisation, then spglib. Both evaluation sets have ground-t
 same cameras, so it runs directly. 210 structures per set, 0 exceptions, 0 unresolved.
   ORACLE, ideal extraction:   original eval 0.9524 (4v) / 0.9524 (5v)
                               expansion eval 0.8952 (4v) / 0.9095 (5v)
-NOTE THAT THIS IS CONSERVATIVE FOR CP24, NOT FLATTERING. CP24's cross-sample oracle was 0.9357 on its
+NOTE THAT THIS IS CONSERVATIVE FOR oracle_stratified, NOT FLATTERING. oracle_stratified's cross-sample oracle was 0.9357 on its
 own 280-structure sample; the evaluation sets give 0.9524 and 0.8952. The original eval set is HIGHER,
 so the cross-sample bracket understated the gap there.
 
@@ -8288,7 +7910,7 @@ accuracies reproduce the recorded values exactly (B1 0.6190, V2b 0.3810, A3 0.69
 B1 0.4524, V2b 0.4000 on the expansion), which is the check that the per-structure vectors are the
 same ones the leaderboard was built from.
 
-=================  WHAT THIS LICENSES, AND IT IS MORE THAN CP24 COULD  ========================
+=================  WHAT THIS LICENSES, AND IT IS MORE THAN oracle_stratified COULD  ========================
 LICENSED NOW, without the cross-sample caveat: on these exact 420 structures, rendered under the frozen
 protocol, ideal atom extraction recovers the crystal system on 90-95% while the best model recovers
 45-69%, and the difference is per-structure and overwhelmingly one-sided. The information IS present in
@@ -8299,8 +7921,8 @@ extraction. It does NOT show a model could have extracted the positions from pix
 ground-truth coordinates, not the image. The correct reading is that the render CARRIES the
 information and the bottleneck is upstream of symmetry reasoning, in perception.
 
-=================  A CAVEAT ON THE STRATIFIED ROWS: CP15's CLASSIFIER IS NOT EXACTLY RECOVERABLE  ===
-I could not reproduce CP15's 137/73 box-sufficiency split. CP15 records "tolerances 2% on lengths,
+=================  A CAVEAT ON THE STRATIFIED ROWS: box_sufficiency's CLASSIFIER IS NOT EXACTLY RECOVERABLE  ===
+I could not reproduce box_sufficiency's 137/73 box-sufficiency split. box_sufficiency records "tolerances 2% on lengths,
 1 deg on angles"; that convention gives me 140/70, and 1%/0.5deg gives 144/66. The composition of the
 ambiguous stratum matches on five of six metric classes (60 hexagonal_or_trigonal, 4 tetragonal,
 3 cubic, 2 orthorhombic, 1 trigonal_rhombohedral) and differs only in the 3 monoclinic entries, which
@@ -8312,8 +7934,8 @@ length tolerance (0.5%, 1%, 2%, 3%, 5%), angle tolerance (0.5, 1, 1.5, 2, 3 deg)
 branch variants. Exactly TWO combinations reproduce the count of 73, both at 3% length / 0.5 deg angle
 — and NEITHER reproduces the composition: they give 7 tetragonal and 1 monoclinic against the recorded
 4 and 3, with the recorded single trigonal_rhombohedral entry absent. So the count match is a
-coincidence of totals, not a recovery, and no tolerance setting of this rule produces CP15's split.
-CP15 used a structurally different rule than the one its finding.md describes.
+coincidence of totals, not a recovery, and no tolerance setting of this rule produces box_sufficiency's split.
+box_sufficiency used a structurally different rule than the one its finding.md describes.
 CONSEQUENCE, STATED PRECISELY: the HEADLINE paired result above does NOT depend on the partition and is
 unaffected. The stratified breakdown DOES, so it is reported as approximate with the classifier
 discrepancy named. This is the SECOND unrecoverable classifier in this package after the random-forest
@@ -8330,29 +7952,29 @@ of the exact partition: this is not a box-ambiguous-specific deficit.
 ```
 
 
-## CP26_model_sweep
+## model_sweep
 
-BACKED BY: `results/CP26_model_sweep/results.json`, `results/CP26_model_sweep/results_original.json`
+BACKED BY: `results/model_sweep/results.json`, `results/model_sweep/results_original.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP26 model sweep (directive item 3)
+PRE-REGISTRATION — model_sweep model sweep (directive item 3)
 WRITTEN BEFORE ANY MODEL IS CALLED.
 
 PURPOSE. A four-row leaderboard is not a benchmark. This adds open-family rows at multiple scales so
 the benchmark reports a landscape rather than three frontier models plus our fine-tune.
 
-PROTOCOL, IDENTICAL TO CP1/CP14 — NOTHING IS TUNED PER MODEL.
+PROTOCOL, IDENTICAL TO zeroshot/frontier_ceiling — NOTHING IS TUNED PER MODEL.
   Renders: the frozen protocol, 5 views, conventional cell, 2x2x2 supercell, 768 px, canonical style.
-  Prompt: the CP14 prompt verbatim. Same for every model. No per-model prompt engineering.
-  Decoding: K=3 samples, temperature 0.7, majority vote. Same parser as CP14.
+  Prompt: the frontier_ceiling prompt verbatim. Same for every model. No per-model prompt engineering.
+  Decoding: K=3 samples, temperature 0.7, majority vote. Same parser as frontier_ceiling.
   Denominators: FIXED at 210 per evaluation set. Parse failures and API errors are scored as ERRORS,
     never dropped. api_errors and unparseable are reported per model.
   Sets: BOTH evaluation sets in this first presentation, per standing discipline.
   Anonymized condition: NOT run for the sweep (it is a contamination control for the frontier ceiling,
-    already reported in CP14 for the three models where it matters).
+    already reported in frontier_ceiling for the three models where it matters).
 
 ROSTER, fixed now — 14 models spanning 6 open families and a scale ladder inside two of them:
   qwen/qwen3-vl-8b-instruct, qwen/qwen3-vl-32b-instruct, qwen/qwen3-vl-235b-a22b-instruct
@@ -8364,7 +7986,7 @@ ROSTER, fixed now — 14 models spanning 6 open families and a scale ladder insi
   moonshotai/kimi-k2.6
   bytedance-seed/seed-1.6
   amazon/nova-pro-v1
-  google/gemini-2.5-flash                          (bridges to the CP14 frontier rows)
+  google/gemini-2.5-flash                          (bridges to the frontier_ceiling frontier rows)
   openai/gpt-4.1-mini
 Total: 14 models x 210 structures x K=3 x 2 sets = 17,640 calls.
 
@@ -8390,7 +8012,7 @@ comparison — different training exposure. They bound TASK DIFFICULTY, not meth
 ### finding.md
 
 ```
-CHECKPOINT: CP26_model_sweep   GAP: a four-row leaderboard is not a benchmark. Does the difficulty
+CHECKPOINT: model_sweep   GAP: a four-row leaderboard is not a benchmark. Does the difficulty
                                claim hold across the field, or only on our own arms? (directive item 3)
 STATUS: DONE. BRANCH S1 FIRES, AND IT FIRES ON TWO INDEPENDENT RUNS. All 13 models fall below the
         shape-free regularity floor and the best falls significantly below it. The difficulty claim is
@@ -8400,7 +8022,7 @@ STATUS: DONE. BRANCH S1 FIRES, AND IT FIRES ON TWO INDEPENDENT RUNS. All 13 mode
         run twice, and an earlier version of this record mixed the two runs into one table.
 
 =================  THE CANONICAL LEADERBOARD — ORIGINAL EVAL SET, n=210, K=3 MAJORITY VOTE  ====
-Frozen protocol, CP14 prompt verbatim, no per-model tuning, denominators fixed at 210, parse failures
+Frozen protocol, frontier_ceiling prompt verbatim, no per-model tuning, denominators fixed at 210, parse failures
 and API errors scored as errors rather than dropped. All counts recomputed from the per-structure
 prediction vectors, not read from a stored summary field.
   model                                 k/210   micro    macro-F1   api err
@@ -8508,7 +8130,7 @@ range and every architecture tested, NOTHING clears the floor.
 =================  WHAT THIS DOES NOT LICENSE  ===============================================
 Zero-shot rows are NOT a method comparison against our fine-tuned arms — different training exposure.
 They bound TASK DIFFICULTY, not method quality. The anonymized contamination control was not run for
-the sweep; it is reported in CP14 for the three frontier models where memorisation was the live concern.
+the sweep; it is reported in frontier_ceiling for the three frontier models where memorisation was the live concern.
 ONE MODEL COULD NOT BE SCORED. moonshotai/kimi-k2.6 was in the pre-registered roster and hangs
 indefinitely on this workload — no response on a 2-structure K=1 probe after 10 minutes, so the failure
 is the model endpoint rather than the harness. Reported as UNSCORED rather than dropped silently; the
@@ -8516,95 +8138,31 @@ roster is 13 of a pre-registered 14.
 ```
 
 
-## CP27_venue
+## classifier_refreeze
 
-BACKED BY: `results/CP27_venue/results.json`
-
-
-### finding.md
-
-```
-CHECKPOINT: CP27_venue   GAP: the directive asks that ALL THREE deadlines be verified, and that the
-                         GAP BETWEEN THEM rather than intrinsic fit decide the submission order.
-STATUS: DONE, AND THE DEADLINE COMPARISON OVERTURNS THE STANDING RECOMMENDATION. The NeurIPS track
-        the package was aimed at has both been RENAMED and had its deadline PASS. TMLR is the only
-        venue that can receive this work now.
-
-=================  THE THREE DEADLINES, VERIFIED  ============================================
-NeurIPS — the track was RENAMED. What was "Datasets & Benchmarks" is, for NeurIPS 2026, the
-"EVALUATIONS & DATASETS" (E&D) track. Its deadlines were abstract May 4 2026 and full paper May 6 2026,
-both AoE. THOSE HAVE PASSED. The next cycle is NeurIPS 2027, whose paper deadline is listed as May 21
-2027 with abstract May 14 2027 — roughly ten months out.
-CVPR 2027 — NOT OFFICIALLY PUBLISHED. As of July 2026 the CVF has not posted a CVPR 2027 call for
-papers or dates; the 2027 CallForPapers and Dates pages return 404. Aggregators listing November 13
-2026 are PROJECTING from the 2026 calendar, not citing the CVF. So the working estimate is roughly
-mid-November 2026, about three and a half months out, and it is UNCONFIRMED.
-TMLR — ROLLING, no deadline. Submit any time. Reviews within about 4 weeks and decisions within about
-2 months, on a per-paper timeline.
-
-=================  WHY THIS DECIDES THE ORDER, ON THE DIRECTIVE'S OWN LOGIC  ==================
-The directive said the gap between deadlines, not intrinsic fit, should decide. The gap is decisive:
-  - the best-fitting venue cannot receive the work for ten months;
-  - the next-soonest is unconfirmed and is the venue two independent reviews already said this is not
-    a paper for as written;
-  - the third has no deadline at all and can receive it this week.
-SO TMLR FIRST. It is not a compromise on fit: TMLR's acceptance criteria are whether the claims are
-supported by accurate, convincing and clear evidence, and whether some of its audience would be
-interested — explicitly avoiding judgments based on novelty or potential impact, and accepting papers
-that meet the criteria "even if the contribution or significance of the work is modest." That is an
-exact description of this package, which is strong on evidence discipline and deliberately modest about
-what survived.
-ONE CRITERION TO CHECK AGAINST OURSELVES: TMLR rejects papers "that incorrectly claim novelty over
-existing published work." The MVTN finding already removed the render-optimisation novelty claim, so
-that exposure is closed — but it is now a stated acceptance criterion rather than a courtesy, which
-makes the deletion load-bearing.
-
-=================  WHAT THE NEURIPS RENAME MEANS FOR THE 2027 OPTION  =========================
-The renamed E&D track is MORE favourable to this package than the old framing, not less. Its FAQ states
-plainly that negative results are welcome in the track "as long as they bring new insights and are
-thoroughly demonstrated via empirical evaluations", naming failure modes of current benchmarks and of
-AI systems as in scope. It also states that submissions need not introduce a new model or outperform
-prior work, and may introduce protocols, tools or documentation practices as artifacts. Three of this
-package's four strongest items are negative or diagnostic results demonstrated empirically.
-CONSEQUENCE: the ten-month wait buys a better-matched venue, not merely a later one. TMLR-first does
-not foreclose it, since a TMLR paper can be extended — but note that DMLR-style extension rules require
-prior publication to be from a conference or workshop rather than a journal, so a TMLR publication
-would constrain a later resubmission. THAT CONSTRAINT MUST BE CHECKED against NeurIPS E&D's own dual
-submission policy before committing, and it is a team decision, not mine.
-
-=================  RECOMMENDATION  ===========================================================
-Submit to TMLR now, on evidence grounds and deadline grounds together. Treat CVPR 2027 as unavailable
-until the CVF posts real dates, and treat NeurIPS E&D 2027 as the venue to revisit only if the team
-prefers a conference and is willing to wait ten months AND has confirmed that a TMLR publication does
-not bar it.
-```
-
-
-## CP28_classifier_refreeze
-
-BACKED BY: `results/CP28_classifier_refreeze/results.json`, `results/CP28_classifier_refreeze/classifier_specifications.json`
+BACKED BY: `results/classifier_refreeze/results.json`, `results/classifier_refreeze/classifier_specifications.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP28 classifier refreeze   (ICLR plan, Phase A)
+PRE-REGISTRATION — classifier_refreeze classifier refreeze   (ICLR plan, Phase A)
 Committed BEFORE any refit or recompute.
 
 GAP. Two cited classifiers cannot be reproduced from the record:
   (a) the random forest on 19 lattice-metric features — three values have circulated (0.8905 original
       run, 0.8857 reproduced, 0.8762 gradient boosting) and the original feature list was never saved;
-  (b) the box-sufficiency predicate — CP15 records a 137/73 split whose exact rule is not recoverable.
-      CP25 searched 50 tolerance x branch-order combinations; two reproduced the COUNT, none reproduced
+  (b) the box-sufficiency predicate — box_sufficiency records a 137/73 split whose exact rule is not recoverable.
+      oracle_within_sample searched 50 tolerance x branch-order combinations; two reproduced the COUNT, none reproduced
       the stratum COMPOSITION, establishing the rule as structurally different from its description.
 
 WHAT I WILL DO.
   1. Refit the RF on the 1610 train structures, evaluate on the 210 original eval, n_estimators=500,
      seed 23. Write to the ledger: the ORDERED feature list, sklearn and numpy versions, the
      hyperparameters, and the per-structure prediction vector.
-  2. Adopt CP25's 140/70 predicate (2% length, 1 degree angle, monoclinic branch requiring beta
+  2. Adopt oracle_within_sample's 140/70 predicate (2% length, 1 degree angle, monoclinic branch requiring beta
      genuinely non-90) as CANONICAL and write its exact source. Recompute EVERY stratified row in
-     CP15, CP24, CP25 and the paper on that predicate.
+     box_sufficiency, oracle_stratified, oracle_within_sample and the paper on that predicate.
 
 DECISION RULE, fixed now.
   - The refrozen RF value becomes the cited value everywhere. 0.8905 goes to a footnote as the
@@ -8630,14 +8188,14 @@ number.
 ### finding.md
 
 ```
-CHECKPOINT: CP28_classifier_refreeze   GAP: two cited classifiers cannot be reproduced from the record.
+CHECKPOINT: classifier_refreeze   GAP: two cited classifiers cannot be reproduced from the record.
 STATUS: DONE. THE PARTITION IS REFROZEN AND REPRODUCES. THE RANDOM FOREST IS A THIRD NON-RECOVERY:
         a refit under the recorded protocol gives 188/210, and NO reading of the recorded prose
         reproduces the published 186/210. Forward reproducibility is fixed; the historical value is not
         recovered. One published significance verdict CHANGES as a result.
 
 =================  THE RANDOM FOREST  ==========================================================
-The 19-feature specification WAS recorded (CP8 finding.md) and is quoted verbatim in
+The 19-feature specification WAS recorded (external_baselines finding.md) and is quoted verbatim in
 classifier_specifications.json. What was never recorded is the exact arithmetic form of three of the
 features. Refitting on 1610 train / 210 eval, n_estimators=500, seed 23:
   CANONICAL REFROZEN VALUE           188/210 = 0.8952   macro-F1 0.8952   train acc 1.0000
@@ -8669,15 +8227,15 @@ DECISION RULE APPLIED. |0.8952 - 0.8857| = 0.0095, inside the pre-registered 0.0
 refrozen value is canonical and 0.8905 goes to a footnote as the unreproducible original.
 
 =================  THE BOX-SUFFICIENCY PARTITION  ==============================================
-CP25's predicate is adopted as canonical and its exact source is now in the ledger: 2% on lengths,
+oracle_within_sample's predicate is adopted as canonical and its exact source is now in the ledger: 2% on lengths,
 1 degree on angles, and a monoclinic branch that does NOT fire when beta is also ~90 (that is an
-orthorhombic metric). It reproduces CP25's 140/70 on the original eval set EXACTLY, with ambiguous
+orthorhombic metric). It reproduces oracle_within_sample's 140/70 on the original eval set EXACTLY, with ambiguous
 composition {hexagonal_or_trigonal 60, tetragonal 4, cubic 3, orthorhombic 2, trigonal_rhombohedral 1}.
 ONE-STRUCTURE DISAGREEMENT ON THE EXPANSION SET, STATED RATHER THAN TUNED AWAY. The canonical
-predicate gives 141/69 where CP15's replication recorded 140/70. The recorded composition lists one
+predicate gives 141/69 where box_sufficiency's replication recorded 140/70. The recorded composition lists one
 monoclinic ambiguous entry; under this predicate every monoclinic-metric structure in that set has
 monoclinic truth, so no monoclinic entry can be ambiguous. I did not adjust tolerances to force
-agreement — CP25 already established that CP15's exact rule is unrecoverable by a 50-combination grid.
+agreement — oracle_within_sample already established that box_sufficiency's exact rule is unrecoverable by a 50-combination grid.
 
 =================  RECOMPUTED STRATIFIED ROWS, ORIGINAL EVAL, CANONICAL 140/70  ================
   arm                      sufficient   ambiguous     drop   Fisher p   counts
@@ -8688,13 +8246,13 @@ agreement — CP25 already established that CP15's exact rule is unrecoverable b
   RF refrozen                0.9214      0.8429     +0.0786   0.0957   129/140, 59/70
 
 A PUBLISHED SIGNIFICANCE VERDICT CHANGES, AND THE PRE-REGISTRATION REQUIRED PUBLISHING IT.
-CP15 published B1's stratified drop as +0.1510 at p = 0.037 on the 137/73 split. On the canonical
+box_sufficiency published B1's stratified drop as +0.1510 at p = 0.037 on the 137/73 split. On the canonical
 predicate it is +0.1143 at p = 0.1318 — NO LONGER SIGNIFICANT. This is not a robustness check that
 came out badly; it is the primary value under the canonical partition, and it makes the
 ORIGINAL-sample leg of the stratified claim a FOURTH independent failure, alongside the expansion-set
 sign reversal, the A3 null, and the RF control inversion.
 THE B3 CHAIN ARM RUNS THE OTHER WAY, strongly: -0.2857 at p = 3e-05, better on AMBIGUOUS structures.
-That is the opposite of the mechanism CP15 proposed and is not explained by it. Recorded as an open
+That is the opposite of the mechanism box_sufficiency proposed and is not explained by it. Recorded as an open
 observation, not folded into the claim.
 
 =================  WHAT THIS DOES NOT ESTABLISH  ==============================================
@@ -8704,15 +8262,15 @@ historical value with a reproducible replacement.
 ```
 
 
-## CP29_v2b_seed_hygiene
+## v2b_seed_hygiene
 
-BACKED BY: `results/CP29_v2b_seed_hygiene/results.json`
+BACKED BY: `results/v2b_seed_hygiene/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP29_v2b_seed_hygiene   GAP: V2b's three seeds give byte-identical macro-F1 (0.3857,
+CHECKPOINT: v2b_seed_hygiene   GAP: V2b's three seeds give byte-identical macro-F1 (0.3857,
                                     81/210 each), recorded as macro_sd = 0.0.
 STATUS: DONE, AND THE CAUSE IS SETTLED. The three adapters are NOT identical, so this is not a seeding
         defect. It is DECODE COLLAPSE: three genuinely different models emit the same restricted label
@@ -8739,7 +8297,7 @@ a pooled SD, an error bar, or a power calculation.
 NO CLAIM IN THIS PAPER USES V2B'S ACROSS-SEED SPREAD, which is why this is bookkeeping rather than a
 retraction:
   - direct-versus-chain is paired McNemar on per-structure vectors, which needs no spread;
-  - the CP14 and CP12 comparison bands use B1's seed SD (0.0515), not V2b's.
+  - the frontier_ceiling and sota_push comparison bands use B1's seed SD (0.0515), not V2b's.
 Recorded so that a future reader does not resurrect 0.000 as evidence of seed stability. It is the
 opposite: it is evidence that macro-F1 cannot see this arm's seed variation at all.
 
@@ -8750,22 +8308,22 @@ measurement. No interval is asserted.
 ```
 
 
-## CP30_protocol_normalisation
+## protocol_normalisation
 
-BACKED BY: `results/CP30_protocol_normalisation/results.json`
+BACKED BY: `results/protocol_normalisation/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP30_protocol_normalisation   GAP: three inconsistencies a reviewer recomputing tables
+CHECKPOINT: protocol_normalisation   GAP: three inconsistencies a reviewer recomputing tables
                                           will hit. (ICLR plan, Phase A)
 STATUS: DONE. Items (a) and (b) applied. Item (c) was ALREADY FIXED and is recorded as verified rather
         than re-applied. Item (d) is SCOPED DOWN with a reason, not blanket-applied — applying it as
         written would have required asserting resolutions I never read.
 
 =================  (a) K IS NOW PRINTED ON EVERY ROW  ==========================================
-CP26's leaderboard compares 13 zero-shot rows at K=3 against an A3 reference at K=8. That is not a
+model_sweep's leaderboard compares 13 zero-shot rows at K=3 against an A3 reference at K=8. That is not a
 like-for-like decode budget. The same A3 adapter at K=3 is 139/210 = 0.6619 against 145/210 = 0.6905 at
 K=8, so the reference row was 6 structures more generous than the rows it anchored.
 Both the report and the paper's results section now print K on the reference row and state the K=3
@@ -8781,11 +8339,11 @@ that the "thirteen models below the floor" result is an ORIGINAL-SAMPLE claim: t
 were never run on the expansion set, so the claim cannot be restated sample-free.
 
 =================  (c) ORACLE VALUES IN EVAL-SET FIGURES — ALREADY CORRECT  ====================
-The plan flags CP14's bracket citing 0.9357, which is CP0b's DISJOINT 280-structure sample. Checked:
-CP14's results.json no longer contains 0.9357; that was corrected in an earlier pass. No change made.
+The plan flags frontier_ceiling's bracket citing 0.9357, which is identifiability's DISJOINT 280-structure sample. Checked:
+frontier_ceiling's results.json no longer contains 0.9357; that was corrected in an earlier pass. No change made.
 Recorded because "verified and already correct" is a different statement from "fixed", and a reviewer
 comparing the plan against the ledger will otherwise look for a change that does not exist.
-CANONICAL for any figure containing eval-set rows: CP25's 0.9524 (original) and 0.9095 (expansion).
+CANONICAL for any figure containing eval-set rows: oracle_within_sample's 0.9524 (original) and 0.9095 (expansion).
 
 =================  (d) EFFECTIVE RESOLUTION — SCOPED, WITH THE REASON STATED  ==================
 The plan asks that the effective_resolution block, read from the live processor, be present in every
@@ -8793,48 +8351,48 @@ cited results file. Audited: 24 of 30 checkpoint results.json files do not carry
 I DID NOT RETROFIT IT, and the reason is the point. That block records what a LIVE processor reported
 at generation time. Writing it into a closed checkpoint now would mean asserting a resolution I did not
 read from that checkpoint's run — the same class of defect as the fabricated parameter counts already
-recorded in CP26. Most of the 24 never ran a processor at all (geometry, occlusion, venue, external
+recorded in model_sweep. Most of the 24 never ran a processor at all (geometry, occlusion, venue, external
 structure baselines), so a blanket requirement is also the wrong test.
-WHAT IS TRUE AND SUFFICIENT: the audited configuration is recorded ONCE, in CP0c, read from the live
+WHAT IS TRUE AND SUFFICIENT: the audited configuration is recorded ONCE, in resolution_audit, read from the live
 processor — max_pixels 200704, grid 1x26x26, patch 16, merge 2, effective 416x416, 169 visual tokens
 per view, 5 views, 938 prefill tokens per sample. Every arm in this package was generated under that
-configuration, and CP0c is the audit of record that establishes it. Checkpoints cite CP0c rather than
+configuration, and resolution_audit is the audit of record that establishes it. Checkpoints cite resolution_audit rather than
 each re-asserting it.
 ```
 
 
-## CP31_visibility_corrected_oracle
+## visibility_corrected_oracle
 
-BACKED BY: `results/CP31_visibility_corrected_oracle/results.json`, `results/CP31_visibility_corrected_oracle/per_view_masks.json`, `results/CP31_visibility_corrected_oracle/conditions_raw.json`, `results/CP31_visibility_corrected_oracle/occlusion_extension.json`
+BACKED BY: `results/visibility_corrected_oracle/results.json`, `results/visibility_corrected_oracle/per_view_masks.json`, `results/visibility_corrected_oracle/conditions_raw.json`, `results/visibility_corrected_oracle/occlusion_extension.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP31 visibility-corrected oracle   (ICLR plan, Phase B)
+PRE-REGISTRATION — visibility_corrected_oracle visibility-corrected oracle   (ICLR plan, Phase B)
 Committed BEFORE any condition is run. CPU only, deterministic, no API spend, no GPU.
 
-GAP. CP19 states it: the oracle assumes perfect centroid extraction of ALL atoms, so 0.9524 bounds
+GAP. atom_detection states it: the oracle assumes perfect centroid extraction of ALL atoms, so 0.9524 bounds
 identifiability from the STRUCTURE, not from the IMAGES. No instrument in the package separates how much
 of the perception deficit the rendering convention imposes from how much the model imposes.
 
-PREREQUISITE, NOT FREE. CP19 covers 28 structures and CP21 covers 40 per set, both on the THREE AXIS
+PREREQUISITE, NOT FREE. atom_detection covers 28 structures and occlusion_redundancy covers 40 per set, both on the THREE AXIS
 VIEWS only, while the oracle uses 4 or 5 cameras. The orbit-based occlusion classification must first be
 extended to 210 structures per set across ALL FIVE views. Geometry only, no detector.
 
-METHOD. Run the CP25 oracle UNCHANGED on per-view centroid sets with occluded detections removed.
+METHOD. Run the oracle_within_sample oracle UNCHANGED on per-view centroid sets with occluded detections removed.
 Removal is PER VIEW, not global: an atom hidden down axis_c may be visible from body_diagonal, and
 triangulation needs only two views. Redundancy is decided by space-group orbit (spglib equivalent_atoms,
-symprec 1e-3) — the corrected rule CP21 adopted after the integer-translate rule was found to undercount
+symprec 1e-3) — the corrected rule occlusion_redundancy adopted after the integer-translate rule was found to undercount
 centred lattices.
 
 FOUR CONDITIONS, both eval sets, 4 and 5 views:
-  O0  all detections present            reproduces CP25 — harness check
+  O0  all detections present            reproduces oracle_within_sample — harness check
   O1  informative occlusion removed     the target condition
   O2  all occlusion removed             upper bound on visibility cost
   O3  redundant occlusion only removed  the control
 Report crystal system primary, plus point group, space group and count_match, since the oracle fails
-through OVER-TRIANGULATION on dense cells (CP0b, mp-1229124).
+through OVER-TRIANGULATION on dense cells (identifiability, mp-1229124).
 
 SECOND READOUT, free once the extension runs. Partition atoms into informatively occluded in NO view,
 SOME views, ALL views. Only the last is unrecoverable from the frozen view set. Never computed, and it is
@@ -8845,18 +8403,18 @@ DECISION RULE, fixed now.
   - O3 GOVERNS INTERPRETABILITY: if the O0-minus-O3 delta reaches HALF the O0-minus-O1 delta, the
     analysis is measuring DETECTION COUNT rather than information and O1 CANNOT be read. That is a
     stop, not a caveat.
-  - If O0 does not reproduce CP25 to within ONE structure, nothing else is scored.
+  - If O0 does not reproduce oracle_within_sample to within ONE structure, nothing else is scored.
 
 WHAT WOULD MAKE A CONDITION UNINFORMATIVE.
   - Any condition failing triangulation on >5% of structures is reported with its failure rate and NOT
-    scored. CP25 recorded zero exceptions at O0.
+    scored. oracle_within_sample recorded zero exceptions at O0.
   - Removing detections can produce SPURIOUS cross-view matches. Report the over-triangulation rate per
     condition alongside count_match; a condition whose over-triangulation rate exceeds O0's by more than
     5 points is measuring correspondence failure, not visibility.
-  - The overlap covariate is ORDINAL ONLY. CP19's "1 - overlap" ceiling was withdrawn after 6 of 84
+  - The overlap covariate is ORDINAL ONLY. atom_detection's "1 - overlap" ceiling was withdrawn after 6 of 84
     measurements exceeded it. No ceiling arithmetic is performed on it here.
 
-EXPECTED FINDING, WORTH STATING EITHER WAY. CP20 attributes mean 0.2363 of total occlusion to exact
+EXPECTED FINDING, WORTH STATING EITHER WAY. occlusion_manipulation attributes mean 0.2363 of total occlusion to exact
 projective coincidence from supercell copies viewed down a lattice vector. The three axis views ARE that
 worst case; body_diagonal and oblique2 are not. Every occlusion figure in the package to date is measured
 on the three worst cameras, so the 0.18-0.20 informative estimate probably OVERSTATES what five views
@@ -8871,7 +8429,7 @@ and no such claim is licensed by any outcome here.
 ### finding.md
 
 ```
-CHECKPOINT: CP31_visibility_corrected_oracle   GAP: the oracle assumes perfect centroid extraction of
+CHECKPOINT: visibility_corrected_oracle   GAP: the oracle assumes perfect centroid extraction of
    ALL atoms, so 0.9524 bounds identifiability from the STRUCTURE, not the IMAGES. (ICLR plan, Phase B)
 STATUS: DONE. THE PRIMARY QUANTITY IS EXACTLY ZERO ON BOTH EVAL SETS, AND THE O3 CONTROL BLOCKS THE
         TARGET CONDITION ANYWAY. Removing informative occlusion changes NOT ONE classification, while
@@ -8880,7 +8438,7 @@ STATUS: DONE. THE PRIMARY QUANTITY IS EXACTLY ZERO ON BOTH EVAL SETS, AND THE O3
         result about the render protocol.
 
 =================  THE PREREQUISITE, WHICH IS ITSELF THE HEADLINE  =============================
-The orbit occlusion classification was extended from CP19's 28 and CP21's 40 structures on THREE AXIS
+The orbit occlusion classification was extended from atom_detection's 28 and occlusion_redundancy's 40 structures on THREE AXIS
 VIEWS to 210 structures per set across ALL FIVE views, 0 errors.
   view              occluded  redundant  informative      (original eval, means)
   axis_a             0.5548     0.4816      0.0732
@@ -8906,10 +8464,10 @@ a ceiling on what the images afford. That is a correction to our own framing, pr
 free readout.
 
 =================  THE FOUR CONDITIONS  ========================================================
-Harness check first: with nothing removed the conditioned oracle reproduces CP25 EXACTLY — 200/210
+Harness check first: with nothing removed the conditioned oracle reproduces oracle_within_sample EXACTLY — 200/210
 original, 191/210 expansion, zero over-triangulation, zero errors. The pre-registered gate required
 agreement within one structure. An earlier version of the harness scored 198 and 185 because it
-generated candidates from every view pair rather than CP25's anchor pair; that is a DIFFERENT acceptance
+generated candidates from every view pair rather than oracle_within_sample's anchor pair; that is a DIFFERENT acceptance
 rule, the gate caught it, and the harness was corrected before any condition was read.
   condition                              original 5v      expansion 5v
   O0 all detections present              200/210 0.9524   191/210 0.9095
@@ -8957,24 +8515,24 @@ The overlap covariate remains ORDINAL only; no ceiling arithmetic was performed 
 ```
 
 
-## CP32_extraction_operating_point
+## extraction_operating_point
 
-BACKED BY: `results/CP32_extraction_operating_point/results.json`
+BACKED BY: `results/extraction_operating_point/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP32_extraction_operating_point   GAP: CP19's failed detector gate carries more than an
+CHECKPOINT: extraction_operating_point   GAP: atom_detection's failed detector gate carries more than an
                                               implementation limit. (ICLR plan, Phase B)
 STATUS: DONE, AND THE CONCLUSION IS NARROWER THAN THE PLAN ANTICIPATED. This is ARGUMENT from three
-        already-measured quantities, not new measurement. All six values verified against CP19's stored
-        summary. But the design it was written to license — CP31's visibility correction — returned a
+        already-measured quantities, not new measurement. All six values verified against atom_detection's stored
+        summary. But the design it was written to license — visibility_corrected_oracle's visibility correction — returned a
         ZERO effect, so this section no longer licenses anything; it stands as a characterisation of
         where extraction fails.
 
 =================  THE THREE MEASURED QUANTITIES, VERIFIED  ====================================
-From CP19's stratified run, 28 structures x 3 views = 84 view-measurements:
+From atom_detection's stratified run, 28 structures x 3 views = 84 view-measurements:
   recall           median 0.400   mean 0.390
   precision        median 0.233   mean 0.357
   centroid error   median 0.717 px on MATCHED atoms — SUB-PIXEL
@@ -8988,109 +8546,40 @@ localises it to better than one pixel, so a precision-requirement curve would an
 answered. Recall tracks occlusion twice as strongly as it tracks atom count, and it halves across
 occlusion terciles while precision does not move — the signature of atoms not being SEPARATED, rather
 than being found and mislocated.
-CP0b independently supports this from the other direction: its 0.03 A jitter arm was moved out of Gate 0
+identifiability independently supports this from the other direction: its 0.03 A jitter arm was moved out of Gate 0
 evidence precisely because independent per-view noise scrambles CROSS-VIEW CORRESPONDENCE, which the
 reconstructor re-solves from element identity and ray geometry alone. Both instruments point at
 correspondence and separation, not at localisation accuracy.
 
 =================  THE LICENSING ARGUMENT DID NOT SURVIVE ITS OWN TARGET  ======================
-The plan's purpose for this checkpoint was to license CP31's design: if extraction fails through
-visibility, then correcting the oracle for measured visibility is the right instrument. CP31 ran and the
+The plan's purpose for this checkpoint was to license visibility_corrected_oracle's design: if extraction fails through
+visibility, then correcting the oracle for measured visibility is the right instrument. visibility_corrected_oracle ran and the
 correction is EXACTLY ZERO on both eval sets, with the O3 control dominating the target condition.
 So the argument is sound about WHERE the detector fails and silent about what correcting for it buys —
 because correcting for it buys nothing. Recorded that way rather than deleted, because the
-visibility-and-segmentation diagnosis is still the correct reading of CP19 and is cited by CP31's
+visibility-and-segmentation diagnosis is still the correct reading of atom_detection and is cited by visibility_corrected_oracle's
 mechanism section.
 
 =================  WHAT THIS DOES NOT ESTABLISH  ==============================================
-NO claim about what a stronger detector would achieve. CP19 records that watershed segmentation, colour
+NO claim about what a stronger detector would achieve. atom_detection records that watershed segmentation, colour
 unmixing and learned detectors were never attempted. The failure is characterised, not bounded.
-The overlap covariate is ORDINAL. CP19's "1 - overlap" ceiling was WITHDRAWN after 6 of 84 measurements
+The overlap covariate is ORDINAL. atom_detection's "1 - overlap" ceiling was WITHDRAWN after 6 of 84 measurements
 exceeded it, and no arithmetic is performed on it here.
 ```
 
 
-## CP33_zeroshot_chain_vs_direct
+## stratified_frontier_expansion
 
-BACKED BY: no numeric results — this checkpoint is a reasoned cut or was subsumed, and carries a finding only.
-
-
-### finding.md
-
-```
-CHECKPOINT: CP33_zeroshot_chain_vs_direct   GAP: does the task behave like the rest of the field on
-              chain-versus-direct prompting? (directive Phase C)
-STATUS: NOT RUN — CUT ON THE DIRECTIVE'S OWN INSTRUCTION, WITH THE ARGUMENT RECORDED. This is a decision,
-     not an omission, and it is reported as one.
-
-WHAT THE DIRECTIVE SAYS. Verbatim: "Confirmatory only. Kancheti et al. already ran seventeen models over
-thirteen benchmarks... First item to cut if budget binds." The directive also lists CP33 as OFF the
-critical path.
-
-WHY THE CUT IS RIGHT RATHER THAN MERELY PERMITTED.
-1. THE CLAIM IS ALREADY OCCUPIED. CP43's audit records 2604.16060 as DEMOTED TO CITED REPLICATION — it
-   occupies direct-beats-chain across seventeen models and thirteen benchmarks. Running our own version
-   would produce a fourteenth benchmark's worth of agreement with a published result we already cite.
-2. NO MANUSCRIPT CLAIM DEPENDS ON IT. The paper's thesis is the oracle-to-model gap and the attribution
-   ladder. Chain-versus-direct appears nowhere in the claim order.
-3. THE COST IS THE LARGEST REMAINING. 20,160 primary calls plus 8,190 secondary at a measured 0.462
-   calls/s is roughly 17 hours of wall-clock API time for a confirmation.
-
-WHAT IS LOST, STATED PLAINLY. We cannot say "this task behaves like the rest of the field" from our own
-data. That sentence is removed rather than softened; where the paper needs the general result it cites
-2604.16060 directly. A reviewer asking whether CoT degrades HERE gets an honest "we did not measure it,
-and here is the published result for the general case."
-
-WHAT WOULD REOPEN IT. If a reviewer treats the field-generality of the CoT result as load-bearing for our
-reading, the run is 17 hours and the protocol is fully specified in the directive. It is shelf-ready.
-```
-
-
-## CP34_second_family_sft
-
-BACKED BY: no numeric results — this checkpoint is a reasoned cut or was subsumed, and carries a finding only.
-
-
-### finding.md
-
-```
-CHECKPOINT: CP34_second_family_sft   GAP: zero-shot chain prompting and trained chain SFT are different
-              objects; does the training claim hold on a second VLM family? (directive Phase C)
-STATUS: NOT RUN — CUT, AND THE REASON IS THAT ITS OWN DESIGN CANNOT SUPPORT A CLAIM THIS PAPER MAKES.
-
-WHY. The directive specifies ONE SEED per arm and its own decision rule says "Direction only; one seed
-cannot establish magnitude." Against that, this project has repeatedly found single-seed results sitting
-inside the reference arm's own spread: B1's three seeds span 0.590 / 0.567 / 0.686, a range of 0.119, which
-is wider than most effects we would be trying to detect. A one-seed direction on a new family would be
-reported with a caveat that makes it uninterpretable, and this project has a standing rule against
-publishing arms whose spread swamps their effect.
-
-WHAT WOULD BE NEEDED INSTEAD. Three seeds per arm on the second family, which is six training runs on
-rented GPU. That is a substantial spend for a claim the manuscript does not make: the paper's thesis is
-the oracle-to-model gap, and no trained arm is load-bearing in it — the fine-tuned model appears once, as
-a comparison point against the oracle.
-
-CONSEQUENCE FOR THE PAPER. Any surviving training claim is FAMILY-SCOPED in the abstract, which is what the
-directive's own fallback prescribes. The scoping is stated, not implied by omission.
-
-COST NOTE. A GPU instance (contract 46941802, RTX 5090, $0.493/hr) was rented for this and CP37 and has
-been idle. It should be destroyed; keeping it does not make the cut reversible on any useful timescale,
-since re-renting takes minutes.
-```
-
-
-## CP35_stratified_frontier_expansion
-
-BACKED BY: `results/CP35_stratified_frontier_expansion/results.json`, `results/CP35_stratified_frontier_expansion/exp_x-ai_grok-4_5.json`, `results/CP35_stratified_frontier_expansion/exp_anthropic_claude-opus-4_8.json`, `results/CP35_stratified_frontier_expansion/exp_google_gemini-3_6-flash.json`
+BACKED BY: `results/stratified_frontier_expansion/results.json`, `results/stratified_frontier_expansion/exp_x-ai_grok-4_5.json`, `results/stratified_frontier_expansion/exp_anthropic_claude-opus-4_8.json`, `results/stratified_frontier_expansion/exp_google_gemini-3_6-flash.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP35 stratified frontier on the expansion set
+PRE-REGISTRATION — stratified_frontier_expansion stratified frontier on the expansion set
 Committed BEFORE any generation. Directive Phase D.
 
-CLAIM UNDER TEST, deliberately weaker than CP15's: pixel models lose their advantage over a numeric reader
+CLAIM UNDER TEST, deliberately weaker than box_sufficiency's: pixel models lose their advantage over a numeric reader
 of the same cell SPECIFICALLY on cue-ambiguous structures, on BOTH samples.
 
 HONEST PRIOR, RECORDED FIRST. The existing expansion data points AWAY from this reading: B1's stratum drop
@@ -9098,20 +8587,20 @@ went +0.1510 (p=0.037) on the original to -0.0500 (p=0.557) on the expansion, an
 (p=0.752) — a third non-replication. D2 or D3 is the likely outcome and both are publishable. I expect D3.
 
 METHOD. gemini-3.6-flash, grok-4.5, claude-opus-4.8 on the 210 expansion structures, frozen five-view
-renders, K=3, temperature 0.7, verbatim CP14 prompt, parse failures and API errors scored as errors.
-Stratify by the CP28-FROZEN canonical partition (141/69 on expansion), not CP15's unrecoverable 137/73.
-RF control rows come from the CP28 canonical refit.
+renders, K=3, temperature 0.7, verbatim frontier_ceiling prompt, parse failures and API errors scored as errors.
+Stratify by the classifier_refreeze-FROZEN canonical partition (141/69 on expansion), not box_sufficiency's unrecoverable 137/73.
+RF control rows come from the classifier_refreeze canonical refit.
 
 READINGS.
   D1 pixel-minus-RF gap significantly larger on the ambiguous stratum on BOTH samples -> mechanism survives
   D2 one sample only -> partition is the replicating object; accuracy pattern is sample-specific; the
      failed replication goes in the MAIN TEXT, not an appendix
-  D3 neither -> CP15 demoted to a descriptive section on the partition and the render convention; the
+  D3 neither -> box_sufficiency demoted to a descriptive section on the partition and the render convention; the
      mechanism claim is WITHDRAWN. This is already the standing verdict from four independent failures;
      this run either overturns it or confirms it.
 
 DECISION RULE. Fisher exact between strata within arm. Primary contrast is pixel-minus-RF, not raw
-accuracy — a moving baseline is what invalidated the CP15 reading.
+accuracy — a moving baseline is what invalidated the box_sufficiency reading.
 DE-CONCENTRATION CHECK on both samples with n stated: on the original set the residual after removing the
 dominant confusion pair was n=13 and one structure moved it 7.7 points, so any residual claim carries its n.
 
@@ -9123,15 +8612,15 @@ Generations on the voided single-cell renders are not scored.
 ### finding.md
 
 ```
-CHECKPOINT: CP35_stratified_frontier_expansion   GAP: CP15's stratified mechanism failed to replicate on
+CHECKPOINT: stratified_frontier_expansion   GAP: box_sufficiency's stratified mechanism failed to replicate on
               a single arm; does it hold against a CONTROL rather than a moving baseline? (directive Phase D)
 STATUS: DONE. BRANCH D1 FIRES, 3 OF 3 ARMS ON BOTH SAMPLES — AND THIS CONTRADICTS THE EXPECTATION I
      RECORDED BEFORE RUNNING. My pre-registration said "I expect D3" and named the existing expansion data
      as pointing away from the claim. It was wrong, and the reversal is the result.
 
 WHAT WAS RUN. gemini-3.6-flash, grok-4.5, claude-opus-4.8 on the 210 expansion structures, frozen 5-view
-renders, K=3, temperature 0.7, verbatim CP14 prompt. Zero unparseable, zero API errors on all three arms.
-Partition is the CP28 canonical predicate, verified this session to reproduce 140/70 (original) and 141/69
+renders, K=3, temperature 0.7, verbatim frontier_ceiling prompt. Zero unparseable, zero API errors on all three arms.
+Partition is the classifier_refreeze canonical predicate, verified this session to reproduce 140/70 (original) and 141/69
 (expansion) with composition identical to the record across all five metric classes.
 RF control refit to the FROZEN specification and verified to reproduce 188/210 = 0.8952 exactly.
 
@@ -9148,10 +8637,10 @@ THE PRIMARY CONTRAST, pixel-minus-RF, negative means the pixel model trails the 
 THREE OF THREE ARMS WIDEN ON THE AMBIGUOUS STRATUM ON BOTH SAMPLES. That is D1: pixel models lose their
 advantage over a numeric reader of the same cell specifically where the cell metric is degenerate.
 
-WHY THIS IS NOT THE SAME CLAIM CP15 MADE, AND WHY IT SURVIVES WHERE CP15 DID NOT. CP15 compared a pixel
+WHY THIS IS NOT THE SAME CLAIM box_sufficiency MADE, AND WHY IT SURVIVES WHERE box_sufficiency DID NOT. box_sufficiency compared a pixel
 arm's raw accuracy across strata, which moves with the stratum's intrinsic difficulty. THE RF CONTROL DROPS
 TOO (original 0.9214 -> 0.8429, expansion 0.9433 -> 0.7536), so a raw drop proves nothing. The contrast is
-what the pre-registration named as primary, and it is what replicates. CP15's withdrawal stands; this is a
+what the pre-registration named as primary, and it is what replicates. box_sufficiency's withdrawal stands; this is a
 weaker and different claim tested against a control.
 
 CONFOUND STATED, NOT BURIED. The ambiguous stratum is LARGELY ONE DEGENERACY: 60 of 70 (original) and 58
@@ -9172,15 +8661,15 @@ residual n is too small. And no mechanism: this measures where the gap widens, n
 ```
 
 
-## CP36_generational_comparison
+## generational_comparison
 
-BACKED BY: `results/CP36_generational_comparison/results.json`
+BACKED BY: `results/generational_comparison/results.json`
 
 
 ### prereg.md
 
 ```
-POST-HOC ANALYSIS RECORD — CP36 generational comparison (Option A)
+POST-HOC ANALYSIS RECORD — generational_comparison generational comparison (Option A)
 NOT A PRE-REGISTRATION, AND THE FILENAME IS KEPT ONLY FOR DIRECTORY CONSISTENCY. I ran the analysis first
 and wrote this after, which inverts this project's standing rule. Stating it here because a document that
 reads like a pre-registration but was written afterwards is worse than no document: the G1/G2/G3 readings
@@ -9196,11 +8685,11 @@ OPTION CHOSEN BEFORE GENERATING, as the directive requires: A. Report the single
 decomposition. Option B (adding each frontier model's predecessor to a 16-model roster) is not run.
 
 HARD CONSTRAINT THE DIRECTIVE IMPOSES ON OPTION A: NO TREND LANGUAGE ANYWHERE. One pair is a comparison,
-not a trajectory. CP26 further established that active parameters do not order accuracy at all, so no
+not a trajectory. model_sweep further established that active parameters do not order accuracy at all, so no
 scaling statement is available either.
 
 WHAT IS MEASURED. Paired per structure on the original 210, K=3, exact binomial on discordant pairs.
-Stratified by the CP28 canonical 140/70 partition.
+Stratified by the classifier_refreeze canonical 140/70 partition.
 
 READINGS FIXED NOW.
   G1 the newer model gains MORE on box-ambiguous than box-sufficient -> a generation is closing the gap the
@@ -9219,7 +8708,7 @@ exact). If it does, the partition survives as a difficulty axis even under gener
 ### finding.md
 
 ```
-CHECKPOINT: CP36_generational_comparison   GAP: does the benchmark survive the next model release?
+CHECKPOINT: generational_comparison   GAP: does the benchmark survive the next model release?
               (directive Phase D, Option A)
 STATUS: DONE, ZERO NEW COMPUTE. Both arms already existed; this is analysis of stored per-structure vectors.
      THE HEADLINE READING REVERSES UNDER THE MANDATORY CONTROL, which is the whole content of the finding.
@@ -9256,12 +8745,12 @@ anyone can recheck, so it is verifiable rather than trusted. But it is not evide
 constrained in advance, and it should not be read as such.
 
 WHAT IS NOT CLAIMED. No trend, no rate of progress, no extrapolation to the next release. Two models one
-generation apart on one sample is a comparison. CP26 separately established that parameter count does not
+generation apart on one sample is a comparison. model_sweep separately established that parameter count does not
 order accuracy on this task at all, so no scaling statement is available either.
 ```
 
 
-## CP37_a3_seeds
+## a3_seeds
 
 BACKED BY: no numeric results — this checkpoint is a reasoned cut or was subsumed, and carries a finding only.
 
@@ -9269,7 +8758,7 @@ BACKED BY: no numeric results — this checkpoint is a reasoned cut or was subsu
 ### finding.md
 
 ```
-CHECKPOINT: CP37_a3_seeds   GAP: A3 is single-seed and its 0.6905 sits inside the reference arm's own
+CHECKPOINT: a3_seeds   GAP: A3 is single-seed and its 0.6905 sits inside the reference arm's own
               across-seed spread (B1: 0.590 / 0.567 / 0.686). (directive Phase E)
 STATUS: NOT RUN — CUT AFTER A QUANTITATIVE TEST OF WHETHER IT COULD CHANGE ANYTHING, NOT ON COST ALONE.
      The adapters DO survive (all_adapters_weights.tar.gz, 2823 MB, in the artifact store), so this was
@@ -9284,7 +8773,7 @@ two places, both as the model side of the oracle-to-model gap:
 That is a 55-structure margin. B1's observed seed spread is +-0.06, which is +-13 structures. Even placing
 A3's true mean at the TOP of B1's observed range (0.686) leaves a gap of 0.2664 to the oracle. Seed
 variation of the magnitude this project has actually measured cannot close it.
-The directive reaches the same place from the other direction: "CP12's thresholds are not reopened... This
+The directive reaches the same place from the other direction: "sota_push's thresholds are not reopened... This
 produces an interval, not a re-litigation."
 
 WHAT IS LOST. The paper reports A3 as a single-seed point estimate rather than a three-seed interval. That
@@ -9292,20 +8781,20 @@ is stated in the limitations rather than hidden: no error bar is drawn on the A3
 about A3's expected value under reseeding.
 
 WHAT WOULD REOPEN IT. A reviewer challenging the MAGNITUDE of the gap rather than its existence. Two GRPO
-runs at seeds 1 and 2 using CP12's recorded reproduce command verbatim; the adapters and the command are
+runs at seeds 1 and 2 using sota_push's recorded reproduce command verbatim; the adapters and the command are
 both in the release, so this is shelf-ready.
 ```
 
 
-## CP38_claim_ledger
+## claim_ledger
 
-BACKED BY: `results/CP38_claim_ledger/results.json`, `results/CP38_claim_ledger/provenance.json`
+BACKED BY: `results/claim_ledger/results.json`, `results/claim_ledger/provenance.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP38_claim_ledger   GAP: no single document states what this paper claims, what each claim
+CHECKPOINT: claim_ledger   GAP: no single document states what this paper claims, what each claim
                                 rests on, and which prior work occupies it. (ICLR plan, Phase F)
 STATUS: DONE. TEN CLAIMS ENUMERATED. Four are contributions, two are supporting replications, TWO ARE
         WITHDRAWN, and two are explicitly NOT CLAIMED because prior work occupies them. Every value in
@@ -9316,7 +8805,7 @@ STATUS: DONE. TEN CLAIMS ENUMERATED. Four are contributions, two are supporting 
 C1  The geometric oracle. Inverting the frozen orthographic cameras, re-solving cross-view
     correspondence from element identity and ray geometry alone, and running spglib on the
     reconstruction: 0.9524 (original) and 0.9095 (expansion), paired against every trained arm at
-    p < 1e-11. No cited work computes an identifiability ceiling this way (CP43).
+    p < 1e-11. No cited work computes an identifiability ceiling this way (related_work_audit).
 C2  The frozen five-view protocol withholds under 1% of atoms — 0.26% original, 0.87% expansion, have
     fewer than two clear views. This is what makes C1 a TIGHT bound rather than a loose one.
 C3  Orbit decomposition of occlusion at full coverage (210 structures x 5 views per set), and the
@@ -9337,7 +8826,7 @@ C7  The cue-sufficiency stratified accuracy drop. FOUR independent failures: the
     reversal, the A3 null (+0.0286, p=0.752), the RF control inversion, and now the original-sample leg
     losing significance under the canonical partition (+0.1143, p=0.1318 against a published +0.1510,
     p=0.037). Four failures is the result, not a run of bad luck to explain away.
-C8  The visibility-corrected ceiling and the render-imposed vs model-imposed separation. CP31's primary
+C8  The visibility-corrected ceiling and the render-imposed vs model-imposed separation. visibility_corrected_oracle's primary
     quantity is EXACTLY ZERO on both eval sets and its pre-registered control dominates the target
     condition, so there is no corrected ceiling distinct from the ideal one.
 
@@ -9348,27 +8837,27 @@ C10  Composition-exclusion benchmark design for VLMs on crystal images. 2506.130
      Compositional-Exclusion benchmark over nine VLMs with space-group validity scoring.
 
 =================  THE GATE THAT IS STILL CLOSED  ==============================================
-CP43's audit covers eight named works. Three instruments have NOT been searched against the
+related_work_audit's audit covers eight named works. Three instruments have NOT been searched against the
 materials-informatics literature: the resolution-versus-reseed comparison, the cue-sufficiency partition,
 and the oracle-only checker. By the plan's own rule no claim resting on those enters as a contribution
 until those rows are filled. C1, C2, C3 and C5 do not rest on them.
 ```
 
 
-## CP39_figures
+## figures
 
-BACKED BY: `results/CP39_figures/results.json`
+BACKED BY: `results/figures/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP39_figures   GAP: none. This directory is a FIGURE STORE, not an experiment.
+CHECKPOINT: figures   GAP: none. This directory is a FIGURE STORE, not an experiment.
 STATUS: CLOSED AS A NON-CHECKPOINT. It holds one rendered figure (bracket_and_claims.png) whose underlying
-     numbers live in CP26_model_sweep, CP25_oracle_within_sample and CP38_claim_ledger. It runs no analysis,
+     numbers live in model_sweep, oracle_within_sample and claim_ledger. It runs no analysis,
      measures nothing, and pre-registers nothing, so it has no result of its own.
 
-WHY THIS RECORD EXISTS AT ALL. A ledger audit flagged CP39 as the only CP* directory without a finding.md,
+WHY THIS RECORD EXISTS AT ALL. A ledger audit flagged figures as the only CP* directory without a finding.md,
 which read as an unfinished checkpoint. It is not unfinished — it was never a checkpoint. Recording that
 explicitly is cheaper than leaving a permanent audit exception that a future reader has to re-diagnose.
 
@@ -9380,15 +8869,15 @@ holding only rendered output is not a checkpoint and is marked as such rather th
 ```
 
 
-## CP40_limitations
+## limitations
 
-BACKED BY: `results/CP40_limitations/results.json`
+BACKED BY: `results/limitations/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP40_limitations   GAP: limitations are scattered across 36 checkpoint records with no single
+CHECKPOINT: limitations   GAP: limitations are scattered across 36 checkpoint records with no single
                                list a reviewer can read. (ICLR plan, Phase F)
 STATUS: DONE. TEN LIMITATIONS, each with its consequence for what may be claimed. Three are inherent or
         standing, four are disclosed-and-mitigated, two are named at every mention, and ONE IS OPEN.
@@ -9397,7 +8886,7 @@ L1  NO HUMAN EXPERT BASELINE. The 50-structure study was never fielded; the sing
     18% and was rejected because its answer pattern showed the respondent was not reading the images.
     CONSEQUENCE: "harder than humans find it" is claimed NOWHERE. Standing limitation, not chased.
 L2  TWO CLASSIFIERS NOT REPRODUCIBLE FROM THE RECORD. The RF's published 186/210 is unreachable under
-    twelve readings of its recorded prose; CP15's partition rule is unrecoverable by a 50-combination
+    twelve readings of its recorded prose; box_sufficiency's partition rule is unrecoverable by a 50-combination
     grid. MITIGATED FORWARD: RF republished at a refrozen 188/210, historical values footnoted, and the
     canonical predicate reproduces 140/70 exactly.
 L3  THE ORACLE READS GROUND-TRUTH COORDINATES. A zero visibility correction makes the ceiling a tighter
@@ -9420,28 +8909,28 @@ L10 V2B'S TRUE SEED SPREAD IS UNKNOWN. The recorded 0.000 SD is decode collapse,
 ```
 
 
-## CP41_no_image_control
+## no_image_control
 
-BACKED BY: `results/CP41_no_image_control/results.json`
+BACKED BY: `results/no_image_control/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP41 no-image control   (ICLR plan, Phase D)
+PRE-REGISTRATION — no_image_control no-image control   (ICLR plan, Phase D)
 Committed BEFORE any call is made. API spend only, no GPU.
 
-GAP. Every zero-shot row in CP26 is prompted with renders AND a text preamble carrying the chemical
+GAP. Every zero-shot row in model_sweep is prompted with renders AND a text preamble carrying the chemical
 formula. Nothing establishes how much of the measured accuracy needs the IMAGE at all. A model that
 scores from formula alone is not doing crystallography from pixels, and the whole benchmark premise
 rests on the image mattering.
 
-METHOD. Re-run a SUBSET of the CP26 roster on the identical original eval set (n=210) under two arms
+METHOD. Re-run a SUBSET of the model_sweep roster on the identical original eval set (n=210) under two arms
 that differ ONLY in whether the renders are attached:
-  IMAGE   the frozen CP26 prompt, renders + formula preamble   (already measured — reuse, do not re-run)
+  IMAGE   the frozen model_sweep prompt, renders + formula preamble   (already measured — reuse, do not re-run)
   TEXT    byte-identical prompt with the image blocks REMOVED, formula preamble retained
-K=3, temperature 0.7, majority vote — identical to CP26 so IMAGE rows are reusable verbatim.
-ROSTER, fixed now: the CP26 top-3 by micro (llama-4-maverick, qwen3-vl-8b, gpt-4.1-mini) plus the
+K=3, temperature 0.7, majority vote — identical to model_sweep so IMAGE rows are reusable verbatim.
+ROSTER, fixed now: the model_sweep top-3 by micro (llama-4-maverick, qwen3-vl-8b, gpt-4.1-mini) plus the
 bottom-1 (seed-1.6) as a floor check. Four models x 210 x K=3 = 2520 calls.
 
 DECISION RULE, fixed now.
@@ -9465,7 +8954,7 @@ WHAT WOULD MAKE THIS UNINFORMATIVE.
 EXPECTED, STATED SO IT CANNOT BE RENEGOTIATED. I expect TEXT to land near the shape-free floor, since
 the floor is itself a composition-only model. If TEXT lands ABOVE the floor, the formula preamble is
 doing more work than the floor captures and the floor is the wrong reference for the whole leaderboard —
-a finding that would require revising CP26's framing, and I will report it.
+a finding that would require revising model_sweep's framing, and I will report it.
 
 SCOPE. This bounds how much the IMAGE contributes for these four models on this sample. It says nothing
 about the fine-tuned arms, which were trained on renders and are not part of this comparison.
@@ -9475,7 +8964,7 @@ about the fine-tuned arms, which were trained on renders and are not part of thi
 ### prereg_roster.md
 
 ```
-PRE-REGISTRATION — CP41 roster extension (directive P2-1)
+PRE-REGISTRATION — no_image_control roster extension (directive P2-1)
 Committed BEFORE any additional call. API spend only, inference only, frozen protocol.
 
 GAP. Three scored models establish that the image matters; they do not support a ROSTER-LEVEL claim. The
@@ -9484,10 +8973,10 @@ benchmark as a whole is available from three points.
 
 METHOD, identical to the three already run so the existing arms are reusable verbatim. Byte-identical
 prompt text with the image blocks removed, same 210 original-eval structures, K=3, temperature 0.7,
-majority vote, paired per structure. IMAGE rows come from CP26 (13 models) and CP14 (frontier models) and
+majority vote, paired per structure. IMAGE rows come from model_sweep (13 models) and frontier_ceiling (frontier models) and
 are NOT re-run.
 
-ROSTER: all 13 CP26 models. The 3 CP14 frontier models are attempted only if their IMAGE per-structure
+ROSTER: all 13 model_sweep models. The 3 frontier_ceiling frontier models are attempted only if their IMAGE per-structure
 vectors exist in the ledger; a frontier row without a stored vector CANNOT be paired and will be reported
 as unavailable rather than approximated.
 
@@ -9523,7 +9012,7 @@ about WHICH visual cue carries the contribution.
 ### finding.md
 
 ```
-CHECKPOINT: CP41_no_image_control   GAP: every zero-shot row is prompted with renders AND a formula
+CHECKPOINT: no_image_control   GAP: every zero-shot row is prompted with renders AND a formula
    preamble. Nothing established that the IMAGE was doing the work. (ICLR plan, Phase D)
 STATUS: DONE. BRANCH N2 FIRES DECISIVELY — the images carry the signal. And the expectation I
         pre-registered was WRONG in a direction that STRENGTHENS the benchmark: text-only lands near
@@ -9531,7 +9020,7 @@ STATUS: DONE. BRANCH N2 FIRES DECISIVELY — the images carry the signal. And th
 
 =================  THE CONTROL  ================================================================
 Byte-identical prompt text with the image blocks removed, same 210 structures, K=3, temperature 0.7 —
-so the IMAGE rows are CP26's verbatim and nothing was re-run on that side.
+so the IMAGE rows are model_sweep's verbatim and nothing was re-run on that side.
   model                        IMAGE     TEXT    delta   img-only  txt-only     exact p
   llama-4-maverick            0.4429   0.1381   +0.3048       73         9     1.4e-13
   qwen3-vl-8b-instruct        0.3762   0.1667   +0.2095       60        16     3.9e-07
@@ -9576,8 +9065,8 @@ which were trained on renders and are not part of this comparison. And nothing a
 carries the 0.21-0.30 — that is the cue-sufficiency question, whose stratified claim is withdrawn.
 
 =================  ROSTER EXTENSION (directive P2-1) — R2 FIRES, NOT R1  =======================
-Extended from 4 attempted models to the FULL 16-model roster (13 CP26 + 3 CP14 frontier). 13 SCORED,
-3 unscored under the pre-registered gates. K=3 on every row; IMAGE rows are CP26/CP14 verbatim, not re-run.
+Extended from 4 attempted models to the FULL 16-model roster (13 model_sweep + 3 frontier_ceiling frontier). 13 SCORED,
+3 unscored under the pre-registered gates. K=3 on every row; IMAGE rows are model_sweep/frontier_ceiling verbatim, not re-run.
   model                            IMAGE     TEXT     delta   i-only  t-only    exact p
   gemini-3.6-flash (K=3)          0.7333   0.1619   +0.5714     139      19    1.0e-23
   claude-opus-4.8 (K=3)           0.5810   0.1667   +0.4143      98      11    1.3e-18
@@ -9621,21 +9110,21 @@ significantly below the sample's floor, so the floor remains a HARDER reference 
 A HARNESS DEFECT WAS FOUND AND FIXED HERE, AND IT COST TWO WHOLE ARMS SILENTLY. Two models printed DONE
 and wrote NO output file: ask() returns None when retries are exhausted, and the aggregation called
 .startswith() on it, raising AttributeError AFTER all 630 calls had been paid for, while the driving shell
-loop's echo fired regardless of exit status. None is now counted as an api_error. CP26 was audited and is
+loop's echo fired regardless of exit status. None is now counted as an api_error. model_sweep was audited and is
 unaffected: all 13 rows have output files. The standing check is now to diff models-with-a-file against the
 requested roster before scoring anything.
 ```
 
 
-## CP43_related_work_audit
+## related_work_audit
 
-BACKED BY: `results/CP43_related_work_audit/results.json`
+BACKED BY: `results/related_work_audit/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP43_related_work_audit   GAP: no systematic prior-art check exists; the one informal check
+CHECKPOINT: related_work_audit   GAP: no systematic prior-art check exists; the one informal check
    performed found two occupied claims, and a third found by a reviewer would be fatal. (Phase F)
 STATUS: DONE FOR THE EIGHT NAMED ROWS, ALL VERIFIED FROM PRIMARY SOURCES (arXiv API titles and
         abstracts, fetched not recalled). THREE claims are demoted, ONE plan characterisation is
@@ -9708,7 +9197,7 @@ STATUS: DONE FOR THE EIGHT NAMED ROWS, ALL VERIFIED FROM PRIMARY SOURCES (arXiv 
     rather than by handing the model the ground-truth text — a genuinely different instrument, and now
     the only defensible framing of the contribution.
 
-=================  WHAT SURVIVES AS A CONTRIBUTION, AFTER THE AUDIT AND AFTER CP31  ===========
+=================  WHAT SURVIVES AS A CONTRIBUTION, AFTER THE AUDIT AND AFTER visibility_corrected_oracle  ===========
   1. The geometric oracle: inverting the frozen orthographic cameras, re-solving cross-view
      correspondence from element identity and ray geometry alone, and running spglib on the
      reconstruction. 0.9524 / 0.9095, paired against every arm at p < 1e-11. No cited work computes an
@@ -9718,8 +9207,8 @@ STATUS: DONE FOR THE EIGHT NAMED ROWS, ALL VERIFIED FROM PRIMARY SOURCES (arXiv 
      2.25-3.34x the occlusion of its two oblique views.
   3. The measurement that the frozen five-view protocol withholds under 1% of atoms, which is what
      makes the ideal ceiling a tight bound rather than a loose one.
-  NOT A CONTRIBUTION, per CP31: the visibility-corrected ceiling and the render-imposed vs
-  model-imposed separation. CP31's primary quantity is zero and its control blocks the target.
+  NOT A CONTRIBUTION, per visibility_corrected_oracle: the visibility-corrected ceiling and the render-imposed vs
+  model-imposed separation. visibility_corrected_oracle's primary quantity is zero and its control blocks the target.
 
 =================  THE THREE PREVIOUSLY OPEN ROWS, NOW SEARCHED  ===============================
 All three instruments have been searched against arXiv using the field's own vocabulary rather than our
@@ -9812,15 +9301,15 @@ are unoccupied rests on FIFTEEN searched works, not on an exhaustive search, and
 ```
 
 
-## CP50_eval_scaleup
+## eval_scaleup
 
-BACKED BY: `results/CP50_eval_scaleup/results.json`, `results/CP50_eval_scaleup/quarantine_clean.json`, `results/CP50_eval_scaleup/scored_full.json`, `results/CP50_eval_scaleup/size_matched.json`
+BACKED BY: `results/eval_scaleup/results.json`, `results/eval_scaleup/quarantine_clean.json`, `results/eval_scaleup/scored_full.json`, `results/eval_scaleup/size_matched.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP50 evaluation-set scale-up
+PRE-REGISTRATION — eval_scaleup evaluation-set scale-up
 Committed BEFORE generation. CPU for data + oracle + classical arms; tiered API for the model arms.
 
 GAP. Every accuracy in this package rests on n=210. "n is too small" is the first reviewer objection and it
@@ -9862,7 +9351,7 @@ composition mix at 2000, and I will check that before reporting a scale effect.
 ### finding.md
 
 ```
-CHECKPOINT: CP50_eval_scaleup   GAP: every accuracy in this package rested on n=210. "n is too small" is
+CHECKPOINT: eval_scaleup   GAP: every accuracy in this package rested on n=210. "n is too small" is
      the first reviewer objection and it was correct. (ICLR directive)
 STATUS: DONE, AND BRANCH S2 FIRES. THE SHAPE-FREE FLOOR DOES NOT SURVIVE AT SCALE, WHICH RETIRES THE
      PACKAGE'S MOST-QUOTED CLAIM. A size-matched control separates two causes that moved together and
@@ -9888,7 +9377,7 @@ because the two draws used different filters.
 THE CONTROL SEPARATES THE TWO QUANTITIES CLEANLY.
   THE ORACLE'S DROP IS A CELL-SIZE EFFECT. At matched size it returns to 0.9459, within 0.0065 of the
   original 0.9524. More atoms per cell means more projective coincidence and more correspondence ambiguity,
-  which is the mechanism CP20 already established. So S3's apparent failure was a composition difference
+  which is the mechanism occlusion_manipulation already established. So S3's apparent failure was a composition difference
   between draws, NOT scale, and the identifiability result generalises once cell size is held fixed.
   THE FLOOR'S DROP IS NOT. At matched size it is 0.2205, still 0.3081 below the original. The floor stays
   near 0.22 whether n is 721 or 1995 and whether cells are large or small, so 0.5286 WAS A PROPERTY OF THE
@@ -9945,15 +9434,15 @@ reported with that sample named. The oracle-to-model gap at scale is bounded on 
 ```
 
 
-## CP51_label_ladder
+## label_ladder
 
-BACKED BY: `results/CP51_label_ladder/results.json`
+BACKED BY: `results/label_ladder/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP51 label ladder
+PRE-REGISTRATION — label_ladder label ladder
 Committed BEFORE the run. CPU only for the oracle and classical arms; model arms reuse stored per-structure
 predictions where the label is derivable, and are NOT re-prompted in this checkpoint.
 
@@ -9969,7 +9458,7 @@ METHOD. For each of four labels — crystal system (7 classes), Bravais lattice 
 space group (230) — report on the original eval set (n=210):
   - CHANCE, computed as the majority-class rate AND as 1/n_classes, since for 230 space groups those
     differ enormously and quoting 1/230 alone would understate the trivial baseline;
-  - the SHAPE-FREE FLOOR (3 features: n_sites, density, volume) refit per label, same protocol as CP28;
+  - the SHAPE-FREE FLOOR (3 features: n_sites, density, volume) refit per label, same protocol as classifier_refreeze;
   - the RANDOM FOREST on the 19 lattice-metric features, refit per label from the frozen specification;
   - the GEOMETRIC ORACLE (R1), which returns a reconstruction whose symmetry is computed by spglib, so all
     four labels come from the same reconstruction at no extra cost.
@@ -9998,7 +9487,7 @@ weakens for the finer labels.
 ### finding.md
 
 ```
-CHECKPOINT: CP51_label_ladder   GAP: the benchmark scored ONE 7-way label. A single label with a floor at
+CHECKPOINT: label_ladder   GAP: the benchmark scored ONE 7-way label. A single label with a floor at
      0.5286 is a probe, not a benchmark, and gives no difficulty axis. (ICLR directive)
 STATUS: DONE. FOUR LABELS SCORED FOR THREE MODEL-FREE ARMS. The headline is that the ORACLE IS FLAT ACROSS
      GRANULARITY while the tabular baseline COLLAPSES — which strengthens the ceiling argument and
@@ -10058,15 +9547,15 @@ oracle). Wyckoff occupation is absent from the sidecar and out of scope.
 ```
 
 
-## CP52_rung_R2_detector_oracle
+## rung_R2_detector_oracle
 
-BACKED BY: `results/CP52_rung_R2_detector_oracle/results.json`, `results/CP52_rung_R2_detector_oracle/r2_raw.json`
+BACKED BY: `results/rung_R2_detector_oracle/results.json`, `results/rung_R2_detector_oracle/r2_raw.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP52, rung R2: the oracle on detector output
+PRE-REGISTRATION — rung_R2_detector_oracle, rung R2: the oracle on detector output
 Committed BEFORE the run. CPU only, no API spend, no GPU.
 
 GAP. R1 (the geometric oracle) never touches a pixel: it inverts the frozen cameras from GROUND-TRUTH
@@ -10074,7 +9563,7 @@ projections. So "perception is the bottleneck" currently rests on an instrument 
 R2 replaces the ground-truth projections with a concrete extraction stage's actual detections and runs the
 IDENTICAL inversion, correspondence solver and spglib step.
 
-METHOD. The CP19/CP32 detector runs on the real render PNGs. Its detections feed the same
+METHOD. The atom_detection/extraction_operating_point detector runs on the real render PNGs. Its detections feed the same
 reconstruct_positions / recover_symmetry path R1 uses. Per structure, both eval sets, 5 views. Paired
 against R1 and R4 on the same named structures, exact McNemar with discordance counts.
 
@@ -10114,7 +9603,7 @@ would recover.
 ### finding.md
 
 ```
-CHECKPOINT: CP52_rung_R2_detector_oracle   GAP: R1 never touches a pixel — it inverts the cameras from
+CHECKPOINT: rung_R2_detector_oracle   GAP: R1 never touches a pixel — it inverts the cameras from
      GROUND-TRUTH projections. So "perception is the bottleneck" rested on an instrument that assumes
      perception. R2 substitutes a real extractor's detections into the identical inversion. (ICLR rung R2)
 STATUS: DONE AND REPORTED UNSCORED BY MY OWN PRE-REGISTERED GATE. The rung does not enter the ladder.
@@ -10137,10 +9626,10 @@ WHAT THE RUN DOES ESTABLISH, WHICH IS NOT NOTHING.
 1. THE PIPELINE IS CORRECT, so the failure is attributable to the detector rather than to my plumbing.
    Zero exceptions across 420 structures (both sets). The pixel-to-projection calibration is EXACT: a least-squares
    affine per view against ground-truth pixels has max residual 0.0000 in projection units. And the same
-   inversion reproduces R1 exactly when fed ground-truth projections (CP31's O0 gate, 200/210).
+   inversion reproduces R1 exactly when fed ground-truth projections (visibility_corrected_oracle's O0 gate, 200/210).
 2. THE DETECTOR IS THE BINDING LIMIT, and it fails in the way its own measurements predict. Median
    recovered/true atom ratio 0.400, which equals the detector's independently measured median recall of
-   0.400 from CP19. Atom-count match on 2 of 210.
+   0.400 from atom_detection. Atom-count match on 2 of 210.
 3. MISSING DETECTIONS DO NOT MERELY SUBTRACT — THEY CORRUPT. 44 of 210 original and 25 of 210 expansion
    structures OVER-triangulate
    (n_recovered > n_true) despite the detector finding FEWER atoms than exist. Dropping a disc in one view
@@ -10162,15 +9651,15 @@ the oracle and the models to a stage rather than describing it.
 ```
 
 
-## CP53_rung_R3_coords_as_text
+## rung_R3_coords_as_text
 
-BACKED BY: `results/CP53_rung_R3_coords_as_text/results.json`
+BACKED BY: `results/rung_R3_coords_as_text/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP53, rung R3: ground-truth coordinates as text
+PRE-REGISTRATION — rung_R3_coords_as_text, rung R3: ground-truth coordinates as text
 Committed BEFORE any call. API spend only, inference only, no GPU.
 
 GAP. R1's oracle uses a PERFECT reasoner (spglib) while R4's models use their own. Perception and
@@ -10183,21 +9672,21 @@ same majority vote, same parse gate, same denominators, same 210 original-eval s
 NOT NOVEL AS A DESIGN. This is the CIF-supplied condition of 2605.29446 and the No-Image family of
 2604.16060. Cited as prior use; only the measurement is claimed.
 
-THE CONTROL PAIR THAT BRACKETS SYMBOLIC CAPABILITY. CP41's text-only arm removed the images and left the
-FORMULA, and every scored arm landed at 7-way chance. CP53 removes the images and supplies the FULL
+THE CONTROL PAIR THAT BRACKETS SYMBOLIC CAPABILITY. no_image_control's text-only arm removed the images and left the
+FORMULA, and every scored arm landed at 7-way chance. rung_R3_coords_as_text removes the images and supplies the FULL
 GEOMETRY. The gap between them is the value of the geometry independent of pixels.
 
 DECISION RULE, fixed now.
   C1  R3 >= R1 (0.9524) -> models can do symmetry reasoning from exact geometry; the ENTIRE deficit is
       perception, and the paper's thesis is clean.
-  C2  R3 near CP41's text-only chance level -> models CANNOT do the symmetry reasoning even with perfect
+  C2  R3 near no_image_control's text-only chance level -> models CANNOT do the symmetry reasoning even with perfect
       geometry, so perception is NOT the whole story and the "perception bottleneck" framing is WRONG for
       this task. This would refute the directive's thesis and must be reported as the headline.
   C3  R3 between R4 and R1 -> both stages contribute; report the split as
       (R3 - R4) = perception's share and (R1 - R3) = reasoning's share, per structure and paired.
 
 WHAT WOULD MAKE A ROW UNINFORMATIVE. >5% unparseable or >5% API errors -> reported with its rate, NOT
-scored, as in CP41. A model that declines without images is a REFUSAL, reported separately.
+scored, as in no_image_control. A model that declines without images is a REFUSAL, reported separately.
 A prompt-length confound is possible: a 20-atom cell as text is a long prompt. Report the mean prompt
 token count beside each row so a length effect is visible rather than hidden.
 
@@ -10213,7 +9702,7 @@ perception, not what any pipeline achieves.
 ### finding.md
 
 ```
-CHECKPOINT: CP53_rung_R3_coords_as_text   GAP: R1's oracle uses a PERFECT reasoner (spglib) while the model
+CHECKPOINT: rung_R3_coords_as_text   GAP: R1's oracle uses a PERFECT reasoner (spglib) while the model
      arms use their own, so perception and symbolic reasoning are confounded. R3 removes extraction by
      supplying ground-truth geometry as text. (ICLR directive, rung R3)
 STATUS: DONE, 14 OF 15 ARMS SCORED. BRANCH C3 FIRES ON ALL 14 — AND THE DECOMPOSITION CONTRADICTS THE
@@ -10233,8 +9722,8 @@ SO "PERCEPTION IS THE BOTTLENECK" IS FALSE AS A GENERAL STATEMENT ON THIS TASK. 
 strongest models and false for the rest, and the direction is systematic.
 
 THE CONTROL PAIR THAT MAKES THIS READABLE, and it is the reason the number is trustworthy.
-CP41 removed the images and left the FORMULA: every scored arm collapsed to 7-way chance (mean 0.1357).
-CP53 removes the images and supplies the FULL GEOMETRY: every arm jumps to 0.41-0.85. The two controls
+no_image_control removed the images and left the FORMULA: every scored arm collapsed to 7-way chance (mean 0.1357).
+rung_R3_coords_as_text removes the images and supplies the FULL GEOMETRY: every arm jumps to 0.41-0.85. The two controls
 differ in exactly one thing, so the jump is attributable to the geometry rather than to text-mode prompting.
 That rules out the obvious objection that models simply do better without images.
 
@@ -10279,15 +9768,15 @@ CIF-supplied condition of 2605.29446 and the no-image family of 2604.16060, cite
 ```
 
 
-## CP54_render_convention_sweep
+## render_convention_sweep
 
-BACKED BY: `results/CP54_render_convention_sweep/results.json`, `results/CP54_render_convention_sweep/oracle_c4_full.json`, `results/CP54_render_convention_sweep/subsample_ids.json`, `results/CP54_render_convention_sweep/oracle_c2_supercell.json`, `results/CP54_render_convention_sweep/oracle_by_convention.json`
+BACKED BY: `results/render_convention_sweep/results.json`, `results/render_convention_sweep/oracle_c4_full.json`, `results/render_convention_sweep/subsample_ids.json`, `results/render_convention_sweep/oracle_c2_supercell.json`, `results/render_convention_sweep/oracle_by_convention.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP54 render-convention sweep, scored on MODELS
+PRE-REGISTRATION — render_convention_sweep render-convention sweep, scored on MODELS
 Committed BEFORE any render or call. Renders are CPU; scoring is API inference. No GPU.
 
 GAP. The package diagnoses without intervening. Every reviewer objection about actionability lands here,
@@ -10297,9 +9786,9 @@ whether render convention changes what MODELS recover is answered by running mod
 CONVENTIONS, holding structures and cameras otherwise fixed. Five arms.
   C1 FROZEN BASELINE            the shipped protocol: 2x2x2 supercell, radii 0.5, the five frozen cameras
   C2 SINGLE CELL                supercell (1,1,1), everything else identical. Tests whether the tiling that
-                                CP20 showed creates ~half of all occlusion by exact projective coincidence
-                                is helping or hurting a MODEL (CP20 only showed it hurts an extractor)
-  C3 SMALL RADII                radii 0.22, everything else identical. CP20's radius sweep showed the MEAN
+                                occlusion_manipulation showed creates ~half of all occlusion by exact projective coincidence
+                                is helping or hurting a MODEL (occlusion_manipulation only showed it hurts an extractor)
+  C3 SMALL RADII                radii 0.22, everything else identical. occlusion_manipulation's radius sweep showed the MEAN
                                 occlusion falls from 0.497 to 0.411 here while the median is pinned, so this
                                 separates "genuine disc overlap" from "coincident copies" for a model
   C4 OFF-AXIS CAMERAS           the perturbed camera map already in the codebase (VIEWS_PERTURBED), which
@@ -10336,7 +9825,7 @@ DECISION RULE, fixed now, per convention against C1.
       occlusion.
 
 EXPECTED, STATED FIRST. I expect V3 for C4 (the report's prediction), and I genuinely do not know for C2/C3
-— CP21 showed most occlusion hides symmetry-EQUIVALENT copies, so removing it may buy nothing, but no model
+— occlusion_redundancy showed most occlusion hides symmetry-EQUIVALENT copies, so removing it may buy nothing, but no model
 has ever been asked. If every convention returns V3 the paper's honest statement is "we found no render
 intervention that helps", which is a weaker result than a win and stronger than an untested claim.
 
@@ -10349,7 +9838,7 @@ failure rate stated.
 ### finding.md
 
 ```
-CHECKPOINT: CP54_render_convention_sweep   GAP: the package diagnoses without intervening. Every reviewer
+CHECKPOINT: render_convention_sweep   GAP: the package diagnoses without intervening. Every reviewer
      objection about actionability lands here. (ICLR directive)
 STATUS: BOTH LEGS DONE. The oracle leg REFUTES A PREDICTION THIS PROJECT PUBLISHED. The model leg returns a
      COMPLETE NULL — zero of sixteen paired comparisons is significant. Together these are the sharpest
@@ -10383,7 +9872,7 @@ default path still returns exactly 200/210 on the original sample, so no prior r
 
 The off-axis gain is a CEILING gain, i.e. branch V2 of the pre-registration, NOT the legibility gain (V1)
 that the paper wanted. Breaking exact projective coincidence makes MORE INFORMATION available to a
-triangulating reader, rather than making the same information easier to read. The mechanism is the one CP20
+triangulating reader, rather than making the same information easier to read. The mechanism is the one occlusion_manipulation
 identified: viewing down a lattice vector stacks supercell copies onto identical pixels, and perturbing the
 camera unstacks them.
 CONSEQUENCE FOR THE PAPER: the frozen protocol is NOT information-optimal. A reviewer asking "why these
@@ -10438,7 +9927,7 @@ inherit C1's and C2's. The supercell DOES change its input, and the result is a 
   single conventional cell   200/210 = 0.9524
   explicit 2x2x2 supercell   178/210 = 0.8476     gained 0, lost 22, exact p < 1e-5
 TILING COSTS THE ORACLE 22 STRUCTURES AND GAINS IT NONE. The shipped protocol's supercell actively lowers
-identifiability, for the reason CP20 established — tiled copies project onto coincident pixels, and a
+identifiability, for the reason occlusion_manipulation established — tiled copies project onto coincident pixels, and a
 triangulating reader cannot separate them. Combined with C4, the frozen protocol is suboptimal on BOTH of
 its geometric choices, and neither correction reaches the models.
 
@@ -10452,15 +9941,15 @@ remains unbuilt. Recorded here so it cannot be quietly forgotten.
 ```
 
 
-## CP56_consolidated_verification
+## consolidated_verification
 
-BACKED BY: `results/CP56_consolidated_verification/results.json`
+BACKED BY: `results/consolidated_verification/results.json`
 
 
 ### finding.md
 
 ```
-CHECKPOINT: CP56_consolidated_verification   GAP: the package had been bitten twice by checks that pass on
+CHECKPOINT: consolidated_verification   GAP: the package had been bitten twice by checks that pass on
      wrong values — a presence-only check that validated against an already-corrupted field, and fabricated
      parameter counts on a figure axis. Both classes must be caught by script, not by reading.
 STATUS: DONE. scripts/verify_manuscript_numbers.py is a BUILD GATE that exits non-zero. 8 of 9
@@ -10537,33 +10026,33 @@ the figures to emit their plotted series to a sidecar file, which is not built.
 ```
 
 
-## CP58_perception_transplant
+## perception_transplant
 
-BACKED BY: `results/CP58_perception_transplant/results.json`, `results/CP58_perception_transplant/a3_raw.json`
+BACKED BY: `results/perception_transplant/results.json`, `results/perception_transplant/a3_raw.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP58 perception transplant
+PRE-REGISTRATION — perception_transplant perception transplant
 Committed BEFORE any call. API inference only, no GPU, no new renders.
 
-GAP. CP53 established that 12 of 14 models are REASONING-limited given perfect geometry, which refuted the
+GAP. rung_R3_coords_as_text established that 12 of 14 models are REASONING-limited given perfect geometry, which refuted the
 perception-bottleneck framing. That leaves a different question open: is the strong models' advantage
 PERCEPTION, and is it TRANSPLANTABLE? A descriptive ladder cannot answer that. A substitution can.
 
 FOUR ARMS ON THE SAME 210 ORIGINAL-EVAL STRUCTURES, ALL PAIRED.
-  A1  weak model end-to-end on pixels                     EXISTS (CP26)
-  A2  strong model end-to-end on pixels                    EXISTS (CP14)
+  A1  weak model end-to-end on pixels                     EXISTS (model_sweep)
+  A2  strong model end-to-end on pixels                    EXISTS (frontier_ceiling)
   A3  strong model EXTRACTS ONLY (emits species + positions, no symmetry answer);
       the WEAK model answers the symmetry question from that text                    NEW
   A4  same as A3 with the ORACLE'S exact positions substituted for the strong
-      model's — i.e. CP53's condition read as a transplant rather than a control     EXISTS (CP53)
+      model's — i.e. rung_R3_coords_as_text's condition read as a transplant rather than a control     EXISTS (rung_R3_coords_as_text)
 
 ROLES, FIXED NOW SO THEY CANNOT BE CHOSEN AFTER THE FACT.
   STRONG = google/gemini-3.6-flash  (best on pixels, 0.7333; best on geometry-as-text, 0.8524)
   WEAK   = meta-llama/llama-4-scout (0.2048 on pixels — near chance; 0.5048 on geometry-as-text)
-The weak model is chosen because CP41 left it the ONE genuinely ambiguous null: it is above chance with
+The weak model is chosen because no_image_control left it the ONE genuinely ambiguous null: it is above chance with
 images (43/210, p=0.009) yet showed no significant image contribution. If any model's pixel reading is
 worth transplanting into, it is this one.
 
@@ -10579,20 +10068,20 @@ DECISION RULE, fixed now. Let A1=0.2048, A2=0.7333, A4=0.5048 (all already measu
 
 THE SECOND MEASUREMENT, WHICH IS THE PART NO PRIOR WORK IN THIS LINE HAS.
 The strong model's EMITTED POSITIONS are scored directly against ground truth — recall, precision, centroid
-error — matched by the same criteria used for the CP19 detector. Prior two-stage work compares stage
+error — matched by the same criteria used for the atom_detection detector. Prior two-stage work compares stage
 outputs only through downstream accuracy because it has no exact positions to compare against. We do.
 This makes the extraction stage measurable rather than inferred, and it lets A3's outcome be attributed to
 extraction QUALITY rather than to the handoff format.
 
 WHAT WOULD MAKE A ROW UNINFORMATIVE.
-  >5% unparseable or >5% API errors on either leg -> reported with its rate, NOT scored (as CP41/CP53).
+  >5% unparseable or >5% API errors on either leg -> reported with its rate, NOT scored (as no_image_control/rung_R3_coords_as_text).
   If the strong model refuses to emit positions without answering, that is a REFUSAL and is reported as
   such rather than retried into compliance.
   If the strong model emits fewer than 3 atoms on >20% of structures, the handoff carries too little to
   reason from and A3 bounds the FORMAT rather than the extraction; say so explicitly.
 
 EXPECTED, STATED FIRST SO IT CANNOT BE RENEGOTIATED. I expect T3 with a SMALL recovered fraction, because
-CP53 already showed this weak model reaches only 0.5048 even with PERFECT geometry — so its ceiling in this
+rung_R3_coords_as_text already showed this weak model reaches only 0.5048 even with PERFECT geometry — so its ceiling in this
 design is 0.5048, not A2's 0.7333, and T1 is close to unreachable by construction. If T1 fires anyway, the
 weak model is doing better from model-written text than from exact coordinates, which would itself need
 explaining.
@@ -10607,7 +10096,7 @@ SCOPE. One strong model, one weak model, one sample. Says nothing about other pa
 ### finding.md
 
 ```
-CHECKPOINT: CP58_perception_transplant   GAP: CP53 showed 12 of 14 models are REASONING-limited given
+CHECKPOINT: perception_transplant   GAP: rung_R3_coords_as_text showed 12 of 14 models are REASONING-limited given
      perfect geometry. Is the strong models' advantage PERCEPTION, and does it TRANSPLANT? A descriptive
      ladder cannot answer that; a substitution can. (ICLR directive)
 STATUS: DONE. NO PRE-REGISTERED BRANCH FIRES, AND THE ACCURACY IS NOT THE RESULT. The informative number is
@@ -10627,14 +10116,14 @@ produced by a collapsed predictor cannot be read as a reasoning measurement at a
 =====  THE REAL RESULT: THE STRONG MODEL'S POSITIONS DO NOT CORRESPOND TO ATOMS  =====
 
 The pre-registration required scoring the emitted positions DIRECTLY against ground truth by the same
-matching criteria used for the CP19 detector, on the grounds that prior two-stage work can only compare
+matching criteria used for the atom_detection detector, on the grounds that prior two-stage work can only compare
 stages through downstream accuracy because it has no exact positions to compare against. That measurement:
 
   median recall                      0.0000
   median precision                   0.0000
   structures with ZERO matched atoms   105 of 206
   median error on the atoms that DID match   0.0817 fractional units
-  (CP19's connected-component detector, for contrast: median recall 0.400, precision 0.233)
+  (atom_detection's connected-component detector, for contrast: median recall 0.400, precision 0.233)
 
 The strong model emits well-formed, plausible-looking coordinate lists — median 48 atoms, correct element
 symbols, five-decimal precision — and on half the structures NOT ONE of them lands within tolerance of a
@@ -10685,16 +10174,16 @@ The pre-registration named that asymmetry before the run.
 ```
 
 
-## CP60_length_control
+## length_control
 
-BACKED BY: `results/CP60_length_control/results.json`
+BACKED BY: `results/length_control/results.json`
 
 
 ### prereg.md
 
 ```
-PRE-REGISTRATION — CP60 length control on the symbolic share   (directive P4 / A1b)
-WRITTEN BEFORE ANY REGRESSION WAS RUN. Zero new API calls: CP53 already holds per-structure R3
+PRE-REGISTRATION — length_control length control on the symbolic share   (directive P4 / A1b)
+WRITTEN BEFORE ANY REGRESSION WAS RUN. Zero new API calls: rung_R3_coords_as_text already holds per-structure R3
 verdicts and the conventional-cell atom counts are in the label pipeline.
 
 THE OBJECTION THIS TESTS, stated as a reviewer would state it. The decomposition assigns R1-R3 to a
@@ -10702,13 +10191,13 @@ THE OBJECTION THIS TESTS, stated as a reviewer would state it. The decomposition
 accuracy FALLS as the coordinate list gets longer, then part of that bucket is long-list handling —
 numeric tokenisation, context length, arithmetic over many rows — and not symmetry reasoning. The
 30.9% median share would then be an upper bound contaminated by list length.
-WHY THE EXISTING prompt_length KEY DOES NOT ANSWER IT. CP53's prompt_length shows geometry prompts are
+WHY THE EXISTING prompt_length KEY DOES NOT ANSWER IT. rung_R3_coords_as_text's prompt_length shows geometry prompts are
 SHORTER than the five-image prompts they beat. That rules out "the lift is a length artefact". It says
 nothing about whether the symbolic residual INFLATES with atom count WITHIN the geometry condition.
 Different question, and the directive is right that C3 conflated them.
 
 TEST. Per model, Spearman rho between per-structure R3 correctness (0/1) and conventional-cell atom
-count, over the structures CP53 scored. Plus a pooled test across models. Two-sided alpha = 0.05.
+count, over the structures rung_R3_coords_as_text scored. Plus a pooled test across models. Two-sided alpha = 0.05.
 Report rho and p for every model whether or not significant.
 
 BRANCHES, committed now.
@@ -10739,12 +10228,12 @@ NO OUTCOME HERE CHANGES THE ORACLE-TO-MODEL GAP, which is measured against pixel
 ### finding.md
 
 ```
-CHECKPOINT: CP60_length_control   GAP: the symbolic bucket is a residual R1-R3 against a solver. If R3
+CHECKPOINT: length_control   GAP: the symbolic bucket is a residual R1-R3 against a solver. If R3
               accuracy falls as the coordinate list lengthens, part of that residual is long-list
               handling rather than symmetry reasoning. (directive P4 / A1b)
 STATUS: DONE. BRANCH L2 FIRES, THE CONFOUND CONTROL DOES NOT RESCUE IT, AND A HEADLINE NUMBER IS
         DOWNGRADED FROM A MEASUREMENT TO AN UPPER BOUND.
-        Zero new API calls: CP53's 14 per-structure prediction vectors already existed and all 14
+        Zero new API calls: rung_R3_coords_as_text's 14 per-structure prediction vectors already existed and all 14
         reproduce their recorded R3 accuracies exactly.
 
 THE ASSOCIATION IS NEGATIVE AND POOLED-SIGNIFICANT. Spearman rho between per-structure R3 correctness
@@ -10768,7 +10257,7 @@ difficulty masquerading as length — the length association exists inside symme
 sharply in cubic and tetragonal, which are the classes where a long coordinate list is least
 informative per row.
 
-WHAT THIS DOWNGRADES. CP53's median perception share is 0.3092, so the symbolic share is 0.6908. Part
+WHAT THIS DOWNGRADES. rung_R3_coords_as_text's median perception share is 0.3092, so the symbolic share is 0.6908. Part
 of that residual is demonstrably list handling. THE SYMBOLIC SHARE IS THEREFORE AN UPPER BOUND ON A
 SYMMETRY-REASONING DEFICIT, NOT A MEASUREMENT OF ONE, and it must be reported that way in the same
 paragraph as the median. Per directive A1a the component is also renamed from "reasoning share" to
@@ -10776,7 +10265,7 @@ paragraph as the median. Per directive A1a the component is also renamed from "r
 the same exact geometry.
 
 WHAT IT DOES NOT TOUCH. The oracle-to-model gap is measured against PIXELS, not text, so no outcome
-here moves it. The direction of CP53's headline finding is also unaffected: models given exact geometry
+here moves it. The direction of rung_R3_coords_as_text's headline finding is also unaffected: models given exact geometry
 still fall short of the solver, and the shortfall is still larger than the perception component for
 most models. What changes is the interpretation of the residual's composition.
 
@@ -10787,4 +10276,415 @@ states rather than pooling away — in trigonal (+0.3246) more atoms go with HIG
 is consistent with atom count proxying symmetry richness in that class, exactly the confound the
 prereg named. The pooled claim survives because 5 of 7 are negative and the two largest-magnitude
 negatives are twice the largest positive, not because every class agrees.
+```
+
+
+## view_subset_sweep
+
+BACKED BY: `results/view_subset_sweep/raw.json`, `results/view_subset_sweep/summary.json`
+
+
+### finding.md
+
+```
+CHECKPOINT: view_subset_sweep   GAP: Corollary 3(a) proves R1 is non-decreasing in the view
+     set at tau = 0. That is a falsifiable prediction of the paper's own theory and it was
+     untested. (audit gap G2 / red flag R10)
+STATUS: DONE. THE PREDICTION HOLDS IN AGGREGATE AT 103 OF 105 NESTED PAIRS, AND THE TWO
+     EXCEPTIONS ARE REAL RATHER THAN NOISE. Reported as measured, with the violation mechanism
+     identified. Zero API calls; 5460 reconstructions in 15 s on 10 CPU processes.
+
+WHAT WAS RUN. The ideal-extraction oracle over every view subset of size 2-5 drawn from the
+frozen five-camera set (axis_a, axis_b, axis_c, body_diagonal, oblique2) = 26 subsets, on the
+210-structure original evaluation sample, symprec 0.01, angle tolerance 5.0, ray tolerance 0.15 A.
+Zero structure-level errors.
+
+THE SAMPLE IS THE LOCAL ONE, DELIBERATELY. oracle_view_curve ran an earlier view curve through the live
+database query and recorded that 21 of 280 material_ids changed between two runs at the same
+seed, because the seed fixes the draw order and not the candidate pool. This sweep reads
+data/e3/structures.json, the same 210 structures every other arm in the paper is scored on, so
+its numbers are comparable to the ladder rather than to a fresh draw.
+
+=================  THE CURVE  ================================================================
+  views   subsets   mean R1    min       max
+    2        10     0.7481    0.6762    0.8000
+    3        10     0.9152    0.8857    0.9524
+    4         5     0.9371    0.9095    0.9524
+    5         1     0.9524    0.9524    0.9524
+
+The full frozen five-camera set gives R1 = 200/210 = 0.9524, which REPRODUCES THE PAPER'S
+HEADLINE CEILING EXACTLY from an independent code path. The knee is at three views: 2->3 gains
+16.7 points, 3->4 gains 2.2, 4->5 gains 1.5. That agrees with oracle_view_curve's 280-structure curve
+(0.7429 / 0.9143 / 0.9357 / 0.9393) to within 0.09 to 1.31 percentage points, on a different
+sample, which is a reproducibility result in its own right. Per view count the absolute
+differences are 0.52, 0.09, 0.14 and 1.31 points; the largest sits at five views, where oracle_view_curve's
+0.9393 on 280 structures meets 0.9524 on this 210-structure sample.
+
+Note that the best THREE-view subset (axis_a, body_diagonal, oblique2) already reaches 0.9524.
+The fifth camera buys nothing on the crystal-system task; it buys the guarantee below.
+
+=================  THE MONOTONE CHECK, STATED HONESTLY  ======================================
+105 nested pairs C subset C'.
+  AGGREGATE violations (mean R1 falls when a view is added):  2 of 105
+  PER-STRUCTURE violations (correct at C, wrong at C'):     195 of 22050 = 0.884%
+  structures showing at least one violation:                 25 of 210
+
+The two aggregate violations share a subset and a direction:
+  axis_a|body_diagonal|oblique2 (200/210) -> +axis_b (198/210): gained 3, lost 5
+  axis_a|body_diagonal|oblique2 (200/210) -> +axis_c (195/210): gained 4, lost 9
+
+Corollary 3(a) is proved at tau = 0. This sweep runs at tau > 0, where the corollary is
+approximate, so these are violations of the approximation and not counterexamples to the
+theorem. Reporting them rather than asserting none is the point of the exercise.
+
+=================  MECHANISM: PHANTOMS, NOT LOST ATOMS  ======================================
+n_recovered < n_true NEVER occurs, in any of the 5460 cells. The oracle never drops an atom,
+which is exactly what Theorem 1 says. Every failure is a PHANTOM: a spurious point that survives
+cross-view verification. Mean phantom excess (n_recovered - n_true) falls monotonically with
+view count and reaches zero at the full set:
+
+  2 views 4.911 | 3 views 0.480 | 4 views 0.048 | 5 views 0.000
+
+So the fifth camera does not raise mean accuracy much; it eliminates phantoms entirely
+(210 of 210 structures recover exactly the true atom count). That is the design consequence
+worth stating: extra views buy reconstruction FIDELITY after they stop buying accuracy.
+
+Why a superset can still lose a structure: at the violating cells the subset's reconstruction
+carries a mean positional RMSD of 0.1801 A (median exactly 0) while the superset's is 0.0505 A
+and NEVER exactly 0. Adding a view removes phantoms but perturbs which candidate survives
+deduplication, and spglib at symprec 0.01 can flip a system on a sub-0.06 A perturbation. The
+subset was sometimes right for a reason the tolerance made fragile, not because fewer views
+carried more information.
+
+=================  THE TEN FIVE-VIEW FAILURES ARE NOT RECONSTRUCTION FAILURES  ===============
+At the full camera set, all 210 structures recover the exact true atom count and 89 have RMSD
+identically zero. The 10 structures the oracle gets wrong all have exact atom counts. They fail
+inside spglib at the production tolerance, not in the inversion. The ceiling at 0.9524 is
+therefore a LABEL-TOLERANCE limit on this sample, not a view-geometry limit.
+
+=================  WHAT THIS ADDS TO THE PAPER  ==============================================
+A third one-sided-in-aggregate theory check alongside the tiling result (22 lost, 0 gained) and
+the camera perturbation (9 gained, 0 lost), at zero API cost, plus an independent reproduction
+of R1 = 0.9524 through a separate code path. Unlike those two it is NOT perfectly one-sided, and
+the paper should say so.
+
+Reproduce: python scripts/run_viewsweep.py   (rc-analysis env; pymatgen + spglib 2.7.0; CPU only)
+Artifacts: raw.json (per-structure x per-subset), summary.json (aggregates).
+```
+
+
+## detector_characterisation
+
+BACKED BY: `results/detector_characterisation/results.json`, `results/detector_characterisation/detection_full.json`
+
+
+### finding.md
+
+```
+CHECKPOINT: detector_characterisation   GAP: G1, the audit's highest-value missing experiment.
+     Proposition 2 says an extractor that is sound and complete at tau/2 reproduces R1. rung_R2_detector_oracle ran the
+     oracle on detector output and it failed its pre-registered gate, but the paper could not say
+     WHY in terms of its own theory, because the detector had never been characterised against
+     Proposition 2's precondition.
+STATUS: DONE. THE DETECTOR FAILS THE PRECONDITION ON ALL THREE AXES, BY MARGINS THAT EXPLAIN rung_R2_detector_oracle's
+     COLLAPSE QUANTITATIVELY. Zero API calls; 210 structures x 5 views in 11m43s on 10 CPU processes.
+
+=================  WHY THIS WAS PREVIOUSLY IMPOSSIBLE, AND WHAT CHANGED  =====================
+atom_detection stored per-view AGGREGATES (tp, fp, fn, precision, recall, median centroid error in PIXELS) for
+28 structures on 3 views. Proposition 2's band test needs per-atom errors in ANGSTROM, so it could
+not be computed from the record, and the renders the detector reads were not on disk: eval.jsonl
+points at data/e3/renders/eval/*.png and the repository contains zero PNG files.
+
+The renders are regenerable from the local CIFs under the frozen protocol (conventional cell, 2x2x2
+supercell, px=768, radii=0.5) with no API access. THE REGENERATION IS EXACT: re-running detection on
+regenerated images reproduces all 84 of atom_detection's recorded view measurements identically — precision
+0.2333, recall 0.4000, centroid error 0.7171 px — including n_det, which depends on the actual
+pixels. The regenerated images are the frozen images.
+
+The px-to-Angstrom scale is recovered from the same letterboxed transform the ground truth uses
+(px / max(pv.w, pv.h)), which is what makes the band test computable at all.
+
+=================  (a) CENTROID ERROR, 54,258 matched detections  ============================
+  pixels:    median 0.7563   mean 3.3261   p95 15.879   max 72.81
+  angstrom:  median 0.0329   mean 0.1112   p95 0.5239   max 1.0744
+
+Full-sample precision and recall are HIGHER than atom_detection's 28-structure stratified subset (precision
+median 0.4278 vs 0.2333; recall median 0.4227 vs 0.4000), because that subset was deliberately
+stratified toward hard, high-overlap cases. The subset re-measures exactly, so this is a sampling
+difference, not a disagreement.
+
+=================  THE BINDING CONSTRAINT: PROPOSITION 2's LOCALISATION REQUIREMENT  =========
+Proposition 2 requires soundness and completeness at tau/2 = 0.005 A. Measured:
+
+  MATCHED CENTROIDS MEETING tau/2:  38 of 54,258  =  0.07%
+  median error is 6.58x larger than the requirement
+
+So even restricted to atoms the detector FINDS AND MATCHES CORRECTLY, its localisation misses the
+precondition by more than half an order of magnitude on the median atom.
+
+Soundness and completeness fail independently and by wider margins:
+  precision median 0.4278  ->  most detections are spurious, so NOT SOUND
+  recall    median 0.4227  ->  about 58% of atoms are missed outright, so NOT COMPLETE at ANY tolerance
+
+=================  (c) THE BAND TEST PASSES 210/210, AND THAT IS VACUOUS  ====================
+Per structure, taking eps as the median centroid error in Angstrom and kappa = 1.7689 from the theory
+audit, the ambiguity band [tau - 2*kappa*eps, tau + 2*kappa*eps] has median half-width 0.0902 A
+(max 0.7865). Every one of the 210 structures has ZERO compared distances inside the band, and the
+band never reaches the closest pair in any structure (0 of 210).
+
+THIS IS NOT EVIDENCE THE DETECTOR IS ADEQUATE. The band is centred on tau = 0.01 A, and the closest
+interatomic distance anywhere in the evaluation set is 1.0951 A — about 11x the band's upper edge.
+No physically realisable structure has interatomic distances near a 0.01 A tolerance, so the test
+passes for a structural reason and cannot discriminate between a good detector and a bad one at this
+tolerance. Reported here because the audit's protocol asks for it, with the caveat attached; it is
+not the constraint that binds.
+
+=================  WHAT THIS SETTLES FOR THE PAPER  ==========================================
+rung_R2_detector_oracle reported R2 unscored under a pre-registered gate (zero-triangulation on 19.0% and 22.4% of
+structures across two samples). That was an empirical stop with no explanation. detector_characterisation supplies the
+explanation in the paper's own terms: the available detector violates Proposition 2's hypothesis on
+soundness, on completeness, and on localisation simultaneously, so R2's collapse is what the theory
+PREDICTS rather than an anomaly.
+
+The consequence for the attribution claim is unchanged but now grounded: the extraction share stays
+unbounded from both sides, because no available detector meets the precondition that would let the
+oracle certify it — NOT because the experiment was skipped. Closing G1 properly needs a detector
+roughly 7x better at localisation AND materially better at both soundness and completeness, which is
+a new method, not a rerun.
+
+Reproduce: python scripts/run_g1_detector.py   (rc-analysis env; CPU only; ~12 min on 10 processes)
+Artifacts: detection_full.json (per-structure x per-view, with per-atom centroid errors and the
+px-per-Angstrom scale), results.json (aggregates and the band test).
+```
+
+
+## endpoint_drift
+
+BACKED BY: `results/endpoint_drift/rerun_minimal_reasoning.json`, `results/endpoint_drift/rerun_default_reasoning.json`, `results/endpoint_drift/released_same_20.json`
+
+
+### finding.md
+
+```
+CHECKPOINT: endpoint_drift   GAP: G3/G5/G6 all assume a new model arm run today is comparable
+     to the released K=3 ladder. That assumption was never tested. It is false.
+STATUS: DONE, AND IT BLOCKS G3/G5/G6 AS SCOPED. A validation slice against a released arm does not
+     reproduce it. Total cost of establishing this: $6.82 over 184 calls, against the ~$404 the
+     full programme would have cost on a premise that does not hold.
+
+WHAT WAS RUN. x-ai/grok-4.5 re-queried through the same harness path, same frozen prompt text, same
+K=3 majority vote, same frozen render protocol (conventional cell, 2x2x2 supercell, px=768,
+radii=0.5), on the first 20 structures of data/e3/eval.jsonl. Same sample, same structures, same
+truth labels as release/predictions/frontier__x-ai__grok-4_5__K3.json (verified: 20/20 id overlap,
+0/20 truth mismatches).
+
+=================  THE RESULT  ===============================================================
+  released (frontier arm, same 20 structures)        7/20
+  re-run today, provider default reasoning           1/20
+  re-run today, effort: minimal                      0/20
+
+=================  IT IS NOT SAMPLING NOISE, AND NOT A DECODE SETTING  =======================
+Pairwise agreement on the 20 predictions:
+
+  new-default  vs  new-minimal      17/20
+  new-default  vs  released         13/20
+  new-minimal  vs  released         13/20
+
+The two new runs used very different reasoning budgets (9,099 vs 1,266 output tokens per call, a
+7.2x difference) and still agree with each other far more than either agrees with the release. If
+the discrepancy were temperature-0.7 sampling variance, the new runs would disagree with each other
+about as much as they disagree with the release. They do not. The endpoint behind the identifier
+`x-ai/grok-4.5` is serving a different system than the one the paper's arms were measured on.
+
+The failure has a consistent shape: the current endpoint collapses triclinic onto monoclinic.
+Predicted-class distribution on 20 triclinic-truth structures:
+
+  released  monoclinic 11, triclinic 7, orthorhombic 2
+  new def   monoclinic 15, orthorhombic 3, triclinic 1, hexagonal 1
+  new min   monoclinic 18, orthorhombic 2
+
+SAMPLING CAVEAT ON THIS SLICE. The first 20 rows of eval.jsonl are all triclinic, the hardest
+stratum, where the released arm itself scores only 10/30 = 0.333. That amplifies the visible gap.
+It does not cause it: the agreement structure above is stratum-independent evidence. A stratified
+20-structure slice would give a tighter estimate of the drift magnitude and has not been run.
+
+A SECOND, SEPARATE FINDING. At provider default the model emitted 9,099 output tokens per call
+against a max_tokens of 900, one probe reaching 16,524 tokens at $0.10 and 384 s for a SINGLE call.
+The released arms show no such behaviour. This is a property of THIS endpoint, not of vision models
+generally: a claude-opus-5 probe on the same task returned 731 output tokens at its own default.
+Notably, on a single paired probe of one structure, 16,524 reasoning tokens and 894 tokens
+(default and effort:minimal respectively) produced the SAME wrong answer on the probe
+structure, and minimal reasoning scored no better than default across the slice (0/20 vs 1/20).
+
+=================  WHY THIS BLOCKS THE REMAINING GAPS  =======================================
+G3 (current-frontier arm), G5 (model arms at scale) and G6 (prompt sensitivity) are all comparisons
+of a NEW measurement against the EXISTING K=3 ladder. If the existing rows cannot be reproduced on
+their own endpoints, any such comparison confounds the effect under study with uncontrolled model
+drift. A frontier arm run today could not distinguish "a current model closes the gap" from "the
+endpoints moved". The gaps stay open, and the honest reason is now recorded rather than assumed.
+
+G4 (reasoning budget) is the one that survives, because it is an internal contrast between two
+settings of the SAME model at the SAME time and needs no comparison to the released ladder. The
+slice above is already weak evidence that the budget does not help on this task.
+
+=================  WHAT THIS IS WORTH TO THE PAPER  ==========================================
+This is direct evidence for the paper's own thesis. A leaderboard is a claim about models at a
+moment; re-running it later does not recover the same numbers, because the model identifiers are
+not stable referents. R1, the render ceiling, is model-free: the view sweep in view_subset_sweep reproduced it
+exactly at 200/210 = 0.9524 through an independent code path. The contrast between a ceiling that
+reproduces and a leaderboard that does not is the argument for reporting model-free bounds, and it
+was obtained here as a measurement rather than an assertion.
+
+SCOPE. One model, one 20-structure single-stratum slice, one point in time. It is enough to
+invalidate the comparability premise behind G3/G5/G6, which is what it was run to test. It is not
+enough to quantify drift across the roster, and no such claim is made.
+
+Reproduce: python scripts/run_model_arm.py --model x-ai/grok-4.5 --arm r4 --K 3 \
+  --ids <20 eval ids> --structures data/e3/structures.json --labels data/e3/eval.jsonl --out <path>
+Artifacts: rerun_default_reasoning.json, rerun_minimal_reasoning.json, released_same_20.json,
+and the runner scripts/run_model_arm.py.
+```
+
+
+## reasoning_budget
+
+BACKED BY: `results/reasoning_budget/results.json`, `results/reasoning_budget/opus5_minimal.json`, `results/reasoning_budget/opus5_default.json`
+
+
+### finding.md
+
+```
+CHECKPOINT: reasoning_budget   GAP: G4 / red flag R11a. Frontier models ship extended thinking
+     by default, and the paper cites work showing chain-of-thought can DEGRADE visual spatial
+     reasoning. No released arm set a reasoning parameter, so every scored model ran at its
+     provider's default and the paper could not say whether the budget mattered.
+STATUS: DONE. A CLEAN PAIRED NULL. 5.4x the reasoning tokens buys ZERO accuracy on this task.
+     This is the one API gap that endpoint drift (endpoint_drift) does not block, because it is an internal
+     contrast between two settings of the SAME model at the SAME time and needs no comparison to
+     the released ladder. Cost $34.00 over 1,260 calls.
+
+WHAT WAS RUN. claude-opus-5, the frozen main_zeroshot prompt verbatim, frozen five-view renders
+(conventional cell, 2x2x2 supercell, px=768, radii=0.5), K=3 majority vote, temperature 0.7, on the
+full 210-structure evaluation sample. Two legs, paired per structure:
+
+  leg A  reasoning = {"effort": "minimal"}   -- reproduces the released token profile
+  leg B  no reasoning field sent             -- exactly what every released arm did (the control)
+
+=================  THE RESULT  ===============================================================
+                    accuracy        out-tok/call    cost      wall
+  minimal           130/210 = 0.6190      89       $14.45     608 s
+  default           130/210 = 0.6190     482       $19.55   2,073 s
+
+  default emits 5.4x the output tokens, costs 1.35x more, and takes 3.4x longer
+  for IDENTICAL accuracy.
+
+The identical totals are not the same predictions. Agreement is 169/210 = 0.8048, so the two
+settings disagree on 41 structures and happen to break even:
+
+  McNEMAR, exact binomial on discordant pairs
+    minimal right / default wrong   13
+    default right / minimal wrong   13
+    discordant 26,  two-sided p = 1.0000
+
+That is as clean a null as this design can produce: the budget reshuffles which structures are
+answered correctly without moving the total in either direction.
+
+A COST THE DEFAULT PAYS THAT ACCURACY HIDES. The default leg returned empty content on 11 of 210
+structures (22 individual calls across K=3), which score as unanswered; the minimal leg returned
+zero. Extended thinking therefore consumed the token budget without emitting an answer often enough
+to matter, and those 11 count against it in the totals above. Restricting to the 199 structures BOTH
+legs answered, minimal is 126/199 = 0.6332 and default 130/199 = 0.6533, with McNemar 9 versus 13
+discordant and p = 0.5235 — still no detectable difference. So the null is not an artifact of the
+unanswered structures: the two settings tie on the full sample and remain statistically
+indistinguishable on the subset where both produced an answer.
+
+=================  PER-STRATUM (minimal / default)  ==========================================
+  triclinic      0.067  /  0.000
+  monoclinic     0.767  /  0.767
+  orthorhombic   0.367  /  0.400
+  tetragonal     0.767  /  0.900
+  trigonal       0.867  /  0.900
+  hexagonal      0.500  /  0.367
+  cubic          1.000  /  1.000
+
+The reshuffling is structured, not random. Extended thinking helps on tetragonal (+0.133) and
+trigonal (+0.033) and hurts on hexagonal (-0.133) and triclinic (-0.067) — the two strata where the
+cell metric is closest to degenerate. Cubic is saturated at 1.000 under both, and monoclinic is
+unchanged to three decimals. So the null total conceals a real trade: more deliberation moves
+accuracy toward the strata with distinctive metrics and away from the ambiguous ones. With n = 30
+per stratum these per-stratum differences are individually underpowered and are reported as
+description, not as claims.
+
+=================  WHAT THIS SETTLES  ========================================================
+R11a asked the paper to state per model whether extended thinking was enabled. The honest answer was
+that no arm ever set the parameter, so all ran at provider defaults that were never logged. This
+checkpoint upgrades that from a disclosure to a measurement: on this task, at this sample size, and for THIS ONE MODEL, the
+reasoning budget does not change what it gets right, and the paper can say so with a
+paired test rather than an apology.
+
+It also matters for the ceiling argument. The gap between the model (0.6190) and the render ceiling
+(0.9524) is not a deliberation deficit. Giving the model 5.4x more reasoning tokens closes none of
+it, which is consistent with the paper's claim that the binding constraint is perception rather than
+downstream inference.
+
+SCOPE. One model, one prompt, one sample, one pair of settings. It does not establish that reasoning
+budgets are irrelevant to spatial tasks generally, and no such claim is made. `effort: minimal` is
+also not identical to the released arms' configuration — it is the closest reproducible stand-in for
+a token profile the released arms achieved by running before extended thinking became a default.
+
+Reproduce:
+  python scripts/run_model_arm.py --model anthropic/claude-opus-5 --arm r4 --K 3 \
+    --reasoning '{"effort":"minimal"}' --ids <210 eval ids> \
+    --structures data/e3/structures.json --labels data/e3/eval.jsonl --out opus5_minimal.json
+  (omit --reasoning for the default leg)
+Artifacts: opus5_minimal.json, opus5_default.json (per-structure predictions and votes),
+results.json (the paired contrast and McNemar test).
+```
+
+
+## option_a_frontier
+
+BACKED BY: `results/option_a_frontier/results.json`
+
+
+### finding.md
+
+```
+# Finding — option_a_frontier
+
+Consolidated record for the exactness revision. It carries the values the article's Section 3.4 and the
+ESI's statistical sections report, and it is the source of record for the figure of the attribution ladder.
+
+## What it establishes
+
+The render ceiling is exact, not merely high. Over the 1950 structures of the scale-up sample, the
+phantom set is empty at five views on every structure (0 of
+1950 structure-subset pairs nonempty), so the oracle returns
+every label and $R_1 = 1.0000$ at any tolerance at or below the symmetry tolerance. Emptiness is a property
+of the five-camera protocol rather than of the construction: the same census leaves the phantom set nonempty
+on 15.4% of two-view pairs and
+1.9% of three-view pairs.
+
+## Why the reference point matters
+
+The ladder decomposition is reported against two ceilings, and they disagree. Against the exact
+$R_1 = 1.0000$ the median perception share is 0.2901
+(bootstrap 95% CI [0.1492, 0.3576]) and 13 of
+14 models are residual-limited (sign test p = 0.0018).
+Against the released merge tolerance, $R_1 = 0.9524$, the same data give a median of
+0.3092 (CI [0.1667, 0.3787]) and
+12 of 14 residual-limited (p = 0.0129).
+The manuscript quotes the exact reference throughout, so any figure or table drawn from the stored
+per-model `perception_fraction` field — which is computed against 0.9524 — would contradict its own text.
+`manuscript/codes/make_fig2_ladder.py` recomputes every share against the exact reference for this reason.
+
+The Spearman correlation of perception share against pixel accuracy is
+-0.1588 (p = 0.5877), which is
+reference-invariant, so perception dominance does not trend with model strength.
+
+## Scope
+
+No model inference was run for this record; the ladder statistics are recomputed from the stored per-model
+accuracies of `rung_R3_coords_as_text`. It has no pre-registration because it consolidates and re-reads
+measurements already taken rather than testing a new prediction.
 ```

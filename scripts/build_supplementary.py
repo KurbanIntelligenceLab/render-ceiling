@@ -11,30 +11,40 @@ import json, os, re, sys
 BLOCK = "**BLOCKED** — not in any checkpoint record; must be measured or the sentence dropped."
 
 
+class _Ledger(dict):
+    """dict that yields None for an absent record instead of raising."""
+    def __getitem__(self, k):
+        return self.get(k)
+
+
 def load(ledger, cp):
     p = f"{ledger}/{cp}/results.json"
     return json.load(open(p)) if os.path.exists(p) else None
 
 
 def main(ledger, out):
-    G = {}
-    for cp in sorted(d for d in os.listdir(ledger) if d.startswith("CP")):
-        G[cp] = load(ledger, cp)
-    cps = sorted((d for d in os.listdir(ledger) if d.startswith("CP")),
-                 key=lambda x: (int(re.match(r"CP(\d+)", x).group(1)), x))
-    c0, c0b, c0c = G["CP0_pipeline"], G["CP0b_identifiability"], G["CP0c_resolution_audit"]
-    c2, c3, c12 = G["CP2_sft_chain"], G["CP3_process_reward"], G["CP12_sota_push"]
-    c15, c23 = G["CP15_box_sufficiency"], G["CP23_depth_sufficiency"]
-    c25, c26 = G["CP25_oracle_within_sample"], G["CP26_model_sweep"]
-    c28, c31 = G["CP28_classifier_refreeze"], G["CP31_visibility_corrected_oracle"]
-    c32, c35 = G["CP32_extraction_operating_point"], G["CP35_stratified_frontier_expansion"]
-    c36, c41 = G["CP36_generational_comparison"], G["CP41_no_image_control"]
-    c50, c52 = G["CP50_eval_scaleup"], G["CP52_rung_R2_detector_oracle"]
-    c53, c54 = G["CP53_rung_R3_coords_as_text"], G["CP54_render_convention_sweep"]
-    c58, c60 = G["CP58_perception_transplant"], G["CP60_length_control"]
+    # Records are named for what they measure. results/INDEX.json carries the run order the old
+    # numeric prefixes used to encode, and G returns None for a record that is absent (some are
+    # staged out of the published package), so a missing record degrades a section rather than
+    # raising a KeyError here.
+    present = {d for d in os.listdir(ledger) if os.path.isdir(f"{ledger}/{d}")}
+    G = _Ledger({cp: load(ledger, cp) for cp in sorted(present)})
+    index = json.load(open(f"{ledger}/INDEX.json"))["records"]
+    ordered = [r["name"] for r in sorted(index, key=lambda r: r["order"])]
+    cps = [n for n in ordered if n in present] + sorted(present - set(ordered))
+    c0, c0b, c0c = G["pipeline"], G["identifiability"], G["resolution_audit"]
+    c2, c3, c12 = G["sft_chain"], G["process_reward"], G["sota_push"]
+    c15, c23 = G["box_sufficiency"], G["depth_sufficiency"]
+    c25, c26 = G["oracle_within_sample"], G["model_sweep"]
+    c28, c31 = G["classifier_refreeze"], G["visibility_corrected_oracle"]
+    c32, c35 = G["extraction_operating_point"], G["stratified_frontier_expansion"]
+    c36, c41 = G["generational_comparison"], G["no_image_control"]
+    c50, c52 = G["eval_scaleup"], G["rung_R2_detector_oracle"]
+    c53, c54 = G["rung_R3_coords_as_text"], G["render_convention_sweep"]
+    c58, c60 = G["perception_transplant"], G["length_control"]
 
     ep = c58["emitted_position_quality"]
-    d19 = c32["verified_against_CP19"]
+    d19 = c32["verified_against_atom_detection"]
     if isinstance(d19, str):
         d19 = json.loads(d19.replace("'", '"'))
     pw = c54["model_leg"]["power"]
@@ -60,7 +70,7 @@ exist in any record, the line says BLOCKED rather than supplying a plausible fig
 ---
 
 ## S1. Dataset construction and label certification
-SOURCE: CP0_pipeline, CP0b_identifiability, CP50_eval_scaleup
+SOURCE: pipeline, identifiability, eval_scaleup
 
 SOURCE DATABASES. Materials Project and JARVIS-DFT. The pilot drew {c0['meta']['n_mp']} structures from MP
 and {c0['meta']['n_jarvis']} from JARVIS; the identifiability sample drew {c0b['meta']['n_mp']} and
@@ -98,7 +108,7 @@ PER-SAMPLE BOUNDS FOR THE TWO 210-STRUCTURE EVALUATION SETS: {BLOCK}
 ---
 
 ## S2. Render protocol
-SOURCE: CP0_pipeline, CP0c_resolution_audit
+SOURCE: pipeline, resolution_audit
 
 CAMERA SPECIFICATION. Five orthographic views: three principal-axis and two oblique. The direction vectors
 are the frozen `VIEWS` map in `scripts/src/cocr/render.py`, which is the normative specification. They are
@@ -106,7 +116,7 @@ referenced rather than transcribed here so the two cannot drift.
 
 RESOLUTION, READ FROM THE LIVE PROCESSOR RATHER THAN ASSUMED. max_pixels
 {c12['training']['max_pixels']}, {c12['training']['effective_visual_tokens_per_view']} effective visual
-tokens per view, {c12['training']['source']}. This matters because CP0c found the DEPLOYED configuration
+tokens per view, {c12['training']['source']}. This matters because resolution_audit found the DEPLOYED configuration
 differed from the DOCUMENTED one by 3.408x in area. The audit's pre-registration stated its own asymmetry
 in advance: only an INCREASE at native resolution would have been a clean positive. The outcome landed in
 the ambiguous branch, so resolution is NOT excluded as a factor and no claim is attached to it.
@@ -117,7 +127,7 @@ the numeric values is {BLOCK}
 ---
 
 ## S3. The geometric oracle
-SOURCE: CP25, CP24, CP31
+SOURCE: oracle_within_sample, oracle_stratified, visibility_corrected_oracle
 
 WHY THE CEILING CAN BE BELOW 1.0, AND WHY THAT IS THE POINT. The oracle forward-projects ground-truth
 positions through each frozen camera, DISCARDS cross-view correspondence, re-solves by ray intersection,
@@ -137,14 +147,14 @@ RUNTIME, WHICH IS THE REPRODUCIBILITY ARGUMENT. The pilot pipeline labelled and 
 in {c0b['meta']['elapsed_sec']} s, both on CPU only — the oracle has no GPU dependency anywhere in
 `reconstruct.py`, so anyone can rerun it on a laptop. Per-run wall-clock for the full evaluation sweeps was
 not recorded.
-MATCH TOLERANCE AND THE PER-STRUCTURE FAILURE-MODE BREAKDOWN: {BLOCK} (the CP58 extraction scoring
+MATCH TOLERANCE AND THE PER-STRUCTURE FAILURE-MODE BREAKDOWN: {BLOCK} (the perception_transplant extraction scoring
 tolerance IS recorded, at {ep['matching_tolerance_frac']} in fractional coordinates, but that is a
 different quantity from the oracle's own cross-view match criterion.)
 
 ---
 
 ## S4. The attribution ladder
-SOURCE: CP25, CP53, CP58, CP60
+SOURCE: oracle_within_sample, rung_R3_coords_as_text, perception_transplant, length_control
 
 R0 IS DEFINITIONAL. Applying the symmetry algorithm to ground-truth positions returns the label by
 construction, so R0 = 1.0000 exactly. Treating R0 as approximately equal to R1 would discard the interval
@@ -160,7 +170,7 @@ isolates symmetry reasoning. Median perception share {c53['perception_fraction']
 {c53['spearman_pixel_vs_perception_share']['rho']} at p =
 {c53['spearman_pixel_vs_perception_share']['p']}.
 
-WHY IT IS ONLY A BOUND (CP60, {c60['api_calls']} new API calls). Regressing per-structure R3 correctness on
+WHY IT IS ONLY A BOUND (length_control, {c60['api_calls']} new API calls). Regressing per-structure R3 correctness on
 conventional-cell atom count over the same records: pooled Spearman {c60['pooled']['rho']} at p =
 {c60['pooled']['p']:.2e} over {c60['pooled']['n_pairs']} model-structure pairs, with
 {c60['pooled']['n_negative_rho']} of {c60['pooled']['n_models']} models negative and
@@ -187,14 +197,14 @@ THE CONTROL PAIR. Formula-only collapses every model toward seven-way chance (me
 The two conditions differ in one thing, which is what makes the lift attributable to the geometry rather
 than to text-mode prompting. PROMPT LENGTH: {json.dumps(c53['prompt_length'])} — the geometry prompts are
 shorter than the five-image prompts they outperform, which rules out a length artefact in the LIFT (a
-different question from CP60's, which is about the residual's composition).
+different question from length_control's, which is about the residual's composition).
 
 PER-MODEL R3 AND R4 VECTORS: `release/predictions/`, one file per model.
 
 ---
 
 ## S5. The extraction fabrication
-SOURCE: CP58
+SOURCE: perception_transplant
 
 THE PROMPTS, VERBATIM: `release/frozen_prompts.json`, entries `CP58_extraction_strong_model` (462
 characters, symmetry question deliberately withheld so the extraction cannot leak an answer) and
@@ -234,23 +244,23 @@ the zero-match count and the emitted-atom distribution are recorded; the full hi
 ---
 
 ## S6. Roster, prompts, decoding, and the model arms
-SOURCE: CP2, CP3, CP12, CP14, CP26, CP41, CP53
+SOURCE: sft_chain, process_reward, sota_push, frontier_ceiling, model_sweep, no_image_control, rung_R3_coords_as_text
 
 THREE ROSTERS, WHICH IS WHY NO BARE COUNT APPEARS ANYWHERE IN THE PAPER.
 
 | condition | attempted | scored | unscored, and under which gate |
 |---|---|---|---|
-| CP26 zero-shot leaderboard | 14 pre-registered | {len(c26['leaderboard_canonical_run_A'])} | `moonshotai/kimi-k2.6` — ENDPOINT FAILURE: no response on a 2-structure K=1 probe after 10 minutes, so the failure is the endpoint not the harness |
-| CP41 image-removal control | {c41['roster_extension']['n_attempted']} | {c41['roster_extension']['n_scored']} | {c41['roster_extension']['n_unscored']}, over a pre-registered 5\\% API-error gate |
-| CP53 coordinates-as-text | {c53['roster']['attempted']} | {c53['roster']['scored']} | `qwen/qwen2.5-vl-72b-instruct` — both gates exceeded at {list(c53['roster']['unscored'].values())[0]['api_error_rate'] * 100:.1f}\\% errors |
+| model_sweep zero-shot leaderboard | 14 pre-registered | {len(c26['leaderboard_canonical_run_A'])} | `moonshotai/kimi-k2.6` — ENDPOINT FAILURE: no response on a 2-structure K=1 probe after 10 minutes, so the failure is the endpoint not the harness |
+| no_image_control image-removal control | {c41['roster_extension']['n_attempted']} | {c41['roster_extension']['n_scored']} | {c41['roster_extension']['n_unscored']}, over a pre-registered 5\\% API-error gate |
+| rung_R3_coords_as_text coordinates-as-text | {c53['roster']['attempted']} | {c53['roster']['scored']} | `qwen/qwen2.5-vl-72b-instruct` — both gates exceeded at {list(c53['roster']['unscored'].values())[0]['api_error_rate'] * 100:.1f}\\% errors |
 
 Every unscored entry is reported UNSCORED rather than dropped.
 
-THE MODEL ARMS. Base `{c2['model']}`. SFT (CP2): {c2['method']}, {c2['train_n_structures']} train /
-{c2['test_n_structures']} test structures, seeds {c2['seeds']}. GRPO (CP3): from SFT checkpoint
+THE MODEL ARMS. Base `{c2['model']}`. SFT (sft_chain): {c2['method']}, {c2['train_n_structures']} train /
+{c2['test_n_structures']} test structures, seeds {c2['seeds']}. GRPO (process_reward): from SFT checkpoint
 `{c3['config']['sft_ckpt']}`, lr {c3['config']['lr']}, KL beta {c3['config']['beta']}, group size
 {c3['config']['group_size']}, {c3['config']['steps']} steps, {c3['config']['train_prompts']} train prompts,
-{c3['config']['stack']}. A3 (CP12): {c12['training']['examples']} examples from
+{c3['config']['stack']}. A3 (sota_push): {c12['training']['examples']} examples from
 {c12['training']['structures']} structures, {c12['training']['epochs']} epochs, {c12['training']['steps']}
 steps, final loss {c12['training']['final_loss']}, {c12['training']['wall_clock_s']} s wall clock.
 AUGMENTATION: {c12['training']['augmentation']} — disjoint from the five frozen eval views, which is what
@@ -261,7 +271,7 @@ WHAT IS NOT CLAIMED FOR A3. SINGLE-SEED. {c12['result']['correct']}/{c12['result
 {round(c25['paired_original_eval']['A3_native']['arm'] * 210)}/210 =
 {c25['paired_original_eval']['A3_native']['arm']} at K=8. It sits INSIDE the reference arm's across-seed
 spread (0.590 / 0.567 / 0.686), exceeding that arm's best seed by ONE structure at K=8 and TRAILING it by
-FIVE at K=3. No improvement over the reference arm is claimed. CP37, the three-seed extension, was CUT;
+FIVE at K=3. No improvement over the reference arm is claimed. a3_seeds, the three-seed extension, was CUT;
 its record holds the quantitative argument that seed variation cannot close the oracle-to-model margin of
 {round(c25['oracle_accuracy']['original_eval']['5v'] * 210) - round(c25['paired_original_eval']['A3_native']['arm'] * 210)}
 structures, which is the comparison A3 is actually used for.
@@ -274,13 +284,13 @@ Mean absolute difference
 {c26['measurement_provenance']['run_to_run_spread']['max_abs_accuracy']}. Every headline claim survives
 both runs independently.
 
-CP41'S REFUSAL CASE, whose raw response would be the strongest single argument for the control's validity:
+no_image_control'S REFUSAL CASE, whose raw response would be the strongest single argument for the control's validity:
 {BLOCK}
 
 ---
 
 ## S7. What the render protocol withholds
-SOURCE: CP31, CP32, CP19
+SOURCE: visibility_corrected_oracle, extraction_operating_point, atom_detection
 
 THE FOUR VISIBILITY CONDITIONS, expansion sample, four views, n = {c31['conditions']['expansion_4v_O0']['n']}:
 
@@ -298,14 +308,14 @@ a flat recovery curve is not a plumbing failure. The pre-registered control rule
 the control dominates, and it does.
 
 UNTRIANGULABLE FRACTIONS, PER-SAMPLE REDUNDANT AND INFORMATIVE MEANS, THE AXIS-VERSUS-OBLIQUE RATIO: in
-CP31's `axis_vs_oblique` and `cross_view_recoverability` fields and CP21's record. The axis/oblique
+visibility_corrected_oracle's `axis_vs_oblique` and `cross_view_recoverability` fields and occlusion_redundancy's record. The axis/oblique
 comparison matters because it means every occlusion figure published before that extension was measured on
 the protocol's three worst cameras.
 
 ---
 
 ## S8. Cue sufficiency
-SOURCE: CP15, CP28, CP18, CP35
+SOURCE: box_sufficiency, classifier_refreeze, eval_expansion, stratified_frontier_expansion
 
 Moved here from the main text because the section ended by disclaiming itself.
 
@@ -333,7 +343,7 @@ suggestive and establishes nothing.
 ---
 
 ## S9. Generational comparison
-SOURCE: CP36
+SOURCE: generational_comparison
 
 Moved here from the main text because the section ended by disclaiming itself.
 
@@ -357,7 +367,7 @@ ONE MODEL PAIR IS A COMPARISON AND NOT A TREND.
 ---
 
 ## S10. Render conventions
-SOURCE: CP54, CP23
+SOURCE: render_convention_sweep, depth_sufficiency
 
 THE ORACLE LEG IS CONCLUSIVE, AND IT REFUTED TWO OF THIS PROJECT'S OWN PREDICTIONS. Off-axis cameras raise
 the ceiling from {c54['oracle_ceiling_by_camera_map']['original']['frozen_micro']} to
@@ -383,19 +393,19 @@ distortion of true depth, so any depth grading must be METRIC-FAITHFUL rather th
 is what justifies that word in any recommendation. Quantization saturates at
 {c23['quantization_saturates_at']} levels across all four strata, having been stated as four and corrected.
 
-THE 16-COMPARISON TABLE with discordance counts and exact p: CP54's `paired_vs_C1` field.
+THE 16-COMPARISON TABLE with discordance counts and exact p: render_convention_sweep's `paired_vs_C1` field.
 
 ---
 
 ## S11. Classical baselines
-SOURCE: CP28_classifier_refreeze, CP8, CP50
+SOURCE: classifier_refreeze, external_baselines, eval_scaleup
 
 THE SHAPE-FREE FLOOR. Three features — atom count, density, cell volume — deliberately blind to shape.
 Canonical {c26['reference_rows']['shape_free_regularity_floor']['k']}/{c26['reference_rows']['shape_free_regularity_floor']['n']}
 = {c26['reference_rows']['shape_free_regularity_floor']['micro']} on the original sample.
 
 THE CELL-METRIC RANDOM FOREST. Ordered 19-feature list, library versions and seed in
-`results/CP28_classifier_refreeze/`. Canonical {rf['canonical_k']}/{rf['n']} = {rf['canonical_micro']}.
+`results/classifier_refreeze/`. Canonical {rf['canonical_k']}/{rf['n']} = {rf['canonical_micro']}.
 ONE FEATURE-SOURCE TRAP IS RECORDED: the features come from the INPUT cell, not the conventionalised cell.
 Feeding conventional cells is off by one structure.
 
@@ -419,7 +429,7 @@ SOURCE: project retraction and superseded-results record
 
 Verbatim in `reports/SUPPLEMENTARY_INFORMATION.md` Part II, which carries every checkpoint's finding
 including every withdrawal. Referenced from the reproducibility statement and the AI-use disclosure, and
-from nowhere in the main text. The CP54 power-calculation retraction is among them.
+from nowhere in the main text. The render_convention_sweep power-calculation retraction is among them.
 
 ---
 
@@ -427,8 +437,8 @@ from nowhere in the main text. The CP54 power-calculation retraction is among th
 SOURCE: every checkpoint's prereg.md
 
 Verbatim in Part II of `SUPPLEMENTARY_INFORMATION.md`, in numeric checkpoint order, including the ones
-whose outcome CONTRADICTED the registered expectation, the ones that landed BETWEEN branches, CP37's cut
-record and CP10's subsumption record. Of the {len(cps)} checkpoints, {npre} carry a pre-registration; the
+whose outcome CONTRADICTED the registered expectation, the ones that landed BETWEEN branches, a3_seeds's cut
+record and merged_retrain's subsumption record. Of the {len(cps)} checkpoints, {npre} carry a pre-registration; the
 rest say so in their own finding text rather than implying one existed.
 
 ---

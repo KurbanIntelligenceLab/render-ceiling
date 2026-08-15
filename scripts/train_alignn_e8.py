@@ -2,7 +2,7 @@
 """
 E8: train ALIGNN for 7-way crystal-system classification on COCR's EXACT labels and split.
 
-This is the fair-comparison row the CP8 literature finding demanded: the published ALIGNN
+This is the fair-comparison row the external_baselines literature finding demanded: the published ALIGNN
 number (75.6% crystal system, DeepCrysTet Table II) is on a different dataset with a random
 split, so it is not comparable to our composition-exclusion result. This trains ALIGNN on
 data/e3's own train/eval material_ids with the same spglib labels.

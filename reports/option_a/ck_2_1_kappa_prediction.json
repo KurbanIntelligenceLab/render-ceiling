@@ -1,0 +1,122 @@
+{
+ "task": "2.1 kappa noise-prediction test",
+ "predictions_written_at": "2026-08-10T22:47:25.665021+00:00",
+ "predictions_written_before_measurements": true,
+ "prediction_rule": "Proposition 2 band: structure safe iff |d_compared - tau| > 2*kappa*eps. With d_min >> tau, eps_tol = (d_min - tau)/(2*kappa). sigma* for R1>=0.95 predicted as the 5th percentile of eps_tol over structures.",
+ "predictions": {
+  "frozen": {
+   "kappa": 2.7321,
+   "dmin_median": 3.0001,
+   "dmin_min": 1.0951,
+   "eps_tolerance_p5": 0.4456,
+   "eps_tolerance_median": 0.5472,
+   "predicted_sigma_star_R1_ge_0.95": 0.4456
+  },
+  "offaxis": {
+   "kappa": 8.4258,
+   "dmin_median": 3.0001,
+   "dmin_min": 1.0951,
+   "eps_tolerance_p5": 0.1445,
+   "eps_tolerance_median": 0.1774,
+   "predicted_sigma_star_R1_ge_0.95": 0.1445
+  },
+  "tiled": {
+   "kappa": 2.7321,
+   "dmin_median": 2.8865,
+   "dmin_min": 1.0951,
+   "eps_tolerance_p5": 0.4353,
+   "eps_tolerance_median": 0.5264,
+   "predicted_sigma_star_R1_ge_0.95": 0.4353
+  }
+ },
+ "predicted_robustness_ordering_most_to_least": [
+  "frozen",
+  "tiled",
+  "offaxis"
+ ],
+ "falsifiable_content": "If kappa governs noise robustness, the measured crossing sigma must order the three protocols as predicted_robustness_ordering, and off-axis must cross at roughly 3.08x lower sigma than frozen (the kappa ratio, since d_min is identical for both).",
+ "measurements": {
+  "predicted_ordering": [
+   "frozen",
+   "tiled",
+   "offaxis"
+  ],
+  "observed_ordering_by_crossing_sigma": [
+   "frozen",
+   "offaxis",
+   "tiled"
+  ],
+  "per_protocol": {
+   "frozen": {
+    "kappa": 2.7321,
+    "predicted_sigma_star": 0.4456,
+    "observed_crossing_sigma": 0.01455,
+    "measured_curve": {
+     "0.0": 1.0,
+     "0.001": 1.0,
+     "0.003": 0.9971,
+     "0.01": 0.979,
+     "0.02": 0.9152
+    }
+   },
+   "offaxis": {
+    "kappa": 8.4258,
+    "predicted_sigma_star": 0.1445,
+    "observed_crossing_sigma": 0.00688,
+    "measured_curve": {
+     "0.0": 1.0,
+     "0.001": 0.999,
+     "0.003": 0.9986,
+     "0.01": 0.911,
+     "0.02": 0.4495
+    }
+   },
+   "tiled": {
+    "kappa": 2.7321,
+    "predicted_sigma_star": 0.4353,
+    "observed_crossing_sigma": 0.00477,
+    "measured_curve": {
+     "0.0": 1.0,
+     "0.001": 0.9867,
+     "0.003": 0.9695,
+     "0.01": 0.8924,
+     "0.02": 0.8167
+    }
+   }
+  },
+  "kappa_ratio_test": {
+   "predicted_frozen_over_offaxis_ratio": 3.084,
+   "observed_frozen_over_offaxis_ratio": 2.115,
+   "kappa_ratio_offaxis_over_frozen": 3.084
+  },
+  "verdict": {
+   "three_way_ordering_predicted": [
+    "frozen",
+    "tiled",
+    "offaxis"
+   ],
+   "three_way_ordering_observed": [
+    "frozen",
+    "offaxis",
+    "tiled"
+   ],
+   "three_way_ordering_correct": false,
+   "kappa_contrast_direction_correct": true,
+   "absolute_sigma_star_overpredicted_by_factor": 30.6,
+   "reading": "Mixed, and reported as such. TWO of the three predictions fail and one holds.\n(1) HOLDS - the kappa-isolating contrast. Frozen and off-axis differ only in camera placement, so kappa alone separates them, and the predicted direction is observed: frozen crosses R1 = 0.95 at sigma = 0.0146 against 0.0069 for off-axis, a factor of 2.1 where kappa predicted 3.1. The paired test confirms it at sigma = 0.01 (18 structures frozen-only against 3 off-axis-only, p = 0.0015) and sigma = 0.02 (102 against 2, p = 5.4e-28). Raising kappa 3.08-fold by perturbing the cameras off the principal axes costs noise robustness, as Proposition 2 requires.\n(2) FAILS - the three-way ordering. Tiled was predicted second and is measured last (crossing at sigma = 0.0048). The prediction treated tiling as a kappa-preserving change, which it is not: tiling multiplies atoms per cell eightfold and shrinks same-species separations, so it degrades robustness through atom density rather than through camera conditioning. The prediction was mis-specified for that arm, and the arm cannot score kappa in either direction.\n(3) FAILS - the absolute sigma*. Predicted 0.4456 for frozen against 0.0146 observed, optimistic by a factor of 31. The prediction used the minimum same-species interatomic distance as the margin, but the binding constraint is the much smaller displacement at which spglib's symmetry detection flips. Proposition 2's band is sufficient for label agreement, not tight, so it orders conditioning correctly and bounds absolute tolerance loosely.\nWhat the paper may claim from this: kappa predicts the RELATIVE noise robustness of two protocols that differ only in camera placement. It does not predict robustness across protocols that differ in atom density, and it does not give a usable absolute noise budget."
+  },
+  "kappa_isolating_contrast": {
+   "pair": "frozen vs off-axis",
+   "why": "identical structures and identical atom geometry; the ONLY difference is camera placement, hence kappa. The tiled arm changes the geometry itself (8x atoms per cell, smaller same-species separations), so it is not a controlled kappa contrast and cannot score the prediction either way.",
+   "kappa_frozen": 2.7321,
+   "kappa_offaxis": 8.4258,
+   "crossing_sigma_frozen": 0.01455,
+   "crossing_sigma_offaxis": 0.00688,
+   "direction_predicted": "frozen more robust than off-axis",
+   "direction_observed": "frozen more robust than off-axis",
+   "direction_correct": true,
+   "ratio_predicted": 3.084,
+   "ratio_observed": 2.115
+  }
+ }
+}

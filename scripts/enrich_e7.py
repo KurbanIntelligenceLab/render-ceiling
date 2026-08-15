@@ -8,7 +8,7 @@ lattice, and our metric-rule implication). Two rows need more:
   D3 (DEPLOYABLE, tool-coupled) needs `spglib_implies`: build a cell from the lattice parameters
      the model EMITTED and ask spglib what system it is. This is a tool applied to the model's
      own numbers — no ground truth — so it stays deployable.
-  O1 (ORACLE) needs `geom_truth_score`: the per-step geometry reward scored against CP0 truth.
+  O1 (ORACLE) needs `geom_truth_score`: the per-step geometry reward scored against pipeline truth.
      This reads the sidecar and is therefore oracle-only.
 
 Doing this as a post-pass (rather than inside generation) means the expensive GPU step never has

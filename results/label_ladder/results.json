@@ -1,0 +1,116 @@
+{
+ "stage": "label_ladder label ladder (ICLR directive)",
+ "branch": "D1/D3 MIXED \u2014 see verdict",
+ "n": 210,
+ "eval_set": "original",
+ "ground_truth": "labels_sidecar.json, already present for all 1820 structures",
+ "wyckoff": "OUT OF SCOPE \u2014 not in the sidecar, would be new labelling",
+ "ladder": {
+  "crystal_system": {
+   "classes_present": 7,
+   "n_classes_total": 7,
+   "majority_rate": 0.1429,
+   "one_over_n": 0.1429,
+   "singleton_classes": 0,
+   "macro_f1_meaningful": true,
+   "rf_lattice19": {
+    "k": 188,
+    "n": 210,
+    "micro": 0.8952
+   },
+   "floor_3feat": {
+    "k": 111,
+    "n": 210,
+    "micro": 0.5286
+   },
+   "oracle_R1": {
+    "k": 200,
+    "n": 210,
+    "micro": 0.9524
+   }
+  },
+  "bravais_lattice": {
+   "classes_present": 13,
+   "n_classes_total": 14,
+   "majority_rate": 0.2286,
+   "one_over_n": 0.0714,
+   "singleton_classes": 1,
+   "macro_f1_meaningful": true,
+   "rf_lattice19": {
+    "k": 191,
+    "n": 210,
+    "micro": 0.9095
+   },
+   "floor_3feat": {
+    "k": 100,
+    "n": 210,
+    "micro": 0.4762
+   },
+   "oracle_R1": {
+    "k": 198,
+    "n": 210,
+    "micro": 0.9429
+   }
+  },
+  "point_group": {
+   "classes_present": 21,
+   "n_classes_total": 32,
+   "majority_rate": 0.1381,
+   "one_over_n": 0.0312,
+   "singleton_classes": 3,
+   "macro_f1_meaningful": true,
+   "rf_lattice19": {
+    "k": 150,
+    "n": 210,
+    "micro": 0.7143
+   },
+   "floor_3feat": {
+    "k": 94,
+    "n": 210,
+    "micro": 0.4476
+   },
+   "oracle_R1": {
+    "k": 200,
+    "n": 210,
+    "micro": 0.9524
+   }
+  },
+  "space_group": {
+   "classes_present": 44,
+   "n_classes_total": 230,
+   "majority_rate": 0.1095,
+   "one_over_n": 0.0043,
+   "singleton_classes": 18,
+   "macro_f1_meaningful": true,
+   "rf_lattice19": {
+    "k": 143,
+    "n": 210,
+    "micro": 0.681
+   },
+   "floor_3feat": {
+    "k": 85,
+    "n": 210,
+    "micro": 0.4048
+   },
+   "oracle_R1": {
+    "k": 198,
+    "n": 210,
+    "micro": 0.9429
+   }
+  }
+ },
+ "verdict": "D1 HOLDS FOR THE ORACLE: it stays at 0.9429-0.9524 on ALL FOUR labels, so the identifiability result is not specific to crystal system and the ceiling argument generalises to space group. D3 PARTLY HOLDS: the shape-free floor degrades 0.5286 -> 0.4048, so size-and-density regularities carry less on finer labels, but never collapse to chance. The RF degrades most (0.8952 -> 0.6810), which is the informative part: the cell metric determines crystal system almost fully but NOT space group, because space group needs the ATOM POSITIONS the metric does not encode.",
+ "monotonicity": {
+  "oracle": "NOT monotone in granularity (0.9524/0.9429/0.9524/0.9429) \u2014 flat, because spglib reads the reconstruction exactly and the reconstruction is either right or wrong",
+  "rf_lattice19": "bravais 0.9095 EXCEEDS crystal system 0.8952 \u2014 13 of 14 classes present and centering is partly metric-determined; then falls sharply to 0.7143 and 0.6810",
+  "floor_3feat": "monotone decreasing 0.5286 -> 0.4762 -> 0.4476 -> 0.4048"
+ },
+ "macro_f1_withheld": "space group has 18 singleton classes of 44 present (230 possible), and point group 3 of 21, so macro-F1 is degenerate on the finer labels and is NOT reported, per the pre-registration. Micro accuracy plus classes-present is reported instead.",
+ "chance_note": "majority-class rate and 1/n_classes diverge hugely on the finer labels (space group 0.1095 vs 0.0043); both are reported because quoting 1/230 alone would understate the trivial baseline sixfold",
+ "self_check": {
+  "crystal_system_rf_reproduces_classifier_refreeze": true,
+  "crystal_system_floor_reproduces": true,
+  "crystal_system_oracle_reproduces_oracle_within_sample": true
+ },
+ "defect_found_and_fixed": "my first oracle pass derived Bravais from get_lattice_type()[0] and got 0.7571 \u2014 NON-MONOTONE against space group at 0.9429, which is impossible since Bravais is coarser. The cause was my derivation, not the oracle: labels.py maps CRYSTAL SYSTEM to a family letter (trigonal -> 'h') and appends the centering from the space-group symbol. Rerun with the pipeline's own bravais_lattice() gives 0.9429. The impossible ordering is what caught it."
+}

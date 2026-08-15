@@ -1,29 +1,50 @@
 # render-ceiling
 
-A measured identifiability ceiling for rendered scientific images, and what it attributes.
+A model-free ceiling for vision–language model evaluation on rendered crystal structures.
 
-Crystal-system classification from ball-and-stick renders, with a MODEL-FREE GEOMETRIC ORACLE that
-establishes what the render protocol actually carries. The oracle forward-projects ground-truth atom
-positions through the same frozen cameras a model sees, DISCARDS cross-view correspondence, re-solves
+[![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
+[![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
+
+Crystal-system classification from ball-and-stick renders, measured against a model-free geometric oracle
+that establishes what the render protocol actually carries. The oracle forward-projects ground-truth atom
+positions through the same frozen cameras a model sees, discards cross-view correspondence, re-solves
 positions by ray intersection, and applies a deterministic symmetry algorithm to the result. No model
-appears anywhere in the measurement, so its accuracy is a property of the images rather than of any
-reader. It recovers 0.9524 and 0.9095 of structures on two independently drawn
-210-structure samples.
+appears anywhere in the measurement, so its accuracy is a property of the images rather than of any reader.
 
-The gap between that ceiling and what models achieve is the paper's subject. Supplying EXACT GEOMETRY AS
-TEXT does not close it: no model reaches the oracle, and the median perception share of the total deficit
-is 0.3092, so most of the remaining deficit is symbolic rather than perceptual.
+With the extraction tolerance tied to the symmetry tolerance the oracle returns every label, so the ceiling
+is exactly 1.0000 and every point of a model's deficit is attributable to the model. Read at the released
+merge tolerance the same pipeline gives 0.9524, and the article reports both, because a ceiling quoted
+without the tolerance that produced it is not a measurement.
+
+The gap between that ceiling and what models achieve is the subject. Supplying exact geometry as text does
+not close it: no model reaches the oracle, the median perception share of the deficit is 0.2901, and 13 of
+14 models are limited more by what survives perception than by perception itself.
+
+## Reproducing the manuscript
+
+Every figure regenerates from the records, byte-for-byte:
+
+    python manuscript/codes/make_fig2_ladder.py results manuscript/render-ceiling-dd/figures/ladder.pdf
+
+Every number in the manuscript and in the reports is checked against those records by
+
+    python scripts/verify_manuscript_numbers.py
+    python scripts/validate_package.py .
+
+The second is the gate for the whole package: it re-runs all six figure generators and compares them to the
+shipped PDFs, requires every four-decimal value in the manuscript to trace to a record under `results/`, and
+refuses the repository if the merged supplementary document is stale with respect to `results/`.
 
 ## Layout
 
 | folder | contents |
 |---|---|
-| `manuscript/` | `cocr_iclr.tex`, its six figures in `figs/`, the submission checklist |
+| `manuscript/` | `render-ceiling-dd/` — the Digital Discovery submission (`main.tex`, `si.tex`, `cover_letter.tex`, its 6 vector figures in `figures/`) — and `codes/`, the generator for each of those figures |
+| `results/INDEX.json` | run order of the experiment records, whose directory names describe what each measures rather than when it ran |
 | `reports/` | `SUPPLEMENTARY_INFORMATION.md` — the single merged document — plus `REPORT.md` (its Part I), `CONVENTIONS.md` (standalone, see below), and `sources/` holding the two documents it is built from |
-| `results/` | 53 checkpoint directories: 90 JSON records and 93 markdown records (every pre-registration and finding) |
+| `results/` | 54 experiment records: 99 JSON records and 91 markdown records (every pre-registration and finding) |
 | `data/` | 13 files — structures, labels and evaluation splits for all three samples (20 MB) |
-| `figures/` | 39 figures, named `CHECKPOINT__figure.png` — one copy per distinct image; the manuscript's six live in `manuscript/figs/` |
-| `scripts/` | 33 top-level scripts, the 11-module `src/cocr` package, 6 figure generators in `figures/` |
+| `scripts/` | 37 top-level scripts and the 11-module `src/cocr` package; the six figure generators live in `manuscript/codes/` |
 | `release/` | 82 files: per-structure prediction vectors, frozen prompts, Croissant metadata |
 | `weights/` | 25 trained LoRA adapters, 2.82 GB, git-ignored — see `weights/README.md` |
 
@@ -76,7 +97,7 @@ pass — so it compares bytes, not counts.
 
 Nothing in this repository is transcribed. Each of these reads the records and rewrites its output:
 
-    python scripts/figures/make_fig1_leaderboard.py results manuscript/figs/leaderboard.png
+    python manuscript/codes/make_fig1_leaderboard.py results manuscript/render-ceiling-dd/figures/leaderboard.pdf
     python scripts/build_supplementary.py results reports/SUPPLEMENTARY_SECTIONS.md
     python scripts/build_si.py . reports/SUPPLEMENTARY_INFORMATION.md
     python scripts/verify_manuscript_numbers.py

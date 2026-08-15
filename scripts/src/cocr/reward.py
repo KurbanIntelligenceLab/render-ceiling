@@ -2,7 +2,7 @@
 CoCr reward server (E3/E4/E7 shared infrastructure).
 
 Parses an emitted hierarchical CoCr chain and scores every step against the
-CP0-label ground truth derived from the source CIF (spglib/pymatgen). Returns a
+pipeline-label ground truth derived from the source CIF (spglib/pymatgen). Returns a
 per-step reward vector + a final-answer reward + a format reward, and logs every
 decision for the E4 reward-hacking audit. CPU, millisecond-scale.
 
@@ -13,7 +13,7 @@ Chain schema (from traces.py):
   [MOTIF]           set-match              -> Wyckoff letters (deduped; repetition NOT rewarded)
   [ANSWER] <system> final reward           -> crystal system exact
 
-Design decisions carried over from CP2 (ledger/CP2_sft_chain):
+Design decisions carried over from sft_chain (ledger/sft_chain):
   1. Geometry is scored on QUALITATIVE relations, never exact cell parameters — the
      finite views cannot support exact-value measurement (E0.5/E1), so exact-value
      rewards would reward an unmeasurable target and invite template recitation.
@@ -135,7 +135,7 @@ def _final_system(text_after_answer: str) -> str | None:
 
 
 def score_chain(text: str, label: dict[str, Any], weights: dict[str, float] | None = None) -> dict[str, Any]:
-    """Score an emitted chain against the CP0 label.
+    """Score an emitted chain against the pipeline label.
 
     Returns per-step rewards in [0,1], a final-answer reward, a format reward in
     [-1, 1], the format-penalized scalar sum (V2a style), and a full decision log.

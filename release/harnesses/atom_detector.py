@@ -1,14 +1,14 @@
 #!/usr/bin/env python
 """
-CP19 — atom-centroid DETECTION from the frozen renders, with the mandatory quality gate.
+atom_detection — atom-centroid DETECTION from the frozen renders, with the mandatory quality gate.
 
-This is the front end directive item 4 specified and CP17 did not build: pixels -> atom centroids.
-CP0b's triangulator (cocr.reconstruct) already goes centroids -> 3D -> spglib, but it has only ever
+This is the front end directive item 4 specified and extractor did not build: pixels -> atom centroids.
+identifiability's triangulator (cocr.reconstruct) already goes centroids -> 3D -> spglib, but it has only ever
 been fed CIF-derived coordinates, so this closes the loop.
 
 THE GATE RUNS FIRST AND IS NOT OPTIONAL. A low downstream symmetry score is uninterpretable unless
 we know whether detection itself works. Ground-truth pixel positions come from ASE's own
-PlottingVariables transform (see ledger/CP17_extractor/calibration.md — four naive projections gave
+PlottingVariables transform (see ledger/extractor/calibration.md — four naive projections gave
 0-76% before this was right), so precision/recall are computed exactly and for free.
 
 Detection: atoms are drawn as filled coloured discs with dark outlines on white. We segment on
@@ -27,7 +27,7 @@ from cocr.render import conventional_cell, VIEWS, VIEW_ORDER, _to_atoms
 
 
 def ground_truth_pixels(structure, view, px=768, supercell=(2, 2, 2), radii=0.5):
-    """Exact atom pixel centres + projected disc diameters + depth. See CP17/calibration.md.
+    """Exact atom pixel centres + projected disc diameters + depth. See extractor/calibration.md.
 
     LETTERBOXING IS LOAD-BEARING: pv.w != pv.h in general, but the canvas is square and
     matplotlib uses equal aspect, so the LARGER span sets the pixel scale and the content is

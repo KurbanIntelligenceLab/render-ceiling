@@ -7,33 +7,33 @@ separate text-reasoning study cited nowhere in this paper.
 
 | script | used for |
 |---|---|
-| `analyze_cp7b.py` | CP7b certification |
-| `build_e2_dataset.py` | CP2 SFT data |
-| `build_expert_packet.py` | CP11 expert packet (unrun) |
-| `detect_atoms.py` | CP19 atom detection |
-| `enrich_e7.py` | CP7 enrichment |
-| `eval_e2.py` | CP2 eval |
-| `eval_e3.py` | CP3/CP12 arm evaluation |
-| `extract_cell.py` | CP17 extractor |
+| `analyze_cp7b.py` | certification certification |
+| `build_e2_dataset.py` | sft_chain SFT data |
+| `build_expert_packet.py` | expert_study expert packet (unrun) |
+| `detect_atoms.py` | atom_detection atom detection |
+| `enrich_e7.py` | test_time_scaling enrichment |
+| `eval_e2.py` | sft_chain eval |
+| `eval_e3.py` | process_reward/sota_push arm evaluation |
+| `extract_cell.py` | extractor extractor |
 | `fetch_e3_structures.py` | data fetch |
-| `finish_cp18.py` | CP18 eval expansion |
-| `probe_frontier.py` | CP14/CP26/CP35/CP41/CP54 frontier + zero-shot arms |
+| `finish_cp18.py` | eval_expansion eval expansion |
+| `probe_frontier.py` | frontier_ceiling/model_sweep/stratified_frontier_expansion/no_image_control/render_convention_sweep frontier + zero-shot arms |
 | `render_e3.py` | render pipeline |
-| `run_cp31_conditions.py` | CP31 visibility-corrected oracle |
-| `run_cp52_r2.py` | CP52 rung R2 |
-| `run_cp58_transplant.py` | CP58 perception transplant |
-| `run_e0.py` | CP0 pipeline build |
-| `run_e05_oracle.py` | CP0b identifiability + the frozen box-sufficiency predicate |
-| `run_e1_zeroshot.py` | CP1 zero-shot |
-| `run_e7_tts.py` | CP7 test-time scaling |
-| `score_e7.py` | CP7 scoring |
-| `score_expert.py` | CP11 expert study (unrun) |
+| `run_cp31_conditions.py` | visibility_corrected_oracle visibility-corrected oracle |
+| `run_cp52_r2.py` | rung_R2_detector_oracle rung R2 |
+| `run_cp58_transplant.py` | perception_transplant perception transplant |
+| `run_e0.py` | pipeline pipeline build |
+| `run_e05_oracle.py` | identifiability identifiability + the frozen box-sufficiency predicate |
+| `run_e1_zeroshot.py` | zeroshot zero-shot |
+| `run_e7_tts.py` | test_time_scaling test-time scaling |
+| `score_e7.py` | test_time_scaling scoring |
+| `score_expert.py` | expert_study expert study (unrun) |
 | `test_reward_text.py` | reward function tests |
-| `train_alignn_cpu.py` | CP8 ALIGNN baseline |
-| `train_alignn_e8.py` | CP8 ALIGNN |
-| `train_e2_lora.py` | CP2 SFT training |
-| `train_e3_grpo.py` | CP3 GRPO training |
-| `train_e8_gnn.py` | CP8 coordinate GNN |
+| `train_alignn_cpu.py` | external_baselines ALIGNN baseline |
+| `train_alignn_e8.py` | external_baselines ALIGNN |
+| `train_e2_lora.py` | sft_chain SFT training |
+| `train_e3_grpo.py` | process_reward GRPO training |
+| `train_e8_gnn.py` | external_baselines coordinate GNN |
 | `verify_manuscript_numbers.py` | the verification gate |
 
 ## `src/cocr/` — the importable package
@@ -59,11 +59,11 @@ separate text-reasoning study cited nowhere in this paper.
 
 | script | figure | reads |
 |---|---|---|
-| `figures/make_fig3_noimage.py` | `noimage.png` | CP41 no-image control |
-| `figures/make_fig4_cuesuff.py` | `cuesuff.png` | CP35 cue-sufficiency contrast |
-| `figures/make_fig5_generational.py` | `generational.png` | CP36 generational comparison |
+| `figures/make_fig3_noimage.py` | `noimage.png` | no_image_control no-image control |
+| `figures/make_fig4_cuesuff.py` | `cuesuff.png` | stratified_frontier_expansion cue-sufficiency contrast |
+| `figures/make_fig5_generational.py` | `generational.png` | generational_comparison generational comparison |
 
-    python scripts/figures/make_fig3_noimage.py <ledger_dir> manuscript/figs/noimage.png
+    python manuscript/codes/make_fig3_noimage.py <ledger_dir> manuscript/render-ceiling-dd/figures/noimage.pdf
 
 Each reproduces its shipped figure byte-for-byte, which `validate_package.py` checks. The other two
 manuscript figures (`ladder.png`, `leaderboard.png`, `conditions.png`) were produced inside their

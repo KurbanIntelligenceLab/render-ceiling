@@ -58,7 +58,7 @@ CANONICAL_SETTING = (0.01, 5.0)
 
 # Production neighborhood: sweep settings near the production tolerance, EXCLUDING
 # the two extremes (tightest symprec=0.001, loosest symprec=0.1). Empirically
-# (CP0 verification, all 16 n=224 flip cases) space-group assignment is stable
+# (pipeline verification, all 16 n=224 flip cases) space-group assignment is stable
 # across this neighborhood for 15/16 flip structures; the flips occur only at the
 # tolerance extremes. A label constant across this neighborhood is the production
 # label the model would be trained/evaluated at, so neighborhood stability — not
@@ -191,7 +191,7 @@ def symprec_sweep(structure: Structure, sweep=DEFAULT_SWEEP) -> dict[str, Any]:
     # Most common SG across the sweep = tolerance-robust label.
     robust_sg = Counter(sg_numbers).most_common(1)[0][0] if sg_numbers else None
 
-    # Production-neighborhood stability (the FROZEN CP0 labeling policy).
+    # Production-neighborhood stability (the FROZEN pipeline labeling policy).
     neigh_sgs = set(r["space_group_number"] for r in results
                     if (r["symprec"], r["angle_tolerance"]) in PRODUCTION_NEIGHBORHOOD
                     and r["space_group_number"] is not None)
@@ -273,7 +273,7 @@ def make_labels(
             "tolerance_robust": (not sweep["flipped"]),  # whole-sweep (diagnostic)
         },
     }
-    # --- FROZEN CP0 LABELING POLICY (decided at CP0, do not re-litigate downstream) ---
+    # --- FROZEN pipeline LABELING POLICY (decided at pipeline, do not re-litigate downstream) ---
     # Carry the production-tolerance (canonical) label; KEEP a structure iff BOTH:
     #   (i)  neighborhood_stable — label constant across the production tolerance
     #        neighborhood (flips, if any, occur only at the tolerance extremes), AND

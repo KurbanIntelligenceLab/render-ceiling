@@ -1,11 +1,11 @@
 #!/usr/bin/env python
 """
-E7 / CP7 scoring — turns one set of K generations into every selection-rule row.
+E7 / test_time_scaling scoring — turns one set of K generations into every selection-rule row.
 
 Runs LOCALLY (CPU only) on the harvested generation files. Every row below is scored from the
 SAME samples, so any difference between rows is the selection rule and never sampling luck.
 
-THE PARTITION IS ENFORCED HERE (ledger/CP7_test_time_scaling/prereg.md). Deployable rows may
+THE PARTITION IS ENFORCED HERE (ledger/test_time_scaling/prereg.md). Deployable rows may
 read only what inference has: the emitted text, the emitted numbers, and tools applied to them.
 Oracle rows may read the sidecar. A row is labelled one or the other, never blended.
 
@@ -16,7 +16,7 @@ Oracle rows may read the sidecar. A row is labelled one or the other, never blen
     D3  tool-coupled: same as D2 but the implication is computed by spglib on a cell built from
         the EMITTED lattice parameters, rather than by our metric rules
   ORACLE
-    O1  rerank by the CP0-truth geometry-step score (the CP9 AUC 0.81 signal)
+    O1  rerank by the pipeline-truth geometry-step score (the calibration AUC 0.81 signal)
     O2  best-of-K by final correctness (absolute ceiling)
 
 Also computes the risk-coverage curve (AURC / E-AURC) with checker-score abstention, and the
