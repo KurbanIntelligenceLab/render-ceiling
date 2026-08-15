@@ -1,136 +1,126 @@
 # render-ceiling
 
-A model-free ceiling for vision–language model evaluation on rendered crystal structures.
+**A model-free ceiling for vision–language model evaluation on rendered crystal structures**
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-blue.svg)](LICENSE)
 [![Data: CC BY 4.0](https://img.shields.io/badge/data-CC%20BY%204.0-lightgrey.svg)](LICENSE-DATA)
 
-Crystal-system classification from ball-and-stick renders, measured against a model-free geometric oracle
-that establishes what the render protocol actually carries. The oracle forward-projects ground-truth atom
-positions through the same frozen cameras a model sees, discards cross-view correspondence, re-solves
-positions by ray intersection, and applies a deterministic symmetry algorithm to the result. No model
-appears anywhere in the measurement, so its accuracy is a property of the images rather than of any reader.
+Can Polat,^a Mustafa Kurban,^*bc Erchin Serpedin,^a and Hasan Kurban^*d
 
-With the extraction tolerance tied to the symmetry tolerance the oracle returns every label, so the ceiling
-is exactly 1.0000 and every point of a model's deficit is attributable to the model. Read at the released
-merge tolerance the same pipeline gives 0.9524, and the article reports both, because a ceiling quoted
-without the tolerance that produced it is not a measurement.
+^a Department of Electrical and Computer Engineering, Texas A&M University, College Station, Texas, USA
+^b Department of Prosthetics and Orthotics, Ankara University, Ankara, Turkey
+^c Department of Electrical and Computer Engineering, Texas A&M University at Qatar, Doha, Qatar
+^d College of Science and Engineering, Hamad Bin Khalifa University, Doha, Qatar
 
-The gap between that ceiling and what models achieve is the subject. Supplying exact geometry as text does
-not close it: no model reaches the oracle, the median perception share of the deficit is 0.2901, and 13 of
-14 models are limited more by what survives perception than by perception itself.
+\* Corresponding authors: kurbanm@ankara.edu.tr, hkurban@hbku.edu.qa
 
-## Reproducing the manuscript
+Submitted to *Digital Discovery* (Royal Society of Chemistry).
 
-Every figure regenerates from the records, byte-for-byte:
+## Abstract
 
-    python manuscript/codes/make_fig2_ladder.py results manuscript/render-ceiling-dd/figures/ladder.pdf
+A vision–language model that misreads a rendered crystal structure and one that misreasons about it produce the same wrong answer, and every existing method for separating them puts a second model in the loop. When a benchmark is built by rendering a structure whose coordinates are known, no model is needed: inverting the known cameras and re-solving cross-view correspondence returns the answer the images support, a quantity we call the render ceiling. We characterise exactly when that ceiling reaches 1, by an emptiness condition on a set of geometric phantoms, and certify that the condition holds on 2160 structures drawn from the Materials Project, so every point of a model's deficit is attributable to the model. Used as the top rung of an attribution ladder over fourteen vision–language models under a frozen evaluation protocol, the ceiling reverses the prevailing explanation of multimodal failure: supplying exact geometry as text lifts every model but closes the minority of the gap, leaving 13 of 14 limited more by what survives perception than by perception itself. The same instrument catches what a leaderboard cannot: a strong model used as the structure-extraction stage emits syntactically perfect coordinates whose median recall against ground truth is zero, a fabrication downstream accuracy would score as bad reasoning. The construction transfers to any benchmark whose forward rendering is known and invertible, and it returns design rules for benchmark builders: which camera placements are robust to extraction noise, and the tolerance at which a pipeline's own reading, not the images, becomes the binding ceiling.
 
-Every number in the manuscript and in the reports is checked against those records by
+## What is in this repository
 
-    python scripts/verify_manuscript_numbers.py
-    python scripts/validate_package.py .
+The code implementing the geometric oracle, the render protocol, the labelling pipeline and every analysis
+reported in the article, together with the released artifact: the render protocol, the labelling tolerances
+and sweep, the feature specification and seed for the cell-metric reference, the verbatim model prompts, the
+per-model raw request and response logs with model identifiers and generation dates, and per-structure
+predictions for every arm reported. Every accuracy in the article recomputes from those released vectors
+without API access.
 
-The second is the gate for the whole package: it re-runs all six figure generators and compares them to the
-shipped PDFs, requires every four-decimal value in the manuscript to trace to a record under `results/`, and
-refuses the repository if the merged supplementary document is stale with respect to `results/`.
+Three results orient the rest. With the extraction tolerance tied to the symmetry tolerance the oracle
+returns every label, so the ceiling is exactly 1.0000 and every point of a model's deficit is attributable
+to the model; read at the released merge tolerance the same pipeline gives 0.9524, and the article reports
+both, because a ceiling quoted without the tolerance that produced it is not a measurement. Supplying exact
+geometry as text lifts every model and closes the minority of the gap: the median perception share of the
+deficit is 0.2901 and 13 of 14 models are limited more by what survives perception than by perception
+itself. And a strong model used as the extraction stage emits syntactically perfect coordinate lists whose
+median recall against ground truth is zero, a fabrication that downstream accuracy alone would have scored
+as bad reasoning.
 
 ## Layout
 
-| folder | contents |
+| path | contents |
 |---|---|
-| `manuscript/` | `render-ceiling-dd/` — the Digital Discovery submission (`main.tex`, `si.tex`, `cover_letter.tex`, its 6 vector figures in `figures/`) — and `codes/`, the generator for each of those figures |
-| `results/INDEX.json` | run order of the experiment records, whose directory names describe what each measures rather than when it ran |
-| `reports/` | `SUPPLEMENTARY_INFORMATION.md` — the single merged document — plus `REPORT.md` (its Part I), `CONVENTIONS.md` (standalone, see below), and `sources/` holding the two documents it is built from |
-| `results/` | 54 experiment records: 99 JSON records and 91 markdown records (every pre-registration and finding) |
-| `data/` | 13 files — structures, labels and evaluation splits for all three samples (20 MB) |
-| `scripts/` | 37 top-level scripts and the 11-module `src/cocr` package; the six figure generators live in `manuscript/codes/` |
+| `manuscript/render-ceiling-dd/` | the Digital Discovery submission: `main.tex`, `si.tex`, `cover_letter.tex`, and its 6 vector figures in `figures/` |
+| `manuscript/codes/` | one generator per figure, plus the shared style module; see its README for the placement-width and panel conventions |
+| `results/` | 54 experiment records: 99 JSON records and 92 markdown records (every pre-registration and finding) |
+| `results/INDEX.json` | run order of those records, whose directory names describe what each measures rather than when it ran |
+| `reports/` | `SUPPLEMENTARY_INFORMATION.md`, the single merged document, plus `REPORT.md` (its Part I), `CONVENTIONS.md` (standalone), and `sources/` holding the two documents it is built from |
+| `data/` | 13 files: structures, labels and evaluation splits for all three samples (20 MB) |
+| `scripts/` | 37 top-level scripts and the 11-module `src/cocr` package |
 | `release/` | 82 files: per-structure prediction vectors, frozen prompts, Croissant metadata |
-| `weights/` | 25 trained LoRA adapters, 2.82 GB, git-ignored — see `weights/README.md` |
+| `weights/` | 2.82 GB of trained LoRA adapters, git-ignored; see `weights/README.md` for the manifest and sha256 |
 
-`weights/` is NOT part of the validated package: `scripts/validate_package.py` neither counts nor scans it,
-so the repository validates identically whether or not the weights are present, and `.gitignore` keeps the
-2.82 GB archive out of git. The manifest, the sha256 it was verified against, and the one cited arm that is
-NOT in the archive are documented in `weights/README.md`.
+Experiment records are named for what they measure rather than by checkpoint number. The numeric prefixes
+that earlier versions used encoded run order, which `results/INDEX.json` now carries explicitly along with
+each record's identifier in the project's own history.
 
-READ `reports/SUPPLEMENTARY_INFORMATION.md` FIRST. It is the whole project in one file, in four parts: the
-narrative report, supplementary sections S1-S14, reviewer questions answered from the records, and every
-checkpoint's pre-registration and finding verbatim. Each checkpoint section opens with a BACKED BY line
-naming the exact `results/CP*/*.json` files its claims come from, so any number traces from prose to source
-without searching — all 90 records are pointed at, and none is orphaned. The document is GENERATED, never
-edited by hand: `scripts/build_si.py` rebuilds it from `results/`, and the validator refuses the repository
-if the shipped file differs from a fresh build by one byte.
+## Reproducing
 
-The two documents under `reports/sources/` are build INPUTS, not duplicates: `PART_C_ANSWERS.md` is
-embedded as Part III, and `SUPPLEMENTARY_SECTIONS.md` is regenerated by the same code that produces Part II.
-Their content appears in full inside the merged document — verified line by line — and they are kept because
-it is regenerated from them.
+Nothing here is transcribed. Each command reads the records and rewrites its output:
 
-`reports/CONVENTIONS.md` is DIFFERENT and is the exception to that: it is a standalone document, NOT a build
-input and NOT absorbed anywhere. It records the program-wide statistical conventions the checkpoints were run
-under — how seed spread is pooled, when a paired test is required, what an accuracy must carry — and several
-pre-registrations cite it by name. None of its 204 substantive lines appears in the merged document. Deleting
-it loses content that survives nowhere else.
-
-Per-structure prediction vectors live in `release/predictions/` only. Duplicate copies that had also been
-kept under `results/` were removed after verifying every vector is byte-identical to its release copy.
-
-## Start here
-
-    python scripts/validate_package.py .
-
-Exit 0 means the repository is complete and internally consistent. Sixteen numbered checks: that every
-folder the README claims exists with the count it claims, that every checkpoint carries a finding, that
-every figure the manuscript references resolves and has a generating script, that every cross-reference and
-citation resolves, that no placeholder survived, that every four-decimal number in the manuscript and in
-every prose document traces by value to a checkpoint record, that every accuracy carries its sample and
-decode budget, that every checkpoint appears in the supplementary, that all six manuscript figures
-regenerate BYTE-FOR-BYTE from their records, that the supplementary is exactly what its generator produces
-from the current `results/`, and that the LaTeX source passes the linter.
-
-EVERY ONE OF THOSE CHECKS WAS TESTED AGAINST A DELIBERATE VIOLATION OF THE RULE IT ENFORCES; three were
-found to crash or silently pass rather than report, and were fixed. The staleness check exists because the
-shipped supplementary was once out of date against its own generator while a line-count glance read as a
-pass — so it compares bytes, not counts.
-
-## Regenerating
-
-Nothing in this repository is transcribed. Each of these reads the records and rewrites its output:
-
-    python manuscript/codes/make_fig1_leaderboard.py results manuscript/render-ceiling-dd/figures/leaderboard.pdf
-    python scripts/build_supplementary.py results reports/SUPPLEMENTARY_SECTIONS.md
+    python manuscript/codes/make_fig2_ladder.py results manuscript/render-ceiling-dd/figures/ladder.pdf
     python scripts/build_si.py . reports/SUPPLEMENTARY_INFORMATION.md
     python scripts/verify_manuscript_numbers.py
-    python scripts/lint_latex.py manuscript/cocr_iclr.tex
+    python scripts/validate_package.py .
 
-Paths are repo-relative through `scripts/_paths.py`; override the root with `RENDER_CEILING_ROOT`.
-The manuscript needs `iclr2027_conference.sty` dropped into `manuscript/` to compile — no TeX toolchain
-was available here, so the source is verified STRUCTURALLY (zero unsubstituted placeholders, all
-cross-references defined, every number traced) and has NOT been compiled. The page estimate is from a word
-count, not a rendered page count.
+Paths are repository-relative through `scripts/_paths.py`; override the root with `RENDER_CEILING_ROOT`.
+The manuscript compiles with any TeX distribution carrying the RSC article class dependencies, four
+`pdflatex` passes plus one `bibtex`.
+
+`validate_package.py` is the gate for the whole package and exit 0 means it is complete and internally
+consistent. It regenerates all 6 figures and compares them byte-for-byte against the shipped PDFs,
+requires every four-decimal number in the manuscript and in every prose document to trace by value to a
+record under `results/`, requires every accuracy to carry its sample and decode budget, checks that every
+cross-reference and citation resolves and that no placeholder survived, and refuses the repository if the
+merged supplementary document differs by one byte from what its generator produces from the current
+`results/`.
+
+Each of those checks was tested against a deliberate violation of the rule it enforces; three were found to
+crash or silently pass rather than report, and were fixed. The staleness check compares bytes rather than
+line counts because the shipped supplementary was once out of date against its own generator while a
+line-count glance read as a pass.
+
+Read `reports/SUPPLEMENTARY_INFORMATION.md` first. It is the whole project in one file, in four parts: the
+narrative report, the supplementary sections, reviewer questions answered from the records, and every
+record's pre-registration and finding verbatim. Each section opens with a line naming the exact JSON files
+its claims come from, so any number traces from prose to source without searching. The document is
+generated, never edited by hand.
+
+`reports/CONVENTIONS.md` is the exception to that: it is standalone, not a build input, and not absorbed
+anywhere. It records the program-wide statistical conventions the records were run under — how seed spread
+is pooled, when a paired test is required, what an accuracy must carry — and several pre-registrations cite
+it by name. None of its 225 substantive lines appears in the merged document.
 
 ## What is claimed, and what is not
 
-FOUR CLAIMS the package supports:
+Four claims the package supports:
 
-1. A certified-label benchmark. Labels are GENERATED rather than annotated, so the ground truth and the
+1. A certified-label benchmark. Labels are generated rather than annotated, so the ground truth and the
    ceiling come from one source. On the kept set after a tolerance quarantine, agreement with the source
    database is 220/220, whose exact one-sided 95% lower bound is 0.9865 — quoted that way rather than as
    "100% accurate".
-2. A model-free ceiling, measured on both samples, that no model arm approaches.
-3. An attribution ladder whose outcome CONTRADICTS the perception-bottleneck reading it was built to test.
+2. A model-free ceiling, measured on both evaluation samples, that no model arm approaches.
+3. An attribution ladder whose outcome contradicts the perception-bottleneck reading it was built to test.
 4. An extraction-fabrication result: a strong model emits syntactically perfect coordinate lists in which
-   half the structures have NOT ONE atom within tolerance of a real one — a failure downstream accuracy
-   alone would have attributed to reasoning.
+   half the structures have not one atom within tolerance of a real one.
 
-WHAT IS NOT CLAIMED. No improvement over any prior fine-tuned arm; the best model arm here is single-seed
-and sits inside the reference arm's own across-seed spread. No novelty for optimising a render protocol —
-that has direct prior art. No causal claim for occlusion. The render-convention model probe is
-INCONCLUSIVE rather than null: significance was unreachable in 7 of 16 paired comparisons at any outcome.
-No human-expert baseline, which is a stated limitation rather than something the package chases.
+What is not claimed. No improvement over any prior fine-tuned arm; the best model arm here is single-seed
+and sits inside the reference arm's own across-seed spread. No novelty for optimising a render protocol,
+which has direct prior art. No causal claim for occlusion. The render-convention model probe is inconclusive
+rather than null, since significance was unreachable in 7 of 16 paired comparisons at any outcome. No
+human-expert baseline, which is a stated limitation rather than something the package chases.
 
 Withdrawals, superseded values and defects found in this project's own work are in the supplementary
-VERBATIM, not summarised. 49 of the 53 checkpoints carry numeric results; the other
-4 are reasoned cuts and one subsumed checkpoint, carrying a finding but no numbers.
-27 of 53 carry a pre-registration written before the corresponding numbers existed; the rest say so
-in their own finding text rather than implying one existed.
+verbatim, not summarised. 47 of the 54 records carry numeric results; the rest are reasoned cuts and one
+subsumed record, carrying a finding but no numbers. 26 carry a pre-registration written before the
+corresponding numbers existed; the rest say so in their own finding text rather than implying one existed.
+
+## Citation
+
+See `CITATION.cff`. The code is released under the MIT licence (`LICENSE`) and the data, records and
+released artifact under CC BY 4.0 (`LICENSE-DATA`). Source structures are drawn from the Materials Project,
+which distributes its data under CC BY 4.0; attribution to the Materials Project is required for any reuse
+of the structural data.
