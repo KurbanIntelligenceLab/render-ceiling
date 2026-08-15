@@ -1,16 +1,7 @@
-# Trained adapter weights — 2.6 GB, distributed out of band.
-# weights/README.md records the manifest and the sha256 to verify a download against,
-# and is tracked; the archive itself is not.
 weights/*
 !weights/README.md
 
-# Staging area for material not referenced by the manuscript, pending deletion.
 to_be_deleted/
-
-# Rendered model inputs — 2,100 PNGs regenerated deterministically from the CIFs in
-# data/<sample>/structures.json by scripts/render_from_cifs.py, so they are a build
-# product rather than a source.
-data/*/renders/
 
 # Python
 __pycache__/
@@ -19,25 +10,8 @@ __pycache__/
 .venv/
 venv/
 
-# The manuscript itself is not published from this repository — the article is the
-# journal's to distribute. manuscript/codes/ IS tracked: the figure generators are
-# part of the reproducibility package and are what a reader runs.
-manuscript/*
-!manuscript/codes/
-!manuscript/codes/**
+docs/
 
-# LaTeX build products.
-*.aux
-*.bbl
-*.blg
-*.fdb_latexmk
-*.fls
-*.lof
-*.log
-*.lot
-*.out
-*.synctex.gz
-*.toc
 
 # OS and editor
 .DS_Store
