@@ -1,0 +1,612 @@
+{
+  "seed": 23,
+  "hardware": "ssh:rcbaseline \u2014 NVIDIA RTX 3090 (24576 MiB, ~17 GiB free at job start), 80 CPUs, 251 GiB RAM, torch 2.4.1+cu121",
+  "resolution_trained_at": "224x224 (resized from the 768px renders; ImageNet mean/std normalization; no geometry-altering augmentation)",
+  "augmentation": "none applied (script supports optional brightness/contrast jitter and autocontrast via --aug; that flag was omitted for this run). No rotation, aspect-ratio distortion, shear, or flip was used at any point, because the label is a geometric property of the cell and any of those transforms can destroy or invert it.",
+  "architectures": [
+    "resnet50 (ImageNet-initialised, torchvision ResNet50_Weights.IMAGENET1K_V2)",
+    "vit_small_patch16_224 (ImageNet-initialised, timm)"
+  ],
+  "training_protocol": {
+    "epochs": 8,
+    "batch_size": 64,
+    "lr": 0.0003,
+    "optimizer": "AdamW, weight_decay=0.01",
+    "schedule": "cosine annealing over all steps",
+    "precision": "bf16/fp16 autocast + GradScaler",
+    "unit_of_training": "each of the 5 rendered views of a structure is a separate training example carrying the structure's crystal_system label (per-view training, as specified)"
+  },
+  "split": {
+    "source": "data/primary/train.jsonl, 1610 structures",
+    "val_frac": 0.1,
+    "n_train_structures": 1449,
+    "n_val_structures": 161,
+    "val_type": "random split of the 1610 training structures (NOT composition-exclusion)",
+    "composition_exclusion_note": "data/primary/split_meta.json reserves 13 elements (Cd, Ce, Hg, In, Ir, La, Mn, Os, Re, Ru, Tc, Ti, Tl) exclusively for the eval split; every structure in data/primary/eval.jsonl and data/replication/eval.jsonl contains at least one of these elements and none of them appear in data/primary/train.jsonl. A random split of the 1610 training structures therefore validates composition-matched generalisation only. It is a legitimate check that training converged and is not overfitting to memorised structures, but it is NOT a preview of eval-set difficulty, because the eval structures differ from every training structure by construction (unseen elements). The gap between the validation accuracy and the eval accuracy below is expected under this design and should be read as a composition-shift gap, not as evidence of a flawed validation split."
+  },
+  "wall_clock_seconds": {
+    "resnet50": 153.13496899604797,
+    "vit_small": 151.6919014453888
+  },
+  "checkpoints": {
+    "resnet50": {
+      "file": "resnet50_s23.pt",
+      "sha256": "1d37092490a6e84487fa26dafb6d9949e273078885e3de304ce6cc964c602bf0",
+      "size_bytes": 94408710
+    },
+    "vit_small": {
+      "file": "vit_small_s23.pt",
+      "sha256": "66c000c96d506a50f30133a4ca914cd794ece7ba8f7f83374febd4df70e29442",
+      "size_bytes": 86732970
+    }
+  },
+  "epoch_curves": {
+    "resnet50": [
+      {
+        "epoch": 0,
+        "train_loss": 0.8365150457989853,
+        "val_loss": 0.5752629683254669,
+        "val_acc": 0.7925465838509317
+      },
+      {
+        "epoch": 1,
+        "train_loss": 0.3474390088720659,
+        "val_loss": 0.4653978448291743,
+        "val_acc": 0.8347826086956521
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.17570690668921554,
+        "val_loss": 0.4850552070180174,
+        "val_acc": 0.84472049689441
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.07851273043954794,
+        "val_loss": 0.46768977329227496,
+        "val_acc": 0.8720496894409938
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.03714772505042827,
+        "val_loss": 0.46017565224666773,
+        "val_acc": 0.8869565217391304
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.017515527414141502,
+        "val_loss": 0.4363837443685495,
+        "val_acc": 0.8956521739130435
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.00869155119675978,
+        "val_loss": 0.4290207766274117,
+        "val_acc": 0.8956521739130435
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.006349563351379032,
+        "val_loss": 0.42756046375595264,
+        "val_acc": 0.8981366459627329
+      }
+    ],
+    "vit_small": [
+      {
+        "epoch": 0,
+        "train_loss": 1.432832029013507,
+        "val_loss": 1.153851184415521,
+        "val_acc": 0.5714285714285714
+      },
+      {
+        "epoch": 1,
+        "train_loss": 0.8657320265748859,
+        "val_loss": 0.8405979644622862,
+        "val_acc": 0.7080745341614907
+      },
+      {
+        "epoch": 2,
+        "train_loss": 0.4669774247218022,
+        "val_loss": 0.7488393389475272,
+        "val_acc": 0.768944099378882
+      },
+      {
+        "epoch": 3,
+        "train_loss": 0.2246923176324473,
+        "val_loss": 0.72030717165944,
+        "val_acc": 0.8149068322981367
+      },
+      {
+        "epoch": 4,
+        "train_loss": 0.0843070233817649,
+        "val_loss": 0.9108094350891824,
+        "val_acc": 0.8099378881987578
+      },
+      {
+        "epoch": 5,
+        "train_loss": 0.022048030378280487,
+        "val_loss": 0.8161754299024617,
+        "val_acc": 0.8273291925465839
+      },
+      {
+        "epoch": 6,
+        "train_loss": 0.00556852419621649,
+        "val_loss": 0.7825568969020192,
+        "val_acc": 0.8422360248447205
+      },
+      {
+        "epoch": 7,
+        "train_loss": 0.0033973930650843982,
+        "val_loss": 0.7841116757288298,
+        "val_acc": 0.8434782608695652
+      }
+    ]
+  },
+  "validation": {
+    "resnet50": {
+      "n_structures": 161,
+      "single_view_acc": [
+        0.8881987577639752,
+        0.8757763975155279,
+        0.8944099378881988,
+        0.9006211180124224,
+        0.9316770186335404
+      ],
+      "mean_logit_acc": 0.9254658385093167,
+      "majority_vote_acc": 0.9316770186335404
+    },
+    "vit_small": {
+      "n_structures": 161,
+      "single_view_acc": [
+        0.8260869565217391,
+        0.7950310559006211,
+        0.8571428571428571,
+        0.8695652173913043,
+        0.8695652173913043
+      ],
+      "mean_logit_acc": 0.906832298136646,
+      "majority_vote_acc": 0.8944099378881988
+    }
+  },
+  "eval_e3_headline": {
+    "resnet50": {
+      "overall_mean_logit": 0.8952380952380953,
+      "overall_majority_vote": 0.8904761904761904,
+      "per_class_mean_logit": {
+        "triclinic": {
+          "n": 30,
+          "acc": 0.7333333333333333
+        },
+        "monoclinic": {
+          "n": 30,
+          "acc": 0.9333333333333333
+        },
+        "orthorhombic": {
+          "n": 30,
+          "acc": 0.9666666666666667
+        },
+        "tetragonal": {
+          "n": 30,
+          "acc": 0.8666666666666667
+        },
+        "trigonal": {
+          "n": 30,
+          "acc": 0.8333333333333334
+        },
+        "hexagonal": {
+          "n": 30,
+          "acc": 0.9333333333333333
+        },
+        "cubic": {
+          "n": 30,
+          "acc": 1.0
+        }
+      },
+      "confusion_mean_logit": [
+        [
+          22,
+          5,
+          0,
+          1,
+          2,
+          0,
+          0
+        ],
+        [
+          0,
+          28,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          29,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          3,
+          26,
+          0,
+          0,
+          1
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          25,
+          5,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          28,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          30
+        ]
+      ],
+      "hex_trig_confusion_count": 7,
+      "total_errors": 22,
+      "hex_trig_frac_of_errors": 0.3181818181818182
+    },
+    "vit_small": {
+      "overall_mean_logit": 0.8333333333333334,
+      "overall_majority_vote": 0.8380952380952381,
+      "per_class_mean_logit": {
+        "triclinic": {
+          "n": 30,
+          "acc": 0.6
+        },
+        "monoclinic": {
+          "n": 30,
+          "acc": 0.8666666666666667
+        },
+        "orthorhombic": {
+          "n": 30,
+          "acc": 0.9666666666666667
+        },
+        "tetragonal": {
+          "n": 30,
+          "acc": 0.7333333333333333
+        },
+        "trigonal": {
+          "n": 30,
+          "acc": 0.7333333333333333
+        },
+        "hexagonal": {
+          "n": 30,
+          "acc": 0.9333333333333333
+        },
+        "cubic": {
+          "n": 30,
+          "acc": 1.0
+        }
+      },
+      "confusion_mean_logit": [
+        [
+          18,
+          8,
+          0,
+          0,
+          3,
+          1,
+          0
+        ],
+        [
+          0,
+          26,
+          3,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          29,
+          1,
+          0,
+          0,
+          0
+        ],
+        [
+          0,
+          0,
+          6,
+          22,
+          0,
+          0,
+          2
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          22,
+          8,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          2,
+          28,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          30
+        ]
+      ],
+      "hex_trig_confusion_count": 10,
+      "total_errors": 35,
+      "hex_trig_frac_of_errors": 0.2857142857142857
+    }
+  },
+  "eval_e3x_replication": {
+    "resnet50": {
+      "overall_mean_logit": 0.7523809523809524,
+      "overall_majority_vote": 0.7238095238095238,
+      "per_class_mean_logit": {
+        "triclinic": {
+          "n": 34,
+          "acc": 0.8823529411764706
+        },
+        "monoclinic": {
+          "n": 29,
+          "acc": 0.7931034482758621
+        },
+        "orthorhombic": {
+          "n": 32,
+          "acc": 0.34375
+        },
+        "tetragonal": {
+          "n": 31,
+          "acc": 0.6774193548387096
+        },
+        "trigonal": {
+          "n": 30,
+          "acc": 0.9
+        },
+        "hexagonal": {
+          "n": 27,
+          "acc": 0.7037037037037037
+        },
+        "cubic": {
+          "n": 27,
+          "acc": 1.0
+        }
+      },
+      "confusion_mean_logit": [
+        [
+          30,
+          4,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          3,
+          23,
+          2,
+          0,
+          0,
+          0,
+          1
+        ],
+        [
+          1,
+          15,
+          11,
+          5,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          2,
+          7,
+          21,
+          0,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          0,
+          0,
+          27,
+          2,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          8,
+          19,
+          0
+        ],
+        [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          27
+        ]
+      ],
+      "hex_trig_confusion_count": 10,
+      "total_errors": 52,
+      "hex_trig_frac_of_errors": 0.19230769230769232
+    },
+    "vit_small": {
+      "overall_mean_logit": 0.580952380952381,
+      "overall_majority_vote": 0.5714285714285714,
+      "per_class_mean_logit": {
+        "triclinic": {
+          "n": 34,
+          "acc": 0.5588235294117647
+        },
+        "monoclinic": {
+          "n": 29,
+          "acc": 0.6551724137931034
+        },
+        "orthorhombic": {
+          "n": 32,
+          "acc": 0.1875
+        },
+        "tetragonal": {
+          "n": 31,
+          "acc": 0.6774193548387096
+        },
+        "trigonal": {
+          "n": 30,
+          "acc": 0.7666666666666667
+        },
+        "hexagonal": {
+          "n": 27,
+          "acc": 0.5925925925925926
+        },
+        "cubic": {
+          "n": 27,
+          "acc": 0.6666666666666666
+        }
+      },
+      "confusion_mean_logit": [
+        [
+          19,
+          13,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        [
+          5,
+          19,
+          4,
+          0,
+          1,
+          0,
+          0
+        ],
+        [
+          3,
+          16,
+          6,
+          4,
+          2,
+          1,
+          0
+        ],
+        [
+          1,
+          3,
+          4,
+          21,
+          2,
+          0,
+          0
+        ],
+        [
+          2,
+          1,
+          1,
+          0,
+          23,
+          3,
+          0
+        ],
+        [
+          0,
+          1,
+          0,
+          0,
+          10,
+          16,
+          0
+        ],
+        [
+          0,
+          0,
+          1,
+          8,
+          0,
+          0,
+          18
+        ]
+      ],
+      "hex_trig_confusion_count": 13,
+      "total_errors": 88,
+      "hex_trig_frac_of_errors": 0.14772727272727273
+    }
+  },
+  "reference_baselines": {
+    "seven_way_chance": 0.1429,
+    "majority_class_rate": {
+      "primary": 0.1429,
+      "replication": 0.1619
+    },
+    "shape_free_cell_metric_baseline": {
+      "primary": 0.5286,
+      "replication": 0.2476
+    },
+    "best_vlm_zeroshot_pixel_accuracy": {
+      "model": "gemini-3.6-flash",
+      "primary": 0.7333
+    },
+    "identifiability_ceiling": {
+      "primary": 1.0,
+      "replication": 0.9952
+    }
+  },
+  "headline_comparison_resnet50_mean_logit": {
+    "primary": 0.8952380952380953,
+    "replication": 0.7523809523809524,
+    "vs_chance_e3": 0.7523380952380953,
+    "vs_shape_free_e3": 0.3666380952380953,
+    "vs_best_vlm_zeroshot_e3": 0.16193809523809533,
+    "vs_ceiling_e3": -0.10476190476190472,
+    "vs_shape_free_e3x": 0.5047809523809523,
+    "vs_ceiling_e3x": -0.2428190476190476
+  }
+}

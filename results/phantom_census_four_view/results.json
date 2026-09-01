@@ -1,0 +1,76 @@
+{
+ "stage": "phantom_census_4view",
+ "branch": "four-view (and five-view) Phi_0 phantom-nonempty census at tau approx 0, needed to support or retire the fifth-camera-does-real-work claim",
+ "what": "Extends the existing 2-view/3-view Phi_0 census (option_a_frontier ck_2_3_phantoms1933) to 4-view (all C(5,4)=5 subsets) and 5-view (the full set), on both the 210-structure original evaluation sample and the 1950-structure e50 neighborhood-stable subset, at tau=1e-6 (approx 0).",
+ "samples": {
+  "e3_original_n210": {
+   "n": 210,
+   "total_pairs_by_viewcount": {
+    "2": 2100,
+    "3": 2100,
+    "4": 1050,
+    "5": 210
+   }
+  },
+  "e50_stable_n1950": {
+   "n": 1950,
+   "subsets_per_structure_2_3": 10,
+   "subsets_per_structure_4": "all 5 (exhaustive)",
+   "subsets_per_structure_5": 1
+  }
+ },
+ "census_e3_n210": {
+  "2": {
+   "total_pairs": 2100,
+   "nonempty": 305,
+   "frac_nonempty": 0.14523809523809525,
+   "total_phantoms": 6165
+  },
+  "3": {
+   "total_pairs": 2100,
+   "nonempty": 39,
+   "frac_nonempty": 0.018571428571428572,
+   "total_phantoms": 477
+  },
+  "4": {
+   "total_pairs": 1050,
+   "nonempty": 0,
+   "frac_nonempty": 0.0,
+   "total_phantoms": 0
+  },
+  "5": {
+   "total_pairs": 210,
+   "nonempty": 0,
+   "frac_nonempty": 0.0,
+   "total_phantoms": 0
+  }
+ },
+ "census_e50_n1950": {
+  "2": {
+   "total_pairs": 19500,
+   "nonempty": 3007,
+   "frac_nonempty": 0.15420512820512822,
+   "total_phantoms": 136663
+  },
+  "3": {
+   "total_pairs": 19500,
+   "nonempty": 365,
+   "frac_nonempty": 0.01871794871794872,
+   "total_phantoms": 8039
+  },
+  "4": {
+   "total_pairs": 9750,
+   "nonempty": 0,
+   "frac_nonempty": 0.0,
+   "total_phantoms": 0
+  },
+  "5": {
+   "total_pairs": 1950,
+   "nonempty": 0,
+   "frac_nonempty": 0.0,
+   "total_phantoms": 0
+  }
+ },
+ "headline": "Phantom-nonempty rate reaches exactly 0.0% at four views on BOTH samples (0/1050 on n=210; 0/9750 on n=1950), matching the five-view rate (0/210; 0/1950). The three-view rate (1.9% both samples) is the last nonzero rate; the fifth camera adds no further reduction beyond what the fourth already achieves.",
+ "provenance": "scripts/run_phantom_census_e3.py, scripts/run_phantom_census_e50.py; raw outputs raw_e3_census_all_subsets.json, raw_e50_census.json in this directory."
+}

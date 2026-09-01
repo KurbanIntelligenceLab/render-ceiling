@@ -1,0 +1,262 @@
+{
+ "note": "Run order of the experiment records. Directory names describe what each record measures rather than when it ran, so this file carries the order the names no longer encode. Every record holds a results.json; larger records keep their per-structure detail in named sibling files that the results.json points to.",
+ "n_records": 64,
+ "records": [
+  {
+   "order": 1,
+   "name": "pipeline"
+  },
+  {
+   "order": 2,
+   "name": "identifiability"
+  },
+  {
+   "order": 3,
+   "name": "resolution_audit"
+  },
+  {
+   "order": 4,
+   "name": "zeroshot"
+  },
+  {
+   "order": 5,
+   "name": "exclusion_baselines"
+  },
+  {
+   "order": 6,
+   "name": "sft_chain"
+  },
+  {
+   "order": 7,
+   "name": "process_reward"
+  },
+  {
+   "order": 8,
+   "name": "test_time_scaling"
+  },
+  {
+   "order": 9,
+   "name": "certification"
+  },
+  {
+   "order": 10,
+   "name": "external_baselines"
+  },
+  {
+   "order": 11,
+   "name": "calibration"
+  },
+  {
+   "order": 12,
+   "name": "merged_retrain"
+  },
+  {
+   "order": 13,
+   "name": "expert_study"
+  },
+  {
+   "order": 14,
+   "name": "sota_push"
+  },
+  {
+   "order": 15,
+   "name": "trigonal_hexagonal"
+  },
+  {
+   "order": 16,
+   "name": "frontier_ceiling"
+  },
+  {
+   "order": 17,
+   "name": "box_sufficiency"
+  },
+  {
+   "order": 18,
+   "name": "paired_resolution"
+  },
+  {
+   "order": 19,
+   "name": "extractor"
+  },
+  {
+   "order": 20,
+   "name": "eval_expansion"
+  },
+  {
+   "order": 21,
+   "name": "atom_detection"
+  },
+  {
+   "order": 22,
+   "name": "occlusion_manipulation"
+  },
+  {
+   "order": 23,
+   "name": "occlusion_redundancy"
+  },
+  {
+   "order": 24,
+   "name": "oracle_view_curve"
+  },
+  {
+   "order": 25,
+   "name": "depth_sufficiency"
+  },
+  {
+   "order": 26,
+   "name": "oracle_stratified"
+  },
+  {
+   "order": 27,
+   "name": "oracle_within_sample"
+  },
+  {
+   "order": 28,
+   "name": "model_sweep"
+  },
+  {
+   "order": 29,
+   "name": "classifier_refreeze"
+  },
+  {
+   "order": 30,
+   "name": "step_reward_arm_seed_hygiene"
+  },
+  {
+   "order": 31,
+   "name": "protocol_normalisation"
+  },
+  {
+   "order": 32,
+   "name": "visibility_corrected_oracle"
+  },
+  {
+   "order": 33,
+   "name": "extraction_operating_point"
+  },
+  {
+   "order": 34,
+   "name": "stratified_frontier_expansion"
+  },
+  {
+   "order": 35,
+   "name": "generational_comparison"
+  },
+  {
+   "order": 36,
+   "name": "finetuned_arm_seeds"
+  },
+  {
+   "order": 37,
+   "name": "claim_ledger"
+  },
+  {
+   "order": 38,
+   "name": "figures"
+  },
+  {
+   "order": 39,
+   "name": "limitations"
+  },
+  {
+   "order": 40,
+   "name": "no_image_control"
+  },
+  {
+   "order": 41,
+   "name": "related_work_audit"
+  },
+  {
+   "order": 42,
+   "name": "eval_scaleup"
+  },
+  {
+   "order": 43,
+   "name": "label_granularity_sweep"
+  },
+  {
+   "order": 44,
+   "name": "detector_oracle"
+  },
+  {
+   "order": 45,
+   "name": "coords_as_text"
+  },
+  {
+   "order": 46,
+   "name": "render_convention_sweep"
+  },
+  {
+   "order": 47,
+   "name": "consolidated_verification"
+  },
+  {
+   "order": 48,
+   "name": "perception_transplant"
+  },
+  {
+   "order": 49,
+   "name": "length_control"
+  },
+  {
+   "order": 50,
+   "name": "view_subset_sweep"
+  },
+  {
+   "order": 51,
+   "name": "detector_characterisation"
+  },
+  {
+   "order": 52,
+   "name": "endpoint_drift"
+  },
+  {
+   "order": 53,
+   "name": "reasoning_budget"
+  },
+  {
+   "order": 54,
+   "name": "frontier_arm_selection"
+  },
+  {
+   "order": 55,
+   "name": "ceiling_below_one"
+  },
+  {
+   "order": 56,
+   "name": "monotonicity_paired"
+  },
+  {
+   "order": 57,
+   "name": "phantom_census_four_view"
+  },
+  {
+   "order": 58,
+   "name": "conditioning_distribution"
+  },
+  {
+   "order": 59,
+   "name": "statistical_housekeeping"
+  },
+  {
+   "order": 60,
+   "name": "class_distribution_majority_baseline"
+  },
+  {
+   "order": 61,
+   "name": "replication_expansion"
+  },
+  {
+   "order": 62,
+   "name": "detector_oracle_reproduction"
+  },
+  {
+   "order": 63,
+   "name": "supervised_pixel_baseline"
+  },
+  {
+   "order": 64,
+   "name": "detector_recall_curve"
+  }
+ ]
+}

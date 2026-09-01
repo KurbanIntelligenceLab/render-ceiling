@@ -1,0 +1,216 @@
+{
+ "answerer_n": 210,
+ "strata": [
+  0.5,
+  0.625,
+  0.75,
+  0.875,
+  1.0
+ ],
+ "min_cell": 3,
+ "chains": {
+  "V2b": {
+   "per_stratum": {
+    "0.5": {
+     "agree_correct": 2,
+     "agree_n": 2,
+     "disagree_correct": 2,
+     "disagree_n": 11
+    },
+    "0.625": {
+     "agree_correct": 2,
+     "agree_n": 2,
+     "disagree_correct": 8,
+     "disagree_n": 26
+    },
+    "0.75": {
+     "agree_correct": 3,
+     "agree_n": 3,
+     "disagree_correct": 5,
+     "disagree_n": 13
+    },
+    "0.875": {
+     "agree_correct": 2,
+     "agree_n": 2,
+     "disagree_correct": 12,
+     "disagree_n": 20
+    },
+    "1.0": {
+     "agree_correct": 47,
+     "agree_n": 48,
+     "disagree_correct": 61,
+     "disagree_n": 79
+    }
+   },
+   "cmh": {
+    "z": 3.6294,
+    "common_or": 16.9918,
+    "strata_used": [
+     0.75,
+     1.0
+    ]
+   },
+   "breslow_day": {
+    "stat": 0.3178,
+    "df": 1,
+    "p": 0.58017,
+    "reject": false
+   },
+   "homogeneity_gate": "CMH reportable",
+   "coverage": 0.2714,
+   "coverage_counts": {
+    "certified": 57,
+    "population": 210,
+    "off_stratum_scored_not_certified": 4
+   },
+   "cmh_denominator": 206,
+   "acc_on_covered": 0.9825,
+   "acc_on_covered_wilson95": [
+    0.9071,
+    0.9969
+   ],
+   "lift_vs_base_rate": {
+    "k": 56,
+    "n": 57,
+    "observed": 0.9825,
+    "base_rate": 0.6905,
+    "lift": 0.292,
+    "direction": "above",
+    "one_sided_p": 1.8e-08,
+    "verdict": "significant"
+   },
+   "prediction_support": {
+    "distribution": {
+     "tetragonal": 79,
+     "cubic": 68,
+     "trigonal": 62,
+     "orthorhombic": 1
+    },
+    "systems_emitted": 4,
+    "never_emitted": [
+     "hexagonal",
+     "monoclinic",
+     "triclinic"
+    ]
+   },
+   "false_certification": {
+    "chain_wrong_n": 130,
+    "answerer_agreed_with_wrong": 1,
+    "rate": 0.0077,
+    "wilson95": [
+     0.0014,
+     0.0423
+    ]
+   }
+  },
+  "B3": {
+   "per_stratum": {
+    "0.5": {
+     "agree_correct": 2,
+     "agree_n": 2,
+     "disagree_correct": 2,
+     "disagree_n": 11
+    },
+    "0.625": {
+     "agree_correct": 2,
+     "agree_n": 2,
+     "disagree_correct": 8,
+     "disagree_n": 26
+    },
+    "0.75": {
+     "agree_correct": 4,
+     "agree_n": 4,
+     "disagree_correct": 4,
+     "disagree_n": 12
+    },
+    "0.875": {
+     "agree_correct": 2,
+     "agree_n": 3,
+     "disagree_correct": 12,
+     "disagree_n": 19
+    },
+    "1.0": {
+     "agree_correct": 18,
+     "agree_n": 20,
+     "disagree_correct": 90,
+     "disagree_n": 107
+    }
+   },
+   "cmh": {
+    "z": 1.6274,
+    "common_or": 2.5708,
+    "strata_used": [
+     0.75,
+     0.875,
+     1.0
+    ]
+   },
+   "breslow_day": {
+    "stat": 3.194,
+    "df": 2,
+    "p": 0.20046,
+    "reject": false
+   },
+   "homogeneity_gate": "CMH reportable",
+   "coverage": 0.1476,
+   "coverage_counts": {
+    "certified": 31,
+    "population": 210,
+    "off_stratum_scored_not_certified": 4
+   },
+   "cmh_denominator": 206,
+   "acc_on_covered": 0.9032,
+   "acc_on_covered_wilson95": [
+    0.751,
+    0.9665
+   ],
+   "lift_vs_base_rate": {
+    "k": 28,
+    "n": 31,
+    "observed": 0.9032,
+    "base_rate": 0.6905,
+    "lift": 0.2127,
+    "direction": "above",
+    "one_sided_p": 0.0053,
+    "verdict": "significant"
+   },
+   "prediction_support": {
+    "distribution": {
+     "tetragonal": 132,
+     "trigonal": 75,
+     "orthorhombic": 3
+    },
+    "systems_emitted": 3,
+    "never_emitted": [
+     "cubic",
+     "hexagonal",
+     "monoclinic",
+     "triclinic"
+    ]
+   },
+   "false_certification": {
+    "chain_wrong_n": 151,
+    "answerer_agreed_with_wrong": 3,
+    "rate": 0.0199,
+    "wilson95": [
+     0.0068,
+     0.0568
+    ]
+   }
+  }
+ },
+ "false_certification_comparison": {
+  "arms": [
+   "V2b",
+   "B3"
+  ],
+  "rates": [
+   0.0077,
+   0.0199
+  ],
+  "difference": 0.0122,
+  "z_pooled": 0.859,
+  "z_unpooled": 0.889,
+  "note": "z_unpooled is the headline; pooled reported alongside, conclusion unchanged"
+ }
+}

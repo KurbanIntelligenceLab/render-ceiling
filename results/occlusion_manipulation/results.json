@@ -1,0 +1,73 @@
+{
+ "stage": "occlusion_manipulation occlusion manipulation \u2014 manipulation check FAILED, no model eval run",
+ "gate": {
+  "requirement": "median occlusion materially below 0.553 before any model call",
+  "canonical_radii_0.50": 0.5183,
+  "thin_radii_0.22": 0.5,
+  "reduction": 0.0183,
+  "verdict": "FAILED"
+ },
+ "radius_sweep_median_occlusion": {
+  "n_structures": 40,
+  "note": "recomputed at the GATE's n=40; an earlier version was at n=25 and reported 0.529/0.278 at the endpoints, which conflicted with the gate's 0.5183 under the same label. Both reproduce exactly at their own n, so it was a sample-size mismatch, not a computation error.",
+  "0.50": 0.5183,
+  "0.35": 0.5,
+  "0.22": 0.5,
+  "0.12": 0.5,
+  "0.06": 0.5,
+  "0.03": 0.5
+ },
+ "cause": "viewing down a lattice vector projects 2x2x2 supercell copies onto IDENTICAL points (nearest-other-atom pixel distance 0.000); no radius separates them",
+ "decomposition_means": {
+  "exact_coincidence": 0.2363,
+  "genuine_disc_overlap": 0.2529,
+  "total": 0.4891,
+  "exhaustive_to": 1.1e-16,
+  "note": "component MEDIANS are not additive; only means are",
+  "RETIRED": "this decomposition used the FIRST 30 rows of eval.jsonl, which is ORDERED BY CRYSTAL SYSTEM (triclinic/monoclinic only). Recomputing on those 30 reproduces 0.4891, confirming the cause. Superseded by occlusion_redundancy's stratified figures: total 0.5699 (original) / 0.5900 (expansion), redundant share 66-68%. Do not circulate 0.4891 or the 48.3%/51.7% shares."
+ },
+ "consequence_for_cp19": "the 55.3% figure is correct but ~48% of it is a tiling artifact, not disc crowding; restate as 'not visible' with the two components named",
+ "branches_unread": [
+  "O1",
+  "O2",
+  "O3",
+  "O4"
+ ],
+ "not_established": "any causal claim that occlusion drives model failure",
+ "api_budget_withheld": "3 models x 210 structures x K=3 x 2 conditions",
+ "radius_sweep_mean_occlusion": {
+  "0.50": 0.4967,
+  "0.35": 0.4502,
+  "0.22": 0.4114,
+  "0.12": 0.3593,
+  "0.06": 0.3267,
+  "0.03": 0.2984,
+  "note": "the MEAN responds to radius (genuine disc overlap shrinks) while the MEDIAN does not (the coincident-copy component is radius-invariant)"
+ },
+ "caveats": {
+  "medians_are_not_additive": "Component MEDIANS are NOT additive: 0.0528 (exact coincidence) + 0.1583 (genuine disc overlap) = 0.2111, while the MEDIAN total is 0.5261. Only the MEANS are additive (0.2363 + 0.2529 = 0.4891). Quoting a component median beside a total median would be misleading, so the split is reported in MEANS only.",
+  "median_pinning": "26 of 75 measurements sit at EXACTLY 0.5000, and on those structures the nearest-other-atom PIXEL DISTANCE IS 0.000: viewing down a lattice vector stacks the 2x2x2 supercell copies onto identical projected positions, so exactly half the atoms are front copies and half are hidden back copies. No disc radius can separate them \u2014 which is why the median is radius-invariant while the mean is not.",
+  "total_0_4891_retired": "Two total-occlusion means circulated: 0.4891 here and 0.5699 in occlusion_redundancy on nominally the same sample \u2014 a 0.0808 discrepancy. TRACED: this checkpoint's decomposition used the FIRST 30 structures of eval.jsonl, and that file is ORDERED BY CRYSTAL SYSTEM, so the slice is triclinic/monoclinic only. Recomputing on exactly those 30 reproduces 0.4891 to within 0.02, confirming the cause rather than assuming it. It is the identical slice defect occlusion_redundancy documents.",
+  "which_total_to_use": "0.4891 (first-30 slice) is RETIRED. Use occlusion_redundancy's stratified figures: 0.5699 (original set) / 0.5900 (expansion set). The component shares (48.3% exact coincidence / 51.7% disc overlap) came from the same biased slice and are ALSO retired; occlusion_redundancy's stratified redundant/informative split (66-68% redundant) supersedes the whole decomposition. Only one total may appear in any circulated document, and it is occlusion_redundancy's.",
+  "no_causal_claim": "No causal claim that occlusion drives model failure is established. The pre-registered interaction test was NOT RUN because the manipulation could not create the required contrast; branches O1-O4 remain open."
+ },
+ "decomposition_medians_not_additive": {
+  "exact_coincidence_median": 0.0528,
+  "genuine_disc_overlap_median": 0.1583,
+  "sum_of_component_medians": 0.2111,
+  "median_total": 0.5261,
+  "note": "recorded ONLY to document non-additivity; do not quote these component medians as a decomposition. See caveats.medians_are_not_additive."
+ },
+ "median_pinning_counts": {
+  "at_exactly_0.5000": 26,
+  "of_measurements": 75,
+  "nearest_other_atom_pixel_distance_on_those": 0.0
+ },
+ "total_discrepancy_traced": {
+  "this_checkpoint": 0.4891,
+  "occlusion_redundancy_original_set": 0.5699,
+  "difference": 0.0808,
+  "traced_to": "this checkpoint's decomposition used the FIRST 30 rows of eval.jsonl, which is ORDERED BY CRYSTAL SYSTEM (triclinic/monoclinic only); recomputing on those 30 reproduces 0.4891 to within 0.02",
+  "resolution": "0.4891 RETIRED; use 0.5699 (original) / 0.5900 (expansion)"
+ }
+}

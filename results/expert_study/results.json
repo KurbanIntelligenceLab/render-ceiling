@@ -1,0 +1,94 @@
+{
+ "stage": "expert_study — is the 210-structure task human-solvable from the renders? NOT RUN; recorded as an open gap",
+ "status": "NOT RUN — no qualified respondent was collected. Recorded as an open gap, NOT as a result, and no substitute assertion is made anywhere in the paper.",
+ "gap": "human baseline / checkability of the render task",
+ "eval": {
+  "set": "a complete 50-structure packet: balanced sample verified representative of the eval set, blinded identifiers",
+  "protocol": "hierarchical scoring rubric, instructions, blind answer sheet, private answer key (cp11_ANSWER_KEY.json). score_expert.py written and VALIDATED against synthetic perfect, random and realistic sheets before any real sheet was scored",
+  "chance_rate": 0.1429,
+  "n_classes": 7
+ },
+ "prereg": {
+  "committed": "the protocol note carried the pre-registered predictions, and the authenticity screen was committed BEFORE the one sheet arrived",
+  "predictions": "including P3': trigonal as the single predicted human failure mode, 0/7 separable by cell outline alone",
+  "screen": "four independent authenticity diagnostics (S1 beats chance; S2 confidence tracks correctness; S3 notes not uniformly self-consistent at chance; S4 timing not on a grid), applied to every sheet",
+  "if_volunteers_materialize_later": "run as specified without modification: 50 structures, documented qualifications, inter-annotator agreement, the trigonal/hexagonal item, per-item confidence and time. The pre-registered authenticity screen applies to every sheet"
+ },
+ "results": {
+  "sheets_received": 1,
+  "sheets_admitted": 0,
+  "human_row": null,
+  "excluded_sheet": {
+   "file": "v676d1545_response_sheet_1.csv (original absolute path removed for release; identified by filename only)",
+   "n": 50,
+   "L1_correct": 9,
+   "L1_accuracy": 0.18,
+   "L1_wilson95": [
+    0.0977,
+    0.308
+   ],
+   "L3_blank_rate": 0.28,
+   "screen": {
+    "S1_beats_chance": false,
+    "S2_confidence_tracks_correctness": false,
+    "S3_notes_not_uniformly_selfconsistent_at_chance": false,
+    "S4_timing_not_on_grid": false
+   },
+   "confidence_profile": {
+    "1": 0.5,
+    "2": 0.333,
+    "3": 0.1,
+    "4": 0.077
+   },
+   "admitted": false,
+   "reason": "scored 18%, essentially the 14.3% chance rate for 7 classes, and failed all four independent authenticity diagnostics",
+   "exclusion_type": "AUTHENTICITY exclusion, not a result-based one — the distinction matters and was maintained when it would have been convenient to blur it: no sheet may be excluded for producing an inconvenient number"
+  },
+  "synthetic_validation_sheet": {
+   "file": "sheet_good.csv (synthetic control)",
+   "n": 50,
+   "L1_correct": 43,
+   "L1_accuracy": 0.86,
+   "L1_wilson95": [
+    0.7381,
+    0.9305
+   ],
+   "L3_blank_rate": 1.0,
+   "screen": {
+    "S1_beats_chance": true,
+    "S2_confidence_tracks_correctness": true,
+    "S3_notes_not_uniformly_selfconsistent_at_chance": true,
+    "S4_timing_not_on_grid": true
+   },
+   "confidence_profile": {
+    "3": 0.714,
+    "4": 0.875,
+    "5": 1.0
+   },
+   "admitted": true
+  },
+  "detail_files": {
+   "scoring_test.json": "the scorer's per-sheet output: per-system correct counts, confusion tallies, Wilson intervals and the screen decision for both sheets",
+   "cp11_ANSWER_KEY.json": "the private 50-item key (item_id, material_id, truth crystal system, b1_ok / v2b_ok / rf_ok flags, and the five view image filenames per item)"
+  }
+ },
+ "cost_to_the_paper": {
+  "unavailable_claim": "the checkability framing — 'the only row whose input a human could check by eye' — is NOT AVAILABLE, and every sentence depending on it must be DELETED rather than softened",
+  "substitute_for_the_information_question": {
+   "source": "the E0.5 oracle (identifiability)",
+   "crystal_system_recovery_from_four_frozen_views_under_ideal_atom_extraction": 0.936,
+   "why_it_helps": "it isolates information content from human skill in a way a human baseline cannot"
+  },
+  "why_the_oracle_does_not_substitute_for_human_solvability": "it assumes perfect atom localisation, which is the hard part",
+  "three_corrections_governing_how_the_bound_may_be_cited": [
+   "it is space-group 91.1% vs crystal-system 93.6%",
+   "a 280-structure sample with ZERO overlap with the eval set",
+   "4 of the 5 shipped views"
+  ],
+  "trigonal_hexagonal_record": "its trigonal/hexagonal mirror also stops short of settling this: BOTH model arms fail the same confusable pair in OPPOSITE directions, strong evidence of intrinsic render ambiguity, but only a human who separates the pair cleanly would prove the information is present and the failure is the models'"
+ },
+ "required_limitations_sentence": "No human baseline was collected. The oracle bound substitutes for the information question; the checkability claim is not made.",
+ "reconciliation": "0.9321 -> 0.9357: the identifiability harness was rerun to record box-sufficiency per row; the rerun's 4-view value is 0.9357 (262/280) against the original 0.9321 (261/280). One structure of 280; the harness draws from a LIVE database so the seed fixes draw order, not the candidate pool. 0.9357 is the current value.",
+ "conclusion": "No human baseline exists. The instrument is complete and validated and the single sheet received was excluded under a pre-registered authenticity screen it failed on all four diagnostics (18% accuracy, at the 14.3% chance rate). The checkability claim is withdrawn from the paper rather than softened; the oracle answers only the information question, not human solvability.",
+ "_provenance": "the 50-structure packet, protocol and private key built for this record; score_expert.py validated on synthetic sheets before scoring; per-sheet output in scoring_test.json, key in cp11_ANSWER_KEY.json"
+}

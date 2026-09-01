@@ -1,0 +1,1127 @@
+{
+ "summary": {
+  "n_structures": 28,
+  "n_view_measurements": 84,
+  "precision": {
+   "median": 0.23329317553681525,
+   "mean": 0.35677401804567516
+  },
+  "recall": {
+   "median": 0.4,
+   "mean": 0.3899015172423302
+  },
+  "centroid_err_px": {
+   "median": 0.7170608281003528
+  },
+  "overlap_covariate": {
+   "median": 0.5527777777777778
+  },
+  "recall_vs_overlap_corr": -0.792,
+  "recall_vs_atomcount_corr": -0.411,
+  "tercile": {
+   "low_overlap": {
+    "recall": 0.528,
+    "precision": 0.383
+   },
+   "high_overlap": {
+    "recall": 0.239,
+    "precision": 0.36
+   }
+  },
+  "withdrawn": "max_recall = 1 - overlap ceiling estimate: 6/84 measurements exceed it, so the overlap proxy overcounts occlusion; usable as an ordinal covariate only"
+ },
+ "records": [
+  {
+   "material_id": "mp-1885",
+   "truth": "cubic",
+   "views": {
+    "axis_a": {
+     "n_gt": 16,
+     "n_det": 85,
+     "tp": 8,
+     "fp": 77,
+     "fn": 8,
+     "precision": 0.09411764705882353,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7128634441272568,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 16,
+     "n_det": 85,
+     "tp": 8,
+     "fp": 77,
+     "fn": 8,
+     "precision": 0.09411764705882353,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7079769205508217,
+     "overlap_covariate": 0.5
+    },
+    "axis_c": {
+     "n_gt": 16,
+     "n_det": 85,
+     "tp": 8,
+     "fp": 77,
+     "fn": 8,
+     "precision": 0.09411764705882353,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7106878942133436,
+     "overlap_covariate": 0.5
+    }
+   }
+  },
+  {
+   "material_id": "mp-1183136",
+   "truth": "cubic",
+   "views": {
+    "axis_a": {
+     "n_gt": 128,
+     "n_det": 162,
+     "tp": 32,
+     "fp": 130,
+     "fn": 96,
+     "precision": 0.19753086419753085,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.7166269149557003,
+     "overlap_covariate": 0.75
+    },
+    "axis_b": {
+     "n_gt": 128,
+     "n_det": 163,
+     "tp": 32,
+     "fp": 131,
+     "fn": 96,
+     "precision": 0.19631901840490798,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.7084872560836495,
+     "overlap_covariate": 0.75
+    },
+    "axis_c": {
+     "n_gt": 128,
+     "n_det": 163,
+     "tp": 32,
+     "fp": 131,
+     "fn": 96,
+     "precision": 0.19631901840490798,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.708244822723417,
+     "overlap_covariate": 0.75
+    }
+   }
+  },
+  {
+   "material_id": "mp-866031",
+   "truth": "cubic",
+   "views": {
+    "axis_a": {
+     "n_gt": 128,
+     "n_det": 171,
+     "tp": 32,
+     "fp": 139,
+     "fn": 96,
+     "precision": 0.1871345029239766,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.7096615354566262,
+     "overlap_covariate": 0.75
+    },
+    "axis_b": {
+     "n_gt": 128,
+     "n_det": 170,
+     "tp": 32,
+     "fp": 138,
+     "fn": 96,
+     "precision": 0.18823529411764706,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.7091134800633979,
+     "overlap_covariate": 0.75
+    },
+    "axis_c": {
+     "n_gt": 128,
+     "n_det": 170,
+     "tp": 32,
+     "fp": 138,
+     "fn": 96,
+     "precision": 0.18823529411764706,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.7082880574017023,
+     "overlap_covariate": 0.75
+    }
+   }
+  },
+  {
+   "material_id": "mp-756317",
+   "truth": "cubic",
+   "views": {
+    "axis_a": {
+     "n_gt": 448,
+     "n_det": 287,
+     "tp": 96,
+     "fp": 191,
+     "fn": 352,
+     "precision": 0.3344947735191638,
+     "recall": 0.21428571428571427,
+     "median_centroid_err_px": 0.69296936696154,
+     "overlap_covariate": 0.75
+    },
+    "axis_b": {
+     "n_gt": 448,
+     "n_det": 288,
+     "tp": 96,
+     "fp": 192,
+     "fn": 352,
+     "precision": 0.3333333333333333,
+     "recall": 0.21428571428571427,
+     "median_centroid_err_px": 0.7186791697113502,
+     "overlap_covariate": 0.75
+    },
+    "axis_c": {
+     "n_gt": 448,
+     "n_det": 288,
+     "tp": 96,
+     "fp": 192,
+     "fn": 352,
+     "precision": 0.3333333333333333,
+     "recall": 0.21428571428571427,
+     "median_centroid_err_px": 0.7150794596768705,
+     "overlap_covariate": 0.75
+    }
+   }
+  },
+  {
+   "material_id": "mp-985290",
+   "truth": "hexagonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 16,
+     "n_det": 208,
+     "tp": 12,
+     "fp": 196,
+     "fn": 4,
+     "precision": 0.057692307692307696,
+     "recall": 0.75,
+     "median_centroid_err_px": 0.6945304655702398,
+     "overlap_covariate": 0.25
+    },
+    "axis_b": {
+     "n_gt": 16,
+     "n_det": 167,
+     "tp": 12,
+     "fp": 155,
+     "fn": 4,
+     "precision": 0.0718562874251497,
+     "recall": 0.75,
+     "median_centroid_err_px": 0.7714203802254178,
+     "overlap_covariate": 0.25
+    },
+    "axis_c": {
+     "n_gt": 16,
+     "n_det": 12,
+     "tp": 8,
+     "fp": 4,
+     "fn": 8,
+     "precision": 0.6666666666666666,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7238025032628703,
+     "overlap_covariate": 0.5
+    }
+   }
+  },
+  {
+   "material_id": "mp-1183051",
+   "truth": "hexagonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 64,
+     "n_det": 280,
+     "tp": 32,
+     "fp": 248,
+     "fn": 32,
+     "precision": 0.11428571428571428,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7136205278056826,
+     "overlap_covariate": 0.5625
+    },
+    "axis_b": {
+     "n_gt": 64,
+     "n_det": 273,
+     "tp": 32,
+     "fp": 241,
+     "fn": 32,
+     "precision": 0.11721611721611722,
+     "recall": 0.5,
+     "median_centroid_err_px": 1.1501227773063039,
+     "overlap_covariate": 0.5625
+    },
+    "axis_c": {
+     "n_gt": 64,
+     "n_det": 32,
+     "tp": 32,
+     "fp": 0,
+     "fn": 32,
+     "precision": 1.0,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7074254662070492,
+     "overlap_covariate": 0.5
+    }
+   }
+  },
+  {
+   "material_id": "mp-2217621",
+   "truth": "hexagonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 88,
+     "n_det": 265,
+     "tp": 40,
+     "fp": 225,
+     "fn": 48,
+     "precision": 0.1509433962264151,
+     "recall": 0.45454545454545453,
+     "median_centroid_err_px": 0.7563857902976594,
+     "overlap_covariate": 0.4772727272727273
+    },
+    "axis_b": {
+     "n_gt": 88,
+     "n_det": 185,
+     "tp": 37,
+     "fp": 148,
+     "fn": 51,
+     "precision": 0.2,
+     "recall": 0.42045454545454547,
+     "median_centroid_err_px": 0.8677053168408042,
+     "overlap_covariate": 0.5227272727272727
+    },
+    "axis_c": {
+     "n_gt": 88,
+     "n_det": 36,
+     "tp": 36,
+     "fp": 0,
+     "fn": 52,
+     "precision": 1.0,
+     "recall": 0.4090909090909091,
+     "median_centroid_err_px": 0.7078128242989514,
+     "overlap_covariate": 0.5909090909090909
+    }
+   }
+  },
+  {
+   "material_id": "mp-1188147",
+   "truth": "hexagonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 160,
+     "n_det": 283,
+     "tp": 92,
+     "fp": 191,
+     "fn": 68,
+     "precision": 0.3250883392226148,
+     "recall": 0.575,
+     "median_centroid_err_px": 0.7112692622673142,
+     "overlap_covariate": 0.425
+    },
+    "axis_b": {
+     "n_gt": 160,
+     "n_det": 220,
+     "tp": 51,
+     "fp": 169,
+     "fn": 109,
+     "precision": 0.2318181818181818,
+     "recall": 0.31875,
+     "median_centroid_err_px": 0.7331124105456523,
+     "overlap_covariate": 0.575
+    },
+    "axis_c": {
+     "n_gt": 160,
+     "n_det": 40,
+     "tp": 40,
+     "fp": 0,
+     "fn": 120,
+     "precision": 1.0,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.7107146794165826,
+     "overlap_covariate": 0.775
+    }
+   }
+  },
+  {
+   "material_id": "mp-1228753",
+   "truth": "monoclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 48,
+     "n_det": 103,
+     "tp": 24,
+     "fp": 79,
+     "fn": 24,
+     "precision": 0.23300970873786409,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.708714845582244,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 48,
+     "n_det": 114,
+     "tp": 24,
+     "fp": 90,
+     "fn": 24,
+     "precision": 0.21052631578947367,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7088981825229108,
+     "overlap_covariate": 0.5
+    },
+    "axis_c": {
+     "n_gt": 48,
+     "n_det": 125,
+     "tp": 19,
+     "fp": 106,
+     "fn": 29,
+     "precision": 0.152,
+     "recall": 0.3958333333333333,
+     "median_centroid_err_px": 9.708170178418687,
+     "overlap_covariate": 0.5
+    }
+   }
+  },
+  {
+   "material_id": "mp-1228427",
+   "truth": "monoclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 160,
+     "n_det": 106,
+     "tp": 60,
+     "fp": 46,
+     "fn": 100,
+     "precision": 0.5660377358490566,
+     "recall": 0.375,
+     "median_centroid_err_px": 0.8880336947547472,
+     "overlap_covariate": 0.55
+    },
+    "axis_b": {
+     "n_gt": 160,
+     "n_det": 200,
+     "tp": 68,
+     "fp": 132,
+     "fn": 92,
+     "precision": 0.34,
+     "recall": 0.425,
+     "median_centroid_err_px": 0.7067640388325965,
+     "overlap_covariate": 0.575
+    },
+    "axis_c": {
+     "n_gt": 160,
+     "n_det": 204,
+     "tp": 58,
+     "fp": 146,
+     "fn": 102,
+     "precision": 0.28431372549019607,
+     "recall": 0.3625,
+     "median_centroid_err_px": 0.7754702585119936,
+     "overlap_covariate": 0.6375
+    }
+   }
+  },
+  {
+   "material_id": "mp-1214987",
+   "truth": "monoclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 192,
+     "n_det": 200,
+     "tp": 96,
+     "fp": 104,
+     "fn": 96,
+     "precision": 0.48,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7162788826005604,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 192,
+     "n_det": 191,
+     "tp": 39,
+     "fp": 152,
+     "fn": 153,
+     "precision": 0.20418848167539266,
+     "recall": 0.203125,
+     "median_centroid_err_px": 17.35359389946975,
+     "overlap_covariate": 0.5833333333333334
+    },
+    "axis_c": {
+     "n_gt": 192,
+     "n_det": 300,
+     "tp": 66,
+     "fp": 234,
+     "fn": 126,
+     "precision": 0.22,
+     "recall": 0.34375,
+     "median_centroid_err_px": 6.0225575348580485,
+     "overlap_covariate": 0.3020833333333333
+    }
+   }
+  },
+  {
+   "material_id": "mp-752827",
+   "truth": "monoclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 288,
+     "n_det": 161,
+     "tp": 90,
+     "fp": 71,
+     "fn": 198,
+     "precision": 0.5590062111801242,
+     "recall": 0.3125,
+     "median_centroid_err_px": 0.743226517304491,
+     "overlap_covariate": 0.6111111111111112
+    },
+    "axis_b": {
+     "n_gt": 288,
+     "n_det": 203,
+     "tp": 38,
+     "fp": 165,
+     "fn": 250,
+     "precision": 0.18719211822660098,
+     "recall": 0.13194444444444445,
+     "median_centroid_err_px": 3.3779386344082667,
+     "overlap_covariate": 0.6111111111111112
+    },
+    "axis_c": {
+     "n_gt": 288,
+     "n_det": 269,
+     "tp": 41,
+     "fp": 228,
+     "fn": 247,
+     "precision": 0.1524163568773234,
+     "recall": 0.1423611111111111,
+     "median_centroid_err_px": 0.8821212196488889,
+     "overlap_covariate": 0.4236111111111111
+    }
+   }
+  },
+  {
+   "material_id": "mp-1258701",
+   "truth": "orthorhombic",
+   "views": {
+    "axis_a": {
+     "n_gt": 64,
+     "n_det": 253,
+     "tp": 32,
+     "fp": 221,
+     "fn": 32,
+     "precision": 0.12648221343873517,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7078519991660357,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 64,
+     "n_det": 170,
+     "tp": 8,
+     "fp": 162,
+     "fn": 56,
+     "precision": 0.047058823529411764,
+     "recall": 0.125,
+     "median_centroid_err_px": 0.7074694599510034,
+     "overlap_covariate": 0.875
+    },
+    "axis_c": {
+     "n_gt": 64,
+     "n_det": 137,
+     "tp": 32,
+     "fp": 105,
+     "fn": 32,
+     "precision": 0.23357664233576642,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7133307093232624,
+     "overlap_covariate": 0.5
+    }
+   }
+  },
+  {
+   "material_id": "mp-1097296",
+   "truth": "orthorhombic",
+   "views": {
+    "axis_a": {
+     "n_gt": 64,
+     "n_det": 161,
+     "tp": 8,
+     "fp": 153,
+     "fn": 56,
+     "precision": 0.049689440993788817,
+     "recall": 0.125,
+     "median_centroid_err_px": 0.7193760808229543,
+     "overlap_covariate": 0.875
+    },
+    "axis_b": {
+     "n_gt": 64,
+     "n_det": 168,
+     "tp": 32,
+     "fp": 136,
+     "fn": 32,
+     "precision": 0.19047619047619047,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.717234132153968,
+     "overlap_covariate": 0.5
+    },
+    "axis_c": {
+     "n_gt": 64,
+     "n_det": 253,
+     "tp": 32,
+     "fp": 221,
+     "fn": 32,
+     "precision": 0.12648221343873517,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7302812713326002,
+     "overlap_covariate": 0.5
+    }
+   }
+  },
+  {
+   "material_id": "mp-560067",
+   "truth": "orthorhombic",
+   "views": {
+    "axis_a": {
+     "n_gt": 128,
+     "n_det": 270,
+     "tp": 53,
+     "fp": 217,
+     "fn": 75,
+     "precision": 0.1962962962962963,
+     "recall": 0.4140625,
+     "median_centroid_err_px": 0.7280909433076853,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 128,
+     "n_det": 156,
+     "tp": 42,
+     "fp": 114,
+     "fn": 86,
+     "precision": 0.2692307692307692,
+     "recall": 0.328125,
+     "median_centroid_err_px": 0.7125567956484964,
+     "overlap_covariate": 0.671875
+    },
+    "axis_c": {
+     "n_gt": 128,
+     "n_det": 165,
+     "tp": 34,
+     "fp": 131,
+     "fn": 94,
+     "precision": 0.20606060606060606,
+     "recall": 0.265625,
+     "median_centroid_err_px": 1.104899060150562,
+     "overlap_covariate": 0.734375
+    }
+   }
+  },
+  {
+   "material_id": "mp-1182863",
+   "truth": "orthorhombic",
+   "views": {
+    "axis_a": {
+     "n_gt": 288,
+     "n_det": 250,
+     "tp": 100,
+     "fp": 150,
+     "fn": 188,
+     "precision": 0.4,
+     "recall": 0.3472222222222222,
+     "median_centroid_err_px": 0.7644618585615348,
+     "overlap_covariate": 0.6319444444444444
+    },
+    "axis_b": {
+     "n_gt": 288,
+     "n_det": 241,
+     "tp": 80,
+     "fp": 161,
+     "fn": 208,
+     "precision": 0.33195020746887965,
+     "recall": 0.2777777777777778,
+     "median_centroid_err_px": 0.7178105325926796,
+     "overlap_covariate": 0.7222222222222222
+    },
+    "axis_c": {
+     "n_gt": 288,
+     "n_det": 276,
+     "tp": 85,
+     "fp": 191,
+     "fn": 203,
+     "precision": 0.3079710144927536,
+     "recall": 0.2951388888888889,
+     "median_centroid_err_px": 0.7288334464497654,
+     "overlap_covariate": 0.7083333333333334
+    }
+   }
+  },
+  {
+   "material_id": "mp-1228890",
+   "truth": "tetragonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 32,
+     "n_det": 139,
+     "tp": 16,
+     "fp": 123,
+     "fn": 16,
+     "precision": 0.11510791366906475,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7203459003793289,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 32,
+     "n_det": 139,
+     "tp": 16,
+     "fp": 123,
+     "fn": 16,
+     "precision": 0.11510791366906475,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7138492252945882,
+     "overlap_covariate": 0.5
+    },
+    "axis_c": {
+     "n_gt": 32,
+     "n_det": 113,
+     "tp": 16,
+     "fp": 97,
+     "fn": 16,
+     "precision": 0.1415929203539823,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7114066141475096,
+     "overlap_covariate": 0.5
+    }
+   }
+  },
+  {
+   "material_id": "mp-22412",
+   "truth": "tetragonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 80,
+     "n_det": 196,
+     "tp": 40,
+     "fp": 156,
+     "fn": 40,
+     "precision": 0.20408163265306123,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.712239969071498,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 80,
+     "n_det": 195,
+     "tp": 40,
+     "fp": 155,
+     "fn": 40,
+     "precision": 0.20512820512820512,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7053760408920371,
+     "overlap_covariate": 0.5
+    },
+    "axis_c": {
+     "n_gt": 80,
+     "n_det": 107,
+     "tp": 20,
+     "fp": 87,
+     "fn": 60,
+     "precision": 0.18691588785046728,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.7108129135022513,
+     "overlap_covariate": 0.8
+    }
+   }
+  },
+  {
+   "material_id": "mp-3038",
+   "truth": "tetragonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 112,
+     "n_det": 232,
+     "tp": 56,
+     "fp": 176,
+     "fn": 56,
+     "precision": 0.2413793103448276,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.7153957521689869,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 112,
+     "n_det": 230,
+     "tp": 56,
+     "fp": 174,
+     "fn": 56,
+     "precision": 0.24347826086956523,
+     "recall": 0.5,
+     "median_centroid_err_px": 0.695110849743938,
+     "overlap_covariate": 0.5
+    },
+    "axis_c": {
+     "n_gt": 112,
+     "n_det": 159,
+     "tp": 36,
+     "fp": 123,
+     "fn": 76,
+     "precision": 0.22641509433962265,
+     "recall": 0.32142857142857145,
+     "median_centroid_err_px": 0.7548339089348826,
+     "overlap_covariate": 0.7142857142857143
+    }
+   }
+  },
+  {
+   "material_id": "mp-1189716",
+   "truth": "tetragonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 320,
+     "n_det": 265,
+     "tp": 137,
+     "fp": 128,
+     "fn": 183,
+     "precision": 0.5169811320754717,
+     "recall": 0.428125,
+     "median_centroid_err_px": 0.7270724217870794,
+     "overlap_covariate": 0.525
+    },
+    "axis_b": {
+     "n_gt": 320,
+     "n_det": 260,
+     "tp": 133,
+     "fp": 127,
+     "fn": 187,
+     "precision": 0.5115384615384615,
+     "recall": 0.415625,
+     "median_centroid_err_px": 0.7140428710306799,
+     "overlap_covariate": 0.5625
+    },
+    "axis_c": {
+     "n_gt": 320,
+     "n_det": 354,
+     "tp": 136,
+     "fp": 218,
+     "fn": 184,
+     "precision": 0.384180790960452,
+     "recall": 0.425,
+     "median_centroid_err_px": 0.7074167427335041,
+     "overlap_covariate": 0.575
+    }
+   }
+  },
+  {
+   "material_id": "mp-2225355",
+   "truth": "triclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 48,
+     "n_det": 73,
+     "tp": 22,
+     "fp": 51,
+     "fn": 26,
+     "precision": 0.3013698630136986,
+     "recall": 0.4583333333333333,
+     "median_centroid_err_px": 0.7151385558028385,
+     "overlap_covariate": 0.5
+    },
+    "axis_b": {
+     "n_gt": 48,
+     "n_det": 69,
+     "tp": 16,
+     "fp": 53,
+     "fn": 32,
+     "precision": 0.2318840579710145,
+     "recall": 0.3333333333333333,
+     "median_centroid_err_px": 1.2206938980735185,
+     "overlap_covariate": 0.5833333333333334
+    },
+    "axis_c": {
+     "n_gt": 48,
+     "n_det": 145,
+     "tp": 26,
+     "fp": 119,
+     "fn": 22,
+     "precision": 0.1793103448275862,
+     "recall": 0.5416666666666666,
+     "median_centroid_err_px": 0.8077523303925171,
+     "overlap_covariate": 0.375
+    }
+   }
+  },
+  {
+   "material_id": "mp-1235466",
+   "truth": "triclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 120,
+     "n_det": 100,
+     "tp": 35,
+     "fp": 65,
+     "fn": 85,
+     "precision": 0.35,
+     "recall": 0.2916666666666667,
+     "median_centroid_err_px": 1.5218849107448973,
+     "overlap_covariate": 0.65
+    },
+    "axis_b": {
+     "n_gt": 120,
+     "n_det": 123,
+     "tp": 36,
+     "fp": 87,
+     "fn": 84,
+     "precision": 0.2926829268292683,
+     "recall": 0.3,
+     "median_centroid_err_px": 1.1153367577382571,
+     "overlap_covariate": 0.20833333333333334
+    },
+    "axis_c": {
+     "n_gt": 120,
+     "n_det": 127,
+     "tp": 30,
+     "fp": 97,
+     "fn": 90,
+     "precision": 0.23622047244094488,
+     "recall": 0.25,
+     "median_centroid_err_px": 0.8660868807493372,
+     "overlap_covariate": 0.31666666666666665
+    }
+   }
+  },
+  {
+   "material_id": "mp-1275776",
+   "truth": "triclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 144,
+     "n_det": 88,
+     "tp": 40,
+     "fp": 48,
+     "fn": 104,
+     "precision": 0.45454545454545453,
+     "recall": 0.2777777777777778,
+     "median_centroid_err_px": 0.7108877259132628,
+     "overlap_covariate": 0.6666666666666666
+    },
+    "axis_b": {
+     "n_gt": 144,
+     "n_det": 75,
+     "tp": 37,
+     "fp": 38,
+     "fn": 107,
+     "precision": 0.49333333333333335,
+     "recall": 0.2569444444444444,
+     "median_centroid_err_px": 6.572891852510265,
+     "overlap_covariate": 0.5555555555555556
+    },
+    "axis_c": {
+     "n_gt": 144,
+     "n_det": 168,
+     "tp": 50,
+     "fp": 118,
+     "fn": 94,
+     "precision": 0.2976190476190476,
+     "recall": 0.3472222222222222,
+     "median_centroid_err_px": 3.7235904733807836,
+     "overlap_covariate": 0.5833333333333334
+    }
+   }
+  },
+  {
+   "material_id": "mp-1046939",
+   "truth": "triclinic",
+   "views": {
+    "axis_a": {
+     "n_gt": 160,
+     "n_det": 65,
+     "tp": 64,
+     "fp": 1,
+     "fn": 96,
+     "precision": 0.9846153846153847,
+     "recall": 0.4,
+     "median_centroid_err_px": 0.7061019408932903,
+     "overlap_covariate": 0.6
+    },
+    "axis_b": {
+     "n_gt": 160,
+     "n_det": 67,
+     "tp": 64,
+     "fp": 3,
+     "fn": 96,
+     "precision": 0.9552238805970149,
+     "recall": 0.4,
+     "median_centroid_err_px": 0.6973062516773101,
+     "overlap_covariate": 0.6
+    },
+    "axis_c": {
+     "n_gt": 160,
+     "n_det": 192,
+     "tp": 26,
+     "fp": 166,
+     "fn": 134,
+     "precision": 0.13541666666666666,
+     "recall": 0.1625,
+     "median_centroid_err_px": 1.3693358119503485,
+     "overlap_covariate": 0.85625
+    }
+   }
+  },
+  {
+   "material_id": "mp-8279",
+   "truth": "trigonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 40,
+     "n_det": 259,
+     "tp": 30,
+     "fp": 229,
+     "fn": 10,
+     "precision": 0.11583011583011583,
+     "recall": 0.75,
+     "median_centroid_err_px": 0.7281820212587702,
+     "overlap_covariate": 0.25
+    },
+    "axis_b": {
+     "n_gt": 40,
+     "n_det": 135,
+     "tp": 18,
+     "fp": 117,
+     "fn": 22,
+     "precision": 0.13333333333333333,
+     "recall": 0.45,
+     "median_centroid_err_px": 10.325565408844245,
+     "overlap_covariate": 0.25
+    },
+    "axis_c": {
+     "n_gt": 40,
+     "n_det": 14,
+     "tp": 12,
+     "fp": 2,
+     "fn": 28,
+     "precision": 0.8571428571428571,
+     "recall": 0.3,
+     "median_centroid_err_px": 0.7160219702655644,
+     "overlap_covariate": 0.7
+    }
+   }
+  },
+  {
+   "material_id": "mp-1228925",
+   "truth": "trigonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 96,
+     "n_det": 81,
+     "tp": 72,
+     "fp": 9,
+     "fn": 24,
+     "precision": 0.8888888888888888,
+     "recall": 0.75,
+     "median_centroid_err_px": 0.7051034857324009,
+     "overlap_covariate": 0.25
+    },
+    "axis_b": {
+     "n_gt": 96,
+     "n_det": 105,
+     "tp": 68,
+     "fp": 37,
+     "fn": 28,
+     "precision": 0.6476190476190476,
+     "recall": 0.7083333333333334,
+     "median_centroid_err_px": 1.3150572111729306,
+     "overlap_covariate": 0.25
+    },
+    "axis_c": {
+     "n_gt": 96,
+     "n_det": 13,
+     "tp": 12,
+     "fp": 1,
+     "fn": 84,
+     "precision": 0.9230769230769231,
+     "recall": 0.125,
+     "median_centroid_err_px": 0.7168875240467375,
+     "overlap_covariate": 0.875
+    }
+   }
+  },
+  {
+   "material_id": "mp-1228995",
+   "truth": "trigonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 168,
+     "n_det": 134,
+     "tp": 126,
+     "fp": 8,
+     "fn": 42,
+     "precision": 0.9402985074626866,
+     "recall": 0.75,
+     "median_centroid_err_px": 0.7141845459111607,
+     "overlap_covariate": 0.25
+    },
+    "axis_b": {
+     "n_gt": 168,
+     "n_det": 118,
+     "tp": 100,
+     "fp": 18,
+     "fn": 68,
+     "precision": 0.847457627118644,
+     "recall": 0.5952380952380952,
+     "median_centroid_err_px": 0.7280835321658958,
+     "overlap_covariate": 0.35119047619047616
+    },
+    "axis_c": {
+     "n_gt": 168,
+     "n_det": 30,
+     "tp": 16,
+     "fp": 14,
+     "fn": 152,
+     "precision": 0.5333333333333333,
+     "recall": 0.09523809523809523,
+     "median_centroid_err_px": 0.7214739685465454,
+     "overlap_covariate": 0.9285714285714286
+    }
+   }
+  },
+  {
+   "material_id": "mp-1228180",
+   "truth": "trigonal",
+   "views": {
+    "axis_a": {
+     "n_gt": 456,
+     "n_det": 282,
+     "tp": 214,
+     "fp": 68,
+     "fn": 242,
+     "precision": 0.7588652482269503,
+     "recall": 0.4692982456140351,
+     "median_centroid_err_px": 0.7235568673737593,
+     "overlap_covariate": 0.5087719298245614
+    },
+    "axis_b": {
+     "n_gt": 456,
+     "n_det": 180,
+     "tp": 157,
+     "fp": 23,
+     "fn": 299,
+     "precision": 0.8722222222222222,
+     "recall": 0.3442982456140351,
+     "median_centroid_err_px": 0.8728032806352853,
+     "overlap_covariate": 0.4780701754385965
+    },
+    "axis_c": {
+     "n_gt": 456,
+     "n_det": 52,
+     "tp": 52,
+     "fp": 0,
+     "fn": 404,
+     "precision": 1.0,
+     "recall": 0.11403508771929824,
+     "median_centroid_err_px": 0.7920661714624486,
+     "overlap_covariate": 0.8859649122807017
+    }
+   }
+  }
+ ]
+}

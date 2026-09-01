@@ -1,0 +1,132 @@
+{
+ "stage": "view_subset_sweep — testing Corollary 3(a)'s prediction that R1 is non-decreasing in the view set, over every 2-to-5-view subset of the frozen camera set",
+ "status": "DONE. THE PREDICTION HOLDS IN AGGREGATE AT 103 OF 105 NESTED PAIRS, AND THE TWO EXCEPTIONS ARE REAL RATHER THAN NOISE. Reported as measured, with the violation mechanism identified.",
+ "gap": "Corollary 3(a) proves R1 is non-decreasing in the view set at tau = 0 — a falsifiable prediction of the paper's own theory, previously untested (audit gap G2 / red flag R10)",
+ "eval": {
+  "set": "the 210-structure original evaluation sample read from data/primary/structures.json — the same 210 structures every other arm in the paper is scored on, deliberately the local sample so the numbers are comparable to the ladder rather than to a fresh draw",
+  "why_local": "oracle_view_curve ran an earlier view curve through the live database query and recorded that 21 of 280 material_ids changed between two runs at the same seed, because the seed fixes the draw order and not the candidate pool",
+  "protocol": "the ideal-extraction oracle over every view subset of size 2-5 drawn from the frozen five-camera set (axis_a, axis_b, axis_c, body_diagonal, oblique2) = 26 subsets; symprec 0.01, angle tolerance 5.0, ray tolerance 0.15 A",
+  "cost": "zero API calls; 5460 reconstructions in 15 s on 10 CPU processes",
+  "structure_level_errors": 0,
+  "reproduce": "python scripts/run_viewsweep.py (rc-analysis env; pymatgen + spglib 2.7.0; CPU only)"
+ },
+ "results": {
+  "curve_by_view_count": {
+   "2": {
+    "subsets": 10,
+    "oracle_ceiling_mean": 0.7481,
+    "min": 0.6762,
+    "max": 0.8
+   },
+   "3": {
+    "subsets": 10,
+    "oracle_ceiling_mean": 0.9152,
+    "min": 0.8857,
+    "max": 0.9524
+   },
+   "4": {
+    "subsets": 5,
+    "oracle_ceiling_mean": 0.9371,
+    "min": 0.9095,
+    "max": 0.9524
+   },
+   "5": {
+    "subsets": 1,
+    "oracle_ceiling_mean": 0.9524,
+    "min": 0.9524,
+    "max": 0.9524
+   }
+  },
+  "full_five_camera_set": {
+   "correct": 200,
+   "n": 210,
+   "R1": 0.9524,
+   "note": "REPRODUCES THE PAPER'S HEADLINE CEILING EXACTLY from an independent code path"
+  },
+  "knee": {
+   "at_views": 3,
+   "gain_2_to_3_points": 16.7,
+   "gain_3_to_4_points": 2.2,
+   "gain_4_to_5_points": 1.5
+  },
+  "best_three_view_subset": {
+   "subset": "axis_a|body_diagonal|oblique2",
+   "R1": 0.9524,
+   "note": "the fifth camera buys nothing on the crystal-system task; it buys the phantom-elimination guarantee below"
+  },
+  "cross_check_vs_oracle_view_curve_280_structures": {
+   "their_curve": {
+    "2": 0.7429,
+    "3": 0.9143,
+    "4": 0.9357,
+    "5": 0.9393
+   },
+   "absolute_differences_points": {
+    "2": 0.52,
+    "3": 0.09,
+    "4": 0.14,
+    "5": 1.31
+   },
+   "range": "0.09 to 1.31 percentage points, on a different sample — a reproducibility result in its own right; the largest difference sits at five views, where oracle_view_curve's 0.9393 on 280 structures meets 0.9524 on this 210-structure sample"
+  },
+  "monotone_check": {
+   "nested_pairs": 105,
+   "aggregate_violations": 2,
+   "per_structure_violations": 195,
+   "per_structure_comparisons": 22050,
+   "per_structure_violation_rate": 0.00884,
+   "structures_with_at_least_one_violation": 25,
+   "structures_total": 210,
+   "the_two_aggregate_violations": [
+    {
+     "from": "axis_a|body_diagonal|oblique2",
+     "from_score": "200/210",
+     "add": "axis_b",
+     "to_score": "198/210",
+     "gained": 3,
+     "lost": 5
+    },
+    {
+     "from": "axis_a|body_diagonal|oblique2",
+     "from_score": "200/210",
+     "add": "axis_c",
+     "to_score": "195/210",
+     "gained": 4,
+     "lost": 9
+    }
+   ],
+   "status_of_the_theorem": "Corollary 3(a) is proved at tau = 0. This sweep runs at tau > 0, where the corollary is approximate, so these are violations of the APPROXIMATION and not counterexamples to the theorem. Reporting them rather than asserting none is the point of the exercise"
+  },
+  "mechanism_phantoms_not_lost_atoms": {
+   "n_recovered_lt_n_true": "NEVER occurs, in any of the 5460 cells — the oracle never drops an atom, exactly what Theorem 1 says",
+   "every_failure_is_a_phantom": "a spurious point that survives cross-view verification",
+   "mean_phantom_excess_by_view_count": {
+    "2": 4.911,
+    "3": 0.48,
+    "4": 0.048,
+    "5": 0.0
+   },
+   "design_consequence": "the fifth camera does not raise mean accuracy much; it eliminates phantoms entirely (210 of 210 structures recover exactly the true atom count). Extra views buy reconstruction FIDELITY after they stop buying accuracy",
+   "why_a_superset_can_lose_a_structure": {
+    "subset_mean_positional_rmsd_A": 0.1801,
+    "subset_median_rmsd_A": 0.0,
+    "superset_mean_positional_rmsd_A": 0.0505,
+    "superset_median": "never exactly 0",
+    "explanation": "adding a view removes phantoms but perturbs which candidate survives deduplication, and spglib at symprec 0.01 can flip a system on a sub-0.06 A perturbation. The subset was sometimes right for a reason the tolerance made fragile, not because fewer views carried more information"
+   }
+  },
+  "the_ten_five_view_failures": {
+   "structures_recovering_exact_true_atom_count_at_full_set": "210 of 210",
+   "structures_with_rmsd_identically_zero": 89,
+   "failures": 10,
+   "diagnosis": "the 10 structures the oracle gets wrong all have exact atom counts; they fail inside spglib at the production tolerance, not in the inversion. The ceiling at 0.9524 is therefore a LABEL-TOLERANCE limit on this sample, not a view-geometry limit"
+  },
+  "detail_files": {
+   "summary.json": "per-subset accuracy for all 26 subsets plus the monotonicity aggregates",
+   "raw.json": "per-structure x per-subset outcomes"
+  }
+ },
+ "what_this_adds": "a third one-sided-in-aggregate theory check alongside the tiling result (22 lost, 0 gained) and the camera perturbation (9 gained, 0 lost), at zero API cost, plus an independent reproduction of R1 = 0.9524 through a separate code path. Unlike those two it is NOT perfectly one-sided, and the paper should say so.",
+ "conclusion": "The monotonicity prediction holds at 103 of 105 nested pairs and at 99.1% of per-structure comparisons. The two aggregate violations are real, share a subset and a direction, and are explained: at tau > 0 adding a view removes phantoms but perturbs the surviving candidates enough for spglib to flip a system. The oracle never loses an atom in any of the 5460 cells, phantom excess falls to exactly zero at five views, and the full camera set reproduces the headline ceiling at 200/210 = 0.9524 — whose 10 failures are a label-tolerance limit, not a view-geometry limit.",
+ "_provenance": "scripts/run_viewsweep.py over data/primary/structures.json, rc-analysis env with pymatgen and spglib 2.7.0, CPU only; artifacts raw.json and summary.json"
+}

@@ -1,0 +1,1765 @@
+{
+ "protocol": {
+  "structures": 210,
+  "k": 3,
+  "temperature": 0.7,
+  "denominator": "fixed at n; parse failures scored as errors",
+  "renders": "frozen 5-view set, unchanged files"
+ },
+ "canonical": {
+  "google/gemini-3.6-flash": {
+   "model": "google/gemini-3.6-flash",
+   "n": 210,
+   "micro": 0.7381,
+   "macro_f1": 0.7185,
+   "per_system_f1": {
+    "cubic": 0.9818,
+    "hexagonal": 0.3429,
+    "monoclinic": 0.7419,
+    "orthorhombic": 0.7273,
+    "tetragonal": 0.8052,
+    "triclinic": 0.7636,
+    "trigonal": 0.6667
+   },
+   "per_system_acc": {
+    "cubic": "27/27",
+    "hexagonal": "6/27",
+    "monoclinic": "23/29",
+    "orthorhombic": "20/32",
+    "tetragonal": "31/31",
+    "triclinic": "21/34",
+    "trigonal": "27/30"
+   },
+   "unparseable_scored_as_error": 0,
+   "api_errors": 0,
+   "k": 3,
+   "temperature": 0.7,
+   "predictions": [
+    {
+     "material_id": "mp-22422",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1183806",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1080470",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 2,
+      "tetragonal": 1
+     }
+    },
+    {
+     "material_id": "mp-30388",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-865254",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-862563",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-979751",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-753983",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1185963",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1196347",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-19803",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-865746",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1078353",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1211014",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-865981",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1104547",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "tetragonal": 1,
+      "cubic": 2
+     }
+    },
+    {
+     "material_id": "mp-1184740",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1183885",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-972478",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-865214",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1095170",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-976595",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-865463",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-754918",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1113975",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1206179",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1111955",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-861883",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1187731",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1209061",
+     "truth": "cubic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-5933",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1210077",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-22156",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-7073",
+     "truth": "hexagonal",
+     "pred": "hexagonal",
+     "votes": {
+      "hexagonal": 2,
+      "trigonal": 1
+     }
+    },
+    {
+     "material_id": "mp-1211250",
+     "truth": "hexagonal",
+     "pred": "hexagonal",
+     "votes": {
+      "trigonal": 1,
+      "hexagonal": 2
+     }
+    },
+    {
+     "material_id": "mp-22662",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1194358",
+     "truth": "hexagonal",
+     "pred": "hexagonal",
+     "votes": {
+      "hexagonal": 3
+     }
+    },
+    {
+     "material_id": "mp-510567",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1205952",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "hexagonal": 1,
+      "trigonal": 2
+     }
+    },
+    {
+     "material_id": "mp-22718",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1079623",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-867318",
+     "truth": "hexagonal",
+     "pred": "hexagonal",
+     "votes": {
+      "hexagonal": 3
+     }
+    },
+    {
+     "material_id": "mp-13312",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-11548",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-569819",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-16305",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-28282",
+     "truth": "monoclinic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-862668",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1226482",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-542939",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-3598",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1111",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 2,
+      "hexagonal": 1
+     }
+    },
+    {
+     "material_id": "mp-1178388",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-865045",
+     "truth": "hexagonal",
+     "pred": "hexagonal",
+     "votes": {
+      "trigonal": 1,
+      "hexagonal": 2
+     }
+    },
+    {
+     "material_id": "mp-11580",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-20608",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1206604",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-542806",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "hexagonal": 1,
+      "trigonal": 2
+     }
+    },
+    {
+     "material_id": "mp-867352",
+     "truth": "hexagonal",
+     "pred": "trigonal",
+     "votes": {
+      "hexagonal": 1,
+      "trigonal": 2
+     }
+    },
+    {
+     "material_id": "mp-20051",
+     "truth": "hexagonal",
+     "pred": "hexagonal",
+     "votes": {
+      "hexagonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1215967",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "tetragonal": 1,
+      "monoclinic": 2
+     }
+    },
+    {
+     "material_id": "mp-752705",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-11913",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 2,
+      "orthorhombic": 1
+     }
+    },
+    {
+     "material_id": "mp-1175684",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1188397",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-28875",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1100482",
+     "truth": "monoclinic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-675832",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 2,
+      "monoclinic": 1
+     }
+    },
+    {
+     "material_id": "mp-1224603",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-680610",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "hexagonal": 1,
+      "monoclinic": 2
+     }
+    },
+    {
+     "material_id": "mp-1225601",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-753601",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1290385",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-11904",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-18456",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1226891",
+     "truth": "monoclinic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 2,
+      "monoclinic": 1
+     }
+    },
+    {
+     "material_id": "mp-582828",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1228063",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-4658",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-6200",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1218620",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1223043",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1207399",
+     "truth": "monoclinic",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 1,
+      "monoclinic": 1,
+      "orthorhombic": 1
+     }
+    },
+    {
+     "material_id": "mp-1190146",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-759465",
+     "truth": "monoclinic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1192586",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-556480",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1221675",
+     "truth": "monoclinic",
+     "pred": "cubic",
+     "votes": {
+      "cubic": 3
+     }
+    },
+    {
+     "material_id": "mp-1287546",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-607829",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1189296",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-669645",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-27398",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1105844",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1222966",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 2,
+      "tetragonal": 1
+     }
+    },
+    {
+     "material_id": "mp-1191990",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1228672",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1078316",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "tetragonal": 1,
+      "orthorhombic": 2
+     }
+    },
+    {
+     "material_id": "mp-1094851",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 2,
+      "orthorhombic": 1
+     }
+    },
+    {
+     "material_id": "mp-3463",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1225903",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1223394",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1047671",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 2,
+      "orthorhombic": 1
+     }
+    },
+    {
+     "material_id": "mp-1191553",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-8154",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1206811",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-560530",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1025558",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1206300",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "orthorhombic": 1,
+      "tetragonal": 2
+     }
+    },
+    {
+     "material_id": "mp-777972",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "tetragonal": 1,
+      "orthorhombic": 2
+     }
+    },
+    {
+     "material_id": "mp-649033",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1094927",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-20666",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1228014",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-675930",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1105259",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1219552",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1029448",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 2
+     }
+    },
+    {
+     "material_id": "mp-768605",
+     "truth": "orthorhombic",
+     "pred": "tetragonal",
+     "votes": {
+      "orthorhombic": 1,
+      "tetragonal": 2
+     }
+    },
+    {
+     "material_id": "mp-1222734",
+     "truth": "orthorhombic",
+     "pred": "orthorhombic",
+     "votes": {
+      "trigonal": 1,
+      "orthorhombic": 2
+     }
+    },
+    {
+     "material_id": "mp-3907",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1207157",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1069477",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1080173",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1221660",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-30411",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-569954",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1207394",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-28843",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1223395",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1212462",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1102524",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1105793",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-571457",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-558557",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1204787",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-569089",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-574369",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1217777",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1219131",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1104930",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 2,
+      "orthorhombic": 1
+     }
+    },
+    {
+     "material_id": "mp-21366",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1201760",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1025144",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-23192",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1227817",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-20980",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1201769",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-8179",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-20911",
+     "truth": "tetragonal",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1101441",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-752479",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-779095",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-647035",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 2,
+      "triclinic": 1
+     }
+    },
+    {
+     "material_id": "mp-757987",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "monoclinic": 1,
+      "triclinic": 2
+     }
+    },
+    {
+     "material_id": "mp-1210977",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-31232",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 2,
+      "trigonal": 1
+     }
+    },
+    {
+     "material_id": "mp-1219636",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 2,
+      "monoclinic": 1
+     }
+    },
+    {
+     "material_id": "mp-1301347",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1284734",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1220826",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-765581",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-861170",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-505236",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-568020",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-32682",
+     "truth": "triclinic",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1100547",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-776963",
+     "truth": "triclinic",
+     "pred": "orthorhombic",
+     "votes": {
+      "orthorhombic": 3
+     }
+    },
+    {
+     "material_id": "mp-1218572",
+     "truth": "triclinic",
+     "pred": "tetragonal",
+     "votes": {
+      "tetragonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1174283",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1100516",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-626800",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "monoclinic": 1,
+      "triclinic": 2
+     }
+    },
+    {
+     "material_id": "mp-1175184",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1223576",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-505619",
+     "truth": "triclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-756230",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-780308",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1303744",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-1213091",
+     "truth": "triclinic",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 2,
+      "monoclinic": 1
+     }
+    },
+    {
+     "material_id": "mp-1175337",
+     "truth": "triclinic",
+     "pred": "triclinic",
+     "votes": {
+      "triclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-755003",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1182608",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1227461",
+     "truth": "trigonal",
+     "pred": "hexagonal",
+     "votes": {
+      "hexagonal": 2,
+      "trigonal": 1
+     }
+    },
+    {
+     "material_id": "mp-570314",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 2,
+      "hexagonal": 1
+     }
+    },
+    {
+     "material_id": "mp-771649",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-567336",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1207106",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 2,
+      "hexagonal": 1
+     }
+    },
+    {
+     "material_id": "mp-1221846",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-570158",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-28865",
+     "truth": "trigonal",
+     "pred": "hexagonal",
+     "votes": {
+      "hexagonal": 2,
+      "trigonal": 1
+     }
+    },
+    {
+     "material_id": "mp-2629",
+     "truth": "trigonal",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 2,
+      "trigonal": 1
+     }
+    },
+    {
+     "material_id": "mp-8176",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1223148",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1007907",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1227521",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1385417",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1048868",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 2,
+      "hexagonal": 1
+     }
+    },
+    {
+     "material_id": "mp-1215704",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 2,
+      "hexagonal": 1
+     }
+    },
+    {
+     "material_id": "mp-989611",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-18075",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1220207",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "hexagonal": 1,
+      "trigonal": 2
+     }
+    },
+    {
+     "material_id": "mp-766789",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "hexagonal": 1,
+      "trigonal": 2
+     }
+    },
+    {
+     "material_id": "mp-1071269",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-1217153",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-754538",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    },
+    {
+     "material_id": "mp-989455",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 2,
+      "hexagonal": 1
+     }
+    },
+    {
+     "material_id": "mp-2025375",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "hexagonal": 1,
+      "trigonal": 2
+     }
+    },
+    {
+     "material_id": "mp-1187591",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "hexagonal": 1,
+      "trigonal": 2
+     }
+    },
+    {
+     "material_id": "mp-2011964",
+     "truth": "monoclinic",
+     "pred": "monoclinic",
+     "votes": {
+      "monoclinic": 3
+     }
+    },
+    {
+     "material_id": "mp-773911",
+     "truth": "trigonal",
+     "pred": "trigonal",
+     "votes": {
+      "trigonal": 3
+     }
+    }
+   ]
+  }
+ },
+ "anonymized": {}
+}

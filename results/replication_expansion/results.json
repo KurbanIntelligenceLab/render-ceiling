@@ -1,0 +1,244 @@
+{
+  "stage": "replication_expansion \u2014 does any headline conclusion replicate on the e3x second draw (n=210, review item 50)",
+  "arms_present_on_e3x": {
+    "frontier_models": [
+      "anthropic/claude-opus-4.8",
+      "google/gemini-3.6-flash",
+      "x-ai/grok-4.5"
+    ],
+    "chain_arm": "V2b (process-trained), K=8",
+    "source_records": [
+      "results/stratified_frontier_expansion/exp_anthropic_claude-opus-4_8.json",
+      "results/stratified_frontier_expansion/exp_google_gemini-3_6-flash.json",
+      "results/stratified_frontier_expansion/exp_x-ai_grok-4_5.json",
+      "results/eval_expansion/gen_V2b_e3x_k8.json"
+    ],
+    "not_present_on_e3x": [
+      "zero-shot 13-model leaderboard (release/predictions/zeroshot__*) \u2014 checked, 0 material_id overlap with data/replication",
+      "r3coords / R3 coordinate-as-text condition for any of the 14/15 roster models \u2014 checked, 0 overlap",
+      "B1-direct SFT arm per-structure predictions \u2014 only aggregate 3-seed mean (0.6143) is recorded, no per-structure vector on e3x or e3",
+      "R2 detector-in-the-loop full per-structure vector on e3x beyond the aggregate 0.0857 already reported in rung_R2_detector_oracle"
+    ],
+    "verification_method": "compared material_id sets against data/replication/structures.json (210 keys); frontier and V2b arms are 210/210 overlap, zero-shot/r3coords release files are 0/210 overlap (they are all on data/primary, the original sample)"
+  },
+  "shape_free_floor_on_e3x": {
+    "method": "RandomForestClassifier(n_estimators=500, random_state=23) refit on data/primary train (n=1610), 3 features (n_sites, density, volume) only, scored on data/replication eval (n=210)",
+    "recomputed_micro": 0.2476,
+    "matches_eval_expansion_record": true,
+    "original_sample_floor_recomputed": 0.5286,
+    "matches_external_baselines_record": true
+  },
+  "R1_oracle_on_e3x": {
+    "method": "reconstruct_positions + recover_symmetry, all 5 views, tau=symprec=0.01",
+    "certified_delta_eq_tau_0_01": {
+      "correct": 209,
+      "n": 210,
+      "micro": 0.9952
+    },
+    "released_delta_0_15": {
+      "correct": 191,
+      "n": 210,
+      "micro": 0.9095
+    },
+    "original_sample_recomputed_for_comparison": {
+      "certified_delta_eq_tau_0_01": {
+        "correct": 210,
+        "n": 210,
+        "micro": 1.0
+      },
+      "released_delta_0_15": {
+        "correct": 200,
+        "n": 210,
+        "micro": 0.9524
+      }
+    },
+    "note": "R1 on the expansion sample is NOT 1.0000 at the certified tolerance, unlike the original sample. One structure (mp-1078353, true triclinic) reconstructs as cubic even at tau=0.01 with all 5 views and exact ray triangulation; this is a genuine identifiability failure on the second draw, not a merge-tolerance artifact, and it means Rone=1.0000 does not automatically transfer to a new sample drawn under the same protocol."
+  },
+  "below_baseline_replication": {
+    "frontier_models_vs_floor": {
+      "claude-opus-4.8": {
+        "original": {
+          "model_acc": 0.580952380952381,
+          "floor_acc": 0.5285714285714286,
+          "delta": 0.05238095238095242,
+          "discordant": [
+            50,
+            39
+          ],
+          "paired_p": 0.28909608069606096,
+          "resolved": false
+        },
+        "expansion": {
+          "model_acc": 0.580952380952381,
+          "floor_acc": 0.24761904761904763,
+          "delta": 0.33333333333333337,
+          "discordant": [
+            86,
+            16
+          ],
+          "paired_p": 9.13466159541085e-13,
+          "resolved": true
+        },
+        "pooled_n420": {
+          "discordant": [
+            136,
+            55
+          ],
+          "paired_p": 4.192333604266912e-09,
+          "resolved": true
+        }
+      },
+      "gemini-3.6-flash": {
+        "original": {
+          "model_acc": 0.7333333333333333,
+          "floor_acc": 0.5285714285714286,
+          "delta": 0.2047619047619047,
+          "discordant": [
+            70,
+            27
+          ],
+          "paired_p": 1.4766951457590834e-05,
+          "resolved": true
+        },
+        "expansion": {
+          "model_acc": 0.7380952380952381,
+          "floor_acc": 0.24761904761904763,
+          "delta": 0.4904761904761905,
+          "discordant": [
+            118,
+            15
+          ],
+          "paired_p": 5.09476472849151e-21,
+          "resolved": true
+        },
+        "pooled_n420": {
+          "discordant": [
+            188,
+            42
+          ],
+          "paired_p": 3.0458193921371035e-23,
+          "resolved": true
+        }
+      },
+      "grok-4.5": {
+        "original": {
+          "model_acc": 0.6142857142857143,
+          "floor_acc": 0.5285714285714286,
+          "delta": 0.08571428571428574,
+          "discordant": [
+            49,
+            31
+          ],
+          "paired_p": 0.056664426345121144,
+          "resolved": false
+        },
+        "expansion": {
+          "model_acc": 0.5904761904761905,
+          "floor_acc": 0.24761904761904763,
+          "delta": 0.34285714285714286,
+          "discordant": [
+            89,
+            17
+          ],
+          "paired_p": 5.912079008704511e-13,
+          "resolved": true
+        },
+        "pooled_n420": {
+          "discordant": [
+            138,
+            48
+          ],
+          "paired_p": 2.7607841962484267e-11,
+          "resolved": true
+        }
+      }
+    },
+    "V2b_chain_vs_floor": {
+      "V2b vs FLOOR  original n=210": {
+        "delta": -0.1476,
+        "discordant": [
+          29,
+          60
+        ],
+        "paired_p": 0.001335,
+        "resolved": true,
+        "n": 210
+      },
+      "V2b vs FLOOR  expansion n=210": {
+        "delta": 0.1524,
+        "discordant": [
+          65,
+          33
+        ],
+        "paired_p": 0.001601,
+        "resolved": true,
+        "n": 210
+      },
+      "V2b vs FLOOR  POOLED n=420": {
+        "delta": 0.0024,
+        "discordant": [
+          94,
+          93
+        ],
+        "paired_p": 1.0,
+        "resolved": false,
+        "n": 420
+      }
+    },
+    "verdict": "The below-baseline claim as stated in the leaderboard figure caption -- 'every model on this draw falls below the shape-free baseline' -- is about the ORIGINAL zero-shot leaderboard (13 models, all below 0.5286) and is explicitly scoped in the manuscript text as 'specific to this draw'. That scoping is CORRECT and REPLICATES: none of the three frontier arms present on e3x falls below the e3x floor (0.2476) either -- all three clear it, by a WIDER margin than on the original sample, because the floor itself collapsed (0.5286->0.2476) while the frontier arms held. The chain arm V2b is the one case that reverses sign: below floor on original (p=1.3e-03), above floor on expansion (p=1.6e-03), pooled null (p=1.00)."
+  },
+  "perception_decomposition_on_e3x": {
+    "testable": false,
+    "reason": "R3 (ground-truth-geometry-as-text condition) was never run on data/replication for any of the 14/15-model roster. release/predictions/coords_as_text__*__K3.json files are all scored against data/primary (0 material_id overlap with e3x, verified). Without an R3 arm on the expansion sample, P(m)=R3-R4 and S(m)=R1-R3 cannot be computed there, and the perception share and the 13-of-14 count cannot be tested for replication.",
+    "what_would_settle_it": "Running the R3 rung (models answer from ground-truth CIF-derived fractional coordinates/species/cell, no image) on data/replication for the same roster used in rung_R3_coords_as_text, then repeating the decomposition with R1(e3x)."
+  },
+  "R1_certified_vs_released_replication": {
+    "original_sample": {
+      "oracle_ceiling_tol_certified": 1.0,
+      "oracle_ceiling_tol_released": 0.9524
+    },
+    "expansion_sample": {
+      "oracle_ceiling_tol_certified": 0.9952,
+      "oracle_ceiling_tol_released": 0.9095
+    },
+    "verdict": "R1=1.0000 (exact ceiling at the certified tolerance) does NOT replicate on the second draw: it is 0.9952 (209/210) on e3x. The manuscript's claim that emptiness of the phantom set (Phi_0=empty) holds 'on every one of the 1950 certified structures' is about the identifiability-certified pool used for the scale-up baselines, not about e3x directly, and this result shows the certified-emptiness property is sample-dependent rather than guaranteed to hold on an arbitrary second draw of n=210 under the same protocol."
+  },
+  "median_share_discrepancy_reconciliation": {
+    "manuscript_value": {
+      "median_share": 0.2901,
+      "S_gt_P_count": "13 of 14",
+      "reference": "R1 = 1.0000 (certified oracle)"
+    },
+    "retired_memo_value": {
+      "median_share": 0.3092,
+      "S_gt_P_count": "12 of 14",
+      "reference": "R1 = 0.9524 (released-tolerance oracle, called R1 in the memo before the R1/R1rel split existed)"
+    },
+    "recomputed_independently": {
+      "at_R1_1_0000": {
+        "median_share": 0.2901,
+        "S_gt_P_count": "13 of 14"
+      },
+      "at_R1_0_9524": {
+        "median_share": 0.3092,
+        "S_gt_P_count": "12 of 14"
+      }
+    },
+    "roster_used": "14 models common to r3coords and (zeroshot union frontier) release files, minus qwen/qwen2.5-vl-72b-instruct (excluded from rung_R3_coords_as_text under the pre-registered >5% API-error gate: 34.4% errors)",
+    "verdict": "BOTH NUMBERS ARE CORRECT ARITHMETIC on the same 14-model, same-P(m) decomposition; they differ only in which oracle value is used as R1 in the denominator and in R1-R3 for S(m). 0.2901/13-of-14 uses the certified R1=1.0000 (delta=tau=0.01, the theoretically exact ceiling established in Theorem 1's identifiability result). 0.3092/12-of-14 uses R1rel=0.9524 (the released pipeline's operating tolerance delta=0.15=15*tau). The manuscript explicitly states this choice and its effect (section_methods.tex: 'at R1rel the two rungs differ by 0.0476 and every share would shift downward, which is one practical consequence of the released tolerance'; section_results.tex explicitly reports both: 0.2901 at R1 and 12-of-14 at R1rel). This is a DEFENSIBLE, DISCLOSED, and CONSISTENT choice, not an unexplained drift: the memo's 0.3092/12-of-14 is the value at the released tolerance and the manuscript's 0.2901/13-of-14 is the value at the certified tolerance, and the manuscript reports both explicitly in the same paragraph. There is no discrepancy once the reference point is identified; the retired memo did not yet have the R1/R1rel distinction and reported only the released-tolerance number under the label 'R1', which reads as a different number from the current text's 'R1' but is arithmetically the same computation at a different oracle setting."
+  },
+  "RF19_reproducibility_caveat": {
+    "note": "The 19-feature RF (not the floor) shows the SAME multi-value non-reproducibility documented in results/classifier_refreeze (0.8905 original run, 0.8857 reproduced, 0.8762 gradient boosting): my independent refit gives 0.8952 on e3 original and 0.8810 on e3x, both different again from the 0.8857/0.8667 pair reported in eval_expansion. Package versions likely differ slightly (this run: sklearn as installed in the python conda env) from the frozen classifier_specifications.json environment (sklearn 1.9.0, numpy 2.4.6). The 3-FEATURE FLOOR, which is what every below-floor test in this record depends on, reproduces EXACTLY (0.5286 original, 0.2476 expansion) across all three independent computations, so this instability does not touch the below-floor conclusions.",
+    "my_refit": {
+      "original": 0.8952380952380953,
+      "expansion": 0.8809523809523809
+    },
+    "eval_expansion_record": {
+      "original": 0.8857,
+      "expansion": 0.8667
+    },
+    "external_baselines_record": {
+      "original": 0.8905
+    }
+  }
+}

@@ -1,0 +1,265 @@
+{
+ "answerer_n": 210,
+ "strata": [
+  0.5,
+  0.625,
+  0.75,
+  0.875,
+  1.0
+ ],
+ "min_cell": 3,
+ "chains": {
+  "V2b": {
+   "per_stratum": {
+    "0.5": {
+     "agree_correct": 2,
+     "agree_n": 3,
+     "disagree_correct": 6,
+     "disagree_n": 16
+    },
+    "0.625": {
+     "agree_correct": 3,
+     "agree_n": 4,
+     "disagree_correct": 15,
+     "disagree_n": 29
+    },
+    "0.75": {
+     "agree_correct": 4,
+     "agree_n": 4,
+     "disagree_correct": 12,
+     "disagree_n": 27
+    },
+    "0.875": {
+     "agree_correct": 7,
+     "agree_n": 8,
+     "disagree_correct": 18,
+     "disagree_n": 35
+    },
+    "1.0": {
+     "agree_correct": 15,
+     "agree_n": 15,
+     "disagree_correct": 47,
+     "disagree_n": 67
+    }
+   },
+   "cmh": {
+    "z": 3.7666,
+    "common_or": 8.9885,
+    "strata_used": [
+     0.5,
+     0.625,
+     0.75,
+     0.875,
+     1.0
+    ]
+   },
+   "breslow_day": {
+    "stat": 2.9455,
+    "df": 4,
+    "p": 0.56975,
+    "reject": false
+   },
+   "homogeneity_gate": "CMH reportable",
+   "coverage": 0.1619,
+   "coverage_counts": {
+    "certified": 34,
+    "population": 210,
+    "off_stratum_scored_not_certified": 2
+   },
+   "cmh_denominator": 208,
+   "acc_on_covered": 0.9118,
+   "acc_on_covered_wilson95": [
+    0.7704,
+    0.9695
+   ],
+   "lift_vs_base_rate": {
+    "k": 31,
+    "n": 34,
+    "observed": 0.9118,
+    "base_rate": 0.6143,
+    "lift": 0.2975,
+    "direction": "above",
+    "one_sided_p": 0.00011,
+    "verdict": "significant"
+   },
+   "prediction_support": {
+    "distribution": {
+     "tetragonal": 79,
+     "cubic": 68,
+     "trigonal": 62,
+     "orthorhombic": 1
+    },
+    "systems_emitted": 4,
+    "never_emitted": [
+     "hexagonal",
+     "monoclinic",
+     "triclinic"
+    ]
+   },
+   "false_certification": {
+    "chain_wrong_n": 130,
+    "answerer_agreed_with_wrong": 3,
+    "rate": 0.0231,
+    "wilson95": [
+     0.0079,
+     0.0657
+    ]
+   }
+  },
+  "B3": {
+   "per_stratum": {
+    "0.5": {
+     "agree_correct": 0,
+     "agree_n": 3,
+     "disagree_correct": 8,
+     "disagree_n": 16
+    },
+    "0.625": {
+     "agree_correct": 3,
+     "agree_n": 7,
+     "disagree_correct": 15,
+     "disagree_n": 26
+    },
+    "0.75": {
+     "agree_correct": 1,
+     "agree_n": 4,
+     "disagree_correct": 15,
+     "disagree_n": 27
+    },
+    "0.875": {
+     "agree_correct": 7,
+     "agree_n": 12,
+     "disagree_correct": 18,
+     "disagree_n": 31
+    },
+    "1.0": {
+     "agree_correct": 10,
+     "agree_n": 14,
+     "disagree_correct": 52,
+     "disagree_n": 68
+    }
+   },
+   "cmh": {
+    "z": -1.374,
+    "common_or": 0.5953,
+    "strata_used": [
+     0.5,
+     0.625,
+     0.75,
+     0.875,
+     1.0
+    ]
+   },
+   "breslow_day": {
+    "stat": 2.8454,
+    "df": 4,
+    "p": 0.58691,
+    "reject": false
+   },
+   "homogeneity_gate": "CMH reportable",
+   "coverage": 0.1905,
+   "coverage_counts": {
+    "certified": 40,
+    "population": 210,
+    "off_stratum_scored_not_certified": 2
+   },
+   "cmh_denominator": 208,
+   "acc_on_covered": 0.525,
+   "acc_on_covered_wilson95": [
+    0.375,
+    0.6706
+   ],
+   "lift_vs_base_rate": {
+    "k": 21,
+    "n": 40,
+    "observed": 0.525,
+    "base_rate": 0.6143,
+    "lift": -0.0893,
+    "direction": "below",
+    "one_sided_p": 0.159,
+    "verdict": "NULL \u2014 point estimate below base rate but not significant"
+   },
+   "prediction_support": {
+    "distribution": {
+     "tetragonal": 132,
+     "trigonal": 75,
+     "orthorhombic": 3
+    },
+    "systems_emitted": 3,
+    "never_emitted": [
+     "cubic",
+     "hexagonal",
+     "monoclinic",
+     "triclinic"
+    ]
+   },
+   "false_certification": {
+    "chain_wrong_n": 151,
+    "answerer_agreed_with_wrong": 19,
+    "rate": 0.1258,
+    "wilson95": [
+     0.0821,
+     0.1882
+    ]
+   }
+  }
+ },
+ "false_certification_comparison": {
+  "arms": [
+   "V2b",
+   "B3"
+  ],
+  "rates": [
+   0.0231,
+   0.1258
+  ],
+  "difference": 0.1028,
+  "z_pooled": 3.197,
+  "z_unpooled": 3.421,
+  "note": "z_unpooled is the headline; pooled reported alongside, conclusion unchanged"
+ },
+ "prereg_decision_threshold": {
+  "source": "the replication pre-registration \u2014 'THRESHOLD ARITHMETIC RECOMPUTED \u2014 RULE UNCHANGED, INPUT CORRECTED', written after generating but BEFORE computing any certification number",
+  "rule": "R1 REPLICATES iff certified accuracy recovers >= 50% of the headroom above the answerer's OWN base rate, AND the exact one-sided binomial test of that slice against the base rate gives p < 0.05",
+  "answerer": "A3 = B1_aug_s0 (sota_push adapter, native 768px, 3220 augmented examples), K=8 majority vote on the same 210 composition-exclusion structures",
+  "base_rate": 0.6905,
+  "base_rate_counts": "145/210",
+  "headroom": 0.3095,
+  "headroom_fraction_required": 0.5,
+  "required_certified_accuracy": 0.8452,
+  "arithmetic": "0.6905 + 0.50*0.3095 = 0.8452",
+  "branches": {
+   "R1": "lift recovers >= 50% of headroom AND p < 0.05 -> certification effect is answerer-independent; report as replicated",
+   "R2": "lift positive and significant (p < 0.05) but recovers < 50% of headroom -> replicated in DIRECTION but attenuated; state the fraction recovered, do not claim the B1-level effect size generalises",
+   "R3": "lift not significant (p >= 0.05) or negative -> the B1 result does NOT generalise across answerers; demote certification from a general capability claim to a single-checkpoint observation"
+  },
+  "threshold_rationale": "50% of headroom is chosen because the B1 result recovered 77.1%; a rule at 50% asks the effect to be more than half as strong on a different answerer \u2014 a genuine test rather than a formality, without demanding the exact original magnitude on a harder base",
+  "secondary_commitments": [
+   "the OUTCOME chain (B3) must remain NULL on this answerer (p >= 0.05); if B3 certifies A3 the process-vs-outcome contrast is answerer-specific \u2014 the sharper falsification test of the two",
+   "V2b's false-certification rate (B1: 3/130 = 0.0231) should stay below B3's; a reversal falsifies the error-decorrelation mechanism story",
+   "coverage will differ and that is EXPECTED, not a finding"
+  ],
+  "note_on_rounding": "the record's finding prose quotes this bar as 0.8453; the replication pre-registration computes 0.8452. Same rule, rounding of 0.6905 + 0.15475 = 0.84525."
+ },
+ "prereg_decision_threshold_superseded": {
+  "status": "SUPERSEDED \u2014 do not use",
+  "why": "the original pre-registration used base rate 0.6619 from sota_push's K=3 evaluation; the replication runs at K=8, where the same answerer's base rate is 145/210 = 0.6905 (+0.0286). Certification is computed on THOSE generations, so the lift must be measured against THEIR base rate. The RULE is untouched; only its arithmetic input changed. The corrected bar (0.8452) is STRICTER than the 0.8310 implied by the stale input, so the correction cannot be accused of loosening the test.",
+  "stale_A3_form": {
+   "base_rate": 0.6619,
+   "headroom": 0.3381,
+   "required_certified_accuracy": 0.831,
+   "arithmetic": "0.6619 + 0.50*0.3381 = 0.8310"
+  },
+  "original_B1_answerer_form": {
+   "base_rate": 0.6143,
+   "headroom_to_1.0": 0.3857,
+   "observed_lift": 0.2975,
+   "fraction_of_headroom_recovered": 0.771,
+   "required_certified_accuracy": 0.8072,
+   "arithmetic": "0.6143 + 0.50*0.3857 = 0.8072",
+   "note": "this is answerer 1 (B1-direct, K=8, base 0.6143). The 77.1%-of-headroom result is what motivated setting the replication bar at 50%. The same 50%-of-headroom rule applied to this answerer gives 0.8072."
+  },
+  "lesson": "fix the base rate at the K the experiment will actually use; quoting a base rate from a different decoding budget writes a threshold that does not mean what it says"
+ },
+ "notes": "The verdict in this record is judged against prereg_decision_threshold, which was committed in advance. Without it the verdict is unfalsifiable. lift_vs_base_rate entries in `chains` are computed against the ANSWERER-1 base rate 0.6143; the replication threshold above applies to the A3 answerer at base 0.6905 (see replication.json)."
+}

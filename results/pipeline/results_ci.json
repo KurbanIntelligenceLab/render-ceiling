@@ -1,0 +1,3785 @@
+{
+ "summary": {
+  "n_records": 224,
+  "n_labeled_ok": 224,
+  "n_errors": 0,
+  "label_correctness": {
+   "n_robust_with_source_sg": 208,
+   "n_agree": 208,
+   "agreement_rate": 1.0,
+   "point_estimate_ge_98pct": true,
+   "ci95_lower": 0.985700661703858,
+   "certified_gt_98pct_at_95ci": true,
+   "per_system": {
+    "cubic": {
+     "n": 31,
+     "n_agree": 31,
+     "ci95_lower": 0.9078859400526763
+    },
+    "hexagonal": {
+     "n": 31,
+     "n_agree": 31,
+     "ci95_lower": 0.9078859400526763
+    },
+    "monoclinic": {
+     "n": 31,
+     "n_agree": 31,
+     "ci95_lower": 0.9078859400526763
+    },
+    "orthorhombic": {
+     "n": 31,
+     "n_agree": 31,
+     "ci95_lower": 0.9078859400526763
+    },
+    "tetragonal": {
+     "n": 29,
+     "n_agree": 29,
+     "ci95_lower": 0.9018553723227043
+    },
+    "triclinic": {
+     "n": 27,
+     "n_agree": 27,
+     "ci95_lower": 0.8949807698236557
+    },
+    "trigonal": {
+     "n": 28,
+     "n_agree": 28,
+     "ci95_lower": 0.8985342644272752
+    }
+   }
+  },
+  "tolerance_flip": {
+   "n_flipped": 16,
+   "flip_rate": 0.07142857142857142,
+   "flipped_ids": [
+    "mp-32884",
+    "mp-663172",
+    "mp-755598",
+    "mp-546190",
+    "mp-985286",
+    "mp-862982",
+    "mp-867241",
+    "JVASP-42541",
+    "JVASP-42234",
+    "JVASP-86845",
+    "JVASP-49773",
+    "JVASP-90580",
+    "JVASP-28565",
+    "JVASP-29104",
+    "JVASP-28959",
+    "JVASP-91939"
+   ],
+   "per_system": {
+    "triclinic": {
+     "n": 32,
+     "flipped": 5,
+     "flip_rate": 0.15625
+    },
+    "monoclinic": {
+     "n": 32,
+     "flipped": 1,
+     "flip_rate": 0.03125
+    },
+    "orthorhombic": {
+     "n": 32,
+     "flipped": 1,
+     "flip_rate": 0.03125
+    },
+    "tetragonal": {
+     "n": 32,
+     "flipped": 3,
+     "flip_rate": 0.09375
+    },
+    "trigonal": {
+     "n": 32,
+     "flipped": 4,
+     "flip_rate": 0.125
+    },
+    "hexagonal": {
+     "n": 32,
+     "flipped": 1,
+     "flip_rate": 0.03125
+    },
+    "cubic": {
+     "n": 32,
+     "flipped": 1,
+     "flip_rate": 0.03125
+    }
+   }
+  },
+  "metadata_leakage": {
+   "n_checked": 0,
+   "n_leak_free": 0,
+   "all_leak_free": true,
+   "violations": []
+  },
+  "label_policy": {
+   "policy": "keep-if-neighborhood-stable-and-source-agrees",
+   "n_keep": 220,
+   "n_quarantine": 4,
+   "quarantine_rate": 0.017857142857142856,
+   "per_system": {
+    "triclinic": {
+     "n": 32,
+     "quarantined": 3,
+     "quarantine_rate": 0.09375
+    },
+    "monoclinic": {
+     "n": 32,
+     "quarantined": 1,
+     "quarantine_rate": 0.03125
+    },
+    "orthorhombic": {
+     "n": 32,
+     "quarantined": 0,
+     "quarantine_rate": 0.0
+    },
+    "tetragonal": {
+     "n": 32,
+     "quarantined": 0,
+     "quarantine_rate": 0.0
+    },
+    "trigonal": {
+     "n": 32,
+     "quarantined": 0,
+     "quarantine_rate": 0.0
+    },
+    "hexagonal": {
+     "n": 32,
+     "quarantined": 0,
+     "quarantine_rate": 0.0
+    },
+    "cubic": {
+     "n": 32,
+     "quarantined": 0,
+     "quarantine_rate": 0.0
+    }
+   }
+  },
+  "wyckoff_consistency": {
+   "n_checked": 224,
+   "n_consistent": 224,
+   "all_consistent": true,
+   "inconsistent_ids": []
+  },
+  "crystal_system_distribution": {
+   "triclinic": 32,
+   "monoclinic": 32,
+   "orthorhombic": 32,
+   "tetragonal": 32,
+   "trigonal": 32,
+   "hexagonal": 32,
+   "cubic": 32
+  }
+ },
+ "rows": [
+  {
+   "material_id": "mp-1183027",
+   "source": "MP",
+   "formula": "Ag2IO6",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-38238",
+   "source": "MP",
+   "formula": "Ag2O",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-32868",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-32884",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 1,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": false,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": false,
+   "unique_sgs": [
+    1,
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-660503",
+   "source": "MP",
+   "formula": "Ag2SO4",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1247874",
+   "source": "MP",
+   "formula": "Ag2Se",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-663172",
+   "source": "MP",
+   "formula": "Ag2SeO4",
+   "our_sg": 1,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": false,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": false,
+   "unique_sgs": [
+    1,
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1247858",
+   "source": "MP",
+   "formula": "Ag2Te",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-755598",
+   "source": "MP",
+   "formula": "Ag2TeO4",
+   "our_sg": 1,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": false,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": false,
+   "unique_sgs": [
+    1,
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1229185",
+   "source": "MP",
+   "formula": "Ag3AsF12",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-34982",
+   "source": "MP",
+   "formula": "Ag3AuS2",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-632480",
+   "source": "MP",
+   "formula": "Ag3SI",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-673825",
+   "source": "MP",
+   "formula": "Ag3SI",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-676121",
+   "source": "MP",
+   "formula": "Ag3SI",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1215087",
+   "source": "MP",
+   "formula": "Ag3SI3",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1247859",
+   "source": "MP",
+   "formula": "Ag5Au3S4",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183089",
+   "source": "MP",
+   "formula": "Ac2Mg",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-35835",
+   "source": "MP",
+   "formula": "Ag(AuS)2",
+   "our_sg": 7,
+   "source_sg": 7,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    7
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-558796",
+   "source": "MP",
+   "formula": "Ag(Bi2S3)3",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1229158",
+   "source": "MP",
+   "formula": "Ag(Te5Au2)2",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-29607",
+   "source": "MP",
+   "formula": "Ag(TeMo)6",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-4691",
+   "source": "MP",
+   "formula": "Ag2CO3",
+   "our_sg": 11,
+   "source_sg": 11,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    11
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1229141",
+   "source": "MP",
+   "formula": "Ag2HgGeS4",
+   "our_sg": 7,
+   "source_sg": 7,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    7
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-9635",
+   "source": "MP",
+   "formula": "Ag2HgS2",
+   "our_sg": 14,
+   "source_sg": 14,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    14
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1079461",
+   "source": "MP",
+   "formula": "Ag2IOF",
+   "our_sg": 4,
+   "source_sg": 4,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    4
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-20210",
+   "source": "MP",
+   "formula": "Ag2PbO2",
+   "our_sg": 15,
+   "source_sg": 15,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    15
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-31053",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 4,
+   "source_sg": 4,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    4
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-38511",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 7,
+   "source_sg": 7,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    7
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-556225",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 11,
+   "source_sg": 11,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    11
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-560025",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 4,
+   "source_sg": 4,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    4
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-610517",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 14,
+   "source_sg": 14,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    14
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1102900",
+   "source": "MP",
+   "formula": "Ag2S",
+   "our_sg": 14,
+   "source_sg": 14,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    14
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183085",
+   "source": "MP",
+   "formula": "Ac2Mg",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1215094",
+   "source": "MP",
+   "formula": "Ag(AsSe2)3",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1207284",
+   "source": "MP",
+   "formula": "Ag(BiSe2)3",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1206226",
+   "source": "MP",
+   "formula": "Ag(BiTe2)3",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1229130",
+   "source": "MP",
+   "formula": "Ag2Bi2SeS3",
+   "our_sg": 44,
+   "source_sg": 44,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    44
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-755127",
+   "source": "MP",
+   "formula": "Ag2GeO4",
+   "our_sg": 70,
+   "source_sg": 70,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    70
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-861942",
+   "source": "MP",
+   "formula": "Ag2GePbS4",
+   "our_sg": 40,
+   "source_sg": 40,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    40
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-9900",
+   "source": "MP",
+   "formula": "Ag2GeS3",
+   "our_sg": 36,
+   "source_sg": 36,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    36
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1096802",
+   "source": "MP",
+   "formula": "Ag2GeSe3",
+   "our_sg": 36,
+   "source_sg": 36,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    36
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1095946",
+   "source": "MP",
+   "formula": "Ag2HgAu",
+   "our_sg": 71,
+   "source_sg": 71,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    71
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-556866",
+   "source": "MP",
+   "formula": "Ag2HgSI2",
+   "our_sg": 36,
+   "source_sg": 36,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    36
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-754338",
+   "source": "MP",
+   "formula": "Ag2O",
+   "our_sg": 72,
+   "source_sg": 72,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    72
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-546190",
+   "source": "MP",
+   "formula": "Ag2O3",
+   "our_sg": 43,
+   "source_sg": 43,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    9,
+    43
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1096329",
+   "source": "MP",
+   "formula": "Ag2PdAu",
+   "our_sg": 71,
+   "source_sg": 71,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    71
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-28557",
+   "source": "MP",
+   "formula": "Ag2PdCl4",
+   "our_sg": 64,
+   "source_sg": 64,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    64
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-5495",
+   "source": "MP",
+   "formula": "Ag2PdO2",
+   "our_sg": 71,
+   "source_sg": 71,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    71
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1207297",
+   "source": "MP",
+   "formula": "Ac2Br2O",
+   "our_sg": 123,
+   "source_sg": 123,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    123
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1207291",
+   "source": "MP",
+   "formula": "Ac2Cl2O",
+   "our_sg": 123,
+   "source_sg": 123,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    123
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-985286",
+   "source": "MP",
+   "formula": "Ac2Mg",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    69,
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183080",
+   "source": "MP",
+   "formula": "Ac3Ag",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183090",
+   "source": "MP",
+   "formula": "Ac3Cd",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183307",
+   "source": "MP",
+   "formula": "Ac3Ce",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183081",
+   "source": "MP",
+   "formula": "Ac3Dy",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183091",
+   "source": "MP",
+   "formula": "Ac3Er",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183096",
+   "source": "MP",
+   "formula": "Ac3I",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183095",
+   "source": "MP",
+   "formula": "Ac3La",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183087",
+   "source": "MP",
+   "formula": "Ac3Lu",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183097",
+   "source": "MP",
+   "formula": "Ac3Mo",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183104",
+   "source": "MP",
+   "formula": "Ac3Nb",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183108",
+   "source": "MP",
+   "formula": "Ac3Ti",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183084",
+   "source": "MP",
+   "formula": "Ac3Tm",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183094",
+   "source": "MP",
+   "formula": "Ac3V",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-11107",
+   "source": "MP",
+   "formula": "Ac2O3",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-977351",
+   "source": "MP",
+   "formula": "Ac2S3",
+   "our_sg": 167,
+   "source_sg": 167,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    167
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-35109",
+   "source": "MP",
+   "formula": "Ag(Mo3S4)2",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1103642",
+   "source": "MP",
+   "formula": "Ag(Mo3Se4)2",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-862982",
+   "source": "MP",
+   "formula": "Ag2Br3",
+   "our_sg": 167,
+   "source_sg": 167,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    15,
+    167
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-864635",
+   "source": "MP",
+   "formula": "Ag2Cl3",
+   "our_sg": 167,
+   "source_sg": 167,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    167
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1391",
+   "source": "MP",
+   "formula": "Ag2F",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-861945",
+   "source": "MP",
+   "formula": "Ag2F3",
+   "our_sg": 167,
+   "source_sg": 167,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    167
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-555477",
+   "source": "MP",
+   "formula": "Ag2H3IO6",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1229093",
+   "source": "MP",
+   "formula": "Ag2Hg",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-37163",
+   "source": "MP",
+   "formula": "Ag2HgI4",
+   "our_sg": 160,
+   "source_sg": 160,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    160
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1079032",
+   "source": "MP",
+   "formula": "Ag2IO6",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-7711",
+   "source": "MP",
+   "formula": "Ag2O",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1229140",
+   "source": "MP",
+   "formula": "Ag2SnBiSe4",
+   "our_sg": 160,
+   "source_sg": 160,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    160
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-35320",
+   "source": "MP",
+   "formula": "Ag3(AsO4)2",
+   "our_sg": 146,
+   "source_sg": 146,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    146
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-36383",
+   "source": "MP",
+   "formula": "Ag3(PO4)2",
+   "our_sg": 146,
+   "source_sg": 146,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    146
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183112",
+   "source": "MP",
+   "formula": "Ac3Ag",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183119",
+   "source": "MP",
+   "formula": "Ac3Br",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183100",
+   "source": "MP",
+   "formula": "Ac3Cd",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183673",
+   "source": "MP",
+   "formula": "Ac3Ce",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183113",
+   "source": "MP",
+   "formula": "Ac3Cl",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183103",
+   "source": "MP",
+   "formula": "Ac3Dy",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-985294",
+   "source": "MP",
+   "formula": "Ac3Er",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183271",
+   "source": "MP",
+   "formula": "Ac3Eu",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-985291",
+   "source": "MP",
+   "formula": "Ac3Hg",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183111",
+   "source": "MP",
+   "formula": "Ac3Ho",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183107",
+   "source": "MP",
+   "formula": "Ac3I",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-985305",
+   "source": "MP",
+   "formula": "Ac3In",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-985540",
+   "source": "MP",
+   "formula": "Ac3La",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183123",
+   "source": "MP",
+   "formula": "Ac3Lu",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-985554",
+   "source": "MP",
+   "formula": "Ac3Nd",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183280",
+   "source": "MP",
+   "formula": "Ac3Np",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-861724",
+   "source": "MP",
+   "formula": "Ac2AgIr",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183076",
+   "source": "MP",
+   "formula": "Ac2AgPb",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183068",
+   "source": "MP",
+   "formula": "Ac2CdGa",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183063",
+   "source": "MP",
+   "formula": "Ac2CdGe",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183086",
+   "source": "MP",
+   "formula": "Ac2CdHg",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-862319",
+   "source": "MP",
+   "formula": "Ac2CdSn",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-862786",
+   "source": "MP",
+   "formula": "Ac2CuGe",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-861883",
+   "source": "MP",
+   "formula": "Ac2CuIr",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183120",
+   "source": "MP",
+   "formula": "Ac2CuRu",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-867122",
+   "source": "MP",
+   "formula": "Ac2CuSi",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-865470",
+   "source": "MP",
+   "formula": "Ac2CuSn",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-862683",
+   "source": "MP",
+   "formula": "Ac2GaCu",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183054",
+   "source": "MP",
+   "formula": "Ac2GaSi",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-867241",
+   "source": "MP",
+   "formula": "Ac2GePd",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1,
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-861872",
+   "source": "MP",
+   "formula": "Ac2HgGe",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "mp-1183377",
+   "source": "MP",
+   "formula": "Ac2InGa",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-97853",
+   "source": "JARVIS",
+   "formula": "Sn3PO4F3",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-97854",
+   "source": "JARVIS",
+   "formula": "AgNO3",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-85460",
+   "source": "JARVIS",
+   "formula": "U3CuO10",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-4510",
+   "source": "JARVIS",
+   "formula": "ScPS4",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86586",
+   "source": "JARVIS",
+   "formula": "Sr2CoWO6",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-85928",
+   "source": "JARVIS",
+   "formula": "TiTlPS5",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86443",
+   "source": "JARVIS",
+   "formula": "Cu3P2O8",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-42541",
+   "source": "JARVIS",
+   "formula": "VO2",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1,
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-89267",
+   "source": "JARVIS",
+   "formula": "CuWO4",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-44082",
+   "source": "JARVIS",
+   "formula": "LiFe2F5",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-42234",
+   "source": "JARVIS",
+   "formula": "Li3Cr2Ni2O8",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2,
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-43051",
+   "source": "JARVIS",
+   "formula": "MnAlO3",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-87222",
+   "source": "JARVIS",
+   "formula": "V2CuO6",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-98062",
+   "source": "JARVIS",
+   "formula": "Na4CuAs2O8",
+   "our_sg": 2,
+   "source_sg": 2,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    2
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-85672",
+   "source": "JARVIS",
+   "formula": "VH6O3F3",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-48112",
+   "source": "JARVIS",
+   "formula": "LiMn2B2O6",
+   "our_sg": 1,
+   "source_sg": 1,
+   "crystal_system": "triclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-48166",
+   "source": "JARVIS",
+   "formula": "LiMn5O3F5",
+   "our_sg": 8,
+   "source_sg": 8,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    8
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-97984",
+   "source": "JARVIS",
+   "formula": "TbTaO4",
+   "our_sg": 13,
+   "source_sg": 13,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    13
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-98224",
+   "source": "JARVIS",
+   "formula": "Ni3Te2",
+   "our_sg": 11,
+   "source_sg": 11,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    11
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-107735",
+   "source": "JARVIS",
+   "formula": "TiCrAgS4",
+   "our_sg": 10,
+   "source_sg": 10,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    10
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-89901",
+   "source": "JARVIS",
+   "formula": "Ho3Co2Ge4",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-43424",
+   "source": "JARVIS",
+   "formula": "Li2MnCuO4",
+   "our_sg": 15,
+   "source_sg": 15,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    15
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-52881",
+   "source": "JARVIS",
+   "formula": "K3CaP2HO8",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-43523",
+   "source": "JARVIS",
+   "formula": "Li4VCr3O8",
+   "our_sg": 10,
+   "source_sg": 10,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    10
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-50463",
+   "source": "JARVIS",
+   "formula": "Li4CuSi2O7",
+   "our_sg": 5,
+   "source_sg": 5,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    5
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-44064",
+   "source": "JARVIS",
+   "formula": "Na2CoO3",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-4492",
+   "source": "JARVIS",
+   "formula": "LuTaO4",
+   "our_sg": 13,
+   "source_sg": 13,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    13
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-42804",
+   "source": "JARVIS",
+   "formula": "V4O3F9",
+   "our_sg": 5,
+   "source_sg": 5,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    5
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86845",
+   "source": "JARVIS",
+   "formula": "NaLi5N2",
+   "our_sg": 6,
+   "source_sg": 6,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": false,
+   "keep_for_training": false,
+   "unique_sgs": [
+    6,
+    38
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-42721",
+   "source": "JARVIS",
+   "formula": "LiFe2O2F3",
+   "our_sg": 12,
+   "source_sg": 12,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    12
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-85785",
+   "source": "JARVIS",
+   "formula": "KH2I3O",
+   "our_sg": 7,
+   "source_sg": 7,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    7
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-85852",
+   "source": "JARVIS",
+   "formula": "Ag3O4",
+   "our_sg": 14,
+   "source_sg": 14,
+   "crystal_system": "monoclinic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    14
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-14014",
+   "source": "JARVIS",
+   "formula": "TbMnSi",
+   "our_sg": 62,
+   "source_sg": 62,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    62
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-50332",
+   "source": "JARVIS",
+   "formula": "Na2CuO2",
+   "our_sg": 71,
+   "source_sg": 71,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    71
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-28397",
+   "source": "JARVIS",
+   "formula": "SiS",
+   "our_sg": 53,
+   "source_sg": 53,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    53
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-15345",
+   "source": "JARVIS",
+   "formula": "YCoC2",
+   "our_sg": 38,
+   "source_sg": 38,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    38
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-98036",
+   "source": "JARVIS",
+   "formula": "Ce3Si8Ni2",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-47529",
+   "source": "JARVIS",
+   "formula": "MnCoO4",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-43739",
+   "source": "JARVIS",
+   "formula": "LiFeF3",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-87903",
+   "source": "JARVIS",
+   "formula": "BaSm2CoO5",
+   "our_sg": 71,
+   "source_sg": 71,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    71
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-98173",
+   "source": "JARVIS",
+   "formula": "HfTlCuS3",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-48383",
+   "source": "JARVIS",
+   "formula": "NaFePO4",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-53071",
+   "source": "JARVIS",
+   "formula": "MgIn2O4",
+   "our_sg": 74,
+   "source_sg": 74,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    74
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-92194",
+   "source": "JARVIS",
+   "formula": "Mg6ZnFe",
+   "our_sg": 38,
+   "source_sg": 38,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    38
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-48745",
+   "source": "JARVIS",
+   "formula": "LiVCuO4",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86274",
+   "source": "JARVIS",
+   "formula": "Al6Fe",
+   "our_sg": 63,
+   "source_sg": 63,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    63
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-52341",
+   "source": "JARVIS",
+   "formula": "SbOF",
+   "our_sg": 33,
+   "source_sg": 33,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    33
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-91848",
+   "source": "JARVIS",
+   "formula": "LaFe5H2",
+   "our_sg": 65,
+   "source_sg": 65,
+   "crystal_system": "orthorhombic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    65
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90856",
+   "source": "JARVIS",
+   "formula": "TiCuSiAs",
+   "our_sg": 129,
+   "source_sg": 129,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    129
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64906",
+   "source": "JARVIS",
+   "formula": "Be2OsRu",
+   "our_sg": 119,
+   "source_sg": 119,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    119
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-89957",
+   "source": "JARVIS",
+   "formula": "Sr2Ti2As2OF2",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-22721",
+   "source": "JARVIS",
+   "formula": "PbBr2",
+   "our_sg": 136,
+   "source_sg": 136,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    136
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86154",
+   "source": "JARVIS",
+   "formula": "Fe2B",
+   "our_sg": 123,
+   "source_sg": 123,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    123
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-91564",
+   "source": "JARVIS",
+   "formula": "SmSb2Au",
+   "our_sg": 129,
+   "source_sg": 129,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    129
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-97732",
+   "source": "JARVIS",
+   "formula": "LaMgSi2",
+   "our_sg": 141,
+   "source_sg": 141,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    141
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-49773",
+   "source": "JARVIS",
+   "formula": "LiTaO3",
+   "our_sg": 127,
+   "source_sg": 127,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    38,
+    127
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-3534",
+   "source": "JARVIS",
+   "formula": "BiClO",
+   "our_sg": 129,
+   "source_sg": 129,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    129
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-15831",
+   "source": "JARVIS",
+   "formula": "CrS2",
+   "our_sg": 122,
+   "source_sg": 122,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    122
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90580",
+   "source": "JARVIS",
+   "formula": "ZrSn",
+   "our_sg": 129,
+   "source_sg": 129,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    57,
+    129
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-53435",
+   "source": "JARVIS",
+   "formula": "Sm2ZnS4",
+   "our_sg": 122,
+   "source_sg": 122,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    122
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-65020",
+   "source": "JARVIS",
+   "formula": "BeCuPt",
+   "our_sg": 107,
+   "source_sg": 107,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    107
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90713",
+   "source": "JARVIS",
+   "formula": "ScNiC2",
+   "our_sg": 129,
+   "source_sg": 129,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    129
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90768",
+   "source": "JARVIS",
+   "formula": "YSn3",
+   "our_sg": 139,
+   "source_sg": 139,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    139
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-42657",
+   "source": "JARVIS",
+   "formula": "FeO2",
+   "our_sg": 136,
+   "source_sg": 136,
+   "crystal_system": "tetragonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    136
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-10",
+   "source": "JARVIS",
+   "formula": "VSe2",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-28634",
+   "source": "JARVIS",
+   "formula": "MoW3Se2S6",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    156
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90228",
+   "source": "JARVIS",
+   "formula": "Ag2IO6",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86968",
+   "source": "JARVIS",
+   "formula": "CdAs2O6",
+   "our_sg": 162,
+   "source_sg": 162,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    162
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90532",
+   "source": "JARVIS",
+   "formula": "FeOF",
+   "our_sg": 146,
+   "source_sg": 146,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    146
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-28704",
+   "source": "JARVIS",
+   "formula": "Mo3WSe6S2",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    156
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-28565",
+   "source": "JARVIS",
+   "formula": "Te2Mo2WSe2S2",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    8,
+    156
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86436",
+   "source": "JARVIS",
+   "formula": "LiSbF6",
+   "our_sg": 148,
+   "source_sg": 148,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    148
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-107772",
+   "source": "JARVIS",
+   "formula": "Bi3Sb",
+   "our_sg": 160,
+   "source_sg": 160,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    160
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-29104",
+   "source": "JARVIS",
+   "formula": "Te6Mo3WSe2",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    8,
+    156
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-91520",
+   "source": "JARVIS",
+   "formula": "LaAlH6",
+   "our_sg": 166,
+   "source_sg": 166,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    166
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-28959",
+   "source": "JARVIS",
+   "formula": "Te2MoWSeS",
+   "our_sg": 156,
+   "source_sg": 156,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    1,
+    156
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90114",
+   "source": "JARVIS",
+   "formula": "Zn2Ga2S5",
+   "our_sg": 166,
+   "source_sg": 166,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    166
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-47962",
+   "source": "JARVIS",
+   "formula": "Li2VO2F",
+   "our_sg": 164,
+   "source_sg": 164,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    164
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-1879",
+   "source": "JARVIS",
+   "formula": "NaVO2",
+   "our_sg": 166,
+   "source_sg": 166,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    166
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-5482",
+   "source": "JARVIS",
+   "formula": "CSO",
+   "our_sg": 160,
+   "source_sg": 160,
+   "crystal_system": "trigonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    160
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86322",
+   "source": "JARVIS",
+   "formula": "LiO",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-16112",
+   "source": "JARVIS",
+   "formula": "YbAsPd",
+   "our_sg": 189,
+   "source_sg": 189,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    189
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-85557",
+   "source": "JARVIS",
+   "formula": "EuCuBi",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-4729",
+   "source": "JARVIS",
+   "formula": "YAl3",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-18544",
+   "source": "JARVIS",
+   "formula": "LiNiN",
+   "our_sg": 187,
+   "source_sg": 187,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    187
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-14997",
+   "source": "JARVIS",
+   "formula": "YbNi5",
+   "our_sg": 191,
+   "source_sg": 191,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    191
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-43079",
+   "source": "JARVIS",
+   "formula": "LiCuS",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-50935",
+   "source": "JARVIS",
+   "formula": "AlInO3",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-22698",
+   "source": "JARVIS",
+   "formula": "LiAgF2",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-91653",
+   "source": "JARVIS",
+   "formula": "Mg3In",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-90040",
+   "source": "JARVIS",
+   "formula": "HfSnRh",
+   "our_sg": 189,
+   "source_sg": 189,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    189
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-5059",
+   "source": "JARVIS",
+   "formula": "Dy3Mn3Ga2Si",
+   "our_sg": 189,
+   "source_sg": 189,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    189
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-91890",
+   "source": "JARVIS",
+   "formula": "LaMg7",
+   "our_sg": 187,
+   "source_sg": 187,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    187
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-91939",
+   "source": "JARVIS",
+   "formula": "TiCo3",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": false,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    63,
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-14740",
+   "source": "JARVIS",
+   "formula": "C",
+   "our_sg": 194,
+   "source_sg": 194,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    194
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86369",
+   "source": "JARVIS",
+   "formula": "LaZn5",
+   "our_sg": 191,
+   "source_sg": 191,
+   "crystal_system": "hexagonal",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    191
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86097",
+   "source": "JARVIS",
+   "formula": "DyB6",
+   "our_sg": 221,
+   "source_sg": 221,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    221
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64664",
+   "source": "JARVIS",
+   "formula": "Ba4NaBi",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-22556",
+   "source": "JARVIS",
+   "formula": "SrFeO3",
+   "our_sg": 221,
+   "source_sg": 221,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    221
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-86726",
+   "source": "JARVIS",
+   "formula": "LuNi4Sn",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-1372",
+   "source": "JARVIS",
+   "formula": "AlAs",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-14873",
+   "source": "JARVIS",
+   "formula": "SrB6",
+   "our_sg": 221,
+   "source_sg": 221,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    221
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-1996",
+   "source": "JARVIS",
+   "formula": "NaI",
+   "our_sg": 225,
+   "source_sg": 225,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    225
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64045",
+   "source": "JARVIS",
+   "formula": "Ba4TaZn",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-63912",
+   "source": "JARVIS",
+   "formula": "Ba4CaRe",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64003",
+   "source": "JARVIS",
+   "formula": "Ba4TeSe",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64584",
+   "source": "JARVIS",
+   "formula": "Ba4NaGe",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64240",
+   "source": "JARVIS",
+   "formula": "Ba4HgPb",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64719",
+   "source": "JARVIS",
+   "formula": "Ba4YNb",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-64377",
+   "source": "JARVIS",
+   "formula": "Ba4LiHf",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-65101",
+   "source": "JARVIS",
+   "formula": "BeReBi4",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  },
+  {
+   "material_id": "JVASP-65062",
+   "source": "JARVIS",
+   "formula": "Ca4BeW",
+   "our_sg": 216,
+   "source_sg": 216,
+   "crystal_system": "cubic",
+   "sg_agree": true,
+   "tolerance_robust": true,
+   "neighborhood_stable": true,
+   "keep_for_training": true,
+   "unique_sgs": [
+    216
+   ],
+   "wyckoff_sum_consistent": true
+  }
+ ],
+ "meta": {
+  "per_system": 16,
+  "min_sites": 2,
+  "max_sites": 16,
+  "n_mp": 112,
+  "n_jarvis": 112,
+  "elapsed_sec": 19.3
+ }
+}

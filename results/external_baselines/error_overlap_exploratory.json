@@ -1,0 +1,47 @@
+{
+ "analysis": "Lane-B3 exploratory: error overlap between the structure-metric RF and the image arms",
+ "status": "EXPLORATORY (existing generations + a cheap RF retrain, no GPU). Not pre-registered; must be re-run under pre-registration before entering a paper.",
+ "reproduction_note": "retraining the RF from the stored CIFs gives 0.8762 vs the 0.8905 recorded in external_baselines (delta 0.0143). The gap is CIF re-parse rounding \u2014 external_baselines built features from the fetched Structure objects, this run re-parses the stored CIF text. Within tolerance, but the external_baselines headline should be quoted as ~0.88-0.89 rather than to 4 decimals. Per-structure RF predictions are now saved, which closes a external_baselines reproducibility gap: only aggregates had been stored.",
+ "contingency_rf_x_b1": {
+  "n": 210,
+  "both_correct": 113,
+  "rf_only": 71,
+  "b1_only": 17,
+  "neither": 9,
+  "rf_acc": 0.8762,
+  "b1_acc": 0.619,
+  "v2b_acc": 0.381,
+  "oracle_union": 0.9571,
+  "union_gain_over_rf": 0.0809
+ },
+ "key_observation": "the image model is right on 17 structures (8.1%) the structure-metric model gets WRONG; an oracle union would reach 0.9571 vs RF's 0.8762",
+ "control_that_qualifies_it": {
+  "question": "is B1 specially competent on RF's hard cases, or merely independent?",
+  "b1_acc_on_rf_errors": 0.654,
+  "b1_base_rate": 0.619,
+  "binomial_z": 0.37,
+  "verdict": "B1 performs at its ORDINARY rate on RF's errors (z=+0.37, not distinguishable from base rate). So the effect is ERROR DECORRELATION, not special competence on hard cases. The honest framing is 'decorrelated errors', NOT 'complementary expertise'."
+ },
+ "per_system": {
+  "b1_rescues": {
+   "monoclinic": 5,
+   "triclinic": 4,
+   "hexagonal": 4,
+   "orthorhombic": 2,
+   "tetragonal": 1,
+   "trigonal": 1
+  },
+  "neither_gets": {
+   "trigonal": 6,
+   "triclinic": 2,
+   "tetragonal": 1
+  },
+  "note": "B1's rescues concentrate in the LOW-SYMMETRY systems (monoclinic/triclinic 9 of 17) \u2014 precisely where the lattice metric is least decisive. This mirrors, in reverse, the certification finding that chain certification concentrates in cubic/tetragonal and has zero coverage on hexagonal/monoclinic."
+ },
+ "why_it_matters": "external_baselines's headline is that a cheap structure model beats every image arm, which threatens the paper's premise. This qualifies it: the modalities fail on DIFFERENT structures, so the image input is not strictly dominated. It motivates a predict-and-certify or ensemble row where the structure model is the answerer \u2014 a stronger system than either alone \u2014 but the gain is decorrelation, not image-specific insight.",
+ "caveats": [
+  "1 seed for the image arms",
+  "oracle union is an upper bound requiring a selector that does not exist",
+  "no pre-registration; exploratory prospecting only"
+ ]
+}

@@ -1,0 +1,101 @@
+{
+ "chance": 0.1429,
+ "sheets": {
+  "/tmp/sheet_good.csv": {
+   "n": 50,
+   "L1_correct": 43,
+   "L1_accuracy": 0.86,
+   "L1_wilson95": [
+    0.7381,
+    0.9305
+   ],
+   "per_system": {
+    "cubic": "7/7",
+    "hexagonal": "5/7",
+    "monoclinic": "7/8",
+    "orthorhombic": "7/7",
+    "tetragonal": "5/7",
+    "triclinic": "7/7",
+    "trigonal": "5/7"
+   },
+   "confusions": {
+    "hexagonal->monoclinic": 1,
+    "tetragonal->orthorhombic": 1,
+    "trigonal->triclinic": 1,
+    "monoclinic->orthorhombic": 1,
+    "tetragonal->triclinic": 1,
+    "trigonal->orthorhombic": 1,
+    "hexagonal->cubic": 1
+   },
+   "L3_blank_rate": 1.0,
+   "screen": {
+    "S1_beats_chance": true,
+    "S2_confidence_tracks_correctness": true,
+    "S3_notes_not_uniformly_selfconsistent_at_chance": true,
+    "S4_timing_not_on_grid": true,
+    "accuracy": 0.86,
+    "wilson_lo": 0.7381,
+    "confidence_profile": {
+     "3": 0.714,
+     "4": 0.875,
+     "5": 1.0
+    }
+   },
+   "admitted": true
+  },
+  "<withheld local path>/v676d1545_response_sheet_1.csv": {
+   "n": 50,
+   "L1_correct": 9,
+   "L1_accuracy": 0.18,
+   "L1_wilson95": [
+    0.0977,
+    0.308
+   ],
+   "per_system": {
+    "cubic": "1/7",
+    "hexagonal": "2/7",
+    "monoclinic": "2/8",
+    "orthorhombic": "1/7",
+    "tetragonal": "0/7",
+    "triclinic": "1/7",
+    "trigonal": "2/7"
+   },
+   "confusions": {
+    "tetragonal->cubic": 3,
+    "tetragonal->orthorhombic": 3,
+    "triclinic->tetragonal": 3,
+    "orthorhombic->hexagonal": 3,
+    "orthorhombic->cubic": 2,
+    "triclinic->hexagonal": 2,
+    "monoclinic->orthorhombic": 2,
+    "hexagonal->tetragonal": 2,
+    "trigonal->monoclinic": 2,
+    "trigonal->cubic": 2
+   },
+   "L3_blank_rate": 0.28,
+   "screen": {
+    "S1_beats_chance": false,
+    "S2_confidence_tracks_correctness": false,
+    "S3_notes_not_uniformly_selfconsistent_at_chance": false,
+    "S4_timing_not_on_grid": false,
+    "accuracy": 0.18,
+    "wilson_lo": 0.0977,
+    "confidence_profile": {
+     "1": 0.5,
+     "2": 0.333,
+     "3": 0.1,
+     "4": 0.077
+    }
+   },
+   "admitted": false
+  }
+ },
+ "admitted": [
+  "/tmp/sheet_good.csv"
+ ],
+ "excluded": [
+  "<withheld local path>/v676d1545_response_sheet_1.csv"
+ ],
+ "human_row": null,
+ "excluded_note": "original absolute paths removed for release; the excluded sheet is identified by filename only. The exclusion reason is in the expert_study finding."
+}

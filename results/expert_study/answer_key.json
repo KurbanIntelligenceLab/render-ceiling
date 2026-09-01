@@ -1,0 +1,752 @@
+[
+ {
+  "item_id": "S01",
+  "material_id": "mp-1096308",
+  "truth_crystal_system": "orthorhombic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1096308_view0.png",
+   "MP_mp-1096308_view1.png",
+   "MP_mp-1096308_view2.png",
+   "MP_mp-1096308_view3.png",
+   "MP_mp-1096308_view4.png"
+  ]
+ },
+ {
+  "item_id": "S02",
+  "material_id": "mp-673678",
+  "truth_crystal_system": "triclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": false,
+  "images": [
+   "MP_mp-673678_view0.png",
+   "MP_mp-673678_view1.png",
+   "MP_mp-673678_view2.png",
+   "MP_mp-673678_view3.png",
+   "MP_mp-673678_view4.png"
+  ]
+ },
+ {
+  "item_id": "S03",
+  "material_id": "mp-1104047",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": false,
+  "images": [
+   "MP_mp-1104047_view0.png",
+   "MP_mp-1104047_view1.png",
+   "MP_mp-1104047_view2.png",
+   "MP_mp-1104047_view3.png",
+   "MP_mp-1104047_view4.png"
+  ]
+ },
+ {
+  "item_id": "S04",
+  "material_id": "mp-7910",
+  "truth_crystal_system": "tetragonal",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-7910_view0.png",
+   "MP_mp-7910_view1.png",
+   "MP_mp-7910_view2.png",
+   "MP_mp-7910_view3.png",
+   "MP_mp-7910_view4.png"
+  ]
+ },
+ {
+  "item_id": "S05",
+  "material_id": "mp-1183229",
+  "truth_crystal_system": "hexagonal",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1183229_view0.png",
+   "MP_mp-1183229_view1.png",
+   "MP_mp-1183229_view2.png",
+   "MP_mp-1183229_view3.png",
+   "MP_mp-1183229_view4.png"
+  ]
+ },
+ {
+  "item_id": "S06",
+  "material_id": "mp-1214834",
+  "truth_crystal_system": "trigonal",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1214834_view0.png",
+   "MP_mp-1214834_view1.png",
+   "MP_mp-1214834_view2.png",
+   "MP_mp-1214834_view3.png",
+   "MP_mp-1214834_view4.png"
+  ]
+ },
+ {
+  "item_id": "S07",
+  "material_id": "mp-1228634",
+  "truth_crystal_system": "hexagonal",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1228634_view0.png",
+   "MP_mp-1228634_view1.png",
+   "MP_mp-1228634_view2.png",
+   "MP_mp-1228634_view3.png",
+   "MP_mp-1228634_view4.png"
+  ]
+ },
+ {
+  "item_id": "S08",
+  "material_id": "mp-1188260",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1188260_view0.png",
+   "MP_mp-1188260_view1.png",
+   "MP_mp-1188260_view2.png",
+   "MP_mp-1188260_view3.png",
+   "MP_mp-1188260_view4.png"
+  ]
+ },
+ {
+  "item_id": "S09",
+  "material_id": "mp-1228817",
+  "truth_crystal_system": "tetragonal",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1228817_view0.png",
+   "MP_mp-1228817_view1.png",
+   "MP_mp-1228817_view2.png",
+   "MP_mp-1228817_view3.png",
+   "MP_mp-1228817_view4.png"
+  ]
+ },
+ {
+  "item_id": "S10",
+  "material_id": "mp-1214750",
+  "truth_crystal_system": "tetragonal",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1214750_view0.png",
+   "MP_mp-1214750_view1.png",
+   "MP_mp-1214750_view2.png",
+   "MP_mp-1214750_view3.png",
+   "MP_mp-1214750_view4.png"
+  ]
+ },
+ {
+  "item_id": "S11",
+  "material_id": "mp-1228180",
+  "truth_crystal_system": "trigonal",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1228180_view0.png",
+   "MP_mp-1228180_view1.png",
+   "MP_mp-1228180_view2.png",
+   "MP_mp-1228180_view3.png",
+   "MP_mp-1228180_view4.png"
+  ]
+ },
+ {
+  "item_id": "S12",
+  "material_id": "mp-2225355",
+  "truth_crystal_system": "triclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": false,
+  "images": [
+   "MP_mp-2225355_view0.png",
+   "MP_mp-2225355_view1.png",
+   "MP_mp-2225355_view2.png",
+   "MP_mp-2225355_view3.png",
+   "MP_mp-2225355_view4.png"
+  ]
+ },
+ {
+  "item_id": "S13",
+  "material_id": "mp-1068010",
+  "truth_crystal_system": "tetragonal",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": false,
+  "images": [
+   "MP_mp-1068010_view0.png",
+   "MP_mp-1068010_view1.png",
+   "MP_mp-1068010_view2.png",
+   "MP_mp-1068010_view3.png",
+   "MP_mp-1068010_view4.png"
+  ]
+ },
+ {
+  "item_id": "S14",
+  "material_id": "mp-19213",
+  "truth_crystal_system": "hexagonal",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": false,
+  "images": [
+   "MP_mp-19213_view0.png",
+   "MP_mp-19213_view1.png",
+   "MP_mp-19213_view2.png",
+   "MP_mp-19213_view3.png",
+   "MP_mp-19213_view4.png"
+  ]
+ },
+ {
+  "item_id": "S15",
+  "material_id": "mp-631567",
+  "truth_crystal_system": "cubic",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-631567_view0.png",
+   "MP_mp-631567_view1.png",
+   "MP_mp-631567_view2.png",
+   "MP_mp-631567_view3.png",
+   "MP_mp-631567_view4.png"
+  ]
+ },
+ {
+  "item_id": "S16",
+  "material_id": "mp-8150",
+  "truth_crystal_system": "trigonal",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-8150_view0.png",
+   "MP_mp-8150_view1.png",
+   "MP_mp-8150_view2.png",
+   "MP_mp-8150_view3.png",
+   "MP_mp-8150_view4.png"
+  ]
+ },
+ {
+  "item_id": "S17",
+  "material_id": "mp-1228721",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1228721_view0.png",
+   "MP_mp-1228721_view1.png",
+   "MP_mp-1228721_view2.png",
+   "MP_mp-1228721_view3.png",
+   "MP_mp-1228721_view4.png"
+  ]
+ },
+ {
+  "item_id": "S18",
+  "material_id": "mp-1183188",
+  "truth_crystal_system": "hexagonal",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1183188_view0.png",
+   "MP_mp-1183188_view1.png",
+   "MP_mp-1183188_view2.png",
+   "MP_mp-1183188_view3.png",
+   "MP_mp-1183188_view4.png"
+  ]
+ },
+ {
+  "item_id": "S19",
+  "material_id": "mp-1182863",
+  "truth_crystal_system": "orthorhombic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1182863_view0.png",
+   "MP_mp-1182863_view1.png",
+   "MP_mp-1182863_view2.png",
+   "MP_mp-1182863_view3.png",
+   "MP_mp-1182863_view4.png"
+  ]
+ },
+ {
+  "item_id": "S20",
+  "material_id": "mp-1228074",
+  "truth_crystal_system": "trigonal",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": false,
+  "images": [
+   "MP_mp-1228074_view0.png",
+   "MP_mp-1228074_view1.png",
+   "MP_mp-1228074_view2.png",
+   "MP_mp-1228074_view3.png",
+   "MP_mp-1228074_view4.png"
+  ]
+ },
+ {
+  "item_id": "S21",
+  "material_id": "mp-2226142",
+  "truth_crystal_system": "trigonal",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": false,
+  "images": [
+   "MP_mp-2226142_view0.png",
+   "MP_mp-2226142_view1.png",
+   "MP_mp-2226142_view2.png",
+   "MP_mp-2226142_view3.png",
+   "MP_mp-2226142_view4.png"
+  ]
+ },
+ {
+  "item_id": "S22",
+  "material_id": "mp-1097296",
+  "truth_crystal_system": "orthorhombic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1097296_view0.png",
+   "MP_mp-1097296_view1.png",
+   "MP_mp-1097296_view2.png",
+   "MP_mp-1097296_view3.png",
+   "MP_mp-1097296_view4.png"
+  ]
+ },
+ {
+  "item_id": "S23",
+  "material_id": "mp-1214797",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1214797_view0.png",
+   "MP_mp-1214797_view1.png",
+   "MP_mp-1214797_view2.png",
+   "MP_mp-1214797_view3.png",
+   "MP_mp-1214797_view4.png"
+  ]
+ },
+ {
+  "item_id": "S24",
+  "material_id": "mp-11772",
+  "truth_crystal_system": "hexagonal",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-11772_view0.png",
+   "MP_mp-11772_view1.png",
+   "MP_mp-11772_view2.png",
+   "MP_mp-11772_view3.png",
+   "MP_mp-11772_view4.png"
+  ]
+ },
+ {
+  "item_id": "S25",
+  "material_id": "mp-1235466",
+  "truth_crystal_system": "triclinic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1235466_view0.png",
+   "MP_mp-1235466_view1.png",
+   "MP_mp-1235466_view2.png",
+   "MP_mp-1235466_view3.png",
+   "MP_mp-1235466_view4.png"
+  ]
+ },
+ {
+  "item_id": "S26",
+  "material_id": "mp-1228728",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1228728_view0.png",
+   "MP_mp-1228728_view1.png",
+   "MP_mp-1228728_view2.png",
+   "MP_mp-1228728_view3.png",
+   "MP_mp-1228728_view4.png"
+  ]
+ },
+ {
+  "item_id": "S27",
+  "material_id": "mp-29816",
+  "truth_crystal_system": "tetragonal",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-29816_view0.png",
+   "MP_mp-29816_view1.png",
+   "MP_mp-29816_view2.png",
+   "MP_mp-29816_view3.png",
+   "MP_mp-29816_view4.png"
+  ]
+ },
+ {
+  "item_id": "S28",
+  "material_id": "mp-1183067",
+  "truth_crystal_system": "cubic",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1183067_view0.png",
+   "MP_mp-1183067_view1.png",
+   "MP_mp-1183067_view2.png",
+   "MP_mp-1183067_view3.png",
+   "MP_mp-1183067_view4.png"
+  ]
+ },
+ {
+  "item_id": "S29",
+  "material_id": "mp-1046784",
+  "truth_crystal_system": "triclinic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1046784_view0.png",
+   "MP_mp-1046784_view1.png",
+   "MP_mp-1046784_view2.png",
+   "MP_mp-1046784_view3.png",
+   "MP_mp-1046784_view4.png"
+  ]
+ },
+ {
+  "item_id": "S30",
+  "material_id": "mp-754198",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-754198_view0.png",
+   "MP_mp-754198_view1.png",
+   "MP_mp-754198_view2.png",
+   "MP_mp-754198_view3.png",
+   "MP_mp-754198_view4.png"
+  ]
+ },
+ {
+  "item_id": "S31",
+  "material_id": "mp-733975",
+  "truth_crystal_system": "triclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-733975_view0.png",
+   "MP_mp-733975_view1.png",
+   "MP_mp-733975_view2.png",
+   "MP_mp-733975_view3.png",
+   "MP_mp-733975_view4.png"
+  ]
+ },
+ {
+  "item_id": "S32",
+  "material_id": "mp-1237061",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1237061_view0.png",
+   "MP_mp-1237061_view1.png",
+   "MP_mp-1237061_view2.png",
+   "MP_mp-1237061_view3.png",
+   "MP_mp-1237061_view4.png"
+  ]
+ },
+ {
+  "item_id": "S33",
+  "material_id": "mp-13369",
+  "truth_crystal_system": "trigonal",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-13369_view0.png",
+   "MP_mp-13369_view1.png",
+   "MP_mp-13369_view2.png",
+   "MP_mp-13369_view3.png",
+   "MP_mp-13369_view4.png"
+  ]
+ },
+ {
+  "item_id": "S34",
+  "material_id": "mp-1245824",
+  "truth_crystal_system": "orthorhombic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1245824_view0.png",
+   "MP_mp-1245824_view1.png",
+   "MP_mp-1245824_view2.png",
+   "MP_mp-1245824_view3.png",
+   "MP_mp-1245824_view4.png"
+  ]
+ },
+ {
+  "item_id": "S35",
+  "material_id": "mp-1079890",
+  "truth_crystal_system": "orthorhombic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1079890_view0.png",
+   "MP_mp-1079890_view1.png",
+   "MP_mp-1079890_view2.png",
+   "MP_mp-1079890_view3.png",
+   "MP_mp-1079890_view4.png"
+  ]
+ },
+ {
+  "item_id": "S36",
+  "material_id": "mp-985443",
+  "truth_crystal_system": "cubic",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-985443_view0.png",
+   "MP_mp-985443_view1.png",
+   "MP_mp-985443_view2.png",
+   "MP_mp-985443_view3.png",
+   "MP_mp-985443_view4.png"
+  ]
+ },
+ {
+  "item_id": "S37",
+  "material_id": "mp-864644",
+  "truth_crystal_system": "cubic",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-864644_view0.png",
+   "MP_mp-864644_view1.png",
+   "MP_mp-864644_view2.png",
+   "MP_mp-864644_view3.png",
+   "MP_mp-864644_view4.png"
+  ]
+ },
+ {
+  "item_id": "S38",
+  "material_id": "mp-11816",
+  "truth_crystal_system": "hexagonal",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-11816_view0.png",
+   "MP_mp-11816_view1.png",
+   "MP_mp-11816_view2.png",
+   "MP_mp-11816_view3.png",
+   "MP_mp-11816_view4.png"
+  ]
+ },
+ {
+  "item_id": "S39",
+  "material_id": "mp-5606",
+  "truth_crystal_system": "tetragonal",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-5606_view0.png",
+   "MP_mp-5606_view1.png",
+   "MP_mp-5606_view2.png",
+   "MP_mp-5606_view3.png",
+   "MP_mp-5606_view4.png"
+  ]
+ },
+ {
+  "item_id": "S40",
+  "material_id": "mp-1228197",
+  "truth_crystal_system": "trigonal",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1228197_view0.png",
+   "MP_mp-1228197_view1.png",
+   "MP_mp-1228197_view2.png",
+   "MP_mp-1228197_view3.png",
+   "MP_mp-1228197_view4.png"
+  ]
+ },
+ {
+  "item_id": "S41",
+  "material_id": "mp-1345578",
+  "truth_crystal_system": "triclinic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1345578_view0.png",
+   "MP_mp-1345578_view1.png",
+   "MP_mp-1345578_view2.png",
+   "MP_mp-1345578_view3.png",
+   "MP_mp-1345578_view4.png"
+  ]
+ },
+ {
+  "item_id": "S42",
+  "material_id": "mp-504676",
+  "truth_crystal_system": "orthorhombic",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-504676_view0.png",
+   "MP_mp-504676_view1.png",
+   "MP_mp-504676_view2.png",
+   "MP_mp-504676_view3.png",
+   "MP_mp-504676_view4.png"
+  ]
+ },
+ {
+  "item_id": "S43",
+  "material_id": "mp-1183110",
+  "truth_crystal_system": "cubic",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1183110_view0.png",
+   "MP_mp-1183110_view1.png",
+   "MP_mp-1183110_view2.png",
+   "MP_mp-1183110_view3.png",
+   "MP_mp-1183110_view4.png"
+  ]
+ },
+ {
+  "item_id": "S44",
+  "material_id": "mp-1189716",
+  "truth_crystal_system": "tetragonal",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1189716_view0.png",
+   "MP_mp-1189716_view1.png",
+   "MP_mp-1189716_view2.png",
+   "MP_mp-1189716_view3.png",
+   "MP_mp-1189716_view4.png"
+  ]
+ },
+ {
+  "item_id": "S45",
+  "material_id": "mp-1183192",
+  "truth_crystal_system": "cubic",
+  "b1_ok": false,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1183192_view0.png",
+   "MP_mp-1183192_view1.png",
+   "MP_mp-1183192_view2.png",
+   "MP_mp-1183192_view3.png",
+   "MP_mp-1183192_view4.png"
+  ]
+ },
+ {
+  "item_id": "S46",
+  "material_id": "mp-866203",
+  "truth_crystal_system": "cubic",
+  "b1_ok": true,
+  "v2b_ok": true,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-866203_view0.png",
+   "MP_mp-866203_view1.png",
+   "MP_mp-866203_view2.png",
+   "MP_mp-866203_view3.png",
+   "MP_mp-866203_view4.png"
+  ]
+ },
+ {
+  "item_id": "S47",
+  "material_id": "mp-1245986",
+  "truth_crystal_system": "triclinic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1245986_view0.png",
+   "MP_mp-1245986_view1.png",
+   "MP_mp-1245986_view2.png",
+   "MP_mp-1245986_view3.png",
+   "MP_mp-1245986_view4.png"
+  ]
+ },
+ {
+  "item_id": "S48",
+  "material_id": "mp-16529",
+  "truth_crystal_system": "orthorhombic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-16529_view0.png",
+   "MP_mp-16529_view1.png",
+   "MP_mp-16529_view2.png",
+   "MP_mp-16529_view3.png",
+   "MP_mp-16529_view4.png"
+  ]
+ },
+ {
+  "item_id": "S49",
+  "material_id": "mp-1183261",
+  "truth_crystal_system": "hexagonal",
+  "b1_ok": true,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1183261_view0.png",
+   "MP_mp-1183261_view1.png",
+   "MP_mp-1183261_view2.png",
+   "MP_mp-1183261_view3.png",
+   "MP_mp-1183261_view4.png"
+  ]
+ },
+ {
+  "item_id": "S50",
+  "material_id": "mp-1214794",
+  "truth_crystal_system": "monoclinic",
+  "b1_ok": false,
+  "v2b_ok": false,
+  "rf_ok": true,
+  "images": [
+   "MP_mp-1214794_view0.png",
+   "MP_mp-1214794_view1.png",
+   "MP_mp-1214794_view2.png",
+   "MP_mp-1214794_view3.png",
+   "MP_mp-1214794_view4.png"
+  ]
+ }
+]

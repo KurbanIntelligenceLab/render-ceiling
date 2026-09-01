@@ -1,0 +1,262 @@
+{
+ "stage": "eval_expansion eval-set expansion to n=420 (review item 5)",
+ "status": "B1 arm DONE and primary question RESOLVED; V2b still generating",
+ "primary_result": {
+  "question": "is B1-direct above the shape-free regularity floor?",
+  "original_n210": {
+   "delta": 0.0905,
+   "discordant": [
+    63,
+    44
+   ],
+   "paired_p": 0.08135,
+   "resolved": false
+  },
+  "expansion_n210": {
+   "delta": 0.2048,
+   "discordant": [
+    70,
+    27
+   ],
+   "paired_p": 1.477e-05,
+   "resolved": true
+  },
+  "pooled_n420": {
+   "delta": 0.1476,
+   "discordant": [
+    133,
+    71
+   ],
+   "paired_p": 1.693e-05,
+   "resolved": true
+  },
+  "cp16_projection": "n=400-500 would resolve it \u2014 projection CORRECT"
+ },
+ "absolute_accuracies": {
+  "RF_19_lattice": {
+   "original": 0.8857,
+   "expansion": 0.8667,
+   "change": -0.019
+  },
+  "B1_direct": {
+   "original": 0.619,
+   "expansion": 0.4524,
+   "change": -0.1666
+  },
+  "FLOOR_3feat": {
+   "original": 0.5286,
+   "expansion": 0.2476,
+   "change": -0.281
+  }
+ },
+ "unplanned_finding": {
+  "claim": "the regularity floor is NOT a stable constant; its value moves with sample composition",
+  "evidence": "floor falls -0.281 vs B1 -0.167 vs RF -0.019",
+  "mechanism": "floor features are size/density/volume regularities, which are sample-specific",
+  "complexity_shift": {
+   "orig_median_conv_atoms": 14,
+   "new_median_conv_atoms": 22,
+   "mannwhitney_p": 9.86e-14,
+   "atoms_drawn_after_2x2x2": [
+    116,
+    176
+   ]
+  },
+  "paper_consequence": "0.5286 must be labelled 'the floor on the original 210-structure sample'; the stable quantity is the PAIRED ordering, resolved in both halves"
+ },
+ "why_complexity_cannot_confound": "the B1-vs-floor test is PAIRED on the same structures; a harder sample lowers both arms and the test only asks which is right when they disagree",
+ "per_system_B1_expansion": {
+  "cubic": {
+   "n": 27,
+   "acc": 0.037037037037037035
+  },
+  "triclinic": {
+   "n": 34,
+   "acc": 0.47058823529411764
+  },
+  "trigonal": {
+   "n": 30,
+   "acc": 0.13333333333333333
+  },
+  "tetragonal": {
+   "n": 31,
+   "acc": 0.3225806451612903
+  },
+  "hexagonal": {
+   "n": 27,
+   "acc": 1.0
+  },
+  "orthorhombic": {
+   "n": 32,
+   "acc": 0.53125
+  },
+  "monoclinic": {
+   "n": 29,
+   "acc": 0.6896551724137931
+  }
+ },
+ "voided_first_attempt": {
+  "value": 0.4143,
+  "reason": "render loop omitted the frozen 2x2x2 supercell",
+  "diagnostic": "cubic accuracy exactly 0.000 on 27 structures, zero 'cubic' predictions in 210",
+  "disposition": "VOID; never citable as an OOD result"
+ },
+ "set_construction": {
+  "n_new": 210,
+  "leakage": {
+   "new_inter_existing_structures": 0,
+   "new_inter_eval": 0,
+   "new_inter_train": 0,
+   "duplicates_within_new": 0
+  },
+  "all_carry_reserved_element": true,
+  "labels": "spglib via make_labels; MP crystal_system used for CANDIDATE SELECTION ONLY",
+  "renders": "1050 files, 0 failures, 768px conventional cell 2x2x2 supercell",
+  "eval_protocol": "max_pixels 200704 (matched to training), K=8 majority vote, denominators 210"
+ },
+ "limitation": "expansion is not complexity-matched to the original sample; a matched design would be cleaner and is stated rather than hidden",
+ "per_class_transfer_B1": {
+  "cubic": [
+   0.433,
+   0.037,
+   "DROP"
+  ],
+  "tetragonal": [
+   0.667,
+   0.323,
+   "DROP"
+  ],
+  "orthorhombic": [
+   0.867,
+   0.531,
+   "DROP"
+  ],
+  "monoclinic": [
+   0.767,
+   0.69,
+   "DROP"
+  ],
+  "triclinic": [
+   0.533,
+   0.471,
+   "DROP"
+  ],
+  "hexagonal": [
+   1.0,
+   1.0,
+   "FLAT"
+  ],
+  "trigonal": [
+   0.067,
+   0.133,
+   "ROSE"
+  ]
+ },
+ "retracted_claim": "'every class except hexagonal dropped' \u2014 FALSE: trigonal rose 0.067->0.133 (2/30 -> 4/30, not significant alone). Correct statement: 5 of 7 dropped, hexagonal flat at ceiling, trigonal rose.",
+ "v2b_arm": {
+  "micro_expansion": 0.4,
+  "macro_expansion": 0.4095,
+  "micro_original": 0.381,
+  "change": 0.019,
+  "paired_vs_floor": {
+   "V2b vs FLOOR  original n=210": {
+    "delta": -0.1476,
+    "discordant": [
+     29,
+     60
+    ],
+    "paired_p": 0.001335,
+    "resolved": true,
+    "n": 210
+   },
+   "V2b vs FLOOR  expansion n=210": {
+    "delta": 0.1524,
+    "discordant": [
+     65,
+     33
+    ],
+    "paired_p": 0.001601,
+    "resolved": true,
+    "n": 210
+   },
+   "V2b vs FLOOR  POOLED n=420": {
+    "delta": 0.0024,
+    "discordant": [
+     94,
+     93
+    ],
+    "paired_p": 1.0,
+    "resolved": false,
+    "n": 420
+   }
+  },
+  "prediction_support": {
+   "expansion": {
+    "cubic": 45,
+    "tetragonal": 96,
+    "trigonal": 69
+   },
+   "original": {
+    "tetragonal": 79,
+    "trigonal": 62,
+    "cubic": 68,
+    "orthorhombic": 1
+   },
+   "note": "3 of 7 classes on expansion, 4 of 7 on original -> per-system accuracy is all-or-nothing"
+  },
+  "saved_text_truncation": "all responses stored at exactly 400 chars (save-time cap, not generation limit); 0/210 unparseable, but the file cannot support post-hoc chain analysis"
+ },
+ "final_pooled_tests": {
+  "V2b vs FLOOR  original n=210": {
+   "delta": -0.1476,
+   "discordant": [
+    29,
+    60
+   ],
+   "paired_p": 0.001335,
+   "resolved": true,
+   "n": 210
+  },
+  "V2b vs FLOOR  expansion n=210": {
+   "delta": 0.1524,
+   "discordant": [
+    65,
+    33
+   ],
+   "paired_p": 0.001601,
+   "resolved": true,
+   "n": 210
+  },
+  "V2b vs FLOOR  POOLED n=420": {
+   "delta": 0.0024,
+   "discordant": [
+    94,
+    93
+   ],
+   "paired_p": 1.0,
+   "resolved": false,
+   "n": 420
+  },
+  "B1 vs V2b     POOLED n=420": {
+   "delta": 0.1452,
+   "discordant": [
+    179,
+    118
+   ],
+   "paired_p": 0.0004784,
+   "resolved": true,
+   "n": 420
+  },
+  "B1 vs FLOOR   POOLED n=420": {
+   "delta": 0.1476,
+   "discordant": [
+    133,
+    71
+   ],
+   "paired_p": 1.693e-05,
+   "resolved": true,
+   "n": 420
+  }
+ },
+ "headline_correction": "'both chain arms fall below the floor' is NOT supported pooled: V2b is below on the original sample (p=1.3e-03) and ABOVE on the expansion (p=1.6e-03), cancelling to p=1.00 at n=420. The floor moved, not the arm. B1-vs-floor (p=1.7e-05) and B1-vs-V2b (p=4.8e-04) are unaffected and are what the paper should lead with."
+}

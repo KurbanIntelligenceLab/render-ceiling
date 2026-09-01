@@ -1,0 +1,388 @@
+{
+ "stage": "statistical_housekeeping",
+ "branch": "replace rank correlation on nominal crystal system with an appropriate statistic; distribution-free order-statistic CI for the n=14 median share; sign-test p for 13-of-14; FDR correction across the full enumerated test family",
+ "crystal_system_association": {
+  "reported_spearman": {
+   "rho": -0.1866,
+   "p": 0.0067056
+  },
+  "recomputed_spearman_natural_rank_order": {
+   "rank_order": [
+    "triclinic",
+    "monoclinic",
+    "orthorhombic",
+    "tetragonal",
+    "trigonal",
+    "hexagonal",
+    "cubic"
+   ],
+   "rho": -0.21846974993590376,
+   "p": 0.0014445378130352553,
+   "n": 210
+  },
+  "kruskal_wallis_nominal_appropriate": {
+   "H": 32.93560517092461,
+   "df": 6,
+   "p": 1.0789262816797982e-05,
+   "group_n_and_mean": {
+    "triclinic": [
+     30,
+     15.27
+    ],
+    "monoclinic": [
+     30,
+     21.0
+    ],
+    "orthorhombic": [
+     30,
+     15.13
+    ],
+    "tetragonal": [
+     30,
+     14.07
+    ],
+    "trigonal": [
+     30,
+     21.87
+    ],
+    "hexagonal": [
+     30,
+     9.57
+    ],
+    "cubic": [
+     30,
+     14.7
+    ]
+   }
+  },
+  "eta_squared": 0.14194886834277387,
+  "verdict": "Kruskal-Wallis (H=32.94, df=6, p=1.08e-05) and eta-squared (0.142) are the nominal-appropriate statistics, both reproduced exactly independently in this session, confirming the theory validation record's numbers. The manuscript's own pipeline imposed a specific ordinal encoding for the Spearman rho rather than treating crystal system as literally unordered, but that encoding is not disclosed in the manuscript text; the exact reported rho (-0.1866) was not reproduced from public data alone (natural symmetry-increasing rank gives -0.2185), confirming the same-sign, close-but-not-identical mismatch already found."
+ },
+ "median_share_ci": {
+  "n": 14,
+  "values_sorted_exact_reference": [
+   0.0084,
+   0.0752,
+   0.0939,
+   0.1222,
+   0.2045,
+   0.2244,
+   0.2901,
+   0.2901,
+   0.3144,
+   0.3488,
+   0.3576,
+   0.3773,
+   0.4466,
+   0.6173
+  ],
+  "median": 0.2901,
+  "percentile_bootstrap_95ci_B20000": [
+   0.1492,
+   0.3576
+  ],
+  "manuscript_reported_bootstrap_ci": [
+   0.1492,
+   0.3576
+  ],
+  "distribution_free_order_statistic_ci": {
+   "order_4_11": {
+    "coverage": 0.9426,
+    "bounds": [
+     0.1222,
+     0.3576
+    ]
+   },
+   "order_3_12": {
+    "coverage": 0.9871,
+    "bounds": [
+     0.0939,
+     0.3773
+    ]
+   }
+  },
+  "note": "0.2901 and [0.1492, 0.3576] reproduce EXACTLY when the perception-share decomposition is computed against the EXACT reference (R1=1.0000), settling the discrepancy with the retired review_round2 memo (0.3092, 12-of-14): that memo's numbers reproduce exactly against the RELEASED-tolerance reference (R1=0.9524) instead. Both figures are internally correct measurements against two different, both real, reference points; the manuscript should state which reference the headline 0.2901 uses (it currently does not name it explicitly next to the number)."
+ },
+ "sign_test_13_of_14": {
+  "reference_used": "R1=1.0000 (exact)",
+  "exception_model": "x-ai/grok-4.5 (only model with perception share P > reasoning share S)",
+  "n_S_gte_P": 13,
+  "n_P_gt_S": 1,
+  "n_total": 14,
+  "p_two_sided_binomtest": 0.0018310546875,
+  "cross_check_at_released_reference_R1_0.9524": {
+   "n_S_gte_P": 12,
+   "n_P_gt_S": 2,
+   "note": "matches retired review_round2 memo's 12-of-14"
+  }
+ },
+ "multiple_comparison_family": {
+  "n_tests_enumerated": 26,
+  "tests": [
+   {
+    "name": "McNemar 61:6, fine-tuned(K=8) vs oracle at R1^0.15",
+    "p": 1.5e-12
+   },
+   {
+    "name": "Sign test, frozen vs off-axis noise sigma=0.01 (18:3)",
+    "p": 0.0015
+   },
+   {
+    "name": "Sign test, frozen vs off-axis noise sigma=0.02 (102:2)",
+    "p": 5.4e-28
+   },
+   {
+    "name": "Spearman, R3 correctness vs atom count, pooled n=2940",
+    "p": 8.133220955625717e-07
+   },
+   {
+    "name": "Fisher exact, atom-count median split",
+    "p": 0.024101377683758543
+   },
+   {
+    "name": "Spearman, atom count vs symmetry rank (confound check)",
+    "p": 0.0067056061307553295
+   },
+   {
+    "name": "Spearman, phantom density vs atoms/cell, 2 views",
+    "p": 0.18628326029891631
+   },
+   {
+    "name": "Spearman, phantom density vs atoms/cell, 3 views",
+    "p": 6.74883644140567e-11
+   },
+   {
+    "name": "Spearman, pixel accuracy vs perception share, n=14",
+    "p": 0.013
+   },
+   {
+    "name": "Sign test 13-of-14 (exact reference)",
+    "p": 0.0018310546875
+   },
+   {
+    "name": "render_conv_0",
+    "p": 0.109
+   },
+   {
+    "name": "render_conv_1",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_2",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_3",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_4",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_5",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_6",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_7",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_8",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_9",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_10",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_11",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_12",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_13",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_14",
+    "p": 1.0
+   },
+   {
+    "name": "render_conv_15",
+    "p": 1.0
+   }
+  ],
+  "bh_fdr_alpha_0.05": [
+   {
+    "name": "McNemar 61:6, fine-tuned(K=8) vs oracle at R1^0.15",
+    "p": 1.5e-12,
+    "p_adj": 1.95e-11,
+    "reject": true
+   },
+   {
+    "name": "Sign test, frozen vs off-axis noise sigma=0.01 (18:3)",
+    "p": 0.0015,
+    "p_adj": 0.0078,
+    "reject": true
+   },
+   {
+    "name": "Sign test, frozen vs off-axis noise sigma=0.02 (102:2)",
+    "p": 5.4e-28,
+    "p_adj": 1.404e-26,
+    "reject": true
+   },
+   {
+    "name": "Spearman, R3 correctness vs atom count, pooled n=2940",
+    "p": 8.133220955625717e-07,
+    "p_adj": 5.2865936211567155e-06,
+    "reject": true
+   },
+   {
+    "name": "Fisher exact, atom-count median split",
+    "p": 0.024101377683758543,
+    "p_adj": 0.06962620219752468,
+    "reject": false
+   },
+   {
+    "name": "Spearman, atom count vs symmetry rank (confound check)",
+    "p": 0.0067056061307553295,
+    "p_adj": 0.024906537057091224,
+    "reject": true
+   },
+   {
+    "name": "Spearman, phantom density vs atoms/cell, 2 views",
+    "p": 0.18628326029891631,
+    "p_adj": 0.44030588797925674,
+    "reject": false
+   },
+   {
+    "name": "Spearman, phantom density vs atoms/cell, 3 views",
+    "p": 6.74883644140567e-11,
+    "p_adj": 5.84899158255158e-10,
+    "reject": true
+   },
+   {
+    "name": "Spearman, pixel accuracy vs perception share, n=14",
+    "p": 0.013,
+    "p_adj": 0.042249999999999996,
+    "reject": true
+   },
+   {
+    "name": "Sign test 13-of-14 (exact reference)",
+    "p": 0.0018310546875,
+    "p_adj": 0.0079345703125,
+    "reject": true
+   },
+   {
+    "name": "render_conv_0",
+    "p": 0.109,
+    "p_adj": 0.2834,
+    "reject": false
+   },
+   {
+    "name": "render_conv_1",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_2",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_3",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_4",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_5",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_6",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_7",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_8",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_9",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_10",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_11",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_12",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_13",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_14",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   },
+   {
+    "name": "render_conv_15",
+    "p": 1.0,
+    "p_adj": 1.0,
+    "reject": false
+   }
+  ],
+  "verdict": "Every currently load-bearing significant claim survives BH-FDR correction across the full 26-test family. Two tests lose significance after correction: the Fisher exact atom-count-median-split test (p=0.0241 -> p_adj=0.0696, not significant) and the two-view phantom-density-vs-atoms-per-cell Spearman (p=0.186, already non-significant before correction). The render-convention probe's 16 comparisons were already reported as null (0 of 16 significant) and remain null after correction. The manuscript currently states no correction; applying BH-FDR explicitly would downgrade exactly one currently-cited significant result (the atom-count median split) from significant to non-significant."
+ },
+ "provenance": "recomputed independently in this session from data/primary/eval.jsonl + data/primary/labels_sidecar.json (crystal system association), results/option_a_frontier/results.json ck_3_3_ladder_stats (median share, sign test), and the enumerated p-values already verified in results/length_control, results/oracle_within_sample, results/render_convention_sweep, results/rung_R3_coords_as_text (multiple-comparison family). Statsmodels multipletests(method='fdr_bh')."
+}

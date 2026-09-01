@@ -1,0 +1,11 @@
+{
+ "single_cell_k": 200,
+ "tiled_k": 178,
+ "n": 210,
+ "single_cell_micro": 0.9524,
+ "tiled_micro": 0.8476,
+ "tiled_only": 0,
+ "single_only": 22,
+ "exact_p": 4.76837158203125e-07,
+ "skipped": 0
+}

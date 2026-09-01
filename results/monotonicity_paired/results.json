@@ -1,0 +1,52 @@
+{
+ "stage": "monotonicity_105pairs",
+ "branch": "recompute the tol=tau sweep over all 105 nested pairs so a directly-comparable 22050-denominator figure exists alongside the released-tolerance figure",
+ "what": "Corollary 3(a) predicts R1 is non-decreasing in the view set at tau=0. The existing record mixed two changes at once: 9 of 11,550 used 55 immediate nestings at tol=tau, while 195 of 22,050 used all 105 nested pairs at tol=0.15. This computes all four combinations (2 tolerances x 2 pair-sets) from one 210x26x2-cell raw sweep so every number in the 2x2 table is directly comparable.",
+ "sample": {
+  "n": 210,
+  "source": "data/primary eval (original 210-structure evaluation sample)"
+ },
+ "nested_pairs_all": 105,
+ "nested_pairs_immediate": 55,
+ "table": {
+  "tol_0.01_immediate_55pairs": {
+   "tol": 0.01,
+   "pairs": 55,
+   "aggregate_violations": 2,
+   "per_structure_comparisons": 11550,
+   "per_structure_violations": 9,
+   "structures_with_violation": 2
+  },
+  "tol_0.15_immediate_55pairs": {
+   "tol": 0.15,
+   "pairs": 55,
+   "aggregate_violations": 2,
+   "per_structure_comparisons": 11550,
+   "per_structure_violations": 99,
+   "structures_with_violation": 25
+  },
+  "tol_0.01_all_105pairs": {
+   "tol": 0.01,
+   "pairs": 105,
+   "aggregate_violations": 2,
+   "per_structure_comparisons": 22050,
+   "per_structure_violations": 15,
+   "structures_with_violation": 2
+  },
+  "tol_0.15_all_105pairs": {
+   "tol": 0.15,
+   "pairs": 105,
+   "aggregate_violations": 2,
+   "per_structure_comparisons": 22050,
+   "per_structure_violations": 195,
+   "structures_with_violation": 25
+  }
+ },
+ "headline_new_figure": "15 of 22,050 (tol=tau=0.01, all 105 nested pairs) is the directly comparable counterpart to the released 195 of 22,050 (tol=0.15, all 105 nested pairs); both share the 22,050 denominator and the full pair set, differing only in tolerance.",
+ "original_published_numbers_reproduce_exactly": {
+  "9_of_11550_at_tol_tau_55_pairs": true,
+  "195_of_22050_at_tol_0.15_105_pairs": true
+ },
+ "interpretation": "Both tolerance settings give the same 2 aggregate (mean-level) violations regardless of pair-set choice (the same subset triple axis_a|body_diagonal|oblique2 losing accuracy when axis_b or axis_c is added). The per-structure violation count rises sharply from 15 to 195 (13x) moving tol from 0.01 to 0.15 at fixed pair-set (all 105), consistent with Corollary 3(a) holding almost exactly at the certified tolerance (15/22050=0.068%) and only approximately at the released tolerance (195/22050=0.884%) -- the released tolerance is where non-monotonicity becomes a visible effect, not an artifact of counting fewer pairs.",
+ "provenance": "recomputed from results/ceiling_below_one/raw_n210_sweep.json (scripts/run_ceiling_sweep_n210.py), which reruns the same oracle as scripts/run_viewsweep.py at both tol=0.01 and tol=0.15 in one pass."
+}

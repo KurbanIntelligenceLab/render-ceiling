@@ -1,0 +1,175 @@
+{
+ "note": "released frontier arm restricted to the 20 validation structures",
+ "model": "x-ai/grok-4.5",
+ "arm": "frontier zero-shot",
+ "K": 3,
+ "predictions": [
+  {
+   "material_id": "mp-1235466",
+   "truth": "triclinic",
+   "pred": "triclinic",
+   "votes": {
+    "triclinic": 2,
+    "monoclinic": 1
+   }
+  },
+  {
+   "material_id": "mp-2215870",
+   "truth": "triclinic",
+   "pred": "triclinic",
+   "votes": {
+    "triclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1246840",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1273441",
+   "truth": "triclinic",
+   "pred": "orthorhombic",
+   "votes": {
+    "orthorhombic": 3
+   }
+  },
+  {
+   "material_id": "mp-1215015",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1246507",
+   "truth": "triclinic",
+   "pred": "triclinic",
+   "votes": {
+    "triclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1048072",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1391233",
+   "truth": "triclinic",
+   "pred": "triclinic",
+   "votes": {
+    "triclinic": 2,
+    "monoclinic": 1
+   }
+  },
+  {
+   "material_id": "mp-2225355",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1345578",
+   "truth": "triclinic",
+   "pred": "triclinic",
+   "votes": {
+    "triclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1046784",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 2,
+    "tetragonal": 1
+   }
+  },
+  {
+   "material_id": "mp-2231502",
+   "truth": "triclinic",
+   "pred": "triclinic",
+   "votes": {
+    "monoclinic": 1,
+    "triclinic": 2
+   }
+  },
+  {
+   "material_id": "mp-673678",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1046464",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-733975",
+   "truth": "triclinic",
+   "pred": "triclinic",
+   "votes": {
+    "triclinic": 2,
+    "monoclinic": 1
+   }
+  },
+  {
+   "material_id": "mp-1046939",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "triclinic": 1,
+    "monoclinic": 2
+   }
+  },
+  {
+   "material_id": "mp-1275776",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1046323",
+   "truth": "triclinic",
+   "pred": "orthorhombic",
+   "votes": {
+    "monoclinic": 1,
+    "orthorhombic": 2
+   }
+  },
+  {
+   "material_id": "mp-1206411",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  },
+  {
+   "material_id": "mp-1247817",
+   "truth": "triclinic",
+   "pred": "monoclinic",
+   "votes": {
+    "monoclinic": 3
+   }
+  }
+ ]
+}

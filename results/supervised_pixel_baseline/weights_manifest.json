@@ -1,0 +1,28 @@
+{
+  "note": "Trained checkpoints are not committed to the repository, per the weights manifest convention. They are transferred back as artifacts alongside this record; do not commit them into git.",
+  "checkpoints": {
+    "resnet50": {
+      "file": "resnet50_s23.pt",
+      "sha256": "1d37092490a6e84487fa26dafb6d9949e273078885e3de304ce6cc964c602bf0",
+      "size_bytes": 94408710
+    },
+    "vit_small": {
+      "file": "vit_small_s23.pt",
+      "sha256": "66c000c96d506a50f30133a4ca914cd794ece7ba8f7f83374febd4df70e29442",
+      "size_bytes": 86732970
+    }
+  },
+  "how_to_load": {
+    "resnet50": "import torchvision.models as tvm; m = tvm.resnet50(); m.fc = torch.nn.Linear(m.fc.in_features, 7); m.load_state_dict(torch.load('resnet50_s23.pt'))",
+    "vit_small": "import timm; m = timm.create_model('vit_small_patch16_224', num_classes=7); m.load_state_dict(torch.load('vit_small_s23.pt'))"
+  },
+  "class_order": [
+    "triclinic",
+    "monoclinic",
+    "orthorhombic",
+    "tetragonal",
+    "trigonal",
+    "hexagonal",
+    "cubic"
+  ]
+}

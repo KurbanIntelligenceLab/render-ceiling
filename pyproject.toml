@@ -1,0 +1,120 @@
+[project]
+name = "render-ceiling"
+version = "1.0.0"
+description = "A model-free ceiling for vision-language model evaluation on rendered crystal structures"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = "MIT"
+license-files = ["LICENSE", "LICENSE-DATA"]
+authors = [
+    { name = "Can Polat" },
+    { name = "Mustafa Kurban", email = "kurbanm@ankara.edu.tr" },
+    { name = "Erchin Serpedin" },
+    { name = "Hasan Kurban", email = "hkurban@hbku.edu.qa" },
+]
+keywords = [
+    "vision-language models",
+    "crystal structures",
+    "benchmark",
+    "evaluation",
+    "geometric oracle",
+]
+dependencies = [
+    "numpy==2.4.6",
+    "scipy==1.17.1",
+    "matplotlib==3.11.0",
+    "pymatgen==2026.5.4",
+    "spglib==2.7.0",
+    "ase==3.29.0",
+    "Pillow==12.3.0",
+]
+
+[project.optional-dependencies]
+# Only needed to fetch source structures from the Materials Project. Every
+# number in the release recomputes without it.
+fetch = ["mp-api==0.46.4"]
+
+[project.scripts]
+render-ceiling = "render_ceiling.cli:main"
+
+[project.urls]
+Repository = "https://github.com/KurbanIntelligenceLab/render-ceiling"
+
+[dependency-groups]
+dev = [
+    "ruff>=0.8",
+    "mypy>=1.13",
+    "pytest>=8.0",
+    "pytest-cov",
+    "pre-commit>=3.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/render_ceiling"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+src = ["src", "tests"]
+# The released harnesses are the as-run record of what produced the numbers.
+# They are kept verbatim as provenance and are deliberately not reformatted.
+extend-exclude = ["release/harnesses"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "RUF", "SIM", "PTH", "RET"]
+
+[tool.ruff.lint.per-file-ignores]
+# The geometry modules follow the notation of the mathematics they implement:
+# R for a rotation matrix, Rs for a list of them. Renaming these to satisfy a
+# style rule would make the code harder to check against the derivation.
+"src/render_ceiling/reconstruct.py" = ["N803", "N806", "B905"]
+# Late imports are load-bearing here: the warnings filter and the matplotlib
+# backend selection must run before the modules they configure are imported.
+# PTH: these modules predate the pathlib convention and are the as-run
+# implementation of the published pipeline; rewriting their I/O to satisfy a
+# style rule would change code that produced released numbers, for no gain.
+"src/render_ceiling/render.py" = ["N806", "E402", "PTH103", "PTH118", "PTH120", "B905"]
+"src/render_ceiling/labels.py" = ["E402", "B905"]
+"src/render_ceiling/data.py" = ["PTH103", "PTH118", "PTH120", "B905", "RET504", "E501"]
+
+[tool.ruff.format]
+docstring-code-format = true
+quote-style = "double"
+
+# Strict typing for the verifier, which is the release gate.
+[tool.mypy]
+python_version = "3.11"
+warn_unreachable = true
+warn_redundant_casts = true
+
+# Two-tier policy. The boundary carries the typing contract: verify.py and
+# cli.py are held to the settings above, and they are what CI gates on.
+#
+# The numerical interior is not. It is built on pymatgen, ase and spglib, which
+# ship weak or absent stubs, and its arrays legitimately change shape as the
+# reconstruction proceeds. Typing it to satisfy the checker would mean rewriting
+# code that produced released numbers, so it is excluded rather than annotated
+# under protest.
+[[tool.mypy.overrides]]
+module = [
+    "render_ceiling.render",
+    "render_ceiling.reconstruct",
+    "render_ceiling.labels",
+    "render_ceiling.data",
+]
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = ["pymatgen.*", "ase.*", "spglib.*", "matplotlib.*", "scipy.*"]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra --strict-markers"
+markers = [
+    "slow: slow tests, excluded from the default local run",
+]

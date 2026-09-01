@@ -1,0 +1,68 @@
+{
+ "stage": "sota_push pixel-input push, run 2 (native resolution + view augmentation)",
+ "verdict": "T1 NOT CLEARED \u2014 pre-registered rule fires; stop, report attempted-and-flat",
+ "result": {
+  "correct": 139,
+  "n": 210,
+  "micro": 0.6619,
+  "macro": 0.6619,
+  "wilson95": [
+   0.5955,
+   0.7225
+  ],
+  "seeds": 1
+ },
+ "training": {
+  "max_pixels": 589824,
+  "effective_visual_tokens_per_view": 576,
+  "source": "read from the live processor, not a formula",
+  "examples": 3220,
+  "structures": 1610,
+  "augmentation": "6 extra cameras, disjoint from the 5 frozen eval views",
+  "epochs": 3,
+  "steps": 1206,
+  "final_loss": 0.1419,
+  "wall_clock_s": 29551
+ },
+ "thresholds": {
+  "T1_movement": 0.666,
+  "delta_vs_T1": -0.0041,
+  "T1_cleared": false,
+  "T2_alignn": 0.756,
+  "delta_vs_T2": -0.0941,
+  "T2_reached": false
+ },
+ "comparisons": {
+  "B1_reference": {
+   "value": 0.6143,
+   "sd": 0.0515,
+   "seeds": [
+    0.59,
+    0.567,
+    0.686
+   ],
+   "delta": 0.0476,
+   "within_one_reference_sd": true,
+   "note": "0.6619 sits INSIDE the reference's own seed range 0.567-0.686, below its best seed"
+  },
+  "regularity_floor": {
+   "value": 0.5286,
+   "delta": 0.1333,
+   "above": true
+  },
+  "published_alignn": {
+   "value": 0.756,
+   "delta": -0.0941,
+   "note": "THEIR data and split; structure input, not pixels \u2014 not directly comparable"
+  }
+ },
+ "confound": "resolution AND augmentation AND data scale all change simultaneously; no single factor attributable even had T1 cleared",
+ "eval_protocol": {
+  "split": "210-structure composition-exclusion (frozen)",
+  "K": 3,
+  "temperature": 0.7,
+  "max_new_tokens": 512,
+  "max_pixels": 589824,
+  "note": "matched to training resolution \u2014 NOT the resolution_audit train/test mismatch"
+ }
+}

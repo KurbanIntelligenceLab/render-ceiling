@@ -1,0 +1,73 @@
+{
+ "stage": "limitations limitations (ICLR plan, Phase F)",
+ "n": 10,
+ "by_status": {
+  "STANDING": 2,
+  "MITIGATED": 1,
+  "INHERENT": 1,
+  "DISCLOSED": 4,
+  "OPEN": 1
+ },
+ "limitations": [
+  {
+   "id": "L1",
+   "limitation": "No human expert baseline. The 50-structure expert study was never fielded; a single returned answer sheet scored 18% and was rejected as a baseline because its answer pattern showed the respondent was not reading the images.",
+   "consequence": "the ideal-extraction ceiling has no human reference, so 'harder than humans find it' is NOT claimed anywhere",
+   "status": "STANDING, stated as a limitation rather than chased"
+  },
+  {
+   "id": "L2",
+   "limitation": "Two cited classifiers are not reproducible from the record. The lattice random forest's published 186/210 is unreachable under twelve defensible readings of its recorded feature prose (classifier_refreeze); box_sufficiency's box-sufficiency rule is unrecoverable by a 50-combination grid search (oracle_within_sample).",
+   "consequence": "the RF is republished at a refrozen 188/210 with the historical values footnoted; stratified rows are recomputed on a canonical predicate that reproduces 140/70 exactly",
+   "status": "MITIGATED FORWARD, historical values not recovered"
+  },
+  {
+   "id": "L3",
+   "limitation": "The oracle reads ground-truth atom coordinates. A zero visibility correction (visibility_corrected_oracle) makes the ideal ceiling a TIGHTER bound on structure-side identifiability but says nothing about whether a model could perform the extraction from pixels.",
+   "consequence": "no claim is made about achievable pixel-side accuracy",
+   "status": "INHERENT to the instrument"
+  },
+  {
+   "id": "L4",
+   "limitation": "The detector used for the extraction gate is weak by construction \u2014 watershed segmentation, colour unmixing and learned detectors were never attempted (atom_detection/extraction_operating_point).",
+   "consequence": "the extraction failure is CHARACTERISED (visibility and segmentation, not precision) but not BOUNDED; no claim about what a stronger detector would achieve",
+   "status": "STANDING"
+  },
+  {
+   "id": "L5",
+   "limitation": "The model sweep ran twice through an aggregation defect; the second run is retained as an unplanned replication and its run-to-run spread published.",
+   "consequence": "adjacent leaderboard rows are NOT separable and the ordering is not exact",
+   "status": "DISCLOSED, with a read-me-first file naming the canonical source"
+  },
+  {
+   "id": "L6",
+   "limitation": "Thirteen zero-shot models were run on the ORIGINAL eval sample only, and the regularity floor moves from 0.5286 to 0.2476 between samples.",
+   "consequence": "the below-floor result is an original-sample claim and cannot be restated sample-free",
+   "status": "NAMED at every mention (protocol_normalisation)"
+  },
+  {
+   "id": "L7",
+   "limitation": "Zero-shot rows are K=3 while the fine-tuned reference is K=8.",
+   "consequence": "K is printed on every row; the same adapter at K=3 is 139/210 rather than 145/210",
+   "status": "DISCLOSED (protocol_normalisation)"
+  },
+  {
+   "id": "L8",
+   "limitation": "Parameter counts are undisclosed for some evaluated models, so no complete scaling curve exists; total and active parameters are separate axes with no cross-family ordering.",
+   "consequence": "only the negative claim is supported \u2014 nothing clears the floor across the whole tested range",
+   "status": "DISCLOSED (model_sweep)"
+  },
+  {
+   "id": "L9",
+   "limitation": "The prior-art audit covers eight named works. The resolution-versus-reseed comparison, the cue-sufficiency partition and the oracle-only checker have NOT been searched against the materials-informatics literature (related_work_audit).",
+   "consequence": "by the plan's own gate, no claim resting on those rows enters as a contribution",
+   "status": "OPEN"
+  },
+  {
+   "id": "L10",
+   "limitation": "V2b's across-seed spread is unknown. The recorded macro_sd = 0.000 is decode collapse, not seed stability (v2b_seed_hygiene), and the true spread was not estimated.",
+   "consequence": "no interval is asserted for that arm",
+   "status": "DISCLOSED, not estimated"
+  }
+ ]
+}

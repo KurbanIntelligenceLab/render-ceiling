@@ -1,0 +1,2553 @@
+{
+ "model": "ALIGNN (published architecture, alignn 2026.5.20, DGL 2.2.0, torch 2.3.0, CPU)",
+ "protocol": "train on 1610 TRAIN, epoch selected on a val split carved from TRAIN, reported on the 210 composition-exclusion EVAL set; graphs from the CONVENTIONAL cell",
+ "seeds": [
+  {
+   "seed": 0,
+   "val": 0.6528,
+   "eval_at_best_val": 0.6762,
+   "epoch": 26,
+   "predictions": {
+    "mp-1235466": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2215870": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1246840": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-1273441": {
+     "pred": "cubic",
+     "truth": "triclinic"
+    },
+    "mp-1215015": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-1246507": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1048072": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1391233": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2225355": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1345578": {
+     "pred": "tetragonal",
+     "truth": "triclinic"
+    },
+    "mp-1046784": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2231502": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-673678": {
+     "pred": "trigonal",
+     "truth": "triclinic"
+    },
+    "mp-1046464": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-733975": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046939": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1275776": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046323": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1206411": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1247817": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-2228346": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2217558": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1235944": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046128": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046536": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1245986": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046312": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046501": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-756745": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-1102961": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1237061": {
+     "pred": "orthorhombic",
+     "truth": "monoclinic"
+    },
+    "mp-1232849": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1104453": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214786": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-6215": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228753": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-14561": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-1228427": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214797": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-3751": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1214784": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1188260": {
+     "pred": "triclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228721": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1228728": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-754198": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-1079632": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1078874": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214987": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1102943": {
+     "pred": "triclinic",
+     "truth": "monoclinic"
+    },
+    "mp-997001": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1228801": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228416": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-567929": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-1246198": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1105940": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-1104047": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1214794": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1104804": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1232615": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-752827": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1105758": {
+     "pred": "tetragonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1539038": {
+     "pred": "tetragonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1178550": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1079890": {
+     "pred": "tetragonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1258701": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-10910": {
+     "pred": "hexagonal",
+     "truth": "orthorhombic"
+    },
+    "mp-560067": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-16529": {
+     "pred": "hexagonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1096576": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096644": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093553": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1245824": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093903": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097386": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097410": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093720": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-29674": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1183276": {
+     "pred": "tetragonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1095763": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097597": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097296": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096466": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1095930": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1182863": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096308": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097427": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-504676": {
+     "pred": "tetragonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1248716": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096345": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093958": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-33615": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1182875": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1228935": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-22412": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214759": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-867347": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-1068010": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-5606": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1183257": {
+     "pred": "orthorhombic",
+     "truth": "tetragonal"
+    },
+    "mp-1228890": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1069712": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7909": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-557233": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1246276": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7906": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-10909": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-570256": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7910": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7188": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214765": {
+     "pred": "trigonal",
+     "truth": "tetragonal"
+    },
+    "mp-4109": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214823": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214750": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-1228817": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1189716": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-29816": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1228926": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1228809": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-3038": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-38417": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-8279": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214834": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228698": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-13369": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228150": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-643047": {
+     "pred": "tetragonal",
+     "truth": "trigonal"
+    },
+    "mp-1245583": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-18733": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228354": {
+     "pred": "tetragonal",
+     "truth": "trigonal"
+    },
+    "mp-1228085": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1095623": {
+     "pred": "orthorhombic",
+     "truth": "trigonal"
+    },
+    "mp-1228866": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-12832": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214580": {
+     "pred": "monoclinic",
+     "truth": "trigonal"
+    },
+    "mp-1246182": {
+     "pred": "tetragonal",
+     "truth": "trigonal"
+    },
+    "mp-1228699": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-1228074": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228925": {
+     "pred": "monoclinic",
+     "truth": "trigonal"
+    },
+    "mp-554669": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1070275": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1228180": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-2226142": {
+     "pred": "triclinic",
+     "truth": "trigonal"
+    },
+    "mp-1228995": {
+     "pred": "orthorhombic",
+     "truth": "trigonal"
+    },
+    "mp-1228197": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-8150": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228643": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-2228574": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-8281": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1228461": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214828": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-19213": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183380": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-985290": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183261": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1228634": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-17535": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-2294": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1029626": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183229": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183051": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-13854": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-754157": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-9324": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-2217621": {
+     "pred": "triclinic",
+     "truth": "hexagonal"
+    },
+    "mp-1183238": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183252": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183049": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-862289": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-1245965": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183563": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183263": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1026813": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-4887": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-11772": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183188": {
+     "pred": "orthorhombic",
+     "truth": "hexagonal"
+    },
+    "mp-1183231": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-997617": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-11816": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1188147": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1246088": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-862873": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867321": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183192": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183136": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1182878": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183140": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183135": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867775": {
+     "pred": "tetragonal",
+     "truth": "cubic"
+    },
+    "mp-862695": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-756317": {
+     "pred": "trigonal",
+     "truth": "cubic"
+    },
+    "mp-864644": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-985443": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183199": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-865989": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183190": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183071": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-631567": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-866031": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1885": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183133": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183067": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-866203": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183118": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183160": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183060": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867338": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867125": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183121": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183110": {
+     "pred": "hexagonal",
+     "truth": "cubic"
+    },
+    "mp-866225": {
+     "pred": "cubic",
+     "truth": "cubic"
+    }
+   }
+  },
+  {
+   "seed": 1,
+   "val": 0.6477,
+   "eval_at_best_val": 0.6095,
+   "epoch": 11,
+   "predictions": {
+    "mp-1235466": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2215870": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1246840": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-1273441": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1215015": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-1246507": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1048072": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1391233": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2225355": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1345578": {
+     "pred": "tetragonal",
+     "truth": "triclinic"
+    },
+    "mp-1046784": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2231502": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-673678": {
+     "pred": "trigonal",
+     "truth": "triclinic"
+    },
+    "mp-1046464": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-733975": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046939": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1275776": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046323": {
+     "pred": "trigonal",
+     "truth": "triclinic"
+    },
+    "mp-1206411": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1247817": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-2228346": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2217558": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1235944": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046128": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046536": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-1245986": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046312": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046501": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-756745": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1102961": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1237061": {
+     "pred": "orthorhombic",
+     "truth": "monoclinic"
+    },
+    "mp-1232849": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1104453": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214786": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-6215": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228753": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-14561": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228427": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214797": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-3751": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1214784": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1188260": {
+     "pred": "triclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228721": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1228728": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-754198": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1079632": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1078874": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214987": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1102943": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-997001": {
+     "pred": "cubic",
+     "truth": "monoclinic"
+    },
+    "mp-1228801": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228416": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-567929": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1246198": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1105940": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-1104047": {
+     "pred": "cubic",
+     "truth": "monoclinic"
+    },
+    "mp-1214794": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1104804": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1232615": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-752827": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1105758": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1539038": {
+     "pred": "cubic",
+     "truth": "orthorhombic"
+    },
+    "mp-1178550": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1079890": {
+     "pred": "cubic",
+     "truth": "orthorhombic"
+    },
+    "mp-1258701": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-10910": {
+     "pred": "triclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-560067": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-16529": {
+     "pred": "cubic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096576": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096644": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093553": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1245824": {
+     "pred": "cubic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093903": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097386": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097410": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093720": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-29674": {
+     "pred": "cubic",
+     "truth": "orthorhombic"
+    },
+    "mp-1183276": {
+     "pred": "cubic",
+     "truth": "orthorhombic"
+    },
+    "mp-1095763": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097597": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097296": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096466": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1095930": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1182863": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096308": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097427": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-504676": {
+     "pred": "trigonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1248716": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096345": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093958": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-33615": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1182875": {
+     "pred": "orthorhombic",
+     "truth": "tetragonal"
+    },
+    "mp-1228935": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-22412": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214759": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-867347": {
+     "pred": "cubic",
+     "truth": "tetragonal"
+    },
+    "mp-1068010": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-5606": {
+     "pred": "cubic",
+     "truth": "tetragonal"
+    },
+    "mp-1183257": {
+     "pred": "orthorhombic",
+     "truth": "tetragonal"
+    },
+    "mp-1228890": {
+     "pred": "trigonal",
+     "truth": "tetragonal"
+    },
+    "mp-1069712": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7909": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-557233": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1246276": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7906": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-10909": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-570256": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7910": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7188": {
+     "pred": "trigonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214765": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-4109": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214823": {
+     "pred": "orthorhombic",
+     "truth": "tetragonal"
+    },
+    "mp-1214750": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1228817": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1189716": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-29816": {
+     "pred": "cubic",
+     "truth": "tetragonal"
+    },
+    "mp-1228926": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1228809": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-3038": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-38417": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-8279": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1214834": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228698": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-13369": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228150": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-643047": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1245583": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-18733": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228354": {
+     "pred": "triclinic",
+     "truth": "trigonal"
+    },
+    "mp-1228085": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1095623": {
+     "pred": "monoclinic",
+     "truth": "trigonal"
+    },
+    "mp-1228866": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-12832": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214580": {
+     "pred": "monoclinic",
+     "truth": "trigonal"
+    },
+    "mp-1246182": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228699": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-1228074": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1228925": {
+     "pred": "tetragonal",
+     "truth": "trigonal"
+    },
+    "mp-554669": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1070275": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-1228180": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-2226142": {
+     "pred": "triclinic",
+     "truth": "trigonal"
+    },
+    "mp-1228995": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1228197": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-8150": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228643": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-2228574": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-8281": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1228461": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214828": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-19213": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183380": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-985290": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183261": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-1228634": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-17535": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-2294": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-1029626": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183229": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183051": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-13854": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-754157": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-9324": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-2217621": {
+     "pred": "triclinic",
+     "truth": "hexagonal"
+    },
+    "mp-1183238": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183252": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183049": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-862289": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-1245965": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183563": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183263": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1026813": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-4887": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-11772": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183188": {
+     "pred": "orthorhombic",
+     "truth": "hexagonal"
+    },
+    "mp-1183231": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-997617": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-11816": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1188147": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1246088": {
+     "pred": "triclinic",
+     "truth": "hexagonal"
+    },
+    "mp-862873": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867321": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183192": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183136": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1182878": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183140": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183135": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867775": {
+     "pred": "tetragonal",
+     "truth": "cubic"
+    },
+    "mp-862695": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-756317": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-864644": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-985443": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183199": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-865989": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183190": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183071": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-631567": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-866031": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1885": {
+     "pred": "tetragonal",
+     "truth": "cubic"
+    },
+    "mp-1183133": {
+     "pred": "orthorhombic",
+     "truth": "cubic"
+    },
+    "mp-1183067": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-866203": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183118": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183160": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183060": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867338": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867125": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183121": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183110": {
+     "pred": "hexagonal",
+     "truth": "cubic"
+    },
+    "mp-866225": {
+     "pred": "cubic",
+     "truth": "cubic"
+    }
+   }
+  },
+  {
+   "seed": 2,
+   "val": 0.6788,
+   "eval_at_best_val": 0.6619,
+   "epoch": 38,
+   "predictions": {
+    "mp-1235466": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2215870": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1246840": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1273441": {
+     "pred": "trigonal",
+     "truth": "triclinic"
+    },
+    "mp-1215015": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-1246507": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1048072": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1391233": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2225355": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1345578": {
+     "pred": "tetragonal",
+     "truth": "triclinic"
+    },
+    "mp-1046784": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2231502": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-673678": {
+     "pred": "trigonal",
+     "truth": "triclinic"
+    },
+    "mp-1046464": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-733975": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046939": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1275776": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046323": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1206411": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1247817": {
+     "pred": "hexagonal",
+     "truth": "triclinic"
+    },
+    "mp-2228346": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-2217558": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1235944": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046128": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046536": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1245986": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046312": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-1046501": {
+     "pred": "triclinic",
+     "truth": "triclinic"
+    },
+    "mp-756745": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1102961": {
+     "pred": "monoclinic",
+     "truth": "triclinic"
+    },
+    "mp-1237061": {
+     "pred": "triclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1232849": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1104453": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214786": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-6215": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228753": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-14561": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228427": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214797": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-3751": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1214784": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1188260": {
+     "pred": "triclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228721": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-1228728": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-754198": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1079632": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1078874": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1214987": {
+     "pred": "cubic",
+     "truth": "monoclinic"
+    },
+    "mp-1102943": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-997001": {
+     "pred": "orthorhombic",
+     "truth": "monoclinic"
+    },
+    "mp-1228801": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1228416": {
+     "pred": "hexagonal",
+     "truth": "monoclinic"
+    },
+    "mp-567929": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1246198": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1105940": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1104047": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1214794": {
+     "pred": "monoclinic",
+     "truth": "monoclinic"
+    },
+    "mp-1104804": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1232615": {
+     "pred": "tetragonal",
+     "truth": "monoclinic"
+    },
+    "mp-752827": {
+     "pred": "trigonal",
+     "truth": "monoclinic"
+    },
+    "mp-1105758": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1539038": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1178550": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1079890": {
+     "pred": "tetragonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1258701": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-10910": {
+     "pred": "hexagonal",
+     "truth": "orthorhombic"
+    },
+    "mp-560067": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-16529": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096576": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096644": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093553": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1245824": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093903": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097386": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097410": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093720": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-29674": {
+     "pred": "trigonal",
+     "truth": "orthorhombic"
+    },
+    "mp-1183276": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1095763": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097597": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097296": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096466": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1095930": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1182863": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096308": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1097427": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-504676": {
+     "pred": "monoclinic",
+     "truth": "orthorhombic"
+    },
+    "mp-1248716": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1096345": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-1093958": {
+     "pred": "orthorhombic",
+     "truth": "orthorhombic"
+    },
+    "mp-33615": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1182875": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1228935": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-22412": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214759": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-867347": {
+     "pred": "cubic",
+     "truth": "tetragonal"
+    },
+    "mp-1068010": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-5606": {
+     "pred": "triclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1183257": {
+     "pred": "orthorhombic",
+     "truth": "tetragonal"
+    },
+    "mp-1228890": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1069712": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7909": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-557233": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1246276": {
+     "pred": "trigonal",
+     "truth": "tetragonal"
+    },
+    "mp-7906": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-10909": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-570256": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7910": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-7188": {
+     "pred": "hexagonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214765": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-4109": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214823": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1214750": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1228817": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1189716": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-29816": {
+     "pred": "monoclinic",
+     "truth": "tetragonal"
+    },
+    "mp-1228926": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-1228809": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-3038": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-38417": {
+     "pred": "tetragonal",
+     "truth": "tetragonal"
+    },
+    "mp-8279": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214834": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228698": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-13369": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228150": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-643047": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1245583": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-18733": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228354": {
+     "pred": "triclinic",
+     "truth": "trigonal"
+    },
+    "mp-1228085": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1095623": {
+     "pred": "monoclinic",
+     "truth": "trigonal"
+    },
+    "mp-1228866": {
+     "pred": "tetragonal",
+     "truth": "trigonal"
+    },
+    "mp-12832": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214580": {
+     "pred": "monoclinic",
+     "truth": "trigonal"
+    },
+    "mp-1246182": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228699": {
+     "pred": "cubic",
+     "truth": "trigonal"
+    },
+    "mp-1228074": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228925": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-554669": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1070275": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228180": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-2226142": {
+     "pred": "triclinic",
+     "truth": "trigonal"
+    },
+    "mp-1228995": {
+     "pred": "orthorhombic",
+     "truth": "trigonal"
+    },
+    "mp-1228197": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-8150": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1228643": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-2228574": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-8281": {
+     "pred": "hexagonal",
+     "truth": "trigonal"
+    },
+    "mp-1228461": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-1214828": {
+     "pred": "trigonal",
+     "truth": "trigonal"
+    },
+    "mp-19213": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183380": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-985290": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183261": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-1228634": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-17535": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-2294": {
+     "pred": "monoclinic",
+     "truth": "hexagonal"
+    },
+    "mp-1029626": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183229": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183051": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-13854": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-754157": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-9324": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-2217621": {
+     "pred": "triclinic",
+     "truth": "hexagonal"
+    },
+    "mp-1183238": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183252": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183049": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-862289": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-1245965": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183563": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183263": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1026813": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-4887": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-11772": {
+     "pred": "trigonal",
+     "truth": "hexagonal"
+    },
+    "mp-1183188": {
+     "pred": "orthorhombic",
+     "truth": "hexagonal"
+    },
+    "mp-1183231": {
+     "pred": "cubic",
+     "truth": "hexagonal"
+    },
+    "mp-997617": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-11816": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1188147": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-1246088": {
+     "pred": "hexagonal",
+     "truth": "hexagonal"
+    },
+    "mp-862873": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867321": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183192": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183136": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1182878": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183140": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183135": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867775": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-862695": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-756317": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-864644": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-985443": {
+     "pred": "hexagonal",
+     "truth": "cubic"
+    },
+    "mp-1183199": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-865989": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183190": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183071": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-631567": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-866031": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1885": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183133": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183067": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-866203": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183118": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183160": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183060": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867338": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-867125": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183121": {
+     "pred": "cubic",
+     "truth": "cubic"
+    },
+    "mp-1183110": {
+     "pred": "hexagonal",
+     "truth": "cubic"
+    },
+    "mp-866225": {
+     "pred": "cubic",
+     "truth": "cubic"
+    }
+   }
+  }
+ ],
+ "mean": 0.6492,
+ "sd_population": 0.0287,
+ "n_eval": 210
+}
