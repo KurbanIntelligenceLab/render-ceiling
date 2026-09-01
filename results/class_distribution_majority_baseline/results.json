@@ -1,0 +1,201 @@
+{
+ "stage": "class_distribution, majority-class baseline, and the shape-free-floor drop (review C-3/C-4)",
+ "seven_way_chance_note": "0.1429 (1/7) is the correct chance reference only under a uniform crystal-system prior; every one of the released samples below is deliberately stratified near-uniform by construction, so 0.1429 is also close to the ACTUAL majority-class rate on every sample except the two natural (non-stratified) draws (eval_expansion210, and the unstratified real MP population, not sampled here).",
+ "class_counts": {
+  "eval210": {
+   "triclinic": 30,
+   "monoclinic": 30,
+   "orthorhombic": 30,
+   "tetragonal": 30,
+   "trigonal": 30,
+   "hexagonal": 30,
+   "cubic": 30
+  },
+  "train1610": {
+   "triclinic": 230,
+   "monoclinic": 230,
+   "orthorhombic": 230,
+   "tetragonal": 230,
+   "trigonal": 230,
+   "hexagonal": 230,
+   "cubic": 230
+  },
+  "eval_expansion210": {
+   "cubic": 27,
+   "triclinic": 34,
+   "trigonal": 30,
+   "tetragonal": 31,
+   "hexagonal": 27,
+   "orthorhombic": 32,
+   "monoclinic": 29
+  },
+  "n1995_scaleup_full": {
+   "triclinic": 285,
+   "monoclinic": 285,
+   "orthorhombic": 285,
+   "tetragonal": 285,
+   "trigonal": 285,
+   "hexagonal": 285,
+   "cubic": 285
+  },
+  "n1950_certified_neighborhood_stable": {
+   "triclinic": 256,
+   "monoclinic": 280,
+   "orthorhombic": 284,
+   "tetragonal": 284,
+   "trigonal": 280,
+   "hexagonal": 281,
+   "cubic": 285
+  },
+  "n1933_quarantine_clean": {
+   "triclinic": 246,
+   "monoclinic": 280,
+   "orthorhombic": 283,
+   "tetragonal": 282,
+   "trigonal": 278,
+   "hexagonal": 279,
+   "cubic": 285
+  }
+ },
+ "majority_class_rates": {
+  "eval210": {
+   "n": 210,
+   "majority_count": 30,
+   "majority_rate": 0.1429
+  },
+  "train1610": {
+   "n": 1610,
+   "majority_count": 230,
+   "majority_rate": 0.1429
+  },
+  "eval_expansion210": {
+   "n": 210,
+   "majority_count": 34,
+   "majority_rate": 0.1619
+  },
+  "n1995_scaleup_full": {
+   "n": 1995,
+   "majority_count": 285,
+   "majority_rate": 0.1429
+  },
+  "n1950_certified_neighborhood_stable": {
+   "n": 1950,
+   "majority_count": 285,
+   "majority_rate": 0.1462
+  },
+  "n1933_quarantine_clean": {
+   "n": 1933,
+   "majority_count": 285,
+   "majority_rate": 0.1474
+  }
+ },
+ "shape_free_floor_recomputation": {
+  "model": "sklearn.ensemble.RandomForestClassifier(n_estimators=500, random_state=23)",
+  "features": [
+   "n_sites (atom count)",
+   "density (g/cm^3, pymatgen Structure.density on the input CIF)",
+   "volume (cell volume, pymatgen Structure.volume)"
+  ],
+  "train_split": "data/primary/train.jsonl, n=1610, identical material_ids/labels as every render-ceiling arm",
+  "n210_eval": {
+   "reported": 0.5286,
+   "recomputed": 0.5285714285714286,
+   "k": 111,
+   "n": 210,
+   "match": true
+  },
+  "n1933_clean_scaleup": {
+   "reported": 0.2054,
+   "recomputed": 0.20538023797206414,
+   "k": 397,
+   "n": 1933,
+   "match": true
+  },
+  "n1995_full_scaleup_uncanonical": {
+   "recomputed": 0.20902255639097744,
+   "k": 417,
+   "n": 1995,
+   "note": "matches eval_scaleup/results.json full_sample.floor_3feat.micro=0.209 exactly; superseded by the quarantine-clean n=1933 value per that record"
+  },
+  "n1950_certified_subset": {
+   "recomputed": 0.20564102564102565,
+   "k": 401,
+   "n": 1950,
+   "note": "the neighborhood_stable=True rows of data/certification/labels_sidecar.json, per code_provenance_validation_record; not separately reported before this record"
+  },
+  "feature_importances_n_sites_density_volume": [
+   0.18964918723244117,
+   0.39499330774972813,
+   0.41535750501783075
+  ],
+  "verification_note": "both released headline values (0.5286 on n=210, 0.2054 on n=1933) reproduce EXACTLY from the released features/seed. Confirmed, not corrected."
+ },
+ "composition_exclusion_imbalance_test": {
+  "reserved_elements": [
+   "Cd",
+   "Ce",
+   "Hg",
+   "In",
+   "Ir",
+   "La",
+   "Mn",
+   "Os",
+   "Re",
+   "Ru",
+   "Tc",
+   "Ti",
+   "Tl"
+  ],
+  "class_balance_by_construction": "the eval210 and train1610 splits are BOTH exactly uniform across the 7 crystal systems by stratified design (30/system and 230/system): split_meta.json per_system_train=230, per_system_eval=30 for all 7 systems. The composition-exclusion split does NOT induce crystal-system class imbalance -- the 32-point floor drop is not a class-imbalance artifact.",
+  "covariate_shift_found": {
+   "density_g_cm3": {
+    "train_median": 5.100175388249452,
+    "eval_median": 6.066066364363444,
+    "mannwhitney_p": 2.3488688514580143e-07
+   },
+   "volume_A3": {
+    "train_median": 163.70582249672424,
+    "eval_median": 214.37537202855384,
+    "mannwhitney_p": 0.0010292224784297483
+   },
+   "n_sites_atom_count": {
+    "train_median": 10.0,
+    "eval_median": 9.0,
+    "mannwhitney_p": 0.2558195052175227
+   },
+   "space_group_granularity": "eval210 has 44 distinct space groups across 210 structures (unique/n=0.210); train1610 has 128 distinct space groups across 1610 (unique/n=0.080) -- the eval draw is MORE space-group-diverse per structure, consistent with composition-exclusion selecting rarer, less-common compositions",
+   "low_density_orthorhombic_outliers": "17/30 orthorhombic eval structures have density<2 g/cm^3 (median 0.56-1.10 g/cm^3), driven by large-cell dilute Tc/Os/Ir/Re-bearing intermetallics (e.g. [Al,Co,Tc], [Al,Fe,Tc]) that are reserved-element artifacts of MP's sparse coverage of these elements at low n_sites; train1610 has the equivalent share (37/230=16%) but at higher median density, so this is a magnitude shift within-class rather than a between-class imbalance"
+  },
+  "conclusion": "The composition-exclusion split preserves exact 7-way class balance (verified from split_meta.json and directly from eval.jsonl/train.jsonl). It does NOT explain the floor's 0.5286->~0.21 drop by class-imbalance. What it does induce is a COVARIATE shift in density and volume (both p<0.01) within each class -- reserved elements (Cd,Ce,Hg,In,Ir,La,Mn,Os,Re,Ru,Tc,Ti,Tl) are disproportionately heavy/dilute or rare-composition MP entries, and the eval210 draw of 210 out of the resulting ~350-450 eligible structures per system landed, by chance of the specific seed=23 draw, on a set where (n_sites,density,volume) happen to separate the 7 systems unusually well."
+ },
+ "drop_mechanism_established_by_prior_record": {
+  "source": "results/eval_scaleup/ (already computed; recomputed and confirmed here, not re-derived independently)",
+  "finding": "the floor's drop from 0.5286 to ~0.21 is NOT a cell-size effect (unlike the oracle's drop, which reverses to 0.9459 under a size-matched control) and IS a property of the specific original n=210 draw: an independently drawn, identically stratified, composition-excluded n=1995 sample gives 0.2090 (0.2054 after quarantine), and a cell-size-matched n=721 subset of that draw still gives 0.2205 -- both far below 0.5286 and stable to cell size.",
+  "this_record_adds": "a bootstrap resampling test on the n=1933 pool: 200 stratified 210-structure resamples (30/system) drawn from the SAME quarantine-clean population give a floor score of 0.2055 +/- 0.0222 (range 0.143-0.271), and ZERO of 200 draws reach 0.5286. A parallel test resampling composition-exclusion splits with 150 different random 13-element reservation sets from the original 1820-structure pool gives floor scores of 0.3196 +/- 0.0654 (max 0.4905), also never reaching 0.5286. A third test of 100 purely-random (non-composition-excluded) stratified n=210 draws from the same pool gives 0.4517 +/- 0.0314 (max 0.5190), still below 0.5286. The released 0.5286 sits above the maximum of all three resampling distributions: z=2.4 above regime C's mean, z=3.2 above regime B's mean, and z=14.6 above regime A's mean (regime A has the tightest spread, sd=0.0222, so the same absolute gap of 0.323 registers as a much larger z there). It is an upper-tail outcome of the specific seed=23 draw under every regime tested, most extremely relative to same-pool stratified resampling.",
+  "verdict": "the 32-point drop is real and reproduces exactly, but its DIRECTION is not that composition-exclusion depresses the floor from a normal ~0.53 task-level value to ~0.21 -- it is that the released n=210 draw is an atypically high outlier for this 3-feature floor, and ~0.21-0.32 is closer to what the floor scores on typical draws of this size and design. This is stated as a property of the ORIGINAL 210 DRAW (design + sampling luck), not attributable to composition-exclusion as a mechanism, and not attributable to a flaw in the floor classifier itself (its exact reproduction from released features/seed rules out an implementation bug)."
+ },
+ "majority_class_vs_leaderboard": {
+  "best_zeroshot_micro": 0.4429,
+  "majority_class_rate_n210": 0.14285714285714285,
+  "best_zeroshot_beats_majority_class": true,
+  "margin_over_majority": 0.30004285714285717,
+  "best_zeroshot_vs_n210_shapefree_floor": {
+   "floor": 0.5286,
+   "verdict": "BELOW",
+   "margin": -0.08569999999999994
+  },
+  "best_zeroshot_vs_full_scale_floor_n1933": {
+   "floor": 0.2054,
+   "verdict": "ABOVE",
+   "margin": 0.23750000000000002
+  },
+  "statement": "the best zero-shot model (llama-4-maverick / glm-4.6v tied, 0.4429) beats the seven-way majority-class rate (0.1429 on the stratified n=210 sample) by 0.30 absolute -- it clears the weakest possible baseline decisively. It falls below the original 210-sample 3-feature shape-free floor (0.5286) but above that same floor's value on the full-scale, independently drawn, quarantine-clean sample (0.2054). The manuscript's below-floor claim is therefore sample-scoped, not a task property, but the model beating majority-class prediction is unambiguous and currently absent from the manuscript."
+ },
+ "figure_line_values": {
+  "leaderboard_figure_majority_class_line": 0.14285714285714285,
+  "leaderboard_figure_note": "draw at y=0.1429 for the n=210 leaderboard (exact majority rate under the stratified 30/system design)",
+  "ladder_figure_majority_class_line_original": 0.14285714285714285,
+  "ladder_figure_majority_class_line_scaleup_n1933": 0.14743921365752716,
+  "ladder_figure_majority_class_line_scaleup_n1933_exact": 0.1474
+ }
+}

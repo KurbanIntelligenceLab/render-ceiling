@@ -1,0 +1,191 @@
+{
+ "stage": "merged_retrain — the merged native-resolution / geometric-OOD retrain: what was pre-registered, what was executed elsewhere, and what was cancelled",
+ "status": "CLOSED — SUBSUMED, NOT ABANDONED. The Q2 (native-resolution retrain) half was executed and is recorded as sota_push (its A3 arm IS this pre-registration's native-resolution retrain). The Q1 (geometric-OOD) half was cancelled for a recorded reason, not dropped silently.",
+ "gap": "Q1 (geometric-OOD) + Q2 (native-resolution retrain)",
+ "prereg": {
+  "committed": "written and committed BEFORE the retrain was launched and before any retrain number existed",
+  "questions": {
+   "Q1": "from prototype_exclusion branch (iii): is B1-direct's OOD robustness chemistry-specific, or does it extend to unseen structural arrangements? prototype_exclusion could not answer it — the built prototype-exclusion eval was 90.0% contaminated for existing checkpoints, the valid no-retrain probe returned a DIFFICULTY SHIFT (all five arms past threshold), and the post-hoc difficulty-controlled analysis was underpowered (best |t| = 1.63)",
+   "Q2": "from resolution_audit branch (ii): was B1's 0.133 accuracy drop at native resolution a genuine resolution effect or a train/test mismatch? Unresolvable without training at native resolution"
+  },
+  "planned_run": {
+   "data": "data/geometry_sft, built and audited in prototype_exclusion: 1610 train / 210 eval, 230 and 30 per system across all 7 systems, 0 prototype overlap, 0 eval-only elements, seed 23",
+   "resolution": "max_pixels = 589824 -> 48x48 grid -> 768x768 effective, 576 visual tokens/view (verified from the live processor; prefill 2973 tokens/sample)",
+   "arms": [
+    "B1 (direct)",
+    "V2b (dense step-level, the Gate-2 winner)"
+   ],
+   "seeds": [
+    0,
+    1,
+    2
+   ],
+   "protocol": "3-sample majority vote, temp 0.7, 512 max new tokens; effective_resolution logged; eval at the SAME native resolution used for training (no train/test resolution mismatch — the entire point of Q2)"
+  },
+  "reference_values_at_416eff_composition_exclusion": {
+   "B1": {
+    "mean": 0.6143,
+    "sd": 0.0515
+   },
+   "V2b": {
+    "mean": 0.3857,
+    "sd": 0.0
+   },
+   "regularity_floor": 0.5286
+  },
+  "threshold": "0.05 absolute; pooled SD per the program-wide statistical conventions, i.e. sqrt((s1^2+s2^2)/2)",
+  "Q1_decision_rules": {
+   "i": "B1 DROPS by > 0.05 while V2b holds within 0.05 => B1's robustness IS chemistry-specific; the memorization story PARTIALLY REVIVES for geometric OOD; report both splits side by side",
+   "ii": "B1 HOLDS within 0.05 => B1's robustness is GENERAL across both OOD axes; the memorization story is closed as refuted and exclusion_baselines branch (a) is strengthened on a properly powered test",
+   "iii": "BOTH arms drop > 0.05 => difficulty shift again; compare ORDERING only and state that a balanced geometric-OOD split is simply harder (this being a TRAINED comparison, a joint drop is informative about task difficulty, not contamination)",
+   "in_all_cases": "report each arm against the external_baselines regularity floor 0.5286, not only against chance — an arm below the floor has not demonstrated crystallographic reasoning"
+  },
+  "Q2_decision_rules": {
+   "i": "an arm IMPROVES by > 0.05 at native => resolution WAS a real constraint; resolution_audit's B1 drop was train/test mismatch; annotate all prior perception results as resolution-limited",
+   "ii": "accuracies FLAT within 0.05 for both arms => resolution was NOT a constraint at this render size; resolution_audit's 'resolution excluded' becomes defensible and the 416-eff results stand as-is",
+   "iii": "an arm DEGRADES by > 0.05 at native even when trained natively => genuine and surprising; investigate before asserting a mechanism",
+   "secondary": "geometry-STEP accuracy for V2b native-trained vs the 0.6349 / 0.6476 pair from resolution_audit item 2. If the natively-trained geometry step still fails to beat the 416 value by > 0.05, the fabrication diagnosis is confirmed under the strongest available test and the 'responsive to the image without being informed by it' sentence stands; if it DOES improve, that sentence must be weakened to apply only to 416-trained models"
+  },
+  "confounds_fixed_in_advance": [
+   "Q1 and Q2 are entangled BY DESIGN in this run (new split AND new resolution); acceptable only because 416-eff/composition-exclusion references exist for both arms, so each comparison changes one axis relative to a known reference. It is NOT a clean 2x2 and must not be described as one. A full factorial (2 splits x 2 resolutions x 3 seeds) is 4x the cost and is explicitly NOT being run",
+   "data/geometry_sft eval is 93.8% contained in data/primary's TRAIN set — irrelevant here because training is on data/geometry_sft/train, disjoint from data/geometry_sft/eval by construction (0 prototype overlap, verified), but these checkpoints must NEVER be evaluated on data/primary's eval set and the 416-eff references must never be recomputed from them",
+   "at native resolution prefill is 3.17x larger, so ~3x the wall-clock of the 416-eff runs — a cost note, not a confound"
+  ],
+  "uninformative_condition": "if both arms land below the regularity floor 0.5286 on the balanced geometric-OOD eval, neither arm demonstrated crystallographic reasoning and both Q1 and Q2 become unanswerable from it — report that plainly rather than interpreting sub-floor differences"
+ },
+ "launch_readiness_verified_on_the_box": {
+  "renders_available_768x768": 9100,
+  "renders_missing": 0,
+  "e3geo_sft_train_rows": 3220,
+  "e3geo_sft_train_composition": "1610 structures x arms B1, V1",
+  "e3geo_sft_eval_rows": 420,
+  "e3geo_sft_eval_composition": "210 structures x arms B1, V1",
+  "e3geo_train_rows": 1610,
+  "e3geo_eval_rows": 210,
+  "train_eval_material_id_intersection": 0,
+  "labels_sidecar_present_in_both_dirs": true,
+  "gaps_found_and_closed_during_prep": [
+   "data/geometry_sft was built in prototype_exclusion as an EVAL split from the GRPO prompt format and LACKED the `target` and `arm` fields the SFT harness requires; fixed by generating targets deterministically from labels_sidecar.json via the trace builder for arms B1 and V1 -> data/geometry_sft_sft/. No new labels were invented",
+   "no re-rendering needed: the renders on disk are genuinely 768x768, so native resolution is reached purely by raising --max-pixels to 589824; the 416x416 of all prior runs was a PROCESSOR cap, never a render limitation"
+  ],
+  "harness_support_confirmed": "scripts/train_e2_lora.py (--data-dir, --max-pixels default 200704, --arm {B1,V1}); scripts/train_e3_grpo.py (--data-dir, --max-pixels, --train-file, --sft-adapter); scripts/eval_e3.py (--data-dir, --max-pixels) — no code changes needed"
+ },
+ "pilot_v1_stopped_before_writing_an_adapter": {
+  "reason": "a comparison against the B1 0.6143 reference would have confounded THREE axes, not two",
+  "axes": {
+   "axis_1_split": "composition-exclusion -> balanced geometric-OOD",
+   "axis_2_resolution": "416x416 (max_pixels 200704) -> 768x768 (589824)",
+   "axis_3_sft_data_size": "115 examples/arm -> 1610 examples/arm (14x) — MISSED IN v1"
+  },
+  "verification": "data/e2/train.jsonl = 460 rows = 115 x 4 arms; data/geometry_sft_sft/train.jsonl = 3220 rows = 1610 x 2 arms",
+  "note": "the v1 prereg text is superseded for the PILOT and was preserved as a snapshot (the superseded v1 pre-registration, its content being the v1 form of the prereg block above)"
+ },
+ "revised_pilot_five_cells_one_seed": {
+  "native_definition": "max_pixels >= 589824, verified from the LIVE processor (48x48 grid, 576 tok/view)",
+  "sft_cells": {
+   "S1": "B1 @ native x comp-1610 (data/primary composition-exclusion, 1610 structures)",
+   "S2": "V1 @ native x comp-1610 -> initialization for G1",
+   "S3": "B1 @ native x geo-1610 (data/geometry_sft balanced geometric-OOD)",
+   "S4": "V1 @ native x geo-1610 -> initialization for G2",
+   "S5": "B1 @ 416 x comp-1610 (ADDED CELL — makes axis 3 MEASURABLE)"
+  },
+  "grpo_cells": {
+   "G1": "V2b from S2, native x comp",
+   "G2": "V2b from S4, native x geo"
+  },
+  "eval_rule": "every model at ITS OWN training resolution (resolution_audit mismatch rule, non-negotiable); comp-trained models on the 210 composition eval, geo-trained on the 210 geometric eval; effective_resolution logged per run, read from the live processor",
+  "three_preregistered_comparisons": {
+   "Q1_resolution": "B1 (S1, native-comp-1610) vs B1 (S5, 416-comp-1610); size and split FIXED, only resolution varies — the clean version of the test resolution_audit could not run. (i) native HIGHER by > 0.05 -> resolution WAS a real constraint; (ii) |delta| <= 0.05 -> resolution NOT a constraint at this render size; (iii) native LOWER by > 0.05 -> surprising, investigate before asserting a mechanism",
+   "Q2_split": "per arm, native-comp-1610 vs native-geo-1610; size and resolution FIXED. prototype_exclusion's branch rules apply verbatim. Every arm also reported against the regularity floor 0.5286",
+   "Q3_scale": "B1 (S5, 416-comp-1610) vs B1 (416-comp-115, the existing 0.6143); resolution and split FIXED, only SFT data size varies (14x)",
+   "Q3_conditionality_stated_in_advance": "the analogous V1 comparison (V1 native-comp-1610 vs V1 416-comp-115 = 0.3365) is RESOLUTION-CONFOUNDED and may be made ONLY IF Q1 returns branch (ii). If Q1 returns (i) or (iii) the V1 scale comparison is NOT made and is reported as unavailable"
+  },
+  "chain_arm_416_comparator": "the existing process_reward V2b (0.3857) was GRPO-trained on 1610 prompts but from an SFT stage of only 115 examples; it may be cited for effect DIRECTION only, with the SFT-lineage caveat wherever cited",
+  "pilot_interpretation_rules": "pipeline validation + effect DIRECTION only. NO gate verdicts; 'confirmed' and 'refuted' are not to be used of any pilot result; the 3-seed matrix decides. Pooled-SD rules cannot be evaluated at n=1 and no branch may be declared from this run. Standing requirements: snapshot the record before any correction; log the zero-variance-group panel for GRPO cells; run the adapter-diff audit across seeds when the matrix runs (bit-identical adapters would indicate a save-twice bug)",
+  "pilot_can": "prove the native-resolution training path runs end to end (no OOM at 3.17x prefill, GRPO reward wiring still fires on the new data dir, eval completes); give a first point estimate for Q1 and Q2; expose cost surprises before 3 seeds are committed",
+  "pilot_cannot": "satisfy EITHER pre-registered decision rule — both compare against pooled seed SDs, which do not exist at n=1"
+ },
+ "cost_model_correction": {
+  "error": "the added S5 cell was described as 'minutes-scale'; that applied the E2 reference timing (4.5 min) without accounting for E2's SFT stage having only 115 examples per arm while S5 trains on 1610",
+  "measured_E2_rate_s_per_example_at_416eff": 2.35,
+  "measured_E2_reference_min": 4.5,
+  "E2_examples": 115,
+  "predicted_S5_min": 63,
+  "actual_S5_s": 3608,
+  "actual_S5_min": 60,
+  "revised_whole_pilot_estimate_h": {
+   "sft_cells_1x416_plus_4xnative": 14.4,
+   "grpo_runs_at_native": 12.7,
+   "evals": 19.6,
+   "total": 47,
+   "note": "~2 days; the 3-seed matrix would be ~3x that. The eval stage is the largest and most compressible block; a pilot-only reduction to K=1 greedy would cut ~13 h without affecting what a 1-seed pilot can legitimately conclude. Flagged to the user for a decision rather than changed unilaterally"
+  }
+ },
+ "cells_actually_completed": {
+  "S5_B1_416_comp1610": {
+   "adapter": "adapters_geo/B1_comp416_s0",
+   "status": "COMPLETE",
+   "steps": 603,
+   "loss_start": 4.4815,
+   "loss_end": 0.0064,
+   "loss_mean_first10": 1.1326,
+   "loss_mean_last10": 0.0224,
+   "minutes": 60,
+   "adapter_mb": 174.7,
+   "observation_recorded_in_advance": "a final training loss of 0.0064 on 1610 examples indicates the model has essentially MEMORISED the training targets. For the B1 arm the target is a single crystal-system word, so near-zero training loss is expected and is NOT by itself evidence of overfitting to the eval. But Q3 (scale 115 -> 1610) then compares two REGIMES that have both saturated their training objective, and any Q3 difference must be attributed to what the larger sample TAUGHT rather than to longer optimisation"
+  },
+  "S1_B1_native_comp1610": {
+   "adapter": "adapters_geo/B1_compnat_s0",
+   "status": "COMPLETE",
+   "steps": 603,
+   "loss_end": 0.0146,
+   "minutes": 241,
+   "note": "241 min against the 200 min estimate confirms the corrected cost model to within ~20%"
+  },
+  "S2_V1_native_comp1610": {
+   "adapter": "adapters_geo/V1_compnat_s0",
+   "status": "PARTIAL — had just started; directory only, no weights; the resumable loop would re-run it from scratch"
+  }
+ },
+ "pause_and_rescope": {
+  "date": "2026-07-27",
+  "directed_sequence": "finish current cell -> certification re-run -> remaining Q1/Q3 cells -> Q2 cells CUT",
+  "stopped_at": "a clean cell boundary; nothing lost",
+  "Q2_cells_cut_rationale": "Q2 is the split axis, which serves the memorization question that exclusion_baselines branch (a) already made non-load-bearing and that prototype_exclusion returned an uninterpretable branch (iii) on. Deferred to the matrix stage, revived only if the certification story needs a robustness row. The data/geometry_sft and data/geometry_sft_sft artifacts are BUILT, AUDITED and RETAINED (0 leakage, 0 missing renders, 3220 SFT rows) — holding them costs nothing",
+  "remaining_pilot_cells_hours": 15,
+  "remaining_pilot_cells": [
+   "S2 V1 @ native x comp-1610 (needed as G1's initialization)",
+   "G1 V2b GRPO from S2, native x comp",
+   "evals: B1_comp416, B1_compnat, V2b_compnat"
+  ],
+  "eval_trim_adopted": {
+   "rule": "split rule, not blanket: B1 evals -> K=1 (4-8 token outputs, negligible sampling variance); chain evals -> K=3 majority RETAINED (greedy has a documented MOTIF-trap history; if any chain cell must run greedy, log the termination rate and revert to K=3 if <50%)",
+   "uniformity": "both sides of every pre-registered comparison use the IDENTICAL K",
+   "decided": "run B1_comp416 at K=3 to match the existing K=3 0.6143 reference, and B1_compnat at K=3 as well so Q1 stays internally uniform; the K=1 trim applies only where BOTH sides of a comparison are new. Saving is smaller than 10h but the comparisons stay valid"
+  }
+ },
+ "results": {
+  "Q2_half_executed_as_sota_push_A3": {
+   "description": "the A3 run in sota_push IS this pre-registration's native-resolution retrain: direct arm, max_pixels 589824 (576 visual tokens/view read from the live processor), 3220 examples (1610 structures x2 with 6-camera augmentation), evaluated on the same frozen 210-structure composition-exclusion split at matched resolution",
+   "A3_accuracy": 0.6619,
+   "A3_correct": 139,
+   "A3_n": 210,
+   "B1_416px_reference": {
+    "mean": 0.6143,
+    "sd": 0.0515
+   },
+   "branch": "Q2-(ii): FLAT within the 0.05 rule",
+   "note": "the pre-registered stopping rule fired against the direction I was leaning and no further runs were made. See sota_push for the full record",
+   "consequence_for_resolution_audit": "because native-trained/native-eval is flat, resolution_audit's branch (ii) reading stands — resolution is not shown to be a confound, and the 416px effective resolution used throughout the program is not a defect that inflated or deflated any reported number"
+  },
+  "Q1_half_cancelled": {
+   "question": "whether B1-direct's OOD robustness is chemistry-specific, tested by retraining on a geometric-OOD split",
+   "reason": "exclusion_baselines branch (a) already REFUTED the pre-registered hypothesis that B1-direct would collapse out of distribution (0.6143 on composition-exclusion vs 0.711 IID, only -13.6%), and prototype_exclusion's no-retrain prototype probe returned an uninterpretable branch (iii) (a difficulty shift affecting all five arms). With the memorization question already answered in the direction that made the retrain unnecessary, spending ~8 GPU-hours to re-answer it was not justified",
+   "gpu_hours_saved": 8,
+   "data_retained": "data/geometry_sft_sft/train.jsonl = 3220 rows (1610 structures x arms B1, V1), data/geometry_sft_sft/eval.jsonl = 420 rows, targets generated deterministically from labels_sidecar.json via the trace builder, all 9100 renders verified to resolve with zero train/eval leakage"
+  }
+ },
+ "must_not_be_claimed": "A3 is ONE seed. The prereg is explicit that no branch may be declared from a single seed where the comparison needs seed SDs, so the flat Q2 reading is reported as attempted-and-flat rather than as a demonstrated null. The geometric-OOD question is OPEN, not answered.",
+ "conclusion": "CLOSED by subsumption: the native-resolution half was executed elsewhere (sota_push A3 = 0.6619 vs the 0.6143 ± 0.0515 416px reference, flat within the pre-registered 0.05 rule, one seed only), and the geometric-OOD half was cancelled for a recorded reason after exclusion_baselines made it non-load-bearing. The built and audited geometric-OOD data is retained and reproducible.",
+ "_provenance": "transcribed from this record's the record's finding prose and its pre-registration (the pre-registration plus the superseded the superseded v1 pre-registration); the executed numbers come from the sota_push A3 run"
+}

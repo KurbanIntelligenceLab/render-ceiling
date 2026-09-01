@@ -21,12 +21,12 @@
   "micro": 0.8797,
   "errors": 0
  },
- "rf_lattice19": {
+ "rf_19_lattice_metrics": {
   "k": 1735,
   "n": 1995,
   "micro": 0.8697
  },
- "floor_3feat": {
+ "shape_free_floor_3feat": {
   "k": 417,
   "n": 1995,
   "micro": 0.209

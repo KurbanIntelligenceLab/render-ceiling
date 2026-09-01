@@ -1,5 +1,5 @@
 """
-CoCr multi-view rendering pipeline.
+Multi-view rendering pipeline.
 
 Standardized ball-and-stick renders of a crystal structure for VLM input.
 Per the experiment plan's "Rendering" section:

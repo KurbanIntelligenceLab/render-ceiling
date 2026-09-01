@@ -1,0 +1,185 @@
+{
+ "stage": "ceiling_below_one",
+ "branch": "impoverished camera protocols as headline ceiling-below-1 numbers, plus the four-view phantom rate needed for the fifth-camera claim",
+ "what": "Recomputes R1 (ideal-extraction ceiling) under two-view and three-view camera subsets on the frozen five-camera geometry, at both the certified tolerance (tau=0.01) and the released ray-tolerance (0.15), as first-class headline quantities rather than a census footnote. Also computes the four-view (and five-view) phantom-nonempty rate at near-zero tolerance to settle whether the fifth camera does real work.",
+ "sample": {
+  "n": 210,
+  "source": "data/primary eval (original 210-structure evaluation sample)"
+ },
+ "protocol": "frozen five-camera set (axis_a, axis_b, axis_c, body_diagonal, oblique2); ideal-extraction oracle (reconstruct_positions + recover_symmetry, render_ceiling.reconstruct), symprec=0.01, angle_tolerance=5.0",
+ "ceiling_by_view_count": {
+  "0.01": {
+   "2": {
+    "oracle_ceiling_mean": 0.9214,
+    "oracle_ceiling_min": 0.7571,
+    "oracle_ceiling_max": 0.981,
+    "worst_subset": "axis_b|axis_c",
+    "best_subset": "axis_a|body_diagonal"
+   },
+   "3": {
+    "oracle_ceiling_mean": 0.9967,
+    "oracle_ceiling_min": 0.9952,
+    "oracle_ceiling_max": 1.0,
+    "worst_subset": "axis_a|axis_b|body_diagonal",
+    "best_subset": "axis_a|axis_b|axis_c"
+   },
+   "4": {
+    "oracle_ceiling_mean": 0.9981,
+    "oracle_ceiling_min": 0.9952,
+    "oracle_ceiling_max": 1.0,
+    "worst_subset": "axis_a|axis_b|body_diagonal|oblique2",
+    "best_subset": "axis_a|axis_b|axis_c|body_diagonal"
+   },
+   "5": {
+    "oracle_ceiling_mean": 1.0,
+    "oracle_ceiling_min": 1.0,
+    "oracle_ceiling_max": 1.0,
+    "worst_subset": "axis_a|axis_b|axis_c|body_diagonal|oblique2",
+    "best_subset": "axis_a|axis_b|axis_c|body_diagonal|oblique2"
+   }
+  },
+  "0.15": {
+   "2": {
+    "oracle_ceiling_mean": 0.7481,
+    "oracle_ceiling_min": 0.6762,
+    "oracle_ceiling_max": 0.8,
+    "worst_subset": "axis_b|body_diagonal",
+    "best_subset": "axis_a|axis_c"
+   },
+   "3": {
+    "oracle_ceiling_mean": 0.9152,
+    "oracle_ceiling_min": 0.8857,
+    "oracle_ceiling_max": 0.9524,
+    "worst_subset": "axis_a|axis_b|body_diagonal",
+    "best_subset": "axis_a|body_diagonal|oblique2"
+   },
+   "4": {
+    "oracle_ceiling_mean": 0.9371,
+    "oracle_ceiling_min": 0.9095,
+    "oracle_ceiling_max": 0.9524,
+    "worst_subset": "axis_b|axis_c|body_diagonal|oblique2",
+    "best_subset": "axis_a|axis_b|axis_c|body_diagonal"
+   },
+   "5": {
+    "oracle_ceiling_mean": 0.9524,
+    "oracle_ceiling_min": 0.9524,
+    "oracle_ceiling_max": 0.9524,
+    "worst_subset": "axis_a|axis_b|axis_c|body_diagonal|oblique2",
+    "best_subset": "axis_a|axis_b|axis_c|body_diagonal|oblique2"
+   }
+  }
+ },
+ "two_view_headline": {
+  "tol_0.01": {
+   "oracle_ceiling_mean": 0.9214,
+   "oracle_ceiling_min": 0.7571,
+   "oracle_ceiling_max": 0.981,
+   "worst_subset": "axis_b|axis_c",
+   "best_subset": "axis_a|body_diagonal"
+  },
+  "tol_0.15": {
+   "oracle_ceiling_mean": 0.7481,
+   "oracle_ceiling_min": 0.6762,
+   "oracle_ceiling_max": 0.8,
+   "worst_subset": "axis_b|body_diagonal",
+   "best_subset": "axis_a|axis_c"
+  }
+ },
+ "three_view_headline": {
+  "tol_0.01": {
+   "oracle_ceiling_mean": 0.9967,
+   "oracle_ceiling_min": 0.9952,
+   "oracle_ceiling_max": 1.0,
+   "worst_subset": "axis_a|axis_b|body_diagonal",
+   "best_subset": "axis_a|axis_b|axis_c"
+  },
+  "tol_0.15": {
+   "oracle_ceiling_mean": 0.9152,
+   "oracle_ceiling_min": 0.8857,
+   "oracle_ceiling_max": 0.9524,
+   "worst_subset": "axis_a|axis_b|body_diagonal",
+   "best_subset": "axis_a|body_diagonal|oblique2"
+  }
+ },
+ "phantom_nonempty_rate_by_view_count_tau_near_zero": {
+  "n210_sample": {
+   "2": {
+    "total_pairs": 2100,
+    "nonempty": 305,
+    "frac_nonempty": 0.14523809523809525,
+    "total_phantoms": 6165
+   },
+   "3": {
+    "total_pairs": 2100,
+    "nonempty": 39,
+    "frac_nonempty": 0.018571428571428572,
+    "total_phantoms": 477
+   },
+   "4": {
+    "total_pairs": 1050,
+    "nonempty": 0,
+    "frac_nonempty": 0.0,
+    "total_phantoms": 0
+   },
+   "5": {
+    "total_pairs": 210,
+    "nonempty": 0,
+    "frac_nonempty": 0.0,
+    "total_phantoms": 0
+   }
+  },
+  "n1950_sample_e50": {
+   "2": {
+    "total_pairs": 19500,
+    "nonempty": 3007,
+    "frac_nonempty": 0.15420512820512822,
+    "total_phantoms": 136663
+   },
+   "3": {
+    "total_pairs": 19500,
+    "nonempty": 365,
+    "frac_nonempty": 0.01871794871794872,
+    "total_phantoms": 8039
+   },
+   "4": {
+    "total_pairs": 9750,
+    "nonempty": 0,
+    "frac_nonempty": 0.0,
+    "total_phantoms": 0
+   },
+   "5": {
+    "total_pairs": 1950,
+    "nonempty": 0,
+    "frac_nonempty": 0.0,
+    "total_phantoms": 0
+   }
+  }
+ },
+ "review_cited_rates_verification": {
+  "two_view_1542_pct": {
+   "claimed": 0.154,
+   "recomputed_e50_n1950": 0.15420512820512822,
+   "recomputed_e3_n210": 0.14523809523809525
+  },
+  "three_view_1_9_pct": {
+   "claimed": 0.019,
+   "recomputed_e50_n1950": 0.01871794871794872,
+   "recomputed_e3_n210": 0.018571428571428572
+  },
+  "four_view_pct_new": {
+   "recomputed_e50_n1950": 0.0,
+   "recomputed_e3_n210": 0.0
+  },
+  "five_view_pct": {
+   "recomputed_e50_n1950": 0.0,
+   "recomputed_e3_n210": 0.0
+  }
+ },
+ "fifth_camera_claim_verdict": "The fifth-camera claim survives only in the fidelity/guarantee sense, not in the accuracy sense. Mean R1 accuracy saturates at four views (0.9371-1.0 depending on tolerance) and gains only 0.15-2.9 points moving to five views. But the phantom-nonempty rate drops to EXACTLY ZERO only at four views and stays zero at five (0.0% at four views on both the 210- and 1950-structure samples, at tau approx 0), matching the earlier three-view rate of 1.9% which is still nonzero. The fifth camera's marginal, measurable contribution is therefore the elimination of the LAST residual phantom-producing failure mode down to a certified-empty guarantee, not an accuracy gain and not the two/three-view rates the manuscript currently cites in the same sentence (those describe the second and third camera's contribution).",
+ "provenance": "recomputed independently via scripts/run_ceiling_sweep_n210.py, scripts/run_phantom_census_e3.py, scripts/run_phantom_census_e50.py; reproduces results/view_subset_sweep/summary.json's tol=0.15 numbers (0.7481/0.9152/0.9371/0.9524) exactly, and results/option_a_frontier/results.json's ck_2_3_phantoms1933 two/three-view rates (0.1542/0.0187) exactly.",
+ "esi_values_table": {
+  "file": "esi_values_table.json",
+  "what": "machine-readable serialisation of the supplementary values table - the revised ESI value tables (impoverished-camera ceilings, phantom-nonempty rates, monotonicity 2x2 sweep, conditioning distribution, statistical housekeeping)",
+  "note": "the ceiling and phantom sections duplicate fields already in this file; the monotonicity, conditioning and statistical-housekeeping sections mirror results/monotonicity_105pairs, results/conditioning_distribution and results/statistical_housekeeping"
+ }
+}

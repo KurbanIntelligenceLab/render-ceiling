@@ -69,7 +69,7 @@
   {
    "id": "C5",
    "claim": "A coordinate-input GNN and an 8B pixel model are statistically indistinguishable",
-   "evidence": "external_baselines alignn_published_3seed.json (mean/sd_population) + external_baselines finding.md paired McNemar",
+   "evidence": "external_baselines alignn_published_3seed.json (mean/sd_population) + external_baselines the record's finding prose paired McNemar",
    "values": {
     "alignn_mean": 0.6492,
     "alignn_sd_population": 0.0287,

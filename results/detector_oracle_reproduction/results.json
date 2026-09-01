@@ -1,0 +1,289 @@
+{
+ "stage": "rung_R2_reproduction \u2014 end-to-end reproduction of the R2 detector-oracle rung, failure-mode decomposition, and detector-recall-vs-R2 ceiling curve",
+ "reproduction_of": "results/rung_R2_detector_oracle (r2_raw.json, the record's finding prose, the pre-registration), verified end to end against freshly rendered PNGs and a re-implemented (functionally identical, vectorized) detector",
+ "renders": "rebuilt from data/primary and data/replication structures.json via scripts/render_from_cifs.py, 210 structures x 5 views x 2 samples = 2100 images, all resolved",
+ "detector_gate_reproduction": {
+  "n_structures": 28,
+  "n_view_measurements": 84,
+  "median_recall": 0.4,
+  "median_precision": 0.23329317553681525,
+  "median_centroid_err_px": 0.7170608281003528,
+  "reproduced_exact_match": true
+ },
+ "r2_reproduction": {
+  "original": {
+   "k": 16,
+   "n": 210,
+   "R2": 0.0762,
+   "zero_recovery": 40,
+   "zero_recovery_rate": 0.1905,
+   "over_triangulation": 44,
+   "count_match": 2
+  },
+  "expansion": {
+   "k": 18,
+   "n": 210,
+   "R2": 0.0857,
+   "zero_recovery": 47,
+   "zero_recovery_rate": 0.2238,
+   "over_triangulation": 25,
+   "count_match": 3
+  }
+ },
+ "gate": {
+  "rule": "if R2 fails to triangulate on >5% of structures, report the rate and do NOT score it",
+  "original": {
+   "zero_recovery_rate": 0.1905,
+   "passed": false
+  },
+  "expansion": {
+   "zero_recovery_rate": 0.2238,
+   "passed": false
+  }
+ },
+ "failure_mode_decomposition": {
+  "note": "per-view detection recall/precision recomputed independently for all 210x5 views on both samples (not just the 28-structure stratified pilot), plus species-misassignment rate on matched centroid pairs",
+  "aggregate": {
+   "original": {
+    "median_recall": 0.6667,
+    "median_precision": 0.0776,
+    "median_species_misassignment_rate_on_matches": 0.0714
+   },
+   "expansion": {
+    "median_recall": 0.5625,
+    "median_precision": 0.0976,
+    "median_species_misassignment_rate_on_matches": 0.1
+   }
+  },
+  "by_r2_outcome": {
+   "original": {
+    "zero_recovery": {
+     "n": 40,
+     "median_recall": 0.5625,
+     "median_precision": 0.0564
+    },
+    "over_triangulation": {
+     "n": 44,
+     "median_recall": 0.845,
+     "median_precision": 0.0504
+    },
+    "other": {
+     "n": 126,
+     "median_recall": 0.6042,
+     "median_precision": 0.067
+    }
+   },
+   "expansion": {
+    "zero_recovery": {
+     "n": 47,
+     "median_recall": 0.4375,
+     "median_precision": 0.0771
+    },
+    "over_triangulation": {
+     "n": 25,
+     "median_recall": 0.8286,
+     "median_precision": 0.0798
+    },
+    "other": {
+     "n": 138,
+     "median_recall": 0.554,
+     "median_precision": 0.0976
+    }
+   }
+  },
+  "species_misassignment_ablation": {
+   "original": {
+    "real_detector_species": {
+     "over": 44,
+     "zero": 40,
+     "k": 16,
+     "R2": 0.0762
+    },
+    "oracle_species_real_centres": {
+     "over": 27,
+     "zero": 46,
+     "k": 37,
+     "R2": 0.1762
+    },
+    "over_triangulation_attributable_to_species_misassignment": 17,
+    "over_triangulation_attributable_to_species_misassignment_frac": 0.3864
+   },
+   "expansion": {
+    "real_detector_species": {
+     "over": 25,
+     "zero": 47,
+     "k": 18,
+     "R2": 0.0857
+    },
+    "oracle_species_real_centres": {
+     "over": 9,
+     "zero": 55,
+     "k": 39,
+     "R2": 0.1857
+    },
+    "over_triangulation_attributable_to_species_misassignment": 16,
+    "over_triangulation_attributable_to_species_misassignment_frac": 0.64
+   }
+  },
+  "interpretation": "Structures whose R2 recovery over-triangulates have HIGHER median per-view detection recall (0.845/0.829) than structures that recover zero atoms (0.5625/0.4375) or the middle group. Over-triangulation is not a low-recall phenomenon; it is what happens when a moderately-good detector's remaining errors (false positives, and especially species misassignment) create spurious cross-view agreement. Substituting oracle species labels for the detector's colour read at the SAME detected centres raises R2 to 0.1762/0.1857 (from 0.0762/0.0857) and removes 17/44 (39%) and 16/25 (64%) of over-triangulated structures respectively, so species misassignment is a first-order contributor to the over-triangulation mechanism, not merely a footnote to it."
+ },
+ "recall_vs_r2_curve": {
+  "method": "ground-truth atom detections per view are dropped independently at random (i.i.d.) at the stated recall, holding species assignment, calibration, and the triangulation/merge/spglib pipeline fixed at the released tolerance tol=0.15; 5-8 seeds per structure per recall level, both eval samples, all 210 structures each",
+  "caveat": "this simulates ONLY the recall axis of detector failure. It removes species misassignment, centroid mislocalisation and false-positive detections entirely, so it is an OPTIMISTIC proxy: a real detector at a given recall would likely score at or below the curve, not on it. The real detector's actual operating point (recall 0.400) sits far below the curve at matched recall (curve value ~0.23-0.30 vs real R2 0.076-0.086), which is exactly what the failure-mode decomposition above explains.",
+  "curve": {
+   "original": {
+    "0.5": {
+     "r2_simulated_at_recall": 0.23238095238095244,
+     "zero_triangulation_rate": 0.5714285714285714,
+     "over_triangulation_rate": 0.0
+    },
+    "0.6": {
+     "r2_simulated_at_recall": 0.3476190476190476,
+     "zero_triangulation_rate": 0.2914285714285714,
+     "over_triangulation_rate": 0.0
+    },
+    "0.7": {
+     "r2_simulated_at_recall": 0.37142857142857144,
+     "zero_triangulation_rate": 0.13238095238095238,
+     "over_triangulation_rate": 0.0
+    },
+    "0.8": {
+     "r2_simulated_at_recall": 0.38476190476190475,
+     "zero_triangulation_rate": 0.043809523809523805,
+     "over_triangulation_rate": 0.0
+    },
+    "0.9": {
+     "r2_simulated_at_recall": 0.42857142857142855,
+     "zero_triangulation_rate": 0.0038095238095238095,
+     "over_triangulation_rate": 0.0
+    },
+    "0.95": {
+     "r2_simulated_at_recall": 0.4742857142857143,
+     "zero_triangulation_rate": 0.0038095238095238095,
+     "over_triangulation_rate": 0.0
+    },
+    "0.97": {
+     "r2_simulated_at_recall": 0.5742857142857143,
+     "zero_triangulation_rate": 0.0009523809523809524,
+     "over_triangulation_rate": 0.0
+    },
+    "0.98": {
+     "r2_simulated_at_recall": 0.6485714285714285,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.0
+    },
+    "0.99": {
+     "r2_simulated_at_recall": 0.7628571428571428,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.0
+    },
+    "0.995": {
+     "r2_simulated_at_recall": 0.8535714285714285,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.0
+    },
+    "0.999": {
+     "r2_simulated_at_recall": 0.925,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.0
+    },
+    "1.0": {
+     "r2_simulated_at_recall": 0.9523809523809523,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.0
+    }
+   },
+   "expansion": {
+    "0.5": {
+     "r2_simulated_at_recall": 0.3038095238095238,
+     "zero_triangulation_rate": 0.3895238095238096,
+     "over_triangulation_rate": 0.0
+    },
+    "0.6": {
+     "r2_simulated_at_recall": 0.360952380952381,
+     "zero_triangulation_rate": 0.1619047619047619,
+     "over_triangulation_rate": 0.0
+    },
+    "0.7": {
+     "r2_simulated_at_recall": 0.3419047619047619,
+     "zero_triangulation_rate": 0.04380952380952381,
+     "over_triangulation_rate": 0.0
+    },
+    "0.8": {
+     "r2_simulated_at_recall": 0.30095238095238097,
+     "zero_triangulation_rate": 0.006666666666666667,
+     "over_triangulation_rate": 0.0
+    },
+    "0.9": {
+     "r2_simulated_at_recall": 0.30952380952380953,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.0
+    },
+    "0.95": {
+     "r2_simulated_at_recall": 0.37142857142857144,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.0038095238095238095
+    },
+    "0.97": {
+     "r2_simulated_at_recall": 0.4438095238095238,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.002857142857142857
+    },
+    "0.98": {
+     "r2_simulated_at_recall": 0.5076190476190476,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.005714285714285714
+    },
+    "0.99": {
+     "r2_simulated_at_recall": 0.6228571428571429,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.008571428571428572
+    },
+    "0.995": {
+     "r2_simulated_at_recall": 0.7261904761904762,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.009523809523809525
+    },
+    "0.999": {
+     "r2_simulated_at_recall": 0.8601190476190477,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.013095238095238096
+    },
+    "1.0": {
+     "r2_simulated_at_recall": 0.9095238095238095,
+     "zero_triangulation_rate": 0.0,
+     "over_triangulation_rate": 0.014285714285714285
+    }
+   }
+  },
+  "real_detector_operating_point": {
+   "recall": 0.4,
+   "original_R2": 0.0762,
+   "expansion_R2": 0.0857
+  },
+  "crossing_points": {
+   "best_vlm_gemini_3.6_flash_0.7333": {
+    "original": 0.9874,
+    "expansion": 0.9952
+   },
+   "grok_4.5_true_R4_0.6143": {
+    "original": 0.9754,
+    "expansion": 0.9893
+   },
+   "shape_free_baseline_0.5286": {
+    "original": 0.9609,
+    "expansion": 0.9818
+   }
+  }
+ },
+ "mandatory_co_reported_operating_point": {
+  "median_recall": 0.4,
+  "median_precision": 0.2333,
+  "median_centroid_error_px": 0.7171,
+  "n_structures_measured": 28,
+  "n_view_measurements": 84,
+  "note": "MUST appear wherever R2 is mentioned. R2 is a lower bound from ONE concrete extractor, never a ceiling for extraction in general."
+ },
+ "manuscript_defect_found_and_fixed": "the gate's justification (this exact analysis, in weaker form) existed only in a commented-out LaTeX block in sections/si_body.tex (Extended limitations, ~line 383-431 pre-edit), so the compiled PDF showed only the bare phrase 'unscored under its pre-registered gate' with no visible definition, operating point, or mechanism. Uncommented, extended with the failure-mode decomposition and the recall-vs-R2 curve (new), and cross-referenced from the introduction, methods and results mentions of R2.",
+ "what_remains_unmeasured": "the achievable ceiling for a REAL trained detector is not established by this record; the recall-vs-R2 curve is a favourable proxy that isolates the recall axis and removes species-misassignment and localisation error, so it upper-bounds what a detector at a given recall could achieve under this triangulation pipeline, not what a real detector would achieve. A trained detector (not connected components on colour thresholds) remains the single most valuable missing measurement."
+}

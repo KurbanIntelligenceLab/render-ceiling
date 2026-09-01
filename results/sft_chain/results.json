@@ -13,7 +13,7 @@
  "arms": {
   "B1": "direct answer",
   "B2": "free-form CoT",
-  "V1": "hierarchical CoCr chain"
+  "V1": "hierarchical render-ceiling chain"
  },
  "primary_metric": "crystal_system accuracy (test)",
  "results": {
@@ -111,7 +111,27 @@
    "V1_target_tokens_max": 294,
    "training_truncation": "none",
    "model_context": 262144,
-   "V1_targets_with_ANSWER": "115/115"
+   "V1_targets_with_ANSWER": "115/115",
+   "target_length_distribution_tokens": {
+    "tokenizer": "Qwen3-VL processor (the exact training tokenizer)",
+    "n_targets_per_arm": 115,
+    "V1": {
+     "min": 205,
+     "median": 231,
+     "max": 294
+    },
+    "B2": {
+     "min": 103,
+     "median": 111,
+     "max": 116
+    },
+    "B1": {
+     "min": 4,
+     "median": 6,
+     "max": 8
+    },
+    "note": "training used NO truncation (processor called with padding=True only, no max_length) and the model context is 262,144 tokens, so 115/115 V1 targets retained their [ANSWER] line + EOS intact. V1's non-termination is a GENUINE learned behaviour, not a clipped-target pipeline artifact."
+   }
   },
   "termination_rate": {
    "B1": 1.0,
@@ -142,7 +162,13 @@
     "full_triple": 0.356
    },
    "metric": "per-structure match of emitted relations vs pipeline truth (full-triple ~0.32-0.36 both arms)",
-   "distinct_count_status": "RETRACTED for V1b (low-cardinality qualitative vocab by design)"
+   "distinct_count_status": "RETRACTED for V1b (low-cardinality qualitative vocab by design)",
+   "over_emission_diagnostic": {
+    "arm": "V1b",
+    "observed_emissions_of_one_pattern": 50,
+    "max_structures_that_could_genuinely_carry_it": 13,
+    "note": "the over-emission is still real, but per-structure accuracy is the honest measure and it says the geometry step is unreliable (full-triple ~0.32-0.36) rather than uniformly template-locked"
+   }
   },
   "termination": {
    "V1": 0.011,
@@ -195,7 +221,21 @@
     "p": 0.7744
    }
   },
-  "interpretation": "Only B1's advantage survives n=30 noise (p<0.01 vs each reasoning arm). The 3 reasoning arms are mutually indistinguishable."
+  "interpretation": "Only B1's advantage survives n=30 noise (p<0.01 vs each reasoning arm). The 3 reasoning arms are mutually indistinguishable.",
+  "noise_note_V1_vs_B2": {
+   "micro_gap": 0.034,
+   "V1_micro": 0.3778,
+   "B2_micro": 0.3444,
+   "verdict": "well inside n=30 binomial noise",
+   "binomial_SE_at_p0.5": 0.091,
+   "binomial_95ci_halfwidth": 0.18,
+   "mcnemar": {
+    "b": 4,
+    "c": 5,
+    "p": 1.0
+   },
+   "note": "the two reasoning arms are NOT statistically separable; only the ~33 pp B1 advantage survives that noise"
+  }
  },
  "v1b_consequence_for_E3": {
   "a_qualitative_geometry_reward": "score edge/angle/ratio relations, not exact values (V1b confirms views support qualitative only)",

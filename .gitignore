@@ -1,19 +1,39 @@
+# Policy: what a reader needs to check the paper is tracked -- the package that
+# implements the oracle and the render protocol, the structures and labels it
+# reads, the JSON record behind every reported number, and the released
+# prediction vectors. Only regenerable state, caches, large binaries and the
+# private development workspace are ignored.
+
+# Private development workspace: the experiment drivers, the figure and table
+# generators, the record prose, the manuscript sources and the agent
+# instructions. Has its own README. Nothing here reaches the release.
+/development/
+
+# Trained adapters, distributed out of band for size. The manifest and sha256
+# stay tracked in weights/README.md.
 weights/*
 !weights/README.md
 
-to_be_deleted/
+# Rendered images: a build product. Five orthographic views per evaluation
+# structure, a pure function of the CIFs and the frozen camera set that are
+# tracked.
+data/*/renders/
 
-# Python
+# Python bytecode, environments and tool caches (regenerable: `uv sync`)
 __pycache__/
 *.py[cod]
 *.egg-info/
 .venv/
 venv/
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.hypothesis/
+.coverage
+dist/
+build/
 
-docs/manuscript/render-ceiling-dd/
-!docs/manuscript/codes/
-
-# OS and editor
+# OS and editor junk
 .DS_Store
 .idea/
 .vscode/

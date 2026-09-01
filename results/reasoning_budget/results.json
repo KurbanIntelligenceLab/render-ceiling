@@ -36,5 +36,52 @@
  "elapsed_s": {
   "minimal": 608.3,
   "default": 2072.7
- }
+ },
+ "agreement_rate": 0.8048,
+ "agreement_note": "agreement 169/210 = 0.8048; the two settings disagree on 41 structures and happen to break even. IDENTICAL TOTALS ARE NOT THE SAME PREDICTIONS.",
+ "per_stratum_accuracy": {
+  "note": "n=30 per stratum; minimal vs default. Individually underpowered \u2014 reported as description, not as claims. This table is the sole support for the 'identical totals, different predictions' claim.",
+  "triclinic": {
+   "minimal": 0.067,
+   "default": 0.0
+  },
+  "monoclinic": {
+   "minimal": 0.767,
+   "default": 0.767
+  },
+  "orthorhombic": {
+   "minimal": 0.367,
+   "default": 0.4
+  },
+  "tetragonal": {
+   "minimal": 0.767,
+   "default": 0.9
+  },
+  "trigonal": {
+   "minimal": 0.867,
+   "default": 0.9
+  },
+  "hexagonal": {
+   "minimal": 0.5,
+   "default": 0.367
+  },
+  "cubic": {
+   "minimal": 1.0,
+   "default": 1.0
+  },
+  "reading": "extended thinking helps on tetragonal (+0.133) and trigonal (+0.033), hurts on hexagonal (-0.133) and triclinic (-0.067) \u2014 the two strata where the cell metric is closest to degenerate. Cubic saturated at 1.000 under both; monoclinic unchanged to three decimals."
+ },
+ "cost_latency_comparison": {
+  "output_token_ratio": 5.4,
+  "cost_ratio": 1.35,
+  "wall_clock_ratio": 3.4,
+  "summary": "default emits 5.4x the output tokens, costs 1.35x more, and takes 3.4x longer for IDENTICAL accuracy (130/210 = 0.6190 both legs)"
+ },
+ "accuracy": {
+  "minimal": 0.619,
+  "default": 0.619,
+  "k": 130,
+  "n": 210
+ },
+ "notes": "Paired null: 5.4x the reasoning tokens buys ZERO accuracy. Scope: one model (claude-opus-5), one prompt, one sample, one pair of settings. 'effort: minimal' is not identical to the released arms' configuration, only the closest reproducible stand-in."
 }

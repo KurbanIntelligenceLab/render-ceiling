@@ -1,0 +1,118 @@
+{
+ "stage": "endpoint_drift — do model endpoints still reproduce the released K=3 ladder? A validation slice says no",
+ "status": "DONE, AND IT BLOCKS G3/G5/G6 AS SCOPED. A validation slice against a released arm does not reproduce it.",
+ "gap": "G3/G5/G6 all assume a new model arm run today is comparable to the released K=3 ladder. That assumption was never tested. It is false.",
+ "cost": {
+  "usd": 6.82,
+  "calls": 184,
+  "against_full_programme_usd": 404,
+  "note": "~$404 is what the full programme would have cost on a premise that does not hold"
+ },
+ "eval": {
+  "set": "the first 20 structures of data/primary/eval.jsonl — all triclinic",
+  "protocol": "x-ai/grok-4.5 re-queried through the same harness path, same frozen prompt text, same K=3 majority vote, same frozen render protocol (conventional cell, 2x2x2 supercell, px=768, radii=0.5)",
+  "identity_checks": {
+   "id_overlap": "20/20",
+   "truth_mismatches": "0/20",
+   "against": "release/predictions/frontier__x-ai__grok-4_5__K3.json"
+  },
+  "reproduce": "python scripts/run_model_arm.py --model x-ai/grok-4.5 --arm r4 --K 3 --ids <20 eval ids> --structures data/primary/structures.json --labels data/primary/eval.jsonl --out <path>"
+ },
+ "results": {
+  "accuracy_same_20_structures": {
+   "released_frontier_arm": {
+    "k": 7,
+    "n": 20
+   },
+   "rerun_today_provider_default_reasoning": {
+    "k": 1,
+    "n": 20,
+    "micro": 0.05
+   },
+   "rerun_today_effort_minimal": {
+    "k": 0,
+    "n": 20,
+    "micro": 0.0
+   }
+  },
+  "pairwise_agreement_on_20_predictions": {
+   "new_default_vs_new_minimal": "17/20",
+   "new_default_vs_released": "13/20",
+   "new_minimal_vs_released": "13/20"
+  },
+  "reasoning_budgets": {
+   "default_output_tokens_per_call": 9099,
+   "minimal_output_tokens_per_call": 1266,
+   "ratio": 7.2
+  },
+  "not_sampling_noise": "the two new runs used very different reasoning budgets (a 7.2x difference) and still agree with each other far more than either agrees with the release. If the discrepancy were temperature-0.7 sampling variance, the new runs would disagree with each other about as much as they disagree with the release. They do not. The endpoint behind the identifier `x-ai/grok-4.5` is serving a different system than the one the paper's arms were measured on",
+  "predicted_class_distribution_on_20_triclinic_truth_structures": {
+   "released": {
+    "monoclinic": 11,
+    "triclinic": 7,
+    "orthorhombic": 2
+   },
+   "new_default": {
+    "monoclinic": 15,
+    "orthorhombic": 3,
+    "triclinic": 1,
+    "hexagonal": 1
+   },
+   "new_minimal": {
+    "monoclinic": 18,
+    "orthorhombic": 2
+   },
+   "shape": "the current endpoint collapses triclinic onto monoclinic"
+  },
+  "second_separate_finding_token_blowup": {
+   "default_output_tokens_per_call": 9099,
+   "max_tokens_setting": 900,
+   "worst_single_probe": {
+    "output_tokens": 16524,
+    "usd": 0.1,
+    "seconds": 384
+   },
+   "released_arms": "show no such behaviour",
+   "control": "a claude-opus-5 probe on the same task returned 731 output tokens at its own default — so this is a property of THIS endpoint, not of vision models generally",
+   "paired_probe": "on a single paired probe of one structure, 16,524 reasoning tokens (default) and 894 tokens (effort:minimal) produced the SAME wrong answer, and minimal reasoning scored no better than default across the slice (0/20 vs 1/20)"
+  },
+  "run_totals": {
+   "rerun_default_reasoning": {
+    "n": 20,
+    "k": 1,
+    "micro": 0.05,
+    "n_parsed": 20,
+    "unanswered": 0,
+    "tokens_in": 192960,
+    "tokens_out": 545960,
+    "cost_usd": 3.3803,
+    "elapsed_s": 2367.5
+   },
+   "rerun_minimal_reasoning": {
+    "n": 20,
+    "k": 0,
+    "micro": 0.0,
+    "n_parsed": 20,
+    "unanswered": 0,
+    "tokens_in": 192960,
+    "tokens_out": 75970,
+    "cost_usd": 0.6727,
+    "elapsed_s": 293.3
+   }
+  },
+  "detail_files": {
+   "rerun_default_reasoning.json": "per-structure predictions, votes and per-call token/cost for the provider-default re-run",
+   "rerun_minimal_reasoning.json": "the same for effort:minimal",
+   "released_same_20.json": "the released frontier arm restricted to these 20 validation structures (K=3, with vote counts)"
+  }
+ },
+ "sampling_caveat": "the first 20 rows of eval.jsonl are all triclinic, the hardest stratum, where the released arm itself scores only 10/30 = 0.333. That AMPLIFIES the visible gap. It does not cause it: the agreement structure is stratum-independent evidence. A stratified 20-structure slice would give a tighter estimate of the drift magnitude and has not been run.",
+ "consequences": {
+  "blocked": "G3 (current-frontier arm), G5 (model arms at scale) and G6 (prompt sensitivity) are all comparisons of a NEW measurement against the EXISTING K=3 ladder. If the existing rows cannot be reproduced on their own endpoints, any such comparison confounds the effect under study with uncontrolled model drift. A frontier arm run today could not distinguish 'a current model closes the gap' from 'the endpoints moved'. The gaps stay open, with the honest reason recorded rather than assumed",
+  "survives": "G4 (reasoning budget) survives, because it is an internal contrast between two settings of the SAME model at the SAME time and needs no comparison to the released ladder. The slice above is already weak evidence that the budget does not help on this task"
+ },
+ "worth_to_the_paper": "direct evidence for the paper's own thesis. A leaderboard is a claim about models at a moment; re-running it later does not recover the same numbers, because the model identifiers are not stable referents. R1, the render ceiling, is model-free: the view sweep in view_subset_sweep reproduced it exactly at 200/210 = 0.9524 through an independent code path. The contrast between a ceiling that reproduces and a leaderboard that does not is the argument for reporting model-free bounds, and it was obtained here as a measurement rather than an assertion.",
+ "scope": "One model, one 20-structure single-stratum slice, one point in time. Enough to invalidate the comparability premise behind G3/G5/G6, which is what it was run to test. NOT enough to quantify drift across the roster, and no such claim is made.",
+ "conclusion": "The released frontier arm scored 7/20 on these structures; re-run today through the identical harness the same model identifier scores 1/20 at provider default and 0/20 at minimal reasoning. The two new runs agree with each other 17/20 but with the release only 13/20 despite a 7.2x difference in reasoning budget, so this is endpoint drift rather than sampling noise. Model-identifier-based leaderboard rows are not reproducible; the model-free render ceiling is.",
+ "_provenance": "scripts/run_model_arm.py re-queries of x-ai/grok-4.5 at two reasoning settings against release/predictions/frontier__x-ai__grok-4_5__K3.json, on the first 20 rows of data/primary/eval.jsonl; artifacts rerun_default_reasoning.json, rerun_minimal_reasoning.json, released_same_20.json"
+}

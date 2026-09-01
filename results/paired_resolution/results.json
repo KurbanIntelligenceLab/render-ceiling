@@ -111,5 +111,47 @@
   "paired_p": 1.0,
   "resolved": false,
   "n_paired": 210
+ },
+ "_power_projection": {
+  "_schema_note": "metadata key, not an arm-vs-arm comparison like the sibling keys",
+  "basis": "B1-direct vs FLOOR_3feat; 51.0% of structures are discordant (107 discordant at n=210, 58.9% favouring B1). The paired test uses only the discordant pairs, so it needs far less n than the single-proportion half-width screen implied.",
+  "projection": [
+   {
+    "n": 210,
+    "expected_discordant": 107,
+    "p": 0.081,
+    "resolves": false
+   },
+   {
+    "n": 400,
+    "expected_discordant": 204,
+    "p": 0.014,
+    "resolves": true
+   },
+   {
+    "n": 600,
+    "expected_discordant": 306,
+    "p": 0.002,
+    "resolves": true
+   },
+   {
+    "n": 1000,
+    "expected_discordant": 510,
+    "p": 0.0001,
+    "resolves": true
+   }
+  ],
+  "conclusion": "TARGET n = 400-500, NOT 1000-2000. Roughly a 2x eval-set expansion rather than 5-10x, changing the GPU and API cost of review item 5 by the same factor. Size the expansion from this table.",
+  "supersedes": "the half-width screen, which implied n = 1000-2000 to resolve a 0.03-0.04 effect"
+ },
+ "_known_defect_rf_19_feature_reproducibility_gap": {
+  "_schema_note": "metadata key, not an arm-vs-arm comparison like the sibling keys",
+  "recorded_rf_accuracy": 0.8905,
+  "recomputed_rf_accuracy": 0.8857,
+  "delta": 0.0048,
+  "protocol_used": "train on the 1610 TRAIN structures, test on the 210 EVAL structures (NOT cross-validation); features from the INPUT cell; RF n_estimators=500, seed 23",
+  "floor_reproduces_exactly": 0.5286,
+  "residual_cause": "the exact 19-feature list, which is not itself recorded anywhere",
+  "impact": "flagged as a minor reproducibility gap; it does not affect any paired test, which depends on per-structure vectors rather than the aggregate"
  }
 }

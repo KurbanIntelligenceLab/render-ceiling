@@ -3,7 +3,7 @@
 atom_detection — atom-centroid DETECTION from the frozen renders, with the mandatory quality gate.
 
 This is the front end directive item 4 specified and extractor did not build: pixels -> atom centroids.
-identifiability's triangulator (cocr.reconstruct) already goes centroids -> 3D -> spglib, but it has only ever
+identifiability's triangulator (render_ceiling.reconstruct) already goes centroids -> 3D -> spglib, but it has only ever
 been fed CIF-derived coordinates, so this closes the loop.
 
 THE GATE RUNS FIRST AND IS NOT OPTIONAL. A low downstream symmetry score is uninterpretable unless
@@ -23,7 +23,7 @@ import warnings; warnings.filterwarnings("ignore")
 import matplotlib; matplotlib.use("Agg")
 from ase.io.utils import PlottingVariables
 from pymatgen.core import Structure
-from cocr.render import conventional_cell, VIEWS, VIEW_ORDER, _to_atoms
+from render_ceiling.render import conventional_cell, VIEWS, VIEW_ORDER, _to_atoms
 
 
 def ground_truth_pixels(structure, view, px=768, supercell=(2, 2, 2), radii=0.5):

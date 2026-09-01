@@ -12,9 +12,9 @@ from _paths import DATA, RESULTS, SRC
 import json, sys, time, numpy as np, warnings
 warnings.filterwarnings("ignore"); sys.path.insert(0,f"{SRC}")
 from pymatgen.core import Structure
-from cocr.render import conventional_cell, VIEW_ORDER
-from cocr import reconstruct as RC
-from cocr.reconstruct import projection_matrices, project, _ray, _ray_intersection
+from render_ceiling.render import conventional_cell, VIEW_ORDER
+from render_ceiling import reconstruct as RC
+from render_ceiling.reconstruct import projection_matrices, project, _ray, _ray_intersection
 
 def reconstruct_cond(conv, view_names, vis, tol=0.15):
     """oracle_within_sample's oracle with per-view visibility. Acceptance rule is oracle_within_sample's EXACTLY: anchor on the first

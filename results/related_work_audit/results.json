@@ -105,5 +105,98 @@
   "NOT_confirmed_from_the_abstract": "the dataset name 'xCrysAlloys' does not appear in the abstract. It is cited in our related work as the dataset name; that must come from the paper body or the repository, not from the abstract I verified.",
   "code_url": "github.com/KurbanIntelligenceLab/StressTestingMMFMinCR \u2014 HEAD 200, resolves",
   "correction_to_my_earlier_statement": "I said this citation 'checks out completely'. Five of six elements are confirmed from the abstract; the dataset name is not, so 'completely' overstated the scope of what I had actually checked. The substantive claims our positioning depends on \u2014 the exclusion protocols and the nine-model VLM evaluation \u2014 are all confirmed."
- }
+ },
+ "external_figures": {
+  "note": "Quantitative figures extracted from the audited papers themselves, all from arXiv titles and abstracts fetched from the API, not recalled. These are OTHER PAPERS' numbers, not ours.",
+  "2605.29446": {
+   "title": "CrystalXRD-Bench: Benchmarking Vision-Language Models for XRD Peak Indexing Across Diverse Crystalline Materials",
+   "n_samples": 250,
+   "n_databases": 10,
+   "n_vlms": 7,
+   "task": "one task \u2014 HKLs of the highest-intensity peak",
+   "best_jaccard": 0.5888,
+   "exact_match_at_best": "37.6%",
+   "models_below_0.50": "six of seven",
+   "design": "pairs the rendered image with the source CIF so visual-extraction and reasoning errors can be separated; access to CIF text does not close the gap",
+   "bearing_on_us": "OCCUPIED FOR THE HEADLINE \u2014 a published crystallography VLM benchmark already reports models failing on rendered crystallographic images AND already separates extraction from reasoning by supplying the CIF. Our difference is a GEOMETRIC ORACLE on the images rather than handing the model ground-truth text."
+  },
+  "2506.13051": {
+   "title": "Stress-Testing Multimodal Foundation Models for Crystallographic Reasoning",
+   "n_vlms": 9,
+   "protocols": [
+    "Spatial-Exclusion benchmark",
+    "Compositional-Exclusion benchmark"
+   ],
+   "scoring": "relative lattice/density errors, a physics-consistency index, and a hallucination score covering invalid space-group predictions",
+   "bearing_on_us": "BENCHMARK-DESIGN CLAIM DEMOTED \u2014 composition-exclusion evaluation of VLMs on crystal images is not novel."
+  },
+  "2604.16060": {
+   "title": "Chain-of-Thought Degrades Visual Spatial Reasoning Capabilities of Multimodal LLMs",
+   "establishes": "CoT degrades generalized spatial intelligence across a comprehensive multi-model, multi-benchmark evaluation",
+   "our_corresponding_result": "n=420, p=4.8e-04",
+   "bearing_on_us": "OUR n=420 p=4.8e-04 RESULT IS A REPLICATION \u2014 a confirmation on a new domain, not a discovery. Claim 4 (direct-beats-chain) is DEMOTED TO CITED REPLICATION, and its demotion rests on this paper alone."
+  },
+  "2510.16926": {
+   "title": "Res-Bench: Benchmarking the Robustness of Multimodal Large Language Models to Dynamic Resolution Input",
+   "n_samples": 14400,
+   "n_resolution_levels": 12,
+   "n_capability_dimensions": 6,
+   "adds": "stability metrics beyond accuracy",
+   "bearing_on_us": "ROW A occupied as a general question; our resolution finding is a domain instance and a confound control, never claimed as a contribution."
+  },
+  "2504.15280": {
+   "title": "Seeing from Another Perspective: Evaluating Multi-View Understanding in MLLMs (All-Angles Bench)",
+   "n_qa_pairs": "2100+ human-annotated",
+   "n_scenes": 90,
+   "scene_type": "real scenes",
+   "n_tasks": 6,
+   "tests": "multi-view geometric consistency and cross-view correspondence; reports MLLMs fall short",
+   "bearing_on_us": "SUPPORTS our premise rather than occupying it \u2014 real scenes, human annotation, no closed-form ceiling, no crystallography."
+  },
+  "2003.14328": {
+   "title": "CRYSPNet: Crystal Structure Predictions via Neural Network",
+   "input": "chemical composition ONLY (aggregated properties of the constituent elements)",
+   "targets": [
+    "Bravais lattice",
+    "space group",
+    "lattice parameters"
+   ],
+   "bearing_on_us": "OPPOSITE input to our random-forest control, which reads the CELL METRIC (19 lattice features) and never sees composition. Does NOT occupy row B. Cited instead as the reason our composition-EXCLUSION split matters: it blocks the CRYSPNet route."
+  },
+  "2411.00803": {
+   "title": "Designing a Dataset for Convolutional Neural Networks to Predict Space Groups Consistent with Extinction Laws",
+   "input": "1D powder patterns COMPUTED FROM lattice parameters and extinction laws",
+   "reported": "accuracy matching the theoretical maximums calculated based on Extinction Laws",
+   "bearing_on_us": "Its ceiling is ANALYTIC (derivable in closed form for a synthetic pattern with a known generative process); ours is EMPIRICAL (a reconstruction on actual renders whose achievable value nobody can write down in advance). Same goal by a route unavailable to us."
+  },
+  "2512.21329": {
+   "title": "Your Reasoning Benchmark May Not Test Reasoning: Revealing Perception Bottleneck in Abstract Reasoning Benchmarks",
+   "method": "two-stage pipeline explicitly separating perception from reasoning: each image is independently converted to a natural-language description, then a model induces and applies rules from those descriptions",
+   "establishes": "the ARC / ARC-AGI gap arises primarily from limitations in VISUAL PERCEPTION, not deficient machine reasoning",
+   "bearing_on_us": "'The perception bottleneck' is PUBLISHED. We must stop presenting it as a finding. Our delta: their perception stage is MODEL-MEDIATED and inherits the describer's errors; ours is a DETERMINISTIC GEOMETRIC inversion against a closed-form ground truth, yielding a NUMERIC CEILING rather than a two-stage contrast."
+  },
+  "2603.16253": {
+   "title": "Grounding the Score: Explicit Visual Premise Verification for Reliable Vision-Language Process Reward Models",
+   "establishes": "a verifier's low score may reflect a reasoning mistake OR the verifier's own misperception; that entanglement produces systematic false positives and negatives",
+   "related_prms": [
+    "2508.04088",
+    "2505.13427",
+    "2511.22998"
+   ],
+   "bearing_on_us": "The ENTANGLEMENT problem is published \u2014 cite as motivation, do not present as an observation. Unoccupied: a DETERMINISTIC GEOMETRIC checker that cannot misperceive because it reads coordinates, not pixels."
+  },
+  "2506.12776": {
+   "title": "Native Visual Understanding: Resolving Resolution Dilemmas in Vision-Language Models",
+   "establishes": "frames the same 'Resolution Dilemma' and notes existing benchmarks neglect resolution as a factor"
+  }
+ },
+ "our_figures_that_are_replications": {
+  "direct_beats_chain": {
+   "n": 420,
+   "p": 0.00048,
+   "p_as_written": "4.8e-04",
+   "status": "REPLICATION of 2604.16060 on a new domain, not a discovery"
+  }
+ },
+ "notes": "MISMATCH FLAGGED, existing keys left untouched: rows_closed_second_pass.row_B_cue_sufficiency still reads 'DIRECTLY OCCUPIED by CRYSPNet; the RF control is a reproduction'. That verdict was REVERSED in the third pass (see rows['2003.14328'] and reversals_third_pass): CRYSPNet takes COMPOSITION as input, the opposite of our cell-metric control, so row B is NOT occupied. The reversal is authoritative."
 }

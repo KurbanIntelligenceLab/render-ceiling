@@ -21,9 +21,9 @@
  "best": "random_forest",
  "comparison": {
   "structure-metric baseline (random_forest)": 0.8905,
-  "CoCr B1-direct (images)": 0.6143,
-  "CoCr V2b chain (images)": 0.3857,
-  "CoCr B3 outcome (images)": 0.3445,
+  "render-ceiling B1-direct (images)": 0.6143,
+  "render-ceiling V2b chain (images)": 0.3857,
+  "render-ceiling B3 outcome (images)": 0.3445,
   "chance": 0.1429
  },
  "regularity_floor": {

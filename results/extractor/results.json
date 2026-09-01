@@ -4,7 +4,8 @@
   "line_detection": {
    "threshold": 0.8,
    "value": 0.9667,
-   "verdict": "PASS"
+   "verdict": "PASS",
+   "counts": "203/210"
   },
   "median_edge_ratio_error": {
    "threshold": 0.1,
@@ -19,7 +20,8 @@
   "p75": 0.4969,
   "frac_within_2pct": 0.335,
   "frac_over_25pct": 0.3957,
-  "shape": "bimodal \u2014 near-exact or catastrophically wrong"
+  "shape": "bimodal \u2014 near-exact or catastrophically wrong",
+  "frac_over_25pct_as_stated_in_prose": "39.6%"
  },
  "angle_recovery": {
   "median_abs_deg": 0.0,
@@ -32,7 +34,8 @@
   "why_not_interpreted": [
    "gate failed, so no pre-registered branch may be read",
    "not commensurable: 'hexagonal_or_trigonal' scored correct against EITHER label, so this is a 6-way-with-free-pass task vs the models' strict 7-way"
-  ]
+  ],
+  "counts": "125/210"
  },
  "what_survives": [
   "cell wireframe is findable in 96.7% of renders",
@@ -42,5 +45,12 @@
   "that the render convention is illegible",
   "that a deterministic reader beats the VLMs",
   "any strengthening of box_sufficiency, which rests on the RF control not on this extractor"
- ]
+ ],
+ "caveats": {
+  "non_comparability_warning": "Comparing the extractor's 0.5952 with the direct-answer arm's 0.6143 would be WRONG. The extractor emits a metric CLASS, and the class 'hexagonal_or_trigonal' is scored correct against EITHER true label, because a cell metric cannot separate that pair at any precision. The models are scored on a strict 7-way label. So the comparison would pit a 6-way-with-a-free-pass task against a 7-way one.",
+  "gate_failure_bars_interpretation": "GATE 2 failed (median edge-ratio error 0.1021 vs threshold 0.10), so per the pre-registration NO branch (E1-E4) may be read and no conclusion about the renders or about the models may be drawn from the extractor's accuracy.",
+  "scope_warning": "this is NOT the probe directive item 4 specified: item 4 asked for PNG -> ATOM CENTROIDS -> triangulation via identifiability's camera inversion -> spglib, gated on detection precision/recall. extractor is a wireframe-only reader gated on edge-length ratios and never localises an atom (see the scope-deviation note). Item 4 REMAINS OPEN and item 6 is BLOCKED on it.",
+  "margin_is_not_a_rounding_artifact": "the 0.0021 shortfall must not be waived: the error distribution is bimodal (p25 0.007, p50 0.102, p75 0.497; 33.5% within 2% of truth, 39.6% more than 25% off). A median sitting on the threshold while two-fifths of measurements are off by more than a quarter is not a measuring instrument.",
+  "narrow_correct_statement": "A DETERMINISTIC READER OF THIS CONVENTION COULD NOT BE BUILT TO INSTRUMENT QUALITY AT THIS EFFORT LEVEL, using darkness-threshold wireframe isolation plus a Hough transform on the three orthographic axis views. That is a fact about our implementation, not about the render convention."
+ }
 }

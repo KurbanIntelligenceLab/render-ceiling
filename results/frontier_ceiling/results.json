@@ -10679,5 +10679,108 @@
     }
    ]
   }
+ },
+ "anonymization_palette_validation": {
+  "canonical_distinct_element_colours": "4+",
+  "canonical_distinct_rgb_values": 1074,
+  "anonymized_appearance": "uniform grey",
+  "anonymized_distinct_rgb_values": 204,
+  "method": "every species replaced with one element (C), geometry untouched; conventional_cell -> replace_species(all -> C) -> render_views(supercell 2,2,2)",
+  "reimplementation_note": "this is a REIMPLEMENTATION; zeroshot's original anonymization code was not recoverable from the scripts or the archive, and this is recorded as such",
+  "why_it_matters": "this pixel-palette check is the only evidence that the contamination control actually changed the renders"
+ },
+ "erratum_bracket_figure_label": {
+  "status": "standing erratum - reviewer finding, upheld",
+  "defect": "the first version of figures/bracket.png labelled the 0.8905 bar 'structure GNN (coords)'. THAT IS WRONG.",
+  "correct_identity_of_0.8905": "random_forest in external_baselines/structure_baseline.json - a TABULAR classifier on 19 lattice-metric + cell features (train_acc 1.0, saturated). It is not a graph network and reads no coordinates as a graph.",
+  "actual_coordinate_gnn": {
+   "name": "plain-tensor CGCNN-style reimplementation (scripts/train_e8_gnn.py)",
+   "value": 0.4889,
+   "sd": 0.0469,
+   "seeds": 3,
+   "source": "cgcnn_style_3seed.json",
+   "supersedes": "the earlier 0.5619 single-seed figure, which had selected its epoch on the eval set (optimism 0.0730)",
+   "vs_floor": -0.0397,
+   "vs_direct_arm": -0.1254,
+   "pooled_seed_sd": 0.0493
+  },
+  "consequence": "the mislabelled bar implied coordinate graph models nearly reach the oracle, when the measured result is the opposite: the coordinate GNN joins the two chain arms BELOW the regularity floor. The figure now shows BOTH bars with distinct labels, the GNN with its seed error bar, and the caption states that both are structure-input rather than image-input models."
+ },
+ "corrected_bracket_ordering": [
+  {
+   "rank": 1,
+   "label": "chance",
+   "value": 0.1429,
+   "above_floor": false
+  },
+  {
+   "rank": 2,
+   "label": "chain V2b",
+   "value": 0.3857,
+   "above_floor": false,
+   "delta_vs_floor": -0.1429
+  },
+  {
+   "rank": 3,
+   "label": "CGCNN-style GNN",
+   "value": 0.4889,
+   "above_floor": false,
+   "delta_vs_floor": -0.0397
+  },
+  {
+   "rank": 4,
+   "label": "regularity floor",
+   "value": 0.5286,
+   "above_floor": null,
+   "delta_vs_floor": 0.0
+  },
+  {
+   "rank": 5,
+   "label": "anthropic/claude-opus-4.8",
+   "value": 0.581,
+   "above_floor": true,
+   "delta_vs_floor": 0.0524
+  },
+  {
+   "rank": 6,
+   "label": "ours (B1 direct arm)",
+   "value": 0.6143,
+   "above_floor": true,
+   "delta_vs_floor": 0.0857
+  },
+  {
+   "rank": 7,
+   "label": "x-ai/grok-4.5",
+   "value": 0.6143,
+   "above_floor": true,
+   "delta_vs_floor": 0.0857
+  },
+  {
+   "rank": 8,
+   "label": "google/gemini-3.6-flash",
+   "value": 0.7333,
+   "above_floor": true,
+   "delta_vs_floor": 0.2047
+  },
+  {
+   "rank": 9,
+   "label": "random forest (19 lattice features, tabular)",
+   "value": 0.8905,
+   "above_floor": true,
+   "delta_vs_floor": 0.3619
+  },
+  {
+   "rank": 10,
+   "label": "oracle (ideal extraction, 4-view)",
+   "value": 0.9357,
+   "above_floor": true,
+   "delta_vs_floor": 0.4035
+  }
+ ],
+ "bracket_floor_clearance_notes": {
+  "above_floor_count": 6,
+  "below_floor_count": 3,
+  "retracted_sentence": "An earlier version said 'only the saturated tabular baseline and the ideal-extraction oracle clear it convincingly'. THAT IS WRONG and contradicted the bracket line - all three frontier models and our own direct arm clear the floor comfortably. Retracted and replaced by the enumeration above.",
+  "precise_statement": "of the three models TRAINED IN THIS PROJECT, two fall below the floor - the chain arm (-0.1429) and the coordinate GNN (-0.0397) - while the direct arm clears it (+0.0857). The label correction moves a second trained model below the floor; it does not extend the claim to the frontier models or to the tabular and oracle references, which all clear it."
  }
 }

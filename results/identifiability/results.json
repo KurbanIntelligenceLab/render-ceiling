@@ -18216,5 +18216,109 @@
   "n_jarvis": 140,
   "seed": 0,
   "elapsed_sec": 31.8
- }
+ },
+ "summary": {
+  "identifiability_ideal": {
+   "2": {
+    "crystal_system": 0.7429,
+    "point_group": 0.6464,
+    "space_group": 0.4107,
+    "count_match": 0.2607
+   },
+   "3": {
+    "crystal_system": 0.9143,
+    "point_group": 0.8357,
+    "space_group": 0.7429,
+    "count_match": 0.6786
+   },
+   "4": {
+    "crystal_system": 0.9357,
+    "point_group": 0.9143,
+    "space_group": 0.9071,
+    "count_match": 0.9893
+   },
+   "5": {
+    "crystal_system": 0.9393,
+    "point_group": 0.9179,
+    "space_group": 0.9107,
+    "count_match": 0.9964
+   }
+  },
+  "headline": {
+   "oracle_crystal_system_4view": 0.9357,
+   "oracle_crystal_system_5view": 0.9393,
+   "oracle_space_group_4view": 0.9071,
+   "oracle_space_group_5view": 0.9107,
+   "note": "The paper's headline oracle ceiling is 0.9357 (crystal system, 4 views); 0.9393 at five views. Trained image arms are evaluated on CRYSTAL SYSTEM, so 0.9357 is the comparable oracle figure, not the 0.9071 space-group value."
+  },
+  "macro_f1_4view": {
+   "space_group_prose": 0.8,
+   "crystal_system_prose": 0.93,
+   "space_group_recomputed": 0.8179,
+   "crystal_system_recomputed": 0.9361,
+   "note": "Prose in the record's finding prose states SG macro-F1 = 0.80 and CS macro-F1 = 0.93 at 4 views. Recomputation from the 280 rows (unweighted mean of per-label F1 over the union of true and predicted labels) gives 0.8179 and 0.9361. CS agrees to 2 dp; SG differs by ~0.018, most likely a different label-set or averaging convention in the original computation. Both are recorded; neither is silently preferred."
+  },
+  "space_group_recovery_by_system_4view": {
+   "prose": {
+    "cubic": 1.0,
+    "hexagonal": 1.0,
+    "tetragonal": 0.975,
+    "triclinic": 0.95,
+    "monoclinic": 0.9,
+    "orthorhombic": 0.8,
+    "trigonal": 0.75
+   },
+   "recomputed": {
+    "cubic": 1.0,
+    "hexagonal": 1.0,
+    "monoclinic": 0.9,
+    "orthorhombic": 0.8,
+    "tetragonal": 0.975,
+    "triclinic": 0.925,
+    "trigonal": 0.75
+   },
+   "n_per_system": 40,
+   "note": "Recomputed from the 280 rows. All values match the prose EXCEPT triclinic: prose says 95%, the rows give 92.5% (37/40). Mismatch reported, not resolved."
+  },
+  "trigonal_failure_mode": {
+   "n_failures_4view": 10,
+   "n_rhombohedral_setting_prose": 9,
+   "n_rhombohedral_setting_recomputed": 10,
+   "n_with_exact_atom_counts": 9,
+   "rhombohedral_groups": [
+    "R3",
+    "R-3",
+    "R32",
+    "R3m",
+    "R3c",
+    "R-3m",
+    "R-3c"
+   ],
+   "true_reconstruction_failure": {
+    "material_id": "mp-1229124",
+    "space_group": 161,
+    "space_group_symbol": "R3c",
+    "n_recovered": 60,
+    "n_expected": 48,
+    "cause": "spurious triangulations survived cross-view verification"
+   },
+   "note": "the record's finding prose states '9 of its 10 SG failures are rhombohedral-setting space groups'. Recomputation shows all 10 failing trigonal structures have R-centred true space groups (167,167,148,146,146,161,161,148,146,166); the '9 of 10' distinction that the data does support is that 9 of the 10 have exactly matching atom counts (a setting/labelling issue) while the 10th, mp-1229124, is a genuine over-triangulation."
+  },
+  "stability_arm_4view_noise": {
+   "noise_angstrom": 0.03,
+   "space_group_recovery_prose": 0.836,
+   "space_group_recovery_recomputed": 0.85,
+   "count_match_recomputed": 0.8929,
+   "note": "NOT Gate 0 evidence. Measures the triangulator's noise-fragility, not render identifiability. Prose says SG 83.6%; the current rows give 85.0% (238/280) - mismatch reported."
+  },
+  "_provenance": "All *_recomputed values in this summary were computed by this record's own 280 `rows` (fields results.{2,3,4,5}v_ideal.{cs_ok,pg_ok,sg_ok,count_match} and stability_4v). The per-view-count table, headline values and per-system table were verified against the record's finding prose; discrepancies are recorded inline rather than silently reconciled."
+ },
+ "caveats": [
+  "The 91% is SPACE GROUP, not crystal system. The trained arms are evaluated on crystal system, whose oracle value is 0.9357 at four views (0.9393 at five). Citing 91% against a crystal-system row would understate the oracle and compare across tasks.",
+  "Overlap with the 210-structure composition-exclusion eval set: ZERO. Overlap with the 1610 train structures: ZERO. This is the same render pipeline and view geometry but a DIFFERENT sample (280 stratified: 140 MP + 140 JARVIS, seed 0) and a different source mix (E3 data is MP-only; the oracle is half JARVIS). It is an upper bound on what the render CONVENTION carries, NOT a row measured on the eval set, and must be labelled that way. It cannot be placed in a single ranked table with eval-set rows without that qualifier.",
+  "Recovery rises monotonically with view count (crystal system 0.7429 -> 0.9143 -> 0.9357 -> 0.9393), so 0.9357 at four views is a CONSERVATIVE floor on the five-view bound; the measured five-view value is 0.9393. State '0.9357 at four views, 0.9393 at five' rather than implying either is the bound for the shipped renders.",
+  "The oracle assumes PERFECT atom localisation (ideal extraction; lattice taken as known because cell edges are drawn). It establishes that the renders CARRY the symmetry information - the trained image arms' 0.6143 is not explained by absent information. It does NOT establish that a human can perform the extraction or that the renders are 'human-solvable'. The checkability framing still requires the human study.",
+  "Gate 0 decision is PROVISIONAL pending the human-expert arm.",
+  "The table was refreshed from the current results.json (2026-07-29). The original table read 73.9 / 90.7 / 93.2% at 2/3/4 views; the harness draws from a LIVE database, so the seed fixes draw order but not the candidate pool. Differences are 1-2 structures out of 280."
+ ]
 }

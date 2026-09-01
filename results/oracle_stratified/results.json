@@ -61,5 +61,45 @@
   "a 0.1141 significant deficit means the render DOES lose something even given perfect extraction; 'fully present' is false, 'mostly present' is supported",
   "perfect atom localisation assumed - bounds recoverability GIVEN extraction"
  ],
- "consequence_for_followon_probe": "the directive gates a two-stage-prompt probe on 'visible but unused'; D delivers a weaker premise on a stratum whose model result did not replicate, so the probe would be EXPLORATORY, not confirmatory"
+ "consequence_for_followon_probe": "the directive gates a two-stage-prompt probe on 'visible but unused'; D delivers a weaker premise on a stratum whose model result did not replicate, so the probe would be EXPLORATORY, not confirmatory",
+ "sample_comparison_fisher_tests": {
+  "note": "Two Fisher exact tests on the SAME pair of samples that reach OPPOSITE conclusions. Both are required; citing either alone misrepresents the record.",
+  "partition_rate": {
+   "test": "box-sufficient vs box-ambiguous partition rate, oracle sample vs evaluation set",
+   "oracle_sample": {
+    "n_box_sufficient": 197,
+    "n": 280,
+    "rate": 0.7036
+   },
+   "evaluation_set": {
+    "n_box_sufficient": 137,
+    "n": 210,
+    "rate": 0.6524
+   },
+   "fisher_p": 0.2407,
+   "significant": false,
+   "conclusion": "NOT significant - within sampling noise. The partition rate was never a discrepancy and needed no source-mix explanation.",
+   "correction_note": "CORRECTION 1 in the record's finding prose: this was previously framed as something requiring a source-mix explanation; it does not. The sample-disjointness flag on the ACCURACY comparison was a separate and legitimate concern, resolved by oracle_within_sample."
+  },
+  "ambiguous_stratum_composition": {
+   "test": "trigonal/hexagonal metric share within the box-ambiguous stratum, oracle sample vs evaluation set",
+   "oracle_sample": {
+    "n_trigonal_hexagonal": 80,
+    "n": 83,
+    "rate": 0.964,
+    "composition": "80 hexagonal_or_trigonal + 3 tetragonal; no monoclinic, orthorhombic or cubic"
+   },
+   "evaluation_set": {
+    "n_trigonal_hexagonal": 61,
+    "n": 73,
+    "rate": 0.836
+   },
+   "fisher_p": 0.012,
+   "significant": true,
+   "conclusion": "SIGNIFICANT - the stratum compositions DIFFER. Part of the 0.1979 gap was composition rather than unread information.",
+   "correction_note": "CORRECTION 2 in the record's finding prose: a real defect in the cross-sample bracket, and the reason oracle_within_sample's within-sample computation was the right call rather than an optional tidy-up. oracle_within_sample SUPERSEDES this reading; the numbers here remain as the record of what was computed."
+  }
+ },
+ "conclusion": "The two Fisher tests reach OPPOSITE conclusions, and that opposition is this record's whole point. The OVERALL partition rates are statistically indistinguishable (197/280 = 0.7036 vs 137/210 = 0.6524, p = 0.2407, not significant), so the two samples are split into box-sufficient/box-ambiguous in comparable proportions. But WITHIN the box-ambiguous stratum the compositions differ significantly (80/83 = 96.4% vs 61/73 = 83.6% trigonal/hexagonal, p = 0.0120). A sample can therefore be unremarkable at the partition level while being materially different in the very stratum the cross-sample gap is read from. The practical consequence: the 0.1979 oracle-minus-model gap on the box-ambiguous stratum is partly composition, not unread information, so the cross-sample bracket is defective and oracle_within_sample supersedes it. Do not cite the non-significant p = 0.2407 as evidence that the samples are comparable for the accuracy comparison.",
+ "_provenance": "Both Fisher p-values and all counts transcribed verbatim from this record's finding prose (authors' working notes; not shipped) (CORRECTION 1 and CORRECTION 2). Not recomputed - the per-structure metric-class assignments for the 210-structure evaluation set are not in this directory."
 }

@@ -131,7 +131,7 @@
   "V2b": "dense step-level (StepGRPO-style): base = mean(per-step verifiable rewards + final)",
   "common": "all arms add 0.25*format; only the per-step verification content of the base varies",
   "naming_correction": "'step-wise credit assignment' / 'per-step advantage attribution' RETRACTED. These arms do dense step-level REWARDING with a PATH-LEVEL group-normalized advantage \u2014 as does StepGRPO (R1-VL arXiv 2503.12937), which aggregates StepRAR+StepRVR step rewards into a scalar per-trajectory reward and normalizes it relative to the group (no token-level attribution). True per-step credit attribution is untested future work / optional E3 extension arm.",
-  "differentiation_from_stepgrpo": "StepGRPO's key steps are GPT-4-extracted (model-generated supervision); CoCr's step targets are deterministic from the source CIF via spglib/pymatgen \u2014 no model in the loop, so every step reward is programmatically verifiable rather than LLM-judged."
+  "differentiation_from_stepgrpo": "StepGRPO's key steps are GPT-4-extracted (model-generated supervision); render-ceiling's step targets are deterministic from the source CIF via spglib/pymatgen \u2014 no model in the loop, so every step reward is programmatically verifiable rather than LLM-judged."
  },
  "mechanism_analysis": {
   "literature": {
@@ -148,7 +148,11 @@
    "silent_from_lattice": 0.49,
    "trl_logged_frac_reward_zero_std": 0.4889,
    "abs_difference": 0.001,
-   "conclusion": "panel statistic confirmed two independent ways"
+   "conclusion": "panel statistic confirmed two independent ways",
+   "n_silent_groups": 441,
+   "n_groups_total": 900,
+   "silent_fraction_exact": 0.49,
+   "counts_note": "441/900 silent groups recovered directly from the reward lattice over all 900 B3 training steps, matching the TRL-logged frac_reward_zero_std = 0.4889 to 0.001. Raw counts added; the pre-existing silent_from_lattice = 0.49 is 441/900 rounded."
   },
   "closed_form_check": {
    "formula": "P[silent] = p^G + (1-p)^G, G=8",
@@ -177,5 +181,79 @@
    }
   },
   "dynamic_sampling_caution": "documented failure mode on sparse hard-gated rewards: batch-wide rejection + resample thrashing (arXiv 2606.27210). With B3 at ~49% silent groups this is a live risk for the OUTCOME arm specifically. If adopted: cap resample rounds, log rejection rates, and apply to ALL arms or none \u2014 asymmetric adoption would break the matched-arm design."
+ },
+ "lora_weight_diff_analysis": {
+  "purpose": "Mechanistic evidence for the null result: the 'B3 == V2b exactly' prediction identity is a decode artefact, not a training bug.",
+  "n_lora_params": 43600000,
+  "n_lora_params_str": "43.6M",
+  "inter_arm": {
+   "pair": "B3 vs V2b",
+   "l2": 0.0168,
+   "max_abs": 6e-05,
+   "verdict": "near-identical but NOT bit-identical",
+   "note": "A save-twice / same-reward wiring bug would give exactly 0. It does not."
+  },
+  "arm_vs_sft": {
+   "l2_approx": 0.063,
+   "max_weight_change_approx": 6e-05,
+   "note": "All arms sit L2 ~0.063 from the V1 SFT checkpoint - frozen-KL confirmed by weights."
+  },
+  "ratio": {
+   "inter_arm_l2_approx": 0.016,
+   "arm_vs_sft_l2_approx": 0.063,
+   "factor": 4,
+   "note": "Inter-arm L2 is ~4x SMALLER than arm-vs-SFT: all arms took small, DISTINCT steps and landed near each other."
+  },
+  "conclusion": "'B3 == V2b in PREDICTIONS' was greedy-argmax collapsing two near-identical policies onto identical discrete tokens, not identical weights. ITEM 1 of the pre-matrix wiring audit: RESOLVED, NO BUG.",
+  "supporting": {
+   "reward_trajectories_last20_mean": {
+    "B3": 0.263,
+    "V2a": 0.509,
+    "V2b": 0.497
+   },
+   "note": "Reward trajectories DO differ across arms, consistent with distinct-but-small weight steps."
+  },
+  "caveats": [
+   "This is mechanistic evidence that the arms are genuinely distinct policies, NOT evidence that the process reward changed behaviour. The weight movement is small in absolute terms and the arms landed close together.",
+   "The faithfulness 'drop' seen earlier was a METRIC MISMATCH: SFT-V1 faithfulness on the SAME reward-server metric = 0.274, not the ~0.35 estimate (which came from sft_chain's different geometry-accuracy metric). The true picture is flat: SFT 0.274 vs arms 0.244-0.263."
+  ],
+  "_provenance": "Transcribed from this record's finding prose (authors' working notes; not shipped) (pre-matrix audit, ITEM 1); identical text in the superseded pre-matrix finding lines 6-11. Not recomputed - adapter weights are not in this directory."
+ },
+ "termination_regeneration_experiment": {
+  "purpose": "Mini-experiment correcting an earlier '0/210 reach [ANSWER] at 900 tok' claim, which was a truncation artefact (the [ANSWER] line sits past char 400).",
+  "design": {
+   "n_structures_per_arm": 12,
+   "source": "evaluation set",
+   "max_new_tokens": 900,
+   "measure": "full-length re-generation, fraction reaching an [ANSWER] line"
+  },
+  "results": {
+   "B3": {
+    "n_reach_answer": 10,
+    "n": 12,
+    "rate": 0.8333
+   },
+   "V2a": {
+    "n_reach_answer": 8,
+    "n": 12,
+    "rate": 0.6667
+   },
+   "V2b": {
+    "n_reach_answer": 10,
+    "n": 12,
+    "rate": 0.8333
+   }
+  },
+  "mean_generation_tokens": "~350-460",
+  "baseline_v1_sft_checkpoint": {
+   "rate": 0.011,
+   "rate_str": "1.1%"
+  },
+  "conclusion": "GRPO LARGELY FIXED the SFT non-termination trap: 8-10 of 12 per arm reach [ANSWER] versus 1.1% for the V1 SFT checkpoint. The crystal-system fallback parser and the true [ANSWER] therefore mostly agree here.",
+  "caveats": [
+   "n = 12 structures per arm - indicative only, not powered to separate the arms from one another (8/12 vs 10/12 is well inside binomial noise).",
+   "Supersedes the earlier '0/210 reach [ANSWER] at 900 tok' claim, which was a truncation artefact."
+  ],
+  "_provenance": "Transcribed from this record's finding prose (authors' working notes; not shipped), TERMINATION (corrected) section."
  }
 }

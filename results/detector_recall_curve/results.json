@@ -1,0 +1,219 @@
+{
+ "stage": "r2_recall_curve \u2014 how the detector-oracle ceiling responds to extraction recall",
+ "question": "At what extraction recall does the pipeline's own reading, rather than the images, become the binding ceiling?",
+ "method": "Sweep the per-atom extraction recall applied to the detector stage from 0.50 to 1.00 and re-solve the oracle at each level, on both evaluation samples.",
+ "eval": {
+  "samples": {
+   "original": {
+    "n": 210
+   },
+   "expansion": {
+    "n": 210
+   }
+  },
+  "recall_levels": 12,
+  "recall_range": [
+   0.5,
+   1.0
+  ],
+  "grids": {
+   "coarse": "0.50-0.95",
+   "fine": "0.97-0.99",
+   "finer": "0.995-1.0"
+  }
+ },
+ "curve": {
+  "original": {
+   "0.5": {
+    "detector_oracle_accuracy": 0.2324,
+    "zero_triangulation_rate": 0.5714,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.6": {
+    "detector_oracle_accuracy": 0.3476,
+    "zero_triangulation_rate": 0.2914,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.7": {
+    "detector_oracle_accuracy": 0.3714,
+    "zero_triangulation_rate": 0.1324,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.8": {
+    "detector_oracle_accuracy": 0.3848,
+    "zero_triangulation_rate": 0.0438,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.9": {
+    "detector_oracle_accuracy": 0.4286,
+    "zero_triangulation_rate": 0.0038,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.95": {
+    "detector_oracle_accuracy": 0.4743,
+    "zero_triangulation_rate": 0.0038,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.97": {
+    "detector_oracle_accuracy": 0.5743,
+    "zero_triangulation_rate": 0.001,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "fine"
+   },
+   "0.98": {
+    "detector_oracle_accuracy": 0.6486,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "fine"
+   },
+   "0.99": {
+    "detector_oracle_accuracy": 0.7629,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "fine"
+   },
+   "0.995": {
+    "detector_oracle_accuracy": 0.8536,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "finer"
+   },
+   "0.999": {
+    "detector_oracle_accuracy": 0.925,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "finer"
+   },
+   "1": {
+    "detector_oracle_accuracy": 0.9524,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   }
+  },
+  "expansion": {
+   "0.5": {
+    "detector_oracle_accuracy": 0.3038,
+    "zero_triangulation_rate": 0.3895,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.6": {
+    "detector_oracle_accuracy": 0.361,
+    "zero_triangulation_rate": 0.1619,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.7": {
+    "detector_oracle_accuracy": 0.3419,
+    "zero_triangulation_rate": 0.0438,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.8": {
+    "detector_oracle_accuracy": 0.301,
+    "zero_triangulation_rate": 0.0067,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.9": {
+    "detector_oracle_accuracy": 0.3095,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.95": {
+    "detector_oracle_accuracy": 0.3714,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0038,
+    "n": 210,
+    "grid": "coarse"
+   },
+   "0.97": {
+    "detector_oracle_accuracy": 0.4438,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0029,
+    "n": 210,
+    "grid": "fine"
+   },
+   "0.98": {
+    "detector_oracle_accuracy": 0.5076,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0057,
+    "n": 210,
+    "grid": "fine"
+   },
+   "0.99": {
+    "detector_oracle_accuracy": 0.6229,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0086,
+    "n": 210,
+    "grid": "fine"
+   },
+   "0.995": {
+    "detector_oracle_accuracy": 0.7262,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0095,
+    "n": 210,
+    "grid": "finer"
+   },
+   "0.999": {
+    "detector_oracle_accuracy": 0.8601,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0131,
+    "n": 210,
+    "grid": "finer"
+   },
+   "1": {
+    "detector_oracle_accuracy": 0.9095,
+    "zero_triangulation_rate": 0.0,
+    "over_triangulation_rate": 0.0143,
+    "n": 210,
+    "grid": "coarse"
+   }
+  }
+ },
+ "headline": {
+  "original": {
+   "at_perfect_recall": 0.9524,
+   "at_recall_0.99": 0.7629,
+   "at_recall_0.95": 0.4743,
+   "at_recall_0.50": 0.2324,
+   "drop_from_perfect_to_0.99": 0.1895,
+   "drop_from_perfect_to_0.95": 0.4781
+  },
+  "expansion": {
+   "at_perfect_recall": 0.9095,
+   "at_recall_0.99": 0.6229,
+   "at_recall_0.95": 0.3714,
+   "at_recall_0.50": 0.3038,
+   "drop_from_perfect_to_0.99": 0.2866,
+   "drop_from_perfect_to_0.95": 0.5381
+  }
+ },
+ "conclusion": "The ceiling is steeply sensitive to extraction recall near perfection: on the original sample a single percentage point of missing recall (1.00 -> 0.99) costs 0.1895 of accuracy, and five points cost 0.4781. Below about 0.95 recall the extraction stage, not the images, is what binds. Zero-triangulation (fewer than two rays for an atom) vanishes above 0.98 recall on the original sample and above 0.90 on the expansion sample, so the decline above those points is misplacement rather than missing atoms. Over-triangulation never occurs at any recall level on either sample.",
+ "_provenance": "Summary computed from recall_curve_raw.json (0.50-0.95), recall_curve_fine.json (0.97-0.99) and recall_curve_finer.json (0.995-1.0), which hold the per-structure detail: material_id, truth, hit_rate, n_true, mean_n_recovered, over_frac, zero_frac."
+}

@@ -1,4 +1,4 @@
-# CoCr-Symmetry — artifact release
+# Artifact release
 
 Everything a reviewer needs to check every number in the paper without rerunning a model.
 
@@ -9,23 +9,23 @@ Everything a reviewer needs to check every number in the paper without rerunning
 currently points at the source repository; replace it with the dataset DOI at deposit. Licence: CC BY 4.0.
 
 Payload to deposit alongside it:
-  data/e3/eval.jsonl              210 evaluation records, original composition-exclusion split
-  data/e3/train.jsonl            1610 training records, composition-disjoint from eval
-  data/e3/structures.json         CIF text per material_id
-  data/e3x/eval.jsonl             210 independently drawn records, replication split
-  data/e3x/structures.json        CIF text for the expansion split
-  data/e3/renders/eval/           1050 PNGs, five orthographic views per structure at 768 px
-  data/e3x/renders/eval/          1050 PNGs, identical camera set
+  data/primary/eval.jsonl              210 evaluation records, original composition-exclusion split
+  data/primary/train.jsonl            1610 training records, composition-disjoint from eval
+  data/primary/structures.json         CIF text per material_id
+  data/replication/eval.jsonl             210 independently drawn records, replication split
+  data/replication/structures.json        CIF text for the expansion split
+  data/primary/renders/eval/           1050 PNGs, five orthographic views per structure at 768 px
+  data/replication/renders/eval/          1050 PNGs, identical camera set
 
 ## What is in this folder
 
 `harnesses/` — the oracle, the orbit-occlusion classifier and conditioned oracle, the zero-shot and
-no-image control harness, the atom detector, and the render, reconstruct and label modules.
+no-image control harness, the atom detector, and and the render, reconstruct and label modules, which import the package in `src/render_ceiling/`.
 
-`predictions/` — 32 per-structure prediction vectors, one file per model per arm, with ARM AND K IN THE
-FILENAME. Every leaderboard row in the paper is recomputable from these without an API key.
+`predictions/` — 68 per-structure prediction vectors, one file per model per arm, with the arm and decode budget in the
+filename. Every leaderboard row in the paper is recomputable from these without an API key.
 
-`frozen_prompts.json` — the prompt text VERBATIM. There is exactly one distinct prompt string; the
+`frozen_prompts.json` — the prompt text verbatim. There is exactly one distinct prompt string; the
 no-image control sends it byte-identically with only the image blocks removed.
 
 `classifier_specifications.json` — the random forest's executable specification: ordered 19-feature list
@@ -38,7 +38,7 @@ sample, K, the seed count and the statistical test. One row is flagged: the labe
 in prose in an early checkpoint rather than in a results.json, and is marked as such rather than presented
 as structured data.
 
-`superseded_results.json` — the retired values as DATA, not only as prose: the 137/73 stratified table,
+`superseded_results.json` — the retired values as data, not only as prose: the 137/73 stratified table,
 the mechanism claim, the reverse-direction arm, the per-view visibility figure, the retired occlusion
 decomposition, and the two retired random-forest values, each with why it was superseded and what replaced it.
 

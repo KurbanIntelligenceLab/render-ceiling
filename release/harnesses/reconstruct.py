@@ -1,5 +1,5 @@
 """
-CoCr E0.5 tool-oracle: reconstruct 3D structure from the multi-view projections
+Geometric oracle: reconstruct 3D structure from the multi-view projections
 and measure how much crystallographic symmetry is recoverable from the finite view
 set alone.
 

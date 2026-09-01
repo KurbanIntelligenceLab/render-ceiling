@@ -1,6 +1,6 @@
 {
  "stage": "exclusion_baselines \u2014 B1-direct and SFT-V1 on the composition-exclusion split",
- "prereg": "prereg.md, committed before any number was inspected",
+ "prereg": "the pre-registration, committed before any number was inspected",
  "eval": {
   "set": "210-structure composition-exclusion (every structure has a train-unseen element)",
   "protocol": "3-sample majority vote, temp 0.7, 512 max new tokens \u2014 identical to the E3 matrix arms"
@@ -34,7 +34,7 @@
    "faith_sd": 0.0287,
    "status": "COMPLETE \u2014 all 3 seeds",
    "comparisons_vs_pooled_noise": {
-    "convention": "pooled = sqrt((s1^2+s2^2)/2) \u2014 program-wide, see ledger/CONVENTIONS.md (was quadrature-sum here before unification)",
+    "convention": "pooled = sqrt((s1^2+s2^2)/2) \u2014 program-wide, see the program-wide statistical conventions (was quadrature-sum here before unification)",
     "B3_minus_SFTV1": {
      "delta": 0.008,
      "pooled_sd": 0.0328,
@@ -142,7 +142,10 @@
    "ratio": ">34x",
    "cause": "SFT-V1 reaches [ANSWER] 1.1% of the time so every generation runs to the 512-token cap"
   },
-  "note": "under accounting (1) B1 uses 67x LESS compute and still wins, which strengthens branch (a)"
+  "note": "under accounting (1) B1 uses 67x LESS compute and still wins, which strengthens branch (a)",
+  "visual_tokens_note": "MEASURED by reading the live Qwen3-VL processor at max_pixels=200704: the 768x768 renders yield 171 visual tokens/view. NOT formula-derived \u2014 Qwen3-VL's 32x32-px/token arithmetic plus the max_pixels cap make formula-derived counts wrong. The finding does not state the formula-derived number, only that the naive value differs; it is therefore not transcribed here.",
+  "render_px": 768,
+  "max_pixels": 200704
  },
  "secondary_finding": {
   "claim": "2501.17161's format-stabilisation half REPRODUCES even though its generalization half does not",
@@ -152,5 +155,12 @@
   "E3 scale-up DEPRIORITIZED (branch (a) withdraws the accuracy justification)",
   "the paper's claim must be verifiability / faithfulness / test-time scaling, not accuracy",
   "defensible headline: a direct image->label mapping is accuracy-optimal here; the verified chain's value is that it is CHECKABLE"
- ]
+ ],
+ "reranking_premise": {
+  "claim": "an answer-INDEPENDENT, deterministically verifiable step (the geometry step, scored against CIF-derived lattice relations without reference to the crystal-system answer) predicts final-answer correctness at AUC ~0.81 \u2014 well above the model's own self-consistency confidence at AUC ~0.62",
+  "verifiable_step_auc": 0.81,
+  "model_confidence_auc": 0.62,
+  "source": "results/calibration (per-step -> final-answer correlation; geometry-only, answer-independent). Per-arm: B3 0.811, V2a 0.812, V2b 0.818 vs vote-share AUC 0.620/0.637/0.619.",
+  "why_it_matters": "this is the E7 test-time-scaling RERANKING PREMISE: the CIF-grounded checker carries information the model's own confidence does not, and the near-identical AUC across arms says this is a property of the CHECKER, not of any one training arm. It is one of the defensible render-ceiling claims that survives branch (a), none of which require the chain to be the most accurate predictor."
+ }
 }

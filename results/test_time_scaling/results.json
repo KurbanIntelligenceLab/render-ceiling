@@ -1,6 +1,6 @@
 {
  "stage": "test_time_scaling / E7 test-time scaling (1 seed, K=8, 210-struct composition-exclusion, 416-eff matched to training)",
- "prereg": "prereg.md, committed before any E7 inference",
+ "prereg": "the pre-registration, committed before any E7 inference",
  "generations": {
   "per_arm": 1680,
   "structures": 210,

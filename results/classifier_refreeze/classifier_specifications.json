@@ -46,7 +46,7 @@
   "split": {
    "train": 1610,
    "eval": 210,
-   "source": "identical material_ids as every CoCr arm, data/e3"
+   "source": "identical material_ids as every render-ceiling arm, data/primary"
   },
   "environment": {
    "sklearn": "1.9.0",

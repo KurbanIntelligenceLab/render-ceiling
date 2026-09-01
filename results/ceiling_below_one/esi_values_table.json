@@ -1,0 +1,283 @@
+{
+ "title": "Revised ESI Values - Ceilings, Monotonicity, Conditioning, Statistics",
+ "source": "results/ceiling_below_one/the supplementary values table (verbatim serialisation of the markdown tables; columns become keys)",
+ "ceiling_under_impoverished_camera_protocols": {
+  "columns": [
+   "views",
+   "tol",
+   "mean_R1",
+   "min_R1",
+   "max_R1",
+   "worst_subset",
+   "best_subset"
+  ],
+  "rows": [
+   {
+    "views": 2,
+    "tol": "tau=0.01",
+    "tol_value": 0.01,
+    "oracle_ceiling_mean": 0.9214,
+    "oracle_ceiling_min": 0.7571,
+    "oracle_ceiling_max": 0.981,
+    "worst_subset": "axis_b|axis_c",
+    "best_subset": "axis_a|body_diagonal"
+   },
+   {
+    "views": 2,
+    "tol": "0.15 (released)",
+    "tol_value": 0.15,
+    "oracle_ceiling_mean": 0.7481,
+    "oracle_ceiling_min": 0.6762,
+    "oracle_ceiling_max": 0.8,
+    "worst_subset": "axis_b|body_diagonal",
+    "best_subset": "axis_a|axis_c"
+   },
+   {
+    "views": 3,
+    "tol": "tau=0.01",
+    "tol_value": 0.01,
+    "oracle_ceiling_mean": 0.9967,
+    "oracle_ceiling_min": 0.9952,
+    "oracle_ceiling_max": 1.0,
+    "worst_subset": "axis_a|axis_b|body_diagonal",
+    "best_subset": "axis_a|axis_b|axis_c"
+   },
+   {
+    "views": 3,
+    "tol": "0.15 (released)",
+    "tol_value": 0.15,
+    "oracle_ceiling_mean": 0.9152,
+    "oracle_ceiling_min": 0.8857,
+    "oracle_ceiling_max": 0.9524,
+    "worst_subset": "axis_a|axis_b|body_diagonal",
+    "best_subset": "axis_a|body_diagonal|oblique2"
+   }
+  ],
+  "note": "headline, not census footnote"
+ },
+ "phantom_nonempty_rate_by_view_count_tau_approx_0": {
+  "columns": [
+   "views",
+   "n210_e3_original",
+   "n1950_e50_stable"
+  ],
+  "rows": [
+   {
+    "views": 2,
+    "n210_e3_original": "14.5%",
+    "n1950_e50_stable": "15.4%"
+   },
+   {
+    "views": 3,
+    "n210_e3_original": "1.9%",
+    "n1950_e50_stable": "1.9%"
+   },
+   {
+    "views": 4,
+    "n210_e3_original": "0.0% (NEW)",
+    "n1950_e50_stable": "0.0% (NEW)"
+   },
+   {
+    "views": 5,
+    "n210_e3_original": "0.0%",
+    "n1950_e50_stable": "0.0%"
+   }
+  ],
+  "fifth_camera_claim": "survives only as fidelity/certification, not accuracy - R1 saturates by four views (0.9371-0.9981 across tolerances) and the phantom-nonempty rate is already zero at four views, matching five. The cited 15.4%/1.9% rates describe the second/third camera, not the fifth."
+ },
+ "monotonicity_sweep_2x2": {
+  "columns": [
+   "tolerance",
+   "pair_set",
+   "violations",
+   "comparisons",
+   "rate"
+  ],
+  "rows": [
+   {
+    "tolerance": "tau=0.01",
+    "pair_set": "55 immediate pairs",
+    "violations": 9,
+    "comparisons": 11550,
+    "rate": "0.078%"
+   },
+   {
+    "tolerance": "0.15",
+    "pair_set": "55 immediate pairs",
+    "violations": 99,
+    "comparisons": 11550,
+    "rate": "0.857%"
+   },
+   {
+    "tolerance": "tau=0.01",
+    "pair_set": "all 105 pairs",
+    "violations": 15,
+    "comparisons": 22050,
+    "rate": "0.068%"
+   },
+   {
+    "tolerance": "0.15",
+    "pair_set": "all 105 pairs",
+    "violations": 195,
+    "comparisons": 22050,
+    "rate": "0.884%"
+   }
+  ],
+  "new_headline_pair": "15 of 22,050 (tau, all 105 pairs), for citation alongside 195/22,050",
+  "aggregate_violations": "2 of 105 in every cell (same subset triple)"
+ },
+ "conditioning_distribution": {
+  "definition": "kappa = 1/sqrt(1-|cos theta|)",
+  "by_pair": {
+   "columns": [
+    "pair",
+    "frozen",
+    "off_axis"
+   ],
+   "rows": [
+    {
+     "pair": "axis_a/axis_b",
+     "frozen": 1.0,
+     "off_axis": 1.0975
+    },
+    {
+     "pair": "axis_a/axis_c",
+     "frozen": 1.0,
+     "off_axis": 1.0001
+    },
+    {
+     "pair": "axis_a/body_diagonal",
+     "frozen": 1.4142,
+     "off_axis": 1.9308
+    },
+    {
+     "pair": "axis_a/oblique2",
+     "frozen": 2.7321,
+     "off_axis": 8.4258
+    },
+    {
+     "pair": "axis_b/axis_c",
+     "frozen": 1.0,
+     "off_axis": 1.0072
+    },
+    {
+     "pair": "axis_b/body_diagonal",
+     "frozen": 2.0,
+     "off_axis": 1.4398
+    },
+    {
+     "pair": "axis_b/oblique2",
+     "frozen": 1.1547,
+     "off_axis": 1.0066
+    },
+    {
+     "pair": "axis_c/body_diagonal",
+     "frozen": 1.328,
+     "off_axis": 1.1117
+    },
+    {
+     "pair": "axis_c/oblique2",
+     "frozen": 1.328,
+     "off_axis": 1.0291
+    },
+    {
+     "pair": "body_diagonal/oblique2",
+     "frozen": 2.2823,
+     "off_axis": 2.4638
+    }
+   ]
+  },
+  "summary_stats": {
+   "columns": [
+    "stat",
+    "frozen",
+    "off_axis"
+   ],
+   "rows": [
+    {
+     "stat": "min",
+     "frozen": 1.0,
+     "off_axis": 1.0001
+    },
+    {
+     "stat": "median",
+     "frozen": 1.328,
+     "off_axis": 1.1046
+    },
+    {
+     "stat": "mean",
+     "frozen": 1.5239,
+     "off_axis": 2.0512
+    },
+    {
+     "stat": "max",
+     "frozen": 2.7321,
+     "off_axis": 8.4258
+    },
+    {
+     "stat": "mean, excluding axis_a/oblique2",
+     "frozen": 1.3897,
+     "off_axis": 1.343,
+     "off_axis_ratio": 0.966
+    }
+   ]
+  },
+  "noise_tolerance_ratio": {
+   "observed": 2.116,
+   "kappa_max_predicted": 3.084,
+   "note": "explained qualitatively (not exactly) by the fact that 9 of 10 pairs are essentially unchanged between protocols while only the worst pair triples"
+  }
+ },
+ "statistical_housekeeping": {
+  "crystal_system_association": {
+   "test": "Kruskal-Wallis",
+   "H": 32.94,
+   "df": 6,
+   "p": 1.08e-05,
+   "eta_squared": 0.142,
+   "replaces": "the undisclosed-ordinal-encoding Spearman rho=-0.1866"
+  },
+  "median_perception_share": {
+   "reference": "exact reference R1=1.0000",
+   "value": 0.2901,
+   "bootstrap_95ci": [
+    0.1492,
+    0.3576
+   ],
+   "bootstrap_note": "reproduces manuscript exactly",
+   "order_statistic_ci": [
+    {
+     "ci": [
+      0.1222,
+      0.3576
+     ],
+     "coverage": 0.943
+    },
+    {
+     "ci": [
+      0.0939,
+      0.3773
+     ],
+     "coverage": 0.987
+    }
+   ],
+   "retired_memo_note": "the retired review_round2 memo's 0.3092 / '12 of 14' reproduces exactly at the RELEASED-tolerance reference (R1=0.9524) instead - both are correct, at different reference points"
+  },
+  "sign_test": {
+   "exact_reference": "13-of-14",
+   "p": 0.0018,
+   "method": "binomtest",
+   "released_reference": "12-of-14"
+  },
+  "multiple_comparison_family": {
+   "n_tests": 26,
+   "procedure": "BH-FDR at alpha=0.05",
+   "verdict": "leaves every load-bearing claim intact",
+   "downgraded": {
+    "test": "Fisher exact atom-count-median-split",
+    "p": 0.0241,
+    "p_adj": 0.0696
+   }
+  }
+ }
+}

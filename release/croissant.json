@@ -49,11 +49,11 @@
  },
  "@type": "sc:Dataset",
  "conformsTo": "http://mlcommons.org/croissant/1.1",
- "name": "CoCr-Symmetry",
+ "name": "render-ceiling",
  "description": "A benchmark for reading crystal symmetry from multi-view ball-and-stick renders. Each record pairs five orthographic renders of a conventional cell with a deterministic spglib symmetry label at three hierarchy levels (crystal system, point group, space group). Evaluation uses a composition-exclusion split: no chemical composition appears in both train and eval. Ships with a model-free geometric oracle that measures the information the renders afford, an orbit decomposition of occlusion into redundant and informative components, and per-structure prediction vectors for every reported model row.",
  "license": "https://creativecommons.org/licenses/by/4.0/",
  "url": "https://github.com/KurbanIntelligenceLab/render-ceiling",
- "citeAs": "Can Polat, Mustafa Kurban, Erchin Serpedin and Hasan Kurban, A model-free ceiling for vision-language model evaluation on rendered crystal structures, Digital Discovery, 2026.",
+ "citeAs": "Can Polat, Mustafa Kurban, Erchin Serpedin and Hasan Kurban, A model-free ceiling for vision-language model evaluation on rendered crystal structures, 2026.",
  "version": "1.0.0",
  "datePublished": "2026-08-06",
  "isLiveDataset": false,
@@ -71,9 +71,9 @@
    "@id": "eval-original",
    "name": "eval_original.jsonl",
    "description": "210 evaluation records, original composition-exclusion split",
-   "contentUrl": "data/e3/eval.jsonl",
+   "contentUrl": "data/primary/eval.jsonl",
    "encodingFormat": "application/jsonlines",
-   "sha256": "26e0afcfeec1fb296760428e87fdca8fdc43392f2d79bb7232e31f12a890c0ef",
+   "sha256": "89bcaa567e2f6730b5ff5aee3bca2598e2e55b74709bafab93c7eb0f3e1f68a4",
    "contentSize": "152481"
   },
   {
@@ -81,9 +81,9 @@
    "@id": "train-original",
    "name": "train_original.jsonl",
    "description": "1610 training records, disjoint in composition from eval",
-   "contentUrl": "data/e3/train.jsonl",
+   "contentUrl": "data/primary/train.jsonl",
    "encodingFormat": "application/jsonlines",
-   "sha256": "a2f227d856179f2169e1ed1f157cb145ff0babb93d3309b441e975889de6365c",
+   "sha256": "436268122075309f2c1634fb4032942e0a6700a037bb97c7829aed2b13936aaa",
    "contentSize": "1173362"
   },
   {
@@ -91,9 +91,9 @@
    "@id": "eval-expansion",
    "name": "eval_expansion.jsonl",
    "description": "210 independently drawn evaluation records used for replication",
-   "contentUrl": "data/e3x/eval.jsonl",
+   "contentUrl": "data/replication/eval.jsonl",
    "encodingFormat": "application/jsonlines",
-   "sha256": "55dff185964e893dd9040f8f811ecb501e3c8e0cc0f8abd6c57c2ead1b31a9ed",
+   "sha256": "397a81c6725282ae7179cde419034ce6ff3cee26253529a82c9735b9dcfbcbfc",
    "contentSize": "153232"
   },
   {
@@ -101,7 +101,7 @@
    "@id": "structures-original",
    "name": "structures_original.json",
    "description": "CIF text per material_id, the input to the render pipeline and the oracle",
-   "contentUrl": "data/e3/structures.json",
+   "contentUrl": "data/primary/structures.json",
    "encodingFormat": "application/json",
    "sha256": "79cf752062983d7da1b9a1ac8fba8fdcceb5e34ad38f01fb870a93418fde42f4",
    "contentSize": "2352415"
@@ -111,7 +111,7 @@
    "@id": "structures-expansion",
    "name": "structures_expansion.json",
    "description": "CIF text per material_id for the expansion split",
-   "contentUrl": "data/e3x/structures.json",
+   "contentUrl": "data/replication/structures.json",
    "encodingFormat": "application/json",
    "sha256": "aedf82809a07ca8b51e19cd4ddee119a2d225f618037678eff5345716cefabf3",
    "contentSize": "354955"
@@ -125,7 +125,7 @@
     "@id": "eval-original"
    },
    "encodingFormat": "image/png",
-   "includes": "data/e3/renders/eval/*.png"
+   "includes": "data/primary/renders/eval/*.png"
   },
   {
    "@type": "cr:FileSet",
@@ -136,7 +136,7 @@
     "@id": "eval-expansion"
    },
    "encodingFormat": "image/png",
-   "includes": "data/e3x/renders/eval/*.png"
+   "includes": "data/replication/renders/eval/*.png"
   }
  ],
  "recordSet": [
@@ -258,5 +258,6 @@
     "@id": "eval/material_id"
    }
   }
- ]
+ ],
+ "publisher": "Kurban Intelligence Lab"
 }

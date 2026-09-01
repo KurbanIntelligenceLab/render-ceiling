@@ -202,6 +202,38 @@
     "counts": "36/140, 16/70"
    }
   },
-  "verdict": "PARTITION replicates (0.6524 vs 0.6667); ACCURACY PATTERN DOES NOT. B1's drop reverses sign (-0.05, p=0.557) and the RF control becomes the only significant dropper (+0.164, p=0.002). Cause: the floor collapsed to 0.2286 on this stratum, so there is nothing to collapse to."
+  "verdict": "PARTITION replicates (0.6524 vs 0.6667); ACCURACY PATTERN DOES NOT. B1's drop reverses sign (-0.05, p=0.557) and the RF control becomes the only significant dropper (+0.164, p=0.002). Cause: the floor collapsed to 0.2286 on this stratum, so there is nothing to collapse to.",
+  "partition_replication_summary": {
+   "expansion": "140/210 = 0.6667 sufficient",
+   "original": "137/210 = 0.6524 sufficient",
+   "expansion_median_conventional_atoms": 22,
+   "original_median_conventional_atoms": 14,
+   "expansion_ambiguous_trigonal_hexagonal_fraction": 0.829,
+   "original_ambiguous_trigonal_hexagonal_fraction": 0.822,
+   "note": "box-sufficiency itself replicates almost exactly on the 210 NEW structures despite their very different composition, with the ambiguous stratum again dominated by the trigonal/hexagonal pair. The PARTITION is a stable property of the render convention; the stratified ACCURACY pattern is not."
+  }
+ },
+ "cross_record_reconciliation": {
+  "why": "three different box-sufficiency numbers are recorded across records; without this reconciliation the three records silently contradict each other",
+  "authoritative": {
+   "value": "137/210 = 0.6524",
+   "ambiguous": "73/210 = 0.3476",
+   "basis": "the metric of the CONVENTIONAL cell - the cell the renders actually draw - on all 210 eval structures, tol 2% on lengths / 1 deg on angles",
+   "note": "this is the RIGHT quantity; neither previously recorded number was it"
+  },
+  "external_baselines_113_of_210": {
+   "value": "113/210 = 0.538",
+   "why_different": "computed on the STORED INPUT cells, which are often primitive and therefore not what is drawn"
+  },
+  "expert_study_41_of_50": {
+   "value": "41/50 = 0.820",
+   "why_different": "computed on the 50-structure expert packet, not the 210-structure eval set"
+  }
+ },
+ "ambiguous_stratum_concentration": {
+  "trigonal_or_hexagonal": 60,
+  "of_ambiguous": 73,
+  "fraction": 0.822,
+  "note": "60 of 73 ambiguous structures (82.2%) are the trigonal/hexagonal metric class, which shares a=b, gamma=120 deg in the conventional hexagonal setting, so the box cannot separate them at any tolerance"
  }
 }

@@ -15,10 +15,10 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "src"))
 import warnings; warnings.filterwarnings("ignore")
 import numpy as np
 
-from cocr.data import fetch_mp_stratified, fetch_jarvis_stratified
-from cocr.render import conventional_cell, VIEW_ORDER
-from cocr.labels import make_labels
-from cocr.reconstruct import reconstruct_positions, recover_symmetry
+from render_ceiling.data import fetch_mp_stratified, fetch_jarvis_stratified
+from render_ceiling.render import conventional_cell, VIEW_ORDER
+from render_ceiling.labels import make_labels
+from render_ceiling.reconstruct import reconstruct_positions, recover_symmetry
 
 LEDGER = os.path.join(os.path.dirname(__file__), "..", "ledger", "identifiability")
 

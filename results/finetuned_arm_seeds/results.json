@@ -1,0 +1,36 @@
+{
+ "stage": "a3_seeds — whether the fine-tuned arm's single-seed point estimate should be reseeded",
+ "kind": "reasoned cut: not run, after a quantitative test of whether it could change a conclusion",
+ "gap": {
+  "statement": "The fine-tuned arm is single-seed, and its 0.6905 sits inside the reference arm's own across-seed spread.",
+  "reference_arm_seeds": [
+   0.59,
+   0.567,
+   0.686
+  ],
+  "reference_arm_spread_half_width": 0.06,
+  "reference_arm_spread_in_structures": 13,
+  "real": true,
+  "note": "A single-seed number inside the reference arm's spread is a legitimate reviewer target, and this project has a standing rule against arms whose spread swamps their effect."
+ },
+ "feasibility": {
+  "adapters_survive": true,
+  "artifact": "all_adapters_weights.tar.gz",
+  "artifact_size_mb": 2823,
+  "note": "The run was feasible. This is a decision about value, not availability."
+ },
+ "test_of_whether_it_could_matter": {
+  "where_the_arm_enters": "two places, both as the model side of the oracle-to-model gap",
+  "oracle": 0.9524,
+  "fine_tuned_arm": 0.6905,
+  "paired": "per structure",
+  "discordance": "61:6",
+  "p_value": 1.5e-12,
+  "margin_in_structures": 55,
+  "gap_if_arm_placed_at_top_of_reference_spread": 0.2664,
+  "conclusion": "Seed variation of the magnitude this project has actually measured cannot close the gap. Even placing the arm's true mean at the top of the reference arm's observed range (0.686) leaves 0.2664 to the oracle."
+ },
+ "what_is_lost": "The paper reports the fine-tuned arm as a single-seed point estimate rather than a three-seed interval. This is stated in the limitations rather than hidden: no error bar is drawn on its bar, and no claim is made about its expected value under reseeding.",
+ "what_would_reopen_it": "A reviewer challenging the magnitude of the gap rather than its existence. Two further training runs at seeds 1 and 2 using the recorded reproduce command; the adapters and the command are both in the release, so this is shelf-ready.",
+ "_provenance": "Decision record. Its numbers are cited from other records: the oracle and fine-tuned-arm accuracies and the paired test from the perception-transplant record, the reference-arm seed spread from exclusion_baselines, the reproduce command from sota_push."
+}

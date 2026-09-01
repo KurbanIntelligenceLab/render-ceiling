@@ -1,6 +1,6 @@
 {
  "stage": "resolution_audit \u2014 effective-resolution audit (blocking for the scope reframe)",
- "prereg": "prereg.md, committed before any re-eval number existed",
+ "prereg": "the pre-registration, committed before any re-eval number existed",
  "confound_confirmed": {
   "max_pixels_all_runs_to_date": 200704,
   "grid_thw": [
@@ -92,7 +92,7 @@
   "prefill_tokens_per_sample": 938
  },
  "geometry_step_probe": {
-  "prereg": "geometry_step_prereg.md \u2014 both candidate sentences written before any number existed",
+  "prereg": "the geometry-step pre-registration \u2014 both candidate sentences written before any number existed",
   "V2b_s0_geometry_step": {
    "at_416": 0.6349,
    "at_native_768": 0.6476,

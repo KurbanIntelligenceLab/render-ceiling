@@ -1,0 +1,324 @@
+{
+ "stage": "external_baselines — structure-input baselines (lattice-metric RF, CGCNN-style reimplementation, published ALIGNN) on our own labels and split, plus the dataset-regularity floor",
+ "status": "DONE. Both structure-input baselines are trained and reported on the 210-structure composition-exclusion eval set: a 19-feature lattice-metric random forest (0.8905) and the PUBLISHED ALIGNN architecture (0.6492 +/- 0.0287, 3 seeds, CPU). The earlier 'ALIGNN cannot be run' record was over-generalised.",
+ "gap": "how does render-ceiling compare to structure-input models?",
+ "motivation": "the verified DeepCrysTet Table II shows the crystal-system row is ALIGNN 75.6 / CGCNN 63.4 / DeepCrysTet 97.5 — published structure-input models are NOT weak on our task, contrary to the 'expected weak on space group' premise. Those numbers are not comparable to ours (different modality, splits, labels, n). The only fair comparison is a structure-input model trained on OUR labels and OUR split.",
+ "eval": {
+  "set": "the 210-structure composition-exclusion eval; identical train (1610) and eval (210) material_ids as every render-ceiling arm",
+  "inputs": "the 1820 re-fetched CIFs (data/primary/structures.json), verified 1820/1820 to reproduce the sidecar labels by the pipeline audit method (rate 1.0) — the structures are provably the ones the VLM was labelled against",
+  "chance": 0.1429,
+  "reproduce": "structures: scripts/fetch_e3_structures.py -> data/primary/structures.json (+ label audit 1820/1820); baseline: 19 lattice-metric features, sklearn RF/GB/logreg, a dedicated baselines environment"
+ },
+ "results": {
+  "lattice_metric_models": {
+   "features": "19: a, b, c, alpha, beta, gamma, volume, three scale-free EDGE RATIOS, the three |angle-90| deviations, |gamma-120|, angle range, angle std, edge coefficient of variation, n_sites, density — computed from the INPUT cell",
+   "deliberately_excluded": "any spglib symmetry output (space group, Wyckoff, bravais), which would leak the label, and composition/element identity",
+   "logistic_regression": {
+    "eval_micro": 0.6524,
+    "macro_f1": 0.6312,
+    "train_acc": 0.6354
+   },
+   "random_forest": {
+    "eval_micro": 0.8905,
+    "macro_f1": 0.8904,
+    "train_acc": 1.0
+   },
+   "gradient_boosting": {
+    "eval_micro": 0.8762,
+    "macro_f1": 0.8733,
+    "train_acc": 0.9963
+   },
+   "best": "random_forest",
+   "detail_file": "structure_baseline.json"
+  },
+  "tautology_check": {
+   "input_cell_metric_already_matches_its_crystal_system": {
+    "count": "113/210",
+    "fraction": 0.538,
+    "reading": "these are largely PRIMITIVE/reduced cells, not conventional cells — the metric does NOT hand over the answer. This is the same primitive-vs-conventional issue that produced a real labeling bug in the pipeline record and a bad geometry step in sft_chain"
+   },
+   "test_1_handwritten_metric_rule_no_learning": {
+    "acc": 0.4143,
+    "reading": "the answer is genuinely NOT trivially readable; learning contributes ~0.48 absolute"
+   },
+   "test_2_scale_free_shape_features_only": {
+    "acc": 0.8571,
+    "reading": "most of the signal is real cell geometry, not absolute scale"
+   },
+   "test_3_n_sites_density_volume_only_no_shape": {
+    "acc": 0.5286,
+    "reading": "WARNING, and this must be reported: features containing NO shape information still reach 0.53, far above the 0.143 chance rate. A substantial part of the 0.89 reflects DATASET REGULARITIES (crystal system correlates with cell size / atom count in this MP-derived sample), not geometric reasoning. The 0.89 is an UPPER BOUND on what 'reading the structure' buys, inflated by exploitable dataset structure"
+   }
+  },
+  "regularity_floor": {
+   "floor": 0.5286,
+   "floor_features": "n_sites + density + volume ONLY (no shape)",
+   "floor_vs_chance": "3.70x the 0.1429 chance rate",
+   "why_it_binds_the_VLM_too": "any model that can sense scale can reach it — including the VLM, since atom count and packing are visible in renders",
+   "arms_vs_floor": {
+    "structure_metric_RF": {
+     "acc": 0.8905,
+     "delta": 0.3619
+    },
+    "render_ceiling_B1_direct": {
+     "acc": 0.6143,
+     "delta": 0.0857
+    },
+    "render_ceiling_V2b_chain": {
+     "acc": 0.3857,
+     "delta": -0.1429
+    },
+    "render_ceiling_SFT_V1_chain": {
+     "acc": 0.3365,
+     "delta": -0.1921
+    }
+   },
+   "verified_against_directive": "all four deltas independently verified against the directive's +0.362 / +0.086 / -0.188 / -0.143 and match to <0.001. The SFT-V1 delta is now -0.1921 on the final 3-seed mean 0.3365 (the directive used the 2-seed 0.3405)",
+   "chain_arms_below_floor": "the chain arms do not merely fail to beat the structure baseline; they fail to beat a 3-feature size-only model. That is stronger and more uncomfortable than anything in exclusion_baselines, and it should be in the paper"
+  },
+  "mechanism_probes_that_refuted_the_candidate_sentence": {
+   "candidate_sentence_proposed_by_the_directive": "above the dataset-regularity floor, the direct image arm adds <0.09 and chain arms add nothing — the accuracy race was substantially a race to exploit sample regularity",
+   "verdict": "the first two clauses are ARITHMETICALLY CORRECT; the causal clause is NOT SUPPORTED by either confirmatory probe the directive itself specified",
+   "probe_a_accuracy_within_size_quartiles": {
+    "bands": {
+     "0": {
+      "n": 53,
+      "floor": 0.6792,
+      "b1": 0.6038,
+      "full_rf": 0.9057,
+      "b1_minus_floor": -0.0754
+     },
+     "1": {
+      "n": 52,
+      "floor": 0.4808,
+      "b1": 0.6859,
+      "full_rf": 0.9615,
+      "b1_minus_floor": 0.2051
+     },
+     "2": {
+      "n": 52,
+      "floor": 0.4615,
+      "b1": 0.6218,
+      "full_rf": 0.8269,
+      "b1_minus_floor": 0.1603
+     },
+     "3": {
+      "n": 53,
+      "floor": 0.4906,
+      "b1": 0.5472,
+      "full_rf": 0.8679,
+      "b1_minus_floor": 0.0566
+     }
+    },
+    "band_averaged": {
+     "floor": 0.528,
+     "b1": 0.6147,
+     "full_rf": 0.8905
+    },
+    "reading": "B1 does NOT collapse within bands (range 0.547-0.686) and still beats the floor by +0.0867 within them. The predicted collapse did not happen, so the shortcut reading is NOT confirmed. The full RF holds 0.83-0.96 within every band, so ITS edge is real geometry, not scale"
+   },
+   "probe_b_prediction_agreement_b1_vs_floor_model": {
+    "n": 210,
+    "raw_agreement": 0.381,
+    "chance_expected": 0.1408,
+    "cohens_kappa": 0.2795,
+    "reading": "LOW agreement. B1 is not tracking the floor model's decisions, so B1's correctness is not explained by exploiting the same regularity"
+   },
+   "conclusion": "the floor is real and it reframes the accuracy race, but the mechanism claim is refuted by its own tests",
+   "defensible_sentence_to_write": "A 3-feature size-only model reaches 0.529 on this eval, so much of the apparent accuracy spread sits on top of dataset regularity rather than crystallographic reasoning. The direct image arm clears that floor by only +0.086, and the chain arms fall BELOW it. But the arms are not simply exploiting the same regularity: within size quartiles the direct arm retains a +0.087 margin over the floor and agrees with the floor model's predictions only weakly (kappa 0.28). The floor bounds how much of the accuracy race is meaningful; it does not show that the arms won it by shortcut.",
+   "do_not_write": "'the accuracy race was substantially a race to exploit sample regularity' — probes (a) and (b) contradict it",
+   "what_survives_for_the_pivot": "the floor de-fangs the accuracy axis for BOTH the RF and B1 (everything is measured against 0.529, not 0.143), and the chain arms' sub-floor position makes accuracy indefensible as their contribution. Checkability remains the only axis on which any image arm demonstrated something"
+  },
+  "cgcnn_style_reimplementation": {
+   "label_requirement": "must be cited as 'CGCNN-style (our implementation)', NEVER as 'CGCNN'. It reproduces the architecture family, not the authors' code or their tuning",
+   "why_reimplemented": "the official ALIGNN package needs DGL, whose compiled libraries have no build for the torch version the VLM stack pins; downgrading torch would break that stack",
+   "architecture": "plain torch, no DGL: atom-Z embeddings -> 3 edge-gated convolutions over a neighbour graph (rcut 8.0 A, <=12 neighbours, 40 Gaussian distance basis) -> mean pool -> MLP -> 7-way softmax; 82K parameters, atom_dim 64",
+   "training": "OUR 1610 train / 210 composition-exclusion eval, leakage asserted 0, CPU only, 60 epochs",
+   "single_seed_run_superseded": {
+    "seed": 0,
+    "best_eval": 0.5619,
+    "best_epoch": "~30",
+    "final_epoch_eval": 0.4667,
+    "train_loss": {
+     "start": 1.956,
+     "end": 0.526
+    },
+    "overfits": "eval accuracy peaked then declined on 1610 structures",
+    "comparisons": {
+     "vs_regularity_floor_0.5286": {
+      "delta": 0.0333,
+      "dir": "ABOVE",
+      "note": "final-epoch 0.4667 is BELOW it, -0.0619"
+     },
+     "vs_B1_direct_0.6143": {
+      "delta": -0.0524,
+      "dir": "BELOW"
+     },
+     "vs_RF_lattice_0.8905": {
+      "delta": -0.3286,
+      "dir": "BELOW"
+     },
+     "vs_published_CGCNN_0.634": {
+      "delta": -0.0721,
+      "dir": "BELOW"
+     },
+     "vs_published_ALIGNN_0.756": {
+      "delta": -0.1941,
+      "dir": "BELOW"
+     }
+    },
+    "caveat_on_best": "0.5619 is selected ON the eval set by early stopping, so it is optimistic and not a clean held-out estimate. The defensible pair to quote was '0.47 at the end of training, 0.56 at its best epoch', with the overfitting stated",
+    "self_correction": "a first pass through these numbers printed 'BELOW FLOOR' for 0.5619. That was wrong (0.5619 > 0.5286); the comparison was re-run explicitly and corrected. Final-epoch 0.4667 IS below the floor",
+    "detail_file": "cgcnn_style_s0.json (per-epoch train loss and eval accuracy)"
+   },
+   "clean_protocol_rerun_3_seeds": {
+    "protocol": "a 200-structure VALIDATION split carved out of TRAIN (fit 1410 / val 200 / eval 210, disjointness asserted), epoch selected on VAL, eval reported at that epoch",
+    "seeds": [
+     {
+      "seed": 0,
+      "val": 0.505,
+      "eval_at_best_val": 0.4286,
+      "epoch": 59
+     },
+     {
+      "seed": 1,
+      "val": 0.49,
+      "eval_at_best_val": 0.4952,
+      "epoch": 51
+     },
+     {
+      "seed": 2,
+      "val": 0.485,
+      "eval_at_best_val": 0.5429,
+      "epoch": 37
+     }
+    ],
+    "mean": 0.4889,
+    "sd": 0.0469,
+    "optimism_of_the_single_seed_figure": 0.073,
+    "supersedes": "cgcnn_style_s0.json best=0.5619; quote 0.4889 +/- 0.0469, not 0.5619",
+    "corrected_comparisons": {
+     "vs_regularity_floor_0.5286": {
+      "delta": -0.0397,
+      "dir": "BELOW",
+      "note": "the graph model does NOT clear the floor"
+     },
+     "vs_B1_direct_0.6143": {
+      "delta": -0.1254,
+      "dir": "BELOW",
+      "pooled_sd": 0.0493,
+      "exceeds_noise": true
+     },
+     "vs_RF_lattice_0.8905": {
+      "delta": -0.4016,
+      "dir": "BELOW"
+     },
+     "vs_chance_0.1429": {
+      "delta": 0.346,
+      "dir": "ABOVE"
+     }
+    },
+    "what_changes": "B1's lead over the graph model grows from +0.052 to +0.125 and is now larger than pooled seed noise, so the like-for-like statement is firmer — at THIS data scale, on OUR split, an image-input VLM beats a coordinate-input graph network. But the graph model now falls BELOW the regularity floor, placing it in the same category as our chain arms: it has not demonstrated crystallographic reasoning on this split, and its result should be read as a DATA-SCALE finding (1610 structures is small for a GNN; all three seeds overfit) rather than as evidence about graph architectures",
+    "detail_file": "cgcnn_style_3seed.json"
+   }
+  },
+  "published_alignn": {
+   "blocker_was_cuda_not_alignn": "the environment record said ALIGNN could not be run because DGL ships no compiled graphbolt library for the torch version the vision stack pins. That was accurate ON THE GPU BOX and was over-generalised: the constraint is the CUDA requirement, not the package. Dropping CUDA removes it entirely",
+   "working_recipe_cpu_verified_end_to_end": "DGL 2.2.0 ships graphbolt libraries for torch 2.1.0 THROUGH 2.3.0 ONLY (listing the graphbolt directory shows which). Pin torch==2.3.0 with torchdata==0.9.0 (torchdata 0.7.1 raises ImportError on DILL_AVAILABLE against torch 2.3; the newer torchdata still ships the deprecated datapipes module DGL needs), plus DGLBACKEND=pytorch and a writable DGL_HOME. alignn 2026.5.20 then imports and trains",
+   "api_gotchas": [
+    "ALIGNN.forward unpacks `g, lg, lat = g` — a THREE-tuple — while Graph.atom_dgl_multigraph returns TWO graphs. `lat` is unpacked but never read on this version, so we pass the real 3x3 lattice matrix: correct if a later version starts using it, harmless now",
+    "forward ends in `torch.squeeze(out)`, which collapses a batch of 1 from (1,7) to (7,) and breaks argmax(dim=1). classification=True is NOT the fix — on this build it forces num_classes=2 (fc out_features=2, verified on the constructed module). Keep classification=False, which correctly gives 7 logits, and restore the batch dim after forward"
+   ],
+   "protocol": "matched to our other structure-input baselines: trained on the 1610 TRAIN structures, epoch selected on a validation split carved out of TRAIN (never on eval), graphs built from the CONVENTIONAL cell, 3 seeds, population SD; 40 epochs, no hyperparameter search; alignn 2026.5.20, DGL 2.2.0, torch 2.3.0, CPU",
+   "seeds": [
+    {
+     "seed": 0,
+     "eval_at_best_val": 0.6762,
+     "epoch": 26,
+     "val": 0.6528
+    },
+    {
+     "seed": 1,
+     "eval_at_best_val": 0.6095,
+     "epoch": 11
+    },
+    {
+     "seed": 2,
+     "eval_at_best_val": 0.6619,
+     "epoch": 38
+    }
+   ],
+   "mean": 0.6492,
+   "sd": 0.0287,
+   "where_it_sits": {
+    "vs_published_ALIGNN_figure_0.756": {
+     "delta": -0.1068,
+     "dir": "BELOW"
+    },
+    "vs_our_lattice_metric_RF_0.8905": {
+     "delta": -0.2413,
+     "dir": "BELOW"
+    },
+    "vs_our_direct_pixel_arm_0.6190": {
+     "delta": 0.0302,
+     "dir": "above on the mean"
+    },
+    "vs_regularity_floor_0.5286": {
+     "delta": 0.1206,
+     "dir": "above"
+    },
+    "vs_our_CGCNN_style_0.4889": {
+     "delta": 0.1603,
+     "dir": "above"
+    }
+   },
+   "paired_mcnemar_alignn_seed0_vs_B1_direct": {
+    "n": 210,
+    "b1_only": 41,
+    "alignn_only": 53,
+    "p": 0.2564,
+    "verdict": "THE COMPARISON DOES NOT SEPARATE. A coordinate-input GNN and our pixel-input 8B fine-tune are STATISTICALLY INDISTINGUISHABLE on this task; it is NOT that ALIGNN beats it"
+   },
+   "why_below_the_published_75.6": "different split (composition-exclusion, deliberately harder than random), different training-set size (1610 vs the published work's much larger set), 40 epochs, and no hyperparameter search. This is a faithful-architecture run under OUR protocol, not a reproduction of the published number, and must not be cited as one",
+   "detail_file": "alignn_published_3seed.json (per-seed val/eval/epoch and per-structure predictions)"
+  },
+  "error_overlap_exploratory": {
+   "status": "EXPLORATORY (existing generations + a cheap RF retrain, no GPU). Not pre-registered; must be re-run under pre-registration before entering a paper",
+   "reproduction_note": "retraining the RF from the stored CIFs gives 0.8762 vs the 0.8905 recorded here (delta 0.0143). The gap is CIF re-parse rounding — this record built features from the fetched Structure objects, that run re-parses the stored CIF text. Within tolerance, but the headline should be quoted as ~0.88-0.89 rather than to 4 decimals. Per-structure RF predictions are now saved, closing a reproducibility gap: only aggregates had been stored",
+   "contingency_rf_x_b1": {
+    "n": 210,
+    "both_correct": 113,
+    "rf_only": 71,
+    "b1_only": 17,
+    "neither": 9,
+    "rf_acc": 0.8762,
+    "b1_acc": 0.619,
+    "v2b_acc": 0.381,
+    "oracle_union": 0.9571,
+    "union_gain_over_rf": 0.0809
+   },
+   "key_observation": "the image model is right on 17 structures (8.1%) the structure-metric model gets WRONG; an oracle union would reach 0.9571 vs RF's 0.8762",
+   "control": {
+    "b1_acc_on_rf_errors": 0.654,
+    "b1_base_rate": 0.619,
+    "binomial_z": 0.37,
+    "verdict": "B1 performs at its ORDINARY rate on RF's errors (z=+0.37, not distinguishable from base rate). The effect is ERROR DECORRELATION, not special competence on hard cases. The honest framing is 'decorrelated errors', NOT 'complementary expertise'"
+   },
+   "detail_file": "error_overlap_exploratory.json (includes the per-system rescue breakdown)"
+  }
+ },
+ "licensed": "on identical labels, identical split, identical protocol, a cheap structure-input model beats our best image-input arm by +0.276 (0.8905 vs 0.6143). The modality gap is large and real, and it is now MEASURED on our own data rather than cited across papers.",
+ "not_licensed": [
+  "calling the RF row an ALIGNN/CGCNN comparison — in the original write-up ALIGNN and CGCNN were not run",
+  "a claim that render-ceiling 'loses' to them: a structure-input model is given the lattice vectors, which is most of the answer, while render-ceiling is given pixels",
+  "treating 0.89 as the geometry ceiling — test 3 shows >=0.53 of it is available from dataset regularities with no shape information at all",
+  "reading the CGCNN-style result as evidence that graph networks are weak at this task: an 82K-parameter reimplementation trained on 1610 structures for 60 CPU epochs is not evidence about ALIGNN. The published 0.756 stands unchallenged; our number is a LOWER BOUND at our data scale and must be labelled as such wherever it appears"
+ ],
+ "consequence_for_the_paper": "this reinforces the exclusion_baselines branch-(a) reframe rather than undermining it. If the claim were 'render-ceiling is accurate at crystal-system classification', this baseline refutes it outright at a fraction of the compute. The defensible claim is the one branch (a) already forced: render-ceiling's contribution is a VERIFIABLE, CHECKABLE chain from images — a legibility/verifiability result, not an accuracy result. The structure baseline should be reported IN the paper, prominently and unprompted, as the honest ceiling context. Hiding it would be indefensible; reporting it makes the verifiability framing credible rather than evasive. With ALIGNN now measured, the a fortiori argument written when the row was missing is unnecessary and is REPLACED by the measured row.",
+ "what_remains": [
+  "a geometry-stratified or dataset-regularity-controlled eval would tighten the 0.89 upper bound (test 3 is the reason it needs tightening)",
+  "the CGCNN-style row is a lower bound at our data scale, not the graph-model number"
+ ],
+ "conclusion": "On our own labels, split and protocol the ordering is NUMERIC CELL >> {coordinate GNN, pixel VLM} > floor > weaker GNN: lattice-metric RF 0.8905, published ALIGNN 0.6492 ± 0.0287, direct pixel arm B1 0.6143, regularity floor 0.5286, CGCNN-style reimplementation 0.4889 ± 0.0469, chance 0.1429. The RF beats every coordinate- and pixel-input learned model here, but at least 0.529 of its accuracy is available from three size-only features, and ALIGNN does not separate from B1 under paired McNemar (p = 0.2564). The accuracy axis is not where the image arms have a claim.",
+ "_provenance": "sklearn RF/GB/logreg over 19 lattice-metric features (a dedicated baselines environment); a plain-torch CGCNN-style reimplementation, single-seed then val-selected 3-seed; published alignn 2026.5.20 on CPU with DGL 2.2.0 / torch 2.3.0, 3 seeds; per-run detail in structure_baseline.json, cgcnn_style_s0.json, cgcnn_style_3seed.json, alignn_published_3seed.json and error_overlap_exploratory.json"
+}

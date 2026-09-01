@@ -1,5 +1,5 @@
 """
-CoCr step-label pipeline.
+Step-label pipeline.
 
 Generates per-structure crystallographic ground truth from a pymatgen Structure
 using spglib/pymatgen, serialized to a canonical JSON schema (schema_version below).
@@ -30,7 +30,7 @@ from pymatgen.core import Structure
 from pymatgen.symmetry.analyzer import SpacegroupAnalyzer
 from pymatgen.analysis.local_env import CrystalNN
 
-SCHEMA_VERSION = "cocr-labels-2"  # v2: lattice reported on conventional standard cell (was input/primitive cell)
+SCHEMA_VERSION = "render-ceiling-labels-2"  # v2: lattice reported on conventional standard cell (was input/primitive cell)
 
 # Space-group-number -> crystal system boundaries (ITA).
 _CRYSTAL_SYSTEM_RANGES = [

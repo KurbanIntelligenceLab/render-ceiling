@@ -132,7 +132,7 @@
   },
   {
    "claim": "label correctness 220/220 on the kept set",
-   "file": "pipeline/verification.md and pipeline/finding.md",
+   "file": "pipeline/the verification note and pipeline/the record's finding prose",
    "field": "prose \u2014 'Kept-set label agreement: 220/220 = 100%, CP95 lower = 0.9865'",
    "value": "220/220, 0.9865",
    "sample": "kept set after a 1.8% tolerance quarantine (triclinic 3/32, monoclinic 1/32, others 0%)",

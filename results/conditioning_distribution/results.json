@@ -1,0 +1,139 @@
+{
+ "stage": "conditioning_distribution",
+ "branch": "report kappa_min/kappa_median/full ten-pair distribution for frozen and off-axis protocols, and test whether excluding the worst pair explains the 2.1x vs 3.08x noise-tolerance gap",
+ "what": "Recomputes camera view directions directly from src/render_ceiling/render.py's VIEWS (frozen) and VIEWS_PERTURBED (off-axis) rotation strings via ASE, then kappa = 1/sqrt(1-|cos theta|) for all C(5,2)=10 camera pairs in each protocol.",
+ "camera_directions": {
+  "frozen": {
+   "axis_a": [
+    1.0,
+    0.0,
+    0.0
+   ],
+   "axis_b": [
+    0.0,
+    -1.0,
+    0.0
+   ],
+   "axis_c": [
+    0.0,
+    0.0,
+    1.0
+   ],
+   "body_diagonal": [
+    0.5,
+    -0.75,
+    0.433
+   ],
+   "oblique2": [
+    0.866,
+    -0.25,
+    0.433
+   ]
+  },
+  "off_axis": {
+   "axis_a": [
+    0.9781,
+    0.0432,
+    0.2034
+   ],
+   "axis_b": [
+    -0.1736,
+    -0.9633,
+    0.2048
+   ],
+   "axis_c": [
+    -0.2079,
+    0.2532,
+    0.9448
+   ],
+   "body_diagonal": [
+    0.6691,
+    -0.5523,
+    0.4973
+   ],
+   "oblique2": [
+    0.9511,
+    -0.0955,
+    0.2939
+   ]
+  }
+ },
+ "kappa_per_pair": {
+  "axis_a/axis_b": {
+   "kappa_frozen": 1.0,
+   "kappa_offaxis": 1.0975457744195285
+  },
+  "axis_a/axis_c": {
+   "kappa_frozen": 1.0000000000000002,
+   "kappa_offaxis": 1.0001393837446715
+  },
+  "axis_a/body_diagonal": {
+   "kappa_frozen": 1.414213562373095,
+   "kappa_offaxis": 1.9308140597058445
+  },
+  "axis_a/oblique2": {
+   "kappa_frozen": 2.7320508075688767,
+   "kappa_offaxis": 8.4257817566855
+  },
+  "axis_b/axis_c": {
+   "kappa_frozen": 1.0000000000000002,
+   "kappa_offaxis": 1.007233269111223
+  },
+  "axis_b/body_diagonal": {
+   "kappa_frozen": 2.0,
+   "kappa_offaxis": 1.4397979098528078
+  },
+  "axis_b/oblique2": {
+   "kappa_frozen": 1.1547005383792517,
+   "kappa_offaxis": 1.0065579837214877
+  },
+  "axis_c/body_diagonal": {
+   "kappa_frozen": 1.328046663634386,
+   "kappa_offaxis": 1.111720691533691
+  },
+  "axis_c/oblique2": {
+   "kappa_frozen": 1.328046663634386,
+   "kappa_offaxis": 1.0291052706879176
+  },
+  "body_diagonal/oblique2": {
+   "kappa_frozen": 2.282252816190145,
+   "kappa_offaxis": 2.4637634429930055
+  }
+ },
+ "kappa_distribution_stats": {
+  "frozen": {
+   "min": 1.0,
+   "median": 1.328046663634386,
+   "mean": 1.5239311051780138,
+   "max": 2.7320508075688767
+  },
+  "off_axis": {
+   "min": 1.0001393837446715,
+   "median": 1.1046332329766098,
+   "mean": 2.0512459542455677,
+   "max": 8.4257817566855
+  }
+ },
+ "excluding_dominant_pair_axis_a_oblique2": {
+  "frozen_mean_9pairs": 1.3896955826901403,
+  "off_axis_mean_9pairs": 1.3429641984189087,
+  "ratio_off_axis_over_frozen_9pairs": 0.9663729345812772
+ },
+ "ratios_all_10_pairs": {
+  "kappa_max_ratio": 3.084050169690368,
+  "kappa_median_ratio": 0.8317729061971557,
+  "kappa_mean_ratio": 1.3460227613150249
+ },
+ "noise_tolerance_crossing": {
+  "frozen_sigma_at_R1_0.95": 0.0146,
+  "off_axis_sigma_at_R1_0.95": 0.0069,
+  "observed_ratio": 2.1159420289855073,
+  "kappa_max_predicted_ratio": 3.084050169690368,
+  "source": "si_body.tex lines 197-211 (Table S2), verified against results/option_a_frontier/results.json ck_2_1_kappa_prediction"
+ },
+ "mechanism_test": {
+  "finding": "excluding the single dominant pair (axis_a/oblique2), the remaining nine pairs are essentially unchanged between protocols (mean 1.3897 frozen vs 1.3430 off-axis, ratio 0.966 -- off-axis is marginally BETTER conditioned on these nine), while kappa_max itself triples (2.7321 -> 8.4258, ratio 3.084).",
+  "verdict": "PARTIALLY CORRECT, converts a reported prediction gap into a mechanism, not a full quantitative derivation. Because Algorithm S1 enumerates all view pairs and verifies each candidate against every other view, the typical (9-of-10) pair barely degrades under off-axis rotation, while only the single worst pair degrades severely. An aggregate accuracy statistic pooled over many candidate pairs and structures should therefore move by less than the worst-pair ratio predicts (2.1x observed vs 3.08x from kappa_max alone), which is the qualitative direction and magnitude of the observed gap, but not an exact closed-form derivation of 2.1x specifically."
+ },
+ "provenance": "recomputed independently in this session directly from src/render_ceiling/render.py's VIEWS and VIEWS_PERTURBED dicts via ase.utils.rotate; matches theory_validation_record's Section 5 table and si_body.tex lines 230-232 exactly."
+}
