@@ -1,5 +1,3 @@
-"""Three predeclared selection rules. Only fitted predictions/fold losses enter."""
-
 import numpy as np
 
 NAMES = ("fixed_4", "paired_1se", "null_guard_1se")

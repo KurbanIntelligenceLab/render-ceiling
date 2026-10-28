@@ -12,15 +12,16 @@ result = Reconstructor(method="atomic").run(inputs)
 print(result.selected_configuration)
 print(result.prediction["cart"])
 print(result.prediction["label"])
-# result.to_dict() and result.to_json() serialize NumPy values.
 ```
 
 `ReconstructionInput(observations, cameras, lattice)` also accepts arrays directly. It validates five finite orthonormal cameras, a nonsingular lattice, complete species-labelled views and three-dimensional observability in each held-out fold. Every view must have the same species counts. The [example input](examples/silicon_projections.json) is a small ideal silicon demonstration. All positions and lattice entries use angstroms.
 
+`result.to_dict()` and `result.to_json()` serialize NumPy values.
+
 `Reconstructor` accepts `atomic`, `collective` and `huber`; its result contains `method`, `selected_configuration`, `prediction` and `diagnostics`. Atomic reconstruction uses the paper's paired one-SE selector; collective reconstruction selects `atom_or_mode_split`; the Huber comparator reports `huber_adaptive_6`. Diagnostics retain the underlying candidate outputs and selection records. The CLI uses this same interface:
 
 ```sh
-uv run render-ceiling reconstruct examples/silicon_projections.json --method atomic --output development/prediction.json
+uv run render-ceiling reconstruct examples/silicon_projections.json --method atomic --output outputs/prediction.json
 ```
 
 ## Numerical implementations

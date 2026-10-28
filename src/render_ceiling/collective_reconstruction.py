@@ -1,5 +1,3 @@
-"""Local collective-displacement alternative; no truth enters inference."""
-
 import numpy as np
 from scipy.linalg import null_space, orth
 from scipy.optimize import linear_sum_assignment
@@ -13,6 +11,7 @@ class InvalidModeGeometry(ValueError):
 
 def representation(cart, species, lattice, ds):
     """Forward action on Cartesian displacements, including cell translations."""
+
     n = len(cart)
     frac = cart @ np.linalg.inv(lattice)
     perms, actions = [], []
@@ -35,11 +34,11 @@ def representation(cart, species, lattice, ds):
 
 
 def mode_groups(cart, species, lattice):
-    """Real isotypic subspaces from simultaneous symmetric class sums.
 
-    Whole equivalent-irrep copies are grouped together. No arbitrary individual
-    basis vector is penalized. Complex conjugate components stay together.
-    """
+
+
+
+
     ds = M.OLD.dataset(cart, species, lattice, 1e-4)
     assert ds is not None
     perms, acts = representation(cart, species, lattice, ds)
@@ -240,8 +239,8 @@ def fitted(obs, cameras, lattice):
             try:
                 groups, audit = mode_groups(space["reference"], recon["species"], lattice)
             except InvalidModeGeometry as exc:
-                # A pseudo-symmetry accepted by the legacy atom method need not
-                # define an orthogonal displacement representation of this lattice.
+
+
                 recon["mode_exclusions"][parent] = str(exc)
                 continue
         for k in [2, 3, 4]:

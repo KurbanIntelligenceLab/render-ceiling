@@ -1,5 +1,3 @@
-"""Verify the v3 paper's result inventory and local documentation links."""
-
 from __future__ import annotations
 
 import hashlib
@@ -9,7 +7,7 @@ from pathlib import Path
 
 
 class Report:
-    """Collect all verification failures."""
+
 
     def __init__(self) -> None:
         self.failures: list[str] = []
@@ -69,7 +67,7 @@ def verify(root: Path) -> Report:
                 report.check(True, name)
             except (ValueError, UnicodeError) as exc:
                 report.check(False, f"Invalid JSONL: {name}: {exc}")
-    # Data and prediction records must parse in a clean checkout as well.
+
     for directory in ("data", "release"):
         for path in (root / directory).rglob("*"):
             if path.suffix not in {".json", ".jsonl"}:

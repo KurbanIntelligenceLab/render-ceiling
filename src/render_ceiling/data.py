@@ -1,5 +1,3 @@
-"""Fetch Materials Project structures for the crystal-system benchmark."""
-
 from __future__ import annotations
 
 import os
@@ -14,6 +12,7 @@ def fetch_mp(
     seed: int = 0,
 ) -> list[dict[str, Any]]:
     """Fetch n structures from Materials Project with source-reported symmetry."""
+
     from mp_api.client import MPRester
 
     key = api_key or os.environ["MP_API_KEY"]
@@ -57,8 +56,8 @@ def fetch_mp_stratified(
     num_sites: tuple[int, int] = (2, 20),
     api_key: str | None = None,
 ) -> list[dict[str, Any]]:
-    """Fetch ~per_system structures for EACH of the 7 crystal systems, so the
-    audit sample spans the full symmetry range instead of an alphabetical slice."""
+
+
     from mp_api.client import MPRester
 
     key = api_key or os.environ["MP_API_KEY"]

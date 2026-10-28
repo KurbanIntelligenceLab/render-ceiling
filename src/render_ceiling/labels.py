@@ -1,5 +1,3 @@
-"""Crystal-system labels used by the geometric reference and reconstruction."""
-
 _CRYSTAL_SYSTEM_RANGES = [
     (1, 2, "triclinic"),
     (3, 15, "monoclinic"),

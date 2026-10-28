@@ -1,5 +1,3 @@
-"""Validated inputs and a common interface to the paper's reconstruction methods."""
-
 from dataclasses import dataclass
 import json
 from pathlib import Path
@@ -22,7 +20,7 @@ def _plain(value: Any) -> Any:
 
 @dataclass
 class ReconstructionInput:
-    """Five calibrated views of the same atoms, with coordinates in angstroms."""
+
 
     observations: list[dict]
     cameras: np.ndarray
@@ -75,7 +73,7 @@ class ReconstructionInput:
 
 @dataclass
 class ReconstructionResult:
-    """Selected prediction plus the full candidate and selection records."""
+
 
     method: str
     selected_configuration: str
@@ -91,7 +89,7 @@ class ReconstructionResult:
 
 @dataclass
 class Reconstructor:
-    """Run a frozen paper method without changing its numerical settings."""
+
 
     method: str = "atomic"
 

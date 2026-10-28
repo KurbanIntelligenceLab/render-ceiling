@@ -3,7 +3,7 @@ name = "render-ceiling"
 version = "1.0.0"
 description = "A model-free ceiling for vision-language model evaluation on rendered crystal structures"
 readme = "README.md"
-requires-python = ">=3.11,<3.14"
+requires-python = "==3.13.*"
 license = "MIT"
 license-files = ["LICENSE"]
 authors = [
@@ -30,7 +30,6 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-# Only needed to fetch source structures from the Materials Project.
 fetch = ["mp-api==0.46.4"]
 
 [project.scripts]

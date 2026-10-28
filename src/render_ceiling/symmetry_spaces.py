@@ -1,5 +1,3 @@
-"""Symmetry invariant affine spaces and camera-weighted projection."""
-
 import numpy as np
 from scipy.linalg import null_space, orth
 from scipy.optimize import linear_sum_assignment
@@ -7,6 +5,7 @@ from scipy.optimize import linear_sum_assignment
 
 def invariant_basis(cart, species, lattice, ds):
     """Fixed group/permutation tangent space plus the arbitrary global origin."""
+
     n = len(cart)
     frac = cart @ np.linalg.inv(lattice)
     reynolds = np.zeros((3 * n, 3 * n))
@@ -35,6 +34,7 @@ def invariant_basis(cart, species, lattice, ds):
 
 def weighted_projection(cart, reference, basis, h):
     """GLS projection and its normalized residual covariance, conditional on basis."""
+
     n = len(cart)
     w = np.kron(np.eye(n), h)
     c = np.kron(np.eye(n), np.linalg.inv(h))

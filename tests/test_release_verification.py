@@ -1,5 +1,3 @@
-"""The manual verifier reports damaged evidence and incomplete documentation."""
-
 import json
 from pathlib import Path
 

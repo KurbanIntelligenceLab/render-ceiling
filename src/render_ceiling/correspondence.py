@@ -1,5 +1,3 @@
-"""Observation-only numerical candidates. No data loading or reference-label access."""
-
 from itertools import combinations
 
 import numpy as np
@@ -43,6 +41,7 @@ def assignments(cart, species, observations, cameras):
 
 def fit(observations, cameras, seed_pair=None):
     """Unknown-correspondence all-view fit; input count is observed, not a truth sidecar."""
+
     observations = canonical_observations(observations)
     cameras = np.asarray(cameras)
     if seed_pair is None:
@@ -118,6 +117,7 @@ def label(cart, species, lattice, tolerance):
 
 def project_symmetry(cart, species, lattice, ds):
     """Average the inverse group action using inferred, periodic species assignments."""
+
     frac = cart @ np.linalg.inv(lattice)
     for _ in range(3):
         correction = np.zeros_like(frac)
@@ -137,6 +137,6 @@ def project_symmetry(cart, species, lattice, ds):
         if np.max(np.abs(correction)) < 1e-12:
             break
     projected = frac @ lattice
-    # Absolute origin is free: fit this nuisance translation by least squares.
+
     projected += np.mean(cart - projected, axis=0)
     return projected

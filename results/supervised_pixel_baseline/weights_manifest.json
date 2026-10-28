@@ -1,5 +1,5 @@
 {
-  "note": "Trained checkpoints are not committed to the repository, per the weights manifest convention. They are transferred back as artifacts alongside this record; do not commit them into git.",
+  "note": "Filenames, SHA-256 checksums and sizes of the trained model weights used in the raster-control evaluation.",
   "checkpoints": {
     "resnet50": {
       "file": "resnet50_s23.pt",

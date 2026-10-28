@@ -1,5 +1,3 @@
-"""Public workflow validation and end-to-end CLI/API agreement."""
-
 import json
 from pathlib import Path
 import subprocess
