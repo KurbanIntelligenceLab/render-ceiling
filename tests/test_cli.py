@@ -1,5 +1,3 @@
-"""Exercise the installed command-line module through real subprocesses."""
-
 import hashlib
 import json
 import subprocess

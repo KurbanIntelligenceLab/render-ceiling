@@ -1,5 +1,3 @@
-"""A conventional robust-triangulation comparator with no symmetry denoising."""
-
 import numpy as np
 
 from . import correspondence as OLD

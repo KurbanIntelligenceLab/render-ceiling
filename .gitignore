@@ -1,9 +1,5 @@
-# Rendered images: a build product. Five orthographic views per evaluation
-# structure, a pure function of the CIFs and the frozen camera set that are
-# tracked.
 data/*/renders/
 
-# Python bytecode, environments and tool caches (regenerable: `uv sync`)
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -15,10 +11,11 @@ dist/
 build/
 development/
 
-# OS and editor junk
 .DS_Store
 .idea/
 .vscode/
 *.swp
 
 .venv-local-vlm/
+
+outputs/

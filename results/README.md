@@ -1,20 +1,22 @@
 # Paper and supplementary results
 
-Figure and table numbers follow the v3 paper and SI. Table `.tex` files contain the finished table content matching the manuscript. RMSD units and denominators appear in each table caption.
+Find each item by its number in the paper PDF; S1–S6 refer to the supplementary tables. Figure links open PDFs. Table links open the saved numerical results and supporting data for that numbered table. Shared records contain results for more than one table.
 
-| Paper item | Finished output | Supporting data | Contents |
-|---|---|---|---|
-| Figure 1 | [reconstruction_v2.pdf](paper_figures/figure_1/reconstruction_v2.pdf) | [paper_figures/figure_1/crystal.json](paper_figures/figure_1/crystal.json) | Mechanism illustration; display geometry in `paper_figures/figure_1/display_cell.json`. |
-| Figure 2 | [collective_v3.pdf](paper_figures/figure_2/collective_v3.pdf) | [paper_figures/figure_2/example.json](paper_figures/figure_2/example.json) | Selected ZrZn2 example; cohort record in `collective_validation/study.json`. |
-| Figure 3 | [paired_outcomes.pdf](paper_figures/figure_3/paired_outcomes.pdf) | [paper_figures/figure_3/paired_outcomes.json](paper_figures/figure_3/paired_outcomes.json) | Paired counts and deficit shares; individual predictions in `../release/predictions/`. |
-| Table 1 | [table_1.tex](paper_tables/table_1.tex) | [symmetry_selector_refinement/metrics.json](symmetry_selector_refinement/metrics.json) | Atomic reconstruction; per-case outputs in `symmetry_selector_refinement/heldout.jsonl`. |
-| Table 2 | [table_2.tex](paper_tables/table_2.tex) | [collective_validation/study.json](collective_validation/study.json) | Cohort 1; cohort 2 in `mode_replication/study.json`. |
-| Table S1 | [table_S1.tex](paper_tables/table_S1.tex) | [symmetry_selector_refinement/comparisons.json](symmetry_selector_refinement/comparisons.json) | Parent-bootstrap coordinate comparisons. |
-| Table S2 | [table_S2.tex](paper_tables/table_S2.tex) | [symmetry_selector_refinement/metrics.json](symmetry_selector_refinement/metrics.json) | Gaussian atomic outcomes; raw outputs in `symmetry_selector_refinement/heldout.jsonl`. |
-| Table S3 | [table_S3.tex](paper_tables/table_S3.tex) | [symmetry_selector_refinement/metrics.json](symmetry_selector_refinement/metrics.json) | Corrupted-view atomic outcomes; same raw outputs. |
-| Table S4 | [table_S4.tex](paper_tables/table_S4.tex) | [paper_audits/external_verified.json](paper_audits/external_verified.json) | External coordinate intervals; raw cohorts in `collective_validation/study.json` and `mode_replication/study.json`. |
-| Table S5 | [table_S5.tex](paper_tables/table_S5.tex) | [collective_validation/study.json](collective_validation/study.json) | Complete cohort 1 controls; cohort 2 in `mode_replication/study.json`. |
-| Table S6 | [table_S6.tex](paper_tables/table_S6.tex) | [physical_readout/study.json](physical_readout/study.json) | Support-refit ablation; verification in `paper_audits/refit_verification.json`. |
+| Number in the paper PDF | Contents | Results and data |
+|---|---|---|
+| Figure 1 | Mechanism illustration | [Figure 1 (PDF)](paper_figures/figure_1/figure_1.pdf), [Figure 1 data](paper_figures/figure_1/crystal.json), [Display geometry](paper_figures/figure_1/display_cell.json) |
+| Figure 2 | Localized and collective departures | [Figure 2 (PDF)](paper_figures/figure_2/figure_2.pdf), [Figure 2 data](paper_figures/figure_2/example.json) |
+| Figure 3 | Paired pixel and exact-text outcomes | [Figure 3 (PDF)](paper_figures/figure_3/paired_outcomes.pdf), [Figure 3 data](paper_figures/figure_3/paired_outcomes.json) |
+| Table 1 | Atomic reconstruction | [Table 1 results](symmetry_selector_refinement/metrics.json), [Per-case data](symmetry_selector_refinement/heldout.jsonl) |
+| Table 2 | External collective evaluations | [Table 2: cohort 1](collective_validation/study.json), [Table 2: cohort 2](mode_replication/study.json) |
+| Table S1 | Parent-bootstrap coordinate comparisons | [Table S1 results](symmetry_selector_refinement/comparisons.json) |
+| Table S2 | Gaussian atomic outcomes | [Table S2 results](symmetry_selector_refinement/metrics.json), [Per-case data](symmetry_selector_refinement/heldout.jsonl) |
+| Table S3 | Corrupted-view atomic outcomes | [Table S3 results](symmetry_selector_refinement/metrics.json), [Per-case data](symmetry_selector_refinement/heldout.jsonl) |
+| Table S4 | External coordinate intervals | [Table S4 results](paper_audits/external_verified.json) |
+| Table S5 | Complete external controls | [Table S5: cohort 1](collective_validation/study.json), [Table S5: cohort 2](mode_replication/study.json) |
+| Table S6 | Support-refit ablation | [Table S6 results](physical_readout/study.json), [Verification](paper_audits/refit_verification.json) |
+
+Figure 2 uses the [first external cohort](collective_validation/study.json). Figure 3 uses the [individual model predictions](../release/predictions/). Table S4 uses raw records from [cohort 1](collective_validation/study.json) and [cohort 2](mode_replication/study.json).
 
 Additional records support the text and reproducibility details:
 

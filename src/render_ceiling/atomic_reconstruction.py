@@ -1,8 +1,3 @@
-"""Symmetry plus sparse physical departures and optional view-specific errors.
-
-No reference structures, injected noise, intervention identities or labels enter inference.
-"""
-
 import numpy as np
 from scipy.linalg import orth
 
@@ -49,11 +44,11 @@ def group_shrink(x, threshold):
 
 
 def initial_sparse_fit(y, cameras, reference, basis, sigma, k, split_error, maxiter=400):
-    """Convex support selection followed by joint least-squares debiasing.
 
-    y is atom x view x xy. Physical coefficients use the camera-information metric.
-    The fixed affine nuisance space is profiled out before proximal optimization.
-    """
+
+
+
+
     n, v, _ = y.shape
     a = np.concatenate([r[:, :2].T for r in cameras], axis=0)
     h = a.T @ a
@@ -100,7 +95,7 @@ def initial_sparse_fit(y, cameras, reference, basis, sigma, k, split_error, maxi
         zd = d + (momentum - 1) / next_momentum * (d - oldd)
         ze = e + (momentum - 1) / next_momentum * (e - olde)
         momentum = next_momentum
-    # A proximal-gradient residual verifies the convex fit even if FISTA oscillates.
+
     residual = qp @ d.ravel() + project(e.ravel()) - qt
     pd = (
         np.zeros_like(d)
@@ -180,7 +175,7 @@ def predict(observations, cameras, lattice):
             residual = fitted["cart"] @ cameras[held][:, :2] - target[0]
             norms = np.linalg.norm(residual, axis=1)
             split_error = CONFIGS[config][1]
-            # Profile the same optional 2D error penalty on the withheld observations.
+
             loss = (
                 np.where(norms <= 4 * sigma, 0.5 * norms**2, 4 * sigma * (norms - 2 * sigma))
                 if split_error
@@ -219,7 +214,7 @@ def predict(observations, cameras, lattice):
             **{k: v for k, v in fitted.items() if k != "operations"},
             "species": recon["species"],
         }
-    # Compare k values within a likelihood family; do not compare unlike robust/L2 scores.
+
     for mode in ["physical", "split"]:
         chosen = min(
             [f"{mode}_{k}" for k in [2, 3, 4]],
@@ -239,6 +234,7 @@ def predict(observations, cameras, lattice):
 
 def sparse_fit(*args, **kwargs):
     """Use the frozen residual check and accurate fallback solver."""
+
     result = initial_sparse_fit(*args, **kwargs)
     if result["kkt_residual"] > 1e-5:
         from .support_refit import sparse_fit as accurate_fit

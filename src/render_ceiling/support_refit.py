@@ -1,7 +1,3 @@
-"""Accurate solver fork: stop on the proximal residual, not successive FISTA iterates.
-The original sealed 448-case probe is preserved. Objective and penalties are unchanged.
-"""
-
 import numpy as np
 from scipy.linalg import orth
 
@@ -9,11 +5,11 @@ from .atomic_reconstruction import group_shrink
 
 
 def sparse_fit(y, cameras, reference, basis, sigma, k, split_error, maxiter=12000):
-    """Convex support selection followed by joint least-squares debiasing.
 
-    y is atom x view x xy. Physical coefficients use the camera-information metric.
-    The fixed affine nuisance space is profiled out before proximal optimization.
-    """
+
+
+
+
     n, v, _ = y.shape
     a = np.concatenate([r[:, :2].T for r in cameras], axis=0)
     h = a.T @ a
@@ -72,7 +68,7 @@ def sparse_fit(y, cameras, reference, basis, sigma, k, split_error, maxiter=1200
         zd = d + (momentum - 1) / next_momentum * (d - oldd)
         ze = e + (momentum - 1) / next_momentum * (e - olde)
         momentum = next_momentum
-    # A proximal-gradient residual verifies the convex fit even if FISTA oscillates.
+
     residual = qp @ d.ravel() + project(e.ravel()) - qt
     pd = (
         np.zeros_like(d)

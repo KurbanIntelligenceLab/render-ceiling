@@ -1,6 +1,6 @@
 {
  "n_distinct_prompt_strings": 3,
- "note": "Verbatim prompt strings, one entry per arm family. No per-model tuning: the same string goes to every model in a roster. perception_transplant's two prompts were added after an audit found them missing from this file even though the checkpoint's result depends on them.",
+ "note": "Verbatim prompt strings for crystal-system prediction and coordinate extraction. Each prompt is shared across the models in its evaluation.",
  "prompts": [
   {
    "id": "main_zeroshot",

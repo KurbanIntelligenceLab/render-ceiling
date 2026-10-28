@@ -1,5 +1,3 @@
-"""Command-line entry point for the release."""
-
 from __future__ import annotations
 
 import argparse
@@ -10,7 +8,7 @@ from .verify import verify
 
 
 def main(argv: list[str] | None = None) -> int:
-    parser = argparse.ArgumentParser(prog="render-ceiling", description=__doc__)
+    parser = argparse.ArgumentParser(prog="render-ceiling", description="Reconstruct crystal coordinates and verify saved results.")
     subparsers = parser.add_subparsers(dest="command", required=True)
 
     verify_parser = subparsers.add_parser(
