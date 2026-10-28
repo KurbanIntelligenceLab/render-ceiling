@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{\textbf{Both external cohorts support the collective-coordinate gains.} Combined split minus comparator RMSD in m\AA, with 98.333\% material-bootstrap intervals from 20,000 draws. The three planned comparisons are Gaussian versus atomic, corrupted versus atomic, and corrupted versus combined Huber. The Gaussian combined-Huber comparison is an additional control. Cohort 2 is a secondary replication analysis.}
+\label{tab:external_intervals}
+\small\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}llrr@{}}
+\toprule
+Condition & Comparator & Difference & Interval\\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Cohort 1}}\\
+Gaussian & Atomic & $-2.458$ & $[-3.045, -1.885]$\\
+Corrupted & Atomic & $-2.641$ & $[-3.266, -2.037]$\\
+Corrupted & Combined Huber & $-0.427$ & $[-0.630, -0.255]$\\
+Gaussian & Combined Huber & $0.007$ & $[-0.050, 0.066]$\\
+\addlinespace[3pt]
+\multicolumn{4}{@{}l}{\textit{Cohort 2}}\\
+Gaussian & Atomic & $-2.345$ & $[-2.905, -1.798]$\\
+Corrupted & Atomic & $-2.356$ & $[-2.971, -1.755]$\\
+Corrupted & Combined Huber & $-0.406$ & $[-0.677, -0.196]$\\
+Gaussian & Combined Huber & $0.007$ & $[-0.005, 0.024]$\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{\textbf{Observation-error modeling preserves reconstruction under a corrupted centroid.} Second reserved cohort, 448 cases. All denominators are explicit; RMSD is in $10^{-3}\,\angstrom$.}
+\label{tab:atomic_corrupted}
+\small\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Overall & Originals & \shortstack{Stable\\changes} & Joint & Restored & RMSD\\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Huber triangulation}}\\
+405/448 & 199/224 & 173/184 & 158/184 & 0/184 & 7.395\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Observation-only}}\\
+432/448 & 216/224 & 180/184 & 172/184 & 0/184 & 5.026\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Physical-only}}\\
+325/448 & 104/224 & 183/184 & 68/184 & 0/184 & 8.757\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, minimum loss}}\\
+422/448 & 199/224 & 183/184 & 158/184 & 0/184 & 4.421\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, paired one-SE}}\\
+431/448 & 208/224 & 183/184 & 167/184 & 0/184 & 4.349\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, fixed $k=4$}}\\
+436/448 & 214/224 & 182/184 & 172/184 & 0/184 & 4.348\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, null guard}}\\
+432/448 & 210/224 & 183/184 & 169/184 & 0/184 & 4.366\\
+\bottomrule
+\end{tabular}
+\end{table}

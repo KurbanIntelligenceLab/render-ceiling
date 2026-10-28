@@ -1,0 +1,26 @@
+{
+  "primary": "paired_1se",
+  "development_only": true,
+  "development_cases": 448,
+  "development_parents": 14,
+  "quality": {
+    "fixed_4": [
+      0.9621212121212122,
+      1.9621212121212122,
+      0
+    ],
+    "paired_1se": [
+      0.9772727272727273,
+      1.9772727272727273,
+      -1
+    ],
+    "null_guard_1se": [
+      0.9696969696969697,
+      1.9696969696969697,
+      -2
+    ]
+  },
+  "development_manifest_hash": "c8c4b5a9803625b2e0327f10993ccf5264471d31bcdbb7bf45bb39164000a763",
+  "heldout_predictions_read": false,
+  "retrospective_validation_used_to_motivate_rules": true
+}

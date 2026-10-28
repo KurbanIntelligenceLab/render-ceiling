@@ -1,0 +1,25 @@
+\begin{table*}[t]
+\centering
+\caption{\textbf{The split model improves coordinates while retaining structural changes.} The reserved cohort contains 28 parents, 1,120 Gaussian cases and 448 corrupted-view cases. RMSD is mean per-case error in m\AA\ (lower is better). Joint correctness and false restoration are percentages of 420 Gaussian or 184 corrupted-view pairs; joint correctness requires both labels, and restoration assigns the changed case its parent class. Paired one-SE is the frozen primary; fixed $k=4$ is secondary. Bars span 0--10 m\AA\ or 0--100\% joint correctness.}
+\label{tab:reconstruction}
+\small
+\definecolor{metrictrack}{gray}{0.90}
+\definecolor{metricfill}{gray}{0.63}
+\newcommand{\metricbar}[2]{\shortstack{#1\\[-1.5pt]\makebox[34pt][l]{\rlap{\color{metrictrack}\rule{34pt}{1.6pt}}\color{metricfill}\rule{#2pt}{1.6pt}}}}
+\setlength{\tabcolsep}{6pt}
+\renewcommand{\arraystretch}{1.10}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrr@{}}
+\toprule
+&\multicolumn{3}{c}{Gaussian noise}&\multicolumn{3}{c}{One corrupted observation}\\
+\cmidrule(lr){2-4}\cmidrule(l){5-7}
+Method & RMSD $\downarrow$ & Joint (\%) $\uparrow$ & Restored (\%) $\downarrow$ & RMSD $\downarrow$ & Joint (\%) $\uparrow$ & Restored (\%) $\downarrow$\\
+\midrule
+Huber triangulation & \metricbar{5.271}{17.92140} & \metricbar{75.7}{25.74286} & 9.5 & \metricbar{7.395}{25.14300} & \metricbar{85.9}{29.19565} & 0.0\\
+Observation-only ($D=0$) & \metricbar{3.921}{13.33140} & \metricbar{81.7}{27.76667} & 11.0 & \metricbar{5.026}{17.08840} & \metricbar{93.5}{31.78261} & 0.0\\
+Physical-only ($E=0$) & \metricbar{3.377}{11.48180} & \metricbar{83.3}{28.33333} & 0.0 & \metricbar{8.757}{29.77380} & \metricbar{37.0}{12.56522} & 0.0\\
+Split, minimum loss & \metricbar{3.387}{11.51580} & \metricbar{83.3}{28.33333} & 0.0 & \metricbar{4.421}{15.03140} & \metricbar{85.9}{29.19565} & 0.0\\
+\textbf{Split, one-SE (primary)} & \metricbar{3.336}{11.34240} & \metricbar{86.2}{29.30476} & 0.2 & \metricbar{4.349}{14.78660} & \metricbar{90.8}{30.85870} & 0.0\\
+Split, fixed $k=4$ & \metricbar{3.325}{11.30500} & \metricbar{88.3}{30.03333} & 0.7 & \metricbar{4.348}{14.78320} & \metricbar{93.5}{31.78261} & 0.0\\
+\bottomrule
+\end{tabular*}
+\end{table*}

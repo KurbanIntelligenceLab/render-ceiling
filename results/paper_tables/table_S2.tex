@@ -1,0 +1,32 @@
+\begin{table}[t]
+\centering
+\caption{\textbf{Gaussian reconstruction balances coordinate recovery and change preservation.} Second reserved cohort, 1,120 cases. All denominators are explicit; RMSD is in $10^{-3}\,\angstrom$.}
+\label{tab:atomic_gaussian}
+\small\setlength{\tabcolsep}{2pt}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+Overall & Originals & \shortstack{Stable\\changes} & Joint & Restored & RMSD\\
+\midrule
+\multicolumn{6}{@{}l}{\textit{Huber triangulation}}\\
+960/1120 & 260/280 & 339/420 & 318/420 & 40/420 & 5.271\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Observation-only}}\\
+1026/1120 & 270/280 & 363/420 & 343/420 & 46/420 & 3.921\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Physical-only}}\\
+1036/1120 & 246/280 & 408/420 & 350/420 & 0/420 & 3.377\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, minimum loss}}\\
+1036/1120 & 246/280 & 408/420 & 350/420 & 0/420 & 3.387\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, paired one-SE}}\\
+1050/1120 & 254/280 & 406/420 & 362/420 & 1/420 & 3.336\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, fixed $k=4$}}\\
+1064/1120 & 262/280 & 403/420 & 371/420 & 3/420 & 3.325\\
+\addlinespace[2pt]
+\multicolumn{6}{@{}l}{\textit{Split, null guard}}\\
+1058/1120 & 264/280 & 395/420 & 367/420 & 12/420 & 3.378\\
+\bottomrule
+\end{tabular}
+\end{table}

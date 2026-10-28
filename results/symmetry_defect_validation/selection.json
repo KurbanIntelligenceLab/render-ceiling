@@ -1,0 +1,18 @@
+{
+  "primary": "split_cv",
+  "component_comparators": [
+    "observation_only",
+    "physical_cv"
+  ],
+  "existing_comparators": [
+    "cross_view",
+    "local_gate_0.01",
+    "adaptive_6",
+    "huber_fixed_0.02",
+    "huber_adaptive_6"
+  ],
+  "selected_before_heldout": true,
+  "development_raw_sha256": "360a6ed2ecbcc1a5847fb94f946b19eaaac8b760a360a4b73b48fa535cd93598",
+  "solver_checked_sha256": "f0a18691f66f03b73aed4820823fe68579d61969063e9035b6c9f2f4df80863a",
+  "development_metrics_sha256": "a2ff382c5b0d469b1a190e5fb4f2971c1a6ab13ffd9ac3b6c62eb636850d25c8"
+}

@@ -1,0 +1,262 @@
+[
+  {
+    "material_id": "mp-1175184",
+    "class": "triclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1303744",
+    "class": "triclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1210977",
+    "class": "triclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-647035",
+    "class": "triclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1192586",
+    "class": "monoclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-753601",
+    "class": "monoclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-582828",
+    "class": "monoclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1215967",
+    "class": "monoclinic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1219552",
+    "class": "orthorhombic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1228672",
+    "class": "orthorhombic",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-27398",
+    "class": "orthorhombic",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-1094851",
+    "class": "orthorhombic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1047671",
+    "class": "orthorhombic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1223394",
+    "class": "orthorhombic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1204787",
+    "class": "tetragonal",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-1105793",
+    "class": "tetragonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1207157",
+    "class": "tetragonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-569954",
+    "class": "tetragonal",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-1212462",
+    "class": "tetragonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1217777",
+    "class": "tetragonal",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-1025144",
+    "class": "tetragonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-989455",
+    "class": "trigonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1217153",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-1221846",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-989611",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-1007907",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-755003",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-1223148",
+    "class": "trigonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-28865",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-1048868",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-1187591",
+    "class": "trigonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1227521",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-754538",
+    "class": "trigonal",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-570314",
+    "class": "trigonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-11580",
+    "class": "hexagonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-22662",
+    "class": "hexagonal",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-20051",
+    "class": "hexagonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-16305",
+    "class": "hexagonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1211250",
+    "class": "hexagonal",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1196347",
+    "class": "cubic",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-1185963",
+    "class": "cubic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1183806",
+    "class": "cubic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1209061",
+    "class": "cubic",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-865746",
+    "class": "cubic",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-1183885",
+    "class": "cubic",
+    "accepted": false,
+    "reason": "Previously used or primary identifier"
+  },
+  {
+    "material_id": "mp-1113975",
+    "class": "cubic",
+    "accepted": false,
+    "reason": "Atom count outside 3 to 32"
+  },
+  {
+    "material_id": "mp-861883",
+    "class": "cubic",
+    "accepted": true
+  },
+  {
+    "material_id": "mp-1104547",
+    "class": "cubic",
+    "accepted": true
+  }
+]

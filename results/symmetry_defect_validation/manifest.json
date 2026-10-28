@@ -1,0 +1,34 @@
+{
+  "files": {
+    "experiments/symmetry_defect_validation/study.py": "226fc9cb664835d4c7fa0c551abaeafc2f4f6ad5ce155ef5f0296aa03b6611a3",
+    "experiments/symmetry_defect_validation/PROTOCOL.md": "19310ca514aeb8de5f84dd63f4c1ab97f8a18ac37f97e3a963363b708617c6da",
+    "experiments/symmetry_defect_probe/baselines.py": "29efc526b1f92fe1ccca5fda2fbca320466562500087d2cb61da22147e732af4",
+    "experiments/symmetry_defect_probe/check_solver.py": "e110a73146674e25c491a7e30530440206b0548dd03afcd602facdce6ee318e5",
+    "experiments/symmetry_defect_probe/methods.py": "c3123a29fb19771080b955cda684fefd9f8d56d868799012e3a905ba03eb4db8",
+    "experiments/symmetry_defect_probe/probe.py": "471bc8cc34eca50fbf4fd8dead44c3c8749d0b5ca17f4fc657266d8ed37ad7bb",
+    "experiments/symmetry_defect_probe/solver_audit_v2.py": "7818e817ecbba577a058208eb6d262c9cc25c298ddbca973c07bede21c8ed7ad",
+    "experiments/symmetry_defect_probe/solver_v2.py": "80481ab4a299e8c462e815217fb89a7d2acddbbc750fc57a76a91df6b70d573f",
+    "experiments/symmetry_defect_probe/test_methods.py": "2220ce42a40f70fc47f90d1b7c805970960cc467dc0e9f72a49d681f9e626053",
+    "results/symmetry_defect_validation/dataset.json": "7d7dcdbef08fd10667fe5490aad37316f72c35d0561bd0660f191db30292d87f",
+    "results/symmetry_defect_validation/schedule.json": "29616affdab9a6417f2014ef8d1bc766c51aeb1a3a49bf1caca30674a8736367",
+    "results/symmetry_defect_validation/selection_attempts.json": "11abe1437e45cadcb36587fe02e4279a8b048925be725deb6ee3a053a060603f",
+    "results/symmetry_defect_validation/selection.json": "a35bd8e36392ec5154996254acd0d69c51c83a1f31d2ef1f094411a30f525e54",
+    "results/symmetry_defect_probe/manifest.json": "d2fbfe30ee3caeb96ba14b3c550392806566358360a437427f557ad829e17a9c",
+    "results/symmetry_defect_probe/solver_audit_v2.json": "e28ba6dd148accdb557594baf0bb25ef1dd8048f8a03ef53a0c0b4832f53c471",
+    "results/symmetry_defect_probe/solver_audit_v2_manifest.json": "eea200c09ac81501737130725200c88e85d3b20772e97ed4e4064e395d557f40",
+    "results/symmetry_defect_probe/solver_checked_v2.jsonl": "f0a18691f66f03b73aed4820823fe68579d61969063e9035b6c9f2f4df80863a",
+    "results/symmetry_defect_probe/robust_baseline.jsonl": "8b754d70267c0b9e8b13e20d9c4475290766c74707c34d23f497d168f4b5a9ed",
+    "results/symmetry_defect_probe/robust_baseline_manifest.json": "720449f42da3dd00e66e3742fd670d688f43e41d5c8cfcbe77f96a779061c8b2"
+  },
+  "parents": 28,
+  "cases": 1568,
+  "gaussian_cases": 1120,
+  "corruption_cases": 448,
+  "seed": 2026102801,
+  "network_disabled": true,
+  "strict_overlap_check": {
+    "prior_parents": 56,
+    "new_parents": 28,
+    "matches": 0
+  }
+}
