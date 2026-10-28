@@ -1,0 +1,182 @@
+{
+  "counts": {
+    "symmetry_defect_validation/gaussian/huber_adaptive_6": {
+      "accuracy": "1014/1120",
+      "original_accuracy": "276/280",
+      "stable_change_accuracy": "364/440",
+      "joint": "358/440",
+      "false_restoration": "35/440",
+      "rmsd": 0.005218386946075393
+    },
+    "symmetry_defect_validation/gaussian/observation_only": {
+      "accuracy": "1036/1120",
+      "original_accuracy": "278/280",
+      "stable_change_accuracy": "377/440",
+      "joint": "374/440",
+      "false_restoration": "48/440",
+      "rmsd": 0.003763892794235227
+    },
+    "symmetry_defect_validation/gaussian/physical_cv": {
+      "accuracy": "1075/1120",
+      "original_accuracy": "264/280",
+      "stable_change_accuracy": "437/440",
+      "joint": "412/440",
+      "false_restoration": "1/440",
+      "rmsd": 0.0031357777965099957
+    },
+    "symmetry_defect_validation/gaussian/split_cv": {
+      "accuracy": "1075/1120",
+      "original_accuracy": "264/280",
+      "stable_change_accuracy": "437/440",
+      "joint": "412/440",
+      "false_restoration": "1/440",
+      "rmsd": 0.0031350934421909777
+    },
+    "symmetry_defect_validation/one_view_error/huber_adaptive_6": {
+      "accuracy": "426/448",
+      "original_accuracy": "214/224",
+      "stable_change_accuracy": "180/192",
+      "joint": "171/192",
+      "false_restoration": "0/192",
+      "rmsd": 0.0072279925387436555
+    },
+    "symmetry_defect_validation/one_view_error/observation_only": {
+      "accuracy": "436/448",
+      "original_accuracy": "220/224",
+      "stable_change_accuracy": "184/192",
+      "joint": "180/192",
+      "false_restoration": "0/192",
+      "rmsd": 0.0048843099187191735
+    },
+    "symmetry_defect_validation/one_view_error/physical_cv": {
+      "accuracy": "324/448",
+      "original_accuracy": "100/224",
+      "stable_change_accuracy": "192/192",
+      "joint": "68/192",
+      "false_restoration": "0/192",
+      "rmsd": 0.008170341861354718
+    },
+    "symmetry_defect_validation/one_view_error/split_cv": {
+      "accuracy": "427/448",
+      "original_accuracy": "203/224",
+      "stable_change_accuracy": "192/192",
+      "joint": "171/192",
+      "false_restoration": "0/192",
+      "rmsd": 0.004209408912173865
+    },
+    "symmetry_selector_refinement/gaussian/huber_adaptive_6": {
+      "accuracy": "960/1120",
+      "original_accuracy": "260/280",
+      "stable_change_accuracy": "339/420",
+      "joint": "318/420",
+      "false_restoration": "40/420",
+      "rmsd": 0.005271031009860405
+    },
+    "symmetry_selector_refinement/gaussian/observation_only": {
+      "accuracy": "1026/1120",
+      "original_accuracy": "270/280",
+      "stable_change_accuracy": "363/420",
+      "joint": "343/420",
+      "false_restoration": "46/420",
+      "rmsd": 0.003921479682253025
+    },
+    "symmetry_selector_refinement/gaussian/physical_cv": {
+      "accuracy": "1036/1120",
+      "original_accuracy": "246/280",
+      "stable_change_accuracy": "408/420",
+      "joint": "350/420",
+      "false_restoration": "0/420",
+      "rmsd": 0.0033769310945202607
+    },
+    "symmetry_selector_refinement/gaussian/split_cv": {
+      "accuracy": "1036/1120",
+      "original_accuracy": "246/280",
+      "stable_change_accuracy": "408/420",
+      "joint": "350/420",
+      "false_restoration": "0/420",
+      "rmsd": 0.0033870480580283978
+    },
+    "symmetry_selector_refinement/gaussian/paired_1se": {
+      "accuracy": "1050/1120",
+      "original_accuracy": "254/280",
+      "stable_change_accuracy": "406/420",
+      "joint": "362/420",
+      "false_restoration": "1/420",
+      "rmsd": 0.003336183184055436
+    },
+    "symmetry_selector_refinement/gaussian/fixed_4": {
+      "accuracy": "1064/1120",
+      "original_accuracy": "262/280",
+      "stable_change_accuracy": "403/420",
+      "joint": "371/420",
+      "false_restoration": "3/420",
+      "rmsd": 0.003324594243817171
+    },
+    "symmetry_selector_refinement/gaussian/null_guard_1se": {
+      "accuracy": "1058/1120",
+      "original_accuracy": "264/280",
+      "stable_change_accuracy": "395/420",
+      "joint": "367/420",
+      "false_restoration": "12/420",
+      "rmsd": 0.0033778489762576534
+    },
+    "symmetry_selector_refinement/one_view_error/huber_adaptive_6": {
+      "accuracy": "405/448",
+      "original_accuracy": "199/224",
+      "stable_change_accuracy": "173/184",
+      "joint": "158/184",
+      "false_restoration": "0/184",
+      "rmsd": 0.007394773003718725
+    },
+    "symmetry_selector_refinement/one_view_error/observation_only": {
+      "accuracy": "432/448",
+      "original_accuracy": "216/224",
+      "stable_change_accuracy": "180/184",
+      "joint": "172/184",
+      "false_restoration": "0/184",
+      "rmsd": 0.00502552260265266
+    },
+    "symmetry_selector_refinement/one_view_error/physical_cv": {
+      "accuracy": "325/448",
+      "original_accuracy": "104/224",
+      "stable_change_accuracy": "183/184",
+      "joint": "68/184",
+      "false_restoration": "0/184",
+      "rmsd": 0.008756550812283985
+    },
+    "symmetry_selector_refinement/one_view_error/split_cv": {
+      "accuracy": "422/448",
+      "original_accuracy": "199/224",
+      "stable_change_accuracy": "183/184",
+      "joint": "158/184",
+      "false_restoration": "0/184",
+      "rmsd": 0.004420518726974408
+    },
+    "symmetry_selector_refinement/one_view_error/paired_1se": {
+      "accuracy": "431/448",
+      "original_accuracy": "208/224",
+      "stable_change_accuracy": "183/184",
+      "joint": "167/184",
+      "false_restoration": "0/184",
+      "rmsd": 0.0043494725914754746
+    },
+    "symmetry_selector_refinement/one_view_error/fixed_4": {
+      "accuracy": "436/448",
+      "original_accuracy": "214/224",
+      "stable_change_accuracy": "182/184",
+      "joint": "172/184",
+      "false_restoration": "0/184",
+      "rmsd": 0.004347964922608044
+    },
+    "symmetry_selector_refinement/one_view_error/null_guard_1se": {
+      "accuracy": "432/448",
+      "original_accuracy": "210/224",
+      "stable_change_accuracy": "183/184",
+      "joint": "169/184",
+      "false_restoration": "0/184",
+      "rmsd": 0.004365948944704569
+    }
+  },
+  "coordinate_scores": 6272,
+  "selector_decisions": 1568
+}

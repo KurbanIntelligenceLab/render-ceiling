@@ -28,7 +28,30 @@ def main(argv: list[str] | None = None) -> int:
         help="treat warnings as failures",
     )
 
+    reconstruct_parser = subparsers.add_parser(
+        "reconstruct", help="reconstruct coordinates from five calibrated views"
+    )
+    reconstruct_parser.add_argument("input", type=Path, help="JSON observations, cameras and lattice")
+    reconstruct_parser.add_argument("--method", choices=("atomic", "collective", "huber"), default="atomic")
+    reconstruct_parser.add_argument("--output", type=Path, help="write JSON to this file (default: stdout)")
+
     args = parser.parse_args(argv)
+
+    if args.command == "reconstruct":
+        from .workflow import ReconstructionInput, Reconstructor
+
+        try:
+            inputs = ReconstructionInput.from_json(args.input)
+            result = Reconstructor(args.method).run(inputs).to_json()
+            if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                args.output.write_text(result)
+            else:
+                print(result, end="")
+        except (OSError, ValueError, TypeError) as exc:
+            print(f"ERROR  {exc}", file=sys.stderr)
+            return 1
+        return 0
 
     if args.command == "verify":
         report = verify(args.root.resolve())

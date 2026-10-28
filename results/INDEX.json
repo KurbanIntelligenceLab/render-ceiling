@@ -1,262 +1,149 @@
 {
- "note": "Run order of the experiment records. Directory names describe what each record measures rather than when it ran, so this file carries the order the names no longer encode. Every record holds a results.json; larger records keep their per-structure detail in named sibling files that the results.json points to.",
- "n_records": 64,
- "records": [
-  {
-   "order": 1,
-   "name": "pipeline"
+  "scope": "v3 main manuscript and SI",
+  "files": {
+    "results/README.md": "87574592c0b778a182352a0fccaaa6cfe0d298f08e1a4b9dbf9bda94a83bf5c6",
+    "results/classifier_refreeze/results.json": "0f128d3ab4b064e663e0c3a811227d98d9cb63e97caa215fb2668ef975a385d6",
+    "results/collective_validation/study.json": "0f3a39bea77cf1d07863f567f2ceb6c6e74144ce00f59c716543251e620748c2",
+    "results/coords_as_text/results.json": "0c84ffe2688c42290b97c27876bebda1bf5f60b0f2c7ce31145c417e1a844871",
+    "results/label_granularity_sweep/results.json": "2eeec3c21e7ed12d1670f31bd705a222ba11b1ede517ba0608d26d27598e6797",
+    "results/mode_replication/study.json": "40132ecbf2a0832313d390a58f2c0922696365395079083665c8cc70d1a82b52",
+    "results/paper_audits/atomic_verification.json": "58e92fbf5ea04dd0f71016cb19ae244e3672f5c85435d0efdafcdfd601931c2e",
+    "results/paper_audits/diagnostic_verification.json": "f415e9f04c4b211419c9850bb652d2c274623fd3a77ef9568cacb8009fac360f",
+    "results/paper_audits/external_audit.json": "c9da2000640ae5d44a66ac40d01b5e2f777af3164e51cf81c1a4a11c93148dd4",
+    "results/paper_audits/external_verified.json": "01bf958548f92e4f8bbc9f9799e9ed56ca4b3b0c56f562c7b0ebe01a40f98983",
+    "results/paper_audits/refit_verification.json": "c5becf6df85cfac15e8dee08f9d77b1df1e53057d700ccb5b30fbbd975998f69",
+    "results/paper_figures/figure_1/crystal.json": "a3c94e11d2f05bae5dba45012f3704f57dbacc9e11e411e1eeca8dfc8a2ffc6c",
+    "results/paper_figures/figure_1/display_cell.json": "5e79cf5f917bf1703362664cfc94698b57a86a2f9d39efb3e276ccb287e8ac8b",
+    "results/paper_figures/figure_1/reconstruction_v2.pdf": "ae1a9030c8e9ab03a6a0450c4e63dc1c7cf22d1bc7c926ae10db0d8567592b87",
+    "results/paper_figures/figure_2/collective_v3.pdf": "7addddfccd2a867639eba1392615b326ce868668e14968ef30745701e0cc7826",
+    "results/paper_figures/figure_2/collective_v3.png": "9ece203e1ef577aff307ab7a8feda5551fb6136f48ccdffee9b706ad23f27b11",
+    "results/paper_figures/figure_2/collective_v3.svg": "b629e6271fff29309eb0f9897a76a3f5466d6153a3d97ef3d19074c2fe2b8c0b",
+    "results/paper_figures/figure_2/example.json": "79c2f2701372a7239b186d5fb0b36e5cdcf8494e57f5ccd4ca011c2ebebf13d5",
+    "results/paper_figures/figure_3/paired_outcomes.json": "cddad94150406a10501df74e42e75b269c7830eab78048becd88428751919a53",
+    "results/paper_figures/figure_3/paired_outcomes.pdf": "0b22d1d8f9ff94c6d77759dceacb407df9d856b923ef2bb39b6258ec31d82bdd",
+    "results/paper_figures/figure_3/paired_outcomes.png": "038089b29367feaa77ead9bf60983c42c60c5d607e90ff999bea0f85e024eb81",
+    "results/paper_figures/figure_3/paired_outcomes.svg": "da532b0001093c7c36abb1a6d05848cc311c869eca6ce83762b2c45019f88735",
+    "results/paper_tables/table_1.tex": "7d34cd99d77dc7261efe6c2dd7135774ba88fea471bc06be653f0a430b93efb6",
+    "results/paper_tables/table_2.tex": "ab6b168604e6538bbeba898d41bb7a7bfc6784951307d695af647a1c388e7d18",
+    "results/paper_tables/table_S1.tex": "53b931c30b25ce2d84c0702858726ff5bd44246222a554d6c270053b1b9717a5",
+    "results/paper_tables/table_S2.tex": "5bbc8f2fd8a54672123ab268ed789bcb74a943d44a7ef002e26ae7b3bc28f70d",
+    "results/paper_tables/table_S3.tex": "5642dbe8b46273bb352686ca40912d5a90c477bb7931477744296b7211f4688d",
+    "results/paper_tables/table_S4.tex": "34d4fe2b9b97af155c707cec4fbcbdd9fb0645c5750c9273bd1798e3c64cb1cb",
+    "results/paper_tables/table_S5.tex": "862c0d4027a2fccb3eb546f52bf6fec264799e2be7e19b7aa0640cea0a35175b",
+    "results/paper_tables/table_S6.tex": "bbcc46051771747f28334f7dc72985592add827a98f784cd5bf7912d1eeb4982",
+    "results/perception_transplant/results.json": "cbd473896d4c9571b470684c7e71df3823ff91c704d61135ab66aaa6ae75ecc1",
+    "results/perception_transplant/transplant_raw.json": "5d9c2a72f8b308091ddc60f3e4b6fd9c8272e0a0ad8c34f167f19bcad3f2f927",
+    "results/phantom_census_four_view/certification_census.json": "1c7a656e48048166e08fabf8c4abe55e87d53b82e6b8770aa02a9a38e7c2f04c",
+    "results/phantom_census_four_view/primary_census_all_subsets.json": "b1385e498d1dd9d4965e455e557030437a7dc0f7b2f4059ec2ba2d18b31b21bb",
+    "results/phantom_census_four_view/results.json": "151ee8106204c2d5f3f2dea53a11432c0c12d8a946cbcbdc93cd0a0e6d2bf788",
+    "results/physical_readout/study.json": "adaf57026fce816c439624f157395b394f30ac3746ae5866c35123387502c094",
+    "results/replication_expansion/oracle_primary_raw.json": "620ed2adc9ff285d5b210574ed1831292dd23b2557c1f6eea357c1770e19e2b1",
+    "results/replication_expansion/oracle_replication_raw.json": "79462aa1b990303a2a5c181e8b9eccf8542e571c226a18614d9518267d3233f7",
+    "results/replication_expansion/results.json": "48c79a10795da85fedf220109073f243035daf5b85a2edf153274ef3321b90d6",
+    "results/supervised_pixel_baseline/manifest.json": "f61ce0c31d0a03ece36db5b593b44852ff404c959932b22fb888233e6438c9f0",
+    "results/supervised_pixel_baseline/resnet50_predictions.json": "22079b369bb3d76cedf3d82beb14fe02d59cc2f07704ee49c84b843eb54d9fa9",
+    "results/supervised_pixel_baseline/resnet50_s23_log.json": "ee5348af341b9a06f98f9b2f41cb541326f394d8b1737799f351b122e73c40c4",
+    "results/supervised_pixel_baseline/results.json": "524e944c203b60a39a4dd5d34dfe7b7a9d217e71ea2ba80102ea8f07b1942c61",
+    "results/supervised_pixel_baseline/vit_small_predictions.json": "af4a41346f00be5db044dcc6744fcc8c9134bde7ce637d57dd725664abd53bfd",
+    "results/supervised_pixel_baseline/vit_small_s23_log.json": "17d5dad46836a51fcd781a6e3fe3e96f16cc4232c9cd92093bdd55c33029912e",
+    "results/supervised_pixel_baseline/weights_manifest.json": "6e72f7c4b6eb109708cb10d604f757d1733ce83dcfe822ec2c8c266867ef8465",
+    "results/symmetry_defect_validation/comparisons.json": "50ac0af3687768d261d3cd423fce771577c1a8d4f7dc59bf46fa66dcbf42b3f7",
+    "results/symmetry_defect_validation/dataset.json": "7d7dcdbef08fd10667fe5490aad37316f72c35d0561bd0660f191db30292d87f",
+    "results/symmetry_defect_validation/heldout.jsonl": "c1fa24b838d777207846b35532498353e47b86bbad4650e9dc0188cd3d5c3b0e",
+    "results/symmetry_defect_validation/independent_audit.json": "5fe9733abcbbedf4de9beac8c2a053f694c98d601e352a77fc1a6b1b844144bf",
+    "results/symmetry_defect_validation/manifest.json": "8a9ff2678b7acfca6303cf8752c7db5f38b0f46f94a2206c8189927d0d05b9eb",
+    "results/symmetry_defect_validation/metrics.json": "707d1886f3bfe635668592b01fcbce65d5cc5efd9d6ba3b724155bc5d8627cf4",
+    "results/symmetry_defect_validation/penalty_identity_check.json": "19d7ce9b1947f859eee634e1532680b141a567a91ce0e28a3b7742781d660c67",
+    "results/symmetry_defect_validation/schedule.json": "29616affdab9a6417f2014ef8d1bc766c51aeb1a3a49bf1caca30674a8736367",
+    "results/symmetry_defect_validation/selection.json": "a35bd8e36392ec5154996254acd0d69c51c83a1f31d2ef1f094411a30f525e54",
+    "results/symmetry_defect_validation/selection_attempts.json": "11abe1437e45cadcb36587fe02e4279a8b048925be725deb6ee3a053a060603f",
+    "results/symmetry_defect_validation/verification.json": "03628900ae8c7b62243f05e16a9a96df5e6fcbd57eddb4d0beadc7be035dbeb3",
+    "results/symmetry_selector_refinement/comparisons.json": "7e5f18dae8a51d16a3821d020f14e78c45d47c4c240f5517bfa1d113c23f6aee",
+    "results/symmetry_selector_refinement/dataset.json": "96a5ae62650adc049b0eb1583e70a8ea889281965f427ec54d19e05bf4868809",
+    "results/symmetry_selector_refinement/development_decision_audit.json": "dc2586ed453f0d914eb7c4192d77d66a34a140155c41890d8bfe3180353b651c",
+    "results/symmetry_selector_refinement/development_decisions.json": "dbcf41d8329c5626ff6838c4c185e2dfeb5120a5245516a12a794a75aef42420",
+    "results/symmetry_selector_refinement/development_manifest.json": "93d271390bdf746f282804626b82b49c3a426e657eff09ae07163e864d2872f8",
+    "results/symmetry_selector_refinement/development_metrics.json": "35458843cf4443acb9d8c0081523d9df820627e79c32d631bfec2a101fa3dd06",
+    "results/symmetry_selector_refinement/heldout.jsonl": "e0d186dee4678cf689f6362feaeb80a037b6c38d537ade45d1d727caf406eb81",
+    "results/symmetry_selector_refinement/independent_audit.json": "181df74fa49a3818d9573e2c2c35bfd5543471e97bd635a5c67f3a212539b01b",
+    "results/symmetry_selector_refinement/manifest.json": "f6e4db96c0316b6d3bb03e69a16ccc33d5a1329209de35c97a25d46d6a991e92",
+    "results/symmetry_selector_refinement/metrics.json": "c009fe390ad0a8e9b8e9f5769a752aa730250322dca4fdc51b7af75b3e043611",
+    "results/symmetry_selector_refinement/schedule.json": "68a7592fa1f8757a3170cdf081983cff5a2599ccb167cca39e39806a37c9ae7b",
+    "results/symmetry_selector_refinement/selection.json": "403469dce51550cfc791db43eee27adc2f7eeebc5640ca5c256e24a4e1763bce",
+    "results/symmetry_selector_refinement/selection_attempts.json": "ced37bc91cd4d287ce832afef52ebdcc9dc5c9f93e50247c18b63184788d5d2a",
+    "results/symmetry_selector_refinement/verification.json": "f3f6d2dcaecf660abc72fba090ab8444013cd38dc9491951cd0336d7d0dd8c62"
   },
-  {
-   "order": 2,
-   "name": "identifiability"
-  },
-  {
-   "order": 3,
-   "name": "resolution_audit"
-  },
-  {
-   "order": 4,
-   "name": "zeroshot"
-  },
-  {
-   "order": 5,
-   "name": "exclusion_baselines"
-  },
-  {
-   "order": 6,
-   "name": "sft_chain"
-  },
-  {
-   "order": 7,
-   "name": "process_reward"
-  },
-  {
-   "order": 8,
-   "name": "test_time_scaling"
-  },
-  {
-   "order": 9,
-   "name": "certification"
-  },
-  {
-   "order": 10,
-   "name": "external_baselines"
-  },
-  {
-   "order": 11,
-   "name": "calibration"
-  },
-  {
-   "order": 12,
-   "name": "merged_retrain"
-  },
-  {
-   "order": 13,
-   "name": "expert_study"
-  },
-  {
-   "order": 14,
-   "name": "sota_push"
-  },
-  {
-   "order": 15,
-   "name": "trigonal_hexagonal"
-  },
-  {
-   "order": 16,
-   "name": "frontier_ceiling"
-  },
-  {
-   "order": 17,
-   "name": "box_sufficiency"
-  },
-  {
-   "order": 18,
-   "name": "paired_resolution"
-  },
-  {
-   "order": 19,
-   "name": "extractor"
-  },
-  {
-   "order": 20,
-   "name": "eval_expansion"
-  },
-  {
-   "order": 21,
-   "name": "atom_detection"
-  },
-  {
-   "order": 22,
-   "name": "occlusion_manipulation"
-  },
-  {
-   "order": 23,
-   "name": "occlusion_redundancy"
-  },
-  {
-   "order": 24,
-   "name": "oracle_view_curve"
-  },
-  {
-   "order": 25,
-   "name": "depth_sufficiency"
-  },
-  {
-   "order": 26,
-   "name": "oracle_stratified"
-  },
-  {
-   "order": 27,
-   "name": "oracle_within_sample"
-  },
-  {
-   "order": 28,
-   "name": "model_sweep"
-  },
-  {
-   "order": 29,
-   "name": "classifier_refreeze"
-  },
-  {
-   "order": 30,
-   "name": "step_reward_arm_seed_hygiene"
-  },
-  {
-   "order": 31,
-   "name": "protocol_normalisation"
-  },
-  {
-   "order": 32,
-   "name": "visibility_corrected_oracle"
-  },
-  {
-   "order": 33,
-   "name": "extraction_operating_point"
-  },
-  {
-   "order": 34,
-   "name": "stratified_frontier_expansion"
-  },
-  {
-   "order": 35,
-   "name": "generational_comparison"
-  },
-  {
-   "order": 36,
-   "name": "finetuned_arm_seeds"
-  },
-  {
-   "order": 37,
-   "name": "claim_ledger"
-  },
-  {
-   "order": 38,
-   "name": "figures"
-  },
-  {
-   "order": 39,
-   "name": "limitations"
-  },
-  {
-   "order": 40,
-   "name": "no_image_control"
-  },
-  {
-   "order": 41,
-   "name": "related_work_audit"
-  },
-  {
-   "order": 42,
-   "name": "eval_scaleup"
-  },
-  {
-   "order": 43,
-   "name": "label_granularity_sweep"
-  },
-  {
-   "order": 44,
-   "name": "detector_oracle"
-  },
-  {
-   "order": 45,
-   "name": "coords_as_text"
-  },
-  {
-   "order": 46,
-   "name": "render_convention_sweep"
-  },
-  {
-   "order": 47,
-   "name": "consolidated_verification"
-  },
-  {
-   "order": 48,
-   "name": "perception_transplant"
-  },
-  {
-   "order": 49,
-   "name": "length_control"
-  },
-  {
-   "order": 50,
-   "name": "view_subset_sweep"
-  },
-  {
-   "order": 51,
-   "name": "detector_characterisation"
-  },
-  {
-   "order": 52,
-   "name": "endpoint_drift"
-  },
-  {
-   "order": 53,
-   "name": "reasoning_budget"
-  },
-  {
-   "order": 54,
-   "name": "frontier_arm_selection"
-  },
-  {
-   "order": 55,
-   "name": "ceiling_below_one"
-  },
-  {
-   "order": 56,
-   "name": "monotonicity_paired"
-  },
-  {
-   "order": 57,
-   "name": "phantom_census_four_view"
-  },
-  {
-   "order": 58,
-   "name": "conditioning_distribution"
-  },
-  {
-   "order": 59,
-   "name": "statistical_housekeeping"
-  },
-  {
-   "order": 60,
-   "name": "class_distribution_majority_baseline"
-  },
-  {
-   "order": 61,
-   "name": "replication_expansion"
-  },
-  {
-   "order": 62,
-   "name": "detector_oracle_reproduction"
-  },
-  {
-   "order": 63,
-   "name": "supervised_pixel_baseline"
-  },
-  {
-   "order": 64,
-   "name": "detector_recall_curve"
+  "paper_scope": {
+    "results/README.md": "Map of all reported figures, tables and supporting records",
+    "results/classifier_refreeze/results.json": "SI 140/70 cell-metric partition and canonical random forest",
+    "results/collective_validation/study.json": "Main Table 2; SI Tables S4\u2013S5: first external cohort",
+    "results/coords_as_text/results.json": "Main Figure 3 and SI paired-model protocol",
+    "results/label_granularity_sweep/results.json": "SI crystal-system and space-group random-forest controls",
+    "results/mode_replication/study.json": "Main Table 2; SI Tables S4\u2013S5: frozen-comparator secondary cohort",
+    "results/paper_audits/atomic_verification.json": "Independent arithmetic checks of reported paper/SI endpoints",
+    "results/paper_audits/diagnostic_verification.json": "Independent arithmetic checks of reported paper/SI endpoints",
+    "results/paper_audits/external_audit.json": "Independent arithmetic checks of reported paper/SI endpoints",
+    "results/paper_audits/external_verified.json": "Independent arithmetic checks of reported paper/SI endpoints",
+    "results/paper_audits/refit_verification.json": "Independent arithmetic checks of reported paper/SI endpoints",
+    "results/paper_figures/figure_1/crystal.json": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_1/display_cell.json": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_1/reconstruction_v2.pdf": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_2/collective_v3.pdf": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_2/collective_v3.png": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_2/collective_v3.svg": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_2/example.json": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_3/paired_outcomes.json": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_3/paired_outcomes.pdf": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_3/paired_outcomes.png": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_figures/figure_3/paired_outcomes.svg": "Main Figures 1\u20133: completed artwork and illustration data",
+    "results/paper_tables/table_1.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/paper_tables/table_2.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/paper_tables/table_S1.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/paper_tables/table_S2.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/paper_tables/table_S3.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/paper_tables/table_S4.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/paper_tables/table_S5.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/paper_tables/table_S6.tex": "Main Tables 1\u20132 and SI Tables S1\u2013S6: completed tables",
+    "results/perception_transplant/results.json": "SI pixel-to-coordinate handoff control",
+    "results/perception_transplant/transplant_raw.json": "SI pixel-to-coordinate handoff control",
+    "results/phantom_census_four_view/certification_census.json": "Main projective-phantom census",
+    "results/phantom_census_four_view/primary_census_all_subsets.json": "Main projective-phantom census",
+    "results/phantom_census_four_view/results.json": "Main projective-phantom census",
+    "results/physical_readout/study.json": "SI Table S6: support-refit ablation",
+    "results/replication_expansion/oracle_primary_raw.json": "Main ideal geometric reference on primary and replication samples",
+    "results/replication_expansion/oracle_replication_raw.json": "Main ideal geometric reference on primary and replication samples",
+    "results/replication_expansion/results.json": "Main ideal geometric reference on primary and replication samples",
+    "results/supervised_pixel_baseline/manifest.json": "Main raster controls and SI training protocol",
+    "results/supervised_pixel_baseline/resnet50_predictions.json": "Main raster controls and SI training protocol",
+    "results/supervised_pixel_baseline/resnet50_s23_log.json": "Main raster controls and SI training protocol",
+    "results/supervised_pixel_baseline/results.json": "Main raster controls and SI training protocol",
+    "results/supervised_pixel_baseline/vit_small_predictions.json": "Main raster controls and SI training protocol",
+    "results/supervised_pixel_baseline/vit_small_s23_log.json": "Main raster controls and SI training protocol",
+    "results/supervised_pixel_baseline/weights_manifest.json": "Main raster controls and SI training protocol",
+    "results/symmetry_defect_validation/comparisons.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/dataset.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/heldout.jsonl": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/independent_audit.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/manifest.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/metrics.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/penalty_identity_check.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/schedule.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/selection.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/selection_attempts.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_defect_validation/verification.json": "SI evaluation provenance: complete earlier reserved-cohort results and solver audits",
+    "results/symmetry_selector_refinement/comparisons.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/dataset.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/development_decision_audit.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/development_decisions.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/development_manifest.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/development_metrics.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/heldout.jsonl": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/independent_audit.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/manifest.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/metrics.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/schedule.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/selection.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/selection_attempts.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance",
+    "results/symmetry_selector_refinement/verification.json": "Main Table 1; SI Tables S1\u2013S3 and selector-selection provenance"
   }
- ]
 }

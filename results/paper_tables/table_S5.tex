@@ -1,0 +1,55 @@
+\begin{table*}[t]
+\centering
+\caption{\textbf{Complete controls across both cohorts expose the representation trade-off.} All 960 cases per cohort are included, using the same frozen methods and scoring. RMSD is in $10^{-3}\,\angstrom$; stable recall and joint correctness concern only stable class-changing cases. Cohort 2 is a secondary replication analysis.}
+\label{tab:external_all}
+\small\setlength{\tabcolsep}{3pt}\renewcommand{\arraystretch}{1.08}
+\begin{tabular}{@{}lrrrrr@{\hspace{12pt}}rrrrr@{}}
+\toprule
+&\multicolumn{5}{c}{Cohort 1}&\multicolumn{5}{c}{Cohort 2}\\
+\cmidrule(lr){2-6}\cmidrule(l){7-11}
+Method & Correct & RMSD & \shortstack{Stable\\recall} & Joint & Modes & Correct & RMSD & \shortstack{Stable\\recall} & Joint & Modes\\
+\midrule
+\multicolumn{11}{@{}l}{\textit{Gaussian, original}}\\
+Atomic split & 158/160 & 3.929 & --- & --- & 0 & 158/160 & 4.094 & --- & --- & 0\\
+Mode Huber & 155/160 & 4.069 & --- & --- & 160 & 156/160 & 4.167 & --- & --- & 160\\
+Mode split & 155/160 & 4.069 & --- & --- & 160 & 156/160 & 4.172 & --- & --- & 160\\
+Atomic or mode, Huber & 157/160 & 3.997 & --- & --- & 6 & 158/160 & 4.114 & --- & --- & 5\\
+\textbf{Atomic or mode, split} & 157/160 & 3.997 & --- & --- & 6 & 158/160 & 4.116 & --- & --- & 4\\
+\addlinespace[3pt]
+\multicolumn{11}{@{}l}{\textit{Gaussian, localized}}\\
+Atomic split & 157/160 & 7.111 & 151/154 & 149/154 & 0 & 160/160 & 7.124 & 152/152 & 150/152 & 0\\
+Mode Huber & 150/160 & 9.823 & 146/154 & 142/154 & 160 & 150/160 & 9.687 & 142/152 & 138/152 & 160\\
+Mode split & 153/160 & 9.800 & 148/154 & 143/154 & 160 & 150/160 & 9.717 & 142/152 & 138/152 & 160\\
+Atomic or mode, Huber & 157/160 & 7.111 & 151/154 & 148/154 & 1 & 160/160 & 7.124 & 152/152 & 150/152 & 0\\
+\textbf{Atomic or mode, split} & 157/160 & 7.111 & 151/154 & 148/154 & 1 & 160/160 & 7.124 & 152/152 & 150/152 & 0\\
+\addlinespace[3pt]
+\multicolumn{11}{@{}l}{\textit{Gaussian, collective}}\\
+Atomic split & 73/160 & 8.164 & 47/64 & 45/64 & 0 & 89/160 & 8.345 & 64/74 & 64/74 & 0\\
+Mode Huber & 153/160 & 5.398 & 63/64 & 62/64 & 160 & 149/160 & 5.863 & 70/74 & 68/74 & 160\\
+Mode split & 153/160 & 5.421 & 63/64 & 62/64 & 160 & 149/160 & 5.870 & 70/74 & 68/74 & 160\\
+Atomic or mode, Huber & 145/160 & 5.700 & 57/64 & 55/64 & 96 & 143/160 & 5.993 & 69/74 & 68/74 & 96\\
+\textbf{Atomic or mode, split} & 146/160 & 5.707 & 58/64 & 56/64 & 97 & 143/160 & 6.000 & 69/74 & 68/74 & 96\\
+\addlinespace[3pt]
+\multicolumn{11}{@{}l}{\textit{One corrupted observation, original}}\\
+Atomic split & 155/160 & 4.011 & --- & --- & 0 & 156/160 & 4.181 & --- & --- & 0\\
+Mode Huber & 158/160 & 4.436 & --- & --- & 160 & 160/160 & 4.629 & --- & --- & 160\\
+Mode split & 158/160 & 4.006 & --- & --- & 160 & 160/160 & 4.099 & --- & --- & 160\\
+Atomic or mode, Huber & 156/160 & 4.031 & --- & --- & 7 & 156/160 & 4.218 & --- & --- & 3\\
+\textbf{Atomic or mode, split} & 155/160 & 4.050 & --- & --- & 5 & 156/160 & 4.213 & --- & --- & 5\\
+\addlinespace[3pt]
+\multicolumn{11}{@{}l}{\textit{One corrupted observation, localized}}\\
+Atomic split & 156/160 & 7.438 & 150/154 & 145/154 & 0 & 155/160 & 7.701 & 147/152 & 144/152 & 0\\
+Mode Huber & 149/160 & 11.911 & 145/154 & 143/154 & 160 & 142/160 & 12.085 & 134/152 & 134/152 & 160\\
+Mode split & 151/160 & 10.313 & 146/154 & 144/154 & 160 & 144/160 & 10.386 & 136/152 & 136/152 & 160\\
+Atomic or mode, Huber & 156/160 & 7.438 & 150/154 & 146/154 & 0 & 155/160 & 7.715 & 147/152 & 144/152 & 1\\
+\textbf{Atomic or mode, split} & 156/160 & 7.438 & 150/154 & 145/154 & 0 & 154/160 & 7.674 & 146/152 & 143/152 & 2\\
+\addlinespace[3pt]
+\multicolumn{11}{@{}l}{\textit{One corrupted observation, collective}}\\
+Atomic split & 71/160 & 8.681 & 41/64 & 39/64 & 0 & 94/160 & 8.609 & 62/74 & 60/74 & 0\\
+Mode Huber & 147/160 & 6.557 & 59/64 & 59/64 & 160 & 152/160 & 6.703 & 71/74 & 71/74 & 160\\
+Mode split & 147/160 & 5.784 & 59/64 & 59/64 & 160 & 151/160 & 5.924 & 70/74 & 70/74 & 160\\
+Atomic or mode, Huber & 136/160 & 6.466 & 55/64 & 54/64 & 88 & 146/160 & 6.659 & 71/74 & 69/74 & 80\\
+\textbf{Atomic or mode, split} & 143/160 & 6.039 & 56/64 & 56/64 & 94 & 148/160 & 6.254 & 70/74 & 68/74 & 89\\
+\bottomrule
+\end{tabular}
+\end{table*}

@@ -1,0 +1,454 @@
+{
+  "collective_validation": {
+    "parents": 80,
+    "cases": 960,
+    "outputs_recomputed": 4800,
+    "class_counts": {
+      "trigonal": 8,
+      "triclinic": 2,
+      "tetragonal": 15,
+      "monoclinic": 14,
+      "hexagonal": 12,
+      "orthorhombic": 17,
+      "cubic": 12
+    },
+    "scores": {
+      "gaussian/original/atomic": {
+        "n": 160,
+        "correct": 158,
+        "rmsd": 0.00392892337018323
+      },
+      "gaussian/original/mode_huber": {
+        "n": 160,
+        "correct": 155,
+        "rmsd": 0.004069044404887738
+      },
+      "gaussian/original/mode_split": {
+        "n": 160,
+        "correct": 155,
+        "rmsd": 0.004068663569709757
+      },
+      "gaussian/original/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 157,
+        "rmsd": 0.0039974198032148595
+      },
+      "gaussian/original/atom_or_mode_split": {
+        "n": 160,
+        "correct": 157,
+        "rmsd": 0.0039974198032148595
+      },
+      "one_view_error/original/atomic": {
+        "n": 160,
+        "correct": 155,
+        "rmsd": 0.004011429033730497
+      },
+      "one_view_error/original/mode_huber": {
+        "n": 160,
+        "correct": 158,
+        "rmsd": 0.004435969830502198
+      },
+      "one_view_error/original/mode_split": {
+        "n": 160,
+        "correct": 158,
+        "rmsd": 0.00400642186315541
+      },
+      "one_view_error/original/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.004031468119314159
+      },
+      "one_view_error/original/atom_or_mode_split": {
+        "n": 160,
+        "correct": 155,
+        "rmsd": 0.0040500869891616905
+      },
+      "gaussian/localized/atomic": {
+        "n": 160,
+        "correct": 157,
+        "rmsd": 0.007111019881081068
+      },
+      "gaussian/localized/mode_huber": {
+        "n": 160,
+        "correct": 150,
+        "rmsd": 0.009822707259746457
+      },
+      "gaussian/localized/mode_split": {
+        "n": 160,
+        "correct": 153,
+        "rmsd": 0.009800368289701848
+      },
+      "gaussian/localized/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 157,
+        "rmsd": 0.007111019881081068
+      },
+      "gaussian/localized/atom_or_mode_split": {
+        "n": 160,
+        "correct": 157,
+        "rmsd": 0.007111019881081068
+      },
+      "one_view_error/localized/atomic": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.007438482364586963
+      },
+      "one_view_error/localized/mode_huber": {
+        "n": 160,
+        "correct": 149,
+        "rmsd": 0.011911460843144091
+      },
+      "one_view_error/localized/mode_split": {
+        "n": 160,
+        "correct": 151,
+        "rmsd": 0.010312700690713147
+      },
+      "one_view_error/localized/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.007438482364586963
+      },
+      "one_view_error/localized/atom_or_mode_split": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.007438482364586963
+      },
+      "gaussian/collective/atomic": {
+        "n": 160,
+        "correct": 73,
+        "rmsd": 0.008164479132448423
+      },
+      "gaussian/collective/mode_huber": {
+        "n": 160,
+        "correct": 153,
+        "rmsd": 0.00539831336296283
+      },
+      "gaussian/collective/mode_split": {
+        "n": 160,
+        "correct": 153,
+        "rmsd": 0.005421208312785708
+      },
+      "gaussian/collective/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 145,
+        "rmsd": 0.0056996612499736615
+      },
+      "gaussian/collective/atom_or_mode_split": {
+        "n": 160,
+        "correct": 146,
+        "rmsd": 0.0057067530538397835
+      },
+      "one_view_error/collective/atomic": {
+        "n": 160,
+        "correct": 71,
+        "rmsd": 0.00868061706135308
+      },
+      "one_view_error/collective/mode_huber": {
+        "n": 160,
+        "correct": 147,
+        "rmsd": 0.0065566481442725175
+      },
+      "one_view_error/collective/mode_split": {
+        "n": 160,
+        "correct": 147,
+        "rmsd": 0.00578389979576426
+      },
+      "one_view_error/collective/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 136,
+        "rmsd": 0.0064659944190626996
+      },
+      "one_view_error/collective/atom_or_mode_split": {
+        "n": 160,
+        "correct": 143,
+        "rmsd": 0.0060391882133408225
+      }
+    },
+    "comparisons": [
+      {
+        "condition": "gaussian",
+        "other": "atomic",
+        "reduction_percent": 30.10266838506326,
+        "mean_difference": -0.0024577260786086386,
+        "adjusted_ci": [
+          -0.0030450090714591233,
+          -0.0018845698325856734
+        ],
+        "wins": 54,
+        "ties": 26,
+        "losses": 0
+      },
+      {
+        "condition": "one_view_error",
+        "other": "atomic",
+        "reduction_percent": 30.429044725082345,
+        "mean_difference": -0.002641428848012258,
+        "adjusted_ci": [
+          -0.003266237088975678,
+          -0.002036959022279275
+        ],
+        "wins": 54,
+        "ties": 26,
+        "losses": 0
+      },
+      {
+        "condition": "one_view_error",
+        "other": "atom_or_mode_huber",
+        "reduction_percent": 6.600782154460123,
+        "mean_difference": -0.0004268062057218781,
+        "adjusted_ci": [
+          -0.0006302192372967006,
+          -0.00025486627315318244
+        ],
+        "wins": 48,
+        "ties": 25,
+        "losses": 7
+      },
+      {
+        "condition": "gaussian",
+        "other": "atom_or_mode_huber",
+        "reduction_percent": -0.12442500624323304,
+        "mean_difference": 7.091803866122863e-06,
+        "adjusted_ci": [
+          -4.990339699424648e-05,
+          6.550470941393798e-05
+        ],
+        "wins": 4,
+        "ties": 70,
+        "losses": 6
+      }
+    ],
+    "existing_gate": false
+  },
+  "mode_replication": {
+    "parents": 80,
+    "cases": 960,
+    "outputs_recomputed": 4800,
+    "class_counts": {
+      "cubic": 8,
+      "monoclinic": 12,
+      "tetragonal": 15,
+      "orthorhombic": 20,
+      "hexagonal": 12,
+      "triclinic": 4,
+      "trigonal": 9
+    },
+    "scores": {
+      "gaussian/original/atomic": {
+        "n": 160,
+        "correct": 158,
+        "rmsd": 0.004094272401612411
+      },
+      "gaussian/original/mode_huber": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.004166795151111702
+      },
+      "gaussian/original/mode_split": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.0041715047100617745
+      },
+      "gaussian/original/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 158,
+        "rmsd": 0.004113699169650778
+      },
+      "gaussian/original/atom_or_mode_split": {
+        "n": 160,
+        "correct": 158,
+        "rmsd": 0.004116124382582744
+      },
+      "one_view_error/original/atomic": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.004180638810055095
+      },
+      "one_view_error/original/mode_huber": {
+        "n": 160,
+        "correct": 160,
+        "rmsd": 0.004629090701153522
+      },
+      "one_view_error/original/mode_split": {
+        "n": 160,
+        "correct": 160,
+        "rmsd": 0.00409866390653814
+      },
+      "one_view_error/original/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.0042179639949362704
+      },
+      "one_view_error/original/atom_or_mode_split": {
+        "n": 160,
+        "correct": 156,
+        "rmsd": 0.004212684605983367
+      },
+      "gaussian/localized/atomic": {
+        "n": 160,
+        "correct": 160,
+        "rmsd": 0.0071236362353867076
+      },
+      "gaussian/localized/mode_huber": {
+        "n": 160,
+        "correct": 150,
+        "rmsd": 0.009686594304149823
+      },
+      "gaussian/localized/mode_split": {
+        "n": 160,
+        "correct": 150,
+        "rmsd": 0.009716517674167674
+      },
+      "gaussian/localized/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 160,
+        "rmsd": 0.0071236362353867076
+      },
+      "gaussian/localized/atom_or_mode_split": {
+        "n": 160,
+        "correct": 160,
+        "rmsd": 0.0071236362353867076
+      },
+      "one_view_error/localized/atomic": {
+        "n": 160,
+        "correct": 155,
+        "rmsd": 0.007700640975333163
+      },
+      "one_view_error/localized/mode_huber": {
+        "n": 160,
+        "correct": 142,
+        "rmsd": 0.012085427452059098
+      },
+      "one_view_error/localized/mode_split": {
+        "n": 160,
+        "correct": 144,
+        "rmsd": 0.010386115117073966
+      },
+      "one_view_error/localized/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 155,
+        "rmsd": 0.007715405332126221
+      },
+      "one_view_error/localized/atom_or_mode_split": {
+        "n": 160,
+        "correct": 154,
+        "rmsd": 0.0076740438523187045
+      },
+      "gaussian/collective/atomic": {
+        "n": 160,
+        "correct": 89,
+        "rmsd": 0.00834529602698728
+      },
+      "gaussian/collective/mode_huber": {
+        "n": 160,
+        "correct": 149,
+        "rmsd": 0.005863393705942818
+      },
+      "gaussian/collective/mode_split": {
+        "n": 160,
+        "correct": 149,
+        "rmsd": 0.0058704544149787
+      },
+      "gaussian/collective/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 143,
+        "rmsd": 0.005993159924023733
+      },
+      "gaussian/collective/atom_or_mode_split": {
+        "n": 160,
+        "correct": 143,
+        "rmsd": 0.006000220633059617
+      },
+      "one_view_error/collective/atomic": {
+        "n": 160,
+        "correct": 94,
+        "rmsd": 0.008609314489734864
+      },
+      "one_view_error/collective/mode_huber": {
+        "n": 160,
+        "correct": 152,
+        "rmsd": 0.006702849330192171
+      },
+      "one_view_error/collective/mode_split": {
+        "n": 160,
+        "correct": 151,
+        "rmsd": 0.005923699473180946
+      },
+      "one_view_error/collective/atom_or_mode_huber": {
+        "n": 160,
+        "correct": 146,
+        "rmsd": 0.006659427801523676
+      },
+      "one_view_error/collective/atom_or_mode_split": {
+        "n": 160,
+        "correct": 148,
+        "rmsd": 0.006253648337626481
+      }
+    },
+    "comparisons": [
+      {
+        "condition": "gaussian",
+        "other": "atomic",
+        "reduction_percent": 28.1005657120381,
+        "mean_difference": -0.002345075393927666,
+        "adjusted_ci": [
+          -0.0029054273197718426,
+          -0.0017984633122681193
+        ],
+        "wins": 54,
+        "ties": 26,
+        "losses": 0
+      },
+      {
+        "condition": "one_view_error",
+        "other": "atomic",
+        "reduction_percent": 27.36183182664672,
+        "mean_difference": -0.0023556661521083816,
+        "adjusted_ci": [
+          -0.0029705432944828044,
+          -0.001755155513955791
+        ],
+        "wins": 53,
+        "ties": 27,
+        "losses": 0
+      },
+      {
+        "condition": "one_view_error",
+        "other": "atom_or_mode_huber",
+        "reduction_percent": 6.093308253966716,
+        "mean_difference": -0.00040577946389719636,
+        "adjusted_ci": [
+          -0.0006772851160038692,
+          -0.00019621593543507894
+        ],
+        "wins": 46,
+        "ties": 26,
+        "losses": 8
+      },
+      {
+        "condition": "gaussian",
+        "other": "atom_or_mode_huber",
+        "reduction_percent": -0.11781279200608902,
+        "mean_difference": 7.0607090358823625e-06,
+        "adjusted_ci": [
+          -4.719107386388914e-06,
+          2.410961123627327e-05
+        ],
+        "wins": 4,
+        "ties": 72,
+        "losses": 4
+      }
+    ],
+    "existing_gate": false
+  },
+  "verification": {
+    "passes": 2,
+    "recomputed_outputs_per_pass": 9600,
+    "source_files_unchanged": true,
+    "method_implementation_matches_both_frozen_studies": true,
+    "study_hashes": {
+      "collective_validation": "95ac67b36fcd7231c694582e22734b588633e0cb9f84133ec0e52b1e32e6e52c",
+      "mode_replication": "5967acd276c6021bd18b655ce93fa08435e323cfefc66a5eaf08c6a276a282fe"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+\begin{table*}[t]
+\centering
+\caption{\textbf{Collective representations improve recovery on external compositions.} Each disjoint cohort contains 80 materials and 160 collective cases per condition. RMSD is mean per-case coordinate error in m\AA; accuracy is the percentage of correct labels. All pipelines use identical observations and remain frozen across cohorts. Cohort 2 is a secondary replication analysis. Combined split improves collective coordinates in both conditions.}
+\label{tab:collective}
+\small
+\setlength{\tabcolsep}{4pt}
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrrr@{}}
+\toprule
+&\multicolumn{4}{c}{External cohort 1}&\multicolumn{4}{c}{External cohort 2}\\
+\cmidrule(lr){2-5}\cmidrule(l){6-9}
+&\multicolumn{2}{c}{Gaussian}&\multicolumn{2}{c}{Corrupted}&\multicolumn{2}{c}{Gaussian}&\multicolumn{2}{c}{Corrupted}\\
+Method & RMSD & Acc. (\%) & RMSD & Acc. (\%) & RMSD & Acc. (\%) & RMSD & Acc. (\%)\\
+\midrule
+Atomic split & 8.164 & 45.6 & 8.681 & 44.4 & 8.345 & 55.6 & 8.609 & 58.8 \\
+Mode Huber & 5.398 & 95.6 & 6.557 & 91.9 & 5.863 & 93.1 & 6.703 & 95.0 \\
+Mode split & 5.421 & 95.6 & 5.784 & 91.9 & 5.870 & 93.1 & 5.924 & 94.4 \\
+Atomic or mode, Huber & 5.700 & 90.6 & 6.466 & 85.0 & 5.993 & 89.4 & 6.659 & 91.3 \\
+\textbf{Atomic or mode, split} & 5.707 & 91.3 & 6.039 & 89.4 & 6.000 & 89.4 & 6.254 & 92.5 \\
+
+\bottomrule
+\end{tabular*}
+\end{table*}

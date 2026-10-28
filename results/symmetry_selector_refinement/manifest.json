@@ -1,0 +1,26 @@
+{
+  "files": {
+    "experiments/symmetry_selector_refinement/selection_rules.py": "86cd03556a1829864687a96b1583a49610ef39d80d6fee66022b6793e330dc1c",
+    "experiments/symmetry_selector_refinement/study.py": "22db302ff6b3d4bf0b4e5addd4abdc5e04a6b1547181f8604c4b962cc561b9f8",
+    "experiments/symmetry_selector_refinement/test_selectors.py": "65f4ca543f109e6d04cb5d0add31dd5cfd38deeb2d51bf9c93a5f22011791f5a",
+    "experiments/symmetry_selector_refinement/PROTOCOL.md": "529aa166bb71d0a90db0e311266fa893181e483f2245046654a593daabb35777",
+    "results/symmetry_selector_refinement/development_manifest.json": "93d271390bdf746f282804626b82b49c3a426e657eff09ae07163e864d2872f8",
+    "results/symmetry_selector_refinement/development_metrics.json": "8d43cd2314a0ea8f8dd3365303bb9be90a617496449b5fc9b0fd166701f8f89b",
+    "results/symmetry_selector_refinement/development_decisions.json": "dbcf41d8329c5626ff6838c4c185e2dfeb5120a5245516a12a794a75aef42420",
+    "results/symmetry_selector_refinement/selection.json": "403469dce51550cfc791db43eee27adc2f7eeebc5640ca5c256e24a4e1763bce",
+    "results/symmetry_selector_refinement/retrospective_metrics.json": "57ae6be4d52ca9f2091b01f62d834f83369eff541bac0418d60a35f8b5e25165",
+    "results/symmetry_selector_refinement/dataset.json": "96a5ae62650adc049b0eb1583e70a8ea889281965f427ec54d19e05bf4868809",
+    "results/symmetry_selector_refinement/schedule.json": "68a7592fa1f8757a3170cdf081983cff5a2599ccb167cca39e39806a37c9ae7b",
+    "results/symmetry_selector_refinement/selection_attempts.json": "ced37bc91cd4d287ce832afef52ebdcc9dc5c9f93e50247c18b63184788d5d2a"
+  },
+  "parents": 28,
+  "cases": 1568,
+  "seed": 2026102901,
+  "network_disabled": true,
+  "primary": "paired_1se",
+  "strict_overlap_check": {
+    "prior_parents": 84,
+    "new_parents": 28,
+    "matches": 0
+  }
+}

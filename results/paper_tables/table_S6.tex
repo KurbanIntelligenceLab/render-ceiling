@@ -1,0 +1,23 @@
+\begin{table}[t]
+\centering
+\caption{\textbf{Joint support refitting improves atomic coordinate recovery.} The ablation uses the previously evaluated second reserved cohort. RMSD is in $10^{-3}\,\angstrom$; classification endpoints use the original stable-change denominators.}
+\label{tab:refit}
+\small\setlength{\tabcolsep}{3pt}
+\begin{tabular}{@{}lrrr@{}}
+\toprule
+Method & RMSD & Joint & Restored\\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Gaussian}}\\
+Paired one-SE, no refit & 3.486 & 319/420 & 0/420\\
+Paired one-SE, refit & 3.336 & 362/420 & 1/420\\
+Fixed $k=4$, no refit & 3.771 & 372/420 & 3/420\\
+Fixed $k=4$, refit & 3.325 & 371/420 & 3/420\\
+\addlinespace[3pt]
+\multicolumn{4}{@{}l}{\textit{One corrupted observation}}\\
+Paired one-SE, no refit & 5.888 & 167/184 & 0/184\\
+Paired one-SE, refit & 4.349 & 167/184 & 0/184\\
+Fixed $k=4$, no refit & 6.224 & 170/184 & 0/184\\
+Fixed $k=4$, refit & 4.348 & 172/184 & 0/184\\
+\bottomrule
+\end{tabular}
+\end{table}
