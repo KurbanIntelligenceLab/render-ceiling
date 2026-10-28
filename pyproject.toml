@@ -6,12 +6,6 @@ readme = "README.md"
 requires-python = "==3.13.*"
 license = "MIT"
 license-files = ["LICENSE"]
-authors = [
-    { name = "Can Polat" },
-    { name = "Mustafa Kurban", email = "kurbanm@ankara.edu.tr" },
-    { name = "Erchin Serpedin" },
-    { name = "Hasan Kurban", email = "hkurban@hbku.edu.qa" },
-]
 keywords = [
     "vision-language models",
     "crystal structures",
@@ -35,8 +29,6 @@ fetch = ["mp-api==0.46.4"]
 [project.scripts]
 render-ceiling = "render_ceiling.cli:main"
 
-[project.urls]
-Repository = "https://github.com/KurbanIntelligenceLab/render-ceiling"
 
 [dependency-groups]
 dev = ["pytest>=8.0"]
