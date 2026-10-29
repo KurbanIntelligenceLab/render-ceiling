@@ -102,48 +102,8 @@ def analyze():
 
 
 def main():
-    s, scores, audit = analyze()
-    s['scores'] = scores
-    s['verification']['final_scoring_audit'] = audit
-    E.save(s)
-    lines = ['# Expanded reconstruction-to-Sonnet comparison', '', 'This completed extension adds 84 matched cases from all 21 remaining parents in the existing cohort. The original pilot had 28 cases from seven parents; the pooled analysis covers 112 cases from 28 parents. The extension evaluates lattice only, Huber reconstruction, and split one-SE reconstruction. No new exact-coordinate calls were made.', '', '## Model outcomes', '', '| Model / cohort | Cases | Lattice correct | Huber correct | Ours correct |', '| --- | ---: | ---: | ---: | ---: |', '| Gemma 3 4B, original pilot | 28 | 2 | 0 | 1 |']
-    for name, title, n in [('pilot', 'Sonnet, original pilot', 28), ('extension', 'Sonnet, new replication', 84), ('pooled', 'Sonnet, pooled', 112)]:
-        m = scores[name]['sonnet']
-        lines.append(f'| {title} | {n} | {m["lattice"]["all"]["correct"]} | {m["huber"]["all"]["correct"]} | {m["split"]["all"]["correct"]} |')
-    m = scores['extension']['sonnet']
-    lines += ['', f'On the new replication, ours scores {m["split"]["all"]["correct"]}/84 versus {m["huber"]["all"]["correct"]}/84 for Huber and {m["lattice"]["all"]["correct"]}/84 for lattice alone. The observed split-minus-Huber change is {m["contrast"]["difference_pp"]:+.2f} percentage points. On stable class-changing structures, ours scores {m["split"]["stable_changed"]["correct"]}/{m["split"]["stable_changed"]["n"]} versus {m["huber"]["stable_changed"]["correct"]}/{m["huber"]["stable_changed"]["n"]}; original-structure accuracy is {m["split"]["original"]["correct"]}/42 versus {m["huber"]["original"]["correct"]}/42. This separates detection of actual departures from preservation of the original class.']
-    lines += ['', 'Gemma uses one greedy response per input; Sonnet uses three responses per distinct input and the recorded voting rule. Gemma was not rerun on the 84 new cases. Its small absolute score should remain visible alongside the relative comparison.', '', '## Geometric fidelity and numerical readout', '', '| Cohort | Huber RMSD (mÅ) | Ours RMSD (mÅ) | Huber numerical correct | Ours numerical correct |', '| --- | ---: | ---: | ---: | ---: |']
-    for name in ['pilot', 'extension', 'pooled']:
-        m = scores[name]
-        lines.append(f'| {name} | {m["coordinate_rmsd_mA"]["huber"]:.3f} | {m["coordinate_rmsd_mA"]["split"]:.3f} | {m["numerical"]["huber"]["all"]["correct"]} | {m["numerical"]["split"]["all"]["correct"]} |')
-    lines += ['', 'The numerical detector uses the same 0.02 Å positional tolerance and 5° angle tolerance on both methods’ actual serialized coordinates. This measures recoverable symmetry information, separately from model interpretation. The original pilot Huber adaptive readout was 22/28; its common-tolerance result is 16/28. Those are different readout protocols.', '', '| Original method-specific readouts, archived benchmark targets | Huber | Ours |', '| --- | ---: | ---: |']
-    for name in ['pilot', 'extension', 'pooled']:
-        values = scores[name]['original_algorithm_readout']
-        lines.append(f'| {name} | {values["huber"]} | {values["split"]} |')
-    maximum = scores['extension']['mean_max_atomic_error_mA']
-    lines += ['', f'The extension mean of the per-case maximum atomic error is {maximum["huber"]:.3f} mÅ for Huber and {maximum["split"]:.3f} mÅ for ours, recomputed with species-matched periodic assignments.', '', '## Paired comparisons', '', '| Cohort / readout | Ours minus Huber (percentage points) | Parent-bootstrap 95% interval | Corrections | Regressions |', '| --- | ---: | --- | ---: | ---: |']
-    for name in ['pilot', 'extension', 'pooled']:
-        for readout in ['sonnet', 'numerical']:
-            d = scores[name][readout]['contrast']; lo, hi = d['parent_bootstrap_95']
-            lines.append(f'| {name} / {readout} | {d["difference_pp"]:+.2f} | [{lo:+.2f}, {hi:+.2f}] | {d["corrected"]} | {d["regressed"]} |')
-    lines += ['', 'Intervals resample parents, preserving each parent’s four dependent cases. The original pilot is exploratory; the new Sonnet split-minus-Huber comparison was fixed before its inference. The common-detector extension was motivated by the pilot failure audit. These intervals are descriptive, and no equivalence margin was prespecified.', '', '## Conditions and paired structure changes', '', '| Cohort / input | Gaussian | Corrupted view | Original | Stable changed | Both original and changed correct | False restoration |', '| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
-    for name in ['extension', 'pooled']:
-        for arm in ['lattice', 'huber', 'split']:
-            m = scores[name]['sonnet'][arm]
-            entries = [m['conditions']['gaussian'], m['conditions']['one_view_error'], m['original'], m['stable_changed'], m['joint']]
-            values = [f'{x["correct"]}/{x["n"]}' for x in entries]
-            values.append(f'{m["false_restoration"]["count"]}/{m["false_restoration"]["n"]}')
-            lines.append(f'| {name} / {arm} | '+' | '.join(values)+' |')
-    lines += ['', '## Input and target audit', '', 'All remaining parents were included, with three per original crystal system. Selection was not based on observed reconstruction or model advantages. Conditions match the pilot: original and large-displacement structures, Gaussian and one-view corruption at 0.01 Å, frozen cameras, and noise repetition zero. Inputs contain lattice and, for reconstruction arms, atomic numbers and eight-decimal fractional coordinates. They omit method names, targets, material identifiers, and numerical readout labels.', '', 'Before any extension inference, the audit found two large-variant cases from mp-865981 whose archived benchmark target is triclinic but whose reference geometry is monoclinic at the prompt’s 0.02 Å tolerance. Both cases were retained, scored against the stated prompt tolerance, and preserved with their original benchmark labels. The archived-target sensitivity follows:', '', '| Target convention, extension | Huber Sonnet | Ours Sonnet | Huber numerical | Ours numerical |', '| --- | ---: | ---: | ---: | ---: |']
-    for name, m in [('Prompt-matched reference', scores['extension']), ('Archived benchmark', scores['archived_target_sensitivity'])]:
-        lines.append(f'| {name} | {m["sonnet"]["huber"]["all"]["correct"]} | {m["sonnet"]["split"]["all"]["correct"]} | {m["numerical"]["huber"]["all"]["correct"]} | {m["numerical"]["split"]["all"]["correct"]} |')
-    lines += ['', 'The lattice arm was requested while the reconstruction run was underway and added for every parent. Its 21 distinct inputs share votes across each parent’s four cases. The protocol amendment and prior protocol hash are retained. No exact-reference calls were added; the original pilot’s 22/28 Sonnet exact-coordinate control remains available in its record. This is a text-geometry handoff study, not an image-plus-reconstruction intervention.', '', '## Inference, cost, and reproducibility', '', f'The extension contains {audit["extension_responses"]} responses: 471 for reconstruction inputs and 63 for lattice-only inputs. There are {audit["invalid_responses"]} invalid responses, including {audit["truncated_responses"]} truncations, and {audit["tied_inputs"]} tied input votes. Invalid responses are retained; valid labels vote, ties use first occurrence, and all-invalid inputs count incorrect. Every extension request has a 16,384-token output cap with native default inference settings. There are no correctness retries.', '', f'Extension token cost is **${audit["extension_cost_usd"]:.4f}**; total cost including the earlier pilot is **${audit["total_cost_including_pilot_usd"]:.4f}**, under the original $35 cap. The extension records {audit["cache_hit_calls"]} cache-hit calls. Charges are independently recomputed from provider-reported usage using [Anthropic’s pricing](https://platform.claude.com/docs/en/about-claude/pricing). Full possible charges were reserved before dispatch, including concurrent and unknown charges. Parent blocks were admitted by budget, never accuracy.', '', '| Input | Correct cases in repeats 1, 2, 3 / 84 |', '| --- | --- |']
-    for arm, values in audit['per_repeat_correct'].items():
-        lines.append(f'| {arm} | '+', '.join(map(str, values))+' |')
-    lines += ['', 'An operational cache check paused after 378 responses because one parent’s prompts had 513–515 total input tokens but no cache writes. Inspection of 285 cached calls showed four tokens outside the cached prefix, implying only 509–511 cacheable tokens on that parent, below the 512-token minimum. All completed calls were retained, and the remaining parents resumed with unchanged inputs, settings, scoring, and spending limits. This audit made no extra generation calls.']
-    lines += ['', 'The [single complete study record](study.json) contains input prompts, case mappings, both target conventions, all raw responses, protocol history, token accounting, numerical readouts, scores, and verification. Geometry checks and mocked spending safeguards passed twice before spending. Final analysis reparses raw answers, verifies votes using two implementations, recomputes charges and numerical labels, and checks original versus extension parent separation. This report is separate from the manuscript pending interpretation of the completed evidence.', '']
-    E.OUT.with_name('report.md').write_text('\n'.join(lines))
-    print(json.dumps({'audit': audit, 'scores': scores}, indent=2))
+    _, scores, _ = analyze()
+    print(json.dumps(scores, indent=2))
 
 
 if __name__ == '__main__':

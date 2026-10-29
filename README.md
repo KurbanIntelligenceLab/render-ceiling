@@ -23,7 +23,7 @@ The included example contains five ideal projections of a four-atom silicon cell
 Saved inputs, raw responses, protocol settings, and numerical results are in [results/](results/README.md). Descriptive records include:
 
 - [Paired image/exact-geometry outcomes](results/geometry_substitution/paired_geometry_outcomes.json) for 17 VLMs, with [complete frontier-model responses](results/geometry_substitution/).
-- [Reconstructed-coordinate accuracy](results/coordinate_handoff/coordinate_handoff_accuracy.json) and [analysis](results/coordinate_handoff/report.md) for the 112-case Sonnet, Gemma, and Qwen comparisons.
+- [Reconstructed-coordinate accuracy](results/coordinate_handoff/coordinate_handoff_accuracy.json) for the 112-case Sonnet, Gemma, and Qwen comparisons.
 - [Atomic reconstruction metrics](results/symmetry_selector_refinement/metrics.json), [per-case outputs](results/symmetry_selector_refinement/heldout.jsonl), and [external collective evaluations](results/collective_validation/study.json).
 
 The [reproducibility guide](REPRODUCIBILITY.md) documents the Python API and numerical implementations. The [model-evaluation protocol](protocols/model_evaluations.md) documents the saved model runs and offline scoring.

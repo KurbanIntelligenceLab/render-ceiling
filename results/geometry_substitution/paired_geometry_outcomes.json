@@ -345,7 +345,6 @@
     }
   ],
   "input_sha256": {
-    "results/paper_figures/figure_3/paired_outcomes.json": "cddad94150406a10501df74e42e75b269c7830eab78048becd88428751919a53",
     "release/predictions/coords_as_text__google__gemini-3_6-flash__K3.json": "ee45455154a039d1009f30478b3c3c6bd45cb1dec06ce4793dc45b30d6838f14",
     "release/predictions/frontier__google__gemini-3_6-flash__K3.json": "7fc5444513594de3ad40ff525cdf0f1db89e51a2ade2cf6e547d8a4a5dfc93df",
     "release/predictions/coords_as_text__x-ai__grok-4_5__K3.json": "77eb10e5d7fd8cb11dce4bcd36247714175e528bc71ae331af66538aabc07a99",
