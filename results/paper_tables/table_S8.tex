@@ -1,0 +1,39 @@
+\begin{table}[!t]
+\centering
+\caption{\textbf{Atomic and collective representations offer complementary recovery.} Mean coordinate RMSD in m\AA\ (lower is better). Each cohort has 80 materials and 160 cases per structure type and condition. All methods receive identical observations. Atomic-or-mode selects its representation by withheld-view prediction. Huber rows are refitting controls; cohort 2 is secondary. Bold identifies adaptive split.}
+\label{tab:collective}
+\footnotesize\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.05}
+\begin{tabular*}{\columnwidth}{@{\extracolsep{\fill}}lrrr@{}}
+\toprule
+Configuration & Original & Localized & Collective \\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Cohort 1; Gaussian noise}}\\
+Atomic split & 3.929 & 7.111 & 8.164\\
+Mode split & 4.069 & 9.800 & 5.421\\
+\textbf{Atomic-or-mode split} & 3.997 & 7.111 & 5.707\\
+Mode Huber & 4.069 & 9.823 & 5.398\\
+Atomic-or-mode Huber & 3.997 & 7.111 & 5.700\\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Cohort 1; corrupted view}}\\
+Atomic split & 4.011 & 7.438 & 8.681\\
+Mode split & 4.006 & 10.313 & 5.784\\
+\textbf{Atomic-or-mode split} & 4.050 & 7.438 & 6.039\\
+Mode Huber & 4.436 & 11.911 & 6.557\\
+Atomic-or-mode Huber & 4.031 & 7.438 & 6.466\\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Cohort 2 (secondary); Gaussian noise}}\\
+Atomic split & 4.094 & 7.124 & 8.345\\
+Mode split & 4.172 & 9.717 & 5.870\\
+\textbf{Atomic-or-mode split} & 4.116 & 7.124 & 6.000\\
+Mode Huber & 4.167 & 9.687 & 5.863\\
+Atomic-or-mode Huber & 4.114 & 7.124 & 5.993\\
+\midrule
+\multicolumn{4}{@{}l}{\textit{Cohort 2 (secondary); corrupted view}}\\
+Atomic split & 4.181 & 7.701 & 8.609\\
+Mode split & 4.099 & 10.386 & 5.924\\
+\textbf{Atomic-or-mode split} & 4.213 & 7.674 & 6.254\\
+Mode Huber & 4.629 & 12.085 & 6.703\\
+Atomic-or-mode Huber & 4.218 & 7.715 & 6.659\\
+\bottomrule
+\end{tabular*}
+\end{table}

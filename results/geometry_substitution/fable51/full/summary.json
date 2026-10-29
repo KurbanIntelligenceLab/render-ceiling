@@ -1,0 +1,5345 @@
+{
+  "model": "claude-fable-5-1",
+  "n": 210,
+  "K": 3,
+  "run_sha256": "06afdba06a5f1e56746600e96946e5ae1f9379f88a78933bdf468bddfdbd1eea",
+  "image_correct": 157,
+  "image_accuracy_percent": 74.76190476190476,
+  "text_correct": 191,
+  "text_accuracy_percent": 90.95238095238095,
+  "both_correct": 147,
+  "corrected": 44,
+  "newly_wrong": 10,
+  "both_wrong": 9,
+  "net_gain_percentage_points": 16.19047619047619,
+  "closed_deficit_percent": 64.15094339622641,
+  "calls": 1260,
+  "new_calls": 1218,
+  "pilot_reused": 42,
+  "usage": {
+    "input_tokens": 542138,
+    "output_tokens": 1881127,
+    "cache_read_input_tokens": 1480172,
+    "cache_creation_input_tokens": 914736
+  },
+  "estimated_cost_usd": 111.28197300000001,
+  "additional_cost_usd": 108.07829500000001,
+  "api_errors": 0,
+  "truncations": 0,
+  "unparseable_responses": 12,
+  "tie_rule": "Archived rule: first encountered among equally frequent valid labels, ordered by repeat index",
+  "ties": {
+    "image": 5,
+    "text": 2
+  },
+  "invalid_votes": {
+    "image": 0,
+    "text": 12
+  },
+  "no_valid_vote_cases": {
+    "image": 0,
+    "text": 4
+  },
+  "protocol_deviations": [
+    "Native Anthropic API instead of archived OpenRouter route",
+    "Temperature omitted to use provider defaults; legacy temperature was 0.7",
+    "4096 output-token cap including default adaptive thinking; truncated responses retained and flagged",
+    "One truncated pilot response replaced at 16384 tokens; original retained and cost included",
+    "One replacement at 16384 tokens only for truncated responses; original attempts and their costs retained",
+    "On authorized continuation, an answer still truncated at 16384 may receive one final replacement at 32768; no completed answers rerun."
+  ],
+  "per_class": {
+    "triclinic": {
+      "n": 30,
+      "image": 17,
+      "text": 26
+    },
+    "monoclinic": {
+      "n": 30,
+      "image": 22,
+      "text": 24
+    },
+    "orthorhombic": {
+      "n": 30,
+      "image": 28,
+      "text": 26
+    },
+    "tetragonal": {
+      "n": 30,
+      "image": 24,
+      "text": 30
+    },
+    "trigonal": {
+      "n": 30,
+      "image": 21,
+      "text": 29
+    },
+    "hexagonal": {
+      "n": 30,
+      "image": 15,
+      "text": 26
+    },
+    "cubic": {
+      "n": 30,
+      "image": 30,
+      "text": 30
+    }
+  },
+  "cases": [
+    {
+      "material_id": "mp-1235466",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-2215870",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1246840",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "triclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1273441",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1215015",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1246507",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1048072",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1391233",
+      "truth": "triclinic",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 1,
+          "monoclinic": 1,
+          "triclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": true,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "triclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-2225355",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1345578",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 2,
+          "tetragonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1046784",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "triclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-2231502",
+      "truth": "triclinic",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 1,
+          "triclinic": 1,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": true,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-673678",
+      "truth": "triclinic",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1046464",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-733975",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1046939",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 2,
+          "cubic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1275776",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "trigonal": 1,
+          "triclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1046323",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "triclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1206411",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "triclinic": 1,
+          "monoclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1247817",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-2228346",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "triclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-2217558",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1235944",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "orthorhombic": 1,
+          "monoclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1046128",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1046536",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1245986",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1046312",
+      "truth": "triclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1046501",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 2,
+          "tetragonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-756745",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1102961",
+      "truth": "triclinic",
+      "image": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1237061",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1232849",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1104453",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "monoclinic": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1214786",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-6215",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228753",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-14561",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "tetragonal": 1,
+          "monoclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228427",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214797",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 1,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": true,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-3751",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "triclinic": 1,
+          "monoclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214784",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "monoclinic": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1188260",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228721",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228728",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-754198",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1079632",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1078874",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214987",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1102943",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-997001",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": null,
+        "votes": {},
+        "valid_votes": 0,
+        "failures": [
+          {
+            "repeat": 0,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 1,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 2,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          }
+        ],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1228801",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228416",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-567929",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1246198",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1105940",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "triclinic",
+        "votes": {
+          "triclinic": 1,
+          "monoclinic": 1,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": true,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1104047",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "triclinic": 1,
+          "monoclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214794",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "orthorhombic": 1,
+          "monoclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1104804",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1232615",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "triclinic": 1,
+          "monoclinic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-752827",
+      "truth": "monoclinic",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1105758",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1539038",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1178550",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1079890",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1258701",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-10910",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-560067",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-16529",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1096576",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1096644",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1093553",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1245824",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 1,
+          "hexagonal": 1,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": true,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1093903",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1097386",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1097410",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1093720",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-29674",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183276",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "orthorhombic": 1,
+          "tetragonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1095763",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1097597",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1097296",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1096466",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1095930",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1182863",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": null,
+        "votes": {},
+        "valid_votes": 0,
+        "failures": [
+          {
+            "repeat": 0,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 1,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 2,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          }
+        ],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1096308",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1097427",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-504676",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 2,
+          "monoclinic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1248716",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1096345",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1093958",
+      "truth": "orthorhombic",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-33615",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1182875",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228935",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "tetragonal": 1,
+          "orthorhombic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 2,
+          "cubic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-22412",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214759",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-867347",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1068010",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-5606",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183257",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228890",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 2,
+          "tetragonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1069712",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-7909",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-557233",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1246276",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-7906",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-10909",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-570256",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-7910",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-7188",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214765",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-4109",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214823",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214750",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228817",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1189716",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-29816",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228926",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228809",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-3038",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-38417",
+      "truth": "tetragonal",
+      "image": {
+        "pred": "orthorhombic",
+        "votes": {
+          "orthorhombic": 1,
+          "cubic": 1,
+          "tetragonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": true,
+        "correct": false
+      },
+      "text": {
+        "pred": "tetragonal",
+        "votes": {
+          "tetragonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-8279",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214834",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228698",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-13369",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228150",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-643047",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1245583",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-18733",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228354",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228085",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1095623",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228866",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-12832",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214580",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1246182",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228699",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228074",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228925",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-554669",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1070275",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228180",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-2226142",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228995",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228197",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-8150",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228643",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-2228574",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-8281",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1228461",
+      "truth": "trigonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1214828",
+      "truth": "trigonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-19213",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183380",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-985290",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183261",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1228634",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-17535",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-2294",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1029626",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183229",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183051",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-13854",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-754157",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-9324",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-2217621",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183238",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183252",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183049",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-862289",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": null,
+        "votes": {},
+        "valid_votes": 0,
+        "failures": [
+          {
+            "repeat": 0,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 1,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 2,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          }
+        ],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1245965",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183563",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "hexagonal": 1,
+          "trigonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183263",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1026813",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-4887",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-11772",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183188",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": null,
+        "votes": {},
+        "valid_votes": 0,
+        "failures": [
+          {
+            "repeat": 0,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 1,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          },
+          {
+            "repeat": 2,
+            "stop_reason": "refusal",
+            "parse_failed": true,
+            "api_error": false
+          }
+        ],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1183231",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "hexagonal",
+        "votes": {
+          "trigonal": 1,
+          "hexagonal": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-997617",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-11816",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1188147",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 2,
+          "hexagonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      }
+    },
+    {
+      "material_id": "mp-1246088",
+      "truth": "hexagonal",
+      "image": {
+        "pred": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": false
+      },
+      "text": {
+        "pred": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-862873",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-867321",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183192",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183136",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "trigonal": 1,
+          "cubic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1182878",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183140",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183135",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-867775",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "orthorhombic": 1,
+          "cubic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-862695",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-756317",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-864644",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "orthorhombic": 1,
+          "cubic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-985443",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183199",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "tetragonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-865989",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183190",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183071",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-631567",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-866031",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1885",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183133",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "tetragonal": 1,
+          "cubic": 2
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183067",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-866203",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183118",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183160",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 1,
+          "tetragonal": 1,
+          "orthorhombic": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": true,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183060",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-867338",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-867125",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183121",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-1183110",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    },
+    {
+      "material_id": "mp-866225",
+      "truth": "cubic",
+      "image": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      },
+      "text": {
+        "pred": "cubic",
+        "votes": {
+          "cubic": 2,
+          "trigonal": 1
+        },
+        "valid_votes": 3,
+        "failures": [],
+        "tie": false,
+        "correct": true
+      }
+    }
+  ],
+  "manuscript_modified": false,
+  "generation_attempts_with_responses": 1414,
+  "refusals": 12,
+  "unknown_charge_reserve_usd": 21.314682499999993,
+  "cache_migration": null,
+  "truncation_repair": {
+    "rule": "Truncation-only replacement at 16384, then at most one at 32768; preserve all attempts",
+    "initial_truncations": 3,
+    "fallback_max_tokens": 16384,
+    "attempted": 3,
+    "status": "completed"
+  },
+  "cache_hits": 413,
+  "net_cache_savings_usd": 12.144837,
+  "all_three_valid_cases": {
+    "image": 210,
+    "text": 206
+  }
+}

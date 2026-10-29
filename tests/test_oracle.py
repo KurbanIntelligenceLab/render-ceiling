@@ -15,7 +15,6 @@ from render_ceiling.render import VIEW_ORDER, VIEWS, conventional_cell
 
 @pytest.fixture
 def cubic() -> Structure:
-    """Rock-salt NaCl: cubic, Fm-3m (225), unambiguous under any tolerance."""
 
     return Structure.from_spacegroup(
         "Fm-3m",
@@ -27,7 +26,6 @@ def cubic() -> Structure:
 
 @pytest.fixture
 def tetragonal() -> Structure:
-    """Rutile TiO2: tetragonal, P4_2/mnm (136). Distinguishes c from a and b."""
 
     return Structure.from_spacegroup(
         "P4_2/mnm",
@@ -38,14 +36,12 @@ def tetragonal() -> Structure:
 
 
 def test_view_set_is_frozen():
-    """The camera set is a frozen constant of the protocol, not a parameter."""
 
     assert VIEW_ORDER == ["axis_a", "axis_b", "axis_c", "body_diagonal", "oblique2"]
     assert set(VIEWS) == set(VIEW_ORDER)
 
 
 def test_projection_matrices_are_rotations():
-    """Each camera is a rotation: orthonormal, determinant +1, so it loses no scale."""
 
     for matrix in projection_matrices(VIEW_ORDER):
         assert matrix.shape == (3, 3)
@@ -54,7 +50,6 @@ def test_projection_matrices_are_rotations():
 
 
 def test_projection_discards_only_depth():
-    """Projection keeps the two screen axes; the third column is depth."""
 
     matrix = projection_matrices(["axis_a"])[0]
     cart = np.array([[1.0, 2.0, 3.0], [-4.0, 0.5, 0.0]])
@@ -81,7 +76,6 @@ def test_oracle_round_trips_under_perfect_extraction(structure_name, request):
 
 
 def test_two_views_is_the_minimum(cubic):
-    """Triangulation needs at least two rays; one view cannot place an atom."""
 
     conv = conventional_cell(cubic)
     recon = reconstruct_positions(conv, VIEW_ORDER[:2], centroid_noise=0.0)
@@ -89,7 +83,6 @@ def test_two_views_is_the_minimum(cubic):
 
 
 def test_reconstruction_is_deterministic(cubic):
-    """No stage draws a random number at zero noise, so two runs agree exactly."""
 
     conv = conventional_cell(cubic)
     first = reconstruct_positions(conv, VIEW_ORDER, centroid_noise=0.0)

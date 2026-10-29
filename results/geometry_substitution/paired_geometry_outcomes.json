@@ -1,0 +1,417 @@
+{
+  "rows": [
+    {
+      "model": "claude-fable-5-1",
+      "name": "Claude Fable 5.1",
+      "k3": 191,
+      "k4": 157,
+      "n": 210,
+      "g": 44,
+      "l": 10,
+      "counts": [
+        147,
+        44,
+        10,
+        9
+      ],
+      "share": 0.6415094339622641,
+      "image_pct": 74.76190476190476,
+      "text_pct": 90.95238095238095,
+      "closed_pct": 64.15094339622641,
+      "group": "Frontier",
+      "source": "results/geometry_substitution/fable51/full/summary.json"
+    },
+    {
+      "model": "claude-sonnet-5-5",
+      "name": "Claude Sonnet 5.5",
+      "k3": 193,
+      "k4": 152,
+      "n": 210,
+      "g": 54,
+      "l": 13,
+      "counts": [
+        139,
+        54,
+        13,
+        4
+      ],
+      "share": 0.7068965517241379,
+      "image_pct": 72.38095238095238,
+      "text_pct": 91.9047619047619,
+      "closed_pct": 70.6896551724138,
+      "group": "Frontier",
+      "source": "results/geometry_substitution/sonnet55/full/summary.json"
+    },
+    {
+      "model": "claude-opus-5-5",
+      "name": "Claude Opus 5.5",
+      "k3": 166,
+      "k4": 145,
+      "n": 210,
+      "g": 45,
+      "l": 24,
+      "counts": [
+        121,
+        45,
+        24,
+        20
+      ],
+      "share": 0.32307692307692304,
+      "image_pct": 69.04761904761905,
+      "text_pct": 79.04761904761905,
+      "closed_pct": 32.30769230769231,
+      "group": "Frontier",
+      "source": "results/geometry_substitution/opus55/full/summary.json"
+    },
+    {
+      "model": "google/gemini-3.6-flash",
+      "k3": 179,
+      "k4": 154,
+      "n": 210,
+      "g": 45,
+      "l": 20,
+      "p": 0.0026263768106840383,
+      "share": 0.44642857142857145,
+      "name": "Gemini 3.6 Flash",
+      "counts": [
+        134,
+        45,
+        20,
+        11
+      ],
+      "image_pct": 73.33333333333333,
+      "text_pct": 85.23809523809524,
+      "closed_pct": 44.642857142857146
+    },
+    {
+      "model": "x-ai/grok-4.5",
+      "k3": 179,
+      "k4": 129,
+      "n": 210,
+      "g": 69,
+      "l": 19,
+      "p": 7.836624631346799e-08,
+      "share": 0.6172839506172839,
+      "name": "Grok 4.5",
+      "counts": [
+        110,
+        69,
+        19,
+        12
+      ],
+      "image_pct": 61.42857142857143,
+      "text_pct": 85.23809523809524,
+      "closed_pct": 61.72839506172839
+    },
+    {
+      "model": "anthropic/claude-opus-4.8",
+      "k3": 140,
+      "k4": 122,
+      "n": 210,
+      "g": 62,
+      "l": 44,
+      "p": 0.09824250442243802,
+      "share": 0.20454545454545456,
+      "name": "Claude Opus 4.8",
+      "counts": [
+        78,
+        62,
+        44,
+        26
+      ],
+      "image_pct": 58.095238095238095,
+      "text_pct": 66.66666666666667,
+      "closed_pct": 20.454545454545457
+    },
+    {
+      "model": "meta-llama/llama-4-maverick",
+      "k3": 104,
+      "k4": 93,
+      "n": 210,
+      "g": 63,
+      "l": 52,
+      "p": 0.3511253697554317,
+      "share": 0.09401709401709402,
+      "name": "Llama 4 Maverick",
+      "counts": [
+        41,
+        63,
+        52,
+        54
+      ],
+      "image_pct": 44.285714285714285,
+      "text_pct": 49.523809523809526,
+      "closed_pct": 9.401709401709402
+    },
+    {
+      "model": "z-ai/glm-4.6v",
+      "k3": 94,
+      "k4": 93,
+      "n": 210,
+      "g": 63,
+      "l": 62,
+      "p": 1.0,
+      "share": 0.008547008547008548,
+      "name": "GLM-4.6V",
+      "counts": [
+        31,
+        63,
+        62,
+        54
+      ],
+      "image_pct": 44.285714285714285,
+      "text_pct": 44.76190476190476,
+      "closed_pct": 0.8547008547008548
+    },
+    {
+      "model": "qwen/qwen3-vl-8b-instruct",
+      "k3": 95,
+      "k4": 79,
+      "n": 210,
+      "g": 71,
+      "l": 55,
+      "p": 0.18122406088142373,
+      "share": 0.12213740458015267,
+      "name": "Qwen3-VL 8B",
+      "counts": [
+        24,
+        71,
+        55,
+        60
+      ],
+      "image_pct": 37.61904761904762,
+      "text_pct": 45.23809523809524,
+      "closed_pct": 12.213740458015266
+    },
+    {
+      "model": "openai/gpt-4.1-mini",
+      "k3": 87,
+      "k4": 77,
+      "n": 210,
+      "g": 60,
+      "l": 50,
+      "p": 0.39092745669950485,
+      "share": 0.07518796992481203,
+      "name": "GPT-4.1 mini",
+      "counts": [
+        27,
+        60,
+        50,
+        73
+      ],
+      "image_pct": 36.666666666666664,
+      "text_pct": 41.42857142857143,
+      "closed_pct": 7.518796992481203
+    },
+    {
+      "model": "qwen/qwen3-vl-235b-a22b-instruct",
+      "k3": 114,
+      "k4": 70,
+      "n": 210,
+      "g": 73,
+      "l": 29,
+      "p": 1.5502681985416567e-05,
+      "share": 0.3142857142857143,
+      "name": "Qwen3-VL 235B",
+      "counts": [
+        41,
+        73,
+        29,
+        67
+      ],
+      "image_pct": 33.333333333333336,
+      "text_pct": 54.285714285714285,
+      "closed_pct": 31.428571428571427
+    },
+    {
+      "model": "bytedance-seed/seed-1.6",
+      "k3": 89,
+      "k4": 54,
+      "n": 210,
+      "g": 76,
+      "l": 41,
+      "p": 0.0015572017627745892,
+      "share": 0.22435897435897437,
+      "name": "Seed 1.6",
+      "counts": [
+        13,
+        76,
+        41,
+        80
+      ],
+      "image_pct": 25.714285714285715,
+      "text_pct": 42.38095238095238,
+      "closed_pct": 22.435897435897438
+    },
+    {
+      "model": "mistralai/mistral-medium-3.1",
+      "k3": 95,
+      "k4": 48,
+      "n": 210,
+      "g": 72,
+      "l": 25,
+      "p": 1.9187392502875323e-06,
+      "share": 0.29012345679012347,
+      "name": "Mistral Medium 3.1",
+      "counts": [
+        23,
+        72,
+        25,
+        90
+      ],
+      "image_pct": 22.857142857142858,
+      "text_pct": 45.23809523809524,
+      "closed_pct": 29.01234567901235
+    },
+    {
+      "model": "qwen/qwen3-vl-32b-instruct",
+      "k3": 95,
+      "k4": 48,
+      "n": 210,
+      "g": 66,
+      "l": 19,
+      "p": 3.040683333139466e-07,
+      "share": 0.29012345679012347,
+      "name": "Qwen3-VL 32B",
+      "counts": [
+        29,
+        66,
+        19,
+        96
+      ],
+      "image_pct": 22.857142857142858,
+      "text_pct": 45.23809523809524,
+      "closed_pct": 29.01234567901235
+    },
+    {
+      "model": "meta-llama/llama-4-scout",
+      "k3": 106,
+      "k4": 43,
+      "n": 210,
+      "g": 89,
+      "l": 26,
+      "p": 2.952378329881734e-09,
+      "share": 0.3772455089820359,
+      "name": "Llama 4 Scout",
+      "counts": [
+        17,
+        89,
+        26,
+        78
+      ],
+      "image_pct": 20.476190476190474,
+      "text_pct": 50.476190476190474,
+      "closed_pct": 37.72455089820359
+    },
+    {
+      "model": "amazon/nova-pro-v1",
+      "k3": 98,
+      "k4": 38,
+      "n": 210,
+      "g": 73,
+      "l": 13,
+      "p": 2.718821367078067e-11,
+      "share": 0.3488372093023256,
+      "name": "Nova Pro",
+      "counts": [
+        25,
+        73,
+        13,
+        99
+      ],
+      "image_pct": 18.095238095238095,
+      "text_pct": 46.666666666666664,
+      "closed_pct": 34.883720930232556
+    },
+    {
+      "model": "mistralai/mistral-small-2603",
+      "k3": 95,
+      "k4": 31,
+      "n": 210,
+      "g": 84,
+      "l": 20,
+      "p": 1.638050151166579e-10,
+      "share": 0.3575418994413408,
+      "name": "Mistral Small 2603",
+      "counts": [
+        11,
+        84,
+        20,
+        95
+      ],
+      "image_pct": 14.761904761904763,
+      "text_pct": 45.23809523809524,
+      "closed_pct": 35.754189944134076
+    }
+  ],
+  "input_sha256": {
+    "release/predictions/coords_as_text__google__gemini-3_6-flash__K3.json": "ee45455154a039d1009f30478b3c3c6bd45cb1dec06ce4793dc45b30d6838f14",
+    "release/predictions/frontier__google__gemini-3_6-flash__K3.json": "7fc5444513594de3ad40ff525cdf0f1db89e51a2ade2cf6e547d8a4a5dfc93df",
+    "release/predictions/coords_as_text__x-ai__grok-4_5__K3.json": "77eb10e5d7fd8cb11dce4bcd36247714175e528bc71ae331af66538aabc07a99",
+    "release/predictions/frontier__x-ai__grok-4_5__K3.json": "37418b583385fd8657913bf809ba0b721f283cda7f13945b687f94618d5e3349",
+    "release/predictions/coords_as_text__anthropic__claude-opus-4_8__K3.json": "9123a07dd1a7e002fa1b8da79ed26d36063c83d7917cb9d755ca3f75e57bb6e4",
+    "release/predictions/frontier__anthropic__claude-opus-4_8__K3.json": "408b591fab343e96d6d5ac1aab53df6489af0e6c3f930ec39a2c7a5d91f99c08",
+    "release/predictions/coords_as_text__meta-llama__llama-4-maverick__K3.json": "0bcf1ed1135556a725ac8cd3a7abd47dad3a50c633b3884406699d8d072e8301",
+    "release/predictions/zeroshot__meta-llama__llama-4-maverick__K3.json": "1cca20b6d955b9256e407972c70ceaece7404b28979c0dc286e2d69fb23adc58",
+    "release/predictions/coords_as_text__z-ai__glm-4_6v__K3.json": "c3369cddfbfa1cb5120d30533ee47fb064b22425e5429eeac19483d535354168",
+    "release/predictions/zeroshot__z-ai__glm-4_6v__K3.json": "acec1917e7fb20fabc460c209d741e4ea1fcf1262666b68b14746029ec20dfa7",
+    "release/predictions/coords_as_text__qwen__qwen3-vl-8b-instruct__K3.json": "895817df0d01a79a962e0f4fae4b9519ab462c2148467f6d21a78dafa35582e6",
+    "release/predictions/zeroshot__qwen__qwen3-vl-8b-instruct__K3.json": "2a044d87005e551c0bf42c42e716e62e2c70800f427b7da52dd840fd73ad5581",
+    "release/predictions/coords_as_text__openai__gpt-4_1-mini__K3.json": "6c114678fb583482588b039d555b61ec9f223253bc0c80075f78ac75000ab234",
+    "release/predictions/zeroshot__openai__gpt-4_1-mini__K3.json": "49db3140ba99513e7e99861fce3b27792309cb3e607fb83c17ba6d0f9dee11e4",
+    "release/predictions/coords_as_text__qwen__qwen3-vl-235b-a22b-instruct__K3.json": "ecf4c968c0ed2c90fc63ee4fa54104065d053a0f90d513a60913b060ae3e24fa",
+    "release/predictions/zeroshot__qwen__qwen3-vl-235b-a22b-instruct__K3.json": "a1cdf955ae51199070338d4d9a1569776646560c381071f25a0c2e6016ebc6b8",
+    "release/predictions/coords_as_text__bytedance-seed__seed-1_6__K3.json": "7c96cf5c92857c8d494e4a33a6e9589adab42f35dd501e93d942a8de51683263",
+    "release/predictions/zeroshot__bytedance-seed__seed-1_6__K3.json": "5e2436b7774c5e73df4898eebd5c253ded6d91b6927420dde97147858a145a7a",
+    "release/predictions/coords_as_text__mistralai__mistral-medium-3_1__K3.json": "7246d40c83d624404d718c178e4b37798a26f1ee37c3c25fe0e0057951f468ef",
+    "release/predictions/zeroshot__mistralai__mistral-medium-3_1__K3.json": "9a542f443b8022eebdd7d78b31e223df478030051f91f4a61d5c47402b50581f",
+    "release/predictions/coords_as_text__qwen__qwen3-vl-32b-instruct__K3.json": "7166eaf899eb4cf4b0ccb5b698e3c8edfa419c7d15825b6a982d0f72ed8b3c5f",
+    "release/predictions/zeroshot__qwen__qwen3-vl-32b-instruct__K3.json": "48aab26a794f72929bb8998a437251a7e1903d495f82d5f18fb567b6c2e44618",
+    "release/predictions/coords_as_text__meta-llama__llama-4-scout__K3.json": "bfaca1f8eaa2b20d639d38a1d5b43c1eb460f3bbcba29aa7b52964b4f3bddcab",
+    "release/predictions/zeroshot__meta-llama__llama-4-scout__K3.json": "297c133fa9b30837e7e1456bee3727ce3b7e662d192df30430806e57b85d890a",
+    "release/predictions/coords_as_text__amazon__nova-pro-v1__K3.json": "029ed01eab07d9a5bfcba8816b2cec740d1d87a1f543759e9834e108caf3576f",
+    "release/predictions/zeroshot__amazon__nova-pro-v1__K3.json": "f827d727562eb8d18c5e4fb6559e15c166915dcdb7946b07c3a15cfbed2a2185",
+    "release/predictions/coords_as_text__mistralai__mistral-small-2603__K3.json": "eb3ae7523c346d81e7153fcae341a3af567820964870d6a05965aa4741936529",
+    "release/predictions/zeroshot__mistralai__mistral-small-2603__K3.json": "789ba55cf6e4c2107568a88d3f89326793c641b7888f628f259beca706b300ee",
+    "results/geometry_substitution/fable51/full/summary.json": "637edae39d50a18891fd94b9956edfedce7c9bfe539212ae66854dbb20514c1f",
+    "results/geometry_substitution/sonnet55/full/summary.json": "7685fd49b3b33b416fcbaccef179df8dcf71a08cd7a98bb5f1a2c082a9564288",
+    "results/geometry_substitution/opus55/full/summary.json": "e5dd9be6b50ed69878f1872308e471416b5bf7647ccfe7710eeac8b935df9751"
+  },
+  "original_roster_summary": {
+    "models": 14,
+    "structures": 210,
+    "median_closed_pct": 29.01234567901235,
+    "median_remaining_pct": 70.98765432098764,
+    "positive_net_gains": 14,
+    "residual_exceeds_gain": 13
+  },
+  "summary": {
+    "models": 17,
+    "positive_net_gains": 17,
+    "median_closed_pct": 31.428571428571427,
+    "residual_exceeds_gain": 14
+  },
+  "groups": {
+    "Frontier": [
+      "claude-fable-5-1",
+      "claude-sonnet-5-5",
+      "claude-opus-5-5"
+    ],
+    "Original roster": [
+      "google/gemini-3.6-flash",
+      "x-ai/grok-4.5",
+      "anthropic/claude-opus-4.8",
+      "meta-llama/llama-4-maverick",
+      "z-ai/glm-4.6v",
+      "qwen/qwen3-vl-8b-instruct",
+      "openai/gpt-4.1-mini",
+      "qwen/qwen3-vl-235b-a22b-instruct",
+      "bytedance-seed/seed-1.6",
+      "mistralai/mistral-medium-3.1",
+      "qwen/qwen3-vl-32b-instruct",
+      "meta-llama/llama-4-scout",
+      "amazon/nova-pro-v1",
+      "mistralai/mistral-small-2603"
+    ]
+  }
+}
