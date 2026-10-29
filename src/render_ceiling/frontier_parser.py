@@ -2,7 +2,6 @@ SYS = ["cubic", "hexagonal", "monoclinic", "orthorhombic", "tetragonal", "tricli
 
 
 def parse_system(text):
-    """Last-mention fallback, same convention as the trained-arm scorer."""
     if not text:
         return None
     t = text.lower()

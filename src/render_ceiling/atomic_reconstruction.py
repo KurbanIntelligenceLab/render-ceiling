@@ -233,7 +233,6 @@ def predict(observations, cameras, lattice):
 
 
 def sparse_fit(*args, **kwargs):
-    """Use the frozen residual check and accurate fallback solver."""
 
     result = initial_sparse_fit(*args, **kwargs)
     if result["kkt_residual"] > 1e-5:
