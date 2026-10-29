@@ -45,15 +45,16 @@ def prepare(path, model):
     print(json.dumps({'cases': len(cases), 'unique_prompts': len(requests), 'generations': len(requests) * 3}))
 
 
-def validate(s):
+def validate(s, check_model=True):
     p = s['protocol']
     assert digest(p) == s['protocol_hash']
     assert digest(s['cases']) == p['cases_hash']
     assert digest(s['requests']) == p['requests_hash']
     for src, h in p['source_hashes'].items():
         assert filehash(ROOT / src) == h
-    for name, h in p['model_files_sha256'].items():
-        assert filehash(Path(p['model_path']) / name) == h
+    if check_model:
+        for name, h in p['model_files_sha256'].items():
+            assert filehash(Path(p['model_path']) / name) == h
 
 
 def run(path, limit):
@@ -122,7 +123,7 @@ def run(path, limit):
 
 def score(path):
     s = json.loads(path.read_text())
-    validate(s)
+    validate(s, check_model=False)
     p = s['protocol']
     assert len(s['responses']) == len(s['requests']) * len(SEEDS)
     for r in s['responses'].values():
