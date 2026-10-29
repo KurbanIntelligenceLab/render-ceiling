@@ -52,4 +52,4 @@ Result records are scoped to the reported evaluations. The `release_scope` metad
 
 ## Model evaluations
 
-The [evaluation protocol](protocols/model_evaluations.md) documents the published runners and offline scoring check. The [frontier records](results/geometry_substitution/) include the three complete 210-case paired evaluations and their reused pilots. The [coordinate-handoff summary](results/coordinate_handoff/coordinate_handoff_accuracy.json) and [report](results/coordinate_handoff/report.md) link all contributing responses and preserve the three-run aggregation, majority voting, target tolerance, and invalid-response rules.
+The [evaluation protocol](protocols/model_evaluations.md) documents the published runners and offline scoring check. The [frontier records](results/geometry_substitution/) include the three complete 210-case paired evaluations and their reused pilots. The [coordinate-handoff summary](results/coordinate_handoff/coordinate_handoff_accuracy.json) links all contributing responses and preserves the three-run aggregation, majority voting, target tolerance, and invalid-response rules.
