@@ -1,0 +1,116 @@
+{
+  "source_sha256": {
+    "results/reconstruction_sonnet_pilot/study.json": "ef77f10a324c1f35513b34e930b684a6f425c59aff79fb327345bfdbc406ddc3",
+    "results/reconstruction_sonnet_extension/study.json": "8cf9c300b3a375e6d2c0c7cc15632bd7d45b052b7e197a7624124ad53aa6df32",
+    "results/reconstruction_gemma_three_seed/study.json": "1669e502bb516e77db46beaded514b1c2eae83e4406f397d86ac5ea458246190",
+    "results/reconstruction_qwen_three_seed/study.json": "30e01e6c2b38d340770341fb72caff643768d377468bc27e3b9810d1b25e7189"
+  },
+  "summary": {
+    "Sonnet 5.5": {
+      "lattice": {
+        "counts": [
+          48,
+          46,
+          48
+        ],
+        "n": 112,
+        "mean_percent": 42.26190476190476,
+        "sample_sd_pp": 1.0309826235529032
+      },
+      "huber": {
+        "counts": [
+          70,
+          74,
+          75
+        ],
+        "n": 112,
+        "mean_percent": 65.17857142857143,
+        "sample_sd_pp": 2.36227795630767
+      },
+      "split": {
+        "counts": [
+          82,
+          86,
+          84
+        ],
+        "n": 112,
+        "mean_percent": 75.0,
+        "sample_sd_pp": 1.7857142857142856
+      },
+      "split_minus_huber_pp": 9.82142857142857
+    },
+    "Gemma 3 4B IT": {
+      "lattice": {
+        "counts": [
+          10,
+          8,
+          10
+        ],
+        "n": 112,
+        "mean_percent": 8.333333333333334,
+        "sample_sd_pp": 1.0309826235529032
+      },
+      "huber": {
+        "counts": [
+          8,
+          8,
+          10
+        ],
+        "n": 112,
+        "mean_percent": 7.738095238095237,
+        "sample_sd_pp": 1.0309826235529032
+      },
+      "split": {
+        "counts": [
+          11,
+          10,
+          8
+        ],
+        "n": 112,
+        "mean_percent": 8.630952380952381,
+        "sample_sd_pp": 1.3638618139749525
+      },
+      "split_minus_huber_pp": 0.8928571428571441
+    },
+    "Qwen3 4B": {
+      "lattice": {
+        "counts": [
+          16,
+          22,
+          18
+        ],
+        "n": 112,
+        "mean_percent": 16.666666666666668,
+        "sample_sd_pp": 2.727723627949905
+      },
+      "huber": {
+        "counts": [
+          16,
+          18,
+          13
+        ],
+        "n": 112,
+        "mean_percent": 13.988095238095239,
+        "sample_sd_pp": 2.2469745343067706
+      },
+      "split": {
+        "counts": [
+          16,
+          21,
+          15
+        ],
+        "n": 112,
+        "mean_percent": 15.476190476190474,
+        "sample_sd_pp": 2.870134155057427
+      },
+      "split_minus_huber_pp": 1.4880952380952355
+    }
+  },
+  "aggregation": "Mean and sample SD of three individual-run accuracies, each on the same 112 cases. Sonnet API repeats are not controlled sampling seeds; local models use fixed seeds. This is a new descriptive summary of preserved outputs, not a new experiment or a replacement for Sonnet majority voting.",
+  "sonnet_majority_counts": {
+    "lattice": 48,
+    "huber": 76,
+    "split": 84
+  },
+  "verification": "All contributing raw outputs reparsed; per-run counts recalculated from case mappings. Local counts match saved scores."
+}

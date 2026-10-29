@@ -1,0 +1,174 @@
+{
+  "status": "PASS",
+  "raw_inputs_outputs_and_case_mappings_preserved": [
+    {
+      "record": "results/geometry_substitution/fable51/pilot/run.json",
+      "source_record_sha256": "f535a37b183ab6eb4baacbee2851ae00f5128f8ee8056c74de6ccca9eae3eb15",
+      "preserved_fields": [
+        "records"
+      ]
+    },
+    {
+      "record": "results/geometry_substitution/fable51/full/run.json",
+      "source_record_sha256": "129bc0cf2ef8265d482cef14805b92b9f4a65f5213fa152a9b3ec7c27a95ed4f",
+      "preserved_fields": [
+        "records"
+      ]
+    },
+    {
+      "record": "results/geometry_substitution/sonnet55/full/run.json",
+      "source_record_sha256": "ffb1337245bd01e57955cf13bd8781441cbe39f63e320c872a16fe2b00666422",
+      "preserved_fields": [
+        "records"
+      ]
+    },
+    {
+      "record": "results/geometry_substitution/opus55/full/run.json",
+      "source_record_sha256": "27e9fa249a622579892a67e3846351226e25a4f3e08859694523a0b3592fb432",
+      "preserved_fields": [
+        "records"
+      ]
+    },
+    {
+      "record": "results/geometry_substitution/sonnet55/pilot/run.json",
+      "source_record_sha256": "926777831e686203bdec0e9348fb6ad68b8f20df0632a94cd0768aae4375bd73",
+      "preserved_fields": [
+        "records"
+      ]
+    },
+    {
+      "record": "results/geometry_substitution/opus55/pilot/run.json",
+      "source_record_sha256": "d381cdc8acc214d46ecbf21f5573c2daa4ae5a7b5de6f4c427b880faeb296317",
+      "preserved_fields": [
+        "records"
+      ]
+    },
+    {
+      "record": "results/reconstruction_gemma_three_seed/study.json",
+      "source_record_sha256": "648b9b80bf2ea39f4ab18952e1ab04ab813ff53cc93d02be277c70efb4189688",
+      "preserved_fields": [
+        "responses",
+        "requests",
+        "cases"
+      ]
+    },
+    {
+      "record": "results/reconstruction_qwen_three_seed/study.json",
+      "source_record_sha256": "9dc293875e73f16b8e33d1f419926982c5829540475f5e72680e0763de7da9f2",
+      "preserved_fields": [
+        "responses",
+        "requests",
+        "cases"
+      ]
+    },
+    {
+      "record": "results/reconstruction_sonnet_extension/study.json",
+      "source_record_sha256": "f00ad9b41f7a27cdf86aef28fbf7d67de4c3fbd0efc08c792457910b52e0989e",
+      "preserved_fields": [
+        "records",
+        "requests",
+        "cases"
+      ]
+    },
+    {
+      "record": "results/reconstruction_vlm_pilot/study.json",
+      "source_record_sha256": "a3cb6291fbb88abb85d528ef99d6161d7222f0b4e662ec30e3476ef1c92c0ed2",
+      "preserved_fields": [
+        "responses",
+        "requests",
+        "cases"
+      ]
+    },
+    {
+      "record": "results/reconstruction_sonnet_pilot/study.json",
+      "source_record_sha256": "8c128d0fd0cb3855d4653a8cb33f42a92a4e69e74c2143ee5d40adcb15a65281",
+      "preserved_fields": [
+        "records",
+        "requests",
+        "cases"
+      ]
+    }
+  ],
+  "offline_scoring": {
+    "status": "PASS",
+    "frontier": {
+      "sonnet55": {
+        "image": 152,
+        "text": 193,
+        "corrected": 54,
+        "regressed": 13,
+        "n": 210
+      },
+      "opus55": {
+        "image": 145,
+        "text": 166,
+        "corrected": 45,
+        "regressed": 24,
+        "n": 210
+      },
+      "fable51": {
+        "image": 157,
+        "text": 191,
+        "corrected": 44,
+        "regressed": 10,
+        "n": 210
+      }
+    },
+    "handoff": {
+      "Sonnet 5.5": {
+        "lattice": [
+          48,
+          46,
+          48
+        ],
+        "huber": [
+          70,
+          74,
+          75
+        ],
+        "split": [
+          82,
+          86,
+          84
+        ]
+      },
+      "Gemma 3 4B IT": {
+        "lattice": [
+          10,
+          8,
+          10
+        ],
+        "huber": [
+          8,
+          8,
+          10
+        ],
+        "split": [
+          11,
+          10,
+          8
+        ]
+      },
+      "Qwen3 4B": {
+        "lattice": [
+          16,
+          22,
+          18
+        ],
+        "huber": [
+          16,
+          18,
+          13
+        ],
+        "split": [
+          16,
+          21,
+          15
+        ]
+      }
+    }
+  },
+  "privacy_changes": "Local filesystem and cache locations replaced by repository-relative paths; public source and record checksums refreshed. Model identities, revisions, protocol parameters, numerical values, prompts and raw responses preserved.",
+  "canonical_paired_outcomes": "results/geometry_substitution/paired_geometry_outcomes.json",
+  "canonical_handoff_accuracy": "results/coordinate_handoff/coordinate_handoff_accuracy.json"
+}

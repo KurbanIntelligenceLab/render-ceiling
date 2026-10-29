@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "calls": 42,
+  "estimated_cost_usd": 3.203678,
+  "peak_concurrency": 14,
+  "cache_hits": 14,
+  "independent_votes_cost_and_input_verification": true
+}

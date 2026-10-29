@@ -1,0 +1,200 @@
+{
+  "source_sha256": {
+    "results/collective_validation/study.json": "0f3a39bea77cf1d07863f567f2ceb6c6e74144ce00f59c716543251e620748c2",
+    "results/mode_replication/study.json": "40132ecbf2a0832313d390a58f2c0922696365395079083665c8cc70d1a82b52"
+  },
+  "rows": [
+    {
+      "cohort": 1,
+      "condition": "gaussian",
+      "variant": "localized",
+      "method": "atomic",
+      "rmsd_mA": 7.111019881081068,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "gaussian",
+      "variant": "localized",
+      "method": "mode_split",
+      "rmsd_mA": 9.800368289701847,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "gaussian",
+      "variant": "localized",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 7.111019881081068,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "gaussian",
+      "variant": "collective",
+      "method": "atomic",
+      "rmsd_mA": 8.164479132448422,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "gaussian",
+      "variant": "collective",
+      "method": "mode_split",
+      "rmsd_mA": 5.4212083127857085,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "gaussian",
+      "variant": "collective",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 5.706753053839783,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "one_view_error",
+      "variant": "localized",
+      "method": "atomic",
+      "rmsd_mA": 7.438482364586963,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "one_view_error",
+      "variant": "localized",
+      "method": "mode_split",
+      "rmsd_mA": 10.312700690713148,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "one_view_error",
+      "variant": "localized",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 7.438482364586963,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "one_view_error",
+      "variant": "collective",
+      "method": "atomic",
+      "rmsd_mA": 8.68061706135308,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "one_view_error",
+      "variant": "collective",
+      "method": "mode_split",
+      "rmsd_mA": 5.783899795764261,
+      "n": 160
+    },
+    {
+      "cohort": 1,
+      "condition": "one_view_error",
+      "variant": "collective",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 6.039188213340823,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "gaussian",
+      "variant": "localized",
+      "method": "atomic",
+      "rmsd_mA": 7.123636235386709,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "gaussian",
+      "variant": "localized",
+      "method": "mode_split",
+      "rmsd_mA": 9.716517674167674,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "gaussian",
+      "variant": "localized",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 7.123636235386709,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "gaussian",
+      "variant": "collective",
+      "method": "atomic",
+      "rmsd_mA": 8.345296026987281,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "gaussian",
+      "variant": "collective",
+      "method": "mode_split",
+      "rmsd_mA": 5.8704544149787,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "gaussian",
+      "variant": "collective",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 6.000220633059617,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "one_view_error",
+      "variant": "localized",
+      "method": "atomic",
+      "rmsd_mA": 7.700640975333165,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "one_view_error",
+      "variant": "localized",
+      "method": "mode_split",
+      "rmsd_mA": 10.386115117073967,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "one_view_error",
+      "variant": "localized",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 7.674043852318705,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "one_view_error",
+      "variant": "collective",
+      "method": "atomic",
+      "rmsd_mA": 8.609314489734864,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "one_view_error",
+      "variant": "collective",
+      "method": "mode_split",
+      "rmsd_mA": 5.923699473180946,
+      "n": 160
+    },
+    {
+      "cohort": 2,
+      "condition": "one_view_error",
+      "variant": "collective",
+      "method": "atom_or_mode_split",
+      "rmsd_mA": 6.2536483376264815,
+      "n": 160
+    }
+  ]
+}

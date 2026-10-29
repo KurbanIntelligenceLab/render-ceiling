@@ -1,0 +1,192 @@
+{
+  "run_sha256": "adf4b9b77e38346dd89e508c6dfa87a963748fb727418d1a655fe84db847057c",
+  "status": "completed",
+  "calls": 42,
+  "usage": {
+    "input_tokens": 94020,
+    "output_tokens": 32940,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0
+  },
+  "estimated_cost_usd": 0.51744,
+  "metrics": {
+    "n": 7,
+    "image_correct": 4,
+    "text_correct": 6,
+    "corrected": 2,
+    "newly_wrong": 0,
+    "both_correct": 4,
+    "both_wrong": 1,
+    "closed_deficit_percent": 66.66666666666667
+  },
+  "cases": [
+    {
+      "material_id": "mp-1235466",
+      "truth": "triclinic",
+      "image": {
+        "complete": true,
+        "prediction": "monoclinic",
+        "votes": {
+          "monoclinic": 2,
+          "triclinic": 1
+        },
+        "correct": false,
+        "tie": false
+      },
+      "text": {
+        "complete": true,
+        "prediction": "triclinic",
+        "votes": {
+          "triclinic": 3
+        },
+        "correct": true,
+        "tie": false
+      }
+    },
+    {
+      "material_id": "mp-1237061",
+      "truth": "monoclinic",
+      "image": {
+        "complete": true,
+        "prediction": "monoclinic",
+        "votes": {
+          "orthorhombic": 1,
+          "monoclinic": 2
+        },
+        "correct": true,
+        "tie": false
+      },
+      "text": {
+        "complete": true,
+        "prediction": "monoclinic",
+        "votes": {
+          "monoclinic": 3
+        },
+        "correct": true,
+        "tie": false
+      }
+    },
+    {
+      "material_id": "mp-1105758",
+      "truth": "orthorhombic",
+      "image": {
+        "complete": true,
+        "prediction": "orthorhombic",
+        "votes": {
+          "orthorhombic": 3
+        },
+        "correct": true,
+        "tie": false
+      },
+      "text": {
+        "complete": true,
+        "prediction": "orthorhombic",
+        "votes": {
+          "tetragonal": 1,
+          "orthorhombic": 2
+        },
+        "correct": true,
+        "tie": false
+      }
+    },
+    {
+      "material_id": "mp-33615",
+      "truth": "tetragonal",
+      "image": {
+        "complete": true,
+        "prediction": "orthorhombic",
+        "votes": {
+          "orthorhombic": 2,
+          "cubic": 1
+        },
+        "correct": false,
+        "tie": false
+      },
+      "text": {
+        "complete": true,
+        "prediction": "cubic",
+        "votes": {
+          "cubic": 2,
+          "tetragonal": 1
+        },
+        "correct": false,
+        "tie": false
+      }
+    },
+    {
+      "material_id": "mp-8279",
+      "truth": "trigonal",
+      "image": {
+        "complete": true,
+        "prediction": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "correct": true,
+        "tie": false
+      },
+      "text": {
+        "complete": true,
+        "prediction": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "correct": true,
+        "tie": false
+      }
+    },
+    {
+      "material_id": "mp-19213",
+      "truth": "hexagonal",
+      "image": {
+        "complete": true,
+        "prediction": "trigonal",
+        "votes": {
+          "trigonal": 3
+        },
+        "correct": false,
+        "tie": false
+      },
+      "text": {
+        "complete": true,
+        "prediction": "hexagonal",
+        "votes": {
+          "hexagonal": 3
+        },
+        "correct": true,
+        "tie": false
+      }
+    },
+    {
+      "material_id": "mp-862873",
+      "truth": "cubic",
+      "image": {
+        "complete": true,
+        "prediction": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "correct": true,
+        "tie": false
+      },
+      "text": {
+        "complete": true,
+        "prediction": "cubic",
+        "votes": {
+          "cubic": 3
+        },
+        "correct": true,
+        "tie": false
+      }
+    }
+  ],
+  "verification": "Reparsed all response text; recomputed voting, paired counts, and token cost independently",
+  "protocol_deviations": [
+    "Seven structures instead of 210",
+    "Native Anthropic API instead of archived OpenRouter route",
+    "Temperature omitted: Sonnet 5.5 rejects sampling parameters; legacy temperature was 0.7",
+    "4096 output-token cap including default adaptive thinking; stop on truncation"
+  ],
+  "pricing_source": "https://platform.claude.com/docs/en/models/sonnet-5-5/overview",
+  "not_for_manuscript": true
+}
