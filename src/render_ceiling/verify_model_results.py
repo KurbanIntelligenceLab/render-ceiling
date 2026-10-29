@@ -83,8 +83,51 @@ def verify_frontier():
         corrected = sum(g['image'] != truth[mid] and g['text'] == truth[mid] for mid, g in guesses.items())
         regressed = sum(g['image'] == truth[mid] and g['text'] != truth[mid] for mid, g in guesses.items())
         assert [image, text, corrected, regressed] == [s[k] for k in ['image_correct', 'text_correct', 'corrected', 'newly_wrong']]
+        assert s['both_correct'] == image - regressed
+        assert s['both_wrong'] == 210 - image - corrected
+        assert abs(s['image_accuracy_percent'] - image / 210 * 100) < 1e-10
+        assert abs(s['text_accuracy_percent'] - text / 210 * 100) < 1e-10
+        assert abs(s['net_gain_percentage_points'] - (text - image) / 210 * 100) < 1e-10
+        assert abs(s['closed_deficit_percent'] - (text - image) / (210 - image) * 100) < 1e-10
+        for label, values in s['per_class'].items():
+            for arm in ['image', 'text']:
+                assert values[arm] == sum(g[arm] == truth[mid] for mid, g in guesses.items() if truth[mid] == label)
+        for case in s['cases']:
+            assert all(case[arm]['pred'] == guesses[case['material_id']][arm] for arm in ['image', 'text'])
+        for arm in ['image', 'text']:
+            predictions = load(folder + '/' + arm + '_predictions.json')['predictions']
+            assert {c['material_id']: c['pred'] for c in predictions} == {mid: g[arm] for mid, g in guesses.items()}
         output[tag] = {'image': image, 'text': text, 'corrected': corrected, 'regressed': regressed, 'n': 210}
     return output
+
+
+
+def verify_paired_outcomes():
+    record = load('results/geometry_substitution/paired_geometry_outcomes.json')
+    sources = {}
+    for path, expected in record['input_sha256'].items():
+        assert hashlib.sha256((ROOT / path).read_bytes()).hexdigest() == expected
+        if path.startswith('release/predictions/'):
+            data = load(path)
+            arm = 'text' if Path(path).name.startswith('coords_as_text__') else 'image'
+            sources.setdefault(data['model'], {})[arm] = data['predictions']
+    assert len(record['rows']) == 17
+    for row in record['rows']:
+        if 'source' in row:
+            source = load(row['source'])
+            actual = [source[k] for k in ['image_correct', 'text_correct', 'corrected', 'newly_wrong']]
+        else:
+            arms = sources[row['model']]
+            image = {c['material_id']: c for c in arms['image']}
+            text = {c['material_id']: c for c in arms['text']}
+            assert set(image) == set(text) and len(image) == 210
+            assert all(image[mid]['truth'] == text[mid]['truth'] for mid in image)
+            pairs = [(image[mid]['pred'] == image[mid]['truth'], text[mid]['pred'] == text[mid]['truth']) for mid in image]
+            actual = [sum(a for a, b in pairs), sum(b for a, b in pairs), sum(not a and b for a, b in pairs), sum(a and not b for a, b in pairs)]
+        assert actual == [row[k] for k in ['k4', 'k3', 'g', 'l']]
+        assert row['counts'] == [row['k4'] - row['l'], row['g'], row['l'], 210 - row['k4'] - row['g']]
+        assert abs(100 * (row['k3'] - row['k4']) / (210 - row['k4']) - row['closed_pct']) < 1e-10
+    return {'models': len(record['rows']), 'matched_counts_and_source_checksums': 'PASS'}
 
 
 def verify_handoff():
@@ -109,6 +152,8 @@ def verify_handoff():
             d = load(f'results/reconstruction_{tag}_three_seed/study.json')
             check_inputs(d)
             assert [c['case_id'] for c in d['cases']] == [c['case_id'] for c in cases]
+            for local, source in zip(d['cases'], cases):
+                assert local == {**source, 'requests': {arm: source['requests'][arm] for arm in ['lattice', 'huber', 'split']}}
             for response in d['responses'].values():
                 assert parse_handoff(response['raw_output']) == response['prediction']
         counts = {}
@@ -129,4 +174,4 @@ def verify_handoff():
 
 
 if __name__ == '__main__':
-    print(json.dumps({'status': 'PASS', 'frontier': verify_frontier(), 'handoff': verify_handoff()}, indent=2))
+    print(json.dumps({'status': 'PASS', 'frontier': verify_frontier(), 'paired_outcomes': verify_paired_outcomes(), 'handoff': verify_handoff()}, indent=2))

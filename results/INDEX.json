@@ -116,7 +116,8 @@
     "results/symmetry_selector_refinement/schedule.json": "68a7592fa1f8757a3170cdf081983cff5a2599ccb167cca39e39806a37c9ae7b",
     "results/symmetry_selector_refinement/selection.json": "403469dce51550cfc791db43eee27adc2f7eeebc5640ca5c256e24a4e1763bce",
     "results/symmetry_selector_refinement/selection_attempts.json": "ced37bc91cd4d287ce832afef52ebdcc9dc5c9f93e50247c18b63184788d5d2a",
-    "results/symmetry_selector_refinement/verification.json": "f3f6d2dcaecf660abc72fba090ab8444013cd38dc9491951cd0336d7d0dd8c62"
+    "results/symmetry_selector_refinement/verification.json": "f3f6d2dcaecf660abc72fba090ab8444013cd38dc9491951cd0336d7d0dd8c62",
+    "results/paper_audits/release_sweep.json": "631734f402caa63a1daf305cbe4640f702830a150e9845109fcdad6b6d0a027a"
   },
   "paper_scope": {
     "results/README.md": "Map of all reported figures, tables and supporting records",
@@ -234,6 +235,7 @@
     "results/geometry_substitution/fable51/pilot/summary.json": "Paired image/exact-geometry evaluation: model inputs, outputs, usage, protocol and independent scoring",
     "results/geometry_substitution/fable51/pilot/report.md": "Paired image/exact-geometry evaluation: model inputs, outputs, usage, protocol and independent scoring",
     "results/geometry_substitution/fable51/pilot/verification.json": "Paired image/exact-geometry evaluation: model inputs, outputs, usage, protocol and independent scoring",
-    "results/geometry_substitution/fable51/pilot/run.json": "Paired image/exact-geometry evaluation: model inputs, outputs, usage, protocol and independent scoring"
+    "results/geometry_substitution/fable51/pilot/run.json": "Paired image/exact-geometry evaluation: model inputs, outputs, usage, protocol and independent scoring",
+    "results/paper_audits/release_sweep.json": "Clean-release scoring, source integrity, rendering-protocol and reproducibility verification"
   }
 }

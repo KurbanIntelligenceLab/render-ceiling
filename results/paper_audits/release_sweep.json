@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "frontier": {
+    "sonnet55": {
+      "image": 152,
+      "text": 193,
+      "corrected": 54,
+      "regressed": 13,
+      "n": 210
+    },
+    "opus55": {
+      "image": 145,
+      "text": 166,
+      "corrected": 45,
+      "regressed": 24,
+      "n": 210
+    },
+    "fable51": {
+      "image": 157,
+      "text": 191,
+      "corrected": 44,
+      "regressed": 10,
+      "n": 210
+    }
+  },
+  "paired_outcomes": {
+    "models": 17,
+    "matched_counts_and_source_checksums": "PASS"
+  },
+  "handoff": {
+    "Sonnet 5.5": {
+      "lattice": [
+        48,
+        46,
+        48
+      ],
+      "huber": [
+        70,
+        74,
+        75
+      ],
+      "split": [
+        82,
+        86,
+        84
+      ]
+    },
+    "Gemma 3 4B IT": {
+      "lattice": [
+        10,
+        8,
+        10
+      ],
+      "huber": [
+        8,
+        8,
+        10
+      ],
+      "split": [
+        11,
+        10,
+        8
+      ]
+    },
+    "Qwen3 4B": {
+      "lattice": [
+        16,
+        22,
+        18
+      ],
+      "huber": [
+        16,
+        18,
+        13
+      ],
+      "split": [
+        16,
+        21,
+        15
+      ]
+    }
+  },
+  "test_cases_passed": 46,
+  "saved_model_json_records_unchanged": 31,
+  "fixes": [
+    "Saved-answer scoring no longer requires model weights; inference retains model-hash checks",
+    "Rendering instructions specify the verified helper and settings",
+    "Local-generation network-isolation startup requirement documented"
+  ],
+  "benchmark_render_spot_check": "All five recorded views regenerated with the prescribed settings; byte-identity independently checked",
+  "new_api_requests": 0,
+  "new_model_inference_calls": 0
+}
