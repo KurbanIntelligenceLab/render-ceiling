@@ -7,4 +7,4 @@ Cases: 7. This record is the pilot evaluation.
 
 Native API defaults are preserved, with no temperature or reasoning override. Output limits, prompt caching, failed transports, and truncation-only replacements are recorded with all earlier attempts. The original 14-model roster used a different API route and temperature 0.7; cross-roster rankings are descriptive.
 
-[Raw responses and protocol](run.json) · [Scoring summary](summary.json) · [Verification](verification.json)
+[Raw responses and protocol](run.json) · [Scoring summary](summary.json)
