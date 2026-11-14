@@ -6,8 +6,8 @@ This research repository contains reconstruction methods, benchmark inputs and r
 
 - Keep reusable numerical implementations in `src/render_ceiling/` with descriptive filenames.
 - Keep `render-ceiling reconstruct` and the Python API aligned through `ReconstructionInput`, `Reconstructor` and `ReconstructionResult` in `workflow.py`.
-- Store completed figure/table outputs and supporting records in `results/`. Publish figure artwork as PDFs alongside its supporting data. Each result file has a purpose and checksum in `results/INDEX.json`.
-- Identify figures and tables by their published numbers. Link to figure PDFs and numerical results using those numbers.
+- Store completed figure/table outputs and supporting records in `results/`. Keep figure artwork and manuscript sources outside the released repository; retain their supporting numerical data. Each result file has a purpose and checksum in `results/INDEX.json`.
+- Identify figures and tables by their published numbers. Link to supporting numerical results using those numbers.
 - Keep README instructions concise, runnable and consistent with the included files. Document the Python API in `REPRODUCIBILITY.md`.
 
 ## Changes and verification
