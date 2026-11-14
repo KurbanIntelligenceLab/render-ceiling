@@ -22,3 +22,5 @@ outputs/
 
 .env
 .env.*
+
+*.tex
