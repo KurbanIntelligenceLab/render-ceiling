@@ -40,7 +40,6 @@ def assignments(cart, species, observations, cameras):
 
 
 def fit(observations, cameras, seed_pair=None):
-    """Unknown-correspondence all-view fit; input count is observed, not a truth sidecar."""
 
     observations = canonical_observations(observations)
     cameras = np.asarray(cameras)
@@ -116,7 +115,6 @@ def label(cart, species, lattice, tolerance):
 
 
 def project_symmetry(cart, species, lattice, ds):
-    """Average the inverse group action using inferred, periodic species assignments."""
 
     frac = cart @ np.linalg.inv(lattice)
     for _ in range(3):

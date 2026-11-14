@@ -11,7 +11,6 @@ def fetch_mp(
     api_key: str | None = None,
     seed: int = 0,
 ) -> list[dict[str, Any]]:
-    """Fetch n structures from Materials Project with source-reported symmetry."""
 
     from mp_api.client import MPRester
 

@@ -1,0 +1,2098 @@
+{
+  "protocol": {
+    "purpose": "Exploratory reconstructed-coordinate handoff; no raster extraction tested",
+    "parent_selection": "One parent per original crystal system, minimum SHA256([20261028,parent,material_id]); no outcome selection",
+    "parents": [
+      "mp-1175684",
+      "mp-1178388",
+      "mp-1184740",
+      "mp-1221660",
+      "mp-1222966",
+      "mp-2025375",
+      "mp-675832"
+    ],
+    "selection_seed": 20261028,
+    "conditions": "sigma 0.01, frozen cameras, noise repetition 0, original and large variants, Gaussian and corrupted",
+    "primary_contrast": "Split minus Huber downstream correctness on all 28 cases; descriptive parent-cluster bootstrap",
+    "secondary": "Original accuracy; stable changed accuracy; paired joint correctness; false restoration; invalid responses; exact geometry and lattice controls",
+    "generation": {
+      "temperature": 0,
+      "top_p": 1,
+      "top_k": 0,
+      "max_tokens": 256,
+      "repetitions": 1
+    },
+    "parser": "Exactly one ANSWER: valid_class occurrence, otherwise exact standalone class; invalid counts incorrect; no spelling repairs",
+    "deduplication": "Identical prompts share one deterministic response; repeated endpoints are not independent",
+    "source_hashes": {
+      "results/symmetry_selector_refinement/dataset.json": "96a5ae62650adc049b0eb1583e70a8ea889281965f427ec54d19e05bf4868809",
+      "results/symmetry_selector_refinement/heldout.jsonl": "e0d186dee4678cf689f6362feaeb80a037b6c38d537ade45d1d727caf406eb81",
+      "src/render_ceiling/coordinate_handoff_inputs.py": "582a5e7da7a04135c9af350e8f43ddbbf1a9bd9a3993ec4de452f9e6e720bf41"
+    },
+    "model_path": "models/mlx-community/gemma-3-4b-it-4bit/93724907d4ed1745d2fe50baadf3b0b01a65abf2",
+    "model_revision": "93724907d4ed1745d2fe50baadf3b0b01a65abf2",
+    "model_files_sha256": {
+      "model.safetensors": "94d3d701367d78584a9334ca00672b1c86e4aefa6a94167556c0485381e74af3",
+      "added_tokens.json": "50b2f405ba56a26d4913fd772089992252d7f942123cc0a034d96424221ba946",
+      "tokenizer_config.json": "0d95398b39395e5cfb290683a78f3fb0551223c672d8b033333c1a5307473760",
+      "special_tokens_map.json": "2f7b0adf4fb469770bb1490e3e35df87b1dc578246c5e7e6fc76ecf33213a397",
+      "chat_template.json": "fe16baf728db49457cde32802cd7efc0ac8a7a9877dbe22fe3322b2d9dc6ccd9",
+      "config.json": "5ccdde91da736e6e6f8f138268c620adcbf1219c973b884240b719a54122465b",
+      "tokenizer.json": "4667f2089529e8e7657cfb6d1c19910ae71ff5f28aa7ab2ff2763330affad795",
+      "processor_config.json": "3ffd5f11778dc73e2b69b3c00535e4121e1badf7018136263cd17b5b34fbaa53",
+      "generation_config.json": "e04ecb65db447404710114fb282baaac482d22a95e2244ecaab428b81672ba78",
+      "tokenizer.model": "1299c11d7cf632ef3b4e11937501358ada021bbdf7c47638d13c0ee982f2e79c",
+      "model.safetensors.index.json": "77f4b67de084c31c7bcd373b039908108eee6c6181607e6d53da730e5f0bc659",
+      "preprocessor_config.json": "f688d6bb20c5017601c4011de7ca656da8485b540b05013efdaf986c0fcc918d"
+    },
+    "requests_hash": "9b8a361add645da141076a53f3ca1bd52e8d10fb16e67bfcd322988da8ed1381",
+    "cases_hash": "8af23add78ffb5382a43a536d99152543c9d39fb7e267afd0e9468129614d0ca",
+    "no_correctness_retries": true
+  },
+  "protocol_hash": "96239b6c39b60e2ff23c8659185e158569d679ab5a77f69c4ba5e98e3c1f3c26",
+  "requests": [
+    {
+      "request_id": "b591246950dba4957b8aadd01aa78a126191f8b66a867d59616a99c8260945df",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]]}"
+    },
+    {
+      "request_id": "6e7f125d9f2c27e331ceee23b574fdadbd441acf606410ba915b7eb469dee221",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.33365206,0.66842027,0.38259383],[16,0.6659235,0.33241395,0.25854128],[16,0.99961098,0.00063454,0.3901184],[81,0.03398007,0.70492965,0.07888441],[81,0.29379625,0.32961389,0.07849432],[81,0.37413711,0.03821071,0.60988364],[81,0.66361522,0.62658001,0.61058746],[81,0.67010147,0.9644493,0.07977689],[81,0.96164816,0.33588489,0.60993782]]}"
+    },
+    {
+      "request_id": "e444e8f1cf8bc1d54905a99e0ee3796ed7e7048ad2cdc40d836854a3065bf8bd",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]]}"
+    },
+    {
+      "request_id": "b39760dff5526e54f336eeafb5bf1e8da20d562fd04f18c5d8cd24429830154d",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.33303285,0.66622874,0.08578196],[8,0.33303285,0.66622874,0.4142688],[8,0.66636618,0.3328954,0.58578196],[8,0.66636618,0.3328954,0.9142688],[55,0.33303285,0.66622874,0.75002538],[55,0.66636618,0.3328954,0.25002538],[81,0.99969951,0.99956207,2.538e-05],[81,0.99969951,0.99956207,0.50002538]]}"
+    },
+    {
+      "request_id": "10c7c81e8d27f61ab11217dcdf741cfee7814e8168c99c0b7c2447947173047a",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.042821,0.530525,0.062441],[7,0.27018267,0.29108067,0.56731683],[7,0.472575,0.958774,0.941127],[7,0.7187784,0.70104475,0.43757327],[38,0.002001,0.002015,0.000848],[38,0.750359,0.251142,0.500356],[58,0.254624,0.752499,0.50134],[58,0.497272,0.505131,0.001057]]}"
+    },
+    {
+      "request_id": "7f6ff4ac697b01f547d4c6adffd1fd25e4686cc34fe337daa9f07b651ac68bcd",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.24017369,0.50401782,0.2522332],[3,0.24644104,0.99623755,0.24751066],[3,0.247582,0.25559274,0.75392278],[3,0.2503501,0.74306168,0.75097116],[3,0.7496499,0.74306168,0.24902884],[3,0.752418,0.25559274,0.24607722],[3,0.75355896,0.99623755,0.75248934],[3,0.75982631,0.50401782,0.7477668],[3,1.0,0.50137622,0.5],[8,0.13051398,0.49974199,0.8901245],[8,0.13071603,0.99966463,0.89094433],[8,0.1329141,0.76308178,0.3861851],[8,0.13862771,0.23612045,0.38717446],[8,0.3660309,0.00143874,0.61163069],[8,0.3697755,0.74952801,0.10925975],[8,0.36980789,0.24948663,0.10902332],[8,0.39396868,0.49745985,0.6148467],[8,0.60603132,0.49745985,0.3851533],[8,0.63019211,0.24948663,0.89097668],[8,0.6302245,0.74952801,0.89074025],[8,0.6339691,0.00143874,0.38836931],[8,0.86137229,0.23612045,0.61282554],[8,0.8670859,0.76308178,0.6138149],[8,0.86928397,0.99966463,0.10905567],[8,0.86948602,0.49974199,0.1098755],[25,0.5,0.26090695,0.5],[25,1.0,0.99443935,0.5],[27,0.0,0.24939675,0.0],[27,0.0,0.7498556,0.0],[27,0.5,0.49948896,0.0],[27,0.5,0.74825756,0.5],[27,0.5,0.99962589,0.0]]}"
+    },
+    {
+      "request_id": "2d9cfdb56e5303d4bb76dac7c232fefa06725da9ebb7044655b1a2eb8b1501a0",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.03444404,0.00901865,0.7417623],[13,0.99508402,0.00359198,0.25115769],[25,0.50066683,0.48925056,0.49798907],[29,0.52067671,0.50562384,0.98690143]]}"
+    },
+    {
+      "request_id": "9a769d4e81b1616ece4c257f1524f1447423f7ce94b756c40bc628841dea22ee",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23898956,0.50311696,0.25184557],[3,0.24536726,0.99582233,0.24736706],[3,0.24755975,0.25567943,0.75418107],[3,0.25038147,0.74397283,0.75059237],[3,0.75009604,0.74348959,0.2496808],[3,0.75149782,0.25560399,0.24588569],[3,0.75475384,0.99504841,0.7542381],[3,0.76070685,0.50366831,0.74858359],[3,0.99979239,0.49966631,0.49903753],[8,0.12916345,0.49811597,0.89069263],[8,0.1308305,0.00210556,0.89118475],[8,0.13240311,0.76218848,0.38554208],[8,0.13703299,0.23611708,0.3868345],[8,0.36382589,0.00235845,0.61095275],[8,0.36859337,0.74964015,0.10878256],[8,0.37212584,0.24765913,0.10937254],[8,0.3949939,0.49654446,0.61561644],[8,0.60633999,0.49797629,0.38414619],[8,0.62812292,0.25068348,0.89111792],[8,0.6291393,0.74865856,0.8917099],[8,0.63335592,0.00230963,0.38837239],[8,0.86318891,0.23591093,0.61294102],[8,0.86606496,0.76395638,0.61320376],[8,0.86829798,0.49833166,0.11039928],[8,0.86835476,0.00012888,0.10793391],[25,0.50010613,0.25953458,0.49978545],[25,0.99868992,0.99218387,0.49973968],[27,0.00081434,0.7502839,0.99971593],[27,0.49945452,0.74777892,0.49942332],[27,0.50030215,0.49872816,0.99945332],[27,0.50150846,0.99901866,0.00051465],[27,0.99932283,0.25018108,0.00038118]]}"
+    },
+    {
+      "request_id": "6d11ddc7fc10c3e1f56a260802a3c88c820f9075296507395b43520394baab73",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.24704784,0.63472018,0.53995992],[34,0.2471778,0.30519433,0.72043239],[34,0.24758529,0.95557458,0.37493044],[34,0.24824507,0.19447525,0.22144509],[34,0.24976566,0.86602709,0.03954987],[34,0.25031675,0.54453585,0.87513388],[34,0.73052268,0.36030542,0.46033996],[34,0.74876599,0.45552643,0.12473383],[34,0.74949222,0.13437903,0.96059406],[34,0.74960572,0.04380502,0.6245988],[34,0.75047269,0.69442443,0.27806972],[34,0.75235336,0.80507045,0.77898419],[51,0.25047149,0.30783487,0.03418007],[51,0.26148503,0.18490567,0.53030204],[51,0.74697485,0.69229878,0.96519175],[51,0.74916595,0.80792645,0.46547841],[57,0.24852364,0.00378641,0.81798355],[57,0.25114448,0.49633913,0.31875818],[57,0.74773897,0.99641476,0.18146745],[57,0.75159727,0.5028017,0.68240225]]}"
+    },
+    {
+      "request_id": "0fc5223e7a5370401bf24df8bcb1e35b1c7786fb229bdb98d34e05b4ad878cd8",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.03444404,0.00901865,0.7417623],[13,0.99508402,0.00359198,0.25115769],[25,0.50002519,0.49158869,0.49782781],[29,0.52067671,0.50562384,0.98690143]]}"
+    },
+    {
+      "request_id": "0c618c63523a332c824e6bdcc08197f82f93031472c3e90128f7d397826db48d",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.24704784,0.63472018,0.53995992],[34,0.24758529,0.95557458,0.37493044],[34,0.24824507,0.19447525,0.22144509],[34,0.24976566,0.86602709,0.03954987],[34,0.25031675,0.54453585,0.87513388],[34,0.25065364,0.3047274,0.72215812],[34,0.74838421,0.36635195,0.46067168],[34,0.74876599,0.45552643,0.12473383],[34,0.749399,0.04399605,0.62478582],[34,0.74949222,0.13437903,0.96059406],[34,0.75047269,0.69442443,0.27806972],[34,0.75235336,0.80507045,0.77898419],[51,0.25047149,0.30783487,0.03418007],[51,0.25175119,0.19206394,0.53393642],[51,0.74697485,0.69229878,0.96519175],[51,0.74916595,0.80792645,0.46547841],[57,0.24852364,0.00378641,0.81798355],[57,0.25114448,0.49633913,0.31875818],[57,0.74773897,0.99641476,0.18146745],[57,0.75159727,0.5028017,0.68240225]]}"
+    },
+    {
+      "request_id": "e7f5efc414c2eac247584f43933e26e5583bc5e780c5eceb796af795cb8e0ba0",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23880333,0.50347218,0.25159094],[3,0.24514612,0.99570994,0.24659922],[3,0.24777686,0.25561784,0.75414301],[3,0.24994321,0.74385629,0.75047411],[3,0.74952838,0.74385629,0.24950801],[3,0.75169473,0.25561784,0.24583911],[3,0.75432546,0.99570994,0.7533829],[3,0.76066825,0.50347218,0.74839118],[3,0.99973579,0.49941842,0.49999106],[8,0.13013965,0.49820228,0.89012556],[8,0.13123831,0.0009762,0.89172804],[8,0.13266817,0.76281991,0.38606044],[8,0.13668543,0.23605008,0.38694943],[8,0.36497731,0.00205007,0.611284],[8,0.36959425,0.74906999,0.10858278],[8,0.37133234,0.24930622,0.10894769],[8,0.39387105,0.49738953,0.61564538],[8,0.60560054,0.49738953,0.38433674],[8,0.62813925,0.24930622,0.89103443],[8,0.62987733,0.74906999,0.89139933],[8,0.63449427,0.00205007,0.38869812],[8,0.86278615,0.23605008,0.61303268],[8,0.86680341,0.76281991,0.61392168],[8,0.86823328,0.0009762,0.10825408],[8,0.86933193,0.49820228,0.10985656],[25,0.49973579,0.2595422,0.49999106],[25,0.99973579,0.99193761,0.49999106],[27,0.49973579,0.4986795,0.99999106],[27,0.49973579,0.74757761,0.49999106],[27,0.49973579,0.99946239,0.99999106],[27,0.99973579,0.25021602,0.99999106],[27,0.99973579,0.75039353,0.99999106]]}"
+    },
+    {
+      "request_id": "43c7a4e413d3812642cdf616b162bd8475daccacabb27d09792d1aeec9ac3f5f",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.24704784,0.63472018,0.53995992],[34,0.2471778,0.30519433,0.72043239],[34,0.24758529,0.95557458,0.37493044],[34,0.24824507,0.19447525,0.22144509],[34,0.24976566,0.86602709,0.03954987],[34,0.25031675,0.54453585,0.87513388],[34,0.73052268,0.36030542,0.46033996],[34,0.74815142,0.04342616,0.62567598],[34,0.74876599,0.45552643,0.12473383],[34,0.74949222,0.13437903,0.96059406],[34,0.75047269,0.69442443,0.27806972],[34,0.75235336,0.80507045,0.77898419],[51,0.25047149,0.30783487,0.03418007],[51,0.26148503,0.18490567,0.53030204],[51,0.74697485,0.69229878,0.96519175],[51,0.74916595,0.80792645,0.46547841],[57,0.24852364,0.00378641,0.81798355],[57,0.25114448,0.49633913,0.31875818],[57,0.74773897,0.99641476,0.18146745],[57,0.75159727,0.5028017,0.68240225]]}"
+    },
+    {
+      "request_id": "493891ed246ed413b2e05011327c681644829c99c44d947cf542e7090f969c85",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,0.00017868,2.57e-06,8.399e-05],[67,0.00017868,0.50000257,0.50008399],[67,0.50017868,2.57e-06,0.50008399],[67,0.50017868,0.50000257,8.399e-05],[68,0.00017868,2.57e-06,0.50008399],[68,0.00017868,0.50000257,8.399e-05],[68,0.50017868,2.57e-06,8.399e-05],[68,0.50017868,0.50000257,0.50008399],[80,0.25017868,0.25000257,0.25008399],[80,0.25017868,0.25000257,0.75008399],[80,0.25017868,0.75000257,0.25008399],[80,0.25017868,0.75000257,0.75008399],[80,0.75017868,0.25000257,0.25008399],[80,0.75017868,0.25000257,0.75008399],[80,0.75017868,0.75000257,0.25008399],[80,0.75017868,0.75000257,0.75008399]]}"
+    },
+    {
+      "request_id": "491a23738af04e3cb9959eb71413d1686b1dd353021b92b71323ca3f34739fd2",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.32945204,0.66237058,0.41408095],[8,0.33177086,0.66749924,0.08573057],[8,0.66725834,0.33162492,0.9139737],[8,0.66985141,0.33316554,0.58555317],[55,0.33997842,0.67324569,0.75076208],[55,0.6653531,0.33308625,0.25085621],[81,0.0029892,0.00114897,0.50003162],[81,0.9984991,0.00021253,0.99982807]]}"
+    },
+    {
+      "request_id": "114d83e9779c391c3f72169721914c0a002b2f8ead0f8bfe9430b3cf5a8c0b77",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.04402894,0.5321611,0.0635124],[7,0.28195543,0.27520578,0.56117209],[7,0.47380979,0.95957832,0.94204282],[7,0.71544342,0.72128552,0.44182992],[38,0.00211328,0.00246701,0.00052294],[38,0.74846253,0.25320862,0.49886431],[58,0.25433376,0.75247062,0.50210822],[58,0.49613003,0.5053256,0.00149788]]}"
+    },
+    {
+      "request_id": "cc455e763be7623b838842a488c7757ed7a73457f9a78d6e7fed7bd5fba69ba3",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23879182,0.50347824,0.25157575],[3,0.24513461,0.995716,0.24658403],[3,0.24776535,0.2556239,0.75412782],[3,0.2499317,0.74386235,0.75045893],[3,0.74951687,0.74386235,0.24949282],[3,0.75168322,0.2556239,0.24582392],[3,0.75431396,0.995716,0.75336771],[3,0.76065674,0.50347824,0.748376],[3,0.99972428,0.49942448,0.49997587],[8,0.13012815,0.49820835,0.89011038],[8,0.1312268,0.00098226,0.89171285],[8,0.13265666,0.76282597,0.38604526],[8,0.13667393,0.23605615,0.38693425],[8,0.36496581,0.00205613,0.61126881],[8,0.36958274,0.74907606,0.1085676],[8,0.37132083,0.24931228,0.1089325],[8,0.39385954,0.49739559,0.61563019],[8,0.60558903,0.49739559,0.38432155],[8,0.62812774,0.24931228,0.89101924],[8,0.62986582,0.74907606,0.89138415],[8,0.63448276,0.00205613,0.38868294],[8,0.86277464,0.23605615,0.6130175],[8,0.8667919,0.76282597,0.61390649],[8,0.86822177,0.00098226,0.10823889],[8,0.86932042,0.49820835,0.10984137],[25,0.49972428,0.25954827,0.49997587],[25,0.99972428,0.99194368,0.49997587],[27,0.49972428,0.49868557,0.99997587],[27,0.49972428,0.74758368,0.49997587],[27,0.49972428,0.99946846,0.99997587],[27,0.99972428,0.25022208,0.99997587],[27,0.99972428,0.75039959,0.99997587]]}"
+    },
+    {
+      "request_id": "a1992889789c003334d6ed113a898e9894e27a5f28dd57359cf96a6ca1530d7d",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,0.0,0.0,0.0],[67,0.5,0.0,0.5],[67,0.5,0.5,0.0],[67,1.0,0.5,0.5],[68,0.0,0.0,0.5],[68,0.5,0.0,0.0],[68,0.5,0.5,0.5],[68,1.0,0.5,0.0],[80,0.25,0.25,0.25],[80,0.25,0.25,0.75],[80,0.25,0.75,0.25],[80,0.25,0.75,0.75],[80,0.75,0.25,0.25],[80,0.75,0.25,0.75],[80,0.75,0.75,0.25],[80,0.75,0.75,0.75]]}"
+    },
+    {
+      "request_id": "4b6beb2694c4fb0ef0644371895930bac01210bc4c4e2aa299e15c69d79492b7",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.25,0.194805,0.221412],[34,0.25,0.305195,0.721412],[34,0.25,0.544746,0.874946],[34,0.25,0.634163,0.539607],[34,0.25,0.865837,0.039607],[34,0.25,0.955254,0.374946],[34,0.73213847,0.35979048,0.46006127],[34,0.75,0.044746,0.625054],[34,0.75,0.134163,0.960393],[34,0.75,0.455254,0.125054],[34,0.75,0.694805,0.278588],[34,0.75,0.805195,0.778588],[51,0.25,0.308082,0.03441],[51,0.25973384,0.18475974,0.53077562],[51,0.75,0.691918,0.96559],[51,0.75,0.808082,0.46559],[57,0.25,0.002874,0.818128],[57,0.25,0.497126,0.318128],[57,0.75,0.502874,0.681872],[57,0.75,0.997126,0.181872]]}"
+    },
+    {
+      "request_id": "5ddb718013ec00731c43ed3517073900fc5702420bfccf90014bd5429244849f",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.24704784,0.63472018,0.53995992],[34,0.2471778,0.30519433,0.72043239],[34,0.24758529,0.95557458,0.37493044],[34,0.24824507,0.19447525,0.22144509],[34,0.24976566,0.86602709,0.03954987],[34,0.25031675,0.54453585,0.87513388],[34,0.73052268,0.36030542,0.46033996],[34,0.74876599,0.45552643,0.12473383],[34,0.749399,0.04399605,0.62478582],[34,0.74949222,0.13437903,0.96059406],[34,0.75047269,0.69442443,0.27806972],[34,0.75235336,0.80507045,0.77898419],[51,0.25047149,0.30783487,0.03418007],[51,0.26148503,0.18490567,0.53030204],[51,0.74697485,0.69229878,0.96519175],[51,0.74916595,0.80792645,0.46547841],[57,0.24852364,0.00378641,0.81798355],[57,0.25114448,0.49633913,0.31875818],[57,0.74773897,0.99641476,0.18146745],[57,0.75159727,0.5028017,0.68240225]]}"
+    },
+    {
+      "request_id": "8b05082ef2bd23d9bab71cfc09159803aea5533fa5ff35e7e44938aa789a5336",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,0.00861117,0.99256908,0.00777646],[67,0.49933547,0.50016218,0.00042032],[67,0.50429488,0.99853715,0.5001892],[67,0.99938773,0.49992642,0.49897357],[68,7.552e-05,0.50023548,0.00138316],[68,0.00031051,0.00052634,0.4989055],[68,0.49901763,0.50021692,0.49943702],[68,0.50037225,0.00039884,0.0001077],[80,0.24981625,0.75032403,0.25300505],[80,0.25042629,0.25054759,0.25057623],[80,0.25054961,0.25007628,0.75083009],[80,0.2507949,0.7483042,0.74987312],[80,0.74925073,0.7514205,0.25060348],[80,0.75053367,0.25002725,0.74874099],[80,0.75145644,0.24949292,0.25006617],[80,0.75965227,0.75966698,0.7495923]]}"
+    },
+    {
+      "request_id": "945b80718ac1a3655713af1df2b9aa835decd6a2a9e857774b795019f081a1bf",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23898956,0.50311696,0.25184557],[3,0.24536726,0.99582233,0.24736706],[3,0.24755975,0.25567943,0.75418107],[3,0.25038147,0.74397283,0.75059237],[3,0.75009604,0.74348959,0.2496808],[3,0.75149782,0.25560399,0.24588569],[3,0.75475384,0.99504841,0.7542381],[3,0.76070685,0.50366831,0.74858359],[3,0.99979239,0.49966631,0.49903753],[8,0.12916345,0.49811597,0.89069263],[8,0.1308305,0.00210556,0.89118475],[8,0.13240311,0.76218848,0.38554208],[8,0.13703299,0.23611708,0.3868345],[8,0.36382589,0.00235845,0.61095275],[8,0.36859337,0.74964015,0.10878256],[8,0.37212584,0.24765913,0.10937254],[8,0.3949939,0.49654446,0.61561644],[8,0.60633999,0.49797629,0.38414619],[8,0.62812292,0.25068348,0.89111792],[8,0.6291393,0.74865856,0.8917099],[8,0.63335592,0.00230963,0.38837239],[8,0.86318891,0.23591093,0.61294102],[8,0.86606496,0.76395638,0.61320376],[8,0.86829798,0.49833166,0.11039928],[8,0.86835476,0.00012888,0.10793391],[25,0.50010613,0.25953458,0.49978545],[25,0.99868992,0.99218387,0.49973968],[27,0.00081434,0.7502839,0.99971593],[27,0.49593949,0.74828636,0.49976402],[27,0.50030215,0.49872816,0.99945332],[27,0.50150846,0.99901866,0.00051465],[27,0.99932283,0.25018108,0.00038118]]}"
+    },
+    {
+      "request_id": "fa8208b88ab7c8fd830a701af3446de7b075aea31d5632d5c71a3fcae2801f30",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.32945204,0.66237058,0.41408095],[8,0.33177086,0.66749924,0.08573057],[8,0.66725834,0.33162492,0.9139737],[8,0.66985141,0.33316554,0.58555317],[55,0.33300976,0.66773942,0.75040319],[55,0.6653531,0.33308625,0.25085621],[81,0.0029892,0.00114897,0.50003162],[81,0.9984991,0.00021253,0.99982807]]}"
+    },
+    {
+      "request_id": "cb96c5e01989044094f05337addcddd4190f5520a0d0b41c1877fff8abcb8ff9",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.33452249,0.66822669,0.38349558],[16,0.65752933,0.33106228,0.24531915],[16,0.99961098,0.00063454,0.3901184],[81,0.03398007,0.70492965,0.07888441],[81,0.29379625,0.32961389,0.07849432],[81,0.37413711,0.03821071,0.60988364],[81,0.66361522,0.62658001,0.61058746],[81,0.67311704,0.97633797,0.09006318],[81,0.96164816,0.33588489,0.60993782]]}"
+    },
+    {
+      "request_id": "f887a7316496c13d9d4a1d400be02196aea1a2c7fae198e52b962681c31cb1b0",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23887929,0.50345234,0.25161641],[3,0.24522208,0.9956901,0.24662469],[3,0.24785282,0.255598,0.75416848],[3,0.25001917,0.74383645,0.75049959],[3,0.74960434,0.74383645,0.24953348],[3,0.75177069,0.255598,0.24586459],[3,0.75440142,0.9956901,0.75340837],[3,0.76074421,0.50345234,0.74841666],[3,0.99981175,0.49939859,0.50001653],[8,0.13021561,0.49818245,0.89015104],[8,0.13131426,0.00095636,0.89175351],[8,0.13274413,0.76280007,0.38608592],[8,0.13676139,0.23603025,0.38697491],[8,0.35121083,0.98922086,0.6067325],[8,0.36967021,0.74905016,0.10860826],[8,0.3714083,0.24928638,0.10897316],[8,0.39394701,0.4973697,0.61567085],[8,0.60567649,0.4973697,0.38436221],[8,0.62821521,0.24928638,0.89105991],[8,0.62995329,0.74905016,0.89142481],[8,0.63335592,0.00230963,0.38837239],[8,0.86286211,0.23603025,0.61305816],[8,0.86687937,0.76280007,0.61394715],[8,0.86830924,0.00095636,0.10827956],[8,0.86940789,0.49818245,0.10988203],[25,0.49981175,0.25952237,0.50001653],[25,0.99981175,0.99191778,0.50001653],[27,0.48760027,0.7605,0.4941067],[27,0.49981175,0.49865967,1.653e-05],[27,0.49981175,0.99944256,1.653e-05],[27,0.99981175,0.25019618,1.653e-05],[27,0.99981175,0.75037369,1.653e-05]]}"
+    },
+    {
+      "request_id": "e77d875e22bc763af7b748366ada97866125375cea64750e98e847e6d047930f",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.33365206,0.66842027,0.38259383],[16,0.65752933,0.33106228,0.24531915],[16,0.99961098,0.00063454,0.3901184],[81,0.03398007,0.70492965,0.07888441],[81,0.29379625,0.32961389,0.07849432],[81,0.37413711,0.03821071,0.60988364],[81,0.66361522,0.62658001,0.61058746],[81,0.67311704,0.97633797,0.09006318],[81,0.96164816,0.33588489,0.60993782]]}"
+    },
+    {
+      "request_id": "e57632d54322001dab99fd85dc66e372f1484804c133fec226842e2f81c11cdb",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.04402894,0.5321611,0.0635124],[7,0.28195543,0.27520578,0.56117209],[7,0.47380979,0.95957832,0.94204282],[7,0.71544342,0.72128552,0.44182992],[38,0.00211328,0.00246701,0.00052294],[38,0.74846253,0.25320862,0.49886431],[58,0.25342981,0.75248363,0.50226194],[58,0.49613003,0.5053256,0.00149788]]}"
+    },
+    {
+      "request_id": "10036f53387f9fc8079eeac6040acbee4b7af7e8e0ca8acdab7dd59ca036af09",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,9.044e-05,0.99956903,0.99974228],[67,0.49933547,0.50016218,0.00042032],[67,0.50093805,0.99981285,0.49948906],[67,0.99938773,0.49992642,0.49897357],[68,7.552e-05,0.50023548,0.00138316],[68,0.00031051,0.00052634,0.4989055],[68,0.49901763,0.50021692,0.49943702],[68,0.50037225,0.00039884,0.0001077],[80,0.24981625,0.75032403,0.25300505],[80,0.25042629,0.25054759,0.25057623],[80,0.25054961,0.25007628,0.75083009],[80,0.25070502,0.74835071,0.7494638],[80,0.74925073,0.7514205,0.25060348],[80,0.75051082,0.25008764,0.74830157],[80,0.75051144,0.74953817,0.75015252],[80,0.75145644,0.24949292,0.25006617]]}"
+    },
+    {
+      "request_id": "154e7f70a06262f2fa69b8454fef1e05f6b25aff409331479b51c5a542f53460",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,0.00861117,0.99256908,0.00777646],[67,0.49933547,0.50016218,0.00042032],[67,0.50084024,0.9999021,0.49946244],[67,0.99938773,0.49992642,0.49897357],[68,7.552e-05,0.50023548,0.00138316],[68,0.00031051,0.00052634,0.4989055],[68,0.49901763,0.50021692,0.49943702],[68,0.50037225,0.00039884,0.0001077],[80,0.24981625,0.75032403,0.25300505],[80,0.25042629,0.25054759,0.25057623],[80,0.25054961,0.25007628,0.75083009],[80,0.2507949,0.7483042,0.74987312],[80,0.74925073,0.7514205,0.25060348],[80,0.75053367,0.25002725,0.74874099],[80,0.75145644,0.24949292,0.25006617],[80,0.75965227,0.75966698,0.7495923]]}"
+    },
+    {
+      "request_id": "2b7426db561826bd4bed231d4d430675ead6e8a205364b4c387fbad79776cff4",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.32945204,0.66237058,0.41408095],[8,0.33177086,0.66749924,0.08573057],[8,0.64171487,0.31337463,0.58895831],[8,0.66730367,0.33154062,0.91397642],[55,0.33601787,0.65077659,0.74481354],[55,0.6653531,0.33308625,0.25085621],[81,0.0029892,0.00114897,0.50003162],[81,0.9984991,0.00021253,0.99982807]]}"
+    },
+    {
+      "request_id": "b7c1356d3a46c39ed8e189b927b792a6057bd7c7e7d0a62159fbaaa5fb3a4981",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]]}"
+    },
+    {
+      "request_id": "a1c9eae43b6ea9fdf3524da869473f7e14457f22cf055cf5494564319937798e",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.33097454,0.66612073,0.08569943],[8,0.33283224,0.66426302,0.41423616],[8,0.64171487,0.31337463,0.58895831],[8,0.66632856,0.33076671,0.91393297],[55,0.34176076,0.6553345,0.74506943],[55,0.66460375,0.33249152,0.25082282],[81,0.99759795,0.99949732,0.99978791],[81,0.99906265,0.99803261,0.49985666]]}"
+    },
+    {
+      "request_id": "42e4cb5e6d09223bd73fad737bece7951fd0718e65e67785c9fd13795e71af38",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.24704784,0.63472018,0.53995992],[34,0.2471778,0.30519433,0.72043239],[34,0.24758529,0.95557458,0.37493044],[34,0.24824507,0.19447525,0.22144509],[34,0.24976566,0.86602709,0.03954987],[34,0.25031675,0.54453585,0.87513388],[34,0.74838421,0.36635195,0.46067168],[34,0.74876599,0.45552643,0.12473383],[34,0.749399,0.04399605,0.62478582],[34,0.74949222,0.13437903,0.96059406],[34,0.75047269,0.69442443,0.27806972],[34,0.75235336,0.80507045,0.77898419],[51,0.25047149,0.30783487,0.03418007],[51,0.25175119,0.19206394,0.53393642],[51,0.74697485,0.69229878,0.96519175],[51,0.74916595,0.80792645,0.46547841],[57,0.24852364,0.00378641,0.81798355],[57,0.25114448,0.49633913,0.31875818],[57,0.74773897,0.99641476,0.18146745],[57,0.75159727,0.5028017,0.68240225]]}"
+    },
+    {
+      "request_id": "7bc7716fc34dd4d578e7113ac4c2d865bb586eae2a64d6d0b6cdaf5a702860e1",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23898956,0.50311696,0.25184557],[3,0.24536726,0.99582233,0.24736706],[3,0.24755975,0.25567943,0.75418107],[3,0.25038147,0.74397283,0.75059237],[3,0.75009604,0.74348959,0.2496808],[3,0.75149782,0.25560399,0.24588569],[3,0.75475384,0.99504841,0.7542381],[3,0.76070685,0.50366831,0.74858359],[3,0.99979239,0.49966631,0.49903753],[8,0.12993397,0.00219864,0.8914062],[8,0.13005998,0.49802289,0.89047118],[8,0.13240311,0.76218848,0.38554208],[8,0.13703299,0.23611708,0.3868345],[8,0.35121083,0.98922086,0.6067325],[8,0.36859337,0.74964015,0.10878256],[8,0.37212584,0.24765913,0.10937254],[8,0.3949939,0.49654446,0.61561644],[8,0.60633999,0.49797629,0.38414619],[8,0.62812292,0.25068348,0.89111792],[8,0.6291393,0.74865856,0.8917099],[8,0.63335592,0.00230963,0.38837239],[8,0.86318891,0.23591093,0.61294102],[8,0.86606496,0.76395638,0.61320376],[8,0.86829798,0.49833166,0.11039928],[8,0.86835476,0.00012888,0.10793391],[25,0.50010613,0.25953458,0.49978545],[25,0.99868992,0.99218387,0.49973968],[27,0.00081434,0.7502839,0.99971593],[27,0.48760027,0.7605,0.4941067],[27,0.4983205,0.99952611,0.00064878],[27,0.50030215,0.49872816,0.99945332],[27,0.99932283,0.25018108,0.00038118]]}"
+    },
+    {
+      "request_id": "526a0c938e2f25d69ae3a4a4b7329429323d8505c8c02068b0c583eb554c9e3f",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.33333333,0.66666667,0.08593658],[8,0.33333333,0.66666667,0.41406342],[8,0.63857545,0.31345812,0.58934444],[8,0.66666667,0.33333333,0.91406342],[55,0.33634145,0.64970383,0.74441035],[55,0.66666667,0.33333333,0.25],[81,0.0,0.0,0.0],[81,0.0,0.0,0.5]]}"
+    },
+    {
+      "request_id": "bbdd5c9285602aa500db3674eb6aadceb830fbb7c26388b9d5ac8047440eb90f",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.25,0.194805,0.221412],[34,0.25,0.305195,0.721412],[34,0.25,0.544746,0.874946],[34,0.25,0.634163,0.539607],[34,0.25,0.865837,0.039607],[34,0.25,0.955254,0.374946],[34,0.75,0.044746,0.625054],[34,0.75,0.134163,0.960393],[34,0.75,0.365837,0.460393],[34,0.75,0.455254,0.125054],[34,0.75,0.694805,0.278588],[34,0.75,0.805195,0.778588],[51,0.25,0.191918,0.53441],[51,0.25,0.308082,0.03441],[51,0.75,0.691918,0.96559],[51,0.75,0.808082,0.46559],[57,0.25,0.002874,0.818128],[57,0.25,0.497126,0.318128],[57,0.75,0.502874,0.681872],[57,0.75,0.997126,0.181872]]}"
+    },
+    {
+      "request_id": "5f0f72b9c1c41e02f0daf1075da04f49a446433c3a0697ba4b2f981278dbe25c",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23885635,0.50346032,0.25160136],[3,0.24519914,0.99569808,0.24660965],[3,0.24782988,0.25560598,0.75415343],[3,0.24999623,0.74384443,0.75048454],[3,0.7495814,0.74384443,0.24951843],[3,0.75174775,0.25560598,0.24584954],[3,0.75437848,0.99569808,0.75339333],[3,0.76072127,0.50346032,0.74840161],[3,0.99978881,0.49940656,0.50000149],[8,0.13062848,0.49819042,0.89002001],[8,0.13085552,0.00096434,0.89185444],[8,0.13272119,0.76280805,0.38607087],[8,0.13673845,0.23603822,0.38695986],[8,0.35121083,0.98922086,0.6067325],[8,0.36964727,0.74905813,0.10859321],[8,0.37138536,0.24929436,0.10895811],[8,0.39392407,0.49737767,0.61565581],[8,0.60565355,0.49737767,0.38434717],[8,0.62819227,0.24929436,0.89104486],[8,0.62993035,0.74905813,0.89140976],[8,0.63335592,0.00230963,0.38837239],[8,0.86283917,0.23603822,0.61304311],[8,0.86685643,0.76280805,0.6139321],[8,0.8687221,0.00096434,0.10814853],[8,0.86894915,0.49819042,0.10998296],[25,0.49978881,0.25953034,0.50000149],[25,0.99978881,0.99192575,0.50000149],[27,0.48760027,0.7605,0.4941067],[27,0.49978881,0.49866764,1.49e-06],[27,0.49978881,0.99945053,1.49e-06],[27,0.99978881,0.25020416,1.49e-06],[27,0.99978881,0.75038167,1.49e-06]]}"
+    },
+    {
+      "request_id": "021224aad125a72c74b60da98ddef11fd84d59c95e7cbb606be6f82ede5e1b61",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,9.044e-05,0.99956903,0.99974228],[67,0.49933547,0.50016218,0.00042032],[67,0.50093805,0.99981285,0.49948906],[67,0.99938773,0.49992642,0.49897357],[68,7.552e-05,0.50023548,0.00138316],[68,0.00031051,0.00052634,0.4989055],[68,0.49901763,0.50021692,0.49943702],[68,0.50037225,0.00039884,0.0001077],[80,0.24981625,0.75032403,0.25300505],[80,0.24999152,0.25227507,0.25009864],[80,0.25054961,0.25007628,0.75083009],[80,0.25070502,0.74835071,0.7494638],[80,0.74979298,0.75125757,0.25113261],[80,0.75045763,0.24981511,0.24944352],[80,0.75051144,0.74953817,0.75015252],[80,0.75096738,0.24992836,0.74839509]]}"
+    },
+    {
+      "request_id": "8cb406f5be028515b228490c99979a3779779f614fcad8774288bac81748e32d",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.3309649,0.66611308,0.085699],[8,0.33236431,0.65933154,0.4142418],[8,0.64171487,0.31337463,0.58895831],[8,0.66730367,0.33154062,0.91397642],[55,0.33601787,0.65077659,0.74481354],[55,0.6653531,0.33308625,0.25085621],[81,0.0029892,0.00114897,0.50003162],[81,0.9984991,0.00021253,0.99982807]]}"
+    },
+    {
+      "request_id": "6f737a4203c631d1d49fe79486586e418c6c7613fd322be010184fd08bd6050a",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.0,0.0,0.251612],[13,0.03131224,0.00908667,0.7423536],[25,0.5,0.5,0.5],[29,0.52041718,0.50650248,0.98804514]]}"
+    },
+    {
+      "request_id": "458fb7bea6a97f6a0fadb07437aae48f585634ab594c283e49847fc47e142cdc",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.04402894,0.5321611,0.0635124],[7,0.2711201,0.29026845,0.56682693],[7,0.47331107,0.9598224,0.9422627],[7,0.71952481,0.70165726,0.43859119],[38,0.00211328,0.00246701,0.00052294],[38,0.74846253,0.25320862,0.49886431],[58,0.25433376,0.75247062,0.50210822],[58,0.49613003,0.5053256,0.00149788]]}"
+    },
+    {
+      "request_id": "56b30fead239781a4d6e9fef11e7a5af395f055edf6a20d328e4b63404bb0c77",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.24941359,0.19462708,0.22134073],[34,0.24941359,0.30532897,0.72134073],[34,0.24941359,0.54439901,0.8751111],[34,0.24941359,0.63414378,0.53953132],[34,0.24941359,0.86581227,0.03953132],[34,0.24941359,0.95555705,0.3751111],[34,0.74941359,0.04439901,0.6247995],[34,0.74941359,0.13414378,0.96037928],[34,0.74941359,0.36581227,0.46037928],[34,0.74941359,0.45555705,0.1247995],[34,0.74941359,0.69462708,0.27856986],[34,0.74941359,0.80532897,0.77856986],[51,0.24941359,0.19209503,0.53422462],[51,0.24941359,0.30786102,0.03422462],[51,0.74941359,0.69209503,0.96568598],[51,0.74941359,0.80786102,0.46568598],[57,0.24941359,0.00346218,0.81819353],[57,0.24941359,0.49649388,0.31819353],[57,0.74941359,0.50346218,0.68171707],[57,0.74941359,0.99649388,0.18171707]]}"
+    },
+    {
+      "request_id": "2cee7030c96cf02e291098b51bc0f71cd646581c04503ced9ddadc12d319c55b",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.03444404,0.00901865,0.7417623],[13,0.99508402,0.00359198,0.25115769],[25,0.49509828,0.50076881,0.49702966],[29,0.52067671,0.50562384,0.98690143]]}"
+    },
+    {
+      "request_id": "09a86bd2caca1555a4056e5a745160fee98bb3709950428b11dd5d29f2e80ae9",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.0,0.0,0.39038062],[16,0.33333333,0.66666667,0.38291745],[16,0.6582725,0.33198166,0.2447999],[81,0.03571373,0.70501271,0.07970746],[81,0.29498729,0.33070102,0.07970746],[81,0.37377843,0.03805771,0.6105175],[81,0.66427928,0.62622157,0.6105175],[81,0.67231455,0.97617494,0.08999375],[81,0.96194229,0.33572072,0.6105175]]}"
+    },
+    {
+      "request_id": "df850ea82464df18c545ae201b3e4147e98625bf69e3cd47c8d44d7dc38c3df7",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.0031318,0.99993198,0.7477967],[13,0.99508402,0.00359198,0.25115769],[25,0.49509828,0.50076881,0.49702966],[29,0.50025953,0.49912136,0.9988563]]}"
+    },
+    {
+      "request_id": "c3cbc6f79de4ee11c39ce3702abfcb4b651b8b7e746b048b53dda9199a74c0b4",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,0.00861117,0.99256908,0.00777646],[67,0.49933547,0.50016218,0.00042032],[67,0.50093805,0.99981285,0.49948906],[67,0.99938773,0.49992642,0.49897357],[68,7.552e-05,0.50023548,0.00138316],[68,0.00031051,0.00052634,0.4989055],[68,0.49901763,0.50021692,0.49943702],[68,0.50037225,0.00039884,0.0001077],[80,0.24981625,0.75032403,0.25300505],[80,0.25042629,0.25054759,0.25057623],[80,0.25054961,0.25007628,0.75083009],[80,0.2507949,0.7483042,0.74987312],[80,0.74925073,0.7514205,0.25060348],[80,0.75053367,0.25002725,0.74874099],[80,0.75145644,0.24949292,0.25006617],[80,0.75965227,0.75966698,0.7495923]]}"
+    },
+    {
+      "request_id": "be28598df0e57e0b12be7a373d9c492b7af7eca2f4cfea486b0ead17bbb09b99",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.04402894,0.5321611,0.0635124],[7,0.2711201,0.29026845,0.56682693],[7,0.47380979,0.95957832,0.94204282],[7,0.71952481,0.70165726,0.43859119],[38,0.00211328,0.00246701,0.00052294],[38,0.74846253,0.25320862,0.49886431],[58,0.25433376,0.75247062,0.50210822],[58,0.49613003,0.5053256,0.00149788]]}"
+    },
+    {
+      "request_id": "ce90a986a757bd92dc81993ea3002e7d0b95e055c91c61a94e1180a9ff7e2d80",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]]}"
+    },
+    {
+      "request_id": "efe234c11ebf3b9f85fe3f4d52a4edf921d39807122da71d493bed87d8076154",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.33333333,0.66666667,0.08593658],[8,0.33333333,0.66666667,0.41406342],[8,0.66666667,0.33333333,0.58593658],[8,0.66666667,0.33333333,0.91406342],[55,0.33333333,0.66666667,0.75],[55,0.66666667,0.33333333,0.25],[81,0.0,0.0,0.0],[81,0.0,0.0,0.5]]}"
+    },
+    {
+      "request_id": "39c77279e7792567c30231ff251dd7f6fd171cc6a2d7f29ad17c4f79fbf25b72",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.23898956,0.50311696,0.25184557],[3,0.24536726,0.99582233,0.24736706],[3,0.24755975,0.25567943,0.75418107],[3,0.25038147,0.74397283,0.75059237],[3,0.75009604,0.74348959,0.2496808],[3,0.75149782,0.25560399,0.24588569],[3,0.75475384,0.99504841,0.7542381],[3,0.76070685,0.50366831,0.74858359],[3,0.99979239,0.49966631,0.49903753],[8,0.12916345,0.49811597,0.89069263],[8,0.1308305,0.00210556,0.89118475],[8,0.13240311,0.76218848,0.38554208],[8,0.13703299,0.23611708,0.3868345],[8,0.35121083,0.98922086,0.6067325],[8,0.36859337,0.74964015,0.10878256],[8,0.37212584,0.24765913,0.10937254],[8,0.3949939,0.49654446,0.61561644],[8,0.60633999,0.49797629,0.38414619],[8,0.62812292,0.25068348,0.89111792],[8,0.6291393,0.74865856,0.8917099],[8,0.63335592,0.00230963,0.38837239],[8,0.86318891,0.23591093,0.61294102],[8,0.86606496,0.76395638,0.61320376],[8,0.86829798,0.49833166,0.11039928],[8,0.86835476,0.00012888,0.10793391],[25,0.50010613,0.25953458,0.49978545],[25,0.99868992,0.99218387,0.49973968],[27,0.00081434,0.7502839,0.99971593],[27,0.48760027,0.7605,0.4941067],[27,0.50030215,0.49872816,0.99945332],[27,0.50150846,0.99901866,0.00051465],[27,0.99932283,0.25018108,0.00038118]]}"
+    },
+    {
+      "request_id": "e1c80e75071942e3b883b5f742f5d525897f68b0f9ca26d8beaababc23b18428",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.33365206,0.66842027,0.38259383],[16,0.66582475,0.33208564,0.25906696],[16,0.99961098,0.00063454,0.3901184],[81,0.03398007,0.70492965,0.07888441],[81,0.29379625,0.32961389,0.07849432],[81,0.37413711,0.03821071,0.60988364],[81,0.66361522,0.62658001,0.61058746],[81,0.67010147,0.9644493,0.07977689],[81,0.96164816,0.33588489,0.60993782]]}"
+    },
+    {
+      "request_id": "6b2453737d187af7c0ab3dc603292cee0a0c113803c7177a9a99e8fd3419a877",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]],\"atoms_atomic_number_fractional_xyz\":[[34,0.24931869,0.19463613,0.22124658],[34,0.24931869,0.30533803,0.72124658],[34,0.24931869,0.54440806,0.87509024],[34,0.24931869,0.63415284,0.53951047],[34,0.24931869,0.86582132,0.03951047],[34,0.24931869,0.9555661,0.37509024],[34,0.74931869,0.04440806,0.62477865],[34,0.74931869,0.13415284,0.96035842],[34,0.74931869,0.36582132,0.46035842],[34,0.74931869,0.4555661,0.12477865],[34,0.74931869,0.69463613,0.27862232],[34,0.74931869,0.80533803,0.77862232],[51,0.24931869,0.19210409,0.53420377],[51,0.24931869,0.30787008,0.03420377],[51,0.74931869,0.69210409,0.96566513],[51,0.74931869,0.80787008,0.46566513],[57,0.24931869,0.00347123,0.81817268],[57,0.24931869,0.49650293,0.31817268],[57,0.74931869,0.50347123,0.68169622],[57,0.74931869,0.99650293,0.18169622]]}"
+    },
+    {
+      "request_id": "917d8383fe7d35d8ceccfa52fc023f53e238b964c68e1053d73360fb9eaf5e8b",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]]}"
+    },
+    {
+      "request_id": "4d3929a5bb01975f679655dc07438477c21777e9a47c48cb539916e13f6b9cca",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.33365206,0.66842027,0.38259383],[16,0.66465399,0.33316216,0.25952542],[16,0.99961098,0.00063454,0.3901184],[81,0.03398007,0.70492965,0.07888441],[81,0.29379625,0.32961389,0.07849432],[81,0.37413711,0.03821071,0.60988364],[81,0.66361522,0.62658001,0.61058746],[81,0.67010147,0.9644493,0.07977689],[81,0.96164816,0.33588489,0.60993782]]}"
+    },
+    {
+      "request_id": "739e6c34162e6e19eaf4fdaed1973399d5602ca44e2b99e2a72e1c3475d1ea38",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.042821,0.530525,0.062441],[7,0.281018,0.276018,0.561662],[7,0.472575,0.958774,0.941127],[7,0.714697,0.720673,0.440812],[38,0.002001,0.002015,0.000848],[38,0.750359,0.251142,0.500356],[58,0.254624,0.752499,0.50134],[58,0.497272,0.505131,0.001057]]}"
+    },
+    {
+      "request_id": "630f903c08ffa7ba1f9fbf6317af95c5eb452d6f2920d65ea3e0f6f6fe102e40",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.99839341,0.00085353,0.25075813],[13,0.99839341,0.00085353,0.74666205],[25,0.49839341,0.50085353,0.49871009],[29,0.49839341,0.50085353,0.99871009]]}"
+    },
+    {
+      "request_id": "61674e21a90c90e29809b25d9833e4d0aecffe66184b85fcacfad165748b8dbb",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,0.00852073,0.99300004,0.00803418],[67,0.5,0.0,0.5],[67,0.5,0.5,0.0],[67,1.0,0.5,0.5],[68,0.0,0.0,0.5],[68,0.5,0.0,0.0],[68,0.5,0.5,0.5],[68,1.0,0.5,0.0],[80,0.25,0.25,0.25],[80,0.25,0.25,0.75],[80,0.25,0.75,0.25],[80,0.25,0.75,0.75],[80,0.75,0.25,0.25],[80,0.75,0.25,0.75],[80,0.75,0.75,0.25],[80,0.75925356,0.76002191,0.75028852]]}"
+    },
+    {
+      "request_id": "3f51f4698d16e98d707e1acb78e6955b796cbc8851ca1e4b0ba66ef67c349764",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]]}"
+    },
+    {
+      "request_id": "a93674b4cb0faed081e0db0e3e2baaceecc2a1680da8ece610cde57949108d89",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[7.32939457,0.0,0.0],[-0.0,7.32939457,0.0],[0.0,0.0,7.32939457]],\"atoms_atomic_number_fractional_xyz\":[[67,0.00019586,2.412e-05,0.99989683],[67,0.00019586,0.50002412,0.49989683],[67,0.50019586,2.412e-05,0.49989683],[67,0.50019586,0.50002412,0.99989683],[68,0.00019586,2.412e-05,0.49989683],[68,0.00019586,0.50002412,0.99989683],[68,0.50019586,2.412e-05,0.99989683],[68,0.50019586,0.50002412,0.49989683],[80,0.24981625,0.75032403,0.25300505],[80,0.25019586,0.25002412,0.24989683],[80,0.25019586,0.25002412,0.74989683],[80,0.25019586,0.75002412,0.74989683],[80,0.75019586,0.25002412,0.24989683],[80,0.75019586,0.25002412,0.74989683],[80,0.75019586,0.75002412,0.24989683],[80,0.75019586,0.75002412,0.74989683]]}"
+    },
+    {
+      "request_id": "80217563cc2d06d99dfde30bb9454f8bb0a4aa21121a74af37780a78908b6876",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[0.0,4.86886292,0.0],[5.62910208,0.0,0.0],[0.0,-1.61363855,-9.32467813]],\"atoms_atomic_number_fractional_xyz\":[[3,0.0,0.50137622,0.5],[3,0.24017369,0.50401782,0.2522332],[3,0.24644104,0.99623755,0.24751066],[3,0.247582,0.25559274,0.75392278],[3,0.2503501,0.74306168,0.75097116],[3,0.7496499,0.74306168,0.24902884],[3,0.752418,0.25559274,0.24607722],[3,0.75355896,0.99623755,0.75248934],[3,0.75982631,0.50401782,0.7477668],[8,0.13051398,0.49974199,0.8901245],[8,0.13071603,0.99966463,0.89094433],[8,0.1329141,0.76308178,0.3861851],[8,0.13862771,0.23612045,0.38717446],[8,0.35341584,0.98830115,0.60741044],[8,0.3697755,0.74952801,0.10925975],[8,0.36980789,0.24948663,0.10902332],[8,0.39396868,0.49745985,0.6148467],[8,0.60603132,0.49745985,0.3851533],[8,0.63019211,0.24948663,0.89097668],[8,0.6302245,0.74952801,0.89074025],[8,0.6339691,0.00143874,0.38836931],[8,0.86137229,0.23612045,0.61282554],[8,0.8670859,0.76308178,0.6138149],[8,0.86928397,0.99966463,0.10905567],[8,0.86948602,0.49974199,0.1098755],[25,0.0,0.99443935,0.5],[25,0.5,0.26090695,0.5],[27,0.0,0.24939675,0.0],[27,0.0,0.7498556,0.0],[27,0.48814575,0.76097863,0.49468338],[27,0.5,0.49948896,0.0],[27,0.5,0.99962589,0.0]]}"
+    },
+    {
+      "request_id": "0c2731cfa52d42c02babfeec06683712dcfe108b991f50fe85ad3ab392c2ff17",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[4.118099,0.0,0.0],[-0.0,11.184008,0.0],[0.0,0.0,12.255458]]}"
+    },
+    {
+      "request_id": "9827c1dc70636d4d6b2f2c24bede678630b35a5060ff3a43fe3ce19839deb653",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.99903089,0.0005341,0.25081784],[13,0.99903089,0.0005341,0.74672176],[25,0.49903089,0.5005341,0.4987698],[29,0.49903089,0.5005341,0.9987698]]}"
+    },
+    {
+      "request_id": "31ba20e8c6c2b2566393fbc32a42055fa3136357229cf00eb0b44a149e5f1671",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.33516733,0.66849014,0.38573361],[16,0.65752933,0.33106228,0.24531915],[16,0.99961098,0.00063454,0.3901184],[81,0.03398007,0.70492965,0.07888441],[81,0.29379625,0.32961389,0.07849432],[81,0.37413711,0.03821071,0.60988364],[81,0.66361522,0.62658001,0.61058746],[81,0.67311704,0.97633797,0.09006318],[81,0.96164816,0.33588489,0.60993782]]}"
+    },
+    {
+      "request_id": "efdb4d3b7a2ad33a3fc69007bacb9e1c519abff7d3541bdf9027e4fe9bf951ec",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.03541736,0.00475082,0.74204309],[13,0.99481973,0.00475082,0.25108145],[25,0.49419014,0.50475082,0.49676767],[29,0.52087581,0.50475082,0.98695887]]}"
+    },
+    {
+      "request_id": "d36993bb42bd3e4493d9401f19addd67854436c8b84a06f97a907254c4533365",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.0,0.0,0.251612],[13,0.0,0.0,0.748388],[25,0.5,0.5,0.5],[29,0.5,0.5,1.0]]}"
+    },
+    {
+      "request_id": "db0d1b3a88fd8d9e4292d17dfc6ff0a990f7c5df5ec4c57ff9b962678632114b",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[1.77859247,-3.08061252,0.0],[1.77859247,3.08061252,0.0],[0.0,0.0,13.38652266]],\"atoms_atomic_number_fractional_xyz\":[[8,0.33310631,0.6662726,0.08581377],[8,0.33310631,0.6662726,0.41430061],[8,0.66643964,0.33293927,0.58581377],[8,0.66643964,0.33293927,0.91430061],[55,0.33310631,0.6662726,0.75005719],[55,0.66643964,0.33293927,0.25005719],[81,0.99977298,0.99960593,5.719e-05],[81,0.99977298,0.99960593,0.50005719]]}"
+    },
+    {
+      "request_id": "b05a07032bc72ad15163e376661c5c13245ce153d42cf4a88a893004928fbffa",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[2.80663,0.0,0.0],[-0.0,2.80663,0.0],[0.0,0.0,6.683073]],\"atoms_atomic_number_fractional_xyz\":[[13,0.0031318,0.99993198,0.7477967],[13,0.99508402,0.00359198,0.25115769],[25,0.48727279,0.50090929,0.49648636],[29,0.50025953,0.49912136,0.9988563]]}"
+    },
+    {
+      "request_id": "5a5372c5e1d6774689a3a3732dd1c46968242e7cf12c4f3acd042611ab9837ee",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.04402894,0.5321611,0.0635124],[7,0.2711201,0.29026845,0.56682693],[7,0.47546757,0.95666208,0.93835976],[7,0.71952481,0.70165726,0.43859119],[38,0.00211328,0.00246701,0.00052294],[38,0.74846253,0.25320862,0.49886431],[58,0.25433376,0.75247062,0.50210822],[58,0.49613003,0.5053256,0.00149788]]}"
+    },
+    {
+      "request_id": "d92e2261247e84236e5a445aa0a35476188cf65022b1f2dd33211664c55a4486",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[-5.21310652,0.0,0.0],[-0.00017433,-5.21948375,0.0],[2.59513334,2.6037372,5.16743638]],\"atoms_atomic_number_fractional_xyz\":[[7,0.04402894,0.5321611,0.0635124],[7,0.28195543,0.27520578,0.56117209],[7,0.47380979,0.95957832,0.94204282],[7,0.71544342,0.72128552,0.44182992],[38,0.00211328,0.00246701,0.00052294],[38,0.74846253,0.25320862,0.49886431],[58,0.2565452,0.7533735,0.50184744],[58,0.49613003,0.5053256,0.00149788]]}"
+    },
+    {
+      "request_id": "8a2fffb4b9c55d2737ac6b1e3fbcb566e16d0d3b1cf7b4d713c8ecebb8c9b877",
+      "prompt": "Classify the crystal system of the supplied periodic structure. Allowed answers: triclinic, monoclinic, orthorhombic, tetragonal, trigonal, hexagonal, cubic. Use the full atomic basis when provided; lattice metrics alone need not determine structural symmetry. Coordinates may contain small measurement errors. Use a positional tolerance of 0.02 angstrom and an angular tolerance of 5 degrees. Return exactly one line: ANSWER: <crystal system>.\n{\"lattice_rows_angstrom\":[[3.56401262,-6.17305093,0.0],[3.56401262,6.17305093,0.0],[0.0,0.0,6.28398674]],\"atoms_atomic_number_fractional_xyz\":[[16,0.0,0.0,0.39038062],[16,0.33333333,0.66666667,0.38291745],[16,0.66666667,0.33333333,0.25802203],[81,0.03571373,0.70501271,0.07970746],[81,0.29498729,0.33070102,0.07970746],[81,0.37377843,0.03805771,0.6105175],[81,0.66427928,0.62622157,0.6105175],[81,0.66929898,0.96428627,0.07970746],[81,0.96194229,0.33572072,0.6105175]]}"
+    }
+  ],
+  "cases": [
+    {
+      "case_id": "b6b5410d93d2e0ae530f0d49",
+      "material_id": "mp-2025375",
+      "variant": "large",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "trigonal",
+      "stable": true,
+      "input_hash": "29ec5b5f7dd717fac784605ee065fe18b8bbf32747f5f65412b7ae4cd985af79",
+      "requests": {
+        "exact": "09a86bd2caca1555a4056e5a745160fee98bb3709950428b11dd5d29f2e80ae9",
+        "huber": "31ba20e8c6c2b2566393fbc32a42055fa3136357229cf00eb0b44a149e5f1671",
+        "split": "cb96c5e01989044094f05337addcddd4190f5520a0d0b41c1877fff8abcb8ff9",
+        "lattice": "e444e8f1cf8bc1d54905a99e0ee3796ed7e7048ad2cdc40d836854a3065bf8bd"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010443035854696631,
+        "split": 0.008251995145209844
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "9356c120bd82fe1105b2a484",
+      "material_id": "mp-1178388",
+      "variant": "original",
+      "condition": "one_view_error",
+      "label": "hexagonal",
+      "original_label": "hexagonal",
+      "stable": true,
+      "input_hash": "0cb0b0d05e2c4f3029df0597ab6ea963a5d516aa572c49289a5dd378292dff03",
+      "requests": {
+        "exact": "efe234c11ebf3b9f85fe3f4d52a4edf921d39807122da71d493bed87d8076154",
+        "huber": "491a23738af04e3cb9959eb71413d1686b1dd353021b92b71323ca3f34739fd2",
+        "split": "b39760dff5526e54f336eeafb5bf1e8da20d562fd04f18c5d8cd24429830154d",
+        "lattice": "ce90a986a757bd92dc81993ea3002e7d0b95e055c91c61a94e1180a9ff7e2d80"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.013353057613593143,
+        "split": 0.0022186975168753138
+      },
+      "algorithm_labels": {
+        "huber": "monoclinic",
+        "split": "hexagonal"
+      }
+    },
+    {
+      "case_id": "ca1ebe91ed8eee158ae900fd",
+      "material_id": "mp-1184740",
+      "variant": "original",
+      "condition": "gaussian",
+      "label": "cubic",
+      "original_label": "cubic",
+      "stable": true,
+      "input_hash": "c6d0427b79f2311784032af36e4bc2eebfc5a343aae8f30b8140a1ebcffbc2d4",
+      "requests": {
+        "exact": "a1992889789c003334d6ed113a898e9894e27a5f28dd57359cf96a6ca1530d7d",
+        "huber": "10036f53387f9fc8079eeac6040acbee4b7af7e8e0ca8acdab7dd59ca036af09",
+        "split": "a93674b4cb0faed081e0db0e3e2baaceecc2a1680da8ece610cde57949108d89",
+        "lattice": "b7c1356d3a46c39ed8e189b927b792a6057bd7c7e7d0a62159fbaaa5fb3a4981"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010391305164231717,
+        "split": 0.005769100490774035
+      },
+      "algorithm_labels": {
+        "huber": "cubic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "d5769080abce7d65b6fbb331",
+      "material_id": "mp-675832",
+      "variant": "original",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "triclinic",
+      "stable": true,
+      "input_hash": "635e0a00eed6764dbf1db7f3f8a43197a4f64de09437021dc27234d9bc3f89ee",
+      "requests": {
+        "exact": "739e6c34162e6e19eaf4fdaed1973399d5602ca44e2b99e2a72e1c3475d1ea38",
+        "huber": "114d83e9779c391c3f72169721914c0a002b2f8ead0f8bfe9430b3cf5a8c0b77",
+        "split": "114d83e9779c391c3f72169721914c0a002b2f8ead0f8bfe9430b3cf5a8c0b77",
+        "lattice": "917d8383fe7d35d8ceccfa52fc023f53e238b964c68e1053d73360fb9eaf5e8b"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.008768664733868428,
+        "split": 0.0087686647338684
+      },
+      "algorithm_labels": {
+        "huber": "monoclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "87ac8ca745ac50813ca88ff8",
+      "material_id": "mp-1222966",
+      "variant": "large",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "orthorhombic",
+      "stable": true,
+      "input_hash": "30706271037e61fd714bed24a8923440b4a5e4e19b976f7e7cf09c3c84fc0af1",
+      "requests": {
+        "exact": "4b6beb2694c4fb0ef0644371895930bac01210bc4c4e2aa299e15c69d79492b7",
+        "huber": "43c7a4e413d3812642cdf616b162bd8475daccacabb27d09792d1aeec9ac3f5f",
+        "split": "6d11ddc7fc10c3e1f56a260802a3c88c820f9075296507395b43520394baab73",
+        "lattice": "0c2731cfa52d42c02babfeec06683712dcfe108b991f50fe85ad3ab392c2ff17"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010578539730844553,
+        "split": 0.01012095649045162
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "74abb839ebbcc8dbf8c7725a",
+      "material_id": "mp-1175684",
+      "variant": "large",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "monoclinic",
+      "stable": true,
+      "input_hash": "95e7798b3c94c952bd46b39d848a91a1d942c4bd790eb96e37c85c8e9cc36bf8",
+      "requests": {
+        "exact": "80217563cc2d06d99dfde30bb9454f8bb0a4aa21121a74af37780a78908b6876",
+        "huber": "39c77279e7792567c30231ff251dd7f6fd171cc6a2d7f29ad17c4f79fbf25b72",
+        "split": "f887a7316496c13d9d4a1d400be02196aea1a2c7fae198e52b962681c31cb1b0",
+        "lattice": "3f51f4698d16e98d707e1acb78e6955b796cbc8851ca1e4b0ba66ef67c349764"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.00992157261466322,
+        "split": 0.00789925430012124
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "4ad41710d8783b1137537b46",
+      "material_id": "mp-1222966",
+      "variant": "original",
+      "condition": "gaussian",
+      "label": "orthorhombic",
+      "original_label": "orthorhombic",
+      "stable": true,
+      "input_hash": "d744563ff67ef4113aa71460b65d9455e4b73894adbf38d4bf82490fe8d51d79",
+      "requests": {
+        "exact": "bbdd5c9285602aa500db3674eb6aadceb830fbb7c26388b9d5ac8047440eb90f",
+        "huber": "42e4cb5e6d09223bd73fad737bece7951fd0718e65e67785c9fd13795e71af38",
+        "split": "6b2453737d187af7c0ab3dc603292cee0a0c113803c7177a9a99e8fd3419a877",
+        "lattice": "0c2731cfa52d42c02babfeec06683712dcfe108b991f50fe85ad3ab392c2ff17"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.009978578800932357,
+        "split": 0.004970273747921933
+      },
+      "algorithm_labels": {
+        "huber": "orthorhombic",
+        "split": "orthorhombic"
+      }
+    },
+    {
+      "case_id": "d842d0ed5468dc0577d75888",
+      "material_id": "mp-675832",
+      "variant": "large",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "triclinic",
+      "stable": true,
+      "input_hash": "beeb8aeff2bb1d1d0f4ce815544b13413d66b071d85d1f17ac0a9be1414d988a",
+      "requests": {
+        "exact": "10c7c81e8d27f61ab11217dcdf741cfee7814e8168c99c0b7c2447947173047a",
+        "huber": "5a5372c5e1d6774689a3a3732dd1c46968242e7cf12c4f3acd042611ab9837ee",
+        "split": "458fb7bea6a97f6a0fadb07437aae48f585634ab594c283e49847fc47e142cdc",
+        "lattice": "917d8383fe7d35d8ceccfa52fc023f53e238b964c68e1053d73360fb9eaf5e8b"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.012686194513243206,
+        "split": 0.008764284017801556
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "bdc063607c5699106e84fc02",
+      "material_id": "mp-1178388",
+      "variant": "large",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "hexagonal",
+      "stable": true,
+      "input_hash": "5e4f00f591f22338377c4e474f781328e729481e01c3fda410bbc27f8fb52179",
+      "requests": {
+        "exact": "526a0c938e2f25d69ae3a4a4b7329429323d8505c8c02068b0c583eb554c9e3f",
+        "huber": "2b7426db561826bd4bed231d4d430675ead6e8a205364b4c387fbad79776cff4",
+        "split": "2b7426db561826bd4bed231d4d430675ead6e8a205364b4c387fbad79776cff4",
+        "lattice": "ce90a986a757bd92dc81993ea3002e7d0b95e055c91c61a94e1180a9ff7e2d80"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010109216320522092,
+        "split": 0.010109216320522195
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "519e3eef18e67a581cefafcb",
+      "material_id": "mp-1175684",
+      "variant": "original",
+      "condition": "gaussian",
+      "label": "monoclinic",
+      "original_label": "monoclinic",
+      "stable": true,
+      "input_hash": "c3a552f32441d2fa1724f34f5206404d4a8baf6c8d4eb4dd99a1acf784e6e976",
+      "requests": {
+        "exact": "7f6ff4ac697b01f547d4c6adffd1fd25e4686cc34fe337daa9f07b651ac68bcd",
+        "huber": "9a769d4e81b1616ece4c257f1524f1447423f7ce94b756c40bc628841dea22ee",
+        "split": "cc455e763be7623b838842a488c7757ed7a73457f9a78d6e7fed7bd5fba69ba3",
+        "lattice": "3f51f4698d16e98d707e1acb78e6955b796cbc8851ca1e4b0ba66ef67c349764"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.009921572614663225,
+        "split": 0.007624528921608603
+      },
+      "algorithm_labels": {
+        "huber": "monoclinic",
+        "split": "monoclinic"
+      }
+    },
+    {
+      "case_id": "067afa22a3127be77a47282f",
+      "material_id": "mp-1178388",
+      "variant": "large",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "hexagonal",
+      "stable": true,
+      "input_hash": "a74af0422b2367ebdc969787ab3365d6eee8bfb4e89b1028162d8d49e300664c",
+      "requests": {
+        "exact": "526a0c938e2f25d69ae3a4a4b7329429323d8505c8c02068b0c583eb554c9e3f",
+        "huber": "8cb406f5be028515b228490c99979a3779779f614fcad8774288bac81748e32d",
+        "split": "a1c9eae43b6ea9fdf3524da869473f7e14457f22cf055cf5494564319937798e",
+        "lattice": "ce90a986a757bd92dc81993ea3002e7d0b95e055c91c61a94e1180a9ff7e2d80"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.012336218826015875,
+        "split": 0.01173762005434046
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "45f58dae5d297ac8dc525803",
+      "material_id": "mp-1221660",
+      "variant": "large",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "tetragonal",
+      "stable": true,
+      "input_hash": "57dba2456ec373aa0a211d6d6c68b65d28f338dc2830e0ee7b4b819fcc18265e",
+      "requests": {
+        "exact": "6f737a4203c631d1d49fe79486586e418c6c7613fd322be010184fd08bd6050a",
+        "huber": "2cee7030c96cf02e291098b51bc0f71cd646581c04503ced9ddadc12d319c55b",
+        "split": "efdb4d3b7a2ad33a3fc69007bacb9e1c519abff7d3541bdf9027e4fe9bf951ec",
+        "lattice": "b591246950dba4957b8aadd01aa78a126191f8b66a867d59616a99c8260945df"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.016179839394490136,
+        "split": 0.02046788103695612
+      },
+      "algorithm_labels": {
+        "huber": "monoclinic",
+        "split": "monoclinic"
+      }
+    },
+    {
+      "case_id": "784f927f0883c25503a4fdcc",
+      "material_id": "mp-1221660",
+      "variant": "original",
+      "condition": "one_view_error",
+      "label": "tetragonal",
+      "original_label": "tetragonal",
+      "stable": true,
+      "input_hash": "1733340c15acb0afed77d7df9b735b009261d2cfa37bb9d0faefab9101a1591c",
+      "requests": {
+        "exact": "d36993bb42bd3e4493d9401f19addd67854436c8b84a06f97a907254c4533365",
+        "huber": "b05a07032bc72ad15163e376661c5c13245ce153d42cf4a88a893004928fbffa",
+        "split": "9827c1dc70636d4d6b2f2c24bede678630b35a5060ff3a43fe3ce19839deb653",
+        "lattice": "b591246950dba4957b8aadd01aa78a126191f8b66a867d59616a99c8260945df"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.023942843360104507,
+        "split": 0.009026898423381153
+      },
+      "algorithm_labels": {
+        "huber": "orthorhombic",
+        "split": "tetragonal"
+      }
+    },
+    {
+      "case_id": "efbc8b9e9631984f02a9b81b",
+      "material_id": "mp-675832",
+      "variant": "large",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "triclinic",
+      "stable": true,
+      "input_hash": "68d280f14754f464568c4cc6fcc6b20363036f1b48556424ed547380fe09dc51",
+      "requests": {
+        "exact": "10c7c81e8d27f61ab11217dcdf741cfee7814e8168c99c0b7c2447947173047a",
+        "huber": "be28598df0e57e0b12be7a373d9c492b7af7eca2f4cfea486b0ead17bbb09b99",
+        "split": "be28598df0e57e0b12be7a373d9c492b7af7eca2f4cfea486b0ead17bbb09b99",
+        "lattice": "917d8383fe7d35d8ceccfa52fc023f53e238b964c68e1053d73360fb9eaf5e8b"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.008768664733868477,
+        "split": 0.00876866473386833
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "63ea317c787775dd05d81707",
+      "material_id": "mp-1222966",
+      "variant": "original",
+      "condition": "one_view_error",
+      "label": "orthorhombic",
+      "original_label": "orthorhombic",
+      "stable": true,
+      "input_hash": "0909aeb1df5035bd8f4319c4ead3f32269a7e390caf002a04a05ceab16974004",
+      "requests": {
+        "exact": "bbdd5c9285602aa500db3674eb6aadceb830fbb7c26388b9d5ac8047440eb90f",
+        "huber": "0c618c63523a332c824e6bdcc08197f82f93031472c3e90128f7d397826db48d",
+        "split": "56b30fead239781a4d6e9fef11e7a5af395f055edf6a20d328e4b63404bb0c77",
+        "lattice": "0c2731cfa52d42c02babfeec06683712dcfe108b991f50fe85ad3ab392c2ff17"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.009566717732440201,
+        "split": 0.0046988481470033785
+      },
+      "algorithm_labels": {
+        "huber": "orthorhombic",
+        "split": "orthorhombic"
+      }
+    },
+    {
+      "case_id": "e6ca9eb2ad94110b21c0e332",
+      "material_id": "mp-1175684",
+      "variant": "large",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "monoclinic",
+      "stable": true,
+      "input_hash": "84193548f0a32036085c356b97c1c85e300ffd606306f8c657fa2c93f7d398f3",
+      "requests": {
+        "exact": "80217563cc2d06d99dfde30bb9454f8bb0a4aa21121a74af37780a78908b6876",
+        "huber": "7bc7716fc34dd4d578e7113ac4c2d865bb586eae2a64d6d0b6cdaf5a702860e1",
+        "split": "5f0f72b9c1c41e02f0daf1075da04f49a446433c3a0697ba4b2f981278dbe25c",
+        "lattice": "3f51f4698d16e98d707e1acb78e6955b796cbc8851ca1e4b0ba66ef67c349764"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.009980517141804776,
+        "split": 0.007955854297397376
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "c4a875a431a38369271d5ec7",
+      "material_id": "mp-675832",
+      "variant": "original",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "triclinic",
+      "stable": true,
+      "input_hash": "c14ccef7fa2159b6cd6a3ecb1f18647684a066d14e82e01f6bb6d782dc1017e7",
+      "requests": {
+        "exact": "739e6c34162e6e19eaf4fdaed1973399d5602ca44e2b99e2a72e1c3475d1ea38",
+        "huber": "d92e2261247e84236e5a445aa0a35476188cf65022b1f2dd33211664c55a4486",
+        "split": "e57632d54322001dab99fd85dc66e372f1484804c133fec226842e2f81c11cdb",
+        "lattice": "917d8383fe7d35d8ceccfa52fc023f53e238b964c68e1053d73360fb9eaf5e8b"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.009189025346842083,
+        "split": 0.009257191884672169
+      },
+      "algorithm_labels": {
+        "huber": "monoclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "5e82e90c84865a5df23001e5",
+      "material_id": "mp-2025375",
+      "variant": "original",
+      "condition": "gaussian",
+      "label": "trigonal",
+      "original_label": "trigonal",
+      "stable": true,
+      "input_hash": "7bbd7379f0722eb98d23be0512c933c50631c7d059565f303a3d29999906a9e2",
+      "requests": {
+        "exact": "8a2fffb4b9c55d2737ac6b1e3fbcb566e16d0d3b1cf7b4d713c8ecebb8c9b877",
+        "huber": "6e7f125d9f2c27e331ceee23b574fdadbd441acf606410ba915b7eb469dee221",
+        "split": "6e7f125d9f2c27e331ceee23b574fdadbd441acf606410ba915b7eb469dee221",
+        "lattice": "e444e8f1cf8bc1d54905a99e0ee3796ed7e7048ad2cdc40d836854a3065bf8bd"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.008403428999433075,
+        "split": 0.00840342899943295
+      },
+      "algorithm_labels": {
+        "huber": "trigonal",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "6910e07176f1fea41207e154",
+      "material_id": "mp-1178388",
+      "variant": "original",
+      "condition": "gaussian",
+      "label": "hexagonal",
+      "original_label": "hexagonal",
+      "stable": true,
+      "input_hash": "619401f1e711c134eeb75b56455d1a05b115343108c9641130dd9e5b3b2d1d73",
+      "requests": {
+        "exact": "efe234c11ebf3b9f85fe3f4d52a4edf921d39807122da71d493bed87d8076154",
+        "huber": "fa8208b88ab7c8fd830a701af3446de7b075aea31d5632d5c71a3fcae2801f30",
+        "split": "db0d1b3a88fd8d9e4292d17dfc6ff0a990f7c5df5ec4c57ff9b962678632114b",
+        "lattice": "ce90a986a757bd92dc81993ea3002e7d0b95e055c91c61a94e1180a9ff7e2d80"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010115107172689642,
+        "split": 0.0022302807875836054
+      },
+      "algorithm_labels": {
+        "huber": "hexagonal",
+        "split": "hexagonal"
+      }
+    },
+    {
+      "case_id": "5d286d585675c8399839bf45",
+      "material_id": "mp-1184740",
+      "variant": "original",
+      "condition": "one_view_error",
+      "label": "cubic",
+      "original_label": "cubic",
+      "stable": true,
+      "input_hash": "5fc0f35bf1d3213d0f1740646c724eba49cc8e24c2df63f79babe686c7871520",
+      "requests": {
+        "exact": "a1992889789c003334d6ed113a898e9894e27a5f28dd57359cf96a6ca1530d7d",
+        "huber": "021224aad125a72c74b60da98ddef11fd84d59c95e7cbb606be6f82ede5e1b61",
+        "split": "493891ed246ed413b2e05011327c681644829c99c44d947cf542e7090f969c85",
+        "lattice": "b7c1356d3a46c39ed8e189b927b792a6057bd7c7e7d0a62159fbaaa5fb3a4981"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010845023347834245,
+        "split": 0.0014472310986218084
+      },
+      "algorithm_labels": {
+        "huber": "cubic",
+        "split": "cubic"
+      }
+    },
+    {
+      "case_id": "87ac16eab16b99352a2285f7",
+      "material_id": "mp-1175684",
+      "variant": "original",
+      "condition": "one_view_error",
+      "label": "monoclinic",
+      "original_label": "monoclinic",
+      "stable": true,
+      "input_hash": "437d9ae5b841b97b2008168ed7ecd732cb43c086acb023d4b321fc570262fe19",
+      "requests": {
+        "exact": "7f6ff4ac697b01f547d4c6adffd1fd25e4686cc34fe337daa9f07b651ac68bcd",
+        "huber": "945b80718ac1a3655713af1df2b9aa835decd6a2a9e857774b795019f081a1bf",
+        "split": "e7f5efc414c2eac247584f43933e26e5583bc5e780c5eceb796af795cb8e0ba0",
+        "lattice": "3f51f4698d16e98d707e1acb78e6955b796cbc8851ca1e4b0ba66ef67c349764"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010445789153806541,
+        "split": 0.007622520076170751
+      },
+      "algorithm_labels": {
+        "huber": "monoclinic",
+        "split": "monoclinic"
+      }
+    },
+    {
+      "case_id": "6123a33a6522ceaff2d8b35a",
+      "material_id": "mp-1221660",
+      "variant": "large",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "tetragonal",
+      "stable": true,
+      "input_hash": "0b233299a3443069b66ac5efa7b0e49013c9e6948ac90259c68e7d3a69a66fbc",
+      "requests": {
+        "exact": "6f737a4203c631d1d49fe79486586e418c6c7613fd322be010184fd08bd6050a",
+        "huber": "0fc5223e7a5370401bf24df8bcb1e35b1c7786fb229bdb98d34e05b4ad878cd8",
+        "split": "2d9cfdb56e5303d4bb76dac7c232fefa06725da9ebb7044655b1a2eb8b1501a0",
+        "lattice": "b591246950dba4957b8aadd01aa78a126191f8b66a867d59616a99c8260945df"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.01751587348902743,
+        "split": 0.019707177512785022
+      },
+      "algorithm_labels": {
+        "huber": "monoclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "91d629ac0b0d1c23697d0b2b",
+      "material_id": "mp-1184740",
+      "variant": "large",
+      "condition": "one_view_error",
+      "label": "triclinic",
+      "original_label": "cubic",
+      "stable": true,
+      "input_hash": "0b4f03279ea826ed66909a5ae6e4552638c2358c33b2d83567cecb6fc342f636",
+      "requests": {
+        "exact": "61674e21a90c90e29809b25d9833e4d0aecffe66184b85fcacfad165748b8dbb",
+        "huber": "8b05082ef2bd23d9bab71cfc09159803aea5533fa5ff35e7e44938aa789a5336",
+        "split": "154e7f70a06262f2fa69b8454fef1e05f6b25aff409331479b51c5a542f53460",
+        "lattice": "b7c1356d3a46c39ed8e189b927b792a6057bd7c7e7d0a62159fbaaa5fb3a4981"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.013036001472664338,
+        "split": 0.010201596549886867
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "5e7dfb56e263b22c7b077dab",
+      "material_id": "mp-2025375",
+      "variant": "large",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "trigonal",
+      "stable": true,
+      "input_hash": "54c696af674be8dc31f17d563a3f4784c9098ac2a14ba0e7451f651b35c3fa31",
+      "requests": {
+        "exact": "09a86bd2caca1555a4056e5a745160fee98bb3709950428b11dd5d29f2e80ae9",
+        "huber": "e77d875e22bc763af7b748366ada97866125375cea64750e98e847e6d047930f",
+        "split": "e77d875e22bc763af7b748366ada97866125375cea64750e98e847e6d047930f",
+        "lattice": "e444e8f1cf8bc1d54905a99e0ee3796ed7e7048ad2cdc40d836854a3065bf8bd"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.00840342899943301,
+        "split": 0.008403428999432982
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "ff4424482b1c264abd7c6ee7",
+      "material_id": "mp-1184740",
+      "variant": "large",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "cubic",
+      "stable": true,
+      "input_hash": "21c93d73dc52c927e31a30db137357ed806463db6bbc4d68d24dbe00eafb3578",
+      "requests": {
+        "exact": "61674e21a90c90e29809b25d9833e4d0aecffe66184b85fcacfad165748b8dbb",
+        "huber": "c3cbc6f79de4ee11c39ce3702abfcb4b651b8b7e746b048b53dda9199a74c0b4",
+        "split": "c3cbc6f79de4ee11c39ce3702abfcb4b651b8b7e746b048b53dda9199a74c0b4",
+        "lattice": "b7c1356d3a46c39ed8e189b927b792a6057bd7c7e7d0a62159fbaaa5fb3a4981"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.010229772457705988,
+        "split": 0.010229772457706262
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "39b89bfa47424e7114d77286",
+      "material_id": "mp-1222966",
+      "variant": "large",
+      "condition": "gaussian",
+      "label": "triclinic",
+      "original_label": "orthorhombic",
+      "stable": true,
+      "input_hash": "9e27df3001b723b660827e057bea39b87b2c557da17a72ecc94d2ecd0e5f9ccc",
+      "requests": {
+        "exact": "4b6beb2694c4fb0ef0644371895930bac01210bc4c4e2aa299e15c69d79492b7",
+        "huber": "5ddb718013ec00731c43ed3517073900fc5702420bfccf90014bd5429244849f",
+        "split": "5ddb718013ec00731c43ed3517073900fc5702420bfccf90014bd5429244849f",
+        "lattice": "0c2731cfa52d42c02babfeec06683712dcfe108b991f50fe85ad3ab392c2ff17"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.009978578800932388,
+        "split": 0.009978578800932213
+      },
+      "algorithm_labels": {
+        "huber": "triclinic",
+        "split": "triclinic"
+      }
+    },
+    {
+      "case_id": "11ccae55778feb4cb10f92ad",
+      "material_id": "mp-1221660",
+      "variant": "original",
+      "condition": "gaussian",
+      "label": "tetragonal",
+      "original_label": "tetragonal",
+      "stable": true,
+      "input_hash": "3e6bbc5ef131d05f3396b6db47e31103bbab6025b3fc96775bc14b98ecb9d334",
+      "requests": {
+        "exact": "d36993bb42bd3e4493d9401f19addd67854436c8b84a06f97a907254c4533365",
+        "huber": "df850ea82464df18c545ae201b3e4147e98625bf69e3cd47c8d44d7dc38c3df7",
+        "split": "630f903c08ffa7ba1f9fbf6317af95c5eb452d6f2920d65ea3e0f6f6fe102e40",
+        "lattice": "b591246950dba4957b8aadd01aa78a126191f8b66a867d59616a99c8260945df"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.016179839394490195,
+        "split": 0.010228934987219987
+      },
+      "algorithm_labels": {
+        "huber": "tetragonal",
+        "split": "tetragonal"
+      }
+    },
+    {
+      "case_id": "88fb0185649fcb190d4c3c43",
+      "material_id": "mp-2025375",
+      "variant": "original",
+      "condition": "one_view_error",
+      "label": "trigonal",
+      "original_label": "trigonal",
+      "stable": true,
+      "input_hash": "785d042a5b3bf5e773632280d6a8bb322bc0e836add76782e65eeccc340e994a",
+      "requests": {
+        "exact": "8a2fffb4b9c55d2737ac6b1e3fbcb566e16d0d3b1cf7b4d713c8ecebb8c9b877",
+        "huber": "4d3929a5bb01975f679655dc07438477c21777e9a47c48cb539916e13f6b9cca",
+        "split": "e1c80e75071942e3b883b5f742f5d525897f68b0f9ca26d8beaababc23b18428",
+        "lattice": "e444e8f1cf8bc1d54905a99e0ee3796ed7e7048ad2cdc40d836854a3065bf8bd"
+      },
+      "coordinate_rmsd": {
+        "huber": 0.009818771904531587,
+        "split": 0.00877796302799817
+      },
+      "algorithm_labels": {
+        "huber": "trigonal",
+        "split": "triclinic"
+      }
+    }
+  ],
+  "responses": {
+    "b591246950dba4957b8aadd01aa78a126191f8b66a867d59616a99c8260945df": {
+      "raw_output": "ANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 161,
+      "generation_tokens": 7,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "045de8f05050a8bdee5d2fc6ef08542d759d6ce00efc7581b117c8a6127d58c3",
+      "seconds": 0.7494456249987707,
+      "metal_peak_bytes": 3367192560
+    },
+    "6e7f125d9f2c27e331ceee23b574fdadbd441acf606410ba915b7eb469dee221": {
+      "raw_output": "hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 516,
+      "generation_tokens": 3,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "5d86f8a71b2032099becc4b878978bda738c164a7c34838e1b25060141e5c073",
+      "seconds": 0.7194250000175089,
+      "metal_peak_bytes": 3778041892
+    },
+    "e444e8f1cf8bc1d54905a99e0ee3796ed7e7048ad2cdc40d836854a3065bf8bd": {
+      "raw_output": "orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 182,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "5b5a7a179a09836b22b0b3334f17a9d5f68e72fe276d54eb7cbc8c00f63bfec2",
+      "seconds": 0.3156273750355467,
+      "metal_peak_bytes": 3409269192
+    },
+    "b39760dff5526e54f336eeafb5bf1e8da20d562fd04f18c5d8cd24429830154d": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 474,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "e7da58522d0368ef3a18f30b2cc996fa4d32a7dbcc4272804aad8e6ae70e7cbe",
+      "seconds": 0.6689389169914648,
+      "metal_peak_bytes": 3727280500
+    },
+    "10c7c81e8d27f61ab11217dcdf741cfee7814e8168c99c0b7c2447947173047a": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 448,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "77ac7ae0be58a2ddaca6be89bc76bfda3e6efa2ca39e3e74e9f7c041fecf4887",
+      "seconds": 0.6207774160429835,
+      "metal_peak_bytes": 3695017908
+    },
+    "7f6ff4ac697b01f547d4c6adffd1fd25e4686cc34fe337daa9f07b651ac68bcd": {
+      "raw_output": "hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 1182,
+      "generation_tokens": 3,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "40d8d04b7f649be99556295e17851c3f241fc133dfec3d158a3cd473d9f32d68",
+      "seconds": 1.5724577080691233,
+      "metal_peak_bytes": 3937453314
+    },
+    "2d9cfdb56e5303d4bb76dac7c232fefa06725da9ebb7044655b1a2eb8b1501a0": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 317,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "74932b784e2e05e4828f6895a30dc730fd8ae9c1a6fcf35f1c6734642a8da586",
+      "seconds": 0.4609237090917304,
+      "metal_peak_bytes": 3618462854
+    },
+    "9a769d4e81b1616ece4c257f1524f1447423f7ce94b756c40bc628841dea22ee": {
+      "raw_output": "hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 1307,
+      "generation_tokens": 3,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "42f1a1f689ac13dc3e2aca17c13bd190cabc1f6a759cbd4975fa952b36996875",
+      "seconds": 1.7375061670318246,
+      "metal_peak_bytes": 3938094314
+    },
+    "6d11ddc7fc10c3e1f56a260802a3c88c820f9075296507395b43520394baab73": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 895,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "2e4ba00f5b5b7386761a34f3892b68a5ebbd59db7fb649925544f1f2879b062a",
+      "seconds": 1.2163131249835715,
+      "metal_peak_bytes": 3833242988
+    },
+    "0fc5223e7a5370401bf24df8bcb1e35b1c7786fb229bdb98d34e05b4ad878cd8": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 317,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "87805c3e3ff0184598ebbcbe3824f1e6d9fd6509e03fb612e333476d1fb71025",
+      "seconds": 0.46737562504131347,
+      "metal_peak_bytes": 3618462854
+    },
+    "0c618c63523a332c824e6bdcc08197f82f93031472c3e90128f7d397826db48d": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 894,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "c66451b0a241ce1d905ab4d6587435537bf1c1893ba30177fe770abd78a0b256",
+      "seconds": 1.204293290968053,
+      "metal_peak_bytes": 3832376076
+    },
+    "e7f5efc414c2eac247584f43933e26e5583bc5e780c5eceb796af795cb8e0ba0": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 1308,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "0186f80f5bd24ec8a92f85db449485f869b0116d5f3ca6c5c1e2ee760e581fef",
+      "seconds": 1.7335970420390368,
+      "metal_peak_bytes": 3938093298
+    },
+    "43c7a4e413d3812642cdf616b162bd8475daccacabb27d09792d1aeec9ac3f5f": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 896,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "510bca609f8e118baf9596a60d819fd472083680167e0cd4ffce051d9bb05cf7",
+      "seconds": 1.1966235419968143,
+      "metal_peak_bytes": 3834111448
+    },
+    "493891ed246ed413b2e05011327c681644829c99c44d947cf542e7090f969c85": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 746,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "5e85d5ea11e96d6c22bace1c1572f76cd46ab59d0e11694260d834d085fd757a",
+      "seconds": 1.0240560000529513,
+      "metal_peak_bytes": 3779223380
+    },
+    "491a23738af04e3cb9959eb71413d1686b1dd353021b92b71323ca3f34739fd2": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 476,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "f387dcffeb03d96ff4a81e9daa1457aeb761d11d6dc36125b54418d0e600530b",
+      "seconds": 0.6695569170406088,
+      "metal_peak_bytes": 3729541684
+    },
+    "114d83e9779c391c3f72169721914c0a002b2f8ead0f8bfe9430b3cf5a8c0b77": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 483,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "475921644e84ad99629e3c69d87613654d99decf270b326b947702afcae3572a",
+      "seconds": 0.7124201250262558,
+      "metal_peak_bytes": 3740110036
+    },
+    "cc455e763be7623b838842a488c7757ed7a73457f9a78d6e7fed7bd5fba69ba3": {
+      "raw_output": "orthombic ANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 1301,
+      "generation_tokens": 9,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "eff779fe24d3e923066c9276d4229a715ff3a112adf39f6f501c317e166f6fa6",
+      "seconds": 1.816609791945666,
+      "metal_peak_bytes": 3938060474
+    },
+    "a1992889789c003334d6ed113a898e9894e27a5f28dd57359cf96a6ca1530d7d": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 446,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "95f15d411acf33bdaefb77ffe52c906e423da6dfedcd4e0db51a9655d81dee92",
+      "seconds": 0.6276989999460056,
+      "metal_peak_bytes": 3693477620
+    },
+    "4b6beb2694c4fb0ef0644371895930bac01210bc4c4e2aa299e15c69d79492b7": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 715,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "1031ab82e6fcacdaf3f604537feb8af575e46217b3c594e0ca143a2817402c7b",
+      "seconds": 1.001934334053658,
+      "metal_peak_bytes": 3779059292
+    },
+    "5ddb718013ec00731c43ed3517073900fc5702420bfccf90014bd5429244849f": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 894,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "22c1a7c041a2258051329e87cf2ba8287794ad7982c22cfb1c56b376366c2013",
+      "seconds": 1.2117309590103105,
+      "metal_peak_bytes": 3832374528
+    },
+    "8b05082ef2bd23d9bab71cfc09159803aea5533fa5ff35e7e44938aa789a5336": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 750,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "a381c7e99d752b0402516ab99a0494129b3782efad4116ee9fcc5e6659e71c51",
+      "seconds": 1.027912124991417,
+      "metal_peak_bytes": 3779239796
+    },
+    "945b80718ac1a3655713af1df2b9aa835decd6a2a9e857774b795019f081a1bf": {
+      "raw_output": "hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 1307,
+      "generation_tokens": 3,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "e6117e66a59263261881d1bc194341c1d7122ce98b33a078b5fb1c5682740f78",
+      "seconds": 1.7142897909507155,
+      "metal_peak_bytes": 3938093290
+    },
+    "fa8208b88ab7c8fd830a701af3446de7b075aea31d5632d5c71a3fcae2801f30": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 476,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "4eb5c15f38d23985a2e1709bf9a56600f5e331b2b0f4dccc9d57dda0b8744a1d",
+      "seconds": 0.6736269160173833,
+      "metal_peak_bytes": 3729541684
+    },
+    "cb96c5e01989044094f05337addcddd4190f5520a0d0b41c1877fff8abcb8ff9": {
+      "raw_output": "hexagonal ANSWER: hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 518,
+      "generation_tokens": 6,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "ab0f224bac98c835861eacbc74e66f1ac11c5029e0ce79329e692a51e4140978",
+      "seconds": 0.7540879169246182,
+      "metal_peak_bytes": 3778041908
+    },
+    "f887a7316496c13d9d4a1d400be02196aea1a2c7fae198e52b962681c31cb1b0": {
+      "raw_output": "orthombic ANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 1296,
+      "generation_tokens": 9,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "171c21f46b500237829a07e81d3f143852e66c5aaa1c6383370274568b87aadc",
+      "seconds": 1.8095210409956053,
+      "metal_peak_bytes": 3938027666
+    },
+    "e77d875e22bc763af7b748366ada97866125375cea64750e98e847e6d047930f": {
+      "raw_output": "hexagonal ANSWER: hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 518,
+      "generation_tokens": 6,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "3235afc4cdf0834a96457133e3645e3f733fb24bae236d57224171058c2782e7",
+      "seconds": 0.7628791249589995,
+      "metal_peak_bytes": 3778041908
+    },
+    "e57632d54322001dab99fd85dc66e372f1484804c133fec226842e2f81c11cdb": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 483,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "00a2b44b0e6d7437760746f19ad72c1133636f8eafeb31ab9c7e536dfd19aa5b",
+      "seconds": 0.7199700420023873,
+      "metal_peak_bytes": 3740110036
+    },
+    "10036f53387f9fc8079eeac6040acbee4b7af7e8e0ca8acdab7dd59ca036af09": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 752,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "9a118ec98c62cc9e2ea3cce980a7199f73e9242a182bfffdcf178f3815d23592",
+      "seconds": 1.041184916975908,
+      "metal_peak_bytes": 3779239812
+    },
+    "154e7f70a06262f2fa69b8454fef1e05f6b25aff409331479b51c5a542f53460": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 750,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "3ec1bd8f6c7a3e218188dca4a2070efddd45309c9b1d5aa32f277fa2aabc5545",
+      "seconds": 1.0373451670166105,
+      "metal_peak_bytes": 3779239796
+    },
+    "2b7426db561826bd4bed231d4d430675ead6e8a205364b4c387fbad79776cff4": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 477,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "38f44353cfa9d765bbb0ec68622f99e801a762b2e3a3bc8fcdfb8a8b85aaa991",
+      "seconds": 0.6701533750165254,
+      "metal_peak_bytes": 3730311828
+    },
+    "b7c1356d3a46c39ed8e189b927b792a6057bd7c7e7d0a62159fbaaa5fb3a4981": {
+      "raw_output": "ANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 169,
+      "generation_tokens": 7,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "3fd67d7a4d7920dc9b5c555eb39f288e052be0e7d653d44a58dfa05d72865ff8",
+      "seconds": 0.335917416960001,
+      "metal_peak_bytes": 3382905776
+    },
+    "a1c9eae43b6ea9fdf3524da869473f7e14457f22cf055cf5494564319937798e": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 479,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "ed6672fa2448c9e9823e2740e4643fc9d9e92f9039c2ef3bab52441843c7baed",
+      "seconds": 0.6784145839046687,
+      "metal_peak_bytes": 3733867348
+    },
+    "42e4cb5e6d09223bd73fad737bece7951fd0718e65e67785c9fd13795e71af38": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 894,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "230c4324fa29a61098c132e0a0b9f55bf7ffbde9d7b8b94efe3067b699656e1b",
+      "seconds": 1.1896397500531748,
+      "metal_peak_bytes": 3832374528
+    },
+    "7bc7716fc34dd4d578e7113ac4c2d865bb586eae2a64d6d0b6cdaf5a702860e1": {
+      "raw_output": "orthorhombic\nANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 1300,
+      "generation_tokens": 12,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "f05dfcf99f2da5ad8941b6406664a36e871192d74eaa93f52aea3bd6d13cab83",
+      "seconds": 1.8214102500351146,
+      "metal_peak_bytes": 3938060466
+    },
+    "526a0c938e2f25d69ae3a4a4b7329429323d8505c8c02068b0c583eb554c9e3f": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 432,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "9f46f99685b8897cde54b20ff3c9112eab6007e536f94850d5ad0538a3af8f30",
+      "seconds": 0.6296500830212608,
+      "metal_peak_bytes": 3763228932
+    },
+    "bbdd5c9285602aa500db3674eb6aadceb830fbb7c26388b9d5ac8047440eb90f": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 694,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "351674fbb72b5beea08d10577718878ed4011de79a2ea73587a45e6624763c41",
+      "seconds": 0.9649352910928428,
+      "metal_peak_bytes": 3778944436
+    },
+    "5f0f72b9c1c41e02f0daf1075da04f49a446433c3a0697ba4b2f981278dbe25c": {
+      "raw_output": "orthombic\nANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 1298,
+      "generation_tokens": 10,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "d9015dd75f849bbf00788648f50e0b7124655c0109de95188790f1bc4efe0486",
+      "seconds": 1.8277486249571666,
+      "metal_peak_bytes": 3938044066
+    },
+    "021224aad125a72c74b60da98ddef11fd84d59c95e7cbb606be6f82ede5e1b61": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 753,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "1ead28c0fbc3ccfa3f7c0e06014af721325e18b364ec32c90e3d9a208a935b68",
+      "seconds": 1.0401777080260217,
+      "metal_peak_bytes": 3779256204
+    },
+    "8cb406f5be028515b228490c99979a3779779f614fcad8774288bac81748e32d": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 473,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "df912763ee9314c4f51bd24488149daf5c6d8a3f6fba9e5ae385de2bbb7e938c",
+      "seconds": 0.6720947079593316,
+      "metal_peak_bytes": 3724052756
+    },
+    "6f737a4203c631d1d49fe79486586e418c6c7613fd322be010184fd08bd6050a": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 280,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "8d859d446af95e9e8264d543f8c938a43f3304b571cb0b4893be5fbbefd0b3c7",
+      "seconds": 0.42245516704861075,
+      "metal_peak_bytes": 3552402946
+    },
+    "458fb7bea6a97f6a0fadb07437aae48f585634ab594c283e49847fc47e142cdc": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 480,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "19980c3f6eca5392d126340e2591e1aec8a7b1db47a3851da01854d03a24aab3",
+      "seconds": 0.6713410409865901,
+      "metal_peak_bytes": 3734801332
+    },
+    "56b30fead239781a4d6e9fef11e7a5af395f055edf6a20d328e4b63404bb0c77": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 894,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "fb025ca41762414b5ef878c3b6ea68ad0cf4e741474776fe39feb525d7930a06",
+      "seconds": 1.1945427909959108,
+      "metal_peak_bytes": 3832374528
+    },
+    "2cee7030c96cf02e291098b51bc0f71cd646581c04503ced9ddadc12d319c55b": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 317,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "76fd00eebf3da9115f518074bdee4ee9907aee2c7703eb1e205d39bd60b3797e",
+      "seconds": 0.4599682920379564,
+      "metal_peak_bytes": 3618462854
+    },
+    "09a86bd2caca1555a4056e5a745160fee98bb3709950428b11dd5d29f2e80ae9": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 500,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "2a0e7846439927afeda0d0f277852a76e77a756592a743b3812e7051e9b84b73",
+      "seconds": 0.6976169579429552,
+      "metal_peak_bytes": 3764474676
+    },
+    "df850ea82464df18c545ae201b3e4147e98625bf69e3cd47c8d44d7dc38c3df7": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 315,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "005e1177260894b7d2e04b5e79e850726a35eacd836cae5d804906420424824a",
+      "seconds": 0.4606313749682158,
+      "metal_peak_bytes": 3616725894
+    },
+    "c3cbc6f79de4ee11c39ce3702abfcb4b651b8b7e746b048b53dda9199a74c0b4": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 751,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "cdc72c1d7ade0de4e806296dea0d732d8b94f3b59489ba4a05119935d007005f",
+      "seconds": 1.0384868329856545,
+      "metal_peak_bytes": 3779239804
+    },
+    "be28598df0e57e0b12be7a373d9c492b7af7eca2f4cfea486b0ead17bbb09b99": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 482,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "73e0ac5c61e1e72ee0552a40d68220ab0ed471f42b697ab6128e11c7a09ed938",
+      "seconds": 0.7224372080527246,
+      "metal_peak_bytes": 3739356276
+    },
+    "ce90a986a757bd92dc81993ea3002e7d0b95e055c91c61a94e1180a9ff7e2d80": {
+      "raw_output": "orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 183,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "969c00acbf62d5e00a0ced716e02055b00cf64d328db6173ae2f137c23cb2301",
+      "seconds": 0.31885137502104044,
+      "metal_peak_bytes": 3410547264
+    },
+    "efe234c11ebf3b9f85fe3f4d52a4edf921d39807122da71d493bed87d8076154": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 426,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "1a0ef29690b194b22277547f5b57939e4010ff91b6dc6498fdaa1039ee1aea26",
+      "seconds": 0.6358241669367999,
+      "metal_peak_bytes": 3754708580
+    },
+    "39c77279e7792567c30231ff251dd7f6fd171cc6a2d7f29ad17c4f79fbf25b72": {
+      "raw_output": "hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 1301,
+      "generation_tokens": 3,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "46a24400e1b5e167bba5220b845016fbec6da180f4546b6c23ec250aef15cc58",
+      "seconds": 1.7344019169686362,
+      "metal_peak_bytes": 3938060474
+    },
+    "e1c80e75071942e3b883b5f742f5d525897f68b0f9ca26d8beaababc23b18428": {
+      "raw_output": "hexagonal ANSWER: hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 517,
+      "generation_tokens": 6,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "113d234922f1d235c9a9a44136e79aa153130a19f8b2e054697c1539b19ea94a",
+      "seconds": 0.7513819579035044,
+      "metal_peak_bytes": 3778041900
+    },
+    "6b2453737d187af7c0ab3dc603292cee0a0c113803c7177a9a99e8fd3419a877": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 896,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "4c25ad4fdb27562ce0e03f26e7838ac9c66631f23e28f56809d74f190007055e",
+      "seconds": 1.1924273340264335,
+      "metal_peak_bytes": 3834109908
+    },
+    "917d8383fe7d35d8ceccfa52fc023f53e238b964c68e1053d73360fb9eaf5e8b": {
+      "raw_output": "ANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 189,
+      "generation_tokens": 7,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "b20267176dd2b0fc44a2854741e4a886a5cb7859b1246db9edf471ad3595f420",
+      "seconds": 0.3401466669747606,
+      "metal_peak_bytes": 3421410576
+    },
+    "4d3929a5bb01975f679655dc07438477c21777e9a47c48cb539916e13f6b9cca": {
+      "raw_output": "hexagonal ANSWER: hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 517,
+      "generation_tokens": 6,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "765b6bded1f5ec4aa19c27c6c79b6a5f02d30486fcc0cf927a7da5016499297a",
+      "seconds": 0.7387457499280572,
+      "metal_peak_bytes": 3778041900
+    },
+    "739e6c34162e6e19eaf4fdaed1973399d5602ca44e2b99e2a72e1c3475d1ea38": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 437,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "45aeb06fcdc015a73a651914e0c04c527d4721764c495cae1975814e63099743",
+      "seconds": 0.6302268339786679,
+      "metal_peak_bytes": 3679189908
+    },
+    "630f903c08ffa7ba1f9fbf6317af95c5eb452d6f2920d65ea3e0f6f6fe102e40": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 318,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "86c07b1a3ce3d2f83e7ec808e03df04a6464359f5a2dbec53b24b91217af0f64",
+      "seconds": 0.45984029211103916,
+      "metal_peak_bytes": 3622149382
+    },
+    "61674e21a90c90e29809b25d9833e4d0aecffe66184b85fcacfad165748b8dbb": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 485,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "372f7906aa613c20140a2f5cc22e15c943c5a0b18e15c8ff511c193ecdd72d93",
+      "seconds": 0.6949200419476256,
+      "metal_peak_bytes": 3742387604
+    },
+    "3f51f4698d16e98d707e1acb78e6955b796cbc8851ca1e4b0ba66ef67c349764": {
+      "raw_output": "ANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 175,
+      "generation_tokens": 7,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "985dc329191e5d2bb777a3e1c6d37e63c2693606f2ed228e9ddd63328a1b1924",
+      "seconds": 0.3350955839268863,
+      "metal_peak_bytes": 3395489408
+    },
+    "a93674b4cb0faed081e0db0e3e2baaceecc2a1680da8ece610cde57949108d89": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 754,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "7b7a1f0813df23ee8e6ef3684ce13882199bb185449876a7d7f9437426a6937d",
+      "seconds": 1.0478128329850733,
+      "metal_peak_bytes": 3779256212
+    },
+    "80217563cc2d06d99dfde30bb9454f8bb0a4aa21121a74af37780a78908b6876": {
+      "raw_output": "hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 1197,
+      "generation_tokens": 3,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "c0b405e015fe3b69df155c930f842455e36352c18bfe3f3eb662d0d5a443eb31",
+      "seconds": 1.6127772909821942,
+      "metal_peak_bytes": 3937535354
+    },
+    "0c2731cfa52d42c02babfeec06683712dcfe108b991f50fe85ad3ab392c2ff17": {
+      "raw_output": "ANSWER: orthorhombic",
+      "prediction": "orthorhombic",
+      "prompt_tokens": 165,
+      "generation_tokens": 7,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "fc36e5548b05efc00161f5302f831559f6a0f791d5ef4cbd9cdd1b0f090de2b0",
+      "seconds": 0.33982570900116116,
+      "metal_peak_bytes": 3376171472
+    },
+    "9827c1dc70636d4d6b2f2c24bede678630b35a5060ff3a43fe3ce19839deb653": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 312,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "baaa96b5510d04e5b81f42b9afffecc83e37fc742b7f107c5798d38d412a1d1c",
+      "seconds": 0.4644725830294192,
+      "metal_peak_bytes": 3609844230
+    },
+    "31ba20e8c6c2b2566393fbc32a42055fa3136357229cf00eb0b44a149e5f1671": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 518,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "e1b8d808a5e60bda784e69437bb7d13bb64ac038fac2278662bd671f30dd7db8",
+      "seconds": 0.7463923749746755,
+      "metal_peak_bytes": 3778041908
+    },
+    "efdb4d3b7a2ad33a3fc69007bacb9e1c519abff7d3541bdf9027e4fe9bf951ec": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 318,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "2fe4db5186423a2a03fbac06a4aac1e12a877144f4aac0b95355a40f5d25849d",
+      "seconds": 0.46555008401628584,
+      "metal_peak_bytes": 3622149382
+    },
+    "d36993bb42bd3e4493d9401f19addd67854436c8b84a06f97a907254c4533365": {
+      "raw_output": "hexagonal",
+      "prediction": "hexagonal",
+      "prompt_tokens": 244,
+      "generation_tokens": 3,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "be2945867a2aaed000de16e60dc268728972bcc99627251e835ba699ea878c8f",
+      "seconds": 0.3693158330861479,
+      "metal_peak_bytes": 3527536344
+    },
+    "db0d1b3a88fd8d9e4292d17dfc6ff0a990f7c5df5ec4c57ff9b962678632114b": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 476,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "29e3fe1bc3cd1d8e681d8c7798d595511c66817077176c28bb2fdd6def6dbed8",
+      "seconds": 0.6713581250514835,
+      "metal_peak_bytes": 3729541684
+    },
+    "b05a07032bc72ad15163e376661c5c13245ce153d42cf4a88a893004928fbffa": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 315,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "7b1ac60afe3a3ee31e911bdb66a0e3046d3229a8ed0d851f211d7cac940d628a",
+      "seconds": 0.4607168339425698,
+      "metal_peak_bytes": 3616725894
+    },
+    "5a5372c5e1d6774689a3a3732dd1c46968242e7cf12c4f3acd042611ab9837ee": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 482,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "288775443949544df70838c0cea51bdb40c0d4f7fc64c1cde05ba9ab2b8635ef",
+      "seconds": 0.7069516670890152,
+      "metal_peak_bytes": 3739356276
+    },
+    "d92e2261247e84236e5a445aa0a35476188cf65022b1f2dd33211664c55a4486": {
+      "raw_output": "monoclinic\n",
+      "prediction": "monoclinic",
+      "prompt_tokens": 481,
+      "generation_tokens": 5,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "ee11d3b38afdf33c8fcbdaef5aa27a037c3fd9daa804c180b10f81040e98821a",
+      "seconds": 0.672774916049093,
+      "metal_peak_bytes": 3735391252
+    },
+    "8a2fffb4b9c55d2737ac6b1e3fbcb566e16d0d3b1cf7b4d713c8ecebb8c9b877": {
+      "raw_output": "monoclinic",
+      "prediction": "monoclinic",
+      "prompt_tokens": 502,
+      "generation_tokens": 4,
+      "finish_reason": "stop",
+      "truncated": false,
+      "formatted_prompt_sha256": "a599688ffbf975a4ee8e00ee95698c91cc48c91b5d283fda827da9375508afcf",
+      "seconds": 0.6985392080387101,
+      "metal_peak_bytes": 3768030196
+    }
+  },
+  "status": "COMPLETE",
+  "verification": {
+    "regenerated_observations_match": 28,
+    "huber_rmsd_and_labels_match": 28,
+    "split_rmsd_matches": 28,
+    "rounded_reference_labels_match": 28,
+    "response_parser_rechecked": 70,
+    "independent_token_delivery_audit": {
+      "complete_prompt_roundtrips": 70,
+      "formatted_hashes_match": true,
+      "token_counts_match": true,
+      "no_prompt_truncation": true,
+      "processor": "MLX native loader as used in inference; initial generic AutoProcessor audit had a token-count mismatch and was replaced with the actual runtime processor"
+    },
+    "independent_scoring_audit": {
+      "status": "PASS",
+      "responses": 70,
+      "cases": 28,
+      "matched_parents": 7,
+      "invalid_responses": 0,
+      "truncated_responses": 0,
+      "truth_class_counts": {
+        "triclinic": 16,
+        "hexagonal": 2,
+        "cubic": 2,
+        "orthorhombic": 2,
+        "monoclinic": 2,
+        "tetragonal": 2,
+        "trigonal": 2
+      }
+    }
+  },
+  "runtime": {
+    "environment": [
+      "Jinja2==3.1.6",
+      "MarkupSafe==3.0.4",
+      "PyYAML==6.0.3",
+      "Pygments==2.21.0",
+      "aiohappyeyeballs==2.7.1",
+      "aiohttp==3.14.5",
+      "aiosignal==1.4.0",
+      "annotated-doc==0.0.5",
+      "annotated-types==0.8.0",
+      "anyio==4.15.1",
+      "attrs==26.1.0",
+      "certifi==2026.10.23",
+      "cffi==2.1.1",
+      "charset-normalizer==3.5.2",
+      "click==8.5.0",
+      "cryptography==50.0.2",
+      "datasets==5.1.0",
+      "dill==0.4.1",
+      "fastapi==0.162.0",
+      "filelock==4.2.4",
+      "frozenlist==1.8.0",
+      "fsspec==2026.7.0",
+      "h11==0.16.0",
+      "hf-xet==1.7.0",
+      "httpcore2==2.16.0",
+      "httpx2==2.16.0",
+      "huggingface_hub==2.3.0",
+      "idna==3.20",
+      "iniconfig==2.3.1",
+      "llguidance==1.9.1",
+      "markdown-it-py==4.2.0",
+      "mdurl==0.1.2",
+      "miniaudio==1.71",
+      "mlx-audio==0.6.2",
+      "mlx-metal==0.32.4",
+      "mlx-vlm==0.7.10",
+      "mlx==0.32.4",
+      "mpmath==1.3.0",
+      "multidict==7.2.1",
+      "multiprocess==0.70.19",
+      "networkx==3.7",
+      "numpy==2.5.4",
+      "opencv-python==5.0.0.93",
+      "opentelemetry-api==1.45.1",
+      "packaging==26.3",
+      "pandas==3.1.0",
+      "pillow==13.0.0",
+      "pluggy==1.7.0",
+      "propcache==0.5.4",
+      "psutil==7.2.2",
+      "pyarrow==26.0.0",
+      "pycparser==3.12",
+      "pydantic==2.14.1",
+      "pydantic_core==2.50.1",
+      "pytest==9.1.1",
+      "python-dateutil==3.0.0",
+      "python-multipart==0.0.32",
+      "regex==2026.9.29",
+      "requests==2.34.2",
+      "rich==15.0.0",
+      "safetensors==0.8.0",
+      "scipy==1.18.1",
+      "sentencepiece==0.2.2",
+      "setuptools==84.2.1",
+      "shellingham==1.5.4",
+      "six==1.17.0",
+      "sounddevice==0.5.6",
+      "starlette==1.10.0",
+      "sympy==1.14.0",
+      "tokenizers==0.23.3",
+      "torch==2.14.1",
+      "torchvision==0.29.1",
+      "tqdm==4.70.1",
+      "transformers==5.21.0",
+      "truststore==0.10.5",
+      "typer==0.27.3",
+      "typing-inspection==0.4.4",
+      "typing_extensions==4.16.0",
+      "tzdata==2026.5",
+      "urllib3==2.8.0",
+      "uvicorn==0.54.0",
+      "websockets==17.3",
+      "xxhash==4.0.2",
+      "yarl==1.25.1"
+    ],
+    "network_denied": true,
+    "device": {
+      "device_name": "Apple M4 Pro",
+      "max_recommended_working_set_size": 19069665280,
+      "memory_size": 25769803776,
+      "architecture": "applegpu_g16s",
+      "max_buffer_length": 14302248960,
+      "resource_limit": 499000
+    }
+  },
+  "metrics": {
+    "lattice": {
+      "all": {
+        "correct": 2,
+        "n": 28,
+        "percent": 7.142857142857143
+      },
+      "original": {
+        "correct": 2,
+        "n": 14,
+        "percent": 14.285714285714286
+      },
+      "stable_changed": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "joint": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "false_restoration": {
+        "correct": 2,
+        "n": 12,
+        "percent": 16.666666666666668
+      },
+      "invalid": 0,
+      "by_condition": {
+        "gaussian": {
+          "correct": 1,
+          "n": 14,
+          "percent": 7.142857142857143
+        },
+        "one_view_error": {
+          "correct": 1,
+          "n": 14,
+          "percent": 7.142857142857143
+        }
+      }
+    },
+    "exact": {
+      "all": {
+        "correct": 0,
+        "n": 28,
+        "percent": 0.0
+      },
+      "original": {
+        "correct": 0,
+        "n": 14,
+        "percent": 0.0
+      },
+      "stable_changed": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "joint": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "false_restoration": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "invalid": 0,
+      "by_condition": {
+        "gaussian": {
+          "correct": 0,
+          "n": 14,
+          "percent": 0.0
+        },
+        "one_view_error": {
+          "correct": 0,
+          "n": 14,
+          "percent": 0.0
+        }
+      }
+    },
+    "huber": {
+      "all": {
+        "correct": 0,
+        "n": 28,
+        "percent": 0.0
+      },
+      "original": {
+        "correct": 0,
+        "n": 14,
+        "percent": 0.0
+      },
+      "stable_changed": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "joint": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "false_restoration": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "invalid": 0,
+      "by_condition": {
+        "gaussian": {
+          "correct": 0,
+          "n": 14,
+          "percent": 0.0
+        },
+        "one_view_error": {
+          "correct": 0,
+          "n": 14,
+          "percent": 0.0
+        }
+      }
+    },
+    "split": {
+      "all": {
+        "correct": 1,
+        "n": 28,
+        "percent": 3.5714285714285716
+      },
+      "original": {
+        "correct": 1,
+        "n": 14,
+        "percent": 7.142857142857143
+      },
+      "stable_changed": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "joint": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "false_restoration": {
+        "correct": 0,
+        "n": 12,
+        "percent": 0.0
+      },
+      "invalid": 0,
+      "by_condition": {
+        "gaussian": {
+          "correct": 0,
+          "n": 14,
+          "percent": 0.0
+        },
+        "one_view_error": {
+          "correct": 1,
+          "n": 14,
+          "percent": 7.142857142857143
+        }
+      }
+    },
+    "primary_contrast": {
+      "difference_pp": 3.571428571428571,
+      "descriptive_parent_bootstrap_95": [
+        0.0,
+        10.714285714285714
+      ],
+      "split_correct_huber_wrong": 1,
+      "huber_correct_split_wrong": 0,
+      "parents": 7
+    },
+    "coordinate_rmsd_mA": {
+      "huber": 11.467399274620467,
+      "split": 8.70145869859087
+    },
+    "algorithm_labels": {
+      "huber": {
+        "correct": 22,
+        "n": 28,
+        "percent": 78.57142857142857
+      },
+      "split": {
+        "correct": 24,
+        "n": 28,
+        "percent": 85.71428571428571
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Reproducibility guide
 
-The [results map](results/README.md) links every figure and table to its finished output and supporting data.
+The [results guide](results/README.md) links the experiment records and supporting data.
 
 ## Python API
 
@@ -48,4 +48,8 @@ The [atomic schedule](results/symmetry_selector_refinement/schedule.json), [data
 
 The [diagnostic release guide](release/README.md) identifies prompts, API model identifiers, exact-text inputs and saved predictions. [Primary](data/primary/) and [replication](data/replication/) directories contain structure and split manifests; [certification](data/certification/) contains the additional geometric census structures.
 
-Result records are scoped to the reported evaluations. The `release_scope` metadata identifies the paper items, the original record checksum and the selection applied to each trimmed record. Retained predictions and numerical values are unchanged. External-cohort `analysis` contains the independently verified five-pipeline scores used in Tables 2, S4 and S5.
+Result records are scoped to the reported evaluations. The `release_scope` metadata identifies the paper items, the original record checksum and the selection applied to each trimmed record. Retained predictions and numerical values are unchanged. External-cohort `analysis` contains the independently verified five-pipeline scores used in the collective-reconstruction evaluation.
+
+## Model evaluations
+
+The [evaluation protocol](protocols/model_evaluations.md) documents the published runners and offline scoring check. The [frontier records](results/geometry_substitution/) include the three complete 210-case paired evaluations and their reused pilots. The [coordinate-handoff summary](results/coordinate_handoff/coordinate_handoff_accuracy.json) links all contributing responses and preserves the three-run aggregation, majority voting, target tolerance, and invalid-response rules.

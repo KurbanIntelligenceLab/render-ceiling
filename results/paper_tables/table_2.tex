@@ -1,22 +1,24 @@
 \begin{table*}[t]
 \centering
-\caption{\textbf{Collective representations improve recovery on external compositions.} Each disjoint cohort contains 80 materials and 160 collective cases per condition. RMSD is mean per-case coordinate error in m\AA; accuracy is the percentage of correct labels. All pipelines use identical observations and remain frozen across cohorts. Cohort 2 is a secondary replication analysis. Combined split improves collective coordinates in both conditions.}
-\label{tab:collective}
-\small
-\setlength{\tabcolsep}{4pt}
+\caption{\textbf{Split reconstruction across selection rules and component ablations.} The reserved cohort has 28 parents, 1,120 Gaussian cases and 448 corrupted cases. RMSD is mean per-case error in m\AA. Joint correctness requires both original and changed labels to be correct; false restoration assigns the changed case its parent class. Joint/restoration denominators are 420/184 and original-control denominators 280/224 (Gaussian/corrupted). One-SE is development-selected primary; fixed $k=4$ is prespecified secondary. Component-removal rows retain their recorded selection rules. $^\dagger$The retrospective no-refit ablation includes changes in fold losses and selection. Bold identifies full-method variants.}
+\label{tab:reconstruction}
+\small\setlength{\tabcolsep}{2pt}\renewcommand{\arraystretch}{1.10}
 \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrrrrrrrr@{}}
 \toprule
-&\multicolumn{4}{c}{External cohort 1}&\multicolumn{4}{c}{External cohort 2}\\
+&\multicolumn{4}{c}{Gaussian noise}&\multicolumn{4}{c}{One corrupted observation}\\
 \cmidrule(lr){2-5}\cmidrule(l){6-9}
-&\multicolumn{2}{c}{Gaussian}&\multicolumn{2}{c}{Corrupted}&\multicolumn{2}{c}{Gaussian}&\multicolumn{2}{c}{Corrupted}\\
-Method & RMSD & Acc. (\%) & RMSD & Acc. (\%) & RMSD & Acc. (\%) & RMSD & Acc. (\%)\\
+Configuration & RMSD $\downarrow$ & Joint $\uparrow$ & Restored $\downarrow$ & Original $\uparrow$ & RMSD $\downarrow$ & Joint $\uparrow$ & Restored $\downarrow$ & Original $\uparrow$\\
+& & (\%) & (\%) & (\%) & & (\%) & (\%) & (\%)\\
 \midrule
-Atomic split & 8.164 & 45.6 & 8.681 & 44.4 & 8.345 & 55.6 & 8.609 & 58.8 \\
-Mode Huber & 5.398 & 95.6 & 6.557 & 91.9 & 5.863 & 93.1 & 6.703 & 95.0 \\
-Mode split & 5.421 & 95.6 & 5.784 & 91.9 & 5.870 & 93.1 & 5.924 & 94.4 \\
-Atomic or mode, Huber & 5.700 & 90.6 & 6.466 & 85.0 & 5.993 & 89.4 & 6.659 & 91.3 \\
-\textbf{Atomic or mode, split} & 5.707 & 91.3 & 6.039 & 89.4 & 6.000 & 89.4 & 6.254 & 92.5 \\
-
+Huber triangulation (baseline) & 5.271 & 75.7 & 9.5 & 92.9 & 7.395 & 85.9 & 0.0 & 88.8\\
+\addlinespace[3pt]
+Without physical departures ($D=0$) & 3.921 & 81.7 & 11.0 & 96.4 & 5.026 & 93.5 & 0.0 & 96.4\\
+Without observation errors ($E=0$) & 3.377 & 83.3 & 0.0 & 87.9 & 8.757 & 37.0 & 0.0 & 46.4\\
+Without joint refit, one-SE$^\dagger$ & 3.486 & 76.0 & 0.0 & 82.1 & 5.888 & 90.8 & 0.0 & 92.4\\
+\addlinespace[3pt]
+\textbf{Split, minimum loss} & 3.387 & 83.3 & 0.0 & 87.9 & 4.421 & 85.9 & 0.0 & 88.8\\
+\textbf{Split, one-SE (primary)} & 3.336 & 86.2 & 0.2 & 90.7 & 4.349 & 90.8 & 0.0 & 92.9\\
+\textbf{Split, fixed $k=4$ (secondary)} & 3.325 & 88.3 & 0.7 & 93.6 & 4.348 & 93.5 & 0.0 & 95.5\\
 \bottomrule
 \end{tabular*}
 \end{table*}

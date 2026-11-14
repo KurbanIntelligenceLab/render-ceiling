@@ -4,4 +4,4 @@ Two disjoint cohorts contain 80 distinct reduced compositions each from a saved 
 
 Cohort 1 prospectively evaluates the frozen combined method. Cohort 2 reports a secondary analysis of unchanged-method comparator outputs. Material-bootstrap resampling keeps related variants and cameras together. The three primary coordinate comparisons use 98.333% intervals from 20,000 draws.
 
-The complete source frame, eligibility decisions, structures, schedules, outputs and analysis are retained in the [first cohort](../results/collective_validation/study.json) and [second cohort](../results/mode_replication/study.json) records. Tables 2, S4 and S5 report these results.
+The complete source frame, eligibility decisions, structures, schedules, outputs and analysis are retained in the [first cohort](../results/collective_validation/study.json) and [second cohort](../results/mode_replication/study.json) records.

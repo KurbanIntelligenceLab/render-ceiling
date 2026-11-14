@@ -4,7 +4,6 @@ from scipy.optimize import linear_sum_assignment
 
 
 def invariant_basis(cart, species, lattice, ds):
-    """Fixed group/permutation tangent space plus the arbitrary global origin."""
 
     n = len(cart)
     frac = cart @ np.linalg.inv(lattice)
@@ -33,7 +32,6 @@ def invariant_basis(cart, species, lattice, ds):
 
 
 def weighted_projection(cart, reference, basis, h):
-    """GLS projection and its normalized residual covariance, conditional on basis."""
 
     n = len(cart)
     w = np.kron(np.eye(n), h)

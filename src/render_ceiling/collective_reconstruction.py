@@ -10,7 +10,6 @@ class InvalidModeGeometry(ValueError):
 
 
 def representation(cart, species, lattice, ds):
-    """Forward action on Cartesian displacements, including cell translations."""
 
     n = len(cart)
     frac = cart @ np.linalg.inv(lattice)

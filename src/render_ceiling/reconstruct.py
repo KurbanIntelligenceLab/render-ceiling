@@ -25,13 +25,11 @@ def projection_matrices(
 
 
 def project(cart: np.ndarray, R: np.ndarray) -> np.ndarray:
-    """Orthographic screen coords (n,2) exactly as render.py's plot_atoms projects."""
 
     return (cart @ R)[:, :2]
 
 
 def _ray(u: float, v: float, R: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
-    """Back-projection ray for a screen point (u,v) under rotation R: (origin, unit dir)."""
 
     x0 = u * R[:, 0] + v * R[:, 1]
     d = R[:, 2] / np.linalg.norm(R[:, 2])
@@ -39,7 +37,6 @@ def _ray(u: float, v: float, R: np.ndarray) -> tuple[np.ndarray, np.ndarray]:
 
 
 def _ray_intersection(x0a, da, x0b, db) -> tuple[np.ndarray | None, float]:
-    """Closest-approach midpoint of two rays and their minimum distance."""
 
 
     A = np.array([[da @ da, -da @ db], [da @ db, -db @ db]])
@@ -151,7 +148,6 @@ def recover_symmetry(
     symprec: float = 0.01,
     angle_tol: float = 5.0,
 ) -> dict[str, Any]:
-    """Run spglib on the reconstructed atoms (lattice known from drawn cell edges)."""
 
     if recon["n_recovered"] == 0:
         return {

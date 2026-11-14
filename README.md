@@ -18,22 +18,14 @@ The included example contains five ideal projections of a four-atom silicon cell
 
 `--method` accepts `atomic` (default, paired one-SE selection), `collective` (localized-or-collective split), and `huber` (adaptive comparator). Output JSON contains selected coordinates, species, crystal-system label and full fit diagnostics. Omit `--output` to print JSON. Use `render-ceiling reconstruct --help` for options; the [reproducibility guide](REPRODUCIBILITY.md) documents the Python API and numerical modules.
 
-## Paper figures and tables
+## Results and reproducibility
 
-Find each item by its number in the paper PDF; S1–S6 refer to the supplementary tables. Links open figure PDFs or the saved numerical results and supporting data. The [detailed results map](results/README.md) also links the evaluation records.
+Saved inputs, raw responses, protocol settings, and numerical results are in [results/](results/README.md). Descriptive records include:
 
-| Number in the paper PDF | Contents | Results and data |
-|---|---|---|
-| Figure 1 | Mechanism illustration | [Figure 1 (PDF)](results/paper_figures/figure_1/figure_1.pdf), [Figure 1 data](results/paper_figures/figure_1/crystal.json), [Display geometry](results/paper_figures/figure_1/display_cell.json) |
-| Figure 2 | Localized and collective departures | [Figure 2 (PDF)](results/paper_figures/figure_2/figure_2.pdf), [Figure 2 data](results/paper_figures/figure_2/example.json) |
-| Figure 3 | Paired pixel and exact-text outcomes | [Figure 3 (PDF)](results/paper_figures/figure_3/paired_outcomes.pdf), [Figure 3 data](results/paper_figures/figure_3/paired_outcomes.json) |
-| Table 1 | Atomic reconstruction | [Table 1 results](results/symmetry_selector_refinement/metrics.json), [Per-case data](results/symmetry_selector_refinement/heldout.jsonl) |
-| Table 2 | External collective evaluations | [Table 2: cohort 1](results/collective_validation/study.json), [Table 2: cohort 2](results/mode_replication/study.json) |
-| Table S1 | Parent-bootstrap coordinate comparisons | [Table S1 results](results/symmetry_selector_refinement/comparisons.json) |
-| Table S2 | Gaussian atomic outcomes | [Table S2 results](results/symmetry_selector_refinement/metrics.json), [Per-case data](results/symmetry_selector_refinement/heldout.jsonl) |
-| Table S3 | Corrupted-view atomic outcomes | [Table S3 results](results/symmetry_selector_refinement/metrics.json), [Per-case data](results/symmetry_selector_refinement/heldout.jsonl) |
-| Table S4 | External coordinate intervals | [Table S4 results](results/paper_audits/external_verified.json) |
-| Table S5 | Complete external controls | [Table S5: cohort 1](results/collective_validation/study.json), [Table S5: cohort 2](results/mode_replication/study.json) |
-| Table S6 | Support-refit ablation | [Table S6 results](results/physical_readout/study.json), [Verification](results/paper_audits/refit_verification.json) |
+- [Paired image/exact-geometry outcomes](results/geometry_substitution/paired_geometry_outcomes.json) for 17 VLMs, with [complete frontier-model responses](results/geometry_substitution/).
+- [Reconstructed-coordinate accuracy](results/coordinate_handoff/coordinate_handoff_accuracy.json) for the 112-case Sonnet, Gemma, and Qwen comparisons.
+- [Atomic reconstruction metrics](results/symmetry_selector_refinement/metrics.json), [per-case outputs](results/symmetry_selector_refinement/heldout.jsonl), and [external collective evaluations](results/collective_validation/study.json).
 
-[Data](data/) contains benchmark structures and split manifests. [Release records](release/README.md) contain prompts, classifier settings and saved model predictions; [protocols](protocols/) describe the evaluations. [LICENSE](LICENSE) contains MIT code terms and CC BY 4.0 data terms.
+The [reproducibility guide](REPRODUCIBILITY.md) documents the Python API and numerical implementations. The [model-evaluation protocol](protocols/model_evaluations.md) documents the saved model runs and offline scoring.
+
+[Data](data/) contains benchmark structures and split manifests. [Diagnostic records](release/README.md) contain prompts, classifier settings, and saved predictions. [LICENSE](LICENSE) contains MIT code terms and CC BY 4.0 data terms.
