@@ -1,6 +1,10 @@
-# Render ceiling and symmetry-aware reconstruction
+# Separating perception from reasoning in vision-language models: a model-free render ceiling for crystal structures
 
-Code and results for **Separating perception from reasoning in vision-language models: a model-free render ceiling for crystal structures**, including the supplementary evaluations. Reconstruct crystal coordinates from species-labelled orthographic projections and a known lattice using atomic decomposition, localized-or-collective reconstruction, or robust triangulation.
+Code and results for the paper and supplementary evaluations. Reconstruct crystal coordinates from species-labelled orthographic projections and a known lattice using atomic decomposition, localized-or-collective reconstruction, or robust triangulation.
+
+## Abstract
+
+Vision-language models (VLMs) often predict plausible structural labels from images without recovering the three-dimensional geometry behind them. End-to-end scores cannot tell whether an error comes from ambiguous views, lost visual information, or flawed reasoning. Multi-view 3D reconstruction faces its own trade-off: rigid symmetry priors erase genuine distortions, while unconstrained triangulation absorbs measurement outliers. We separate visual perception from structural reasoning through an inspectable 3D geometric intermediate. Its foundation is a model-free render ceiling: an exact reference for what calibrated, species-labeled projections determine, obtained by ruling out projective phantoms. Across a 1,950-structure census, every tested combination of four or five calibrated views uniquely determined the 3D sites from complete, species-labeled centroids. Against this reference, replacing images with exact text coordinates lowers the error rate of all 17 evaluated VLMs on crystals. The three frontier models gain 10.0–19.5 percentage points yet still miss 8.1–21.0% of cases. To recover geometry from imperfect observations, our symmetry-aware split reconstruction jointly estimates a symmetric base, coherent 3D physical displacements, and view-specific 2D corruption, adaptively selecting between atomic and collective distortion modes. Relative to Huber triangulation, it reduces coordinate error by 36.7% under Gaussian noise and 41.2% under corruption. Adaptive mode selection further cuts collective error up to 30.4% relative to atomic split across two external cohorts without sacrificing localized fidelity. Given reconstructed rather than Huber coordinates, downstream models improve. Geometric recovery thus becomes an explicit, testable foundation for structural understanding.
 
 ## Run
 
@@ -20,7 +24,7 @@ The included example contains five ideal projections of a four-atom silicon cell
 
 ## Results and reproducibility
 
-Saved inputs, raw responses, protocol settings, and numerical results are in [results/](results/README.md). Descriptive records include:
+Saved inputs, raw responses, protocol settings, and numerical results are in [results/](results/README.md). [Figures 1–2 and Tables 1–3, S1–S7](results/README.md#paper-figures-and-tables) link the paper to supporting numerical records. Descriptive records include:
 
 - [Paired image/exact-geometry outcomes](results/geometry_substitution/paired_geometry_outcomes.json) for 17 VLMs, with [complete frontier-model responses](results/geometry_substitution/).
 - [Reconstructed-coordinate accuracy](results/coordinate_handoff/coordinate_handoff_accuracy.json) for the 112-case Sonnet, Gemma, and Qwen comparisons.
