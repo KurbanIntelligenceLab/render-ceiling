@@ -24,7 +24,7 @@ The included example contains five ideal projections of a four-atom silicon cell
 
 ## Results and reproducibility
 
-Saved inputs, raw responses, protocol settings, and numerical results are in [results/](results/README.md). [Figures 1–2 and Tables 1–3, S1–S7](results/README.md#paper-figures-and-tables) link the paper to figure PDFs and numerical records. Descriptive records include:
+Saved inputs, raw responses, protocol settings, and numerical results are in [results/](results/README.md). [Figures 1–2 and Tables 1–3, S1–S7](results/README.md#paper-figures-and-tables) link the paper to supporting numerical records. Descriptive records include:
 
 - [Paired image/exact-geometry outcomes](results/geometry_substitution/paired_geometry_outcomes.json) for 17 VLMs, with [complete frontier-model responses](results/geometry_substitution/).
 - [Reconstructed-coordinate accuracy](results/coordinate_handoff/coordinate_handoff_accuracy.json) for the 112-case Sonnet, Gemma, and Qwen comparisons.

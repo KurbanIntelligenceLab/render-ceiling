@@ -24,3 +24,4 @@ outputs/
 .env.*
 
 *.tex
+results/paper_figures/**/*.pdf
